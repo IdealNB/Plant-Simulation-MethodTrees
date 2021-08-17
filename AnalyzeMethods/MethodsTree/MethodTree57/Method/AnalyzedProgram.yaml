@@ -1,0 +1,22 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param station : object, row : integer, workareaTable : object := VOID
+ -> string
+ 	
+ if workareaTable.getColumnNo("SetupMatrix") /= -1 AND workareaTable["SetupMatrix", row] /= VOID
+ 	if NOT existsObject(to_str(station) + ".SetupMatrix") AND NOT station.hasAttribute("SetupMatrix") AND station.isNameUnique("SetupMatrix") 
+ 		station.createAttr("SetupMatrix", "table")
+ 		station.SetupMatrix.RowIndex := TRUE
+ 		station.SetupMatrix.ColumnIndex := TRUE
+ 		station.SetupMatrix.DataType := "time"
+ 	end
+ 	station.SetupTime.setTypeAndAttr("Matrix(Type)", "self.SetupMatrix")
+ 	workareaTable["SetupMatrix", row].copyRangeTo({1,0}..{*,*}, station.SetupMatrix, 0, 0)
+ end
+ 	
+ return "OK" 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 9ed3a1d8-9818-4f2e-b310-1c87f180c4cc

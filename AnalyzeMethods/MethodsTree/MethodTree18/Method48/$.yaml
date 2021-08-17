@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [248.50000000000006,-4.5,0.1]
+Label: ".insert_ProcessObjects"
+LockStructure: true
+Name: Method48
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7475d962-9df0-4529-900f-72e062ad8872
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927942
+$Nodes:
+- 2e83e888-086a-4579-852d-ac4b3faf7b29
+- 4a67ce44-b048-4959-8dd0-6b79f4631993
+- 05706ab3-98b4-436a-9761-5d5df690ee09
+- cc0257a2-bfa6-45a2-ae54-51062aaba219
+- 21eb07b1-697b-40d6-8bad-e146c4d52693
+- 2a099cad-3855-422f-a26c-8795b27ec687
+- b1aa4dd1-b6a1-4d64-a5c1-2b58e4578630

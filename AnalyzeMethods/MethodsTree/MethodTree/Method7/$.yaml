@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [33.6,-8.5,0.1]
+Label: ".write_Successor"
+LockStructure: true
+Name: Method7
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 3d81d025-115c-4307-a16a-8c5e45a6355e
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927272
+$Nodes:
+- 6be3da3c-577a-4c29-8c1a-9a9698949340
+- 6459ca97-ac6b-4e17-a02e-84e0da1ade78
+- 25618cef-39a8-4e17-b2fa-3b94432f3b7d
+- 0d2a1e3a-5473-4507-b609-8511ba5d1548
+- 3a61187c-f9a6-4589-a243-2b47073c38aa
+- 189b0948-0f5c-4e65-b7a4-76df0424bd1b
+- 5ccb8d46-7c41-4a6f-b783-10e5307eb250

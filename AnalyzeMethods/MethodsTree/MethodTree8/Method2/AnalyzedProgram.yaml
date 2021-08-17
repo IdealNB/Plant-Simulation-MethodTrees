@@ -1,0 +1,46 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ param a, b, c : any, import_line : integer, note : string
+ 
+ if a.getColumnNo("UniqueID") /= -1 AND b.getColumnNo("UniqueID") /= -1
+ 	for var row := 1 to a.yDim
+ 		b.setCursor("UniqueID", 1)
+ 		var prevID : boolean := b.find({"UniqueID", *}, a["UniqueID", row])
+ 		var change_row : integer := c.ydim + 1
+ 		c.setCursor("UniqueID", 1)
+ 		var UId_exists : boolean := c.find({"UniqueID", *}, a["UniqueID", row])
+ 	
+ 		if prevID = true then
+ 			for var column := 1 to a.xDim
+ 				if a[column, row] /= b[column, b.CursorY] and UId_exists = false then
+ 					Import_History["Changes_made", import_line] := "TRUE"
+ 					c["Change_Note", change_row] := c["Change_Note", change_row] + " / " + a[column, 0]
+ 					c[column + 1, change_row] := a[column, row]
+ 					c["UniqueID", change_row] := a["UniqueID", row]
+ 					c["Applied_In_Model", change_row] := "FALSE"
+ 				end
+ 			next
+ 		
+ 		else
+ 			if a["UniqueID", row] /= "" then
+ 				Import_History["Changes_made", import_line] := "TRUE"
+ 				c["Change_Note", change_row] := note
+ 				c.InsertList(2, change_row, a.copy({1, row}..{*, row}))
+ 			
+ 				if note = "Deleted"
+ 					c.setFontColorRow(change_row, 2)
+ 				elseif note = "New Item"
+ 					c.setFontColorRow(change_row, makeRGBValue(0, 128, 0))
+ 				end
+ 				c["Applied_In_Model", change_row] := "FALSE"
+ 			end
+ 		end
+ 	next
+ else
+ 	Import_History["Changes_made", import_line] := "not supported"
+ 	Import_History.setFontColorRow(import_line, makeRGBValue(150, 150, 150))
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 0f5252a6-a8ab-410a-b8d0-0f29f674b3af

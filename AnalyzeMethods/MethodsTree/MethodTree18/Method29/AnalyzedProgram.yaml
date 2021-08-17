@@ -1,0 +1,58 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ for var i := 1 to Product_Data.yDim
+ 	
+ 	Object_Mapping.CursorY := 1
+ 	var PS_Class : string := Product_Data["PlantSimClass", i]
+ 	var found_element : boolean := Object_Mapping.find({"TC PlantSimClass",*}, PS_Class)
+ 
+ 	if found_element = true then
+ 		
+ 		var temp_stat : object := Object_Mapping["PlantSimulation Object", Object_Mapping.CursorY]
+ 		
+ 	
+ 		if temp_stat.InternalClassName = "Piece" OR temp_stat.InternalClassName = "Goods" OR temp_stat.InternalClassName = "Vehicle"
+ 			
+ 			var level : integer := Product_Data["Level", i]
+ 			var LengthOriented : boolean := Object_Mapping["LengthOrientation", Object_Mapping.CursorY]
+ 			var GetCapacity : boolean := Object_Mapping["GetCapacity", Object_Mapping.CursorY]
+ 		
+ 		
+ 			create_LibObjects(temp_stat, LengthOriented, GetCapacity, level, i, Product_Data, "MU")
+ 	
+ 		end
+ 
+ 	end
+ 	
+ next
+ 
+ for var i := 1 to Layout_Data.yDim
+ 	
+ 	Object_Mapping.CursorY := 1
+ 	PS_Class := Layout_Data["PlantSimClass", i]
+ 	found_element := Object_Mapping.find({"TC PlantSimClass",*}, PS_Class)
+ 
+ 	if found_element = true then
+ 		
+ 		temp_stat := Object_Mapping["PlantSimulation Object", Object_Mapping.CursorY]
+ 		
+ 	
+ 		if temp_stat.InternalClassName = "Piece" OR temp_stat.InternalClassName = "Goods" OR temp_stat.InternalClassName = "Vehicle"
+ 			
+ 			level := Layout_Data["Level", i]
+ 			LengthOriented := Object_Mapping["LengthOrientation", Object_Mapping.CursorY]
+ 			GetCapacity := Object_Mapping["GetCapacity", Object_Mapping.CursorY]
+ 		
+ 		
+ 			create_LibObjects(temp_stat, LengthOriented, GetCapacity, level, i, Layout_Data, "MU")
+ 	
+ 		end
+ 
+ 	end
+ 	
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 7ae6775b-4447-4f3b-b029-c3b7c58e9267

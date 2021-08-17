@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [336.70000000000005,-4.5,0.1]
+Label: ".connectStationPERT_Layout"
+LockStructure: true
+Name: Method62
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: d1c4175b-e9b1-4db3-bc77-2f9b94727d7d
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928017
+$Nodes:
+- e1806d0e-d8e7-48d5-951a-f235cad20553
+- fde248a4-0283-45da-891c-1c76966f3440
+- ed0ab69c-3248-49a7-8720-44383a7397e0
+- 42ba1de3-d5fa-4be5-9036-a871d78ae23e
+- 0a3e835d-5995-43ae-a6d2-dd1a59dc1236
+- d86a7e20-1045-46d8-b706-10ba94f9dd6b
+- dbdeda7b-1f5f-4eb6-8bb6-3ae48e8b920a

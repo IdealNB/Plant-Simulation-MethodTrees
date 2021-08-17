@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [2.4499999999999997,-4.5,0.1]
+Label: ".getLDXML_JTs"
+LockStructure: true
+Name: Method1
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 6c5a4bde-7ca5-4ca7-a3ee-dd5b3f6b3d5e
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927242
+$Nodes:
+- eb59603b-c80e-4feb-a279-a604c0320960
+- f3efeaef-6c1f-4440-9120-fa7cb4e50119
+- a6553d67-3bb5-47a2-9019-eeeb0e78a873
+- 0a1f78af-d553-484b-b6d3-14dc9d5584ef
+- 06ac2ac9-fce8-4575-a1c5-eec1bcdc9430
+- c14c7ec8-2bf2-484c-b6ba-0e4b9c872f7b
+- ce934592-ce00-45e6-8176-4413a99a353f

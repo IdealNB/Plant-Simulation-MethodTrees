@@ -1,0 +1,18 @@
+InternalClassType: Frame
+Coordinate3D: [1,-286.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.insert_ProcessObjects"
+LockStructure: true
+Name: MethodTree27
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 3264387c-ab37-4d65-b166-7ced7b16a338
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 975a3105-5f4b-4a12-8a68-46e240ff9c7b
+- a455d1a6-ad07-4524-b155-29712eaa46a3
+- cd510a22-0f21-4689-be4f-a2106eee0db1
+- a8e717f2-7025-4789-80ed-3e97ac6f76b0
+- f4b7b2f8-2b3c-4b84-94e7-f086c99ab1ef
+- 40a29875-ff6a-4f02-bd99-2ff3305a88fa

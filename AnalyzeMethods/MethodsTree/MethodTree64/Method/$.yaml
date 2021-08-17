@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Copy_CustMethods"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 2b61676d-3f0e-4e75-8cfd-a2e61d4d06f3
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928607
+$Nodes:
+- b0d2fa89-b760-494c-a3c6-3c50feaa33e7
+- bc6daabd-b145-4742-92ae-327026fdd4ba
+- 54c2c0f6-fe79-47ee-a50c-4c3f8f195074
+- 2d7f759a-890e-4c27-b1c7-94dc14407983
+- a5521cef-c5f5-4e07-9c59-1ea5181e9cb5
+- 87f3380b-7356-40ff-a23f-8898f0677fd0
+- f286e6b1-d3c7-4901-828d-2b927b268f33

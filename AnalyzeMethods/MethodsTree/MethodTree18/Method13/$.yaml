@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [71.049999999999983,-16.5,0.1]
+Label: ".set_Animation"
+LockStructure: true
+Name: Method13
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 5fa86389-01d5-459b-8b55-843c259a7081
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927767
+$Nodes:
+- c076e118-0f57-48fc-aa16-2f40478aa141
+- f2921c0f-b84b-4687-813e-b8cd0b4d1dec
+- fe6fe31a-8ed0-4c6e-9159-dc42e5c654fa
+- a3ca270c-97bf-42b6-ba71-7de496fc5162
+- d551afca-a7a8-481d-9ace-1418a1e8b332
+- 916a7331-105f-4e49-9898-432280ab0326
+- b58ab5c3-4e20-4087-9001-f9d8e4f25738

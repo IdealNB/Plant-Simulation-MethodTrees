@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-317,0]
+Label: ".Models.TestInstance.TeamcenterWizard.openAWfromContext"
+LockStructure: true
+Name: MethodTree30
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 4360bcb3-4327-4088-8f3d-022b6ab33e4a
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 26941859-f97d-4684-a847-2cd5beb56f6d
+- 7b7649c7-fa00-4882-9977-d7a6975aed36
+- 870b081f-0415-49f6-890d-6b8ad2425ad2

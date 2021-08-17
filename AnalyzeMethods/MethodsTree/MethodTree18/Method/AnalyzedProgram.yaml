@@ -1,0 +1,54 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ if Layout_Data.yDim = 0 AND Process_Data.yDim = 0 AND LogProcess_Data.yDim = 0
+ 	promptMessage("No data available!", "Please import data first.")
+ 	return
+ end
+ 
+ set_CurrentDirectory
+ 
+ infoBox("Building model from data. This may take a while.", TRUE)
+ create_ModelLib     
+ deleteAllObjects    
+ insert_LayoutObjects
+ create_Products		
+ 
+ infoBox("Setting process data.", TRUE)
+ custom_Methods.write_Process_Data(current)
+ 	
+ if Build_ProcessLevel
+ 	insert_ProcessObjects
+ end
+ 
+ get_All_Levels
+ 	
+ infoBox("Setting up connectors.", TRUE)
+ if Connectors = "SequenceNumbers"
+ 	Iterate_connectors(tbl_connections)
+ elseif Connectors = "Process_PERT"
+ 	connectProcessPERT_Layout
+ 	if Build_ProcessLevel
+ 		connectPERT_BBProc
+ 	end
+ elseif Connectors = "Station_PERT"
+ 	connectStationPERT_Layout
+ elseif Connectors = "AutoConnectLines"
+ 	connectLines
+ end
+ 	
+ if Set_PERTPos
+ 	positionPERT
+ end
+ 
+ Import_History["Applied_In_Model", Import_History.ydim] := true
+ 	
+ if Delete_Data
+ 	deleteData
+ end
+ 	
+ infoBox("", TRUE) 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 90e33186-45d8-4f37-90f2-102dbbc3b3f0

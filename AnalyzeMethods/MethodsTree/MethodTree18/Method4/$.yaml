@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [22.05,-4.5,0.1]
+Label: ".insert_LayoutObjects"
+LockStructure: true
+Name: Method4
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 166973dc-0f14-4a60-a7cb-80b72ce29816
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927722
+$Nodes:
+- a9caf67c-e6d8-4fff-a26d-778fbaaeb1f7
+- f85eca51-3f3d-490a-9391-bb9573d63bd2
+- 099c6099-98e6-4082-bc90-fdacbc24c24c
+- a59a5503-6fc9-4ff7-b674-052c3b8e89ad
+- 9ebae34f-7100-491b-ad63-bc9e5dfdb5ee
+- 0ecc24d7-57a6-45e8-b293-22b867de2158
+- fcd53c05-3238-43e5-875d-21eabb0e02bd

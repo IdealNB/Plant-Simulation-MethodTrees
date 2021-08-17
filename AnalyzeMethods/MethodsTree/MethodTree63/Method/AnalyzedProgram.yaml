@@ -1,0 +1,14 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param homeframe, libMU : object, i : integer, dataTable : object
+ 
+ homeframe.write_WorkplanToProduct(libMU, i, dataTable)
+ 
+ homeframe.write_VariantsToProduct(libMU, i, dataTable)
+ 
+
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: a6ead8a9-1b13-4b99-9419-0151a0135de6

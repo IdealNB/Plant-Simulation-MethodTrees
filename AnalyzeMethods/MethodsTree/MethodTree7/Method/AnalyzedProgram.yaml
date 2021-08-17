@@ -1,0 +1,21 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ -> boolean
+ 
+ result := FALSE
+ 
+ PlMXML_Import.delete({1,1}..{*,*})
+ 
+ if strRcopy(path_XML, 4) /= ".xml"
+ 	var xmlPath : string := copy(path_XML, 1, strRpos("\\\\", path_XML)) + "Teamcenter.xml"
+ 	Teamcenter.transformXML(path_XML, xmlPath)
+ 	PlMXML_Import.readXMLFile(xmlPath)
+ 	result := TRUE
+ else	
+ 	PlMXML_Import.readXMLFile(path_XML)
+ 	result := TRUE
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: bc8b18e6-09e5-46f5-b026-6775a37e018a

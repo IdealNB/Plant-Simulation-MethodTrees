@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [35.349999999999994,-12.5,0.1]
+Label: ".load_TcJTs"
+LockStructure: true
+Name: Method5
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 807f1ce7-fd49-4a08-8a0a-8fb4d46c95a5
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927522
+$Nodes:
+- 1dae6ed5-6f73-400d-90ad-6fcf37e83faf
+- 2d77441f-485b-411d-9fd7-69cc85ccb4ee
+- b0d40d5b-c427-4479-9a7c-bf94bc45d045
+- e5fe20ee-7c60-45c4-b89d-55b045d3f91e
+- 6476d07d-b6c4-495b-a609-5751ccf83a17
+- 55e5a0e0-2bdf-431d-a217-3d460124dd44
+- f98d0d02-be2b-4f05-8150-491ee3234323

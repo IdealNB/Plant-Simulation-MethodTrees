@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-446,0]
+Label: ".Models.TestInstance.TeamcenterWizard.set_Animation"
+LockStructure: true
+Name: MethodTree44
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 5af848b2-8914-4f75-934b-943f3201aae0
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 3a6c875d-c863-4636-b6e2-3d61895346f3
+- b5448512-1b9b-4ef9-8076-1a8eaa0b1c62
+- b4ba2bd7-a638-476c-8f13-05d58f1c12f7

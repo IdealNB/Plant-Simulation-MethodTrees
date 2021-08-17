@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Del_CustMethods"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 478b4fd5-69b2-4d91-b1ef-83b58117de9e
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928612
+$Nodes:
+- f2122d4c-c88d-47b4-9a96-1fa41a761415
+- db2b68b7-fe69-4cbb-90d0-11d37914a4ae
+- 42665944-26b7-4a69-9c6d-f4d2afea87c2
+- fcf69ed6-351f-4ae0-9ff5-919b7780e0f0
+- 2f21524b-7458-440c-b9d0-ddade27366c9
+- 98fc68be-370b-436f-ad7f-0b9cdce11b2f
+- d61178cc-07ab-470f-9a56-79f4457a461a

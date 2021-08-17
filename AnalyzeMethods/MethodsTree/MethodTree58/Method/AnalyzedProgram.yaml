@@ -1,0 +1,13 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param station : object, pTime : time := 0
+ -> string
+ 	
+ station.ProcTime := pTime
+ 	
+ return "OK" 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 243b9d46-30a2-4ddd-ba3e-97c7438a1e67

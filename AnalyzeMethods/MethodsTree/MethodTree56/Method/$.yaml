@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".write_FailureProfile"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 5ce76ae9-da2c-4d92-b2e2-7f7c9ef267e3
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928567
+$Nodes:
+- 8c71c55e-edc7-44d1-a9c5-eadd2d5f3b57
+- 5251f15c-ff20-46da-a2ec-76ea061d9f6e
+- f0db7482-4a79-4f45-96d2-16ec90dcd838
+- f748f8a1-daad-48fc-ac88-970f0c942af1
+- 94ebe4e0-fa3d-4b9e-8955-844421537803
+- 887eaae2-4c30-43a0-a236-9a7ec363e756
+- 67cf6f39-b3f9-43f6-b7b4-9cef2cbf214b

@@ -1,0 +1,8 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ TeamCenter.logout
+ infoBox("", TRUE)
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 1c10d906-ef4f-41e3-a01c-1a0843250bec

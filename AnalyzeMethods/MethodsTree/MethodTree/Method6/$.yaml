@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [28,-4.5,0.1]
+Label: ".transfer_Tables"
+LockStructure: true
+Name: Method6
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 56ab60b6-ab5a-42fa-bf47-6b0e2bb0c08c
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927267
+$Nodes:
+- f0b999e0-a9c9-46ec-a263-e4da8a799ba4
+- f8818526-fcd5-4958-977f-ff9581649390
+- 6ce5a938-6323-4c84-933e-8eddce52d8f4
+- aa5f4792-90c7-4294-b418-97b48d842acb
+- 3ef678fa-a66a-457f-a99a-01e6f8716e03
+- 801b2b66-2f5e-4641-b3db-86dac6e803ee
+- 6715f054-adc5-4488-be30-c5e8cfddec4f

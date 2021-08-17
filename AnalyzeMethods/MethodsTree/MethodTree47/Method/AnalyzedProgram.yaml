@@ -1,0 +1,27 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ for var i := 1 to Library_Objects.yDim
+ 
+ 	var stationLib : object := Library_Objects["LibObject", i]
+ 	var uid : string := Library_Objects["UniqueID", i]
+ 	var workareaTable : object := Layout_Data
+ 	
+ 
+ 	workareaTable.CursorY := 1
+ 	workareaTable.find({"UniqueID", *}, uid)
+ 	var rowWA : integer := workareaTable.CursorY
+ 	var level : integer := workareaTable["Level", rowWA]
+ 	
+ 
+ 
+ 	if stationLib.ReplaceGraphicsWithTcJT AND existsGraphicGroup(stationLib, "Teamcenter")
+ 		stationLib._3D.deleteGraphicGroup("Teamcenter")
+ 		load_TcJTs(stationLib, workareaTable, level, rowWA, TRUE, TRUE)
+ 	end
+ 
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: e1f052f2-3057-48d1-8b44-fc5fb4621d4c

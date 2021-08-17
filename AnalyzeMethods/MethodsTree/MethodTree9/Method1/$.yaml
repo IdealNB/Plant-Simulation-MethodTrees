@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [7.35,-4.5,0.1]
+Label: ".create_LibObjects"
+LockStructure: true
+Name: Method1
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 5fd0e74d-5687-4226-a8db-a6a7f54c1464
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927372
+$Nodes:
+- e3fd5d80-c645-4427-89a6-87ff654ed99e
+- b09ab9e6-4760-4495-95c7-839050f7b52d
+- bc1c6880-2595-4f54-b2a5-5eb8d4d79c18
+- cbf6ec78-dff1-4f36-b6fb-7d3c599a59d0
+- 1f265b2e-b551-4520-9028-8c758804addf
+- 86f1d99d-eefe-4e25-a280-c01978e7fee7
+- dfad0e74-2482-49bb-8482-937513d1200d

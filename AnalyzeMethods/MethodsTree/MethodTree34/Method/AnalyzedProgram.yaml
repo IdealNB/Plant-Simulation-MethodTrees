@@ -1,0 +1,22 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var tcw : object := self.~.class
+ 
+ if tcw /= VOID
+ 	
+ 	for var i := 1 to tcw.NumChildren
+ 		
+ 		if tcw.childNo(i).~ = ~ AND tcw.childNo(i) /= self.~
+ 			promptmessage("This model already contains a TeamcenterWizard.", "Only one TeamcenterWizard is allowed!")
+ 			RootFolder.BasicObjects.&deleteTCWizard.executeNewCallChain(self.~)
+ 			exitloop
+ 			
+ 		end	
+ 	next
+ 	
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 3127a6d5-654c-4251-add0-097603882f02

@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [11.899999999999999,-4.5,0.1]
+Label: ".write_History"
+LockStructure: true
+Name: Method3
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 792594a5-c5f6-43a7-aa43-c31438b00459
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927252
+$Nodes:
+- 65052066-d18c-46f4-8fa7-84155e323305
+- 2e02e5d6-2a37-4df0-bd53-0bf97d339b0f
+- b80a69a7-468c-4757-98d2-683f8bb6ca55
+- 0833aedb-2574-4c4d-96ee-3a011f185193
+- d3c5b305-0a64-4266-bb11-3bc70faafea6
+- a732231e-dcae-4207-86b8-78523882719f
+- e5c2ca17-2888-4280-b65d-97e54748be5a

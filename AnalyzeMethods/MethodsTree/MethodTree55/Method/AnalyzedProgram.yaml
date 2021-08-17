@@ -1,0 +1,67 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param byref objectLib : object, i : integer, dataTable : object
+ 
+ var wpTable : table := self.workplanTable
+ 
+ if NOT objectLib.hasAttribute("WorkPlan")
+ 	objectLib.createAttr("WorkPlan", "Table")
+ end
+ 
+ var prodICID : string := dataTable["InContextID", i]
+ 
+ if prodICID /= ""
+ 
+ 	for var j := 1 to Process_Data.yDim
+ 	
+ 		if Process_Data["ConsumedParts", j] /= VOID
+ 		
+ 			Process_Data["ConsumedParts", j].CursorY := 1
+ 			if Process_Data["ConsumedParts", j].find({"InContextID",*}, prodICID)
+ 			
+ 				var wpRow : integer := wpTable.yDim + 1
+ 				wpTable["Process", wprow] := Process_Data["Name", j]	
+ 				wpTable["Time", wprow] := Process_Data["Time", j]		
+ 			
+ 				wpTable.createNestedList("Time Details", wprow, to_Str(Process_Data["Time", j]))
+ 			
+ 				var level : integer := Process_Data["Level", j]
+ 				var k := j+1
+ 				var m := 1
+ 				while Process_Data["Level", k] > level
+ 					wpTable["Time Details", wprow]["Operation", m] := Process_Data["Name", k]
+ 					wpTable["Time Details", wprow]["Time", m] := Process_Data["Time", k]
+ 					k += 1
+ 					m += 1
+ 				end
+ 				
+ 				wpTable["ID", wprow] := Process_Data["ID", j]			
+ 				wpTable["Successor", wprow] := Process_Data["Successor", j]
+ 		
+ 				if Process_Data["UsedResources", j] /= VOID
+ 				
+ 					var StationICID : string := Process_Data["UsedResources", j]["InContextID", 1]
+ 					Created_Objects.CursorY := 1
+ 					if Created_Objects.find({"InContextID",*}, StationICID)
+ 					
+ 						wpTable["Station", wprow] := Created_Objects["Link", Created_Objects.CursorY]
+ 			
+ 					end
+ 			
+ 				end
+ 			
+ 			end
+ 	
+ 		end
+ 	
+ 	next
+ 
+ end
+ 
+ objectLib.WorkPlan := wpTable
+ wpTable.delete 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: ac9ced68-d8d9-47b2-9b9f-8d81113cb96a

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".uploadReportToTC"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7a420b4d-47a7-47cd-abbe-544d6290d0d1
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928152
+$Nodes:
+- 1899f3cf-6270-44cc-94fa-8ff2934c01c5
+- d2c91613-0e6f-4d38-84ec-afa2e4d45aed
+- c5e03fa4-5426-4c22-be3b-b07add635df7
+- e554545e-4923-4710-b09f-2e269ea11514
+- 07e09745-f79c-4c82-9a61-dc1ac760a474
+- afda95fd-dc5b-43bd-8037-1914f163d1bb
+- 67f57a4d-0183-467f-a1f1-cee4b1e005ba

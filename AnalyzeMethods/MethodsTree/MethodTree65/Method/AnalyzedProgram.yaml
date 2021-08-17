@@ -1,0 +1,23 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ if NOT RootFolder.Public.isNameUnique("write_Process_Data")
+ 	RootFolder.Public.&write_Process_Data.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Resource_Data")
+ 	RootFolder.Public.&write_Resource_Data.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("get_Variant")
+ 	RootFolder.Public.&get_Variant.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Process_Data_BB")
+ 	RootFolder.Public.&write_Process_Data_BB.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Product_Data")
+ 	RootFolder.Public.&write_Product_Data.deleteObject
+ end
+ &custom_Methods.Value := "RootFolder.TeamcenterWizard"
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 98fc68be-370b-436f-ad7f-0b9cdce11b2f

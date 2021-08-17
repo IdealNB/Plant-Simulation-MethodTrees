@@ -1,0 +1,58 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var workareaTable : object := Layout_Data
+ var workareaTableU : object := Layout_Data_Update
+ var row : integer
+ var bGetAllLevels : boolean := false
+ var station, auto_connector : object
+ 
+ check_CreatedObjects
+ 
+ if Import_History.ydim > 1
+ 	
+ 
+ 	var Changes : table := Import_History["Changes", Import_History.ydim]
+ 	var Connectors : table := Import_History["Connector_List", Import_History.ydim]
+ 
+ 	workareaTableU.delete({1, 0}..{*, *})
+ 	workareaTable.copyFormatTo(workareaTableU)
+ 	workareaTable.copyRangeTo({1, 0}..{*, 0}, workareaTableU, 1, 0)
+ 
+ 
+ 	if Changes.ydim > 0 then
+ 	
+ 		for var i := 1 to Changes.yDim
+ 
+ 		
+ 			if Changes["Change_Note", i] = "New Item" AND Changes["PlantSimClass", i] /= "" AND Changes["Applied_In_Model", i] = "FALSE"
+ 		
+ 				var ID : string := Changes["UniqueID", i]
+ 				
+ 			
+ 				workareaTable.CursorY := 1
+ 				workareaTable.find({"UniqueID", *}, ID)
+ 				row := workareaTable.CursorY
+ 				workareaTable.copyRangeTo({1, row}..{*, row}, workareaTableU, 1, 1)
+ 				insert_LayoutObjects(workareaTableU)
+ 				workareaTableU.delete({1, 1}..{1, *})
+ 				Changes["Applied_In_Model", i] := "TRUE"
+ 					
+ 			
+ 					
+ 			end
+ 			
+ 		next		
+ 	
+ 		Import_History["Applied_In_Model", Import_History.ydim] := true
+ 		
+ 	
+ 
+ 	
+ 	end
+ 
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 0131834c-0c67-4c8e-a27d-e47f20c5ce4b

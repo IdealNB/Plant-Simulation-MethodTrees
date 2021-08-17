@@ -1,0 +1,19 @@
+InternalClassType: Station
+Origin: 1f7e65c4-ef19-42aa-9f2c-3bf2c94fdc77
+RandomSeed: 1073927854
+UUID: 5f7fabef-0c96-4982-9858-a87f4d21f3c4
+$Successors:
+-
+ $Location: be3583cb-5ff1-41e4-bf03-dc6c2aa291b8
+ $Succ: c5d01f79-56da-4506-b6d5-17091eafe526
+ Name: MethodConnector30
+ Origin: ed888ccc-5f97-4759-b965-c4e0f76434be
+ UUID: 1cf331eb-60a0-47e2-9d48-e67e3b5781fe
+-
+ $Location: be3583cb-5ff1-41e4-bf03-dc6c2aa291b8
+ $Succ: ce4ff76c-50cc-4c42-8a86-e5be261c39c0
+ Name: MethodConnector31
+ Origin: ed888ccc-5f97-4759-b965-c4e0f76434be
+ UUID: e41052b8-3245-4447-9520-0f01aa9b0791
+$Predecessors:
+- 838093ac-5539-46e3-98cb-a3e6267492e1

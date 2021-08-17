@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Iterate_connectors"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 551235a0-f030-41fa-87de-fd38035719d1
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927647
+$Nodes:
+- d90b5658-5bde-43c8-add4-b9bc9ba18adf
+- 0f5e78a7-35c6-4e48-b697-a8be10ed8b82
+- d3174833-945b-4623-ac38-e8efb5a838f2
+- 5a529e38-5855-4087-b8bb-4691a2b6a74c
+- 9e485e0e-bfb0-4666-8029-a7a4b7a3a4ee
+- 1f268075-eb1f-4137-857c-a9ec529aae6a
+- bd74ee6e-c680-4a66-892e-b7e0719a5946

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".write_Process_Data_BB"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7f36e350-7d39-4310-a95e-681478ae157b
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928182
+$Nodes:
+- 27ff19da-6833-4cda-9691-f043ed7b8f0d
+- 0dcd50a6-a1be-4979-80db-cde32318974a
+- c49435db-e467-4820-a099-af9ba6fa23e0
+- 67a82547-8d6b-43fe-954a-330177bb0b9b
+- b5100aac-afa7-4e69-b851-6df520aff84f
+- 812d5cae-fbd3-4c7c-8cfd-1543e882aba1
+- 730900c0-f77c-4223-bb42-8edd85bd1b05

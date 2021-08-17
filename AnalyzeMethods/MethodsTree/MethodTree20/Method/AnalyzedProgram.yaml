@@ -1,0 +1,16 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ param obj : object, ggn : string
+ -> boolean
+ result := FALSE
+ 
+ var ggnList : any := obj._3D.GraphicGroupNames 
+ for var i := 1 to ggnList.dim
+ 	if ggnList[i] = ggn
+ 		return TRUE
+ 	end
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 634752f2-c3ba-4961-9413-78107da9967b

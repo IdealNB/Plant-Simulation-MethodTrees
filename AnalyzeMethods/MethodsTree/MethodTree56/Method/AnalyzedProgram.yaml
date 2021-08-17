@@ -1,0 +1,35 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param station : object, row : integer, workareaTable : object := VOID
+ -> string
+ 
+ var setFail : boolean := FALSE
+ if (existsObject(to_str(station) + ".Availability") OR station.getAttrNo("Availability") > 0 OR NOT station.isNameUnique("Availability")) AND workareaTable["Availability", row] /= 0 
+ 	var availability : real := workareaTable["Availability", row]
+ 	setFail := TRUE
+ elseif (existsObject(to_str(station) + ".Availability") OR station.getAttrNo("Availability") > 0 OR NOT station.isNameUnique("Availability"))
+ 	availability := 95
+ end
+ if (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR")) AND workareaTable["MTTR", row] /= 0 
+ 	var mttr : time := workareaTable["MTTR", row]
+ 	setFail := TRUE
+ elseif (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR")) AND workareaTable["Availability", row] = 100 
+ 	mttr := 0
+ elseif (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR"))
+ 	mttr := 60
+ end
+ if setFail
+ 	if station.Failures.getFailure("Teamcenter") = VOID
+ 		station.Failures.createFailure("Teamcenter", availability, mttr, "ProcessingTime", 0, 0, TRUE)
+ 	else
+ 		station.Failures.Teamcenter.Availability := availability
+ 		station.Failures.Teamcenter.Mttr := mttr
+ 	end
+ end
+ 	
+ return "OK" 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 887eaae2-4c30-43a0-a236-9a7ec363e756

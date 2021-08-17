@@ -1,0 +1,10 @@
+InternalClassType: Station
+Origin: 1f7e65c4-ef19-42aa-9f2c-3bf2c94fdc77
+RandomSeed: 1073928334
+UUID: 04b8fe47-8dc6-45f1-b04c-8388a3d5e23e
+$Successors:
+-
+ $Location: 23dcd2b6-f082-48c6-8360-1590af007fcd
+ $Succ: 05245af2-03fc-44f3-bd3e-627acd70efc0
+ Origin: ed888ccc-5f97-4759-b965-c4e0f76434be
+ UUID: 4d783452-25f6-4bf3-bd1f-e0e4a763fc94

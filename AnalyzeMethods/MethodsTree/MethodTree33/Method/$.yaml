@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".connectProcessPERT_Layout"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: cc9f4ed6-72a0-421e-b450-45eb17120c0a
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928167
+$Nodes:
+- 009d9374-3062-4897-8639-454834f655eb
+- 493a361e-05c6-48f1-be1a-41cfa129d9c0
+- 570c2607-b005-4757-a90f-7d321fe5ee86
+- 086d216f-2cd9-4e34-a874-76fbcd687b33
+- 455e9989-4fc4-446a-8501-15b790811d6a
+- 375024ea-b481-4932-863c-1f709c190115
+- 8a67e30c-6066-4210-927d-a12b3a2abda4

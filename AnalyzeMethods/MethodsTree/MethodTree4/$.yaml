@@ -1,0 +1,16 @@
+InternalClassType: Frame
+Coordinate3D: [1,-42,0]
+Label: ".Models.TestInstance.TeamcenterWizard.reset_TC_position"
+LockStructure: true
+Name: MethodTree4
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 3a5a5adb-4ab2-452b-9d72-1cd15f6bfce1
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- cc545052-484c-4301-bfaa-ba602a4e7ba9
+- ba039f96-daf5-48de-971e-8d6b354ac6e2
+- 71418905-c515-4d9e-8513-866d08a0c71d
+- 47f881ce-288b-4b9b-a76f-3b6e5ea78512

@@ -1,0 +1,23 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ if RootFolder.Public.isNameUnique("write_Process_Data")
+ 	RootFrame.TeamcenterWizard.&write_Process_Data.duplicate(RootFolder.Public, "write_Process_Data")
+ end
+ if RootFolder.Public.isNameUnique("write_Resource_Data")
+ 	RootFrame.TeamcenterWizard.&write_Resource_Data.duplicate(RootFolder.Public, "write_Resource_Data")
+ end
+ if RootFolder.Public.isNameUnique("get_Variant")
+ 	RootFrame.TeamcenterWizard.&get_Variant.duplicate(RootFolder.Public, "get_Variant")
+ end
+ if RootFolder.Public.isNameUnique("write_Process_Data_BB")
+ 	RootFrame.TeamcenterWizard.&write_Process_Data_BB.duplicate(RootFolder.Public, "write_Process_Data_BB")
+ end
+ if RootFolder.Public.isNameUnique("write_Product_Data")
+ 	RootFrame.TeamcenterWizard.&write_Product_Data.duplicate(RootFolder.Public, "write_Product_Data")
+ end
+ &custom_Methods.Value := "RootFolder.Public"
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 87f3380b-7356-40ff-a23f-8898f0677fd0

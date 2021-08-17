@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".errorLogout"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 9fe95f36-9380-4004-9352-528904e1d807
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928082
+$Nodes:
+- dca6612a-b974-4960-afa1-70603df83525
+- e4460c69-8c98-409c-9e80-38c12ccf9fa5
+- 5949a046-fd2e-480a-9080-673414ee75f7
+- 826cdf31-0119-4882-a6fe-a5dce7bf07a6
+- 43eb9e5b-b163-440d-8904-bfdf61c1014c
+- 1c10d906-ef4f-41e3-a01c-1a0843250bec
+- 506732fd-8952-46d1-bd11-7bba3dc15848

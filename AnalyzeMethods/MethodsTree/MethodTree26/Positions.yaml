@@ -1,0 +1,8 @@
+InternalClassType: DataTable
+Origin: 676b71ab-9b5e-48ce-b91c-dff4bb19a35a
+UUID: 261e0df2-cc7d-4c49-8ec3-e897ebf38f03
+$Data:
+ Columns:
+ - [0,string,2,"Start","End"]
+ - [1,length,2,0,4.8999999999999995]
+ - [2,length,2,0,-0.5]

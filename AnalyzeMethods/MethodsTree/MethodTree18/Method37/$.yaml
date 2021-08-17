@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [191.8,-16.5,0.1]
+Label: ".set_SegmentTab"
+LockStructure: true
+Name: Method37
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: fd31f14e-8593-4f97-a2c4-6f2bf7104368
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927887
+$Nodes:
+- 6a5d2b65-289a-4cb6-a5ca-b0bd54aef738
+- 3fe50681-b80a-4c24-80a2-42508c42e794
+- e5584ad8-2e44-47ec-b645-eba839b58b55
+- 134afffd-22fe-4596-b84d-d282c7527e1e
+- f0541a56-fc8a-4bdf-9ecf-5be268208f86
+- 4b05f9a4-83de-41a1-bc03-509ba5506876
+- 36ca142f-febd-404c-b90e-12ffbec0a3f2

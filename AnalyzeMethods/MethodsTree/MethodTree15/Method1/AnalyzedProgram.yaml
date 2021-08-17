@@ -1,0 +1,26 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param workTable : object
+ 
+ var predecs : string[]
+ var row : integer
+ 
+ if workTable.getColumnNo("Predecessor") /= -1 AND workTable.getColumnNo("Successor") /= -1
+ 	for var i := 1 to workTable.yDim
+ 		if workTable["Predecessor", i] /= ""
+ 			predecs := SplitString(workTable["Predecessor", i], " ")
+ 			for var j := 1 to predecs.dim
+ 				workTable.CursorY := 1
+ 				if workTable.find({"ID", *}, predecs[j])
+ 					row := workTable.CursorY
+ 					workTable["Successor", row] := trim(workTable["Successor", row] + " " + workTable["ID", i])
+ 				end
+ 			next
+ 		end
+ 	next
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 07ffd863-3486-41a2-8334-bf5dd7fa72b5

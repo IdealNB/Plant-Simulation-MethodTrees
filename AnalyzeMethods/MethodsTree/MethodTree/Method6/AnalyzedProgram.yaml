@@ -1,0 +1,320 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ PLMXML_Import.setCursor("subType", 1)
+ var	rowLayout : integer[]
+ while PLMXML_Import.find({"subType",1}..{"subType",*}, "MEPlantContext")
+ 	rowLayout.append(PLMXML_Import.CursorY)
+ end
+ 
+ PLMXML_Import.setCursor("subType", 1)
+ var rowProcess : integer[]
+ var rowLogProcess : integer := 0
+ while PLMXML_Import.find({"subType",1}..{"subType",*}, "MEProcessContext")
+ 	if copy(PLMXML_Import["contents", PLMXML_Import.CursorY]["ItemRevision.subType", 1], 1, 4) /= "Lgt0"
+ 		rowProcess.append(PLMXML_Import.CursorY)
+ 	elseif copy(PLMXML_Import["contents", PLMXML_Import.CursorY]["ItemRevision.subType", 1], 1, 4) = "Lgt0"
+ 		rowLogProcess := PLMXML_Import.CursorY
+ 	end
+ end
+ 
+ PLMXML_Import.setCursor("subType", 1)
+ var rowProduct : integer[]
+ while PLMXML_Import.find({"subType",1}..{"subType",*}, "MEProductContext")
+ 	rowProduct.append(PLMXML_Import.CursorY)
+ end
+ 
+ if rowLayout.dim = 0 AND rowProcess.dim = 0 AND rowProduct.dim = 0 AND PLMXML_Import.yDim > 0 AND PLMXML_Import["subType",1] /= "MECollaborationContext"
+ 	rowLayout.append(1)
+ end
+ 
+ var layoutTable : object := Layout_Data
+ var layoutTableU : object := Layout_Data_Update
+ layoutTable.delete({1,0}..{*,*})
+ layoutTableU.delete({1,0}..{*,*})
+ layoutTable.inheritFormat := TRUE
+ layoutTableU.inheritFormat := TRUE
+ 
+ for var rowLayoutX := 1 to rowLayout.dim
+ 	var	workareaTable : table := PLMXML_Import["contents", rowLayout[rowLayoutX]] 
+ 	var layoutTableOffset : integer := layoutTable.yDim
+ 
+ 	for var i := 1 to Import_Mapping.yDim
+ 		workareaTable.setCursor(1, 0)
+ 		if Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Layout Header", i] /= "" AND workareaTable.find({1,0}..{*,0}, Import_Mapping["TC Import Header", i])
+ 			var workareaTableCol := workareaTable.CursorX
+ 			var Import_MappingRow := i
+ 			var colName : string := Import_Mapping["PS Layout Header", Import_MappingRow]
+ 			if layoutTable.find({1,0}..{*,0}, colName)
+ 				var layoutTableCol := layoutTable.CursorX
+ 			else 
+ 				layoutTableCol := layoutTable.XDimIndex + 1
+ 				layoutTable[layoutTableCol, 0] := colName
+ 				layoutTableU[layoutTableCol, 0] := colName
+ 				if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 					layoutTable.setDataType(layoutTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 					layoutTableU.setDataType(layoutTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 				else
+ 					layoutTable.setDataType(layoutTableCol, workareaTable.getDataType(workareaTableCol))
+ 					layoutTableU.setDataType(layoutTableCol, workareaTable.getDataType(workareaTableCol))
+ 				end
+ 			end	
+ 			if layoutTable.getDataType(layoutTableCol) /= "table"
+ 				workareaTable.copyRangeTo({workareaTableCol ,1}..{workareaTableCol, *}, layoutTable, layoutTableCol, layoutTableOffset + 1)
+ 			else
+ 				for var j := 1 to workareaTable.yDim
+ 					if workareaTable[workareaTableCol, j] /= VOID
+ 						layoutTable.createNestedList(layoutTableCol, j+layoutTableOffset)
+ 						layoutTable[layoutTableCol, j+layoutTableOffset].ColumnIndex := TRUE 
+ 						for var k := 1 to Import_Mapping["Format", Import_MappingRow].yDim
+ 							workareaTable[workareaTableCol, j].setCursor(1, 0)
+ 							if Import_Mapping["Format", Import_MappingRow][1, k] /= "" AND Import_Mapping["Format", Import_MappingRow][2, k] /= "" AND workareaTable[workareaTableCol, j].find({1,0}..{*,0}, Import_Mapping["Format", Import_MappingRow][1, k])
+ 								var workareaTableSubCol := workareaTable[workareaTableCol, j].CursorX
+ 								var Import_MappingSubRow := k
+ 								var subColName := Import_Mapping["Format", Import_MappingRow][2, Import_MappingSubRow]
+ 								var layoutTableSubCol := layoutTable[layoutTableCol, j+layoutTableOffset].xDimIndex + 1
+ 								layoutTable[layoutTableCol, j+layoutTableOffset][layoutTableSubCol, 0] := subColName
+ 								if Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow] /= ""
+ 									layoutTable[layoutTableCol, j+layoutTableOffset].setDataType(layoutTableSubCol, Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow])
+ 								end
+ 								workareaTable[workareaTableCol, j].copyRangeTo({workareaTableSubCol, 1}..{workareaTableSubCol, *}, layoutTable[layoutTableCol, j+layoutTableOffset], layoutTableSubCol, 1)
+ 							elseif Import_Mapping["Format", Import_MappingRow][1, k] /= "" AND Import_Mapping["Format", Import_MappingRow][2, k] /= ""
+ 								Import_MappingSubRow := k
+ 								subColName := Import_Mapping["Format", Import_MappingRow][2, Import_MappingSubRow]
+ 								layoutTableSubCol := layoutTable[layoutTableCol, j+layoutTableOffset].xDimIndex + 1
+ 								layoutTable[layoutTableCol, j+layoutTableOffset][layoutTableSubCol, 0] := subColName
+ 								if Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow] /= ""
+ 									layoutTable[layoutTableCol, j+layoutTableOffset].setDataType(layoutTableSubCol, Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow])
+ 								end
+ 							end
+ 						next
+ 					end
+ 				next
+ 			end
+ 		elseif Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Layout Header", i] /= ""
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS Layout Header", Import_MappingRow]
+ 			layoutTableCol := layoutTable.XDimIndex + 1
+ 			layoutTable[layoutTableCol, 0] := colName
+ 			if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 				layoutTable.setDataType(layoutTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 			end
+ 		end
+ 	next
+ 	write_Successor(layoutTable)
+ next
+ 
+ var processTable : object := Process_Data
+ processTable.delete({1,0}..{*,*})
+ processTable.inheritFormat := TRUE
+ 
+ for var rowProcessX := 1 to rowProcess.dim
+ 	workareaTable := PLMXML_Import["contents", rowProcess[rowProcessX]] 
+ 	var processTableOffset : integer := processTable.yDim
+ 	
+ 	for var i := 1 to Import_Mapping.yDim
+ 		workareaTable.setCursor(1, 0)
+ 		if Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Process Header", i] /= "" AND workareaTable.find({1,0}..{*,0}, Import_Mapping["TC Import Header", i])
+ 			workareaTableCol := workareaTable.CursorX
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS Process Header", Import_MappingRow]
+ 			processTable.setCursor(1, 0)
+ 			if processTable.find({1,0}..{*,0}, colName)
+ 				var processTableCol := processTable.CursorX
+ 			else 
+ 				processTableCol := processTable.XDimIndex + 1
+ 				processTable[processTableCol, 0] := colName
+ 				if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 					processTable.setDataType(processTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 				else
+ 					processTable.setDataType(processTableCol, workareaTable.getDataType(workareaTableCol))
+ 				end	
+ 			end	
+ 			if processTable.getDataType(processTableCol) /= "table"
+ 				workareaTable.copyRangeTo({workareaTableCol, 1}..{workareaTableCol, *}, processTable, processTableCol, processTableOffset + 1)
+ 			else
+ 				for var j := 1 to workareaTable.yDim
+ 					if workareaTable[workareaTableCol, j] /= VOID
+ 						processTable.createNestedList(processTableCol, j+processTableOffset)
+ 						processTable[processTableCol, j+processTableOffset].ColumnIndex := TRUE
+ 						for var k := 1 to Import_Mapping["Format", Import_MappingRow].yDim
+ 							workareaTable[workareaTableCol, j].setCursor(1, 0)
+ 							if Import_Mapping["Format", Import_MappingRow][1, k] /= "" AND Import_Mapping["Format", Import_MappingRow][2, k] /= "" AND workareaTable[workareaTableCol, j].find({1,0}..{*,0}, Import_Mapping["Format", Import_MappingRow][1, k])
+ 								workareaTableSubCol := workareaTable[workareaTableCol, j].CursorX
+ 								Import_MappingSubRow := k
+ 								subColName := Import_Mapping["Format", Import_MappingRow][2, Import_MappingSubRow]
+ 								var processTableSubCol := processTable[processTableCol, j+processTableOffset].xDimIndex + 1
+ 								processTable[processTableCol, j+processTableOffset][processTableSubCol, 0] := subColName
+ 								if Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow] /= ""
+ 									processTable[processTableCol, j+processTableOffset].setDataType(processTableSubCol, Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow])
+ 								end
+ 								workareaTable[workareaTableCol, j].copyRangeTo({workareaTableSubCol, 1}..{workareaTableSubCol, *}, processTable[processTableCol, j+processTableOffset], processTableSubCol, 1)
+ 							end
+ 						next
+ 					
+ 						Import_Mapping["Format", Import_MappingRow].setCursor(1, 0)
+ 						if Import_Mapping["Format", Import_MappingRow].find({2,0}..{2,*}, "Type")
+ 								Import_MappingSubRow := Import_Mapping["Format", Import_MappingRow].CursorY
+ 								var filter := splitString(Import_Mapping["Format", Import_MappingRow][4, Import_MappingSubRow], ";")
+ 								for var m := processTable[processTableCol, j+processTableOffset].yDim downto 1
+ 									if filter.find(processTable[processTableCol, j+processTableOffset]["Type", m]) = 0
+ 											processTable[processTableCol, j+processTableOffset].cutRow(m)
+ 									end
+ 								next
+ 								if processTable[processTableCol, j+processTableOffset].yDim = 0
+ 									processTable[processTableCol, j+processTableOffset] := VOID
+ 								end
+ 						end
+ 					
+ 					end
+ 				next
+ 			end
+ 		elseif Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Process Header", i] /= ""
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS Process Header", Import_MappingRow]
+ 			processTableCol := processTable.XDimIndex + 1
+ 			processTable[processTableCol, 0] := colName
+ 			if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 				processTable.setDataType(processTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 			end
+ 		end
+ 	next
+ 	write_Successor(processTable)
+ next
+ 
+ processTable := LogProcess_Data
+ processTable.delete({1,0}..{*,*})
+ processTable.inheritFormat := TRUE
+ if rowLogProcess > 0
+ 	workareaTable := PLMXML_Import["contents", rowLogProcess] 
+ 	
+ 	for var i := 1 to Import_Mapping.yDim
+ 		workareaTable.setCursor(1, 0)
+ 		if Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS LogProcess Header", i] /= "" AND workareaTable.find({1,0}..{*,0}, Import_Mapping["TC Import Header", i])
+ 			workareaTableCol := workareaTable.CursorX
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS LogProcess Header", Import_MappingRow]
+ 			processTableCol := processTable.xDimIndex + 1
+ 			processTable[processTableCol, 0] := colName
+ 			if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 				processTable.setDataType(processTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 			else
+ 				processTable.setDataType(processTableCol, workareaTable.getDataType(workareaTableCol))
+ 			end	
+ 			if processTable.getDataType(processTableCol) /= "table"
+ 				workareaTable.copyRangeTo({workareaTableCol, 1}..{workareaTableCol, *}, processTable, processTableCol, 1)
+ 			else
+ 				for var j := 1 to workareaTable.yDim
+ 					if workareaTable[workareaTableCol, j] /= VOID
+ 						processTable.createNestedList(processTableCol, j)
+ 						processTable[processTableCol, j].ColumnIndex := TRUE
+ 						for var k := 1 to Import_Mapping["Format", Import_MappingRow].yDim
+ 							workareaTable[workareaTableCol, j].setCursor(1, 0)
+ 							if Import_Mapping["Format", Import_MappingRow][1, k] /= "" AND Import_Mapping["Format", Import_MappingRow][2, k] /= "" AND workareaTable[workareaTableCol, j].find({1,0}..{*,0}, Import_Mapping["Format", Import_MappingRow][1, k])
+ 								workareaTableSubCol := workareaTable[workareaTableCol, j].CursorX
+ 								Import_MappingSubRow := k
+ 								subColName := Import_Mapping["Format", Import_MappingRow][2, Import_MappingSubRow]
+ 								processTableSubCol := processTable[processTableCol, j].xDimIndex + 1
+ 								processTable[processTableCol, j][processTableSubCol, 0] := subColName
+ 								if Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow] /= ""
+ 									processTable[processTableCol, j].setDataType(processTableSubCol, Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow])
+ 								end
+ 								workareaTable[workareaTableCol, j].copyRangeTo({workareaTableSubCol, 1}..{workareaTableSubCol, *}, processTable[processTableCol, j], processTableSubCol, 1)
+ 							end
+ 						next
+ 					
+ 						Import_Mapping["Format", Import_MappingRow].setCursor(1, 0)
+ 						if Import_Mapping["Format", Import_MappingRow].find({2,0}..{2,*}, "Type")
+ 								Import_MappingSubRow := Import_Mapping["Format", Import_MappingRow].CursorY
+ 								filter := splitString(Import_Mapping["Format", Import_MappingRow][4, Import_MappingSubRow], ";")
+ 								for var m := processTable[processTableCol, j].yDim downto 1
+ 									if filter.find(processTable[processTableCol, j]["Type", m]) = 0
+ 											processTable[processTableCol, j].cutRow(m)
+ 									end
+ 								next
+ 								if processTable[processTableCol, j].yDim = 0
+ 									processTable[processTableCol, j] := VOID
+ 								end
+ 						end
+ 					
+ 					end
+ 				next
+ 			end
+ 		elseif Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS LogProcess Header", i] /= ""
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS LogProcess Header", Import_MappingRow]
+ 			processTableCol := processTable.XDimIndex + 1
+ 			processTable[processTableCol, 0] := colName
+ 			if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 				processTable.setDataType(processTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 			end
+ 		end
+ 	next
+ 	write_Successor(processTable)
+ end
+ 
+ var productTable : object := Product_Data
+ productTable.delete({1,0}..{*,*})
+ productTable.inheritFormat := TRUE
+ 
+ for var rowProductX := 1 to rowProduct.dim
+ 	workareaTable := PLMXML_Import["contents", rowProduct[rowProductX]] 
+ 	var productTableOffset : integer := productTable.yDim
+ 
+ 	for var i := 1 to Import_Mapping.yDim
+ 		workareaTable.setCursor(1, 0)
+ 		if Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Product Header", i] /= "" AND workareaTable.find({1,0}..{*,0}, Import_Mapping["TC Import Header", i])
+ 			workareaTableCol := workareaTable.CursorX
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS Product Header", Import_MappingRow]
+ 			productTable.setCursor(1, 0)
+ 			if productTable.find({1,0}..{*,0}, colName)
+ 				var productTableCol := productTable.CursorX
+ 			else 
+ 				productTableCol := productTable.XDimIndex + 1
+ 				productTable[productTableCol, 0] := colName
+ 				if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 					productTable.setDataType(productTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 				else
+ 					productTable.setDataType(productTableCol, workareaTable.getDataType(workareaTableCol))
+ 				end
+ 			end	
+ 			if productTable.getDataType(productTableCol) /= "table"
+ 				workareaTable.copyRangeTo({workareaTableCol, 1}..{workareaTableCol, *}, productTable, productTableCol, productTableOffset + 1)
+ 			else
+ 				for var j := 1 to workareaTable.yDim
+ 					if workareaTable[workareaTableCol, j] /= VOID
+ 						productTable.createNestedList(productTableCol, j+productTableOffset)
+ 						productTable[productTableCol, j+productTableOffset].ColumnIndex := TRUE 
+ 						for var k := 1 to Import_Mapping["Format", Import_MappingRow].yDim
+ 							workareaTable[workareaTableCol, j].setCursor(1, 0)
+ 							if Import_Mapping["Format", Import_MappingRow][1, k] /= "" AND Import_Mapping["Format", Import_MappingRow][2, k] /= "" AND workareaTable[workareaTableCol, j].find({1,0}..{*,0}, Import_Mapping["Format", Import_MappingRow][1, k])
+ 								workareaTableSubCol := workareaTable[workareaTableCol, j].CursorX
+ 								Import_MappingSubRow := k
+ 								subColName := Import_Mapping["Format", Import_MappingRow][2, Import_MappingSubRow]
+ 								var productTableSubCol := productTable[productTableCol, j+productTableOffset].xDimIndex + 1
+ 								productTable[productTableCol, j+productTableOffset][productTableSubCol, 0] := subColName
+ 								if Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow] /= ""
+ 									productTable[productTableCol, j+productTableOffset].setDataType(productTableSubCol, Import_Mapping["Format", Import_MappingRow][3, Import_MappingSubRow])
+ 								end
+ 								workareaTable[workareaTableCol, j].copyRangeTo({workareaTableSubCol, 1}..{workareaTableSubCol, *}, productTable[productTableCol, j+productTableOffset], productTableSubCol, 1)
+ 							end
+ 						next
+ 					end
+ 				next
+ 			end
+ 		elseif Import_Mapping["TC Import Header", i] /= "" AND Import_Mapping["PS Product Header", i] /= ""
+ 			Import_MappingRow := i
+ 			colName := Import_Mapping["PS Product Header", Import_MappingRow]
+ 			productTableCol := productTable.XDimIndex + 1
+ 			productTable[productTableCol, 0] := colName
+ 			if Import_Mapping["Format", Import_MappingRow] /= VOID
+ 				productTable.setDataType(productTableCol, Import_Mapping["Format", Import_MappingRow].name)
+ 			end
+ 		end
+ 	next
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 801b2b66-2f5e-4641-b3db-86dac6e803ee

@@ -1,0 +1,11 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ -> boolean
+ 
+ result := TRUE
+ 
+ TeamCenter.retrieveData(Sync_Select) 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: eb830b9a-e296-4b4d-98a8-b74752318220

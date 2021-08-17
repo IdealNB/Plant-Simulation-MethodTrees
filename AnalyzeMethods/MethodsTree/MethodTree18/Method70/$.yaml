@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [383.25000000000011,-4.5,0.1]
+Label: ".deleteData"
+LockStructure: true
+Name: Method70
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: e91e135e-2e1a-4d6f-863a-38f8c3d8e6e5
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928057
+$Nodes:
+- 6d90a238-d1a8-4596-9ad4-c391eb559fe7
+- e2e7fb1b-f07a-4b97-ad95-74683e777e08
+- dfb11bf0-de25-4583-9945-86d6a03eb334
+- 89e68d6f-207e-4e09-94d0-7d353ea6a100
+- 41c63838-7af7-4017-b92e-252dbf1f13e9
+- 5d8a27b9-a426-46be-b4d6-0cff1b76b649
+- 66ee6122-07f7-447f-8bfb-44a75b4819e2

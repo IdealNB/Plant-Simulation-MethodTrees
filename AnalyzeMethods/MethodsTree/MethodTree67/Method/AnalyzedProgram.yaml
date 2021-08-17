@@ -1,0 +1,22 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param byref objectLib : object, pRow : integer, dataTable : object
+ 
+ var VariantsTab : table
+ VariantsTab.create
+ VariantsTab.ColumnIndex := true
+ 
+ custom_Methods.get_Variant("product", pRow, VariantsTab, self.~)
+ 
+ for var i := 1 to VariantsTab.XDimIndex
+ 	var VariantsName : string := VariantsTab[i, 0]
+ 	if  objectLib.isNameUnique(VariantsName)
+ 		objectLib.createAttr(VariantsName, "string")
+ 	end
+ 	objectLib.setAttribute(VariantsName, VariantsTab[i, 1])
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 659c4f88-a2be-490c-9bca-7a7c6cf706b0

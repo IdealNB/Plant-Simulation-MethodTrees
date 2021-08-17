@@ -1,0 +1,16 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ -> boolean
+ 
+ var i : integer := strRpos("\\\\", modelFile)
+ if i = 0
+ 	result := FALSE
+     promptmessage("Please save the model first to apply your settings.")
+ else
+ 	result := TRUE
+     setCurrentDirectory(copy(modelFile, 1, i-1))
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: df231778-e081-4b0a-b4bc-602bb511223c

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [1,-537.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.positionPERT"
+LockStructure: true
+Name: MethodTree53
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: ceb6cde7-f222-48f4-b5b3-4026ee23c69a
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- ddac2760-fe93-4916-a48e-db9f26c2fdb5
+- ac8ab1b9-434e-4670-a9d1-f2d902d81fae
+- 1bf447f0-66f9-405e-b026-e76785010378
+- 9ba40874-b2f5-4dbc-920a-0486667bc8b2
+- d0bf7d7d-8aa7-4415-8c8d-9fb134e8d7d5
+- d8879f74-d81c-481b-9f52-c00070032bcb
+- bde8db68-865b-488f-9202-07084b506757

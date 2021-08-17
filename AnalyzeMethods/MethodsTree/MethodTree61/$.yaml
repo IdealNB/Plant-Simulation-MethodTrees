@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-617.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.deleteInternalTables"
+LockStructure: true
+Name: MethodTree61
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 10932222-d268-4b30-ba76-0612b070a160
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 35c655c1-55f6-472d-8dc6-2e6eeadbd330
+- afa2f425-1359-42bd-ab7a-a62dce8f7a39
+- e5caefbc-1943-46bc-bb5e-cd22fa8c4d25

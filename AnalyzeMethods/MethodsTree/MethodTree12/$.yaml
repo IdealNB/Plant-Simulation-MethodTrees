@@ -1,0 +1,17 @@
+InternalClassType: Frame
+Coordinate3D: [1,-138,0]
+Label: ".Models.TestInstance.TeamcenterWizard.get_All_Levels"
+LockStructure: true
+Name: MethodTree12
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: dafbb49d-3d4f-455c-a3bb-8d38c7c7a20e
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- a1b408bd-cf6c-4409-a483-6b52a147cf00
+- 5f87bd4b-8937-41b8-8f08-325387cf6c01
+- 40ede417-250e-42ff-9f44-4c8bc5e85099
+- 15aac7d6-cebb-49d4-8479-60d9b849d53f
+- 41c7eadd-2f2e-4214-808b-d635110545bf

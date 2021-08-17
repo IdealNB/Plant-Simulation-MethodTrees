@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-324.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.uploadReportToTC"
+LockStructure: true
+Name: MethodTree31
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 169b7def-74d8-4d26-b9bf-ef77d39b1581
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 03e6b51a-20fd-4b55-887a-cc255b132997
+- 4aa1b5a7-7295-460e-b2f7-0cbf660ad66d
+- 7a420b4d-47a7-47cd-abbe-544d6290d0d1

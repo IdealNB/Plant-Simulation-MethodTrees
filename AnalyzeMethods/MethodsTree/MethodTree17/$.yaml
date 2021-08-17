@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-191.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.connectLines"
+LockStructure: true
+Name: MethodTree17
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 9659cb27-ae1d-49a2-8ebf-5992adc3227a
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 9252fc61-5201-445c-a348-02bcce73b7ee
+- 861db273-dc71-413f-b6cd-80642248ee47
+- 04aeba80-e24d-453d-82da-b3fb388bf195

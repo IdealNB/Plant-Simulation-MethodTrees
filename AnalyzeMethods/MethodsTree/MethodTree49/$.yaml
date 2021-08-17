@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-503.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.write_CreatedLibObjects"
+LockStructure: true
+Name: MethodTree49
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: f301d58f-9308-4f73-8330-2880bb6092b1
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 54288009-b447-4914-97c8-8847a40078b6
+- 156f75ac-d2d1-4fe1-9975-3ee07c98769d
+- e94dc281-89b1-4bd4-b7dc-1e58eeeabfb5

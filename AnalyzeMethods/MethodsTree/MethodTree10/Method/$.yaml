@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".compare_Imports"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 68ad043f-4f25-49b3-a362-781dbc1f2e67
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927492
+$Nodes:
+- a1fe4eed-2b32-43c6-8015-06cc00aeaa5b
+- 26b1bf77-686f-4e58-b429-0e2a28009f30
+- f607948a-95bc-4e9d-a391-22d8e8e58f57
+- 9ec82df5-ba35-4130-b38f-fa9a095a3e88
+- 5acd41d3-4cf7-49c9-82ec-c20152628eee
+- 38f24918-e424-4224-982a-494e87ec3457
+- c070b9e2-c457-4345-953b-0dd11eea070f

@@ -1,0 +1,47 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ -> boolean
+ 
+ result := TRUE
+ 
+ for var i := 1 to Layout_Data.yDim
+ 	var PSC : string := Layout_Data["PlantSimClass", i]
+ 	if PSC /= "" AND PSC /= "Frame"
+ 		Object_Mapping.setCursor(1,1)
+ 		if NOT Object_Mapping.find({"TC PlantSimClass",1}..{"TC PlantSimClass",*}, PSC )
+ 			if messageBox("The PlantSimClass" + chr(13) + ">> " + PSC + " <<" + chr(13) + "is missing in the Object Mapping table." + chr(13) + "Do you want to add it to the table?", 48, 3) = 16
+ 				Object_Mapping["TC PlantSimClass", Object_Mapping.yDim+1] := PSC
+ 			end
+ 			Object_Mapping.openDialog
+ 			result := FALSE
+ 		end
+ 	end
+ next
+ 
+ for var i := 1 to Product_Data.yDim
+ 	PSC := Product_Data["PlantSimClass", i]
+ 	if PSC /= "" AND PSC /= "Frame"
+ 		Object_Mapping.setCursor(1,1)
+ 		if NOT Object_Mapping.find({"TC PlantSimClass",1}..{"TC PlantSimClass",*}, PSC )
+ 			if messageBox("The PlantSimClass" + chr(13) + ">> " + PSC + " <<" + chr(13) + "is missing in the Object Mapping table." + chr(13) + "Do you want to add it to the table?", 48, 3) = 16
+ 				Object_Mapping["TC PlantSimClass", Object_Mapping.yDim+1] := PSC
+ 			end
+ 			Object_Mapping.openDialog
+ 			result := FALSE
+ 		end
+ 	end
+ next
+ 
+ for var i := 1 to Object_Mapping.yDim
+ 	if NOT existsObject(obj_to_str(Object_Mapping["PlantSimulation Object", i]))
+ 		promptmessage("Invalid or missing object entry in the Object Mapping table.")
+ 		Object_Mapping.openDialog
+ 		result := FALSE
+ 		return
+ 	end
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 8e298035-b365-48a8-802c-30e8e9c892b4

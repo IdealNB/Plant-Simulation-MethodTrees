@@ -1,0 +1,14 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ if Data_Source = "TC"
+ 	
+ 	var TCDir : string := make_AbsDir(Teamcenter.Directory)
+ 	var delDir := "del \\"" + TCDir + "\\\\*.*\\" /F /S /Q"
+ 	system(delDir)
+ 	
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 5d8a27b9-a426-46be-b4d6-0cff1b76b649

@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-640,0]
+Label: ".Models.TestInstance.TeamcenterWizard.Copy_CustMethods"
+LockStructure: true
+Name: MethodTree64
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: f7c9fd66-c101-4511-9e15-27079975d576
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 643d72ee-d63e-4a8b-9301-e835f433fe89
+- 9a58d77d-f5e0-4d61-ac8e-4a469b874874
+- 2b61676d-3f0e-4e75-8cfd-a2e61d4d06f3

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Iterate_levels"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 39662b0e-68c5-4c7b-8645-1358f681e159
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927307
+$Nodes:
+- 8a98b3a5-4f10-4fc2-86ca-65020707249b
+- 8499adf5-5dca-437d-a916-3d8258a42337
+- 2198b217-0f46-49a5-b58f-c6b9a7e90ac5
+- 1c642ba4-1385-4982-9406-dc7865c4ef29
+- 020545f7-3504-47b4-b058-e655e8831d4f
+- 11f68b56-8201-45b6-a612-2270bb9683ed
+- 5edf41f8-048c-444d-9473-2637286bdc85

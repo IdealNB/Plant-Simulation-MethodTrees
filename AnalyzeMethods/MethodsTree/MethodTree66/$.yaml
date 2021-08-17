@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-655,0]
+Label: ".Models.TestInstance.TeamcenterWizard.check_License"
+LockStructure: true
+Name: MethodTree66
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: d7d77d7c-6b94-460f-ae02-2f744cd36085
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- f6a908c3-91b2-468b-ae51-1b818c13a4ee
+- cf5fd2ca-ad0a-400d-a0eb-17b12eebb04f
+- c0c40f11-da2d-4529-a5f9-118ddbfc80e0

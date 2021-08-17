@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-431,0]
+Label: ".Models.TestInstance.TeamcenterWizard.getTC_Data"
+LockStructure: true
+Name: MethodTree42
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: e58bbf7b-829f-4617-8625-ff86815fd5ed
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 1d7c43c9-7c0a-40b3-b3c8-172e779c0764
+- 855577d3-da24-4e8a-b173-e5c511677e2f
+- 3d1d38d8-fef9-48be-8930-1707b24dec6d

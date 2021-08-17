@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-355,0]
+Label: ".Models.TestInstance.TeamcenterWizard.insertTCWizard"
+LockStructure: true
+Name: MethodTree34
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 2df96ed2-c789-40cf-be83-e48e857d68f8
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 3b490070-dabc-4a70-b832-47d937c83ab8
+- 3ded9c23-e411-49d6-b9eb-e0e11ef7671a
+- 6ab5a7a1-cf8a-4772-bb2f-4f5aad4aa321

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".write_VariantsToProduct"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 84b91171-6518-41f7-b28c-25c59950eece
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928622
+$Nodes:
+- 695ce656-5161-466c-9b44-3cd33d02bff7
+- 61bbd4e0-031c-4a41-a851-d42552b1089c
+- c3ea7ddd-0c85-496e-9ccf-7821eba33f6f
+- 0b881da3-3c84-4e09-8364-dd1a42b6cb15
+- e373ae78-8994-407c-bf36-dd7edd7d92e7
+- 659c4f88-a2be-490c-9bca-7a7c6cf706b0
+- 14b97647-779e-44f0-89e7-f788ee9be41f

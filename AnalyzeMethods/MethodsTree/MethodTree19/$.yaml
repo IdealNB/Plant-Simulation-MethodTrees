@@ -1,0 +1,16 @@
+InternalClassType: Frame
+Coordinate3D: [1,-222.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.deleteData"
+LockStructure: true
+Name: MethodTree19
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: af2ad5e8-1a20-48db-8ad7-467a7fbffa57
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- bb31837c-0ad7-4048-ba68-4103ae521d4d
+- 056528d6-e180-400d-b32a-535ba91bfdda
+- 95686ddc-836b-454c-af00-f6ba91d755e0
+- 5941e15f-5719-40a9-8e62-6bdf6e9014a9

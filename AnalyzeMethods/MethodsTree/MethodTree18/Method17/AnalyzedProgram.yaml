@@ -1,0 +1,21 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ param obj : object, posx, posy, posz : real, index : integer, workareaTable : object
+ 
+ var row : integer := Created_Objects.ydim + 1
+ Created_Objects["Name", row] := obj.name
+ Created_Objects["Label", row] := obj.label
+ Created_Objects["Link", row] := obj
+ Created_Objects["SimType", row] := workareaTable["PlantSimClass", index]
+ Created_Objects["posx", row] := posx
+ Created_Objects["posy", row] := posy
+ Created_Objects["posz", row] := posz
+ Created_Objects["Import_Index", row] := index
+ Created_Objects["Occ_ID", row] := workareaTable["ID", index]
+ Created_Objects["ItemID", row] := workareaTable["ItemID", index]
+ Created_Objects["UniqueID", row] := workareaTable["UniqueID", index]
+ Created_Objects["InContextID", row] := workareaTable["InContextID", index]
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 6847fa6d-2a47-4985-afc7-712cd32b21c9

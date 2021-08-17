@@ -4,6 +4,6 @@ Label: "Generate non-methods"
 Name: GenerateObjects
 Origin: 6c3be86d-0c6c-4fea-9966-b091be278533
 UUID: 50370ed1-4cc2-40b1-af87-a065634b283d
-Value: true
+Value: false
 3D:
- VisibleGraphicGroups: ["default","true"]
+ VisibleGraphicGroups: ["default","false"]

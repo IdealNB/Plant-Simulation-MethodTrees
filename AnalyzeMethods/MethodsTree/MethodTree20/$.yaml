@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-234,0]
+Label: ".Models.TestInstance.TeamcenterWizard.existsGraphicGroup"
+LockStructure: true
+Name: MethodTree20
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 1a0bb523-82c2-4815-a988-35dea43054e3
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- e7fed2e2-238b-4d9a-8f0a-f6678a85af9a
+- 29cfcf0c-5f24-44c6-b156-ef4282612fa8
+- ad59ebee-8a57-4fca-b60a-f436f78fa1e9

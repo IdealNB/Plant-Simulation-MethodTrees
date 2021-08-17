@@ -1,0 +1,61 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ -> boolean
+ 
+ result := FALSE
+ 
+ PlMXML_Import.delete({1,1}..{*,*})
+ LD_XML_Import.delete({1,1}..{*,*})
+ LD_XML_Import.inheritFormat := TRUE
+ LD_XML_Import.inheritContents := TRUE
+ Layout_Data.delete({1,1}..{*,*})
+ Layout_Data.inheritFormat := TRUE
+ Layout_Data.inheritContents := TRUE
+ 
+ if strRcopy(path_XML, 4) = ".xml"
+ 	LD_XML_Import.readXMLFile(path_XML, TRUE)
+ 	if LD_XML_Import[1, 0] = "ItemId"
+ 		result := TRUE
+ 	else
+ 		promptMessage("You need to select .xml files exported from Line Designer.")
+ 		return
+ 	end
+ else
+ 	promptMessage("You need to select .xml files exported from Line Designer.")
+ 	return
+ end
+ 
+ LD_XML_Import.insertColumn(19)
+ LD_XML_Import.insertColumn(20)
+ LD_XML_Import.insertColumn(25)
+ LD_XML_Import.insertColumn(28)
+ LD_XML_Import.setDataType(19, 20, 25, 28, "string")
+ LD_XML_Import.setDataType(8, "real")
+ LD_XML_Import.setDataType(9, "time")
+ LD_XML_Import.setDataType(10, "length")
+ LD_XML_Import.setDataType(11, "speed")
+ LD_XML_Import.setDataType(12, 15, "integer")
+ LD_XML_Import.setDataType(26, 27, 28, "table")
+ LD_XML_Import[19, 0] := "Predecessor"
+ LD_XML_Import[20, 0] := "Successor"
+ LD_XML_Import[25, 0] := "PERT_Pos"
+ LD_XML_Import[28, 0] := "SetupMatrix"
+ 
+ for var i := 1 to LD_XML_Import.yDim
+ 	if LD_XML_Import[2, i] = ""
+ 		if LD_XML_Import[22, i] /= ""
+ 			LD_XML_Import[2, i] := omit(LD_XML_Import[22, i], strlen(LD_XML_Import[22, i])-2, 3)
+ 		else
+ 			LD_XML_Import[2, i] := LD_XML_Import[4, i]
+ 		end
+ 	end
+ next
+ 
+ LD_XML_Import.copyRangeTo({"UniqueID",1}..{"UniqueID",*}, LD_XML_Import, "ID", 1)
+ 
+ LD_XML_Import.copyFormatTo(Layout_Data, TRUE)
+ LD_XML_Import.copyRangeTo({1,1}..{*,*}, Layout_Data, 1, 1) 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: c14c7ec8-2bf2-484c-b6ba-0e4b9c872f7b

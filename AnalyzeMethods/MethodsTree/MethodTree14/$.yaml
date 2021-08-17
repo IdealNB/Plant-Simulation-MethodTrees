@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-165,0]
+Label: ".Models.TestInstance.TeamcenterWizard.openTCWDialog"
+LockStructure: true
+Name: MethodTree14
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 904602c3-c8ad-4c6a-b383-94f2b4454678
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- a5344a21-c369-4575-aa28-f7aed9879965
+- 6d9347ee-2d36-400a-870b-2a97324a9284
+- 9841ca7c-9d2f-4337-b6c2-cfd7fa8f8e2d

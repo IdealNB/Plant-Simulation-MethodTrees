@@ -1,0 +1,61 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param homeframe, station : object, row : integer, bLengthOriented, bGetCapacity : boolean, workareaTable : object := VOID
+ if workareaTable = VOID
+ 	workareaTable := Layout_Data
+ end
+ 
+ if station.InternalClassName /= "Network" then
+ 
+ 
+ 	var ret : string := homeframe.write_FailureProfile(station, row, workareaTable)
+ 	if ret /= "OK"
+ 		print to_str(station) + ": " + ret
+ 	end
+ 		
+ 	if bLengthOriented
+ 		if (existsObject(to_str(station) + ".Speed") OR station.getAttrNo("Speed") > 0 OR NOT station.isNameUnique("Speed")) AND workareaTable["Speed", row] /= 0
+ 			station.speed := workareaTable["Speed", row]
+ 		end
+ 		
+ 		if (existsObject(to_str(station) + ".Length") OR station.getAttrNo("Length") > 0 OR NOT station.isNameUnique("Length")) AND workareaTable["Length", row] /= 0
+ 			if station.InternalClassName = "Nw2Way"
+ 				station.A.length := workareaTable["Length", row]
+ 			else
+ 				station.length := workareaTable["Length", row]
+ 			end
+ 		end
+ 
+ 	end
+ 		
+ 	if bGetCapacity 
+ 		if (existsObject(to_str(station) + ".xDim") OR station.getAttrNo("xDim") > 0 OR NOT station.isNameUnique("xDim")) AND workareaTable["Capacity", row] >= 1 then
+ 			station.xDim := workareaTable["Capacity", row]
+ 			station.yDim := 1
+ 		elseif (existsObject(to_str(station) + ".Capacity") OR station.getAttrNo("Capacity") > 0 OR NOT station.isNameUnique("Capacity")) AND workareaTable["Capacity", row] >= 1 then
+ 			station.Capacity := workareaTable["Capacity", row]
+ 		end
+ 	end
+ 	
+ 
+ 	if station.InternalClassName = "NwShift" AND workareaTable.getColumnNo("ShiftTable") /= -1 AND workareaTable.getColumnNo("VacationTable") /= -1
+ 		if workareaTable["ShiftTable", row] /= VOID
+ 			station.ShiftPlan := workareaTable["ShiftTable", row]
+ 		end
+ 		if workareaTable["VacationTable", row] /= VOID
+ 			station.Calendar := workareaTable["VacationTable", row]
+ 		end
+ 	end
+ 	
+ 
+ 	ret := homeframe.write_SetupMatrix(station, row, workareaTable)
+ 	if ret /= "OK"
+ 		print to_str(station) + ": " + ret
+ 	end
+ 	
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 1b9527d9-c2ea-45f1-921e-15512c6a5097

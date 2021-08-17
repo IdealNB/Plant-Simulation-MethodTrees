@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".makeValidObjectName"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 5411699a-b4cd-4223-9b22-d449a087b1f8
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927692
+$Nodes:
+- cd33b60c-a5e4-4030-97ec-e3ee91f58d9d
+- 358952f8-1e26-4e8e-86bd-81a57f532f8c
+- f038cfd2-2e63-476d-90f1-2647b83fe4c9
+- 3380cbcc-1abe-440e-bc29-697c17c87c19
+- 23aa665e-306b-48a9-99ce-9439488ed67d
+- 31a78e65-3975-4d1f-9360-514c12f3bd25
+- baa21060-0b65-43eb-bc23-239111484835

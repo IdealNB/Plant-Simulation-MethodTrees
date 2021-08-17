@@ -1,0 +1,16 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param array16 : real[16]
+ -> real[4,4]
+ var k : integer := 1
+ for var i := 1 to 4
+ 	for var j := 1 to 4
+ 		result[j, i] := array16[k]
+ 		k += 1
+ 	next
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 34a3f244-2550-47ee-9728-7e95f971ff89

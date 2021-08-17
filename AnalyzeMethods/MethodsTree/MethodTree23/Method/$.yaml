@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".fill_OpList"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: b7bc6fa2-9f4c-49b8-be41-250e24303dd7
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928092
+$Nodes:
+- 487f3e87-5c8e-4360-9b7d-d6687b654cb7
+- 9728ddb9-b210-4568-8150-bce142f2a9b5
+- 95af115d-e0c8-4ba3-bfcb-0c63ad1ee3f6
+- 454e0ff4-354d-4ad6-bced-54ac72a6489a
+- a194de9a-0966-4f55-a937-a35db1407a71
+- 2220baa3-33c6-405a-a49e-70b8c3b32fe8
+- e518d11e-9db4-48af-8300-be8b112f862d

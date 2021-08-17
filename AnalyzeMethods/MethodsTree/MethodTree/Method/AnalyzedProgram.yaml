@@ -1,0 +1,58 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var AISelected, SyncSelected : string
+ 
+ if set_CurrentDirectory
+ 	
+ 	if Data_Source = "TC"
+ 	
+ 		TeamCenter.UserName := ""
+ 		TeamCenter.setPassword("") 
+ 		Sync_Select := -1
+ 		infoBox("Connecting to Teamcenter ...", TRUE)
+ 		if TeamCenter.login
+ 			AISelect.delete
+ 			SyncSelect.delete
+ 			TeamCenter.queryApplicationInterfaces(AISelect)
+ 			infoBox("", TRUE)
+ 			TC_Select.open
+ 			waituntil Sync_Select >= 0
+ 			if Sync_Select > 0
+ 			
+ 				if NOT getTC_Data
+ 					Sync_Select := 0
+ 				end
+ 			end
+ 	
+ 			TeamCenter.logout
+ 		else
+ 			infoBox("", TRUE)
+ 		end
+ 
+ 	elseif Data_Source = "TC_XML"
+ 		if getXML_JTs
+ 			Sync_Select := 1
+ 		else
+ 			Sync_Select := 0
+ 		end
+ 		
+ 	elseif Data_Source = "LD_XML"
+ 		getLDXML_JTs
+ 		Sync_Select := 0
+ 		check_Mapping
+ 		write_History
+ 		
+ 	end
+ 
+ 	if Sync_Select > 0
+ 		transfer_Tables
+ 		check_Mapping
+ 		write_History
+ 	end
+ 
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: cb412be1-9553-48a6-a75f-76ea0ea5bb0e

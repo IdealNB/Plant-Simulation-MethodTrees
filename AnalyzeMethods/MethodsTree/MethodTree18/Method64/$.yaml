@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [351.05000000000007,-4.5,0.1]
+Label: ".connectLines"
+LockStructure: true
+Name: Method64
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: f7d81797-09ca-47a5-bb2d-0625a51f3763
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928027
+$Nodes:
+- d977455b-f91d-42a1-986a-f794f1d09a3b
+- bc9d0f0f-06b0-464c-94a1-f926a2eed27c
+- c416d583-6115-4a59-b478-9f856b33b636
+- b5e57a9d-e10b-40dd-a97b-3a37b24e5a8b
+- ccd6a6d6-54d9-4854-a432-3732a4aa70b5
+- b9f58177-0520-4fae-90ab-98afda0d2728
+- 55b6fa47-3534-4310-ada1-d4313630c7c8

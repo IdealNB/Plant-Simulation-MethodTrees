@@ -1,0 +1,16 @@
+InternalClassType: Frame
+Coordinate3D: [1,-377.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.apply_ModelChanges"
+LockStructure: true
+Name: MethodTree37
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 52ed8809-2cfa-44b5-8eaf-0e8f8bd786b2
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- fa337f86-9211-475d-a9bc-06e1a5ab85d0
+- b1230fee-02b6-4164-9f03-98276f807bdb
+- 5b378464-a4ba-448a-93aa-63259880d7d9
+- d0368c25-6f47-42d4-91f9-4aeb9e6bfe73

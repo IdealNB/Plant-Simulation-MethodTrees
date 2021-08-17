@@ -1,8 +1,0 @@
-InternalClassType: Variable
-Coordinate3D: [18,0.7809,0]
-DataType: real
-HasInitValue: false
-Name: shellThickness
-Origin: e84f209f-f52a-4ebb-ba53-900e877e7687
-UUID: ecee27f7-29de-41a7-baaf-6b98aaae6542
-Value: 0.1

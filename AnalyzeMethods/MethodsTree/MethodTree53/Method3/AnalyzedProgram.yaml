@@ -1,0 +1,20 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var obj : object
+ 
+ check_CreatedObjects
+ 
+ for var i := 1 to Created_Objects.ydim loop
+ 	obj := Created_Objects["Link", i]
+ 
+ 	Created_Objects["posx", i]	:= obj._3D.Position.X
+ 	Created_Objects["posy", i]	:= obj._3D.Position.Y
+ 	Created_Objects["posz", i]	:= obj._3D.Position.Z
+ next
+ 
+
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 6f02323e-0050-438b-905e-b6aa88e1768a

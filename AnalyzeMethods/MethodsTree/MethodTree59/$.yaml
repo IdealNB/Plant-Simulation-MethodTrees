@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-602.5,0]
+Label: ".Models.TestInstance.TeamcenterWizard.write_AssemblyList"
+LockStructure: true
+Name: MethodTree59
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: b7370e76-5936-4862-8dbb-65f738c598e5
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 2115903c-9d93-459c-849c-c6fe95e9784e
+- d45f33a5-5fc7-4917-b3a2-670b9afc4b12
+- 1f2b5a26-6f2d-4442-9c7b-e6e3ee97e3c6

@@ -1,0 +1,12 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var Connector : object := RootFolder.BasicObjects.MaterialFlow.Connector
+ 
+ for var i := 1 to Created_Objects.yDim loop
+ 	Created_Objects["Link", i].connectAutomatically
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: b9f58177-0520-4fae-90ab-98afda0d2728

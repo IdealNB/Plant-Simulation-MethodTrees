@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".check_License"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: c0c40f11-da2d-4529-a5f9-118ddbfc80e0
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928617
+$Nodes:
+- 69ee07fe-6133-4345-a2eb-aaf7070cd7fc
+- 27c572b1-a7b0-44a2-add3-181967d20baf
+- 906783d0-4af8-4a41-ac07-29af270c17c1
+- f701f7dc-b43d-42c4-a201-eef35f4145c3
+- e23645b0-8045-47bb-927d-bda81cb8aff5
+- 3f27ed28-1d08-463f-8851-60ad33b681e3
+- 2f22074e-db1a-46b4-a645-734de86e5905

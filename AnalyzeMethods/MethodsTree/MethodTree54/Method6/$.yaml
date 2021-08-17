@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [32.9,-12.5,0.1]
+Label: ".make4x4Array"
+LockStructure: true
+Name: Method6
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7d152d2b-284f-4afd-81d1-0d02d160a395
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928497
+$Nodes:
+- ac2e2c5e-892b-4a25-a0ce-a51b1e42f6e6
+- 4e403bbd-a579-4182-b635-56f97fee2297
+- 4a28e58d-8163-4f84-a326-dff1994c250b
+- 7a2abce8-a142-4fdb-9bad-a288dad3be54
+- cdec58c9-6833-4d8c-8259-2ee2be5dba0f
+- 0e25c149-8c11-476e-bc8a-b1dbb7e682f9
+- 3e5b5964-609b-4664-ae1c-2f5a05bce4cf

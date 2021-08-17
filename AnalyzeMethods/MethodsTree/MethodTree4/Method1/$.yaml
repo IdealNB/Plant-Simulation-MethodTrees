@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [6.3,-4.5,0.1]
+Label: ".check_CreatedObjects"
+LockStructure: true
+Name: Method1
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 47f881ce-288b-4b9b-a76f-3b6e5ea78512
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927332
+$Nodes:
+- 97ae5db7-ae9f-43b8-883d-a2d38d1fd41b
+- 4e20df1b-e268-4745-aeae-de6b91ed236b
+- 78c45827-f481-44d3-a669-ab2b334b6113
+- 259e69c8-d44d-4f53-9672-4d76f8d77285
+- 848fbdc3-149b-435c-a2d2-3eab144cf161
+- 1fe9a915-7edc-4252-ae6e-bbdf7e3cd6f4
+- 8500f101-e0a7-4ddd-8204-a356db7d5a98

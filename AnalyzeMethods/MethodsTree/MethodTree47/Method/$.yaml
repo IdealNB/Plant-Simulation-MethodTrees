@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".updateResourceGraphics"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: da10e319-4eab-4f37-b5cd-9c4e793ce744
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928332
+$Nodes:
+- 7450f361-e66a-4e7b-8929-322e346dffba
+- 04b8fe47-8dc6-45f1-b04c-8388a3d5e23e
+- dc26c470-3c8e-4564-9856-7554dd37cc5f
+- eb3c34c8-fd46-4a6b-9a68-5720c102ec60
+- c37ae827-3649-45b5-a465-b4f88f03243f
+- e1f052f2-3057-48d1-8b44-fc5fb4621d4c
+- 741917cc-375a-43f8-aa96-f75e9e837adf

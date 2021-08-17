@@ -1,0 +1,71 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var predecs : string[]
+ var target, start : object[]
+ var target_UID, start_UID : string
+ var row, i1Level, i2Level  : integer
+ 
+ for var i := 1 to Process_Data.ydim 
+ 	
+ 	i1Level := Process_Data["Level", i]
+ 	for var i1 := i downto 1
+ 						
+ 		if i1 = i OR Process_Data["Level", i1] < i1Level
+ 	
+ 	
+ 			if Process_Data["Predecessor", i1] /= "" then
+ 				predecs := SplitString(Process_Data["Predecessor", i1], " ")
+ 				target_UID := Process_Data["UniqueID", i]
+ 		
+ 				if Created_Objects.find({"UniqueID", *}, target_UID)
+ 					target.append(Created_Objects["Link", Created_Objects.cursorY])
+ 		
+ 					for var j := 1 to predecs.dim
+ 						Process_Data.CursorY := 1
+ 						Process_Data.find({"ID", *}, predecs[j])
+ 						row := Process_Data.CursorY
+ 						
+ 						i2Level := Process_Data["Level", row]
+ 						for var i2 := row to Process_Data.yDim
+ 										
+ 							if i2 = row OR Process_Data["Level", i2] > i2Level
+ 						
+ 								start_UID := Process_Data["UniqueID", i2]
+ 								Created_Objects.CursorY := 1
+ 								if Created_Objects.find({"UniqueID", *}, start_UID)
+ 									start.append(Created_Objects["Link", Created_Objects.cursorY])
+ 								end
+ 						
+ 							else 
+ 								exitLoop
+ 							end
+ 									
+ 						next
+ 						
+ 						
+ 					next
+ 		
+ 				end
+ 			
+ 			end
+ 	
+ 			if start.dim > 0 AND target.dim > 0
+ 				ConnectObjects(start, target)
+ 			end
+ 			
+ 		else 
+ 			exitLoop
+ 		end
+ 	
+ 	next
+ 	
+ 	start.delete
+ 	target.delete
+ 	predecs.delete
+ 	
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 39652520-ff2a-44d2-8e4c-03389a335afb

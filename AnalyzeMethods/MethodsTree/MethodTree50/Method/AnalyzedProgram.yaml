@@ -1,0 +1,23 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ var i := Library_Objects.ydim
+ if Library_Objects.ydim > 0
+ 	repeat
+ 		if to_str(Library_Objects["LibObject", i]) /= "VOID" AND
+ 				Library_Objects["LibObject", i].numChildren = 0
+ 			Library_Objects["LibObject", i].deleteObject
+ 			Library_Objects.cutRow(i)
+ 		else
+ 			i -= 1
+ 		end
+ 	until i = 0 
+ end
+ 
+ if Library_Objects.ydim = 0
+ 	Library_Objects.inheritContents := TRUE
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 12618025-5617-4ef6-b139-dad092c210e7

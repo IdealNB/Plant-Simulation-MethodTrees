@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [16.1,-4.5,0.1]
+Label: ".deleteAllObjects"
+LockStructure: true
+Name: Method3
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 82796270-02db-458d-b0ff-1f3d117317d4
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927717
+$Nodes:
+- 45a18a05-baa0-4f66-9ab0-793b48615cac
+- 4c0b3ea9-2045-4639-9727-d0491e47dddb
+- 4a88b338-579f-4b23-a765-a977ea2a6136
+- 36ef3fec-ccae-46d3-9de5-628c9789935a
+- 281225bc-3d15-4f49-9e1e-485ef8529abe
+- 7248c319-767b-4beb-9028-d40c6c662187
+- e1a829c4-3d5b-488b-968b-3388da0f7e63

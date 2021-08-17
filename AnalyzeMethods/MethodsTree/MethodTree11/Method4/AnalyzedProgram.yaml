@@ -1,0 +1,16 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ param obj : object, index : integer, workareaTable : object
+ 
+ var row : integer := Library_Objects.ydim + 1
+ Library_Objects["TcItemID", row] := workareaTable["TcItemID", index]
+ Library_Objects["Name", row] := obj.name
+ Library_Objects["Label", row] := obj.label
+ Library_Objects["LibObject", row] := obj
+ Library_Objects["SimType", row] := workareaTable["PlantSimClass", index]
+ Library_Objects["Import_Index", row] := index
+ Library_Objects["UniqueID", row] := workareaTable["UniqueID", index]
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 2bc89bc9-696b-4b6c-9c36-3ff4cffc2945

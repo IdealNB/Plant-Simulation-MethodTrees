@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".openAWfromContext"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 870b081f-0415-49f6-890d-6b8ad2425ad2
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928147
+$Nodes:
+- 30c1700c-489a-499f-ade9-eb588f951d07
+- 30460d6a-dcaf-4904-8508-f981e00e0c43
+- c14cd8b0-abce-43df-b95d-d18a7cb51b2a
+- 04d6fd4a-c17e-4039-af5b-a4a412447265
+- a6b1180e-be56-4d3c-afcd-2215d7c2a39b
+- 6ab8318e-098d-4e10-87e4-f02bfdc2acf8
+- 1b176324-3740-4bb8-857c-e74c1ce73087

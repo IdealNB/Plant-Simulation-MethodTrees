@@ -1,0 +1,63 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param graphObj : object
+ 
+ var segTab : table
+ var aniTab : table
+ var x1, x2, x3 :length[3]
+ 
+ if graphObj._3D.MUAnimations.getAnimation("Teamcenter") /= VOID
+ 	
+ 	graphObj._3D.MUAnimations.Teamcenter.getTable(aniTab)
+ 
+ 	if aniTab.yDim > 1
+ 	
+ 		graphObj._3D.getExtSegments(segTab)
+ 		segTab.maxYDim := -1
+ 		segTab.delete 
+ 							
+ 		graphObj._3D.BaseHeight := aniTab[3,1]
+ 		segTab[6,1] := 0.0
+ 	
+ 		if NOT graphObj.hasAttribute("Offset")
+ 			graphObj.createAttr("Offset", "table")
+ 			graphObj.Offset.DataType := "integer"
+ 		end
+ 		graphObj.Offset[1, 1] := aniTab[1,1]
+ 		graphObj.Offset[2, 1] := aniTab[2,1]
+ 	
+ 		x1.x := aniTab[1,1]; x1.y := aniTab[2,1]; x1.z := aniTab[3,1]
+ 		x2.x := aniTab[1,2]; x2.y := aniTab[2,2]; x2.z := aniTab[3,2]
+ 
+ 		if x2.x ~= x1.x
+ 			segTab[1,2] := 0
+ 		else
+ 			segTab[1,2] := atan((x1.y - x2.y) / (x2.x - x1.x)) / (2 * pi) * 360
+ 		end
+ 		segTab[2,2] := abs((x2 - x1).Magnitude)
+ 
+ 		for var j := 2 to aniTab.yDim-1
+ 			x1.x := aniTab[1,j-1]; x1.y := aniTab[2,j-1]; x1.z := aniTab[3,j-1]
+ 			x2.x := aniTab[1,j];   x2.y := aniTab[2,j];   x2.z := aniTab[3,j]
+ 			x3.x := aniTab[1,j+1]; x3.y := aniTab[2,j+1]; x3.z := aniTab[3,j+1]
+ 	
+ 			var v1 : length[3] := x2 - x1
+ 			var v2 : length[3] := x3 - x2
+ 	
+ 			var sign := when v1.y * (x3.x - x1.x) - v1.x * (x3.y - x1.y) < 0.0 then -1 else 1
+ 	
+ 			segTab[1, j+1] := sign * acos((v1.x * v2.x + v1.y * v2.y) / v1.Magnitude / v2.Magnitude) / (2 * pi) * 360
+ 			segTab[2, j+1] := abs((x3 - x2).Magnitude)
+ 		next
+ 							
+ 		graphObj._3D.setExtSegments(segTab)
+ 	
+ 
+ 	end
+ 
+ end 
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: e49bc0bb-8f4d-46a1-b8ea-7c8c8f1a00c6

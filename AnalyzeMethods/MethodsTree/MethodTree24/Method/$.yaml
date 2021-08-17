@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".get_Variant"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 41cf1a80-f22c-4de2-a862-7744ecc45262
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928097
+$Nodes:
+- a487fe40-20c9-4a55-baf3-94476fcec626
+- 3b1c43a1-84cb-4400-aa36-ddee014c5d0e
+- 9b2a0e72-0970-49d4-b23b-0e42fb9fb641
+- a0c73fe5-ef1f-494c-a68c-1a346a4a8c33
+- c0e31a1f-0102-4348-aa16-7cf20686299f
+- f15b6e5e-a49b-4e4e-9067-56f1360ebd32
+- 047bae8e-a3a4-4f56-bb6c-890343c5fc6e

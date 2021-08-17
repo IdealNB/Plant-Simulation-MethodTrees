@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".connectObjects"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 88dce561-36b8-49ce-843b-9883cc3c779e
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927337
+$Nodes:
+- 45a181f8-1c29-4e7a-9d94-44cdcfd4bee4
+- e9cde884-9b61-4cba-a3cf-e7d93548152d
+- 6c51a6ce-e11f-4021-8b23-aa27f8cd96e2
+- 4f777446-b216-4f26-8393-fdae9e92945b
+- 7257fbb9-cf04-428c-9625-67f88a568afd
+- 90652a59-2808-48b5-9a27-ada6f8261a59
+- 9db1abea-343e-45eb-85d2-bbab298b8f1a

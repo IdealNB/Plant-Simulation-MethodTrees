@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [39.199999999999996,-16.5,0.1]
+Label: ".make_AbsDir"
+LockStructure: true
+Name: Method6
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: bc29d4e9-12df-43fe-bc75-ee978d41a48b
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927527
+$Nodes:
+- fea3ebb3-d544-46ea-8a8c-5ee35df4fa4b
+- c9247031-a469-4d23-91fe-9ea571ca28d9
+- d80af394-320f-47e6-ac00-f18f49a218a6
+- f38ae98b-4d5e-4424-b1ea-b932b814d18a
+- f960bf3e-59cd-4339-9317-400a6518a9c3
+- a308de69-1384-4dee-95b3-5e96e616a32d
+- 46201256-1501-450e-9460-e03ba4370bd1

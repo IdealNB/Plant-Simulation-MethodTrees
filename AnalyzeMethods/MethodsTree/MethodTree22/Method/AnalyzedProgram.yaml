@@ -1,0 +1,131 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param homeframe : object
+ 
+ var opList : table
+ opList.create
+ opList.setDataType(2, "time")
+ opList.ColumnIndex := true
+ opList.writeRow( 1, 0, "Operation", "Time", "Parts", "Variant")
+ var prodList : table[string, string, integer]
+ prodList.create
+ 
+ homeframe.check_CreatedObjects
+ 
+ var Created_Objects : object := homeframe.Created_Objects
+ var Process_Data : object := homeframe.Process_Data
+ 
+ for var i := 1 to Created_Objects.yDim 
+ 	var obj : object := Created_Objects["Link", i]
+ 	var objICID : string := Created_Objects["InContextID", i]
+ 	
+ 
+ 	if (obj.getAttrNo("ProcTime") > 0 OR NOT obj.isNameUnique("ProcTime"))
+ 		
+ 		for var k := 1 to Process_Data.yDim 
+ 
+ 			if Process_Data["Time", k] > 0 AND Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1)
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID ) 
+ 					var pTime : time := Process_Data["Time", k]
+ 				
+ 					var ret : string := homeframe.write_ProcessTime(obj, pTime)
+ 					if ret /= "OK"
+ 						print to_str(obj) + ": " + ret
+ 					end
+ 				end
+ 					
+ 			end
+ 				
+ 		next
+ 			
+ 	end
+ 
+ 	
+ 
+ 	if existsObject(to_str(obj) + ".OperationTable") OR obj.hasAttribute("OperationTable")
+ 			
+ 		for var k := 1 to Process_Data.yDim 
+ 
+ 			if Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1)
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID ) 
+ 					var children : string := Process_Data["ChildrenIDs", k]
+ 						
+ 					if children /= "" 
+ 						opList.delete
+ 						opList.delete({5,0}..{*,0})
+ 						prodList.delete
+ 						homeframe.fill_OpList(splitString(children, " "), opList, prodList)
+ 					end
+ 				
+ 					if opList.yDim = 0
+ 						homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList)
+ 					end
+ 					obj.OperationTable.delete
+ 					obj.OperationTable.insertList(1, 0, opList.copy({1,0}..{*,*}))
+ 				
+ 					if existsObject(to_str(obj) + ".ProcTime") OR obj.hasAttribute("ProcTime")
+ 						obj.ProcTime.Type := "Formula"
+ 						if obj.internalClassName = "Network" AND existsObject(to_str(obj) + ".ProcTime")
+ 							obj.ProcTime.Formula := "getProcTime"
+ 						elseif obj.hasAttribute("getProcTime")
+ 							obj.ProcTime.Formula := "self.getProcTime"
+ 						end
+ 					end
+ 					
+ 					if obj.InternalClassName = "NwAssembler"
+ 						if prodList.yDim = 0
+ 							homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList)
+ 						end
+ 						homeframe.write_AssemblyList(obj, prodList)
+ 					end
+ 								
+ 					if existsObject(to_str(obj) + ".NumWorker") OR obj.hasAttribute("NumWorker")
+ 						obj.NumWorker := Process_Data["Num_Workers", k]
+ 					end
+ 						
+ 				else
+ 					print "UsedResource >>", Created_Objects["Name", i], "<< not found in table ", Process_Data, "!"
+ 				end
+ 
+ 			end
+ 				
+ 		next
+ 	
+ 	elseif obj.InternalClassName = "NwAssembler"
+ 		
+ 		for var k := 1 to Process_Data.yDim 
+ 
+ 			if Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1)
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID ) 
+ 					children := Process_Data["ChildrenIDs", k]
+ 					opList.delete
+ 					opList.delete({5,0}..{*,0})
+ 					prodList.delete	
+ 					if children /= "" 
+ 						homeframe.fill_OpList(splitString(children, " "), opList, prodList)
+ 					end
+ 					if prodList.yDim = 0
+ 						homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList)
+ 					end
+ 					homeframe.write_AssemblyList(obj, prodList)
+ 
+ 				end
+ 				
+ 			end
+ 			
+ 		next
+ 	
+ 	end
+ 			
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 309d576b-3ee9-4f82-b071-76f283c4ddc5

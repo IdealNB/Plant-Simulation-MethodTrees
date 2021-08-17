@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".write_Resource_Data"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 62d2de5f-ed5e-4afa-ac74-878ac4b8c1f0
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073927342
+$Nodes:
+- ed389bc5-2df6-476b-a327-de840d868b03
+- 3c10be74-c12c-4cf4-8aea-c999acd0665e
+- d81aeb71-39a5-4b5e-ae0e-866fa37060aa
+- 8b7accd1-215c-4ecb-9184-3f05b0e6a7aa
+- e3ee63f5-c023-469b-a9dd-db25e47ba4ac
+- 1b9527d9-c2ea-45f1-921e-15512c6a5097
+- 14b17a6a-40f9-4f44-93ac-cc6263f4c049

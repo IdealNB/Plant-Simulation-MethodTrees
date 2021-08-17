@@ -1,0 +1,22 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ -> boolean
+ 
+ if Created_Objects.yDim = 0 AND Library_Objects.yDim = 0
+ 	PLMXML_Import.delete
+ 	LD_XML_Import.delete
+ 	Layout_Data.delete
+ 	Layout_Data_Update.delete
+ 	Process_Data.delete
+ 	Product_Data.delete
+ 	LogProcess_Data.delete
+ 	result := TRUE
+ else
+ 	promptMessage("There are still objects based on this data in the library and model. " +
+ 	"You must >Delete Current Model< and >Clean Up Library< in the Actions menu before you can clean up the data tables.")
+ 	result := FALSE
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 2e53760a-c7b3-4e44-ab05-c57ec8f26266

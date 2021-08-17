@@ -1,0 +1,21 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ if current = root then
+ 	openDialog
+ else
+ 	if check_License = "NO"
+ 	
+ 		return
+ 	elseif check_License = "TC"
+ 		TC_Import.setSensitive("Settings", TRUE)
+ 	elseif check_License = "LD"
+ 	
+ 		TC_Import.setSensitive("Settings", FALSE)
+ 	end
+ 	TC_Import.open
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 2b615b25-8de5-4101-8112-356715d2b077

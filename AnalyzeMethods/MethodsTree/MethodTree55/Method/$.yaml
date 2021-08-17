@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".write_WorkplanToProduct"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 2eaab11d-602a-47e2-88ee-2963a6f88cd0
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073928562
+$Nodes:
+- 8ddfaa86-5b93-46f9-a637-94f99ad7f1cc
+- a66b549c-ec6a-4227-a827-465caeeee4a0
+- d3f45278-cf83-46cc-b985-ac0a38f989ef
+- 2e46424e-66be-4ac3-a245-a9cc8a67e7e3
+- ecf24d6c-cae8-4b38-bfbf-605c6fb7f79d
+- ac9ced68-d8d9-47b2-9b9f-8d81113cb96a
+- 88cdb574-5602-4de6-a1e3-1d8a3c80b1f9
