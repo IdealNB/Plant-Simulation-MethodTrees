@@ -3,6 +3,10 @@ Coordinate3D: [-9,-1,0]
 Name: CreateMethodTrees
 Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
+ //This method is called when a "generate"-button is activated.
+ //The method searches in the namespace for methods (internal+external)
+ //Each method found will have a tree constructed for it.
+ 
  var nameSpace := model
  var i := 0
  var node:object

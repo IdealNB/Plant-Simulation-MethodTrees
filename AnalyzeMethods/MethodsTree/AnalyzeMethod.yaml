@@ -5,8 +5,10 @@ Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
  param tree:object,node:string, methodNode:object
  
- --var del := strChr(10)
- --var subParts := splitString(node.program, del)
+ //This method analyzes a method-node in a tree to find any new nodes.
+ //If found, those nodes are added as well. If the node is a method, it is analyzed as well.
+ 
+ //The following code is not perfect in any way, but it should be able to find most objects.
  
  var nodeObj:any := str_to_method(node)
  var p := nodeObj.program
@@ -26,7 +28,7 @@ Program: |+1
  	end
  	p := t
  end
- --remove all --
+ --remove all -- comments
  while strLPos("--",p) /= 0
  	f1 := strLPos("--", p)
  	t0 := strOmit(p, 0, f1)
@@ -39,7 +41,7 @@ Program: |+1
  	end
  	p := t
  end
- --remove all //
+ --remove all // comments
  while strLPos("//",p) /= 0
  	f1 := strLPos("//", p)
  	t0 := strOmit(p, 0, f1)
@@ -52,14 +54,16 @@ Program: |+1
  	end
  	p := t
  end
- 
+ --save code without comments on node, for validation purposes
  methodNode.AnalyzedProgram.cont := p
  
+ --divide cleaned code into parts
  var del := strChr(10)
  del += strChr(9)
  del += "(),;[]{}:="
  var subParts := splitString(p, del)
  
+ --analyze all parts to find objects/nodes
  for var a := 1 to subParts.dim
  
  	if strLPos("\\"", subParts[a]) /= 0 --if a string, skip
@@ -81,8 +85,6 @@ Program: |+1
  			--skip this
  			continue
  		end
- 
- 
  		node2Obj := str_to_obj(node2)
  		var createdNode:object
  
@@ -97,22 +99,25 @@ Program: |+1
  						exitloop
  					end
  					if b = methodNode.numsucc
+ 						--add the node
  						createdNode := addNode(tree,methodNode,node,node2, "DataTable")
  					end
  				next
  			end
  		else
- 			--print "INFO; in " + to_str(nodeObj) + ", skipped adding node: " + node2
+ 			--add the node
  			addNode(tree,methodNode,node,node2,node2Obj.internalClassType)
  		end
  	elseif isValidMethod
  		--is a method (object or internal)
  		node2Obj := str_to_Method(node2)
- 		if node = node2--nodeObj = node2Obj
+ 		if node = node2
  			--recursion! Will never finish...
+ 			--(this check will not find all types of recursion, but it's a start...)
  			createdNode := addNode(tree,methodNode, node, node2, "Recursion")
  		else
  			createdNode := addNode(tree,methodNode, node, node2, "MethodNode")
+ 			--analyze the created node
  			analyzeMethod(tree, node2, createdNode)
  		end
  	else

@@ -5,12 +5,16 @@ Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
  param tree,prevMethodNode:object ,fromObj, toObj:string, NodeType:string ->object
  
+ //This method adds a node into a tree.
+ 
  var methodNodeClass, methodNode:object
  var id:integer
- var nodeCanHaveSucc := true
- var defaultNodeType := false
- --var toObjStr:string := to_str(toObj)
+ var nodeCanHaveSucc := true --currently determines if node is placed vertical or horizontal
+ var defaultNodeType := false --simplifies the below switch-code
  
+ //This switch constructs a node and adds it to the tree
+ //This switch need to be extended to handle all Plant Simulation internal objects.
+ //Basically, there need to be a class-object in .AnalyzeMethods.derived for each object (that have the correct icon)
  switch NodeType
  case "MethodNode"
  	methodNodeClass := .AnalyzeMethods.derived.Method
@@ -46,6 +50,7 @@ Program: |+1
  	debug
  end
  
+ --default configuration
  if defaultNodeType
  	methodNode := methodNodeClass.derive(tree)
  	methodNode.label := regex_replace(toObj, to_str(model), "")
@@ -56,12 +61,6 @@ Program: |+1
  	methodNode.ActivationId.text := "No: " + to_str(id)
  end
  
- 
- --var mo := MethodNode.MethodObj
- --var text := mo._3d.getGraphic("default").createText(methodNode.label,1)
- --text.scale := 1.5
- --text.position := [5.2,-0.35,0.0025]
- 
  if fromObj /= ""
  	if nodeCanHaveSucc
  		.AnalyzeMethods.derived.MethodConnector.connect(prevMethodNode,methodNode)
@@ -70,13 +69,13 @@ Program: |+1
  	end
  end
  
- //Start
+ //Start-pos of node
  var startPos := [0,3.5,0.1]
  if fromObj /= ""
  	startPos := prevMethodNode.coordinate3D
  end
  
- //Set pos
+ //Set pos from start
  if nodeCanHaveSucc = false and prevMethodNode.numSucc > 1
  	--stack
  	var horizontalNode := prevMethodNode.succ(prevMethodNode.numSucc-1).~
@@ -102,6 +101,7 @@ Program: |+1
  	tree.Positions["Y","End"] := methodNode.coordinate3D[2]
  end
  
+ //Extend baseplate
  var gr := tree._3d.getGraphic("plate",[1])
  gr.scale[1] := tree.positions["X","End"]-tree.positions["X","Start"]+10
  gr.scale[2] := tree.positions["Y","End"]-tree.positions["Y","Start"] -4

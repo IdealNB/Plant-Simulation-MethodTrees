@@ -5,6 +5,9 @@ Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
  param node:string
  
+ //This method constructs a new tree for a method, and adds the first node in the tree as the method itself.
+ //Then, the first node is analyzed to find the next node.
+ 
  var tree := .AnalyzeMethods.MethodTree.derive(current)
  Tree.label := node
  Trees.appendRow(tree,tree.name)

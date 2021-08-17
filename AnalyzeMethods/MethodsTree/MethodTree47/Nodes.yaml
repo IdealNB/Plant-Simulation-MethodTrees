@@ -1,7 +1,0 @@
-InternalClassType: DataTable
-Origin: 5828da38-cedb-42b8-b38c-3010c3f698ee
-UUID: 7b5226fb-9099-4f15-a144-16b8aa0b0d53
-$Data:
- Columns:
- - [0,object,8,da10e319-4eab-4f37-b5cd-9c4e793ce744,f944cc2f-fb46-4495-ae86-51f2f2828b35,4cdea315-fab0-4809-a59a-121d4bf14cc6,ee20747e-2cd8-4ed1-b3d4-5448dcdb6262,e2373aa2-f7d9-4c8e-80dc-48e774149b09,0c63d11b-e268-4fbc-bf8f-9a25a33cdac9,dbdd583e-f818-40a4-a920-e841df74efcb,dc7787b1-5d7e-4ea4-9bf6-118fba326d16]
- - [1,integer,8,0,1,2,3,4,5,6,7]
