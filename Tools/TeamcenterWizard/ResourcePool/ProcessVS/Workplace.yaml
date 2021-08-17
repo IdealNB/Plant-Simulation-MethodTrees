@@ -1,0 +1,10 @@
+InternalClassType: Workplace
+Coordinate3D: [-2,0,0]
+Origin: f233db08-7826-41c9-b424-c249b84a9692
+RandomSeed: 1
+Station: "ProcessVS"
+UUID: 590748cf-6656-4524-a6cc-10a73a5dfb22
+3D:
+ Rotation: [0,0,0,-1]
+ VisibleGraphicGroups: ["assigned"]
+InheritEntranceExitLockedOnReset: false

@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Comment: "Attention: only used when using rules!!!"
+Coordinate3D: [44.75,-39.85,0]
+DataType: integer
+Font: 2
+Name: NumRulesExp
+Origin: adb2b098-f7bf-44f4-8661-08f4ea05f61d
+ShowDataType: false
+UUID: fd30636d-2e93-4e6c-86f3-ff93b9910aa0
+Value: 1

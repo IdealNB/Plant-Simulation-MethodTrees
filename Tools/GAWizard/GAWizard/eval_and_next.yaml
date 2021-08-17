@@ -1,0 +1,83 @@
+InternalClassType: Method
+Coordinate3D: [26,0,0]
+Name: eval_and_next
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by: endSim
+ -- only for non-distributed simulation
+ if eventcontroller /= void 
+ 	eventcontroller.RandomNumbersVariant := 1
+ end
+ 
+ var StatEvalTab:object := statisticalEvaluation
+ var row:integer := StatEvalTab.currRow
+ if currRunNo = 1 
+ 	var s:string := to_str("Gen ",currGeneration," Ind ",IndividualNum)
+ 	IntermediateResults[0,row] := s
+ 	StatEvalTab.createNestedList(6,row)
+ 	StatEvalTab[6,row].Name:=s -- observations
+ 	/*if typeOfFitness ~= "time" 
+ 		StatEvalTab[6,row].dataType := "time" -- datatype of Observations
+ 	else
+ 		StatEvalTab[6,row].dataType := "real"
+ 	end*/
+ 
+ end
+ var t:table := StatEvalTab[6,row] -- Observations
+ 
+ var fit:real --_Intermed_
+ if UserFitness 
+ 	fit := str_to_method(to_str(~,".",UserCalculateFitness)).execute
+ 	t[1,currRunNo] := fit
+ 	IntermediateResults[currRunNo,row] := fit
+ else
+ 	fit := getFitness(t,currRunNo)
+ 	if Fitness.yDim > 1
+ 		t.copyRangeTo({2,currRunNo}..{Fitness.yDim + 1,currRunNo}, IntermediateResults,(currRunNo - 1) * (Fitness.yDim + 1)  + 2,row)
+ 		IntermediateResults[(currRunNo - 1) * (Fitness.yDim + 1)  + 1,row] := fit
+ 	else
+ 		t[1,currRunNo] := fit
+ 		IntermediateResults[currRunNo,row] := fit
+ 	end
+ end
+ 
+ /*var fit:real
+ if UserFitness 
+ 	fit := str_to_method(to_str(~,".",UserCalculateFitness)).execute
+ else
+ 	fit := getFitness(t,currRunNo)
+ end
+ 
+ t[1,currRunNo] := fit
+ IntermediateResults[currRunNo,row] := fit*/
+ 
+ StatEvalTab[2,row] := currRunNo
+ 
+ if currRunNo = NumRuns 
+ 	fit := t.meanValue({1,1}..{1,*})
+ 	StatEvalTab[1,row] := fit
+ 	if NumRuns > 1  -- with statistical evaluation
+ 		StatEvalTab[3,row] := t.min({1,1}..{1,*})
+ 		StatEvalTab[4,row] := t.max({1,1}..{1,*})
+ 		StatEvalTab[5,row] := t.standardDeviation({1,1}..{1,*})
+ 	end
+ 	individuals[2,individualNum] := fit
+ 
+ 	-- evaluate the next individual:
+ 	StatEvalTab.currRow := StatEvalTab.currRow + 1
+ 	individualNum := individualNum + 1
+ 	currRunNo := 1
+ 	-- firstReset := true;-- maybe necessary
+ 	DefSeed4Run(currRunNo)
+ 	EventController.reset-- init_ and start_ is done in 'nextIndividual'
+ 
+ else
+ 	currRunNo := currRunNo + 1
+ 	
+ 	DefSeed4Run(currRunNo)
+ 	EventController.reset
+ 	EventController.start --WithoutAnimation
+ end
+ Dialog.GAWizard.setCaption("currRunR_com",to_str(currRunNo)) -- show current run No
+RandomSeed: 431
+UUID: 0d320f6f-7264-47e5-962c-04d416e3e8db

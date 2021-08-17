@@ -1,0 +1,13 @@
+InternalClassType: Toolbar
+ChangePathCtrl:
+ConstructorCtrl:
+DestructorCtrl:
+Label: "Teamcenter"
+MoveToFolderCtrl:
+Name: Teamcenter
+UUID: 3b5add08-f83a-4fd5-99ec-3b5590748fa3
+Visible: true
+$Objects:
+- 894bca5e-0b1e-4a4e-b7cc-9e44d5278526
+- a2aaeacb-9948-4a18-81a1-050a3bd168ed
+- 87a3951d-33d4-43e6-86d0-9f62cf892185

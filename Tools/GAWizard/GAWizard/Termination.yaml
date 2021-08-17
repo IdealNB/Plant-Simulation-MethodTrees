@@ -1,0 +1,93 @@
+InternalClassType: Method
+Coordinate3D: [22,-4,0]
+Name: Termination
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- Prepare statistics, set the original seed values
+ -- called by: Control of the basic object 'GaOptimization'
+ param tab:table
+ 
+ generationChange(tab)
+ var DLGobj:object := dialog.GAWizard
+ DLGobj.setsensitive("start_but",true)
+ DLGobj.setCaption("start_but",rootfolder.Localization.getText(2)) -- Start/Starten
+ 
+ if usingRemote 
+ 	Dialog.readyObservations := 2 * numRuns * GAoptimization.generationSize
+ 	Dialog.readyIndividuals := 2 * GAoptimization.generationSize
+ 	DLGobj.setCaption("currIndivR_com",to_str(Dialog.readyIndividuals))
+ 	DLGobj.setCaption("currRunR_com",to_str(Dialog.readyObservations))
+ end
+ 
+ root.deleteMovables -- otherwise it is impossible to reduce the capacity of buffers
+ -- (Why should have the Movables of the last evaluation run a special significance?)
+ deleteSuspendedMethods
+ 
+ if bestIndividuals.yDim > 0 
+ 	transferBest(1)
+ end
+ GAstopFlag := false
+ 	
+ Dialog.GAWizard.setCaption("currRunR_com",to_str(numRuns))
+ 
+ Dialog.changeUserSettings("restore")
+ 
+ optimRuns  := false
+ Completion(tab) -- user method
+ 
+ RunningTime := sysdate - dialog.startDatatime
+ DistributedSimulation.EvaluateSimMachines(JobsTable, Dialog.RemoteMachines, Dialog.RemoteTable)
+ 
+ Recording.append(rootfolder.Localization.getText(59)) -- Optimization finished.
+ if Recording.remoteErrors 
+ 	Recording.append(rootfolder.Localization.getText(314)) -- An error occurred on a remote computer.
+ end
+ 
+ if saveHTMLatEnd OR showHTMLatEnd 
+ 	prepReport
+ 	
+ 	if saveHTMLatEnd 
+ 		var HTMLname:string := to_str(reportObject.saveToDirectory, ReportObject.Informations[1,1],".html")
+ 		reportObject.save(HTMLname)
+ 	end
+ 	
+ 	if showHTMLatEnd 
+ 		ReportObject.show
+ 	end
+ end
+ 	
+ if MailAtEnd 	
+ 	if isComputerAccessPermitted
+ 		dialog.sendMail
+ 	else
+ 		print "It was impossible to send a mail because of no access to the computer."
+ 	end
+ end
+ 
+ infobox("",false)
+ if ShowRuntimeAtEnd  -- check box showRuntimeAtEnd_CB
+ 	if Recording.remoteErrors
+ 		MessageBox(to_str(rootfolder.Localization.getText(59),strChr(10), rootfolder.Localization.getText(60)," ",RunningTime,strChr(10), rootfolder.Localization.getText(314)), 1, 4) -- Info icon
+ 	else
+ 		MessageBox(to_str(rootfolder.Localization.getText(59),strChr(10), rootfolder.Localization.getText(60)," ",RunningTime), 1, 4) -- Info icon
+ 	end
+ end
+ 
+ currIcon := "Default"
+ if _3D.exists
+ 	_3D.VisibleGraphicGroups := makeArray("default")
+ end
+ 
+ if UsingRemote 
+ 	var machTab:object := DistributedSimulation.machinesTable
+ 	for var j := 1 to machTab.yDim 
+ 		if machTab[17,j] /= void
+ 			machTab[17,j].JobID := 0
+ 		end
+ 	next
+ 	-- sleep(0.1,false); not necessary, the next step is a reset, which will set the best solution into the model
+ 	terminateRemoteProcesses -- terminate remote processes
+ 	-- do not: DistributedSimulation.removeDistrSim_
+ end
+RandomSeed: 456
+UUID: cbb00b82-cb6d-47fa-8d5d-a62766ba05e4

@@ -1,0 +1,15 @@
+InternalClassType: DataTable
+Coordinate3D: [43.3,-17.35,0]
+Name: SVGofCharts
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 0ec7310e-c589-4b39-8720-30ef728b708c
+$Data:
+ ListFormat:
+  ColumnWidth: 50
+  DataType: string
+  MaxXDim: 1
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+ Columns:

@@ -1,0 +1,97 @@
+InternalClassType: Method
+Coordinate3D: [16.85,-9.55,0]
+Name: EventSink
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- callback of the remote process
+ -- event treatment: end of simulation,_timeout, messageBox on the remote machine
+ -- ErrorHandler
+ /* Attention: If you use Debugger > StopOnControls or Debugger > StopOnSubRoutines the eventSink_method
+ shows the messages at the end and not at the correct time.
+ */
+ param id:integer, p1:any -- p1 text of message, in general.
+ 
+ if JobId = -1
+ 	return
+ end
+ var EvCtrlStr:string := to_str(rootframe,".eventController")
+ 
+ var row:integer := MachineIndex
+ var machTab:object := ~.MachinesTable
+ if id = 1 	-- Simulation ended (p1 = VOID)
+ 	-- "The simulation was ended as expected and is ready for evaluation."
+ 	machTab.addLogging("The simulation was ended as expected and is ready for evaluation.", JobId, MachineIndex, false)
+ 
+ 	var infoStr:string := "ready for evaluation"	-- job status
+ 	-- if machTab[10,row] = infoStr then return end
+ 	machTab[10,row] := infoStr	-- job status
+ 
+ 	var t:time := sysdate - startDateTime
+ 	machTab[16,row] += t -- measure the simulation running time
+ 	machTab[15,row] += 1 -- counter simulation runs
+ 
+ 	var eMPlant:any := getInterfaceOfRemoteProcess(eMPlantHandle)
+ 	~.~.M_ReadResult(eMPlant,JobId) -- code depends of the wizard (Experimentmanager or GAwizard)
+ 
+ 	eMPlant.StopSimulation --(EvCtrlStr) -- Plant Simulation does not generate new events.
+ 
+ 	machTab[9,row] := -1
+ 	machTab[10,row] := "idle"
+ 	JobId := -1
+ 	&RunProcess.executeNewCallChain
+ 
+ elseif id = 2  -- fireSimTalkMessage
+ 	-- "Receive fireSimTalkMessage '",p1,"' during the job ",JobId
+ 	machTab.addLogging(to_str("'",p1,"' job ",JobId), JobId, MachineIndex, true)
+ 	if strLpos("Unknown error",to_str(p1)) = 1
+ 		machTab[10,row] := "Cancelled simulation"-- catched by the Global Error Handler
+ 		~.~.Recording.remoteErrors := true -- shows message "An error occurred on a remote computer."
+ 		~.~.Recording.append(to_str(p1))
+ 
+ 		eMPlant := getInterfaceOfRemoteProcess(eMPlantHandle)
+ 		eMPlant.StopSimulation -- (EvCtrlStr) -- Plant Simulation does not generate new events.
+ 
+ 		if JobId > 0
+ 			t := sysdate - startDateTime
+ 			machTab[16,row] += t -- measure the simulation running time
+ 			machTab[15,row] += 1 -- counter simulation runs
+ 			~.~.M_TreatError(JobId,to_str(p1))
+ 		end
+ 		machTab[9,row] := -1
+ 		machTab[10,row] := "idle"
+ 		JobId := -1
+ 		&RunProcess.executeNewCallChain
+ 	end
+ 
+ elseif id = 3
+ 	machTab.addLogging(to_str("Promptmessage: ",p1), JobId, MachineIndex, true)
+ 	~.~.Recording.append(to_str(p1))
+ 
+ else
+ 	machTab.addLogging(to_str("Unexpected message: ",p1), JobId, MachineIndex, true)
+ end
+ 
+ /*var sema:object := ~.~.rootfolder.Internal.&sema
+ waituntil sema.value = false prio 2
+ sema.value := true
+ 
+ -- if NOT_CheckRemote then return; end -- sudden terminated process: check it directly
+ 
+ switch id
+ case 1 	-- Simulation ended (p1 = VOID)
+ 
+ 
+ case 2  -- fireSimTalkMessage
+ 
+ case 3 	-- receive_promptmessage from the remote computer (is blocked via SetNoMessages)
+ -- "_Promptmessage: ",p1
+ 
+ 
+ end*/
+RandomSeed: 349
+UUID: b15bffe6-a845-42a7-9210-30bc55bbd664
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: object
+ Value: "ErrorHandler"

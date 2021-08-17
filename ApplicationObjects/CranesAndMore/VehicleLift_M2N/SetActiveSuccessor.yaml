@@ -1,0 +1,12 @@
+InternalClassType: Method
+Coordinate3D: [-2,-9,0]
+Name: SetActiveSuccessor
+Origin: ff6edb54-f219-4374-9714-c8547303ab3d
+Program: |+1
+ -- Can be used to set the successor number of the next lift operation
+ 
+ --ActiveSuccessor := 1
+RandomSeed: 3932
+UUID: a722b67e-2ca1-4559-9071-b3aa8b7f918d
+3D:
+ VisibleGraphicGroups: ["User"]

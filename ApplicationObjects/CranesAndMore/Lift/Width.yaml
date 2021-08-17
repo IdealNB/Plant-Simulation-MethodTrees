@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-3,0]
+CreateIn3D: true
+DataType: length
+Name: Width
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+PlausibilityCtrl: "RecomputeLayout"
+UUID: bd82cbf6-afbd-4c01-97a1-d295f2424de9
+Value: 1

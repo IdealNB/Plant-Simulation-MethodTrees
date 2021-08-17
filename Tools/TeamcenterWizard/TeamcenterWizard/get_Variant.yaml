@@ -1,0 +1,110 @@
+InternalClassType: Method
+Coordinate3D: [-15,-19,0]
+Name: get_Variant
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+  read and format variant information for operations
+ 
+  To add user defined / customized code here please open this method in the Public folder of the TeamcenterWizard library.
+  Switch off inheritance and add your code. This ensures that your changes are not overwritten when updating of the library.
+ _________________________________________________________________________________
+ Parameters	: variant string, formatted variant array
+ 			  
+ ReturnValues: formatted variant array
+ 
+ Called By	: fill_OpList
+ Calls		: 
+ 
+ Author	: Ralph Bauknecht
+ Date		: 06.09.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 13.02.2019	RBA		add usage of variant info in process table 
+ 17.09.2019	RBA		moved a derivation of this method to Public\\TcW_Methods frame and made this the active copy
+ 09.10.2019	RBA		Variant String has no end character -> take the whole string
+ 05.05.2021	RBA		removed customizable methods in Public
+ 14.06.2021	RBA		Changed completely interpreter of variant string; change from variants string to VariantsTab table
+ _________________________________________________________________________________*/
+ 
+ param source : string, pRow : integer, byref VariantsTab : table, homeframe : object
+ 
+ -- These are examples for the Variant format
+ -- ((([Teamcenter]Ausstattung = A)))
+ -- (((([Teamcenter]Verkehrsposition = RHT | [Teamcenter]Verkehrsposition = LHT) & [Teamcenter]Fahrzeugseite = l & [Teamcenter]Regulation = ECE & [HSW]Derivat = ENTRY)))
+ -- (((([Teamcenter]Bumper = 'Double Exhausts' | [Teamcenter]Bumper = 'Single Exhaust'))))
+ -- Change according to the format comming from your TC server
+ 
+ var Product_Data : object := homeframe.Product_Data
+ var Process_Data : object := homeframe.Process_Data
+ 
+ /*var VariantsTab : table
+ VariantsTab.create
+ VariantsTab.ColumnIndex := true*/
+ 
+ switch source
+ case "product"
+ 	var vStr : string := Product_Data["Variants", pRow]
+ case "process"
+ 	vStr := Process_Data["Variants", pRow]
+ end
+ 
+ repeat
+ 
+ 	var p1 := pos("[Teamcenter]", vStr )        	-- search for Variant format in the string
+ 	if p1 > 0
+ 		p1 += 12 									-- start pos of variant name info
+ 		vStr := omit(vStr, 0, p1)					-- delete up to start of variant info
+ 		var p2 : integer := pos("=", vStr ) - 1		-- end pos of variant name
+ 		var variantsname := copy( vStr, 0, p2 )
+ 		var VarCol : integer := VariantsTab.getColumnNo(variantsname) -- if variant entry exists get column
+ 		if VarCol = -1
+ 			VarCol := VariantsTab.XDimIndex + 1                       -- else add new column
+ 			VariantsTab[VarCol, 0] := variantsname
+ 		end
+ 		
+ 		vStr := omit(vStr, 0, p2 + 3)				-- delete variant name from the string to enable the search for the next
+ 
+ 		if copy( vStr, 1, 1 ) = "'"					-- if variant value string is in 'quotes'
+ 			vStr := omit(vStr, 1, 1)
+ 			p2 := pos("'", vStr ) 					-- end pos of variant value
+ 		else
+ 			var p2a : integer[]						-- check for possible characters following the variant value
+ 			if pos("|", vStr ) > 0
+ 				p2a.append(pos("|", vStr ) -1)
+ 			else
+ 				p2a.append(strlen(vStr) + 1)		-- set to end of string if not found
+ 			end
+ 			if pos("&", vStr ) > 0
+ 				p2a.append(pos("&", vStr ) -1)
+ 			else
+ 				p2a.append(strlen(vStr) + 1)
+ 			end
+ 			if pos(")", vStr ) > 0
+ 				p2a.append(pos(")", vStr ))
+ 			else
+ 				p2a.append(strlen(vStr) + 1)
+ 			end
+ 			p2 := p2a.min 							-- end pos of variant value
+ 		end
+ 		VariantsTab[1, VarCol] := incl(copy( vStr, 0, p2 ) + ",", VariantsTab[1, VarCol], 1) 	-- copy the variant info to the result
+ 
+ 
+ 		vStr := omit(vStr, 0, p2) 					-- delete variant info from the string to enable the search for the next
+ 	end;
+ 
+ until pos("[Teamcenter]", vStr ) = 0 -- loop until last variant info in string
+ 
+ 
+ if source = "product" AND Product_Data["ParentID", pRow] /= "" -- for product variants look for more info in parent
+ 	Product_Data.setCursor(1,1)
+ 	if Product_Data.find({"ID",1}..{"ID",*}, Product_Data["ParentID", pRow])
+ 		var pRow2 := Product_Data.CursorY
+ 		self.execute(source, pRow2, VariantsTab, homeframe)
+ 	end
+ end
+RandomSeed: 1073814192
+UUID: b58d746c-ca72-4f91-a3b2-439477094eee

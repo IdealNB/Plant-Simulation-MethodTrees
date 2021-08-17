@@ -1,0 +1,7 @@
+InternalClassType: Variable
+Coordinate3D: [5,-10,0]
+Name: Sync_Select
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: dcf7fe4c-0e8c-4dd5-b68e-a60271aea645
+$DataType: integer
+Value: 0

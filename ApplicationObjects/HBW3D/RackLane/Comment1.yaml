@@ -1,0 +1,9 @@
+InternalClassType: Comment
+Cont: "Below are attributes that are passed by the user and used to adjust the RSU"
+Coordinate3D: [-17,3,0]
+Font: 2
+Name: Comment1
+Origin: 6ff5122e-3f53-4711-bc67-3253e129a962
+SaveAsRichedit: false
+Text: "RSU Attributes"
+UUID: 399d370f-55da-4b3c-a63e-5bed4f30ad6c

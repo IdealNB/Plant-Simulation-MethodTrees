@@ -1,0 +1,8 @@
+InternalClassType: Dialog
+Origin: 1acd522c-b62b-49d7-8708-3163662a25b5
+UUID: 5c238274-e531-46f8-a0fc-cc4d1fc8b79e
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 1073863206

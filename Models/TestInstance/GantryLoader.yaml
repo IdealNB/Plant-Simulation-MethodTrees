@@ -1,0 +1,83 @@
+InternalClassType: Track
+Coordinate3D: [14,-6,0]
+Length: 5.0990195135927845
+Origin: c34958ad-81a5-4325-9114-324efce49a41
+RandomSeed: 1073889155
+UUID: 4786713a-faac-4d3d-8d38-4c0ff64777a2
+$CustomAttributes:
+-
+ Name: OnCreate
+ $DataType: method
+ RandomSeed: 1073889153
+-
+ Name: INIT
+ $DataType: method
+ RandomSeed: 1073889151
+-
+ Name: getLoader
+ $DataType: method
+ RandomSeed: 1073889149
+-
+ Name: createILoader
+ $DataType: method
+ RandomSeed: 1073889147
+-
+ Name: checkNewPosition
+ $DataType: method
+ RandomSeed: 1073889145
+-
+ Name: checkMotion
+ $DataType: method
+ RandomSeed: 1073889143
+-
+ Name: OnOpen
+ $DataType: method
+ RandomSeed: 1073889141
+-
+ Name: openedDialog
+ $DataType: object
+ Value: ""
+-
+ Name: createDefault3DPortal
+ $DataType: method
+ RandomSeed: 1073889139
+-
+ Name: createDefault3DLoader
+ $DataType: method
+ RandomSeed: 1073889137
+-
+ Name: statistic
+ $DataType: method
+ RandomSeed: 1073889135
+-
+ Name: createHook
+ $DataType: method
+ RandomSeed: 1073889133
+-
+ Name: initStore
+ $DataType: method
+ RandomSeed: 1073889131
+-
+ Name: createHLoader
+ $DataType: method
+ RandomSeed: 1073889129
+-
+ Name: createDefault3DHook
+ $DataType: method
+ RandomSeed: 1073889127
+-
+ Name: RESET
+ $DataType: method
+ RandomSeed: 1073889125
+-
+ Name: OnPull
+ $DataType: method
+ RandomSeed: 1073889123
+-
+ Name: CheckBlockingList
+ $DataType: method
+ RandomSeed: 1073889121
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [-11.309932474020195,5.0990195135927845,0]

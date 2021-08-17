@@ -1,0 +1,41 @@
+InternalClassType: Method
+Coordinate3D: [-23,6,0]
+Label: ""
+Name: createRack
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // create the 3D representation of the rack (store)
+ //
+ // Parameters	: Rack, the rack for which we want to create the 3D representation
+ //
+ // Return Values: none
+ //
+ // Called By	: INIT
+ // Calls		:
+ //---------------------------------------------------------------------------
+ 
+ param Rack : object
+ 
+ if not Rack._3D.exists then
+ 	return
+ end
+ 
+ // define the rack size
+ Rack.XDim := NumberOfColumns
+ Rack.YDim := NumberOfRows
+ 
+ Rack._3D.Gap := Gap
+ Rack._3D.FloorThickness := FloorThickness
+ Rack._3D.GroundClearance := GroundClearance
+ 
+ 
+ Rack._3D.Dimensions := [BoxWidth, BoxDepth, BoxHeight]
+ 
+ // change the graphic of the rack
+ Rack._3D.AutoGraphicsActive := true
+ Rack._3D.StoreType := "Rack with square posts (dynamic)"
+RandomSeed: 2285
+UUID: 8d220149-d496-4819-88f8-ff58be89f844
+3D:
+ Mirror: [false,false,false]

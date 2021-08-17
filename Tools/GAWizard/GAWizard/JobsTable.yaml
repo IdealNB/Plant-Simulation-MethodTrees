@@ -1,0 +1,65 @@
+InternalClassType: DataTable
+Coordinate3D: [37.300000000000004,-8,0]
+Label: ""
+Name: JobsTable
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 4bd4083d-accd-46e1-b9b7-3288f5eaeffa
+$CustomAttributes:
+-
+ Name: RangeStart
+ DataType: integer
+ Value: 1
+-
+ Name: RangeEnd
+ DataType: integer
+ Value: 0
+-
+ Name: stateColumnNo
+ DataType: integer
+ Value: 4
+$Data:
+ Comment: ~
+ ListFormat:
+  Alignment: "Right"
+  ColumnIndex: true
+  ColumnWidth: 6
+  DataType: integer
+  MaxXDim: 8
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 9
+  -
+   Index: 2
+   Width: 9
+  -
+   Index: 3
+   DataType: integer
+   Width: 9
+  -
+   Index: 4
+   DataType: string
+   Width: 8
+  -
+   Index: 5
+   DataType: string
+   Width: 20
+  -
+   Index: 6
+   DataType: datetime
+   Width: 20
+  -
+   Index: 7
+   DataType: datetime
+   Width: 20
+  -
+   Index: 8
+   DataType: time
+   Width: 12
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,9,~,"Generation","Individual","Observation","State","Simulation machine (No)","Start","End","Running time "]
+ Columns:

@@ -1,0 +1,107 @@
+InternalClassType: Method
+Coordinate3D: [8,-23,0]
+Name: updateResourceData
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- apply changes in resources -  Availability, MTTR, Capacity, Position, Graphics
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: write_Resource_Data, make4x4Array, updateResourceGraphics
+ 
+ Author		: Ralph Bauknecht
+ Date		: 07.02.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 28.04.2020	RBA		add "current" to write_Resource_Data call
+ 05.05.2021	RBA		removed customizable methods in Public
+ _________________________________________________________________________________*/
+ 
+ var workareaTable : object := Layout_Data
+ var rowWA, rowCO : integer
+ var bLengthOriented, bGetCapacity : boolean
+ var station : object
+ var	tm : real[4,4] -- transformation matrix from TC is converted to 4x4 matrix
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ if Import_History.ydim > 1 -- safety check if history table contains entries
+ 	
+ 	-- get last entry which contains changes to previous PLMXML
+ 	var Changes : table := Import_History["Changes", Import_History.ydim]
+ 	var Connectors : table := Import_History["Connector_List", Import_History.ydim]
+ 
+ 	-- check if changes exist and are not yet applied
+ --	if Changes.ydim > 0 and Import_History["Applied_In_Model", Import_History.ydim] = false then
+ 	if Changes.ydim > 0 then
+ 	
+ 		for var i := 1 to Changes.yDim
+ 			
+ 			var ID : string := Changes["UniqueID", i] -- get link to object
+ 			Created_Objects.CursorY := 1
+ 
+ 			-- if change for an existing and valid object is not yet applied
+ 			if Created_Objects.find({"UniqueID", *}, ID) /*AND Changes["PlantSimClass", i] /= ""*/ AND Changes["Applied_In_Model", i] = "FALSE"
+ 				
+ 				rowCO := Created_Objects.CursorY
+ 				station := Created_Objects["Link", rowCO] -- the object
+ 				-- create temporary workareatable
+ 				workareaTable.CursorY := 1
+ 				workareaTable.find({"UniqueID", *}, ID)
+ 				rowWA := workareaTable.CursorY -- the data
+ 				
+ 				-- setting is changed in the layout data and is not yet applied
+ 				if (pos("Availability",Changes["Change_Note", i]) > 0 OR pos("MTTR",Changes["Change_Note", i]) > 0 OR 
+ 						pos("Speed",Changes["Change_Note", i]) > 0 OR pos("Length",Changes["Change_Note", i]) > 0 OR
+ 						pos("Capacity",Changes["Change_Note", i]) > 0)
+ 					
+ 					bLengthOriented := (pos("Speed",Changes["Change_Note", i]) > 0 OR pos("Length",Changes["Change_Note", i]) > 0)
+ 					bGetCapacity := pos("Capacity",Changes["Change_Note", i]) > 0
+ 					-- sets data from the Layout_Data table to the new object
+ 					custom_Methods.write_Resource_Data(current, station, rowWA, bLengthOriented, bGetCapacity, workareaTable) 
+ 				end
+ 				
+ 				var updatePos := FALSE
+ 				-- position of object has changed
+ 				if pos("Abs_Transform",Changes["Change_Note", i]) > 0 AND station.~ = Model_Root AND workareatable["Abs_Transform", rowWA] /= "" -- if not hierarchical model
+ 					tm := make4x4Array(splitStringToNum( workareatable["Rel_Transform", rowWA], " "))
+ 					updatePos := TRUE
+ 				elseif pos("Rel_Transform",Changes["Change_Note", i]) > 0 AND station.~ /= Model_Root AND workareatable["Rel_Transform", rowWA] /= "" -- if hierarchical model or inside user defined frame based object
+ 					tm := make4x4Array(splitStringToNum( workareatable["Abs_Transform", rowWA], " "))
+ 					updatePos := TRUE
+ 				end
+ 				if updatePos
+ 					-- Set position and rotation for object (rotation around z-axis)
+ 					station._3D.TransformationMatrix  := tm
+ 					-- write actual position values to table
+ 					Created_Objects["posx", rowCO]	:= station._3D.Position.X
+ 					Created_Objects["posy", rowCO]	:= station._3D.Position.Y
+ 					Created_Objects["posz", rowCO]	:= station._3D.Position.Z
+ 				end
+ 
+ 				Changes["Applied_In_Model", i] := "TRUE" -- this change is applied
+ 			end
+ 			
+ 		next		
+ 	
+ 		Import_History["Applied_In_Model", Import_History.ydim] := true
+ --		TC_Import.SetSensitive("Apply_ResourceU", FALSE) -- only apply once
+ 	
+ 	end
+ 
+ 	if Update_Graphics -- import new graphics to the library
+ 		updateResourceGraphics
+ 	end
+ 	
+ end
+RandomSeed: 1073814172
+UUID: 05d4680f-01b8-4d7c-87b9-2fdcb7fdb542
+3D:
+ Mirror: [false,false,false]

@@ -1,0 +1,21 @@
+InternalClassType: Method
+Coordinate3D: [32,-10,0]
+Name: sendMail
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by: Termination
+ -- non-distribute simulation and distribute simulation
+ var subject:string := to_str(rootfolder.Localization.getText(59)) -- Optimization finished.
+ 
+ var ModfileStr:string := rootfolder.Localization.getText(326) -- "Model file [*.spp]:"
+ ModfileStr := strOmit(ModfileStr, strLpos("[*.spp]", ModfileStr),8) -- remove "[*.spp]"
+ ModfileStr := to_str(strTrim(ModfileStr),": ",modelFile) -- Model file: 
+  --to_str(toUpper(getenv("COMPUTERNAME")),strChr(10),--
+ var body:string := to_str(ModfileStr, strChr(10))
+ body:= to_str(body, rootfolder.Localization.getText(327),": ",current.~," ",strChr(10),strChr(13))
+ body:= to_str(body, rootfolder.Localization.getText(107),"  ", ~.RunningTime)
+ -- Running time of the optimization:
+ -- local body:string := rootfolder.Localization.getText(121);--The experiment run is finished.
+ sendSMTPMail(~.MailServer,~.MailReceiver,subject,body)
+RandomSeed: 440
+UUID: 106e5403-a589-467f-8e24-58d52cdcb686

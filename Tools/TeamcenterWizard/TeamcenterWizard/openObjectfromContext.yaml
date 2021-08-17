@@ -1,0 +1,10 @@
+InternalClassType: Method
+Coordinate3D: [9,-1,0]
+Name: openObjectfromContext
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ -- TODO: not in use, not finished
+ 
+ ?.openDialog
+RandomSeed: 1073814185
+UUID: dd4faeaa-df1a-48d3-9673-dc7d7b98bbab

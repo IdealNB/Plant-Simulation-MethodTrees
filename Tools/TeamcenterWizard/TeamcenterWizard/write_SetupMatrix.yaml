@@ -1,0 +1,80 @@
+InternalClassType: Method
+Coordinate3D: [-8,-26.985400000000002,0]
+Name: write_SetupMatrix
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Setup Data to the generated resources
+ -- ErrorHandler attached for objects that do not support setup 
+ _________________________________________________________________________________
+ Parameters	: station (new object), data table
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Resource_Data
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 28.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 28.04.2020			
+ _________________________________________________________________________________*/
+ 
+ param station : object, row : integer, workareaTable : object := VOID
+ -> string
+ 	
+ -- if SetupMatrix data is defined; this requires a fixed format in the subtables - see Data Mapping table
+ if workareaTable.getColumnNo("SetupMatrix") /= -1 AND workareaTable["SetupMatrix", row] /= VOID
+ 	if NOT existsObject(to_str(station) + ".SetupMatrix") AND NOT station.hasAttribute("SetupMatrix") AND station.isNameUnique("SetupMatrix") 
+ 		station.createAttr("SetupMatrix", "table")
+ 		station.SetupMatrix.RowIndex := TRUE
+ 		station.SetupMatrix.ColumnIndex := TRUE
+ 		station.SetupMatrix.DataType := "time"
+ 	end
+ 	station.SetupTime.setTypeAndAttr("Matrix(Type)", "self.SetupMatrix")
+ 	workareaTable["SetupMatrix", row].copyRangeTo({1,0}..{*,*}, station.SetupMatrix, 0, 0)
+ end
+ 	
+ return "OK" -- data successfully set to the object
+RandomSeed: 1073814154
+UUID: 2cf0e407-bb7b-4195-be31-121d50414312
+3D:
+ Mirror: [false,false,false]
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814153
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  For objects that cannot take a setup matrix, since there is no way to check for this.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in write_SetupMatrix
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 28.04.2020
+  _________________________________________________________________________________
+  	History: 
+  Date		Author	Description
+  12.11.2020	RBA		Changed error message
+   _________________________________________________________________________________*/
+  
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  	-> string
+  
+  error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  return "Not possible to assign the Setup Matrix to this object."

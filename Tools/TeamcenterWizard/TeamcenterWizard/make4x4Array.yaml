@@ -1,0 +1,38 @@
+InternalClassType: Method
+Coordinate3D: [16,-21,0]
+Name: make4x4Array
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- converts 16x1 array to 4x4 array
+ -- 16x1 array is coming from TC transformations
+ -- 4x4 array is needed to multiplicate 2 trafos, and is standard for 3D_TransformationMatrix
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: m_insert_objects
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 23.10.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 23.10.2018 
+ _________________________________________________________________________________*/
+ 
+ param array16 : real[16]
+ -> real[4,4]
+ var k : integer := 1
+ for var i := 1 to 4
+ 	for var j := 1 to 4
+ 		result[j, i] := array16[k]
+ 		k += 1
+ 	next
+ next
+RandomSeed: 1073814189
+UUID: e588dc97-3564-462d-89d7-280b57239ee8

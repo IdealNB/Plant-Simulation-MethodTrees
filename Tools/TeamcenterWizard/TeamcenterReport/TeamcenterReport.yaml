@@ -1,0 +1,40 @@
+InternalClassType: HtmlReport
+Content: |+1
+ [!self, Header, *]
+ # General Information
+ ## Overview
+ * Model file: [=modelFile]
+ * Simulation root: [EventController.Location]
+ * Simulation time: [EventController.SimTime]
+ * End time: [EventController.End]
+ * Generated on: [=sysdate]
+ 
+ ## Model
+ ><[root, *]
+ 
+ # Statistics
+ ## State Statistics
+ [root, %States]
+ ## Drain Statistics
+ -- Uncomment the next line and adjust the path and name of your drain
+ -- [root.Drain]
+ -- add more drains in new lines
+ --## Resources Statistics
+ -- Uncomment the next two lines if you are using a Broker in your model.
+ --### Broker
+ --[Broker,1,2,4,5,8,10,11]
+ -- Uncomment the next two lines if you are using a WorkerChart in your model.
+ --### Worker Chart
+ --[WorkerChart]
+ -- Uncomment the next line if you are using the EnergyAnalyzer in your model.
+ --[.Tools.EnergyAnalyzer.EnergyAnalyzer*]
+ Stuttgart, [=day(sysdate)].[=month(sysdate)].[=year(sysdate)+1900]
+ <span style="font-family: Segoe Script; font-size:32pt">John Doe</span>
+
+Coordinate3D: [0,0,0]
+Label: "Plant Simulation Report"
+Name: TeamcenterReport
+Origin: 005b3db4-8b29-4245-ae38-cbd9e49c902e
+UUID: 8b0fe527-f919-4402-b46f-5b12222b3a76
+3D:
+ ExcludeFromShowContentOfLocation: true

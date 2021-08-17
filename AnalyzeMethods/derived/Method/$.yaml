@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Method
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- b1ba17ed-1c38-4f82-9db0-2e8bd7ad0203
+- 1f7e65c4-ef19-42aa-9f2c-3bf2c94fdc77
+- 543f6173-f755-4915-9f72-db03f47f4b0f
+- 0ebb6ebe-889d-4195-a65d-151a1a46265b
+- 35e9c16a-8ef1-4e86-b25e-1a57ee7d6be8
+- c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+- 3405c316-3e71-469b-91b4-8725d0d33b5e

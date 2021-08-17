@@ -1,0 +1,27 @@
+InternalClassType: Variable
+ChangePathCtrl:
+Color: 0
+Comment: ""
+ConstructorCtrl:
+Coordinate3D: [0,0,0]
+CreateIn3D: false
+DataType: integer
+DecimalPlaces: -1
+DestructorCtrl:
+DragDropCtrl:
+Font: 1
+HasInitValue: false
+InitCtrl:
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: Variable
+OpenCtrl:
+PlausibilityCtrl:
+RenameCtrl:
+ShowDataType: false
+ShowUnit: false
+StatisticsActive: false
+SupportDDEhotlinks: false
+Transparent: false
+UUID: adb2b098-f7bf-44f4-8661-08f4ea05f61d
+Value: 0

@@ -1,0 +1,100 @@
+InternalClassType: Method
+Coordinate3D: [-7.9999999999999991,-25.985399999999995,0]
+Name: write_FailureProfile
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Failure Data to the generated resources
+ -- ErrorHandler attached for objects that do not support (ProcessingTime based) failure 
+ _________________________________________________________________________________
+ Parameters	: station (new object), data table
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Resource_Data
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 28.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 28.04.2020			
+ _________________________________________________________________________________*/
+ 
+ param station : object, row : integer, workareaTable : object := VOID
+ -> string
+ 
+ -- if Availability not defined but MTTR given, PlantSim uses default value: 95%
+ var setFail : boolean := FALSE
+ if (existsObject(to_str(station) + ".Availability") OR station.getAttrNo("Availability") > 0 OR NOT station.isNameUnique("Availability")) AND workareaTable["Availability", row] /= 0 
+ 	var availability : real := workareaTable["Availability", row]
+ 	setFail := TRUE
+ elseif (existsObject(to_str(station) + ".Availability") OR station.getAttrNo("Availability") > 0 OR NOT station.isNameUnique("Availability"))
+ 	availability := 95
+ end
+ -- if MTTR not defined but Availability less 100%, PlantSim uses default value: 60sec
+ if (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR")) AND workareaTable["MTTR", row] /= 0 
+ 	var mttr : time := workareaTable["MTTR", row]
+ 	setFail := TRUE
+ elseif (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR")) AND workareaTable["Availability", row] = 100 
+ 	mttr := 0
+ elseif (existsObject(to_str(station) + ".MTTR") OR station.getAttrNo("MTTR") > 0 OR NOT station.isNameUnique("MTTR"))
+ 	mttr := 60
+ end
+ -- set failure profile if data given
+ if setFail
+ 	if station.Failures.getFailure("Teamcenter") = VOID -- failure profile is not existing
+ 		station.Failures.createFailure("Teamcenter", availability, mttr, "ProcessingTime", 0, 0, TRUE) -- create failure profile
+ 	else -- set data to existing failure profile
+ 		station.Failures.Teamcenter.Availability := availability
+ 		station.Failures.Teamcenter.Mttr := mttr
+ 	end
+ end
+ 	
+ return "OK" -- data successfully set to the object
+RandomSeed: 1073814156
+UUID: 8f6beda9-2aa2-4dab-9919-640b352793ab
+3D:
+ Mirror: [false,false,false]
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814155
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  For objects that cannot take a ProcessingTime based failure profile, since there is no way to check for this.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in write_FailureProfile
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 28.04.2020
+  _________________________________________________________________________________
+  	History: 
+  Date		Author	Description
+  12.11.2020	RBA		Changed error message
+   _________________________________________________________________________________*/
+  
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  	-> string
+  	
+  if error = "The value of argument 4 is out of the allowed range."
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	return "ProcessingTime based failure is not supported by this object."
+  else
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	return "Not possible to assign Failure data to this object."
+  end

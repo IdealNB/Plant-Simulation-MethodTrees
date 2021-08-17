@@ -1,0 +1,14 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: ApplicationObjects
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 2a973042-999a-424c-8e56-424d18f84590
+3D:
+ BackgroundColor: -1
+$Nodes:
+- ce00e02d-1992-4253-b85f-94214b641a99
+- f8c55ce5-6bbd-47c7-b117-fff8c4651fc5

@@ -1,0 +1,45 @@
+InternalClassType: Method
+Coordinate3D: [-6,0,0]
+Name: uploadReportToTC
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: uploads Report to TC
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TcReport Context Menu
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 06.02.2019	RBA		look for TeamcenterWizard in case it was renamed
+ 14.01.2020	RBA		correct name of TcW method to uploadReportToTC
+ 07.05.2021	RBA		check license type
+ _________________________________________________________________________________*/
+ 
+ var tcw : object
+ 
+ for var i := 1 to RootFolder.TeamcenterWizard.NumChildren
+ 	if RootFolder.TeamcenterWizard.childNo(i).~ = ~
+ 		tcw := RootFolder.TeamcenterWizard.childNo(i)
+ 		exitloop
+ 	end	
+ next
+ 
+ if check_License = "TC"
+ 	if existsObject(to_str(tcw) + ".uploadReportToTC")
+ 		tcw.uploadReportToTC(ReportObject, TC_Folder)
+ 	else
+ 		messageBox("Please insert TeamcenterWizard to the root of your model to use this function.", 1, 3)
+ 	end
+ end
+RandomSeed: 1073814232
+UUID: a316b6c5-ac4d-440e-b153-83c4e0806b49

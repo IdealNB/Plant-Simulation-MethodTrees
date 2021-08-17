@@ -1,0 +1,21 @@
+InternalClassType: Method
+Coordinate3D: [-4.5,1,0]
+Name: checkBoxIsFree
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // check if the defined storage box is free
+ //--------------------------------------------------------------------------------
+ 
+ param RackLane: object, Side: string, Column, Row: integer -> boolean
+ 
+ if Side ~= "left"
+ 	return Racklane.OccupancyLeft[Column, Row] = 0
+ else
+ 	return Racklane.OccupancyRight[Column, Row] = 0
+ end
+RandomSeed: 2253
+UUID: b038d9bb-7378-4e82-a529-8f892aaf4c82
+3D:
+ Mirror: [false,false,false]
+ Rotation: [0,0,0,-1]

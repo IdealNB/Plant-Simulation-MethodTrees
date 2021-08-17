@@ -1,0 +1,32 @@
+InternalClassType: Method
+Coordinate3D: [2.25,-1.85,0]
+Name: Start
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ /* starts the simulation machines each in an own callchain
+ Call Chain: Start
+ StartMachine
+ 		Machine.ConnectProcess_(asTest,firstStart)
+ 		Machine.RunProcess_
+ */
+ terminateRemoteProcesses
+ removeDistrSim
+ 
+ var numSimMachines:integer
+ 
+ switch ~.ObjType  -- Starting remote processes
+ case "Experiment"
+ 	numSimMachines := min(MachinesTable.yDim, ~.JobsTable.yDim)
+ case "GAwizard"
+ 	numSimMachines := min(MachinesTable.yDim, 2 * ~.JobsTable.yDim) -- note that the first generation is generated, which is smaller
+ end
+ 
+ MachinesTable.numSimMachine := numSimMachines -- Number of SimMachine that still need to be started
+ 
+ for var row := 1 to numSimMachines 
+ 	-- StartMachine will be started after this callChain has ended
+ 	-- call them running in parallel
+ 	&StartMachine.executeNewCallChain(row,false,true) -- test, firstStart
+ next
+RandomSeed: 344
+UUID: 5ce3d62f-a09d-4e3f-ae3f-1e2fe095c4e7

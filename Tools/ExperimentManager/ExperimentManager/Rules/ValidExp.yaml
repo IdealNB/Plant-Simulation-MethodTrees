@@ -1,0 +1,47 @@
+InternalClassType: Method
+Coordinate3D: [-8.05,13,0]
+Name: ValidExp
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- The current experment number is compared with the input string
+ -- called by: 'evalRules' via "execute"
+ param s:string -> boolean
+  -- s:=" 1;2;4-6;  8; 10; 12 - 14; 18"
+ var currExp:integer := ~.currExpNo
+ 
+ var a:integer[] := splitStringToNum(s,";")
+ if strLen(s) < 1 OR splitStringToNum(s,";").contains(currExp)
+ 	return true
+ end
+ -- currExp := 15
+ 
+ 
+ while strLpos("-",s) > 0
+ 	var s1:string := strCopy(s,1,strLpos("-",s)-1)
+ 	a := splitStringToNum(s1,";")
+ 	if a.contains(currExp)
+ 		result := true
+ 		exitloop
+ 	else
+ 		var f:integer := a[a.dim]
+ 		s := strCopy(s, strLpos("-",s)+1, strLen(s))
+ 		a := splitStringToNum(s,";")
+ 		if a.contains(currExp)
+ 			result := true
+ 			exitloop
+ 		end
+ 		var t:integer := a[1]
+ 		if f < currExp AND currExp < t
+ 			result := true
+ 			exitloop
+ 		end
+ 	end
+ end
+ 
+ if strLen(s) < 1 OR splitStringToNum(s,";").contains(currExp)
+ 	result := true
+ end
+ --print currExp," ", result
+ --print
+RandomSeed: 296
+UUID: 2f86afe3-0988-4889-bb2b-9006565eb9e9

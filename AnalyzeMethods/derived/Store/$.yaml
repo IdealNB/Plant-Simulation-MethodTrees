@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Store
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: bf597860-c83f-4429-bf11-b6e5dd40440d
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 7111fb3e-8b6e-4334-85d1-5070ab44e7fc
+- 345dde3a-4d3c-4d5f-8de9-8efd656f72dd
+- 033a9aea-37be-4a9a-a78d-ca6059a03ba9
+- 576dfc98-362b-4f91-919f-20e40fcb5a44
+- 1a78c896-6822-4a05-9b28-c7777beed7dc
+- 0bf11eea-95a1-4d8d-a396-92ff3f7de47a
+- 93622d75-4d97-4d2c-82fc-d2252d92196a

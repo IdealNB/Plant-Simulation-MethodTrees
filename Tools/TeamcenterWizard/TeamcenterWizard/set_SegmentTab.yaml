@@ -1,0 +1,86 @@
+InternalClassType: Method
+Coordinate3D: [3.4,-23.8,0]
+Name: set_SegmentTab
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: set the segment table of length oriented objects according to 
+   imported animation spline from Line Designer
+ _________________________________________________________________________________
+ Parameters	: object
+ 			  
+ ReturnValues: none
+ 
+ Called By	: load_TcJTs
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 20.03.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ param graphObj : object
+ 
+ var segTab : table
+ var aniTab : table
+ var x1, x2, x3 :length[3]
+ 
+ if graphObj._3D.MUAnimations.getAnimation("Teamcenter") /= VOID -- if there is an animation line imported
+ 	
+ 	graphObj._3D.MUAnimations.Teamcenter.getTable(aniTab) -- read animation path into table
+ 
+ 	if aniTab.yDim > 1 -- if the animation line is defined
+ 	
+ 		graphObj._3D.getExtSegments(segTab) -- get actual segments table
+ 		segTab.maxYDim := -1 -- set no of rows to infinite
+ 		segTab.delete 
+ 							
+ -- first line; start Z
+ 		graphObj._3D.BaseHeight := aniTab[3,1]
+ 		segTab[6,1] := 0.0
+ 	
+ -- TODO: temporary correction for animation lines that do not start in (0, 0)
+ 		if NOT graphObj.hasAttribute("Offset")
+ 			graphObj.createAttr("Offset", "table")
+ 			graphObj.Offset.DataType := "integer"
+ 		end
+ 		graphObj.Offset[1, 1] := aniTab[1,1]
+ 		graphObj.Offset[2, 1] := aniTab[2,1]
+ 	
+ -- second line
+ 		x1.x := aniTab[1,1]; x1.y := aniTab[2,1]; x1.z := aniTab[3,1]
+ 		x2.x := aniTab[1,2]; x2.y := aniTab[2,2]; x2.z := aniTab[3,2]
+ 
+ 		if x2.x ~= x1.x
+ 			segTab[1,2] := 0
+ 		else
+ 			segTab[1,2] := atan((x1.y - x2.y) / (x2.x - x1.x)) / (2 * pi) * 360
+ 		end
+ 		segTab[2,2] := abs((x2 - x1).Magnitude)
+ 
+ -- all other lines
+ 		for var j := 2 to aniTab.yDim-1
+ 			x1.x := aniTab[1,j-1]; x1.y := aniTab[2,j-1]; x1.z := aniTab[3,j-1]
+ 			x2.x := aniTab[1,j];   x2.y := aniTab[2,j];   x2.z := aniTab[3,j]
+ 			x3.x := aniTab[1,j+1]; x3.y := aniTab[2,j+1]; x3.z := aniTab[3,j+1]
+ 	
+ 			var v1 : length[3] := x2 - x1
+ 			var v2 : length[3] := x3 - x2
+ 	
+ 			var sign := when v1.y * (x3.x - x1.x) - v1.x * (x3.y - x1.y) < 0.0 then -1 else 1
+ 	
+ 			segTab[1, j+1] := sign * acos((v1.x * v2.x + v1.y * v2.y) / v1.Magnitude / v2.Magnitude) / (2 * pi) * 360
+ 			segTab[2, j+1] := abs((x3 - x2).Magnitude)
+ 		next
+ 							
+ 		graphObj._3D.setExtSegments(segTab) -- write segments table to the object
+ 	
+ 
+ 	end -- if the animation line is defined
+ 
+ end -- if there is an animation line imported
+RandomSeed: 1073814160
+UUID: 0cd29825-a9b7-4cc6-8e89-9d8eb45f967f

@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Comment: ""
+Coordinate3D: [-10,1.7208,0]
+DataType: length
+Name: ConveyorWidth
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: fc12ede9-0ffa-4bd6-992e-9e6b520705d9
+$Observers:
+- [Value,"onChanges"]
+Value: 1

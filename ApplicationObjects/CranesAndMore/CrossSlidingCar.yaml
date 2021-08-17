@@ -1,0 +1,575 @@
+InternalClassType: Conveyor
+Acceleration: 1
+AccelerationEnabled: false
+Accumulating: false
+AutomaticStop: false
+Backwards: false
+BwEntranceCtrl: "self.OnBwEntrance"
+BwEntranceCtrlFront: true
+BwEntranceCtrlRear: false
+BwExitCtrl: "self.OnBwExit"
+BwExitCtrlFront: true
+BwExitCtrlRear: true
+Capacity: 1
+ChangePathCtrl:
+ConnectCtrl:
+ConstructorCtrl:
+Coordinate3D: [1,-1,0]
+CostingActive: false
+CreateIn3D: true
+CycleTime: 0
+Deceleration: 1
+DestructorCtrl:
+DragDropCtrl:
+EnergyActive: false
+EntranceCtrl: "self.OnEntrance"
+EntranceCtrlFront: false
+EntranceCtrlRear: true
+EntranceLocked: false
+ExitCtrl: "self.OnExit"
+ExitCtrlFront: true
+ExitCtrlOnce: true
+ExitCtrlRear: true
+ExitLocked: false
+ExitStrategy: "Cyclic"
+ExitStrategyBlocking: false
+FailCtrl:
+FailureActive: true
+InitCtrl:
+Label: ""
+Length: 2
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+MUDistance: -1
+MUDistanceType: "Gap"
+Name: CrossSlidingCar
+OpenCtrl: "self.OnOpen"
+PauseCtrl:
+PlausibilityCtrl:
+PullCtrl: "self.OnPull"
+RandomSeed: 1
+RecoveryTime: 0
+RelabelCtrl:
+RenameCtrl:
+ResourceType: "Transport"
+ResStatOn: true
+ShiftcalendarObject:
+Speed: 0.5
+SpeedCtrl:
+UnplannedCtrl:
+UUID: 06eadecd-1248-4df7-a4b9-9a8f8ee8b7e9
+Width: 1
+$TabConfig: 0xfe44
+3D:
+ AnimationObject: "Car"
+ AniRotationAxis: [0,0,-1]
+ AniRotationCenter: [0,0,0]
+ ExcludeFromShowContentOfLocation: false
+ GraphicGroupNames: ["default","Rails"]
+ InternalClassType: SimulationObject
+ LockedGraphicGroups: []
+ Mirror: [false,false,false]
+ MUAnimations:
+ MUSideToAttach: "Bottom"
+ NameLabelEnabled: false
+ NameLabelPosition: [0,-0.5,0]
+ NameLabelRotation: [0,0,0,-1]
+ NameLabelScale: [1,1,1]
+ ObstacleForWorker: "Visible graphics"
+ Poses:
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+ SelfAnimations:
+ ShowContent: true
+ StatesOrientation: "(Off)"
+ VisibleGraphicGroups: ["Rails"]
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: false
+ $Objects:
+ -
+  AniGravityMode: false
+  AnimationOffset: [0,0,0]
+  AniRotationAxis: [0,0,-1]
+  AniRotationCenter: [0,0,0]
+  AniTranslationDirection: [0,1,0]
+  BaseHeight: 1
+  ExtConfiguration:
+  -
+   Name: "Legs_1"
+   Extrusion Profile: [[-0.5,-0.05],[-0.4,-0.05],[-0.4,0.05],[-0.5,0.05],[-0.5,-0.05]]
+   Configuration Type: 20
+   Offsets: [-0.1,0]
+   Repetition Interval: 0
+   Graphic Group ID: 0
+   Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+  -
+   Name: "Legs_2"
+   Extrusion Profile: [[0.4,-0.05],[0.5,-0.05],[0.5,0.05],[0.4,0.05],[0.4,-0.05]]
+   Configuration Type: 20
+   Offsets: [-0.1,0]
+   Repetition Interval: 0
+   Graphic Group ID: 0
+   Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+  -
+   Name: "LegCrossbars"
+   Extrusion Profile: [[-0.05,-0.05],[0.05,-0.05],[0.05,0.05],[-0.05,0.05],[-0.05,-0.05]]
+   Configuration Type: 10
+   Offsets: [-0.45,0.45]
+   Repetition Interval: 0
+   Graphic Group ID: 0
+   Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+  -
+   Name: "Rollers"
+   Extrusion Profile: [[0.05,-0.05],[0.04330127018922194,-0.025000000000000005],[0.025000000000000008,-0.00669872981077807],[3.0616169978683832e-18,0],[-0.024999999999999991,-0.0066987298107780632],[-0.043301270189221926,-0.024999999999999984],[-0.05,-0.049999999999999975],[-0.043301270189221953,-0.074999999999999969],[-0.025000000000000022,-0.093301270189221935],[-9.1848509936051487e-18,-0.1],[0.025000000000000008,-0.093301270189221935],[0.043301270189221946,-0.074999999999999983],[0.05,-0.05]]
+   Configuration Type: 14
+   Offsets: [-0.475,0.475]
+   Repetition Interval: 0.15000000000000002
+   Graphic Group ID: 0
+   Material: [0x8a8a8a,0x333333,0xdcf5f5,0x0,0,26]
+  -
+   Name: "Frame_2"
+   Extrusion Profile: [[0.44999999999999996,-0.1],[0.49999999999999994,-0.1],[0.49999999999999994,0],[0.44999999999999996,0],[0.44999999999999996,-0.1]]
+   Configuration Type: 0
+   Offsets: [0,0]
+   Repetition Interval: 0
+   Graphic Group ID: 0
+   Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+  -
+   Name: "Frame_1"
+   Extrusion Profile: [[-0.5,-0.1],[-0.45,-0.1],[-0.45,0],[-0.5,0],[-0.5,-0.1]]
+   Configuration Type: 0
+   Offsets: [0,0]
+   Repetition Interval: 0
+   Graphic Group ID: 0
+   Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+  GraphicGroupNames: ["default"]
+  InternalClassType: AnimatableExtrusionObject
+  JointAcceleration: 0
+  JointDeceleration: 0
+  JointLowerLimit: 0
+  JointLowerLimitActive: true
+  JointType: "Prismatic Joint"
+  JointUpperLimit: 6
+  JointUpperLimitActive: true
+  JointVelocity: 0.5
+  LockedGraphicGroups: []
+  Mirror: [false,false,false]
+  MUAnimations:
+  Name: Car
+  Position: [0,0,0]
+  Rotation: [0,0,0,-1]
+  Scale: [1,1,1]
+  SelfAnimations:
+  ShowContent: true
+  UUID: afd58205-e2d1-4f62-b420-ca4d8ca10a40
+  VisibleGraphicGroups: ["default"]
+  Width: 1
+  $ExtSegments:
+   - 0
+   - [0,2,0]
+$IconArray:
+-
+ Name: "Default"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - paWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAvb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29APcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAvb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29APcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAvb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29APcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAvb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29APcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAvb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29APcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcApaWlpaWlpaWlAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcAzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEzpSEAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlAPcAAPcAAPcAAPcAAPcAAPcAAPcApaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWl
+ - paWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWl
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+$CustomAttributes:
+-
+ Name: DampingTime
+ DataType: time
+ Value: 2
+-
+ Name: OnExit
+ DataType: method
+ RandomSeed: 4657
+ Value: |+1
+  var CSC := self.~
+  var part := @
+  if part.Location = CSC
+  	if part.Destination.Backwards
+  		partt.move(part.Destination, -1)
+  	else
+  		part.move(part.Destination, 0)
+  	end
+  elseif part.Location /= CSC
+  	CSC.ExitLocked := true
+  end
+-
+ Name: OnSensor
+ DataType: method
+ RandomSeed: 4696
+ Value: |+1
+  param SensorID: integer, Front: boolean, BookPos: boolean
+  
+  self.~.Stopped := true
+-
+ Name: processPendingTransfers
+ DataType: method
+ RandomSeed: 4802
+ Value: |+1
+  param part:object
+  
+  var CSC := self.~
+  
+  ?.ExitLocked := true
+  var sourceObject:object := part.~
+  
+  var partPosition:length[3] := CSC._3D.getPositionOfObject(part)
+  
+  if sourceObject /= CSC.CurrentObject
+  	// Move car to the pick position
+  	var dy := calcDroppedPerpendicularFootPoint([0,0,0], [0,-1,0], partPosition).y
+  	CSC.state := "driveto"
+  	CSC.waitPosReached(?._3D.getObject(1).moveTo(dy))
+  	CSC.CurrentObject := sourceObject
+  	CSC.state := "damping"
+  	wait CSC.DampingTime
+  end
+  CSC.state := "loading"
+  CSC.Backwards := partPosition.x > 0
+  
+  var Sensor := CSC.Sensors.ID1
+  
+  if CSC.OccupiedLength + part.length >= CSC.length
+  	debug -- Vehicle should be longer than all parts that it has to transport
+  end
+  
+  if CSC.Backwards
+  	Sensor.Position := 0
+  	part.move(CSC,-1)
+  else
+  	CSC.unblock(part)
+  end
+  
+  
+  waituntil part.RearLocation = ?
+  
+  if CSC.FrontMU /= void
+  	CSC.FrontMU.stopped := false
+  end
+  
+  
+  if not CSC.Full
+  	if CSC.MaximumDwellTime > 0
+  		var MaxWaitTime:time := CSC.MaximumDwellTime
+  		waituntil CSC.NewPart wait MaxWaitTime
+  		// If there are parts coming from the same source we load more parts
+  		if not waitExpired
+  			CSC.NewPart := false
+  			return
+  		end
+  	end
+  end
+  
+  
+  
+  if CSC.Backwards
+  	Sensor.Position := (CSC.length - CSC.OccupiedLength)/2
+  	Sensor.Rear := true
+  	Sensor.Front := false
+  else
+  	Sensor.Position := CSC.length - (CSC.length - CSC.OccupiedLength)/2
+  	Sensor.Rear := false
+  	Sensor.Front := true
+  end
+  
+  CSC.FrontMU.stopped := false
+  
+  while not CSC.Empty
+  	// Move car to the drop position
+  	var DestinationObject := CSC.cont.Destination
+  	if DestinationObject /= CSC.CurrentObject
+  		CSC.state := "damping"
+  		wait ?.DampingTime
+  		CSC.state := "drivefull"
+  		var dropPosition:length[3] := CSC._3D.getPositionOfObject(DestinationObject, DestinationObject._3D.getMUAnimationPosition(0))
+  		dy := calcDroppedPerpendicularFootPoint([0,0,0], [0,-1,0], dropPosition).y
+  		CSC.waitPosReached(CSC._3D.getObject(1).moveTo(dy))
+  		CSC.CurrentObject := DestinationObject
+  		CSC.state := "damping"
+  		wait ?.DampingTime
+  	end
+  	CSC.state := "unloading"
+  	CSC.Backwards := dropPosition.x <= 0
+  
+  	CSC.ExitLocked := false
+  	CSC.stopped := false
+  
+  	waituntil CSC.ExitLocked
+  	if not CSC.Empty
+  		var NextDestination := CSC.cont.Destination
+  		var NextDestinationBackwards := CSC._3D.getPositionOfObject(NextDestination, NextDestination._3D.getMUAnimationPosition(0)).x <= 0
+  		if CSC.Backwards /= NextDestinationBackwards and CSC.NumMU > 1
+  			debug -- This part can't be moved, because other parts might be blocking the way.
+  		end
+  	end
+  end
+  
+  if CSC.FwBlockListEntry1 /= void
+  	CSC.state := "waiting"
+  	CSC.&OnPull.executeNewCallchain(CSC.FwBlockListEntry1, CSC) // Process parts waiting in the forward blocking list
+  else
+  	CSC.driveHome
+  end
+-
+ Name: OnBwExit
+ DataType: method
+ RandomSeed: 4805
+ Value: |+1
+  var CSC := self.~
+  var part := @
+  if part.Location = CSC
+  	if part.Destination.Backwards
+  		partt.move(part.Destination, -1)
+  	else
+  		part.move(part.Destination, 0)
+  	end
+  elseif part.Location /= CSC
+  	CSC.ExitLocked := true
+  end
+-
+ Name: CurrentObject
+ DataType: object
+ Value: ""
+ HasInitValue: true
+ InitValue: ""
+-
+ Name: OnOpen
+ DataType: method
+ RandomSeed: 1073751190
+ Value: "rootfolder.internal.dialog.genDialog"
+-
+ Name: objType
+ DataType: string
+ Value: "CrossSlidingCar"
+-
+ Name: OpenedDialog
+ DataType: object
+ Value: ""
+-
+ Name: AccelerationOn
+ DataType: boolean
+ Value: false
+-
+ Name: ParametrizeCar
+ DataType: method
+ RandomSeed: 1073751218
+ Value: |+1
+  var CrossSlidingCar :=  self.~
+  var Car := CrossSlidingCar._3D.getObject("Car")
+  
+  var segments: table
+  segments.create
+  
+  Car.getExtSegments(segments)
+  
+  segments[2,2] := CrossSlidingCar.Length
+  
+  Car.setExtSegments(segments)
+  
+  var LeftRail := CrossSlidingCar._3D.getGraphic("Rails", ["LeftRail"])
+  var RightRail := CrossSlidingCar._3D.getGraphic("Rails", ["RightRail"])
+  var CurrentWidth := abs(RightRail.Position.x-LeftRail.Position.x)
+  var deltaX := CrossSlidingCar.Length - CurrentWidth
+  
+  RightRail.Position.x := CrossSlidingCar.Length - CrossSlidingCar.RailWidth/2
+  
+  RightRail.Scale.y := CrossSlidingCar.TrackLength
+  LeftRail.Scale.y := CrossSlidingCar.TrackLength
+  
+  RightRail.Position.y := - CrossSlidingCar.TrackLength/2 + Car.Width/2
+  LeftRail.Position.y := - CrossSlidingCar.TrackLength/2 + Car.Width/2
+-
+ Name: TrackLength
+ DataType: length
+ Value: 7
+-
+ Name: driveHome
+ DataType: method
+ RandomSeed: 1073752127
+ Value: |+1
+  var CSC := self.~
+  CSC.state := "drivetohome"
+  if CSC.HomePosition /= void and CSC.DrivingHome
+  	var position:length[3] := CSC._3D.getPositionOfObject(CSC.HomePosition, CSC.HomePosition._3D.getMUAnimationPosition(0))
+  	var dy := calcDroppedPerpendicularFootPoint([0,0,0], [0,-1,0], position).y
+  	CSC.waitPosReached(CSC._3D.getObject(1).moveTo(dy))
+  else
+  	CSC.waitPosReached(CSC._3D.getObject(1).moveTo(0))
+  end
+  CSC.state := "waiting"
+-
+ Name: HomePosition
+ DataType: object
+ Value: ""
+-
+ Name: MaximumDwellTime
+ DataType: time
+ Value: 0
+-
+ Name: RailWidth
+ DataType: length
+ Value: 0.108
+-
+ Name: waitPosReached
+ DataType: method
+ RandomSeed: 1073752028
+ Value: |+1
+  param movementTime:time
+  // If there are no failures configured, then just proceed and wait for the movement time that was specified
+  if not self.~.FailureActive or self.~.Failures <= 0
+  	wait movementTime
+  	return
+  end
+  
+  // Pause the movement during a failure
+  while movementTime > 0
+      stopuntil self.~.Failed wait movementTime
+      if waitExpired then exitloop end
+  	self.~._3D.Poses.pauseMovement
+  	var oldState := self.~.state
+  	self.~.state := "failed"
+  	stopuntil not self.~.Failed
+  	self.~.state := oldState
+      self.~._3D.Poses.continueMovement
+      movementTime := self.~._3D.Poses.getAnimationTime
+  end
+-
+ Name: state
+ DataType: string
+ Value: ""
+ HasInitValue: true
+ InitValue: "waiting"
+ StatisticsActive: true
+-
+ Name: OnPull
+ DataType: method
+ RandomSeed: 1073752031
+ Value: |+1
+  var CSC  := ?
+  
+  var part := @
+  if part = void
+  	return
+  end
+  if part.destination /= void then
+  	if CSC.CurrentObject = part.~
+  		CSC.NewPart := true
+  		CSC.processPendingTransfers(part)
+  	elseif CSC.empty
+  		CSC.FrontMU := @
+  		CSC.processPendingTransfers(part)
+  	else
+  		waituntil CSC.state = "waiting"
+  		CSC.processPendingTransfers(part)
+  	end
+  else
+  	throwRuntimeError(to_str(self.~)+": No destination for MU defined!")
+  end
+-
+ Name: DrivingHome
+ DataType: boolean
+ Value: false
+-
+ Name: NewPart
+ DataType: boolean
+ Value: false
+ HasInitValue: true
+ InitValue: false
+-
+ Name: init
+ DataType: method
+ RandomSeed: 1073752245
+ Value: |+1
+  var CSC := self.~
+  
+  if CSC.Capacity = 1
+  	self.~.Sensors.ID1.Position := CSC.length/2
+  else
+  	self.~.Sensors.ID1.Position := CSC.length
+  end
+-
+ Name: reset
+ DataType: method
+ RandomSeed: 1073752250
+ Value: "self.~.backwards := false"
+-
+ Name: OnEntrance
+ DataType: method
+ RandomSeed: 1073752305
+ Value: |+1
+  var CSC := self.~
+  if not CSC.full and CSC.MaximumDwellTime > 0
+  	CSC.FrontMU.stopped := true
+  end
+-
+ Name: OnBwEntrance
+ DataType: method
+ RandomSeed: 1073752308
+ Value: |+1
+  var CSC := self.~
+  if not CSC.full and CSC.MaximumDwellTime > 0
+  	CSC.FrontMU.stopped := true
+  end
+-
+ Name: FrontMU
+ DataType: object
+ Value: ""
+$Sensors:
+-
+ Id: 1
+ $CreatedHere: true
+ PositionAbs: 1
+ FromEnd: false
+ Control: "self.OnSensor"
+ Destination: null
+ Front: false
+ Rear: false
+ BookPosition: false
+ IfDestination: true
+ LightBarrierMode: false

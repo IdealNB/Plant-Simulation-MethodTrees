@@ -1,0 +1,28 @@
+InternalClassType: DataTable
+Coordinate3D: [0.5,-5,0]
+Name: Content
+Origin: d6a75ee0-8e9e-4c40-a584-1111ec6c6863
+UUID: bfb10c72-1cb9-4755-a97c-ce066ca8272c
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnIndexContents: false
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 1
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 30
+  -
+   Index: 1
+   DataType: integer
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,2,"Product","Quantity"]
+ Columns:

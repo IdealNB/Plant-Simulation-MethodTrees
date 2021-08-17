@@ -1,0 +1,21 @@
+InternalClassType: Method
+Coordinate3D: [-4.5,7,0]
+Label: ""
+Name: addRacklane
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // add a rack lane to table Racklanes
+ //--------------------------------------------------------------------------------
+ 
+ Param Racklane : object
+ 
+ Racklanes.setCursor(1)
+ if not Racklanes.find(Racklane) then
+ 	Racklanes.append(Racklane)
+ 	NumFreePlaces += Racklane.RackLeft.capacity + Racklane.RackRight.capacity
+ end
+RandomSeed: 2236
+UUID: ed15e272-c5ce-4c96-8f01-abbb8bc28e13
+3D:
+ Mirror: [false,false,false]

@@ -1,0 +1,7 @@
+InternalClassType: Station
+Coordinate3D: [1,0,0]
+Origin: c26c2ebb-15c9-4402-8fdd-0d475ebecb08
+RandomSeed: 35
+UUID: a2431c88-805a-469a-99b7-19b0085c854e
+$Predecessors:
+- 86f050a4-244b-417f-9227-94c44ecc010b

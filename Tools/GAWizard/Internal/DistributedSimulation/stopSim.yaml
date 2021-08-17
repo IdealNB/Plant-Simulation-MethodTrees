@@ -1,0 +1,9 @@
+InternalClassType: Method
+Coordinate3D: [38,-1.85,0]
+Name: stopSim
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by: infty simulation run (SimMachine.M_StartSimulation_)
+ param JobNo:integer
+RandomSeed: 467
+UUID: b9cbd309-d8e9-44fb-80b7-e832dc367e32

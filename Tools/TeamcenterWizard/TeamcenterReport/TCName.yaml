@@ -1,0 +1,10 @@
+InternalClassType: Comment
+BackgroundColor: 16777215
+Coordinate3D: [-1,-1.7,0.005]
+Name: TCName
+Origin: f47edc1e-c99c-41c1-8b4b-241f1aff72f6
+Text: "Teamcenter Name: Plant Simulation Report"
+Transparent: false
+UUID: f8fa8f70-795c-4299-961c-94e82afef6c5
+3D:
+ ExcludeFromShowContentOfLocation: false

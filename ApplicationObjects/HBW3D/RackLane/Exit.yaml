@@ -1,0 +1,14 @@
+InternalClassType: Interface
+Coordinate3D: [0,-4,1]
+MaxConnections: 1
+Name: Exit
+Origin: 36c20b8d-1c80-4074-b22d-7918958e6fc8
+Position: 5
+RandomSeed: 1
+Side: "Bottom"
+UUID: 73c46aff-69a9-4dd1-a26b-c725166e8abf
+3D:
+ Rotation: [90,0,0,-1]
+ VisibleGraphicGroups: ["default"]
+$Predecessors:
+- 47587722-0d5c-402a-a578-7c9eacda0843

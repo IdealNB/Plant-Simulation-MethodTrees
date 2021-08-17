@@ -1,0 +1,36 @@
+InternalClassType: Method
+Coordinate3D: [16,-22,0]
+Name: makeValidObjectName
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- eliminates all characters from TC strings that are not allowed in Plant Sim object names
+ _________________________________________________________________________________
+ Parameters	: string from TC
+ 			  
+ ReturnValues: object name
+ 
+ Called By	: insert_LayoutObjects, insert_ProcessObjects
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 01.01.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 18.12.2019	RBA		add "_" in front of upper case characters to make name unique since
+ 					Plant Simulation does not differentiate between upper and lower case in names
+ _________________________________________________________________________________*/
+ param inObjectNameToCheck : string
+ -> string
+ 
+ -- This method removes all characters that are not allowed as object names in Plant Simulation:
+ -- var testString := "ljasdfla- :;,.!\\"§$%&/()=?`´?\\}][{°^"
+ 
+ result := regex_replace(inObjectNameToCheck, "[&$%§\\-,;()\\[\\]{}?!/=`´\\^°\\\\\\\\:\\.\\" ]", "")
+ 
+ return regex_replace(result, "([A-Z])", "_$1")
+RandomSeed: 1073814201
+UUID: 61ffe999-bfcd-4b2f-a259-6d33edc9952d

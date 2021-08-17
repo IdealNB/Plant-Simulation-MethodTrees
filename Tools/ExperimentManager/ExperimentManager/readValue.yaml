@@ -1,0 +1,27 @@
+InternalClassType: Method
+Coordinate3D: [0.5,-27.5,0]
+Name: readValue
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- result := variableStr
+ param varStr:string->any
+ 
+ var varStrNeu:string
+ 
+ if isOutTable(varStr) 
+ 	var obj:object := varStr
+ 	return obj.meanValue
+ end
+ 
+ var a:integer := strLpos("[",varStr)
+ if a>0 AND strLpos(",",varStr)=0  -- 1D-list, use the read_method
+ 	var b:integer := strLpos("]",varStr)
+ 	varStrNeu := to_str(strCopy(varStr,1,a-1),"[", strCopy(varStr,a+1,b-a-1),"]")
+ else
+ 	varStrNeu := varStr
+ end -- 1D-list
+ 
+ var stmt:string := to_str("-> any return ",varStrNeu)
+ result := executeSilent(stmt)
+RandomSeed: 251
+UUID: 07cadb25-6d39-47d5-8567-2c1371c59125

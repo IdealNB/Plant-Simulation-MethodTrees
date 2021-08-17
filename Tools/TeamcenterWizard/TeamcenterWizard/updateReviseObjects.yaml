@@ -1,0 +1,289 @@
+InternalClassType: Method
+Coordinate3D: [8,-21,0]
+Name: updateReviseObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ -- TODO: not in use, not finished
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- check for changes in new object revisions and apply them
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 11.12.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 11.12.2018	
+ _________________________________________________________________________________*/
+ 
+ /*var	workareaTable : object := Layout_Data 
+ var row : integer
+ var Arr_Notes : string[]
+ var bObjExists, bGetAllLevels : boolean := false
+ var station, auto_connector : object
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ if Import_History.ydim > 1 -- safety check if history table contains entries
+ 	
+ 	-- get last entry which contains changes to previous PLMXML
+ 	var Changes : table := Import_History["Changes", Import_History.ydim]
+ 	var Connectors : table := Import_History["Connector_List", Import_History.ydim]
+ 
+ 	var temp_PLMXML : table
+ 	temp_PLMXML.create
+ 	temp_PLMXML.columnIndex := true
+ 	workareaTable.copyRangeTo({1, 0}..{*, 0}, temp_PLMXML, 1, 0)
+ 
+ 	-- check if changes exist and are not yet applied
+ 	if Changes.ydim > 0 and Apply_Changes = false then
+ 	
+ 		for var i := 1 to Changes.yDim
+ 			-- get link to object and check
+ 			var ID : string := Changes["Occ_Id", i]
+ 			var change_note : string := Changes["Change_Note", i]
+ 			Arr_Notes := SplitString(change_note, "/")
+ 		
+ 			Created_Objects.CursorY := 1
+ 			bObjExists := Created_Objects.find({"Occ_Id", *}, ID)
+ 		
+ 			for var x := 1 to Arr_Notes.dim loop
+ 			
+ 				switch Arr_Notes[x]
+ 				case "New ItemID or Revision"
+ 					-- if a new object/resource was created
+ 					if bObjExists = false then
+ 						-- create temporary workareatable and insert the item with a
+ 						workareaTable.CursorY := 1
+ 						workareaTable.find({"ID", *}, ID)
+ 						row := workareaTable.CursorY
+ 						workareaTable.copyRangeTo({1, row}..{*, row}, temp_PLMXML, 1, 1)
+ 						m_insert_objects(temp_PLMXML)
+ 						temp_PLMXML.delete({1, 1}..{1, *})
+ 					end
+ 					
+ 					-- if a workarea was created
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "Deleted"
+ 					-- if a resource was deleted
+ 					if bObjExists = true then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						station.delete
+ 						Created_Objects.cutRow(row)
+ 					end
+ 					
+ 					-- if a workarea was deleted
+ 					-- and if deleted workarea did contain children
+ 					--> Other Workareas or resources are involved and listed
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "Parent"
+ 					if bObjExists = true then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 					end
+ 						
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "Children_Occ_Ids"
+ 					if bObjExists = true then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 					end
+ 						
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "Abs_Transform" -- applies changed rotation and/or position
+ 					if bObjExists = true and Changes["Abs_Transform", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						var tm : real[16] := splitStringToNum(Changes["Abs_Transform", i], " ")
+ 						var sx : real := tm[13]
+ 						var sy : real := tm[14]
+ 						var sz : real := tm[15]
+ 						Created_Objects["posx", row] := sx
+ 						Created_Objects["posy", row] := sy
+ 						Created_Objects["posz", row] := sz
+ 						
+ 						-- Set Rotation
+ 						var newangle, r00, r10 : real
+ 						r00 := tm[1]
+ 						r10 := tm[2]
+ 						newangle := -atan2(r10, r00)/pi*180
+ 						station.ObjectAngle := newangle
+ 						station.coordinate3D := makearray(sx, sy, sz)
+ 						
+ 						workareaTable.CursorY := 1
+ 						workareaTable.find({"ID", *}, ID)
+ 						row := workareaTable.CursorY
+ 						
+ 						-- Set Position of 3D Object
+ 						if (workareatable["JT_File", row] /= void) then
+ 							station._3d.deletePlainGraphics
+ 							var file : string :=  workareatable["JT_File", row]
+ 							tm := splitStringToNum(Changes["Abs_Transform", i], " ")
+ 							tm[13] -= sx
+ 							tm[14] -= sy
+ 							tm[15] -= sz
+ 							
+ 							var gid : integer := station._3d.importGraphics(makearray(0,0,0), path + file, false, false)
+ 							if gid /= -1 then
+ 								gid := station._3d.groupGraphics(makearray(), makearray(gid))
+ 								
+ 								station._3D.setGraphicTransformationMatrix(makeArray(gid), tm)
+ 								station._3D.addGraphicTransformation(makeArray(1), makearray(0,0,0), newangle, makeArray(0,0,1), makeArray(0,0,0), 1)
+ 								if graphObj.internalClassName /= "Network"
+ 									station._3D.extractMUAnimation(makeArray(gid, 1), "Default")
+ 								end
+ 							end
+ 						end
+ 					end
+ 					
+ 				case "ItemID"
+ 					-- in 4GD same as Occ_ID
+ 					if bObjExists = true and Changes["ItemID", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						Created_Objects["Label", row] := Changes["ItemID", i]
+ 						station.label := Changes["ItemID", i]
+ 					end
+ 					
+ 				case "Name"
+ 					if bObjExists = true then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						Created_Objects["Name", row] := Changes["Name", i]
+ 					end
+ 					
+ 				case "Sequence_Number"
+ 					-- Delete all AUTOMATICALLY created Connectors from last Import
+ 					-- Manually created Connectors stay in the model
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "predecessor"
+ 					-- Delete all AUTOMATICALLY created Connectors from last Import
+ 					-- Manually created Connectors stay in the model
+ 					-- the 'predecessor' column only influences model where areas are connected with PERT
+ 					tbl_connections.delete({1, 1}..{*, *})
+ 					bGetAllLevels := true
+ 					
+ 				case "Availability"
+ 					if bObjExists = true and Changes["Availability", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						station.Availability := str_to_num(Changes["Availability", i])
+ 					end
+ 					
+ 				case "MTTR"
+ 					if bObjExists = true and Changes["MTTR", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						station.MTTR := str_to_num(Changes["MTTR", i])
+ 					end
+ 					
+ 				case "PlantSimClass"
+ 					--> Only MessageBox needed that the user has to change the Class manually
+ 					--> To prevent deleting manually edited attributes or values
+ 					if bObjExists = true then
+ 						row := Created_Objects.CursorY
+ 						Created_Objects["SimType", row] := Changes["PlantSimClass", i]
+ 						print("PlantSimClass for item " + Changes["Occ_Id", i] + " was changed!")
+ 					end
+ 					
+ 				case "Length"
+ 					if bObjExists = true and Changes["Length", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						
+ 						--get PlantSimClass from createdObjcts table and check if it has length orientation
+ 						var ClassPS_Len : string := Created_Objects["SimType", row]
+ 						Element_definition.CursorY := 1
+ 						var bLenFound : boolean := Element_definition.find({"LD_property_name", *}, ClassPS_Len)
+ 						
+ 						if bLenFound = true and Element_definition["LengthOrientation", Element_definition.CursorY] = true then
+ 							station.length := str_to_num(Changes["Length", i])
+ 						end
+ 						
+ 					end
+ 					
+ 				case "Speed"
+ 					if bObjExists = true and Changes["Speed", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						station.Speed := str_to_num(Changes["Speed", i])
+ 					end
+ 					
+ 				case "Capacity"
+ 					if bObjExists = true and Changes["Capacity", i] /= "" then
+ 						row := Created_Objects.CursorY
+ 						station := Created_Objects["Link", row]
+ 						
+ 						--get PlantSimClass from createdObjcts table and check if it has capacity
+ 						var ClassPS_Cap : string := Created_Objects["SimType", row]
+ 						Element_definition.CursorY := 1
+ 						var bCapFound : boolean := Element_definition.find({"LD_property_name", *}, ClassPS_Cap)
+ 						
+ 						if bCapFound = true and Element_definition["GetCapacity", Element_definition.CursorY] = true then
+ 							if Element_definition["LengthOrientation", Element_definition.CursorY] = true
+ 								--> for Buffers, Sorters, Lines... lengthoriented elements
+ 								station.capacity := str_to_num(Changes["Capacity", i])
+ 							else
+ 								--> for Stores
+ 								station.xDim := str_to_num(Changes["Capacity", i])
+ 								station.yDim := 1
+ 							end
+ 						end
+ 						
+ 					end
+ 					
+ 					
+ 				else
+ 					-- nothing
+ 				end
+ 				
+ 			next
+ 		
+ 		next
+ 	
+ 		Import_History["Applied_In_Model", Import_History.ydim] := true
+ 	
+ 		if bGetAllLevels = true then
+ 			for var w := 1 to Connectors.ydim loop
+ 				auto_connector := Connectors["Connector", w]
+ 				if auto_connector /= VOID then
+ 					auto_connector.deleteObject
+ 				end
+ 				Connectors.cutRow(w)
+ 			next
+ 		
+ 			m_Get_All_Levels
+ 			m_Iterate_connectors(tbl_connections)
+ 		
+ 			if PERT_Connected = true then
+ 				m_PERT_areas
+ 			end
+ 			
+ 		end
+ 	
+ 	end
+ 
+ end*/
+RandomSeed: 1073814174
+UUID: 8bda711a-c370-460e-966e-b31ed490b6c8
+3D:
+ Mirror: [false,false,false]

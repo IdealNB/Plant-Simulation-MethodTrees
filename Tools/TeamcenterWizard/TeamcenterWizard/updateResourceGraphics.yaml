@@ -1,0 +1,50 @@
+InternalClassType: Method
+Coordinate3D: [8.7,-23.7,0]
+Name: updateResourceGraphics
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- import new graphics to the library of the model
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: updateResourceData
+ Calls		: load_TcJTs
+ 
+ Author		: Ralph Bauknecht
+ Date		: 07.02.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 07.02.2020	
+ _________________________________________________________________________________*/
+ 
+ -- loop through model library
+ for var i := 1 to Library_Objects.yDim
+ 
+ 	var stationLib : object := Library_Objects["LibObject", i]
+ 	var uid : string := Library_Objects["UniqueID", i]
+ 	var workareaTable : object := Layout_Data
+ 	
+ 	-- find lib object in workareatable
+ 	workareaTable.CursorY := 1
+ 	workareaTable.find({"UniqueID", *}, uid)
+ 	var rowWA : integer := workareaTable.CursorY -- the data
+ 	var level : integer := workareaTable["Level", rowWA]
+ 	
+ 
+ 	-- load 3D data to the library object
+ 	if stationLib.ReplaceGraphicsWithTcJT AND existsGraphicGroup(stationLib, "Teamcenter")
+ 		stationLib._3D.deleteGraphicGroup("Teamcenter") -- delete existing graphics
+ 		load_TcJTs(stationLib, workareaTable, level, rowWA, TRUE, TRUE) -- Trafo was already applied to instance
+ 	end
+ 
+ next
+RandomSeed: 1073814165
+UUID: c604ef68-ee03-4f23-a189-b195777bdb6b
+3D:
+ Mirror: [false,false,false]

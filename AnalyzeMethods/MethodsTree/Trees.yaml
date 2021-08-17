@@ -1,0 +1,25 @@
+InternalClassType: DataTable
+Coordinate3D: [-3,-1,0]
+Name: Trees
+Origin: 8f1ab797-f9a8-49b5-b7a6-fed21ba3875d
+UUID: e926ae30-999e-406f-b7ad-7036245d3040
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnIndexContents: false
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   DataType: object
+   Width: 32
+  RowFormat:
+  -
+   Index: 0
+   DataType: string
+   FastIndexAccess: true
+ ColumnIndex: [string,2,"Tree","OrigPath"]
+ Columns:

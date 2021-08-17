@@ -1,0 +1,15 @@
+InternalClassType: Method
+Coordinate3D: [-8,-1,0]
+Name: setWorker
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ var CTable : table
+ 
+ WorkerPool.getCreationTable(CTable)
+ --CTable[1,1] := .TeamcenterWizard.BasicObjects.Resources.Worker
+ CTable[2,1] := Num_Worker
+ WorkerPool.setCreationTable(CTable)
+ 
+ -- ToDo: set Import Service Table with same number
+RandomSeed: 1073814240
+UUID: 40d75266-87be-4ad9-b8fe-af52988b8d2b

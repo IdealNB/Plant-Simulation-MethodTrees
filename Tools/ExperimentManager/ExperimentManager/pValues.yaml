@@ -1,0 +1,98 @@
+InternalClassType: DataTable
+ChangePathCtrl:
+CloseCtrl:
+ConstructorCtrl:
+Coordinate3D: [56.150000000000006,-4.6999999999999993,0]
+DestructorCtrl:
+DragDropCtrl:
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: pValues
+OpenCtrl:
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+PlausibilityCtrl:
+RelabelCtrl:
+RenameCtrl:
+UUID: 5bc27780-d4ea-40eb-9653-5c54ecbfadb8
+$CustomAttributes:
+-
+ Name: OutputValue
+ DataType: string
+ Value: ""
+-
+ Name: SQR
+ DataType: method
+ RandomSeed: 222
+ Value: |+1
+  param a : real -> real
+  
+  if (a= 0.0) 
+  	return(0.0)
+  else
+  	return(a*a)
+  end
+
+-
+ Name: deleteTmpTables
+ DataType: method
+ RandomSeed: 221
+ Value: |+1
+  -- called by:_prepareReport,_resetWizard
+  var t:table := self.~.tmpTables
+  for var j := 1 to t.yDim 
+  	if t[1,j] /= void 
+  		t[1,j].deleteObject
+  	end
+  next
+  t.delete
+-
+ Name: tmpTables
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnWidth: 20
+   DataType: string
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 1
+    DataType: object
+  Columns:
+$Data:
+ Comment: ~
+ ShowComment: true
+ ListFormat:
+  Alignment: "Center"
+  ColumnIndex: true
+  ColumnWidth: 10
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Alignment: "Center"
+   Hidden: false
+   Width: 9
+  -
+   Index: 1
+   Width: 10
+  -
+   Index: 2
+   Width: 10
+  -
+   Index: 3
+   Width: 10
+  -
+   Index: 4
+   Width: 10
+  -
+   Index: 5
+   Width: 10
+  RowFormat:
+  -
+   Index: 0
+   Alignment: "Center"
+ Columns:

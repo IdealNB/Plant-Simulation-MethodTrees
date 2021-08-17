@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Comment: "last registered error handling method"
+Coordinate3D: [17,-4.8000000000000007,0]
+DataType: object
+HasInitValue: false
+Name: ModelErrorHandling
+Origin: d67cec05-ddd2-49b9-96fb-d92509183dc2
+UUID: a80ddf3e-717f-4442-8563-5523a41c667b
+Value: ""

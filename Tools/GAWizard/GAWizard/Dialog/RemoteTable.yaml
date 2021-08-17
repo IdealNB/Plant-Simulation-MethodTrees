@@ -1,0 +1,78 @@
+InternalClassType: DataTable
+Coordinate3D: [6,-1,0]
+Name: RemoteTable
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: cf1d6396-12f3-4c54-9f50-cd7cb46208b6
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+-
+ Name: setRemoteInDialog
+ DataType: method
+ RandomSeed: 447
+ Value: |+1
+  var lst:list[string];var tab:object
+  
+  tab := self.~ -- tablefile RemoteTable
+  -- update the dialog
+  lst.create
+  
+  for var j := RemoteTable.ydim downto 1 
+  	if RemoteTable[3,j] 
+  		lst.insert(1, to_str(tab[1,j]," (n)"))
+  	else
+  		lst.insert(1, to_str(tab[1,j]," (",tab[2,j],")"))
+  	end
+  next
+  if lst.dim=0 
+  	lst.insert(1, " ")
+  end
+  
+  GAwizard.setList("RemotesList",lst)
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+  -
+   Index: 2
+   Alignment: "Right"
+   DataType: integer
+   Width: 13
+  -
+   Index: 3
+   DataType: boolean
+   FormatString: "AAAAA"
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+  CellFormat:
+  -
+   Index: 1
+   Rows:
+   -
+    Index: 0
+    Alignment: "Center"
+  -
+   Index: 2
+   Rows:
+   -
+    Index: 0
+    Alignment: "Center"
+  -
+   Index: 3
+   Rows:
+   -
+    Index: 0
+    Alignment: "Center"
+ ColumnIndex: [string,4,~,"Comp Name","Num Processes","Use all cores"]
+ Columns:

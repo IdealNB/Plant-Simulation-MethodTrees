@@ -1,0 +1,91 @@
+InternalClassType: Method
+Coordinate3D: [6,-4,0]
+Name: evaluate
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- evaluate fitness of the first_individual of the generation
+ -- pointed by the attribute "_individualNum"
+ -- called via GaOptimization.evolve_
+ param allKids:table
+ 
+ var n,j:integer
+ var individual:table
+ Individuals := allKids-- Variable of type table
+ NumOfIndividual := allKids.yDim
+ 
+ currGeneration := currGeneration + 1
+ var DLGobj:object := dialog.GAWizard
+ DLGobj.setCaption("currGenR_com",to_str(currGeneration))
+ 	
+ var StatTab:object := statisticalEvaluation
+ var row:integer
+ 
+ StatTab.StartCurrGen := StatTab.yDim + 1
+ 	
+ --	print "Evaluating generation ", currGeneration;
+ dialog.readyObservations := 0
+ dialog.readyIndividuals  := 0
+ 	
+ if UsingRemote  -- checkbox		
+ 	-- preparing the 'JobsTable' for the evaluation of the next generation:
+ 	var JobTab:object := JobsTable; n := JobTab.yDim; JobTab.RangeStart := n+1
+ 	for j := 1 to NumOfIndividual 
+ 		individual := allKids[1,j].copy
+ 		row := StatTab.ydim + 1
+ 		StatTab[0,row] := individual
+ 		StatTab[0,row].name := getIndividualName(row) -- to_str("Gen ",currGeneration," Ind ",j)
+ 							
+ 		StatTab[7,row] := row -- ID
+ 	
+ 		if (lastGeneration4DuplicatesCheck = -1 OR CurrGeneration <= lastGeneration4DuplicatesCheck) AND alreadyEvaluated(j,row)  -- Is the individual already evaluated?
+ 			-- The entry in StatisticalEvaluation is done by method 'alreadyEvaluated_'.
+ 			for var k := 1 to NumRuns 
+ 				n := n + 1 -- This indivudual is already evaluated.
+ 				JobTab.writeRow(1,n, currGeneration, j, k, "ready")
+ 				-- state of an observation is 'open' later 'process' and finally 'ready'
+ 			next
+ 			--Dialog.readyIndividuals := Dialog.readyIndividuals + 1;
+ 			--Dialog.readyObservations := Dialog.readyObservations + NumRuns;
+ 		else -- This_indivudual is not yet evaluated:
+ 			for var k := 1 to NumRuns 
+ 				n := n + 1
+ 				JobTab.writeRow(1,n, currGeneration, j, k, "open") -- JobsTable
+ 				-- state of an observation is 'open' later 'process' and finally 'ready'
+ 			next
+ 		end
+ 	next -- j
+ 	JobTab.RangeEnd := n
+ 	--print "Gen: ",currGeneration,", Range ",JobTab.RangeStart," -> ",JobTab.RangeEnd;
+ 	
+ 	DLGobj.setCaption("currIndivR_com",to_str(Dialog.readyIndividuals))
+ 	DLGobj.setCaption("currRunR_com",to_str(Dialog.readyObservations))
+ 	
+ 	if currGeneration = 1 
+ 		DistributedSimulation.Start -- generates the remote process
+ 	else
+ 		DistributedSimulation.ActivateMachines
+ 	end
+ 	-- end of UsingRemote
+ 	
+ else -- not distributed simulation
+ 	
+ 	StatTab.currRow := StatTab.ydim + 1
+ 	
+ 	for j := 1 to NumOfIndividual 
+ 		individual := allKids[1,j].copy
+ 		row := StatTab.ydim + 1
+ 		StatTab[0,row] := individual
+ 		StatTab[0,row].Name := getIndividualName(row) --to_str("Gen ",currGeneration," Ind ",j)
+ 		StatTab[7,row] := row
+ 	next
+ 	
+ 	individualNum := 1
+ 	currRunNo := 1
+ 		
+ 	DefSeed4Run(currRunNo)
+ 	
+ 	eventController.reset-- executeNewCallChain(nextIndividual) => init + start
+ 	firstReset := true
+ end
+RandomSeed: 458
+UUID: c53c3c29-3adb-4589-8e7f-ce12cb3eeab9

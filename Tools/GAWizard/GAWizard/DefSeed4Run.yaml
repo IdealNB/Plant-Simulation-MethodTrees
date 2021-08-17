@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [43.3,-4,0]
+Name: DefSeed4Run
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- determine and set the seed table of a observation
+ -- Called by: NewJob_, eval_and_next (endSim), evaluate (GAoptimization), dialog
+ -- Non distributed simulation: eval_and_next (via endSim), nextIndividual (first run)
+ -- Distributed simulation: NewJobId (in case of successful remote parametrization
+ param ObservNo:integer->table
+ 
+ if eventController /= void 
+ 	eventController.RandomNumbersVariant := ObservNo
+ end
+
+RandomSeed: 413
+UUID: fcbe5b78-94f0-4b6b-8f94-d2d6e5598fa3

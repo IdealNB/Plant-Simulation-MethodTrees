@@ -1,0 +1,63 @@
+InternalClassType: DataTable
+Coordinate3D: [-4,7,0]
+Name: Frames
+Origin: 14b0b0f3-9be3-467f-95b4-1d31fdb86fdd
+UUID: 416f0b30-fa72-47f4-88ad-37577e627b33
+$CustomAttributes:
+-
+ Name: tooltip
+ DataType: string
+ Value: "all frames containing a given basic object"
+-
+ Name: reg
+ DataType: method
+ RandomSeed: 36
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,z4/k2p+O3qPv2cL89vfYg5iYysuoytDs2fq9/Jmd07STmfGUl/TinMbfia7MqIr+7/6Q9u2E65SQqaq2gsDh0qmX1L6fp6Xim/nck467iZu0/tz84+qkjKyurIy0xpCn2JecxOTgqdes/9fJ+rjK2eWK5tieguLD3YKhrcj25qXdtsOj+/GqiNai0Jaa8KSauabfwMffze/L0vLPoJjC3pablYjpk/Du05z/9vqsp4zSiueG2+n5zJSbo7WD3qWpr/W7w87Z682d4bOF97SH/bTjosvkwIyA8onHgLrG9aTyq9v/4NnWlbacvtri9vaM/uzelaGv7OOygouD0o378qPQ9/SyuePbiYE]
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 50
+  DataType: string
+  MaxXDim: 1
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 20
+  -
+   Index: 1
+   Alignment: "Center"
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnIndex: true
+     ColumnWidth: 20
+     DataType: object
+     MaxXDim: 2
+     ShowDataType: true
+     ColumnFormat:
+     -
+      Index: 1
+      Alignment: "Left"
+     -
+      Index: 2
+      Alignment: "Left"
+      DataType: string
+     RowFormat:
+     -
+      Index: 0
+      Hidden: false
+    ColumnIndex: [string,3,~,"abs path","rel path"]
+    Columns:
+   Width: 11
+  RowFormat:
+  -
+   Index: 0
+   Alignment: "Center"
+   Hidden: false
+ ColumnIndex: [string,2,"Basic object","Frames"]
+ Columns:

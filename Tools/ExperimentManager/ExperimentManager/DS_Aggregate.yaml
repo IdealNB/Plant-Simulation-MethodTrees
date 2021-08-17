@@ -1,0 +1,56 @@
+InternalClassType: Method
+Coordinate3D: [45.5,-18.85,0]
+Name: DS_Aggregate
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Distributed Simulation Interface
+ var ExNo,ObNo, row:integer
+ DS_ObservValues.delete
+ for var j:= 1 to DS_Output.yDim
+ 	var s:string := DS_Output[1,j]
+ 	var a:string[] := splitString(s,";")
+ 	row += 1
+ 	DS_ObservValues[1,row] := str_to_num(a[1])
+ 	DS_ObservValues[2,row] := str_to_num(a[2])
+ 	for var i := 3 to a.dim
+ 		DS_ObservValues.setDataType(i,"real")
+ 	next
+ 	
+ 	for var i := 3 to a.dim
+ 		s := a[i]
+ 		if strLPos(":",s) > 0
+ 			DS_ObservValues.setDataType(i,"time")
+ 			DS_ObservValues[i,row] := str_to_time(s)
+ 		else
+ 			DS_ObservValues[i,row] := str_to_num(s)
+ 		end
+ 	next
+ next
+ 
+ DetailedResults.delete
+ Results.delete({2,Input.yDim + 1}..{*,*})
+ 
+ var obsTab:table
+ var numOut:integer := Output.yDim
+ for var k := 1 to DS_ObservValues.yDim -- sim run
+ 	ExNo := DS_ObservValues[1,k]
+ 	ObNo := DS_ObservValues[2,k]
+ 	for var n := 1 to numOut
+ 		if DetailedResults[7*n,ExNo].void
+ 			DetailedResults.createNestedList( 7*n, ExNo) -- Exp is active
+ 			obsTab := DetailedResults[7*n, ExNo]
+ 			DetailedResults[7*n, ExNo].name := to_str("Ex",ExNo," Out",n)
+ 		else
+ 			obsTab := DetailedResults[7*n, ExNo]
+ 		end
+ 		obsTab[1,ObNo] := DS_ObservValues[n+2,k]
+ 	next -- n output value
+ next -- k sim run
+ 
+ for var j := 1 to ExpTable.yDim
+ 	CalcStatistics4Exp(j)
+ next
+ 
+ prepReport
+RandomSeed: 170
+UUID: 8a8bd290-2db0-45bb-b518-128534f24e7e

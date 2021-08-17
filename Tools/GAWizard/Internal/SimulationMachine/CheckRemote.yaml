@@ -1,0 +1,124 @@
+InternalClassType: Method
+Coordinate3D: [6.75,-6.25,0]
+Name: CheckRemote
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- Check whether the remote process is running yet (with errorhandler)
+ -- called by: ConnectProcess_, _RunProcess of all remote machines (periodically call in _Observer)
+ ->boolean
+ if eMPlantHandle <= 0 then return false; end
+ 	
+ var sema:object := rootfolder.Internal.&sema -- object Variable
+ waituntil sema.value = false prio 1
+ sema.value := true
+ 	
+ var eMPlant:any := getInterfaceOfRemoteProcess(eMPlantHandle)  -- this method has an error handler
+ 		
+ var machTab:object := ~.MachinesTable
+ var row:integer := MachineIndex
+ 
+ var portionReady:real
+ if (Eventcontroller /= void) AND (Eventcontroller.End > 0) 
+ 	var endTime:time := Eventcontroller.End
+ 	var currTime:time := eMPlant.getValue(to_str(StartNetwork,".simTime"))
+ 	portionReady := round(100 * currTime/endTime, 2)
+ end
+ 
+ var CheckRemoteMeth:object := self
+ var now:datetime := sysDate
+ 
+ if eMPlant.getValue(to_str(StartNetwork,".isRunning")) 
+ 	if portionReady > 0
+ 		machTab.addLogging(to_str("Simulation is running ",portionReady," % ready."), JobId, MachineIndex, false) -- "Simulation is running ",portionReady," % ready."))
+ 	else
+ 		machTab.addLogging(to_str("Simulation is running ",portionReady," % ready."), JobId, MachineIndex, false) -- "Simulation is running."
+ 	end
+ 	CheckRemoteMeth.lastCheckTime := now
+ 		
+ else -- The simulation is not running:			
+ 	if (JobId > 0) AND eMPlant.getValue(to_str(StartNetwork,".simTime"))>0  -- (CheckRemoteMeth.lastCheckedJob = JobId) AND (CheckRemoteMeth.lastCheckTime_+ 0.8 * ObserverPeriod < now) then
+ 				
+ 		if machTab[10,MachineIndex] /= "ready for evaluation"  -- Otherwise the simulation end of the jobId is already registered and M_ResultingMethod_will be called later
+ 			-- register the results of the job
+ 			-- "No simulation is running. The last check was ", now - CheckRemoteMeth.lastCheckTime," ago."
+ 			machTab.addLogging(to_str("No simulation is running. The last check was ", now - CheckRemoteMeth.lastCheckTime," ago."), JobId, MachineIndex, false)
+ 			if machTab[10,MachineIndex] /= "Canceled simulation" 
+ 				~.~.M_ReadResult(eMPlant, JobId) -- evaluation like EventSink(1,""), register the end and the duration of the job
+ 			end
+ 			machTab[9,row] := -1
+ 			machTab[10,row] := "idle"
+ 			JobId := -1
+ 			
+ 			&RunProcess.executeNewCallChain
+ 			CheckRemoteMeth.lastCheckTime := now
+ 			sema.value := false
+ 			return (eMPlant /= VOID)
+ 		end
+ 		CheckRemoteMeth.lastCheckedJob := -2
+ 		
+ 	else
+ 		-- waiting in_CheckRemote in_EventSink.
+ 		machTab.addLogging("No simulation is running and wait for ready message.", JobId, MachineIndex, false)
+ 		CheckRemoteMeth.lastCheckTime := now
+ 		CheckRemoteMeth.lastCheckedJob := JobId
+ 	end
+ end -- The simulation is not running.
+ 
+ var t:time := ~.QuitAfterTime -- setting of the dialog 'Terminate after time'
+ if t > 0  -- a timeout is possible	
+ 	var JobsTab:object := ~.~.JobsTable
+ 	var stateCol:integer := JobsTab.stateColumnNo
+ 
+ 	if JobId = -1  -- waiting for other Remote machines
+ 		eMPlant.QuitAfterTime(2000 * t)
+ 		-- "Start the 'Terminate after time' anew."
+ 		machTab.addLogging("Start the 'Terminate after time' anew.", JobId, MachineIndex, false)
+ 		
+ 		&RunProcess.executeNewCallChain
+ 		sema.value := false
+ 		return (eMPlant /= VOID)
+ 		
+ 	elseif JobId > 0 AND JobsTab[stateCol+2,JobId] + t < sysdate  -- Start + QuitAfterTime < now
+ 		var TimeOutInfo:string := "The simulation was stopped because the simulation time exceeds the Terminate after time."
+ 		machTab.addLogging(TimeOutInfo, JobId, MachineIndex, false)
+ 		-- measure the simulation running time
+ 		t := sysdate - startDateTime
+ 		machTab[16,row] := machTab[16,row] + t
+ 		machTab[15,row] := machTab[15,row] + 1
+ 		
+ 		JobsTab[stateCol,JobId] := "ready" -- state
+ 		JobsTab[stateCol+3,JobId] := sysdate -- register the end and the duration of the job
+ 		JobsTab[stateCol+4,JobId] := JobsTab[stateCol+3,JobId] - JobsTab[stateCol+2,JobId]
+ 		
+ 		-- register some results, if necessary (for instance in the GAwizard, set the fitness to the penalty_value)
+ 		-- ExpMgr: M_TreatError
+ 		~.stopSim(JobId)
+ 
+ 		machTab[9,row] := -1
+ 		machTab[10,row] := "idle"
+ 		JobId := -1
+ 		
+ 		&RunProcess.executeNewCallChain
+ 		sema.value := false
+ 		return (eMPlant /= VOID)
+ 					
+ 	end -- JobId > 0
+ end -- if t > 0 (QuitAfterTime)
+ 
+ sema.value := false
+ return (eMPlant /= VOID)
+RandomSeed: 479
+UUID: 7882340c-eb26-4532-a154-401b8553ca63
+$CustomAttributes:
+-
+ Name: lastCheckTime
+ DataType: datetime
+ Value: 2015-1-1
+-
+ Name: lastCheckedJob
+ DataType: integer
+ Value: 0
+-
+ Name: Errorhandler
+ DataType: object
+ Value: "ErrorHandler"

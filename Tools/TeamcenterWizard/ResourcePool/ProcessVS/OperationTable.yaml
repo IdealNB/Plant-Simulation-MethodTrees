@@ -1,0 +1,32 @@
+InternalClassType: DataTable
+Coordinate3D: [-8,2,0]
+Name: OperationTable
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 0660fa97-0916-40f3-9c91-42764592786e
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 31
+  -
+   Index: 2
+   DataType: time
+   Width: 10
+  -
+   Index: 3
+   Width: 10
+  -
+   Index: 4
+   Width: 11
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,5,~,"Operation","Time","Part","Variant"]
+ Columns:

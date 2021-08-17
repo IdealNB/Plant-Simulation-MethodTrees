@@ -1,0 +1,307 @@
+InternalClassType: Dialog
+Coordinate3D: [8,-5,0]
+Origin: df9155d3-5265-48e2-9f28-172d2565d72c
+UUID: b7dee293-e464-4737-a9d0-ca48a8ce86eb
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 1073811464
+$Elements:
+-
+ Type: TabControl
+ Name: "Settings"
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Data"
+  Caption: "Data"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Times"
+   Caption: "Times"
+   Rect: [0,0,30,8]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "loadTime_txt"
+    Caption: "LoadTime"
+   -
+    Type: EditText
+    Name: "loadTime"
+    Caption: "8"
+    Rect: [16,0,10,0]
+    CallbackArgument: "loadTime"
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "raisingTable_txt"
+    Caption: "Raise table"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "raisingTable"
+    Caption: "10"
+    Rect: [16,1,10,0]
+    CallbackArgument: "raisingTable"
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "unloadTime_txt"
+    Caption: "Unload time"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "unloadTime"
+    Caption: "4"
+    Rect: [16,2,10,0]
+    CallbackArgument: "unloadTime"
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "loweringTable_txt"
+    Caption: "Lower table"
+    Rect: [0,3,0,0]
+   -
+    Type: EditText
+    Name: "loweringTable"
+    Caption: "5"
+    Rect: [16,3,10,0]
+    CallbackArgument: "loweringTable"
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "info_times_1"
+    Caption: "Speed of lift is calculated"
+    Rect: [0,5,0,0]
+   -
+    Type: StaticText
+    Name: "info_times_2"
+    Caption: "from these times."
+    Rect: [0,6,0,0]
+  -
+   Type: GroupBox
+   Name: "Heights"
+   Caption: "Heights"
+   Rect: [32,0,30,7]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "enterHeight_txt"
+    Caption: "Enter height"
+   -
+    Type: EditText
+    Name: "enterHeight"
+    Caption: "1"
+    Rect: [16,0,10,0]
+    CallbackArgument: "enterHeight"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "exitHeight_txt"
+    Caption: "Exit height"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "exitHeight"
+    Caption: "2"
+    Rect: [16,1,10,0]
+    CallbackArgument: "exitHeight"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "info_heights_1"
+    Caption: "Lift will move between"
+    Rect: [0,3,0,0]
+   -
+    Type: StaticText
+    Name: "info_heights_2"
+    Caption: "these Z-coordinates."
+    Rect: [0,4,0,0]
+ -
+  Type: TabPage
+  Name: "Graphics"
+  Caption: "Graphics"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Beam"
+   Caption: "Beam"
+   Rect: [1,0,30,4]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "beamLength_txt"
+    Caption: "Beam length"
+   -
+    Type: EditText
+    Name: "beamLength"
+    Caption: "2.5"
+    Rect: [15,0,10,0]
+    CallbackArgument: "beamLength"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "beamthickness_txt"
+    Caption: "Beam thickness"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "beamThickness"
+    Caption: "0.2"
+    Rect: [15,1,10,0]
+    CallbackArgument: "beamThickness"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "amountJoints_txt"
+    Caption: "Amount joints"
+    Rect: [0,2,0,0]
+   -
+    Type: Drop-Down
+    Name: "amountJoints"
+    Caption: ["2","3","4","5"]
+    Rect: [15,2,10,0]
+    CallbackArgument: "amountJoints"
+  -
+   Type: GroupBox
+   Name: "Top"
+   Caption: "Top"
+   Rect: [34,0,30,5]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "topWidth_txt"
+    Caption: "Top width"
+   -
+    Type: EditText
+    Name: "topWidth"
+    Caption: "2"
+    Rect: [15,0,10,0]
+    CallbackArgument: "topWidth"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "topLength_txt"
+    Caption: "Top length"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "topLength"
+    Caption: "3"
+    Rect: [15,1,10,0]
+    CallbackArgument: "topLength"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "topThickness_txt"
+    Caption: "Top thickness"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "topThickness"
+    Caption: "0.3"
+    Rect: [15,2,10,0]
+    CallbackArgument: "topThickness"
+    DataType: 9
+    Password: false
+   -
+    Type: StaticText
+    Name: "shellThickness_txt"
+    Caption: "Shell thickness"
+    Rect: [0,3,0,0]
+   -
+    Type: EditText
+    Name: "shellThickness"
+    Caption: "0.1"
+    Rect: [15,3,10,0]
+    CallbackArgument: "shellThickness"
+    DataType: 9
+    Password: false
+  -
+   Type: GroupBox
+   Name: "Colors"
+   Caption: "Colors"
+   Rect: [1,4,30,4]
+   $Elements:
+   -
+    Type: Button
+    Name: "beamColors"
+    Caption: "Beam Colors"
+    Rect: [0,0,12,0]
+    CallbackArgument: "beamColors"
+   -
+    Type: Button
+    Name: "topClassColors"
+    Caption: "Top colors"
+    Rect: [14,0,12,0]
+    CallbackArgument: "topClassColors"
+   -
+    Type: Button
+    Name: "baseColors"
+    Caption: "Base colors"
+    Rect: [0,1,12,0]
+    CallbackArgument: "baseColors"
+   -
+    Type: Button
+    Name: "outerShellColors"
+    Caption: "Shell Colors"
+    Rect: [14,1,12,0]
+    CallbackArgument: "outerShellColors"
+  -
+   Type: GroupBox
+   Name: "Products"
+   Caption: "Products"
+   Rect: [34,5,30,2]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "muLength_txt"
+    Caption: "Product length"
+   -
+    Type: EditText
+    Name: "muLength"
+    Caption: "0.5"
+    Rect: [14,0,10,0]
+    CallbackArgument: "muLength"
+    DataType: 9
+    Password: false
+ -
+  Type: TabPage
+  Name: "Utilities"
+  Caption: "Utilities"
+  $Elements:
+  -
+   Type: Button
+   Name: "toggleMUPosVisible"
+   Caption: "Toggle mu-pos visibility"
+   Rect: [1,0,25,0]
+   CallbackArgument: "toggleMUPosVisible"
+  -
+   Type: Button
+   Name: "openUtilization"
+   Caption: "Utilization Chart"
+   Rect: [33,0,25,0]
+   CallbackArgument: "openUtilization"
+  -
+   Type: Button
+   Name: "assembleLift"
+   Caption: "Assemble lift"
+   Rect: [1,1,25,0]
+   CallbackArgument: "assembleLift"
+-
+ Type: StaticText
+ Name: "update_txt"
+ Caption: "Press apply to update!"
+ Rect: [52,9,0,0]

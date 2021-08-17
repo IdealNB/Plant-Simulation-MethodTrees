@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2.8,-5,0]
+DataType: integer
+HasInitValue: false
+Name: Num_Worker
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: a9142394-cc1d-4061-8137-3d98ae3d8c85
+3D:
+ ExcludeFromShowContentOfLocation: false
+Value: 1

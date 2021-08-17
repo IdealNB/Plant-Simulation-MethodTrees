@@ -1,0 +1,90 @@
+InternalClassType: Part
+AutomaticRouting: false
+BookPntHRelative: 0
+BookPntLRelative: 0.5
+BookPntWRelative: 0.5
+ChangePathCtrl:
+ConstructorCtrl:
+Coordinate3D: [-3,3,0]
+CostingActive: false
+CreateIn3D: true
+Destination:
+DestructorCtrl:
+DragDropCtrl:
+Label: ""
+MoveToFolderCtrl:
+MUHeight: 0.1
+MULength: 0.5
+MUWidth: 0.4
+Name: Part
+OpenCtrl:
+PlausibilityCtrl:
+ProdStatOn: true
+RelabelCtrl:
+RenameCtrl:
+ResetDestinationWhenAtDestination: true
+RouteWeightingAttr: ""
+UUID: 26b5f967-a825-4965-aef2-6d003f16e293
+$BasicObject: true
+3D:
+ GraphicGroupNames: ["default"]
+ LockedGraphicGroups: []
+ MaterialActive: false
+ Mirror: [false,false,false]
+ Poses:
+ Rotation: [0,0,0,-1]
+ ScaleAutomatically: true
+ StatesOrientation: "(Off)"
+ VisibleGraphicGroups: ["default"]
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,0.4,0]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [0,0,0]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: false
+$IconArray:
+-
+ Name: "Operational"
+ Transparent: true
+ Size: [17,17]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAARrzcRrzcgIAAgIAAgIAARrzcRrzcgIAAgIAAgIAAgIAAgIAA
+ - gIAARrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - RrzcRrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyM
+ - RrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMFFyM
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - RrzcRrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyM
+ - RrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMFFyM
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+RrzcFFyMMo6+Mo6+Mo6+FFyMgIAA
+ - gIAARrzcFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMgIAA
+ - gIAAgIAAgIAAgIAAgIAAFFyMFFyMgIAAgIAAgIAAFFyMFFyMgIAAgIAAgIAAgIAAgIAA
+-
+ Name: "Waiting"
+ Transparent: true
+ Size: [17,17]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAARrzcRrzcgIAAgIAAgIAARrzcRrzcgIAAgIAAgIAAgIAAgIAA
+ - gIAARrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - RrzcRrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyM
+ - RrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMFFyM
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - RrzcRrzcRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyMRrzcRrzcRrzcRrzcFFyM
+ - RrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMFFyM
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcAP//AP//AP//RrzcFFyMAP//AP//AP//RrzcFFyMAP//AP//AP//FFyMgIAA
+ - gIAARrzcFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMRrzcFFyMFFyMFFyMFFyMFFyMgIAA
+ - gIAAgIAAgIAAgIAAgIAAFFyMFFyMgIAAgIAAgIAAFFyMFFyMgIAAgIAAgIAAgIAAgIAA

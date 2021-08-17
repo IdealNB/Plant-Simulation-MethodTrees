@@ -1,0 +1,81 @@
+InternalClassType: DataTable
+Coordinate3D: [13.05,-0.099999999999999645,0]
+CreateIn3D: false
+Name: ExpTable
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+PlausibilityCtrl: "Dialog.closeExpTab"
+UUID: 5c277103-dfd0-468a-a133-78c75e0f617a
+$CustomAttributes:
+-
+ Name: getExpString
+ DataType: method
+ RandomSeed: 305
+ Value: |+1
+  param ExpNo:integer->string
+  
+  var nExp :integer
+  if NOT UsingTables then
+  	nExp := 1
+  else
+  	nExp := max(1,ExpTable.yDim)
+  end
+  if usingRules then
+  	nExp := max(nExp, NumRulesExp)
+  end
+  
+  var numDigits:integer := floor(log10(ExpNo))+1-- since ExpNo = 1 do not use 'ceil'
+  var maxDigits:integer := floor(log10(nExp))+1
+  if numDigits < maxDigits 
+  	for var j := numDigits+1 to maxDigits 
+  		result := to_str("0",result)
+  	next
+  end
+  result := to_str(" ",result,ExpNo)
+-
+ Name: getExpID
+ DataType: method
+ RandomSeed: 304
+ Value: |+1
+  param ExpNo:integer->string
+  var expT:object := ExpTable
+  --if expT.RowIndex_
+  	result := expT[0, ExpNo]
+  	if strLen(result) = 0
+  		result := to_str("Exp",expT.getExpString(ExpNo))
+  	end
+  
+  --else
+  --	result := to_str("Exp",expT.getExpString(ExpNo))
+  --end
+$Data:
+ Comment: |+1
+  Enter the input values for each experiment.\r
+  If you want to run single experiments and preserve already simulated experiments, mark the experiments with true and false, respectively.
+ ShowComment: true
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: real
+  FormatString: "-15.2"
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 9
+  -
+   Index: 1
+   Alignment: "Center"
+   DataType: boolean
+   FormatString: "AAAAA"
+   Width: 5
+  CellFormat:
+  -
+   Index: 0
+   Rows:
+   -
+    Index: 0
+    Alignment: "Center"
+ ColumnIndex: [string,2,"Name","Active"]
+ Columns:

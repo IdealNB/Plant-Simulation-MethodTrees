@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Color: 16711680
+Comment: "recommended 5:00"
+Coordinate3D: [6.0500000000000007,-6.3000000000000007,0]
+DataType: time
+HasInitValue: false
+Name: ObserverPeriod
+Origin: d67cec05-ddd2-49b9-96fb-d92509183dc2
+ShowDataType: true
+UUID: caf6978e-db4e-449c-b2a3-696148681a84
+Value: 5:00

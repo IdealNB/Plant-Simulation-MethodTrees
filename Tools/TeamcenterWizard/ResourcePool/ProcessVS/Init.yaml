@@ -1,0 +1,60 @@
+InternalClassType: Method
+Coordinate3D: [-8,0,0]
+Name: Init
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- inits the object 
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: 
+ Calls		: setWorker
+ 
+ Author		: Ralph Bauknecht
+ Date		: 24.10.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 29.09.2019	RBA		set ProcTime, Availability and MTTR to internal station	
+ 20.08.2020	RBA		create new failure profile "Teamcenter"
+ 16.06.2021	RBA		use sum to calc init cycle time
+ _________________________________________________________________________________*/
+ 
+ if ProcTime.Type = "const"
+ 	ProcessVS.ProcTime := ProcTime
+ end
+ 
+ -- ProcessVS.XDim := Capacity -- TODO: use ParallelStation as basic object in ProcessVS
+ 
+ Num_Worker := NumWorker -- use of NumWorker also in other objects
+ setWorker -- set number of workers in the WorkerPool
+ 
+ if Availability < 100 
+ 	if MTTR = 0 -- failure profile setting
+ 		MTTR := 60 -- use standard value if no input from TC
+ 	end
+ 	if ProcessVS.Failures.getFailure("Teamcenter") = VOID -- failure profile is not existing
+ 		ProcessVS.Failures.createFailure("Teamcenter", Availability, MTTR, "ProcessingTime", 0, 0, TRUE) -- create failure profile
+ 	else -- set data to existing failure profile
+ 		ProcessVS.Failures.Teamcenter.Availability := Availability
+ 		ProcessVS.Failures.Teamcenter.Mttr := MTTR
+ 	end
+ end
+ 
+ 
+ -- calculate sum of all times -- TODO 
+ Cycle_Time := 0
+ if OperationTable.yDim > 0
+ 	Cycle_Time := OperationTable.sum({"Time",1}..{"Time",*})
+ else
+ 	Cycle_Time := ProcTime
+ end
+RandomSeed: 1073814241
+UUID: d650c3c9-6400-48fb-805f-acbb249ab314
+3D:
+ VisibleGraphicGroups: ["default","init"]

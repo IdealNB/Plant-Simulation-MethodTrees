@@ -1,0 +1,84 @@
+InternalClassType: Method
+Coordinate3D: [15,-2,0]
+Name: Generate
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- calls all methods that generate a model from the data tables
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: deleteAllObjects, insert_LayoutObjects, insert_ProcessObjects, 
+ 			  write_Process_Data, deleteData, set_CurrentDirectory, ...
+ 
+ Author		: Ralph Bauknecht
+ Date		: 04.09.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 23.10.2018	RBA		added check if data tables are not empty
+ 04.12.2018	RBA		remove change management
+ 26.08.2019	RBA		add set_CurrentDirectory
+ 17.09.2019	RBA		call write_Process_Data in Public/TcW_Methods
+ 17.03.2020	RBA		changed to 1 Connectors variable to switch between settings
+ 24.03.2020	RBA		call positionPERT
+ 02.04.2020	RBA		call create_Products
+ 04.05.2021	RBA		removed customizable methods in Public
+ _________________________________________________________________________________*/
+ 
+ if Layout_Data.yDim = 0 AND Process_Data.yDim = 0 AND LogProcess_Data.yDim = 0
+ 	promptMessage("No data available!", "Please import data first.")
+ 	return
+ end
+ 
+ set_CurrentDirectory -- sets the working directory to the model folder
+ 
+ infoBox("Building model from data. This may take a while.", TRUE) -- show message while building in the background
+ create_ModelLib      -- creates or links a folder to host the class objects for the model
+ deleteAllObjects     -- delete any existing model objects
+ insert_LayoutObjects -- generate new model from Layout_Data
+ create_Products		 -- generate MU objects in the library
+ 
+ infoBox("Setting process data.", TRUE) -- show message while building in the background
+ custom_Methods.write_Process_Data(current) -- write Process Data to the generated resources 
+ 	
+ if Build_ProcessLevel
+ 	insert_ProcessObjects -- generate blackbox resources from Process_Data if checked
+ end
+ 
+ get_All_Levels -- fill hierarchy tables for connections
+ 	
+ infoBox("Setting up connectors.", TRUE) -- show message while building in the background
+ if Connectors = "SequenceNumbers"
+ 	Iterate_connectors(tbl_connections) -- connect by sequence numbers
+ elseif Connectors = "Process_PERT"
+ 	connectProcessPERT_Layout -- connect layout by process pert data
+ 	if Build_ProcessLevel
+ 		connectPERT_BBProc -- connect blackbox processes by pert data
+ 	end
+ elseif Connectors = "Station_PERT"
+ 	connectStationPERT_Layout
+ elseif Connectors = "AutoConnectLines"
+ 	connectLines -- autoconnect lines 
+ end
+ 	
+ if Set_PERTPos
+ 	positionPERT -- set the position of the objects to PERT positions; overwrite graphical positions
+ end
+ 
+ Import_History["Applied_In_Model", Import_History.ydim] := true -- actual data was used to generate model
+ 	
+ if Delete_Data
+ 	deleteData -- delete all imported data files from local folder
+ end
+ 	
+ infoBox("", TRUE) -- close message
+RandomSeed: 1073814199
+UUID: db68f9c0-0003-4e43-a989-e430959d35df
+3D:
+ Mirror: [false,false,false]

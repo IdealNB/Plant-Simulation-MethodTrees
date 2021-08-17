@@ -1,0 +1,12 @@
+InternalClassType: Interface
+Coordinate3D: [-3,0,0]
+ExitStrategyBlocking: true
+Name: IN
+Origin: 2efe1555-83d4-41df-bd18-3f63267c468e
+RandomSeed: 1
+UUID: 58c0568a-9223-4c91-bef1-ccd2efa6e1fc
+$Successors:
+-
+ $Succ: bb2228ff-d9e1-4e23-abf1-c529db7672e1
+ Origin: 568e0ea5-2c83-44ea-93ab-48ca7402b907
+ UUID: bd133b57-f5ca-477f-bc7c-cc937ee2ce28

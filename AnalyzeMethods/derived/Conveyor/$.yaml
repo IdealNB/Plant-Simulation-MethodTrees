@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Conveyor
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 6074b243-9a72-4ca7-9759-50455ace061f
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 7c731570-d948-4c2b-9e77-b766317e6825
+- 1b8a451b-59ac-41d0-a232-45b1db811c6d
+- 45705220-774a-4f38-b15d-47efd204c448
+- 7f456881-ea06-4b96-bde3-69b75f0b2b67
+- b41f414c-379b-4102-911f-1daced391db2
+- 6048abe7-b647-4783-b669-37477fa1415e
+- e42c515e-1591-4fd4-8357-d3ca33f33e13

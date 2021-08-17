@@ -1,0 +1,141 @@
+InternalClassType: Method
+Coordinate3D: [3,-26.9689,0]
+Name: write_WorkplanToProduct
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: generates a workplan in an attribute of an MU
+ _________________________________________________________________________________
+ Parameters	: new library object, row, Product_Data or Layout_Data
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Product_Data
+ Calls		: --
+ 
+ Author		: Ralph Bauknecht
+ Date		: 02.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 25.11.2020	RBA		add check for InContextID
+ _________________________________________________________________________________*/
+ 
+ param byref objectLib : object, i : integer, dataTable : object
+ 
+ var wpTable : table := self.workplanTable -- work table for MU workplan
+ 
+ if NOT objectLib.hasAttribute("WorkPlan")
+ 	objectLib.createAttr("WorkPlan", "Table") -- create MU attribute
+ end
+ 
+ var prodICID : string := dataTable["InContextID", i] -- incontext ID of the product
+ 
+ if prodICID /= "" -- if the product is used in a process
+ 
+ 	for var j := 1 to Process_Data.yDim -- loop through Process_Data
+ 	
+ 		if Process_Data["ConsumedParts", j] /= VOID -- if there is a product linked to the process
+ 		
+ 			Process_Data["ConsumedParts", j].CursorY := 1
+ 			if Process_Data["ConsumedParts", j].find({"InContextID",*}, prodICID)
+ 			
+ 				var wpRow : integer := wpTable.yDim + 1
+ 				wpTable["Process", wprow] := Process_Data["Name", j]		-- process step name
+ 				wpTable["Time", wprow] := Process_Data["Time", j]			-- process step time
+ 			
+ 				wpTable.createNestedList("Time Details", wprow, to_Str(Process_Data["Time", j])) -- subtable for operation times
+ 			
+ 				var level : integer := Process_Data["Level", j]
+ 				var k := j+1 -- start with the next line
+ 				var m := 1
+ 				while Process_Data["Level", k] > level -- go through all sub process operations
+ 					wpTable["Time Details", wprow]["Operation", m] := Process_Data["Name", k]
+ 					wpTable["Time Details", wprow]["Time", m] := Process_Data["Time", k]
+ 					k += 1
+ 					m += 1
+ 				end -- while Process_Data["Level", k] > level
+ 				
+ 				wpTable["ID", wprow] := Process_Data["ID", j]				-- process step own ID
+ 				wpTable["Successor", wprow] := Process_Data["Successor", j]	-- process step succs
+ 		
+ 				if Process_Data["UsedResources", j] /= VOID -- if there is a station linked to the process
+ 				
+ 					var StationICID : string := Process_Data["UsedResources", j]["InContextID", 1]
+ 					Created_Objects.CursorY := 1
+ 					if Created_Objects.find({"InContextID",*}, StationICID)
+ 					
+ 						wpTable["Station", wprow] := Created_Objects["Link", Created_Objects.CursorY]	-- process step station
+ 			
+ 					end --Created_Objects.find({"InContextID",*}, StationICID)
+ 			
+ 				end -- if Process_Data["UsedResources", j] /= VOID
+ 			
+ 			end -- if Process_Data["ConsumedParts", j].find({"InContextID",*}, prodICID)
+ 	
+ 		end --if Process_Data["ConsumedParts", j] /= VOID
+ 	
+ 	next
+ 
+ end -- prodICID /= ""
+ 
+ objectLib.WorkPlan := wpTable -- write WP to MU attribute
+ wpTable.delete -- empty work table
+RandomSeed: 1073814157
+UUID: e8d7c6dc-c7df-41f0-b5d9-2491889f1eee
+$CustomAttributes:
+-
+ Name: workplanTable
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 6
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 2
+    DataType: time
+   -
+    Index: 3
+    DataType: table
+    Prototype:
+     EditorPermissions: 12
+     ListFormat:
+      ColumnIndex: true
+      ColumnWidth: 5
+      DataType: string
+      MaxXDim: 2
+      ShowDataType: true
+      ColumnFormat:
+      -
+       Index: 1
+       Width: 11
+      -
+       Index: 2
+       DataType: time
+       Width: 10
+      RowFormat:
+      -
+       Index: 0
+       Hidden: false
+       DataType: string
+       FastIndexAccess: true
+     ColumnIndex: [string,3,~,"Operation","Time"]
+     Columns:
+   -
+    Index: 6
+    DataType: object
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+    DataType: string
+    FastIndexAccess: true
+  ColumnIndex: [string,7,~,"Process","Time","Time Details","ID","Successor","Station"]
+  Columns:

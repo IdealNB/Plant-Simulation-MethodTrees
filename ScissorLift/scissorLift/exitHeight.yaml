@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [7,3.6000000000000005,0]
+DataType: real
+HasInitValue: false
+Name: exitHeight
+Origin: e84f209f-f52a-4ebb-ba53-900e877e7687
+UUID: 60d9bb6c-6054-48ab-b228-4c7aee94d51e
+Value: 4

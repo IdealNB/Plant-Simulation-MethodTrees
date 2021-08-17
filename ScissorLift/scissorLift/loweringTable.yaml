@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [12,2.1809000000000003,0]
+DataType: time
+HasInitValue: false
+Name: loweringTable
+Origin: e84f209f-f52a-4ebb-ba53-900e877e7687
+UUID: d20480fb-260c-40c4-934a-20552a5e1afc
+Value: 5

@@ -1,0 +1,32 @@
+InternalClassType: Method
+Coordinate3D: [15,-27,0]
+Name: connectLines
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- for all created objects executes connectAutomatically
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 11.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ 11.12.2018 
+ _________________________________________________________________________________*/
+ 
+ // template of Connector
+ var Connector : object := RootFolder.BasicObjects.MaterialFlow.Connector
+ 
+ for var i := 1 to Created_Objects.yDim loop
+ 	Created_Objects["Link", i].connectAutomatically
+ next
+RandomSeed: 1073814200
+UUID: 18f9db71-d799-4d48-80eb-fff690cdf2b8

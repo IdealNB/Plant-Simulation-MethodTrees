@@ -1,0 +1,45 @@
+InternalClassType: Method
+Coordinate3D: [1.6999999999999993,-9,0]
+Name: markBottleneckObject
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- for external call
+ 
+ resourceStats.sort(2,"down")  --- find the object with maximal working portion
+ var obj:object := resourceStats[1,1]
+ var x:integer := obj.xpos
+ var y:integer := obj.ypos
+ var w,h:integer
+ obj.getIconSize(w,h)
+ 
+ obj.~.drawEllipse(-15,x-(w/2)-10,y-(h/2)-10,w+20,h+20,makeRGBValue(11, 222, 11),5)
+ --drawEllipse(Layer:<integer>, X:<integer>, Y:<integer>, Width:<integer>, Height:<integer>, RGB:<integer>, LineWidth:<integer>)
+ 
+ 
+ resourceStats.sort(4,"down")  --- object with max waiting
+ obj := resourceStats[1,1]
+ x := obj.xpos
+ y := obj.ypos
+ obj.getIconSize(w,h)
+ obj.~.drawEllipse(-15,x-(w/2)-10,y-(h/2)-10,w+20,h+20,colors[1,3],5)
+ 
+ resourceStats.sort(5,"down")  --- object with max blocked
+ obj := resourceStats[1,1]
+ x:= obj.xpos
+ y:= obj.ypos
+ obj.getIconSize(w,h)
+ obj.~.drawEllipse(-15,x-(w/2)-10,y-(h/2)-10,w+20,h+20,colors[1,4],5)
+ 
+ resourceStats.sort(7,"down")  --- object with max disrupted
+ obj := resourceStats[1,1]
+ x := obj.xpos
+ y := obj.ypos
+ obj.getIconSize(w,h)
+ obj.~.drawEllipse(-15,x-(w/2)-10,y-(h/2)-10,w+20,h+20,colors[1,6],5)
+RandomSeed: 58
+UUID: 565653f5-0465-4319-95e8-477a19a71018
+$CustomAttributes:
+-
+ Name: ReportObject
+ DataType: object
+ Value: ""

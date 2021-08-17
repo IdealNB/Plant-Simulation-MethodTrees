@@ -1,0 +1,145 @@
+InternalClassType: Dialog
+Label: "RackLane"
+Origin: 0ffc9180-617b-46eb-9c46-02559209e3f7
+UUID: 2fabf5bd-3614-429f-be11-edbcb3bce988
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 1073901409
+-
+ Name: initDialog
+ $DataType: method
+ RandomSeed: 1073901407
+-
+ Name: applyDialog
+ $DataType: method
+ RandomSeed: 1073901405
+-
+ Name: showStatistic
+ $DataType: method
+ RandomSeed: 1073901403
+-
+ Name: changeAttribute
+ $DataType: method
+ RandomSeed: 1073901401
+-
+ Name: applyAttributes
+ $DataType: method
+ RandomSeed: 1073901399
+-
+ Name: initDerivates
+ $DataType: method
+ RandomSeed: 1073901397
+-
+ Name: adoptParameters
+ $DataType: method
+ RandomSeed: 1073901395
+-
+ Name: reset
+ $DataType: method
+ RandomSeed: 1073901393
+$Elements:
+-
+ Type: CheckBox
+ Name: "NameInherit"
+ IsChecked: true
+-
+ Type: CheckBox
+ Name: "LabelInherit"
+ IsChecked: true
+-
+ Type: TabControl
+ Name: "tab_tab"
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Rack_tab"
+  $Elements:
+  -
+   Type: CheckBox
+   Name: "NumberOfColumnsInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "NumberOfRowsInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "BoxWidthInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "GapInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "BoxHeightInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "FloorThicknessInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "BoxDepthInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "GroundClearanceInherit"
+   IsChecked: true
+ -
+  Type: TabPage
+  Name: "RSU_tab"
+  $Elements:
+  -
+   Type: CheckBox
+   Name: "TrackWidthInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "RSU_speedInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "RSU_accelerationInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "RSU_decelerationInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "LoadHandler_speedInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "Carrier_speedInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "RSU_AvailabilityInherit"
+   IsChecked: true
+ -
+  Type: TabPage
+  Name: "Conveyor_tab"
+  $Elements:
+  -
+   Type: CheckBox
+   Name: "ConveyorWidthInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "ConveyorLengthInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "BaseHeightInherit"
+   IsChecked: true
+  -
+   Type: CheckBox
+   Name: "ConveyorSpeedInherit"
+   IsChecked: true
+ -
+  Type: TabPage
+  Name: "statistic_tab"

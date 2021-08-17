@@ -1,0 +1,38 @@
+InternalClassType: DataTable
+CloseCtrl: "RootFolder.Internal.Tools.closeTab"
+Coordinate3D: [49.300000000000004,0,0]
+Label: ""
+Name: IntermediateResults
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 0a97b185-d220-4f36-a5e6-6c6346da43b4
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+$Data:
+ Comment: ~
+ ListFormat:
+  Alignment: "Right"
+  ColumnIndex: true
+  ColumnWidth: 8
+  DataType: real
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 12
+  -
+   Index: 1
+   Width: 9
+  RowFormat:
+  -
+   Index: 0
+   FontSize: 1
+   FontColor: 0xa00000
+   Color: 0xc0c0c0
+   Hidden: false
+ ColumnIndex: [string,1,"Individuum"]
+ Columns:

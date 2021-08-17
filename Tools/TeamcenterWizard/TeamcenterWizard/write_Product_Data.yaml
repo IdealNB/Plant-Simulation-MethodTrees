@@ -1,0 +1,47 @@
+InternalClassType: Method
+Coordinate3D: [-8,-21,0]
+Name: write_Product_Data
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Product Data to the generated MUs
+ -- This is only called for MUs that a re generated from the Products table data (BOM). 
+ 
+  To add user defined / customized code here please open this method in the Public folder of the TeamcenterWizard library.
+  Switch off inheritance and add your code. This ensures that your changes are not overwritten when updating of the library.
+ _________________________________________________________________________________
+ Parameters	: homeframe (TeamcenterWizard), libMU (new object), i (actual row), dataTable (Product_Data)
+ 			  
+ ReturnValues: none
+ 
+ Called By	: create_LibObjects
+ Calls		: write_WorkplanToProduct
+ 
+ Author		: Ralph Bauknecht
+ Date		: 26.03.2021
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 26.03.2021	RBA		
+ 05.05.2021	RBA		removed customizable methods in Public
+ 18.06.2021	RBA		add call for write_WorkplanToProduct
+ _________________________________________________________________________________*/
+ 
+ param homeframe, libMU : object, i : integer, dataTable : object
+ -- homeframe is the TeamcenterWizard frame holding all tables, methods and settings
+ -- libMU is the generated MU in the TeamcenterLibrary.ModelName.MUs
+ -- i is the row in the Product_Data table
+ -- dataTable is the Product_Data table
+ 
+ -- the process steps defined for the product are set as a workplan to the MU
+ homeframe.write_WorkplanToProduct(libMU, i, dataTable)
+ 
+ homeframe.write_VariantsToProduct(libMU, i, dataTable)
+ 
+ -- add your code here
+RandomSeed: 1073814143
+UUID: 0bc82261-35e8-48eb-a643-ed4de6d02449
+3D:
+ Mirror: [false,false,false]

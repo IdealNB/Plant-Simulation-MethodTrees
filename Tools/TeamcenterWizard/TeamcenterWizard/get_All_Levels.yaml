@@ -1,0 +1,86 @@
+InternalClassType: Method
+Coordinate3D: [4,-29,0]
+Name: get_All_Levels
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- writes a structured table of layout and process data
+ _________________________________________________________________________________
+ Parameters	: none
+ 
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: Iterate_levels
+ 
+ Author		: Ralph Bauknecht
+ Date		: 16.01.2019
+ _________________________________________________________________________________
+ History:
+ Date		Author	Description
+ 16.01.2019	RBA		add Process_Data handling, add Process_Connections table, add 2 parameters to m_Iterate_levels
+ 17.01.2019	RBA		change name from m_Get_All_Levels to get_All_Levels
+ 22.01.2019	RBA		deaktivate process data because of low performance
+ 17.03.2020	RBA		deactivate 'connect areas, if PERT activated' because call of the method has changed
+ 29.04.2021	RBA		delete unused code; restructure the call to Iterate_levels
+ _________________________________________________________________________________*/
+ 
+ var	workareaTableLayout : object := Layout_Data
+ var	workareaTableProcess : object := Process_Data
+ 
+ -- Occ_IDs are strings to identify each element in the workarea-table
+ -- These elements will be sorted in tbl_connections according their level
+ var table_counter : integer := 1
+ var level_counter : integer
+ var current_Table : table
+ var current_children : string[]
+ 
+ -- Determine max. levels in workareaTableLayout
+ if workareaTableLayout.getColumnNo("Level") /= -1
+ 	var MAX_levels : integer := workareaTableLayout.max({"Level", 1}..{"Level", *})
+ else
+ 	MAX_levels := 0
+ end
+ 
+ for level_counter := 0 to MAX_levels loop
+ 	for var j := 1 to workareaTableLayout.ydim loop
+ 		if workareaTableLayout["Level", j] = level_counter then
+ 			tbl_connections.createNestedList("Occ_ID", table_counter, workareaTableLayout["ID", j])
+ 			tbl_connections["Level", table_counter] := level_counter
+ 			tbl_connections["Children", table_counter] :=  workareaTableLayout["ChildrenIds", j]
+ 
+ 			--connect Ressources according Sequence Numbers
+ 			if workareaTableLayout["PlantSimClass", j] /= "" then
+ 				tbl_connections["Type", table_counter] := "Resource"
+ 				tbl_connections["Sequence_Number", table_counter] :=  str_to_num(workareaTableLayout["Sequence_Number", j])
+ 
+ 			--connect areas with Sequence Numbers
+ 			elseif workareaTableLayout["PlantSimClass", j] = "" --and PERT_Connected = false then
+ 				tbl_connections["Type", table_counter] := "Area"
+ 				tbl_connections["Sequence_Number", table_counter] :=  str_to_num(workareaTableLayout["Sequence_Number", j])
+ 
+ 			end
+ 
+ 			table_counter += 1
+ 		end
+ 	next
+ next
+ 
+ if tbl_connections.ydim > 0 then
+ 	
+ 	for var y := 1 to tbl_connections.ydim loop
+ 		current_Children.delete
+ 
+ 		if tbl_Connections["Children", y] /= "" then
+ 			current_children := SplitString(tbl_Connections["Children", y], " ")
+ 			current_table := tbl_connections["Occ_ID", y]
+ 
+ 			Iterate_levels(current_table, current_Children, MAX_levels, level_counter, workareaTableLayout, "Resource")
+ 		end
+ 	next
+ 
+ end
+RandomSeed: 1073814211
+UUID: e525c526-a3f4-4147-b34d-e718e4c51128

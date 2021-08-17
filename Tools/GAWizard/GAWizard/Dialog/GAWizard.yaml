@@ -1,0 +1,669 @@
+InternalClassType: Dialog
+ArgumentForApply: "APPLY"
+ArgumentForClose: "Close"
+ArgumentForOpen: "Open"
+CallbackMethod: "self.Callback"
+Coordinate3D: [1,-3.1500000000000004,0]
+DialogX: 70
+DialogY: 300
+Label: " Genetic Algorithms"
+Locked: false
+Name: GAWizard
+Origin: 6af6095e-7c37-4c55-b4ef-27672df98806
+ShowStandardButtons: true
+UUID: bf7a3999-f785-42b8-a628-b53818af9523
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 454
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,wIbQx+nzhcHVyrjA8NDS4r/h/OnB7JWugqj8mNO1r5uJiZWYyev1mqS/r/iU5p73kIGeyMiw5Lu1++TVt8qm14jy773K4u3u5qyHp5LLxqjY3L216pT5qKKk4M3x/ImPnKyfxM6R9tS6uvKE6JbE7NHCpfbZ58rBhLWFgv7XuOWjvfrhqb+o7MunifWyr6X+mM/n2ur69K6MwdHC/K/a05mK6p6ovseFmK2t7pGI54eby+2eh4euxbWPyve82p/m4O/0itbl2Leqw9vhufS3pLuCzNKYj4P96M++8vXd4aPY+7Tl5JSChq+ZsKzO99q25dnsj4K/zIqTzZuF75Skqp7Gr921p6Osl8OF6sDdns6lg9LOr4SunY+xopzk4NOhk9uh9YrhjdyBjqCp2Z3f4Mrt1MPjw4e++MLJ15nu2vbI4YnShvjr3Jm1qvnV3b/9jOOrpMXyts+3l4Pbhvqc8ebOq/yPiILZqfmE4JHB/fyE9qPcj9v27vyzp9jvioCAosXO7faCstXjwcOLuMei48WhkOCc77mhic/c9e2F7KeU7aXbj+HjjNG3yozVnYDj6cC/qN6lqZiv6YqRhruehJqNke2Mjbnr6PKovcTEnMaAgfjh4rP/r9Kv2o+Th53by6CXw6idxZ6825b87Lng2ZHe7YaChevBuvijy/r8ysnkpdec26G0j6ehz4j+5rfkifTdosS5n7bXoNHZ/6qks42FlKaJsa7AhcLTi4D8n5aFg8mJxYCSpMP806eB2pOQkqukq5yWwNfQ4JuGr5rUmrrAr6y7jvvE9YWr68uUntqN/6Wtosf+namo/ZTzqebhwfuLoPmPs6fTp8nA9IbJ9qCt18iNgt7Z/pLI+aa6i6r87fjw9LXa3pm/+PLb9efSqJrzgtjJz57fyN/Zlc72q6yyl53dkPyEkfaNzYKW56L16vrLhtTbjcPu177n1+mflKSU5+/Fj7HRhf6vhYGj/I2J/ZfBrOLBw830g9LjvOT9+LCFtv+2ga+xpbOWrJe6jbPupPSIj6Xi7O+KiI/8qI3WgZ3W8LLe1u+6lYiUisyq2qWUy++ksfP9u7j/rfiq9rjggfCJiLbnq9+R8Iughcrjro+jyKj0/oCGkZLjmZbDlKD26Ybur4PC3N/apNHk2cn17oqLmLyJ5oTapbLmvrzX+OiPmoyXuPuXrYG3yIifqtXa/vegpr/i1f7j577E9bfvvJaB/aTl5sGsxbK34L3DpqzQz4ek6oW1/sv2s4rz2qq+wJeRq/uzltCKssKWwuDbtJSwrdyk9fTaib6iu7LvyYTHupW2zpPkuqyHvJbaq6rm/pju+YyRmvOf/8fJrOm23qDe/My7t+LqoY7e1PLfkebZxr2M+9a67LHN0pG3w5vJssCN4M/7+cTdi8OPqOK0p8GhqZmvrePswr+vyam6w9bchZai+pPElOq64pLnpejmjJ3z5Irx2Pm7kpLttcCe6MTagsGaiJaVw8DDt9+Kg83L45mliNeKuL+m3O22vZGLjZqz56GOvrf2zoWnxoiZtqSJlpPK9PDb+IXD+fy2rKO9xvvjw9LDs7zDgIi5/+Cih8uk3Ki42O/+7LvQgrCH38DK3p+N9cLtsYS56uvM9IbH8rX/2LfmkuqNk4n6+t6i/reAyJjFoaLS5pajjfHjooHUmrLVnPqjnoK9tenvz9Hqg8PA9Yaq7cXz9P/V8ZDI7r2prdiol8StifW/r+/txKfX7emRrLb/tNfz4rHkqIDp/4zY3q7lrP+cmKq+1YibtrbosZbBoYOAia7al/PalND/9ajdy9mww77X1J7U4pDl3ubD/oLXlY2s4Zfh/IWthoevioeCjPrI18XR+YrDnoWxp67xpZCfjILkh4XzhKzxhfvrxpPir7qU4KTmxKSNn8ux7qK5+c+omKHz38Dtgsbck+Cf0+PT/Lqg053ikoyj3Z/N6ILkqMvbmq/Qg7eetMaqsp2AkKeYsYjsjdL9y5uR/fGdq6Ph/5T32MPSz8nxt8LpmsL52J6B8Y7mrae2kq/GsOLlgcPQpoL04Zj+lb+oxt21nYODr9e39vW3lsrqov6ky5vPq8zPlunnhsXO4dn4+6z4yqXZr+fIsOzQ09vU1t/LrsaM7Nq52amK6rDG7ujdj8HZ8sO7gJ7Jn5H1qJD2oLjTtsHqxeKisZaP2Jb2/+rsg+TY2ovWk8u88urBi8iJ6u/Ww9TSrY+l3euJpdn9lbX45Nq8hMel55699/P2ot+B9uqCxa7AscPUrPbQl4XKtf7Ln5aR4bbE3/qjo/rLvo2dpPeQlZXiqd/ohd2bpMfD49jSw8vr9qahzdOrxZ6d3aKlgsenvNS02dL3zNTw/Ne6jrmkzczNtIDDw7/E8pifiIOG1uOrxanCrrrigNbNpbCqjYGVjc6275ONp4KYlr/WsMnOxuufpcGVlr3Q09qOjab8quiJ9fyn7PHr6ePXuvzc1O25jcOo1NjmkuTritWqmeG9zJ7m2tXY3+jlpOCh05js376W0OauyKHExabE6tO0l/SrwOLnsZfDqb3346iqhrHkpe6Epdfbm+zdz66svIf9ytW7nuq6jZGEq5ae5pXRxLK0s6PH2sqs9sjawu+74YfSw7eg9+zvnZnq6+K5rd3v1fLPrPbapLLm+YKsl+TRkrSS5r6hs9vd/aOp5dqUwYab4/eqlraG6vP6ocnbxcW65bnotvLGqKnExOu62O7bnvyj442ooMTI1MO5kKHD9Zzng6v/5MOrtITM+dq2+8XZ+rP81oTTia/c8MGwsKKyxaHglpPHss3X75iAuOSv9pewqZ+7hf/f9ee1xpSnsoj1rtud7cmU6fWB/eHe47aX3oPs05v5ybapjLTsw5PdsYy1hYiko7vV1v22g9DUuq7u9v2fzuvT7OqArb2RkpD3kYqEm++i0YvfgOXipfy5suHD54/4jOrv6//1kru10ZT8gf25jfSXy/KitIfEjPan2cysy9Xt8r6b2Oz0uJzYjrDmjOq/6eGT8OvbhMT38LfBzJnozIqr4tWj8+rn/O3n7+ON6+zIp8OR/PiW5uPaoNXyp+bEsbq249ax48Ps7ouCt6Cc8M2vl9agiaacpYPTr/rOiPWn0JL+4KOzsuD/2s3r6Y+wobC86YG+sf6gnPzlirLu2f6Jgpr8/NKU/fOVoNOAp6f114zL7tP41JLLh7vYtL7Nyc6/hJufnM/RkYOxoIvg2PCjtcfarr/Ez/X7rMqtr5WU0s65zZ2uxfnlwrykieeHzMaR1pbv2em2/MXlgJLLsNjO+tCH/u2Z76bkren+uPr33Nfbkcqc8+vpxcPYtqjChI3s943HlNqKm5TDk8KPvfr6ucy48OGGyLa0k7D67O/dtsPGzteXmMXC9eDTzpiCqMC0uJiOzemQu83l2ePbvejt9umE7YejjNPNk+6U7MqJnNK1gc6/6au4/OP1ypTZ74nQ4Nf+h+TepbuakuGwpLuHntexrJvc7ceboueY4bfHi4vk0/SZoL+hto7QluDjhq6G98Ke5LWw+aTBoeSmyb3Ujfuz0JD0ruWunMGaxbruiv+h6p+MtYX8n4yP4syFz4Hthfb59ven9++xgNLI0a3shJuW5P738vGryZj77K/musGh//ChjqCNwLSh+qONxK+t4ruRyqKp48Xdi/GwxK6L/Oe9qYDjkZbf7fnkzI+0pZ2Ku6+boPWKufjImfKo+9qDvITy1/i6vu7c5rLxm8+u3fbZwrmi64XanqmqueLbsO+sndK/8Lbw8Pyvzvi6huH6jv7K8/iTw5PSu77Hou6q9Pvhx62P457BhdCM0b2n8ZCHxNnzo+afq8GlqJ+Bo6qzgofvk6aG1MDFrK3Jgpbt0MGWoJmD243JtIvbicv7z6Ly2O+1/fe06cDkmb6HofrSmNSEk5vrqoO3p6aEqbCJs/aaxIvosYbpxvLokp6b1ojprdXX6IjQrdD7jtX3uL/5sZq9v9Pdo73z6Jfo79fZhu6Eo6Lx6cSXsY3Ep7aIxZH1u+3s1tm8voG1v5mmj9yD5r36k4nO9Myv+5Pi7raT9LmdmMX/nqO9pvfoq4vHq++14IKEv+aZ44bgkPiRyv2rvuyH++KS4I/+lYzdkcvl3t3r+9bdnuqtvY2dgLzErtmuj9OVsLPwmrbvyJmYn8Wwr+q72PCyueS0x8Ot7/D6ye7+ieTBoN3kmM6ikvKQ4trFm9XPqPDWsZngz/20pJvsmveO6cTjqOXV6+DMlJKfm6eLgOnK+v7z8o7rup+u5pHN0L2ayafz+vPo36yfzpORxKfY366ApMnFjcmdmoaWjs/J4sG9jNGeroKlyIWBmb6Yo+6RuerC5KXr19+hmqPrqqWmhNPpyJvj9JCD3OizzoHFqp2Bg9zYkc+GyuGXm8iVqqCH5oOCtMyMv6PUoOiVtPbtyf2i1sWGu4jvrsmohfmPoqe0h77E2JGAmbrk97af+9X/l47/8qKx/r/dm+79w7LHh9Xg08yl8sGjo8+FkPzdv5eZ44H7s6jY3eGevZrr+//Q44ub86yv1ceIsprq65Lp8NTwirHjn/Cai4zuqLPcm+f7gdicpKKl+OXZxo+Y6I7yh8zz99bno/ip7YOWuKfz6KfH2rfgkPCtnuPv15yj0KTuwIv0uLvb/pX+447T58mfldi08bL9qM2Tz+yeyubywvjGgtWC3P70p+OJgYq248uTsLm9vLOKjcCV2ves8snl/oWdwfLM4pbs+pTw/buy5bHi7vHF5dnKsK6PiLnKque75I3+3fiB1vWygPn32/K0spagqYy35r/s2+C334Ko8eWLr4+N1IjvtcLIqdDmmcCw3LXB6q7XqcWbiPripLrwjISr5pu9n+/v05zMrp7vmdKpsozelu30r6Pa0sa3urDN67WKvteDno/53f2N36ST9eCRz6idnqCXn8y0gdHA+O6YkLvgmO3T2+Ga8rajuIGTyoT338HY98PDuJiLlb37md2H7vXUruTwj4i+s6LfmK6Rgqu77IGKj/KT+vLu0aeR/6vJl6e2vdDB7p265eiG0v/PtvKjgb2P6++L6PyB4o3U/PP45uD3jr6Fh/H0yq+O4M20+pGggYX65tLxzLH74d3Sl/C1vZTmo6vTlJfGka3q+PmfkNeJqpDflZaq8YKgrfLOgbyc0fn5t/2799jBkfXKm6/o/oya94fvk86etJuFwf+PiaD80OHfivSkruv+sJ7b9YeFrL/E0emlg7b69dqi0arq8qKNzN37iaaM0KCjiLHn5b+op5iTipXDyvO38sO5kPiIuZCu6Z+h9bONzdGxgpaIuaTp3uPq5NOisual/bj1wpX0vojD1v/9g4W0x+jVt7WZzcyMi5Gi84qTn/+htfqI98aknprcrtG93r+rtZ7dpLXWm4rjmrrW0Me9gt6d59ea/+OWmrzi9+nIvojju+OJga3GmfXl1Lbt79HTrr2uzpWNkKmC7aLqp67PwMnC0qSrwNHntLynxM2Dp53o3uHVlqDpqoT7lLWHvcrSz+Smj4nT+erG9Pep79Tln7fQ87aevLWX56KvzomgmJTolOy5yIX7qo7k8p79sa+HvafKlfmlt9zmkb3gwo+S5dzzlL60qda5jKLNsIHgtoH8hYSAvqXv9e7n+42MmuCh1fzo68/W9Ni8rPW8xrWOiZHa+ozI74vrwt6yjuWzsqmEpK3KpaDkwcyV4pbau924uqiJ5NvLt56w8LW58umSpPrqiLKK3oetusn5q6S41dSbpv+FjIul/aj3/rLykJLwjPHK0LCwl7vLpr/xpeCZ6pevvOiwndmS3dLKp7LAtv6G2d+ovpz6v6KnmfHKqKTgotWMho7r8szpuqfwvI/xgejB9rfu4+bf+JDK7/PKu/6asfXdhZffq/DHsYCnzq780MbBoI6qp9/1xbfXsaLTrrDy3ZG5guHUuJWJpJr/6ZPFw4XqxYOCjdiz+Je0y7mwk87+voS5kcv48Zr8zKa2tdnyxbrZ+7yfppv/jbqujeqL3aPzxJ6V0sTAyf3qhbKAvd7y3qHB7rbjwNzy5b/jl6C7k+Co97a2mbbewMezmcO20Y3AyIvq1aWYyIn/scXHqJGM/uHV88D5rZnF+/D29raS/+6L5P/ektP1lrXc16qDqJSThtC1k4WNquz7jM+Txsmf+avCrp2/pqOAs8W+zoO27+Sr6sae7qzz8rrmt9WepaL4997NzY6KsfqV9Ib37+OGv7Ch26/kuJfvs9W1+rjfx5TCzvWokJnC7balueDz6bjyqoHCmYe/943XwJyLlo706/KAzuvCiMKCyOa3vseTl7zmtrvPzPiu1YnFiMKkn+mshsjZ2Nf1ob+E79PBm/mwl4jthrng5qPAupGig7LI7dHQjOCq2IP37J/57bK8pqmPk8vKsKjB8Pis3r/Rv42N/oiPudncpd+z76nEv7Oi9f3F9ufXzJS5sMTvmMfF18OGhKmzyrGcycmZl9yZza2joKrFuI29yJ2wqKGk76j73625h5TRurDLuPiZpp/LyIyorNXwvoygg+7lud6QlPLgovztkemhvLCclbX2/prniZza8KjYm4Xur+DQjLaBg4DV+cq/4fqG89iN5NLp5ObQ2dKzqJrO4N7brIe4iqDFyPWy0eOVj7v9vPqg1YLo7+zqz7Sk4oS/udPX1K/0vq7V9sT0lJqYmbOEkr+3t6DG3uir14j34+e6mf2X1dKDz+OR3vei67zsoOaK4p/Tg6CRupGytKjjw/qciavo2u696+rg56PWxt6Rp/DI75TA2LnPw6Xy9YDz+Ynu4a/smeXgl5Hg2pudpqLM1aH5l8mAzOGYqKHe+pnL4ufLobeoo6fE9vGEjLz58JuSpb2d27qvnNWiwtj70LaE+ffSxpyjobCP9dGas+vYsLCv+uDVx/O+nrH35ajgxtjZ+c2oo/mg/qinxZeAwrb+w+HauKix4IWR+4zRwqTdjPz5waCphY/U1tfJ9Lyfu4ub/YGAh+jhxM/Hg97at7e71ciyh6m5i5jGmvi57aDB25XH/57U08SUsrOj0/mo5J2d7+/Ks6jjvNmkwrKPk/fX0vvI+Zvjk7zyzp77zaSqi8XXmImrwcPPvJabqr6k0eTHus7o49So49O9uMCbprOZ9M3HmcemsvvT9YzLlInHguWg36L10JOM/bX964u68s72h/ra/7PIrOXo/PyqrvTZ8JeSlcvQ/fPNsNeR2N65l6GwpO7E+/eT+/jM/ObLpuDmy4W1ztLpsK+8krCEg8+Ll96tot3Ny9La46HAwtDrhPKwtvrlyb7Ep9Ga7civlsTL/J/qv6XqipE]
+-
+ Name: DialogElements
+ DataType: table
+ Value:
+  Comment: "Translation of Index_Menu row 292"
+  ShowComment: true
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 2
+   RowIndex: true
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    DataType: string
+   -
+    Index: 1
+    DataType: integer
+   -
+    Index: 2
+    DataType: string
+   RowFormat:
+   -
+    Index: 0
+    DataType: string
+  ColumnIndex: [string,3,"dialogelement",~,"Comment"]
+  Columns:
+  - [0,string,85,"Define","Min_Op","Max_Op","GenSize_com","NumGen_com","Define_com","DefineProblem_C","Reliability_Gr","NumOfSimRuns_Txt","ConfigMethod_Txt","Evolution_B","start_but","chartDesired_com","BestIndividual_com","currGen_com","currRun_com","allOffSpring_B","HTML_but","StatisticsFitness_com","StatisticalEvaluation_B","child_com","resetOpt_com","startOpt_com","ProgrssionOpt_Txt","currIndiv_com","Define","Run","Evaluate","Objects_Menu","GAtablesMenu","contr","run_com","Eval_group","DistSim","useRemote","RemotesListTxt","AddAddress","TestConnection_But","RemoveAddress","QuitAfterTimeTxt","LicTypeTxt","LowPrio","showStatisticEval_CB","Miscellaneous","saveHTMLatEnd","Descript_Gr","DescrProjectName_Txt","DescProjectPers_Txt","FolderHTML_but","Recording_But","ProblemDefinition_B","FitnessTable","FitnessMethod","Fitness_B","Recording_B","Log_Txt","IntermediateResults_B","Interm_Com","bestIndividuals_B","Contents_Menu","HelpGA_Menu","HelpObject_Menu","OpenLoc_Menu","Navigate_Menu","Help_Menu","NumBestInd_com","Control_menu","Termination_meth","currFitness_com","Reset_meth","Define_Gr","FitnessTxt","resetGA_but","generationChange_meth","Group_Simulation","Param_but","No_Individual_TXT","ModelParam_Gr","SendMail_CB","Mailserver_Txt","MailReceiver_Txt","SaveHTML_Gr","ReportAtEnd_CB","showRuntimeAtEnd_CB","SimulateWith3D_CB"]
+  - [1,integer,85,201,202,203,204,205,206,207,208,209,215,210,2,214,216,217,218,219,49,224,225,226,227,228,229,230,234,235,236,237,238,239,241,242,244,245,246,247,248,249,251,252,253,254,255,256,257,259,261,262,266,267,268,269,270,271,272,273,274,275,276,277,278,279,281,282,283,284,285,286,288,240,290,291,185,186,188,132,189,374,376,375,377,379,378,329]
+  - [2,string,85,"Define","Minimum","Maximum","Size of generation:","Number of generations:","Optimization problem:","Definition of the optimization parameter:","Statistical reliability:","Observations per individual:","Configuration method:","Show","Start (213)","Evolution:","Best individuals:","Current generation:","Observation:","Show","Report","Statistics of Fitness values:","Show","Offspring diagram:","Wizard:","Optimization:"," Progress of the optimization ","Current individual:","Model","Run","Evaluate","Objects","GA Tables","GA Control"," Control of the optimization "," Analysis of the optimization ","Distribution","Use remote simulation","List of remote addresses:","Insert","Test","Remove","Termination after [time]:","Remote licence:","Lower priority","Prepare detailed evaluation","Miscellaneous","Save HTML report after the experiment run"," The HTML Report shows the information you enter ","Name of the project:","In charge:","HTML Folder","Protocol","Open","by table:","by method:","Open","Open","Recordings:","Show","Intermediate results:","Show","Contents","Help on GA","Help on Object","Open Location","Navigate","Help","Number of best individuals:","Controls","Termination","Best fitness value:","Preparation","Optimization group","Fitness calculation:","Reset","Generation Change"," Analysis of the optimization ","Set Parameters","Number of individual:"," Model parametrization ","Send e-mail","E-mail server:","E-mail recipient:"," Behavior at the end of the experiment run ","Show report","Show run time","Simulate with 3D"]
+$Elements:
+-
+ Type: Menu
+ Name: "Navigate_Menu"
+ Caption: "Navigate"
+ $Elements:
+ -
+  Type: Menu
+  Name: "OpenLoc_Menu"
+  Caption: "Open Location"
+  CallbackArgument: "OpenLoc_Menu"
+-
+ Type: Menu
+ Name: "Control_menu"
+ Caption: "Controls"
+ $Elements:
+ -
+  Type: Menu
+  Name: "Reset_meth"
+  Caption: "Preparation"
+  CallbackArgument: "Reset_meth"
+ -
+  Type: Menu
+  Name: "generationChange_meth"
+  Caption: "Generation Change"
+  CallbackArgument: "generationChange_meth"
+ -
+  Type: Menu
+  Name: "Termination_meth"
+  Caption: "Termination"
+  CallbackArgument: "Termination_meth"
+-
+ Type: Menu
+ Name: "Objects_Menu"
+ Caption: "Objects"
+ $Elements:
+ -
+  Type: Menu
+  Name: "contr"
+  Caption: "GA Control"
+  CallbackArgument: "openContr"
+ -
+  Type: Menu
+  Name: "GAtablesMenu"
+  Caption: "GA Tables"
+  CallbackArgument: "GAtablesMenu"
+-
+ Type: Menu
+ Name: "Help_Menu"
+ Caption: "Help"
+ $Elements:
+ -
+  Type: Menu
+  Name: "Contents_Menu"
+  Caption: "Contents"
+  CallbackArgument: "Contents_Menu"
+ -
+  Type: Menu
+  Name: "HelpGA_Menu"
+  Caption: "Help on GA"
+  CallbackArgument: "HelpGA_Menu"
+ -
+  Type: Menu
+  Name: "HelpObject_Menu"
+  Caption: "Help on Object"
+  CallbackArgument: "HelpObject_Menu"
+-
+ Type: TabControl
+ Name: "Tab"
+ Rect: [0,0,53,15]
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Define"
+  Caption: "Define"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Define_Gr"
+   Caption: " Optimization "
+   Rect: [0,0,47,10]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "Define_com"
+    Caption: "Optimization direction:"
+   -
+    Type: RadioButton
+    Name: "Min_Op"
+    Caption: "Minimum"
+    Rect: [22,0,0,0]
+    CallbackArgument: "Min_Op"
+    GroupID: 1
+    IsSelected: true
+   -
+    Type: RadioButton
+    Name: "Max_Op"
+    Caption: "Maximum"
+    Rect: [33,0,0,0]
+    CallbackArgument: "Max_Op"
+    GroupID: 1
+   -
+    Type: StaticText
+    Name: "NumGen_com"
+    Caption: "Number of generations:"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "NumGen_Inp"
+    Caption: "5"
+    Rect: [28,1,15,0]
+    DataType: 4
+    Password: false
+   -
+    Type: StaticText
+    Name: "GenSize_com"
+    Caption: "Size of generation:"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "GenSize_Inp"
+    Caption: "10"
+    Rect: [28,2,15,0]
+    DataType: 4
+    Password: false
+   -
+    Type: StaticText
+    Name: "DefineProblem_C"
+    Caption: "Optimization parameter:"
+    Rect: [0,4,0,0]
+   -
+    Type: Button
+    Name: "ProblemDefinition_B"
+    Caption: "Open"
+    Rect: [28,4,15,0]
+    CallbackArgument: "DefineProblem"
+   -
+    Type: StaticText
+    Name: "ConfigMethod_Txt"
+    Caption: "Configuration method:"
+    Rect: [0,5,0,0]
+   -
+    Type: EditText
+    Name: "ConfigMethod_Inp"
+    Rect: [23,5,15,0]
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "ConfigMethod_but"
+    Caption: " ..."
+    Rect: [38,5,5,0]
+    CallbackArgument: "ConfigMethod_but"
+   -
+    Type: StaticText
+    Name: "FitnessTxt"
+    Caption: "Fitness calculation:"
+    Rect: [0,6,0,0]
+   -
+    Type: RadioButton
+    Name: "FitnessTable"
+    Caption: "by table:"
+    Rect: [0,7,0,0]
+    CallbackArgument: "FitnessTable"
+    GroupID: 2
+    IsSelected: true
+   -
+    Type: Button
+    Name: "Fitness_B"
+    Caption: "Open"
+    Rect: [28,7,15,0]
+    CallbackArgument: "fit_but"
+    Enable: false
+   -
+    Type: RadioButton
+    Name: "FitnessMethod"
+    Caption: "by method:"
+    Rect: [0,8,0,0]
+    CallbackArgument: "FitnessMethod"
+    GroupID: 2
+   -
+    Type: EditText
+    Name: "FitnessMethod_Inp"
+    Rect: [23,8,15,0]
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "FitnessMethod_but"
+    Caption: " ..."
+    Rect: [38,8,5,0]
+    CallbackArgument: "FitnessMethod_but"
+  -
+   Type: GroupBox
+   Name: "Reliability_Gr"
+   Caption: " Statistical reliability "
+   Rect: [0,11,47,2]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "NumOfSimRuns_Txt"
+    Caption: "Observations per individual:"
+   -
+    Type: EditText
+    Name: "NumRuns_I"
+    Caption: "1"
+    Rect: [28,0,15,0]
+    DataType: 4
+    Password: false
+ -
+  Type: TabPage
+  Name: "Run"
+  Caption: "Run"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "run_com"
+   Caption: " Control of the optimization "
+   Rect: [0,0,47,3]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "resetOpt_com"
+    Caption: "Wizard:"
+   -
+    Type: Button
+    Name: "resetGA_but"
+    Caption: "Reset"
+    Rect: [28,0,15,0]
+    CallbackArgument: "resetGA"
+    Enable: false
+   -
+    Type: StaticText
+    Name: "startOpt_com"
+    Caption: "Optimization:"
+    Rect: [0,1,0,0]
+   -
+    Type: Button
+    Name: "start_but"
+    Caption: "Starten"
+    Rect: [28,1,15,0]
+    CallbackArgument: "startStop"
+  -
+   Type: GroupBox
+   Name: "ProgrssionOpt_Txt"
+   Caption: " Progress of the optimization "
+   Rect: [0,4,47,5]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "currFitness_com"
+    Caption: "Best fitness value:"
+   -
+    Type: StaticText
+    Name: "currFitnessR_com"
+    Caption: " "
+    Rect: [20,0,0,0]
+   -
+    Type: StaticText
+    Name: "currGen_com"
+    Caption: "Current generation:"
+    Rect: [0,1,0,0]
+   -
+    Type: StaticText
+    Name: "currGenR_com"
+    Caption: " "
+    Rect: [20,1,0,0]
+   -
+    Type: StaticText
+    Name: "currIndiv_com"
+    Caption: "Current individual:"
+    Rect: [0,2,0,0]
+   -
+    Type: StaticText
+    Name: "currIndivR_com"
+    Caption: " "
+    Rect: [20,2,0,0]
+   -
+    Type: StaticText
+    Name: "currRun_com"
+    Caption: "Observation:"
+    Rect: [26,2,0,0]
+   -
+    Type: StaticText
+    Name: "currRunR_com"
+    Caption: " "
+    Rect: [40,2,0,0]
+   -
+    Type: StaticText
+    Name: "log_Txt"
+    Caption: "All recordings:"
+    Rect: [0,3,0,0]
+   -
+    Type: Button
+    Name: "Recording_B"
+    Caption: "Open"
+    Rect: [28,3,15,0]
+    CallbackArgument: "log_but"
+  -
+   Type: GroupBox
+   Name: "ModelParam_Gr"
+   Caption: " Model parametrization "
+   Rect: [0,10,47,3]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "No_Individual_TXT"
+    Caption: "Number of the individual:"
+   -
+    Type: EditText
+    Name: "No_Individual_Inp"
+    Rect: [28,0,15,0]
+    CallbackArgument: "Validation_Individual"
+    DataType: 4
+    Password: false
+   -
+    Type: Button
+    Name: "Param_but"
+    Caption: "Set Parameters"
+    Rect: [20,1,23,0]
+    CallbackArgument: "Param_but"
+ -
+  Type: TabPage
+  Name: "Evaluate"
+  Caption: "Evaluate"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Eval_group"
+   Caption: " Analysis of the optimization "
+   Rect: [0,0,47,5]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "BestIndividual_com"
+    Caption: "Best individuals:"
+   -
+    Type: Button
+    Name: "bestIndividuals_B"
+    Caption: "Show"
+    Rect: [28,0,15,0]
+    CallbackArgument: "Best_But"
+   -
+    Type: StaticText
+    Name: "NumBestInd_com"
+    Caption: "Number of best individuals:"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "NumBestInd_inp"
+    Caption: "5"
+    Rect: [28,1,15,0]
+    DataType: 4
+    Password: false
+   -
+    Type: StaticText
+    Name: "chartDesired_com"
+    Caption: "Evolution:"
+    Rect: [0,2,0,0]
+   -
+    Type: Button
+    Name: "Evolution_B"
+    Caption: "Show"
+    Rect: [28,2,15,0]
+    CallbackArgument: "ChartOnOff"
+   -
+    Type: Button
+    Name: "HTML_but"
+    Caption: "Bericht"
+    Rect: [7,3,30,0]
+    CallbackArgument: "HTML_but"
+  -
+   Type: GroupBox
+   Name: "Group_Simulation"
+   Caption: " Analysis of the simulation "
+   Rect: [0,6,47,5]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "showStatisticEval_CB"
+    Caption: "Provide detailed evaluation"
+    CallbackArgument: "showStatisticEval_CB"
+    IsChecked: true
+   -
+    Type: StaticText
+    Name: "StatisticsFitness_com"
+    Caption: "Statistics of Fitness values:"
+    Rect: [0,1,0,0]
+   -
+    Type: Button
+    Name: "StatisticalEvaluation_B"
+    Caption: "Show"
+    Rect: [28,1,15,0]
+    CallbackArgument: "StatisticsFitness"
+   -
+    Type: StaticText
+    Name: "Interm_Com"
+    Caption: "Intermediate results:"
+    Rect: [0,2,0,0]
+   -
+    Type: Button
+    Name: "IntermediateResults_B"
+    Caption: "Show"
+    Rect: [28,2,15,0]
+    CallbackArgument: "Interm_But"
+   -
+    Type: StaticText
+    Name: "child_com"
+    Caption: "Offspring diagram:"
+    Rect: [0,3,0,0]
+   -
+    Type: Button
+    Name: "allOffSpring_B"
+    Caption: "Show"
+    Rect: [28,3,15,0]
+    CallbackArgument: "child"
+ -
+  Type: TabPage
+  Name: "DistSim"
+  Caption: "Distribution"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "DistSim_Gr"
+   Rect: [0,0,47,13]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "useRemote"
+    Caption: "Use distributed simulation"
+    CallbackArgument: "CB_useRemote"
+   -
+    Type: StaticText
+    Name: "RemotesListTxt"
+    Caption: "Computer and number of parallel processes:"
+    Rect: [0,1,0,0]
+    Enable: false
+   -
+    Type: ListBox
+    Name: "RemotesList"
+    Rect: [0,2,27,5]
+    CallbackArgument: "RemotesList"
+    Enable: false
+   -
+    Type: Button
+    Name: "AddAddress"
+    Caption: "Insert"
+    Rect: [30,2,12,0]
+    CallbackArgument: "AddAddress_B"
+    Enable: false
+   -
+    Type: Button
+    Name: "TestConnection_But"
+    Caption: "Test"
+    Rect: [30,3,12,0]
+    CallbackArgument: "TestConnection_But"
+    Enable: false
+   -
+    Type: Button
+    Name: "RemoveAddress"
+    Caption: "Remove"
+    Rect: [30,4,12,0]
+    CallbackArgument: "RemoveAddress_B"
+    Enable: false
+   -
+    Type: Button
+    Name: "Recording_But"
+    Caption: "Protocol"
+    Rect: [30,5,12,0]
+    CallbackArgument: "Recording_But"
+    Enable: false
+   -
+    Type: CheckBox
+    Name: "SimulateWith3D_CB"
+    Caption: "Simulate with 3D"
+    Rect: [0,8,0,0]
+    CallbackArgument: "SimulateWith3D_CB"
+    Enable: false
+    IsChecked: true
+   -
+    Type: StaticText
+    Name: "quitAfterTimeTxt"
+    Caption: "Terminate after [time]:"
+    Rect: [0,9,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "QuitAfterTime"
+    Caption: "5:00.0000"
+    Rect: [25,9,18,0]
+    CallbackArgument: "QuitAfterTime"
+    Enable: false
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "LicTypeTxt"
+    Caption: "Remote license:"
+    Rect: [0,10,0,0]
+    Enable: false
+   -
+    Type: Drop-Down
+    Name: "LicType"
+    Caption: ["Professional","Standard","Application","Runtime","Research","Educational","Simulation","Highest Available"]
+    Rect: [21,10,22,0]
+    Enable: false
+    SelectionIndex: 1
+   -
+    Type: CheckBox
+    Name: "LowPrio"
+    Caption: "Lower priority"
+    Rect: [0,11,0,0]
+    CallbackArgument: "LowPrio"
+    Enable: false
+ -
+  Type: TabPage
+  Name: "Miscellaneous"
+  Caption: "Miscellaneous"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Descript_Gr"
+   Caption: " The HTML Report shows the information you enter "
+   Rect: [0,0,47,4]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "DescrProjectName_Txt"
+    Caption: "Name of the project:"
+   -
+    Type: EditText
+    Name: "ProjName_Inp"
+    Rect: [23,0,20,0]
+    DataType: 1
+    Password: false
+   -
+    Type: StaticText
+    Name: "DescProjectPers_Txt"
+    Caption: "In charge:"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "ProjPers_Inp"
+    Rect: [23,1,20,0]
+    DataType: 1
+    Password: false
+   -
+    Type: StaticText
+    Name: "MailReceiver_Txt"
+    Caption: "E-mail recipient:"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "MailReceiver_Inp"
+    Rect: [23,2,20,0]
+    DataType: 1
+    Password: false
+  -
+   Type: GroupBox
+   Name: "SaveHTML_Gr"
+   Caption: " Behavior at the end of the experiment run "
+   Rect: [0,5,47,6]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "showRuntimeAtEnd_CB"
+    Caption: "Show run time"
+    CallbackArgument: "showRuntimeAtEnd_CB"
+    IsChecked: true
+   -
+    Type: CheckBox
+    Name: "ReportAtEnd_CB"
+    Caption: "Show report"
+    Rect: [23,0,0,0]
+    CallbackArgument: "ReportAtEnd_CB"
+   -
+    Type: CheckBox
+    Name: "saveHTMLatEnd"
+    Caption: "Save the report after the experiment run"
+    Rect: [0,1,0,0]
+    CallbackArgument: "saveHTMLatEnd"
+   -
+    Type: Button
+    Name: "FolderHTML_but"
+    Caption: "HTML Folder"
+    Rect: [0,2,16,0]
+    CallbackArgument: "openHTMLPath"
+    Enable: false
+   -
+    Type: EditText
+    Name: "FolderHTML_inp"
+    Caption: "C:\\TEMP\\"
+    Rect: [17,2,26,0]
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: CheckBox
+    Name: "SendMail_CB"
+    Caption: "Send e-mail"
+    Rect: [0,3,0,0]
+    CallbackArgument: "SendMail_CB"
+   -
+    Type: StaticText
+    Name: "Mailserver_Txt"
+    Caption: "E-mail server:"
+    Rect: [0,4,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "Mailserver_Inp"
+    Rect: [23,4,20,0]
+    Enable: false
+    DataType: 1
+    Password: false

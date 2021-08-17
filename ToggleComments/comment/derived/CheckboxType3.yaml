@@ -1,0 +1,15 @@
+InternalClassType: Checkbox
+Coordinate3D: [-4,-5,0]
+Label: "Toggle Type3"
+Name: CheckboxType3
+Origin: cac789b2-d8b2-40ec-9312-8446fb8e2c31
+UUID: ff1e1dc8-e849-43bf-8326-6bbdf2d94ef1
+$CustomAttributes:
+-
+ Name: type
+ $DataType: object
+ Value: d72e5670-62f6-4439-a4cf-592f7c6d77f0
+-
+ Name: OnClicked
+ $DataType: method
+ RandomSeed: 1073811447

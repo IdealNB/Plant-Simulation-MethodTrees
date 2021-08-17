@@ -1,0 +1,36 @@
+InternalClassType: Method
+Coordinate3D: [-6,-1,0]
+Name: renameReport
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: sets Name of the frame to report object
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TcReport Rename control
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ 21.12.2018	RBA	
+ _________________________________________________________________________________*/
+ 
+ param oldName, newName : string, userRename : boolean
+ 
+ if userRename
+ 	if check_License = "TC"
+ 		ReportObject.Name := newName
+ 		&ReportObject.Value := newName
+ 	else
+ 		?.Name := oldName
+ 	end
+ end
+RandomSeed: 1073814231
+UUID: 9b5f101a-3123-4c69-a95c-501fd2db8df5

@@ -1,0 +1,34 @@
+InternalClassType: Method
+Coordinate3D: [-8,-19,0]
+Name: write_Process_Data_BB
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Process Data to the generated blackbox resources
+ 
+  To add user defined / customized code here please open this method in the Public folder of the TeamcenterWizard library.
+  Switch off inheritance and add your code. This ensures that your changes are not overwritten when updating of the library.
+ _________________________________________________________________________________
+ Parameters	: homeframe (TeamcenterWizard)
+ 			  
+ ReturnValues: none
+ 
+ Called By	: insert_ProcessObjects, TC_Import.callback Process data update
+ Calls		: fill_OpList
+ 
+ Author		: Ralph Bauknecht
+ Date		: 18.02.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 17.09.2019	RBA		moved a derivation of this method to Public\\TcW_Methods frame and made this the active copy
+ 05.05.2021	RBA		removed customizable methods in Public
+ _________________________________________________________________________________*/
+ 
+ param homeframe : object
+ 
+ -- PROCESS DATA TO ProcessBB AND ProcessVS OBJECTS IS SET BY THE METHOD insert_ProcessObjects --
+RandomSeed: 1073814178
+UUID: 800fe961-4659-49d7-9aef-c82feb9c5d68

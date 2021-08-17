@@ -1,0 +1,21 @@
+InternalClassType: Method
+Coordinate3D: [37.300000000000004,-13,0]
+Name: RescaleSetParameter
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Called by reset via Rescale 
+ -- This process is started for the simulation of a single observation.
+ evalExpTable(currExpNo) -- set the input values defined in 'ExtTable'
+ if strLen(UserSeedValueMethod) > 0 --_UserDefSeed 
+ 	--str_to_method(to_str(~,".",UserSeedValueMethod)).execute(currExpNo,currRunNo)
+ 	--_userSeedValues(currExpNo,currRunNo)
+ 	if strLpos(".",UserSeedValueMethod) = 1
+ 		str_to_method(UserSeedValueMethod).execute(?.~)
+ 	else
+ 		str_to_method(to_str(~,".",UserSeedValueMethod)).execute(?.~)
+ 	end	
+ end
+ 
+ eventController.start --WithoutAnimation
+RandomSeed: 209
+UUID: b8e4455c-ac4a-4940-9b3b-33406aa19f5f

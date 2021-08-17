@@ -1,0 +1,42 @@
+InternalClassType: Method
+Coordinate3D: [7,10,0]
+Name: showStats
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- called by: dialog
+ var i : integer
+ 
+ if not ~.analyzed 
+ 	analyzeModel
+ end
+ 
+ if ~.~ = rootfolder 
+ 	return
+ end
+ 
+ var sortCriteria:list[string]
+ sortCriteria.create
+ for i := 1 to 5 
+ 	sortCriteria.insert(i, rootfolder.Localization.getText(i+10))
+ next
+ -- Please select the sort criteria for statistics ranking.
+ i := promptlist1(sortCriteria, rootfolder.Localization.getText(8))
+ 
+ ~.resourceStats.writeRow(1,0,rootfolder.Localization.getText(41),-- resource
+ 	rootfolder.Localization.getText(43),-- working
+ 	rootfolder.Localization.getText(48),-- setup
+ 	rootfolder.Localization.getText(42),-- waiting		
+ 	rootfolder.Localization.getText(44),-- blocked
+     rootfolder.Localization.getText(40),-- PoweringUpDown
+ 	rootfolder.Localization.getText(45),-- disrupted
+ 	rootfolder.Localization.getText(49),-- stopped
+ 	rootfolder.Localization.getText(46),-- pause
+     rootfolder.Localization.getText(47)) -- sortCriteria
+ 
+ if i > 0 
+ 	~.sortStats(i)
+ 	~.resourceStats.showComment := true
+ 	~.resourceStats.openDialog
+ end
+RandomSeed: 73
+UUID: 99500dd9-551a-45f5-902a-af54cdc9da33

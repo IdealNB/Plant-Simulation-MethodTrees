@@ -1,0 +1,32 @@
+InternalClassType: Method
+Coordinate3D: [33.45,-24.1,0]
+Name: setParameter
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: advanced dialog on tab Validation
+ param ExpNo,ObsNo:integer
+ 
+ if UsingTables
+ 	var j:integer := 2
+ 	while ExpTable[j,0]/=void  -- scan the column index
+ 		var str: string := ExpTable[j,0]
+ 		var AttrStr:string := ValueDescriptions.getOrig(str)
+ 		var AttrVal:any
+ 		if ExpTable[j, ExpNo]/=void 		
+ 			AttrVal := ExpTable[j, ExpNo]
+ 			if NOT writeValue(AttrStr, AttrVal) 
+ 				print AttrStr," := ",AttrVal," was impossible"
+ 			end
+ 		end
+ 		forget AttrVal
+ 		j += 1
+ 	end
+ end -- if UsingTables
+ 
+ if strLen(UserConfigMethod) > 0
+ 	str_to_method(to_str(~,".",UserConfigMethod)).execute(ExpNo) -- for instance, set the number of workers by the method setCreationTable
+ end
+ 
+ DefSeed4Run(ExpNo,ObsNo)
+RandomSeed: 241
+UUID: 66e4b53f-eeac-496c-892e-dc0fff7e98ff

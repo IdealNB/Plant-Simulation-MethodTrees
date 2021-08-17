@@ -1,0 +1,7 @@
+InternalClassType: Variable
+Coordinate3D: [6.5,-4,0]
+DataType: integer
+Name: MaxAmount
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: c2dcf2ba-60a1-4807-a73e-65ba9e9c9388
+Value: 20

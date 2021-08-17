@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [24.200000000000003,-8.45,0]
+Name: insRootStr
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ param obj_str,root_str:string->string
+ 
+ while strLpos(" ",obj_str)=1 loop obj_str := strOmit(obj_str,1,1);end
+ if strLpos("root",obj_str) = 1
+ 	-- already "root" inserted OR entry deleted
+ 	return obj_str
+ else 
+ 	if strLpos(".",obj_str) /= 1  -- for instance: obj_str = "station.procTime"
+ 		return to_str("root.",obj_str)
+ 	else
+ 		if strLpos(root_str,obj_str)=1   -- for instance: obj_str = ".Model.station.procTime"
+ 			var L:integer := StrLen(root_str)
+ 			return to_str("root",strOmit(obj_str,0,L+1))
+ 		else -- for instance: obj_str = ".MUs.Part.statAvgLifeSpan"
+ 			return obj_str
+ 		end
+ 	end
+ end
+RandomSeed: 60
+UUID: 34e4f637-c985-45f1-8676-6aa3834c4457

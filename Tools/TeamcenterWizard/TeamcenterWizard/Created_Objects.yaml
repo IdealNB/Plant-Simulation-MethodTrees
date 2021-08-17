@@ -1,0 +1,80 @@
+InternalClassType: DataTable
+Coordinate3D: [23,-23,0]
+Name: Created_Objects
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: fa713bb0-9389-433d-894d-132853a94845
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 16
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 9
+  -
+   Index: 2
+   Width: 13
+  -
+   Index: 3
+   DataType: object
+   Width: 23
+  -
+   Index: 4
+   Width: 12
+  -
+   Index: 5
+   DataType: real
+   FormatString: "-15.4"
+   Width: 12
+  -
+   Index: 6
+   DataType: real
+   FormatString: "-15.4"
+   Width: 6
+  -
+   Index: 7
+   DataType: real
+   FormatString: "-15.4"
+   Width: 6
+  -
+   Index: 8
+   DataType: real
+   FormatString: "-15.6"
+   Width: 5
+  -
+   Index: 9
+   DataType: real
+   FormatString: "-15.6"
+   Width: 4
+  -
+   Index: 10
+   DataType: real
+   FormatString: "-15.6"
+   Width: 4
+  -
+   Index: 11
+   DataType: real
+   FormatString: "-15.6"
+   Width: 4
+  -
+   Index: 12
+   DataType: integer
+   Width: 9
+  -
+   Index: 13
+   Width: 10
+  -
+   Index: 14
+   Width: 10
+  -
+   Index: 15
+   Width: 25
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,17,~,"Name","Label","Link","SimType","posx","posy","posz","alpha","rotx","roty","rotz","Import_Index","Occ_ID","ItemID","UniqueID","InContextID"]
+ Columns:

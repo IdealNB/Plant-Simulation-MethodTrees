@@ -1,0 +1,62 @@
+InternalClassType: Method
+Coordinate3D: [8,-22,0]
+Name: updateDeleteObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- deletes objects in the model that are deleted in TC data
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 11.12.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 01.07.2019	RBA		add check_CreatedObjects; 
+ 					add set Applied_In_Model;
+ 					set button in dialog unsensitive after execution
+ 05.12.2019	RBA		add "Applied_In_Model" column
+ _________________________________________________________________________________*/
+ 
+ var Changes : table := Import_History["Changes", Import_History.yDim]
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ for var i := 1 to Changes.ydim 
+ 	
+ 	--  item was deleted in the layout data and is not yet applied
+ 	if Changes["Change_Note", i] = "Deleted" AND Changes["Applied_In_Model", i] = "FALSE"
+ 		Created_Objects.setCursor(1,1)
+ 		
+ 		if Created_Objects.find({"UniqueID", 1}..{"UniqueID", *}, Changes["UniqueID", i])
+ 			var row := Created_Objects.cursorY
+ 			Created_Objects["Link", row].deleteObject -- delete object
+ 			Created_Objects.cutRow(row) -- delete administrative entry of object
+ 			Changes["Applied_In_Model", i] := "TRUE" -- this change is applied
+ 		end
+ 		
+ 	end
+ next
+ 
+ Import_History["Applied_In_Model", Import_History.ydim] := true
+ --TC_Import.SetSensitive("Delete_ObjectsU", FALSE) -- only apply once
+RandomSeed: 1073814186
+UUID: 650314a2-4c17-4e6a-a0e6-30b82ac3a5bb
+3D:
+ Mirror: [false,false,false]
+ StatesOrientation: "(Off)"
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true

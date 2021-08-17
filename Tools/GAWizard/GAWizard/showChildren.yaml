@@ -1,0 +1,83 @@
+InternalClassType: Method
+Coordinate3D: [11.55,-17.35,0]
+Name: showChildren
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- prepare the chart
+ -- called by:_prepareReport
+ param nGen: integer
+ 
+ var k,GenSize,a,b,indNo,childID,numNewInd: integer; var y,up,lo,delta,yScaleMin,yScaleMax:real
+ var resTab,anaTab:object;var s,s1:string
+ 
+ var withStatistics:boolean := (numRuns > 1) -- with observations
+ delta := 0.08
+ anaTab := annotations-- object
+ anaTab.delete
+ resTab := StatisticalEvaluation
+ GenSize := GaOptimization.GenerationSize
+ 
+ yScaleMin := resTab.min({1,1}..{1,*})
+ yScaleMax := resTab.max({1,1}..{1,*})
+ if withStatistics  -- with observations
+ 	yScaleMin := min(yScaleMin, resTab.min({3,1}..{3,*}))
+ 	yScaleMax := max(yScaleMax, resTab.max({4,1}..{4,*}))
+ end
+ yScaleMin := yScaleMin * 0.9
+ yScaleMax := yScaleMax * 1.1
+ OffSpring.yscaleMin := yScaleMin-- diagram
+ OffSpring.yscaleMax := yScaleMax
+ 
+ if nGen = 1  
+ 	a := 1
+ 	b := GenSize
+ else
+ 	a := GenSize * (2 * nGen - 3) + 1
+ 	b := GenSize * (2 * nGen - 1)
+ end
+ 
+ var tabChi:object := Children;    tabChi.delete
+ var row:integer
+ for k := a to b 
+ 	indNo := indNo + 1
+ 	y := resTab[1,k]
+ 	tabChi.writeRow(1,indNo, indNo, y) -- table of children
+ 	childID := resTab[7,k]
+ 		
+ 	if resTab[6,k].name ~= "penalty"  -- vertical line with the word 'Penalty', do not show ID
+ 		row := row + 1; anaTab.writeRow(1,row, 0, indNo, 0.8*yScaleMin + 0.2*yScaleMax, 0.9*yScaleMin + 0.1*yScaleMax,3,2,"Penalty")
+ 		
+ 	else -- not a penalty evaluation
+ 		if childID = k  -- show ID in the diagram
+ 			numNewInd := numNewInd + 1 -- a new_individual: its number is black (as expected)
+ 			row := row + 1; anaTab.writeRow(1,row, 0, indNo, 0.8*yScaleMin + 0.2*yScaleMax, 0.9*yScaleMin + 0.1*yScaleMax,3,2,to_str(childID))
+ 		else -- already evaluated: number is red
+ 			row := row + 1; anaTab.writeRow(1,row, 0, indNo, 0.8*yScaleMin + 0.2*yScaleMax, 0.9*yScaleMin + 0.1*yScaleMax,4,2,to_str(childID))
+ 		end
+ 		
+ 		if withStatistics  -- with observations
+ 			up     := resTab[3,k]-- min
+ 			lo     := resTab[4,k]-- max
+ 			row := row + 1;anaTab.writeRow(1,row, 0,indNo, up,lo, 3,0)-- vertical lines
+ 			row := row + 1;anaTab.writeRow(1,row, 1,up, indNo-delta,indNo+delta, 3,0)
+ 			row := row + 1;anaTab.writeRow(1,row, 1,lo, indNo-delta,indNo+delta, 3,0)
+ 		end
+ 	end
+ next
+ --- Children of generation ",nGen," with ",numNewInd," new evaluated individuals"
+ s1 := rootfolder.Localization.getMessage(57,nGen,numNewInd,"")
+ if withStatistics  -- with observations
+ 	-- s1," with Min-Max intervals of ",a," observations
+ 	OffSpring.subtitle :=  to_str(s1," ",rootfolder.Localization.getMessage(58,NumRuns,"","") )
+ else
+ 	OffSpring.subtitle := s1
+ end
+ 
+ OffSpring.annotations := OffSpring.annotations
+ OffSpring.annotations.delete
+ OffSpring.annotations.insertList(1,1, anaTab.copy({1,1}..{7,*}))
+ 
+ s := to_str("<<",OffSpring.getHTMLcode(150,100,true),">>")
+ SVGofCharts[1,nGen] := s
+RandomSeed: 398
+UUID: 343db9a5-bd1f-4353-9fc2-3710334c6619

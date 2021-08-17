@@ -1,0 +1,31 @@
+InternalClassType: DataTable
+Coordinate3D: [16.35,-12,0]
+Label: ""
+Name: HashTable
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 43cd1275-6589-4680-be2b-9d827bed9acf
+$Data:
+ Comment: |+1
+  Columns No is equal to strHash(uniqueIndivStr) mod m.\r
+  The column index is the number of items of the corresponding column.\r
+  The values are the large integers strHash(uniqueIndivStr).
+ ShowComment: true
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 8
+  DataType: integer
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+  -
+   Index: 2
+   FormatString: "-15.5"
+  RowFormat:
+  -
+   Index: 0
+   FontSize: 1
+   Color: 0xf0fbff
+   Hidden: false
+   DataType: integer
+ Columns:

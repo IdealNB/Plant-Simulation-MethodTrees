@@ -1,0 +1,9 @@
+InternalClassType: Method
+Origin: 2cf0e407-bb7b-4195-be31-121d50414312
+RandomSeed: 1073886698
+UUID: 6d5dbb0d-8f6b-4b9e-a928-f680df925b0e
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ $DataType: method
+ RandomSeed: 1073886696

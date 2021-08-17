@@ -1,0 +1,22 @@
+InternalClassType: Method
+Coordinate3D: [3.6999999999999993,-24.1,0]
+Name: sendMail
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: EndOfAllExperiments
+ -- non-distribute simulation and distribute simulation
+ var subject:string := to_str(rootfolder.Localization.getText(125),strToUpper(getenv("COMPUTERNAME"))) -- Experiment study on 
+ 
+ var ModfileStr:string := rootfolder.Localization.getText(78) -- "Model file [*.spp]:"
+ ModfileStr := strOmit(ModfileStr, strLpos("[*.spp]", ModfileStr),8) -- remove "[*.spp]"
+ ModfileStr := to_str(strTrim(ModfileStr),": ",modelFile) -- Model file: 
+ 
+ var body:string := to_str(rootfolder.Localization.getText(121),strChr(10),--The experiment run is finished.
+ 	rootfolder.Localization.getMessage(122,RunningTime,"",""),strChr(10), -- The running time was $1.
+ 	ModfileStr, strChr(10),-- Model file: 
+ 	rootfolder.Localization.getText(416),": ",current) -- Experimentmanager:
+ 
+ -- local body:string := rootfolder.Localization.getText(121);--The experiment run is finished.
+ sendSMTPMail(MailServer,MailReceiver,subject,body)
+RandomSeed: 230
+UUID: 73106433-de0c-4187-acf5-d4cb2bed3687

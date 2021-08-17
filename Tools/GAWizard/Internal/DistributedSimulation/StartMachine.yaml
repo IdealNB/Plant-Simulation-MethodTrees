@@ -1,0 +1,60 @@
+InternalClassType: Method
+Coordinate3D: [5.25,-1.85,0]
+Name: StartMachine
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- create a frame for every SimulationMachine
+ -- called by: DistributedSimulation.Start
+ param row:integer,asTest,firstStart:boolean	-- row number of MachinesTable
+ 
+ if firstStart	
+ 	var y:integer
+ 	var x:integer := row mod 5
+ 	if x = 0 then
+ 		x := 5
+ 		y := row div 5 - 1
+ 	else
+ 		y := row div 5
+ 	end
+ 	var newMachine:object := ~.rootfolder.Internal.SimulationMachine.duplicate(current)
+ 	newMachine.Coordinate3D := makeArray(6 * x, -12 - 3 * y, 0.0)
+ 	-- initialize the SimulationMachine frame attributes
+ 	newMachine.MachineIndex := row
+ 	
+ 	var RemoteName:string := MachinesTable[1,row]
+ 	newMachine.label := RemoteName
+ 	
+ 	newMachine.StartNetwork  	:= MachinesTable[3,row]
+ 	
+ 	MachinesTable[17,row] := newMachine
+ 	MachinesTable.createNestedList(8,row)
+ 	MachinesTable[8,row].name := "Logging"
+ 	
+ 	newMachine.JobId 			:= -1	-- JobId
+ 	MachinesTable[9,row]		:= -1	-- JobId
+ 	
+ else
+ 	newMachine := MachinesTable[17,row]
+ end
+ 
+ newMachine.eMPlantHandle    := 0	-- Handle
+ MachinesTable[7,row]		:= 0	-- Handle
+ 
+ if asTest
+ 	-- "Test connection to"]," '",~.DistributedSimulation.MachinesTable[1,row],"'"
+ 	infoBox(to_str(rootFolder.Localization.getMessage(368,MachinesTable[1,row],"","")),false)
+ else
+ 	var RemoteTab:object := ~.Dialog.RemoteTable
+ 	RemoteTab.setCursor(1,1)
+ 	var numCoresStr:string
+ 	if RemoteTab.find({1,1}..{1,*},RemoteName) then
+ 		numCoresStr := to_str(RemoteTab[2,RemoteTab.cursorY])
+ 	else
+ 		numCoresStr := "n"
+ 	end  	-- Starting remote process $1 on '$2'.	
+ 	infobox(rootfolder.Localization.getMessage(350,to_str(MachinesTable[19,row],"/",numCoresStr),RemoteName,""),false) 
+ end
+ 
+ newMachine.ConnectProcess(asTest,firstStart)
+RandomSeed: 472
+UUID: 127d5ce8-531b-4671-ae43-5276d2e2f1f9

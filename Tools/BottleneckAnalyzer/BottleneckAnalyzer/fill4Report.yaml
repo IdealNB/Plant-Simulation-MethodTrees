@@ -1,0 +1,29 @@
+InternalClassType: Method
+Coordinate3D: [27.1,-5.5,0]
+Name: fill4Report
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- ResourceStats is filled and sorted according to the sum working + failure
+ -- All bar charts are shown.
+ -- called by: preparing a report for an arbitrary application (external call)
+ analyzeModel
+ 
+ ResourceStats.writeRow(1,0,rootfolder.Localization.getText(41),-- resource
+ 	rootfolder.Localization.getText(43),-- working
+ 	rootfolder.Localization.getText(48),-- setup
+ 	rootfolder.Localization.getText(42),-- waiting		
+ 	rootfolder.Localization.getText(44),-- blocked
+     rootfolder.Localization.getText(40),-- PoweringUpDown
+ 	rootfolder.Localization.getText(45),-- disrupted
+ 	rootfolder.Localization.getText(49),-- stopped
+ 	rootfolder.Localization.getText(46),-- pause
+ 	rootfolder.Localization.getText(47)) -- sortCriteria
+ 
+ sortStats(3)
+RandomSeed: 59
+UUID: 9b1486bb-ce82-4824-8d96-7aab5dfcf82f
+$CustomAttributes:
+-
+ Name: ReportObject
+ DataType: object
+ Value: ""

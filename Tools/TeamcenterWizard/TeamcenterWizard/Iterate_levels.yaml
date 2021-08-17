@@ -1,0 +1,84 @@
+InternalClassType: Method
+Coordinate3D: [4.7,-29.7,0]
+Name: Iterate_levels
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- writes a structured table of layout and process data
+ _________________________________________________________________________________
+ Parameters	: none
+ 
+ ReturnValues: none
+ 
+ Called By	: get_All_Levels
+ Calls		:
+ 
+ Author		: Ralph Bauknecht
+ Date		: 22.01.2019
+ _________________________________________________________________________________
+ History:
+ Date		Author	Description
+ 22.01.2019	RBA		change name from m_Iterate_levels to Iterate_levels
+ 29.04.2021	RBA		delete unused code
+ _________________________________________________________________________________*/
+ 
+ param current_Table_ORG : table, Current_Children : any, MAX_levels, level_counter : integer, workareaTable : object, type : string
+ 
+ var current_Table : table := current_Table_ORG
+ 
+ if current_Table /= VOID then
+ 
+ 	current_Table.ColumnIndex := true
+ 	current_Table.maxXDim := 5
+ 	current_Table[1,0] := "Occ_ID"
+ 	current_Table[2,0] := "Level"
+ 	current_Table[3,0] := "Children"
+ 	current_Table[4,0] := "Type"
+ 	current_Table[5,0] := "Sequence_Number"
+ 
+ 	current_Table.SetDataType("Level", "integer")
+ 	current_Table.SetDataType("Children", "string")
+ 	current_Table.SetDataType("Type", "string")
+ 	current_Table.SetDataType("Sequence_Number", "integer")
+ 
+ 	if current_Table.GetDataType("Occ_ID") /= "table" then
+ 		current_Table.SetDataType("Occ_ID", "table")
+ 	end
+ 
+ 	for var i := 1 to Current_Children.dim loop
+ 		var Occ_ID : string := Current_Children[i]
+ 
+ 		current_Table.createNestedList("Occ_ID", i, Occ_ID)
+ 		current_Table["Level", i] := level_counter
+ 
+ 		workareatable.CursorY := 1
+ 		var bFound_ID : boolean := workareaTable.find({"ID",*}, Occ_ID)
+ 		var poiY : integer := workareaTable.CursorY
+ 		current_Table["Children", i] :=  workareaTable["ChildrenIDs", poiY]
+ 
+ 		--connect Ressources according Sequence Numbers
+ 		if workareaTable["PlantSimClass", poiY] /= "" then
+ 			current_Table["Type", i] := type
+ 			current_Table["Sequence_Number", i] :=  str_to_num(workareaTable["Sequence_Number", poiY])
+ 
+ 		end
+ 	next
+ 
+ 	if current_table.ydim /= 0 and  level_counter < MAX_levels then
+ 		level_counter +=1
+ 		for var y := 1 to current_Table.ydim loop
+ 			current_Children.delete
+ 
+ 			if current_Table["Children", y] /= "" then
+ 				current_children := SplitString(current_Table["Children", y], " ")
+ 				current_table := current_Table["Occ_ID", y]
+ 				Iterate_levels(current_table, current_Children, MAX_levels, level_counter, workareaTable, type)
+ 				current_Table := current_Table_ORG
+ 			end
+ 		next
+ 	end
+ end
+RandomSeed: 1073814223
+UUID: bc21161e-205b-4377-9058-a154b777356a

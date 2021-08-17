@@ -1,0 +1,113 @@
+InternalClassType: Track
+Capacity: 1
+Coordinate3D: [0,0,0]
+EntranceCtrl: "self.OnEntrance"
+EntranceCtrlFront: false
+EntranceCtrlRear: true
+ExitCtrlOnce: true
+Length: 2
+Origin: f6296f5c-f863-4087-b72d-f5bece44a6cd
+RandomSeed: 1
+UUID: ff7f6aac-010d-4174-953f-c8e63b9a524f
+Width: 1
+3D:
+ BaseHeight: 0.01
+ ExtConfiguration:
+ -
+  Name: "Lanes"
+  Extrusion Profile: [[-0.45,-0.01],[0.45,-0.01],[0.45,0],[-0.45,0],[-0.45,-0.01]]
+  Configuration Type: 2
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0x8cff,0x292929,0x0,0x0,0,13]
+ -
+  Name: "Frame_2"
+  Extrusion Profile: [[0.44999999999999996,-0.01],[0.49999999999999994,-0.01],[0.49999999999999994,0],[0.44999999999999996,0],[0.44999999999999996,-0.01]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+ -
+  Name: "Frame_1"
+  Extrusion Profile: [[-0.5,-0.01],[-0.45,-0.01],[-0.45,0],[-0.5,0],[-0.5,-0.01]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+ VisibleGraphicGroups: ["default"]
+$CustomAttributes:
+-
+ Name: playTranslation
+ DataType: method
+ RandomSeed: 3923
+ Value: |+1
+  param startHeight:length, endHeight:length
+  var LiftSpeed:speed := current.LiftSpeed
+  
+  // Check if object exists in 3D and if animation is turned on
+  if self.~._3D.existsWithAnimation
+      var liftTime:time  := self.~._3D.playTranslation([0, 0, startHeight], [0, 0, endHeight], LiftSpeed)
+      while liftTime > 0
+      stopuntil self.~.Failed wait liftTime                                                       
+      if waitExpired then exitloop end
+      	current.Failed := true
+      	self.~._3D.SelfAnimations.pause
+      	stopuntil not self.~.Failed
+      	current.Failed := false
+      	self.~._3D.SelfAnimations.play
+      	liftTime := self.~._3D.SelfAnimations.AnimationTimeTotal
+       end
+  else
+      var liftStart:time  := EventController.SimTime
+      liftTime  := abs(endHeight-startHeight) / LiftSpeed 
+      while liftTime > 0
+     		stopuntil self.~.Failed wait liftTime                         		
+     		if waitExpired then exitloop end
+     			liftTime -= (EventController.SimTime-liftStart)
+     			stopuntil not self.~.Failed
+     			liftStart := EventController.SimTime
+      	end        
+  end
+-
+ Name: OnEntrance
+ DataType: method
+ RandomSeed: 3922
+ Value: |+1
+  if not ?.Full 
+  	return
+  end
+  
+  
+  ?.EntranceLocked := true
+  
+  var LiftHeight:length
+  if current.succ/=void
+  	LiftHeight:= ?._3D.getPositionOfObject(current.succ,current.succ._3D.getMUAnimationPosition(0.0)).z - current.EntranceHeight
+  else
+  	LiftHeight:= current.ExitHeight - current.EntranceHeight
+  end
+  
+  self.~.playTranslation(0, LiftHeight)
+  ?.ExitLocked := false
+  				
+  stopuntil ?.Empty
+  ?.ExitLocked := true
+  
+  self.~.playTranslation(LiftHeight, 0)
+  ?.EntranceLocked := false
+-
+ Name: Reset
+ DataType: method
+ RandomSeed: 3921
+ Value: |+1
+  @.EntranceLocked := false
+  @.ExitLocked := true
+  
+  Track._3D.BaseHeight := current.EntranceHeight
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [0,2,0]

@@ -1,0 +1,72 @@
+InternalClassType: Method
+Coordinate3D: [-14,4,0]
+Name: closeExpTab
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: interaction plausibility of ExpTable, reset the wizard,
+ -- close tables of experimental design
+ 
+ var expT:object := ~.ExpTable
+ 
+ -- determine the number n of experiments:
+ for var row := expT.yDim downto 1
+ 	var EntryFound:boolean := false;
+ 	for var col := 2 to expT.xDim
+ 		if expT[col,row] /= void
+ 			EntryFound := true
+ 			exitloop
+ 		end
+ 	next
+ 	if NOT EntryFound then
+ 		expT.cutRow(row); -- empty row deleted
+ 	end;
+ next -- row
+ var n:integer := expT.yDim;
+ 
+ if ~.UsingRules
+ 	n := max(n, ~.NumRulesExp) -- set in Advances Dialog (tab Rules)
+ 	~.ReportRules.delete({0,1}..{*,*}) -- save rules names
+ end
+ --expT.delete({1,n+1}..{*,*})
+ 
+ ~.DetailedResults.delete({0,n+1}..{*,*})
+ ~.Results.delete({0,n+1}..{*,*})
+ --~._Protocol.delete({0,n+1}..{*,*})
+ ~.InputValues.delete({0,n+1}..{*,*})
+ ~.OutputValues.delete({0,n+1}..{*,*})
+ 
+ expT.RowIndex := true -- configuration by simtalk and old Experimentmanager
+ if expT.getDataType(0) /= "string"
+ 	expT.setDataType(0, "string")
+ end
+ 
+ if expT[0,0] = void
+ 	expT[0,0] := Rootfolder.Localization.getText(103) -- "Experiments"
+ end
+ 
+ var ExpStr:string
+ for var j:=1 to n
+ 	if expT[1,j] = void AND j <= expT.yDim
+ 		expT[1,j]:= true
+ 	end
+ 
+ 	ExpStr :=  expT.getExpID(j)  -- used as row index, like "Exp 01" or user-defined
+ 
+ 	~.DetailedResults[0,j]  := ExpStr; ~.DetailedResults.refillDialog
+ 	~.Results[0,j]          := ExpStr; ~.Results.refillDialog
+ 	~.InputValues[0,j]      := ExpStr; ~.InputValues.refillDialog
+ 	~.OutputValues[0,j]     := ExpStr; ~.OutputValues.refillDialog
+ 	~.ReportRules[0,j]      := ExpStr -- not opened by dialogbox
+ next
+ 
+ expT.setAlignmentColumn(1,"center")
+ for var j := 2 to expT.xDim
+ 	expT.setAlignmentColumn(j,"right")
+ next
+ 
+ expT.refillDialog
+ if ?.name /= "resetWizard"
+ 	~.ExpRunFromGeneralDesign := false
+ end
+RandomSeed: 321
+UUID: 98202401-5382-46d0-a222-7d5a96e5a42d

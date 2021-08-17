@@ -1,0 +1,41 @@
+InternalClassType: DataTable
+Coordinate3D: [28,-23,0]
+Name: Object_Mapping
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 37c932cf-778e-4869-85ed-7802a3daf305
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 4
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: true
+  -
+   Index: 2
+   DataType: object
+   Width: 40
+  -
+   Index: 3
+   DataType: boolean
+   FormatString: "AAAAA"
+   Width: 12
+  -
+   Index: 4
+   DataType: boolean
+   FormatString: "AAAAA"
+   Width: 15
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,5,~,"TC PlantSimClass","PlantSimulation Object","LengthOrientation","GetCapacity"]
+ Columns:
+ - [1,string,23,"Source","Drain","Station","ParallelStation","AssemblyStation","DismantleStation","PickAndPlace","Store","Buffer","Sorter","Conveyor","AngularConverter","Converter","Turntable","Turnplate","Track","TwoLaneTrack","StationOps","ShiftCalendar","Entity","Container","Transporter","Worker"]
+ - [2,object,23,"RootFolder.ResourcePool.Source","RootFolder.ResourcePool.Drain","RootFolder.ResourcePool.Station","RootFolder.ResourcePool.ParallelStation","RootFolder.ResourcePool.AssemblyStation","RootFolder.ResourcePool.DismantleStation","RootFolder.ResourcePool.PickAndPlace","RootFolder.ResourcePool.Store","RootFolder.ResourcePool.Buffer","RootFolder.ResourcePool.Sorter","RootFolder.ResourcePool.Conveyor","RootFolder.ResourcePool.AngularConverter","RootFolder.ResourcePool.Converter","RootFolder.ResourcePool.Turntable","RootFolder.ResourcePool.Turnplate","RootFolder.ResourcePool.Track","RootFolder.ResourcePool.TwoLaneTrack","RootFolder.ResourcePool.StationOps","RootFolder.BasicObjects.Resources.ShiftCalendar","RootFolder.ResourcePool.MUs.Part","RootFolder.ResourcePool.MUs.Container","RootFolder.ResourcePool.MUs.Transporter","RootFolder.ResourcePool.Resources.Workplace"]
+ - [3,boolean,23,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0]
+ - [4,boolean,23,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0]

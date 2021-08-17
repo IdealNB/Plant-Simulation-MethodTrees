@@ -1,0 +1,25 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: AnalyzeMethods
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: cdfc2d78-76e8-458d-9d36-3a2af760c181
+3D:
+ BackgroundColor: -1
+$Nodes:
+- e894d2e5-f9e8-4b32-8ccb-3eec69343249
+- 2587680c-8cc2-4422-90b5-873cfa737bd7
+- 6a1d4dd9-6e78-435d-ac1a-839cb25e08ba
+- 4393eed9-c045-49af-97b6-2dff93f60e1d
+- dd652573-9f51-4558-9da2-4e82a53d469e
+- fc8e0b31-34ec-425f-98a4-9bea5d7727f0
+- 8f1ab797-f9a8-49b5-b7a6-fed21ba3875d
+- f26590ba-aa2c-410a-9de6-4c434266f9fb
+- c6d60f7a-57ee-4c02-b7d2-9635feb37671
+- 1228824b-6298-488c-825f-0b55c39ee270
+- 55f1a49c-de84-461b-a427-13c57fac25ad
+- 6c3be86d-0c6c-4fea-9966-b091be278533
+- 3c58de6f-4c87-4d90-90ca-56835985762b

@@ -1,0 +1,93 @@
+InternalClassType: Method
+Coordinate3D: [-15.000000000000002,-27,0]
+Name: write_AssemblyList
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Assembly Data to the generated resources
+ -- ErrorHandler attached for objects that do not support setup 
+ _________________________________________________________________________________
+ Parameters	: station (new object), data table
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Process_Data
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 20.10.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 20.10.2020			
+ _________________________________________________________________________________*/
+ 
+ param station : object, prodList : table
+ -> string
+ 
+ var assyList : table[string, integer]
+ assyList.create
+ 	
+ -- if there are products to assemble
+ if prodList.yDim > 0
+ 	station.partListMode := "MU Types"
+ 	
+ 	for var i := 1 to prodList.yDim -- get MU names 
+ 		
+ 		Library_Objects.setCursor(1,1)
+ 		if Library_Objects.find({1,1}..{1,*}, prodList[2, i]) -- find created MU in library
+ 			var row : integer := Library_Objects.CursorY
+ 			assyList[1, assyList.yDim+1] := Library_Objects["LibObject", row].name -- MU name
+ 			assyList[2, assyList.yDim] := prodList[3, i] -- quantity
+ 		end
+ 		
+ 	next
+ 	
+ 	station.AssemblyList := assyList
+ 
+ end
+ 	
+ return "OK" -- data successfully set to the object
+RandomSeed: 1073814150
+UUID: 368add3d-b65f-488f-844c-78f88ff4d7df
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814149
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  For objects that cannot take an AssemblyList.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in write_AssemblyList
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 12.11.2020
+  _________________________________________________________________________________
+  	History: 
+  Date		Author	Description
+  12.11.2020			
+   _________________________________________________________________________________*/
+  
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  	-> string
+  	
+  /*if error = "The value of argument 4 is out of the allowed range."
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	return "Assembly list was not assigned."
+  else*/
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	return "Not possible to assign an Assembly list to this object."
+  //end

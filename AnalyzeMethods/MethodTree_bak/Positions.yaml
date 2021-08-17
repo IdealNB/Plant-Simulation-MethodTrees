@@ -1,0 +1,30 @@
+InternalClassType: DataTable
+Coordinate3D: [2,1,0]
+Name: Positions
+Origin: 8f1ab797-f9a8-49b5-b7a6-fed21ba3875d
+UUID: bd34c075-a30f-4ab5-95e0-fa119271f88a
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnIndexContents: false
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   DataType: length
+  -
+   Index: 2
+   DataType: length
+  RowFormat:
+  -
+   Index: 0
+   DataType: string
+   FastIndexAccess: true
+ ColumnIndex: [string,3,~,"X","Y"]
+ Columns:
+ - [0,string,2,"Start","End"]
+ - [1,length,2,0,0]
+ - [2,length,2,0,0]

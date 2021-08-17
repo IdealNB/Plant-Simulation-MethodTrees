@@ -1,0 +1,9 @@
+InternalClassType: Interface
+Coordinate3D: [3,0,0]
+Name: OUT
+Origin: 2efe1555-83d4-41df-bd18-3f63267c468e
+RandomSeed: 1
+Side: "Right"
+UUID: 158bd1dc-00dc-4297-8462-a80d7685da29
+$Predecessors:
+- e83fcdb4-63e3-43c8-b730-f1dc77739021

@@ -1,0 +1,77 @@
+InternalClassType: DataTable
+CloseCtrl: "self.OnClose"
+Coordinate3D: [28,-21,0]
+Name: LogProcess_Data
+OpenCtrl: "self.OnOpen"
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 56788215-f240-42ed-a671-28a6248ee419
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+-
+ Name: OnOpen
+ DataType: method
+ RandomSeed: 1073814191
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- set open/close indicator 
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: table open control
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 12.10.2020
+  _________________________________________________________________________________
+  History: 
+  Date		Author		Description
+  12.10.2020	RBA			
+  _________________________________________________________________________________*/
+  
+  self.~.openDialog
+  self.~.isOpen := TRUE
+-
+ Name: OnClose
+ DataType: method
+ RandomSeed: 1073814190
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- set open/close indicator 
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: table close control
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 12.10.2020
+  _________________________________________________________________________________
+  History: 
+  Date		Author		Description
+  12.10.2020	RBA			
+  _________________________________________________________________________________*/
+  
+  param changed: boolean
+  self.~.isOpen := FALSE
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ Columns:

@@ -1,0 +1,81 @@
+InternalClassType: Method
+Coordinate3D: [26,-7,0]
+Name: changeUserSettings
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by: EndOfAllExperiments, Start (button)
+ -- val = "read" read and store the current settings and switch off the animation
+ -- val = "restore" restore the settings before the experiment run
+ param val:string
+ var ani_MU, ani_Icon : boolean
+ switch strToLower(val)
+ case "read" 
+ 	self.setting_resetInitBox := resetInitBox(false)
+ 	self.setting_animMU := animation(false)
+ 	
+ 	if NOT ~.simulateWithAnimation
+ 		animation(false)
+ 	end
+ 	
+ 	if existsObject("EventController") 
+ 		self.setting_Realtime := EventController.Realtime
+ 		self.setting_RandomNumbersVariant := EventController.RandomNumbersVariant
+ 		self.setting_simSpeed := EventController.speed
+ 		self.setting_IncrRNVariant := EventController.IncrementRandomNumbersVariantOnReset
+ 		self.setting_SummaryReport := EventController.SummaryReport
+ 	else
+ 		return
+ 	end
+ 	EventController.speed := 100
+ 	EventController.Realtime := false
+ 	EventController.IncrementRandomNumbersVariantOnReset := false
+ 	EventController.SummaryReport := false
+ 	
+ case "restore"  -- method "Start"
+ 	resetInitBox(self.setting_resetInitBox)
+ 	animation(self.setting_animMU)
+ 	
+ 	if EventController /=void  
+ 		EventController.SummaryReport := self.setting_SummaryReport
+ 		EventController.Realtime := self.setting_Realtime
+ 		EventController.RandomNumbersVariant := self.setting_RandomNumbersVariant
+ 		EventController.speed := self.setting_simSpeed
+ 		EventController.IncrementRandomNumbersVariantOnReset := self.setting_IncrRNVariant
+ 	end
+ 
+ end
+RandomSeed: 441
+UUID: e8e1541d-eb51-41a3-b404-2469979c5add
+$CustomAttributes:
+-
+ Name: setting_resetInitBox
+ DataType: boolean
+ Value: false
+-
+ Name: setting_Realtime
+ DataType: boolean
+ Value: false
+-
+ Name: setting_RandomNumbersVariant
+ DataType: integer
+ Value: 0
+-
+ Name: setting_simSpeed
+ DataType: integer
+ Value: 100
+-
+ Name: setting_IncrRNVariant
+ DataType: boolean
+ Value: false
+-
+ Name: setting_SummaryReport
+ DataType: boolean
+ Value: true
+-
+ Name: setting_animMU
+ DataType: boolean
+ Value: false
+-
+ Name: setting_animIcon
+ DataType: boolean
+ Value: false

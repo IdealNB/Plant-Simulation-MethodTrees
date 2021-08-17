@@ -1,0 +1,32 @@
+InternalClassType: DataTable
+Coordinate3D: [26,-17.35,0]
+Name: Children
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 53ec4405-0c09-4367-9103-b41248152424
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: real
+  FormatString: "-15.2"
+  MaxXDim: 2
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   DataType: integer
+   FormatString: "-9"
+   Width: 11
+  -
+   Index: 1
+   Alignment: "Right"
+   DataType: integer
+   FormatString: "-9"
+   Width: 16
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,3,~,"Child","Fitness"]
+ Columns:

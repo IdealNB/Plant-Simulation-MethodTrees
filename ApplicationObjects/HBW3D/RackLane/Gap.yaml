@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-23,-3.7379,0]
+DataType: length
+Name: Gap
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: b84226ac-e8c2-4d37-b4cd-4e33984a300b
+$Observers:
+- [Value,"onChanges"]
+Value: 0.04

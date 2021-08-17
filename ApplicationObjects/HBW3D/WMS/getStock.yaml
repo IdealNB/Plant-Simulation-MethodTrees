@@ -1,0 +1,26 @@
+InternalClassType: Method
+Coordinate3D: [-4.5,-7.0000000000000009,0]
+Name: getStock
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // copy the content of table Content into the table provided by user
+ //--------------------------------------------------------------------------------
+ 
+ param tab: any
+ 
+  if isTable(tab) or (isObject(tab) and tab.InternalClassname="NwList2D") then
+ 	// it's a table or table object
+ 	tab.delete
+ 	tab.ColumnIndex := true
+ 	tab.setDataType(1, "string")
+ 	tab.setDataType(2, "integer")
+ 	Tab.writeRow(1, 0, "Product", "Available")
+ 	
+ 	// number products available
+ 	Content.copyRangeTo({0,1}..{1,*}, tab, 1, 1)
+ end
+RandomSeed: 2233
+UUID: 35d8c0e5-5623-4549-8511-1d98d8734c94
+3D:
+ Mirror: [false,false,false]

@@ -1,0 +1,69 @@
+InternalClassType: DataTable
+Coordinate3D: [32.7,-0.05,0]
+Name: Charts
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+PlausibilityCtrl: "self.PlausCharts"
+UUID: c87661e4-5ff8-47c2-91a2-ea6b37b51713
+$CustomAttributes:
+-
+ Name: PlausCharts
+ DataType: method
+ RandomSeed: 199
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,lLqfybe8u4HgpuTE8u6Bia/Fh+vPj9LXk7rWtcvEs66a36PQ0evb1au7nbDi26XH6fm4h/qn+MP6rvnF35+78/SD4Kry0L3Oiu7qkJCcy9mhkp2ppoOY0ND+tOCIwKX0gfqqvJ2Y8r3Ux6GwgeONgr3eupG1146cmcmh1KHYkqyf+ZWwmMjz7qTT1vT+95O1tfa/sojytvTp0fDLxpTizZLxtcyWhZ7jv/K4l+2IiPLt1eSCsYmIzNLeiais94SalbCQ4764tOeR8amy1u6unLuqqL+bgv757O7Duae89IfG3Jrdic6Qv+eIxvvqju3QvJHXqKmhj66i/PDiyr2gtOuLiYSG1Jjzh+jtpeL+k920j4A]
+-
+ Name: replace_dot
+ DataType: method
+ RandomSeed: 198
+ Value: |+1
+  -- replace_dot
+  param s:string->string
+  
+  var n,k:integer;var ReplaceStr,dotStr:string
+  
+  result := strOmit(s,1,5)
+  dotStr := "."
+  k := strLpos(dotStr,result)
+  if k = 0 then return end
+  n := strLen(result)
+  ReplaceStr := "_"
+  repeat
+  	--result := omit(result,k,1);
+  	result := to_str(strCopy(result,1,k-1),ReplaceStr,strCopy(result,k+1,n))
+  	k := strLpos(".",result)
+  until k = 0
+-
+ Name: deleteVoidEntries
+ DataType: method
+ RandomSeed: 197
+ Value: |+1
+  -- called by: resetReport_(via_resetWizard)
+  var obj:object := self.~
+  for var j := obj.yDim downto 1 
+  	if obj[1,j] = void 
+  		obj.cutRow(j)
+  	end
+  next
+$Data:
+ Comment: "Showing the results of the first observation of each experiment"
+ ShowComment: true
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 20
+  -
+   Index: 1
+   DataType: object
+   Width: 48
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,2,"Label of the Chart","Chart"]
+ Columns:

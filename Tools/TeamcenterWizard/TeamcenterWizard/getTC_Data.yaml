@@ -1,0 +1,79 @@
+InternalClassType: Method
+Coordinate3D: [8,-16,0]
+Name: getTC_Data
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- imports Teamcenter data
+ -- has an errorhandler in case the import fails or is incomplete
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: TRUE if import succeeded, even uncomplete
+ 
+ Called By	: Import
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 26.08.2019
+ _________________________________________________________________________________
+ 	History: 
+  26.08.2019
+ _________________________________________________________________________________*/
+ -> boolean
+ 
+ result := TRUE -- init 
+ 
+ TeamCenter.retrieveData(Sync_Select) -- import data from TC
+RandomSeed: 1073814171
+UUID: 6221613f-cbc0-4aab-8b8a-9710eab36f77
+3D:
+ Mirror: [false,false,false]
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814170
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  Allows to continue with imported data even if not all JTs could be retreived.
+  The used attribute __LastImportedXml is not documented, and is available from V14.2 up.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in getTC_Data
+  Calls		: 
+  
+  Author	: Ralph Bauknecht
+  Date		: 26.08.2019
+  _________________________________________________________________________________
+  	History: 
+  26.08.2019	
+   _________________________________________________________________________________*/
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  -> boolean
+  
+  print error -- show complete error message on the console
+  
+  if Teamcenter.isNameUnique("__LastImportedXml") -- does not exist in Versions < 14.2
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("Loading data from Teamcenter failed or was uncomplete.", "You need to upgrade to Plant Simulation 14.2 or higher to continue with uncomplete imports.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  elseif Teamcenter.__LastImportedXml = "" -- import failed completely
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("Loading data from Teamcenter failed.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  else -- PLMXML was imported, JTs are partially or not imported
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("Loading JT data from Teamcenter failed or was uncomplete.", "Generating a model with this import can lead to incomplete graphical representation.", "Open the console to see more information and repeat this step.")
+  	return TRUE	
+  end

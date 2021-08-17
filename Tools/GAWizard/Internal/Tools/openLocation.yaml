@@ -1,0 +1,10 @@
+InternalClassType: Method
+Coordinate3D: [9,-7,0]
+Name: openLocation
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- menu '?'
+ ?.~.openDialog
+
+RandomSeed: 496
+UUID: 197db3ff-aff7-4e46-b24e-120ef25c4db4

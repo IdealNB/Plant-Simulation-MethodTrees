@@ -1,0 +1,36 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [-8,-1,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: TeamcenterWizard
+PermitDeleteCtrl:
+RenameCtrl:
+RootFolder: true
+UUID: 5933e95b-1ead-4648-af6f-3fda2ef1ebb0
+3D:
+ BackgroundColor: -1
+Password:
+LibInfo:
+ Name: "Wizard for Teamcenter"
+ Version: "15.0.2"
+ Description: |+1
+  Imports Teamcenter data 
+  and generates a simulation model.
+  $German$Assistent für Teamcenter 
+  Importiert Teamcenter-Daten 
+  und erzeugt ein Simulationsmodell.
+ AlternativePaths: "$German$.Tools.TeamcenterWizard"
+ Requires3D: true
+ ProhibitAccess: false
+$Nodes:
+- 3b5add08-f83a-4fd5-99ec-3b5590748fa3
+- 894bca5e-0b1e-4a4e-b7cc-9e44d5278526
+- a2aaeacb-9948-4a18-81a1-050a3bd168ed
+- 87a3951d-33d4-43e6-86d0-9f62cf892185
+- c8c01533-3ec4-40a8-af07-63331e13a153
+- 17fd5f57-3e4d-4b93-9e09-07a36ed3cbad
+- c86e6e07-e3f5-4e39-b5a9-6918cdc063f4
+- c4ac15db-5f98-41d9-a994-da1c2be2e395
+- 1c99b021-57ce-473b-82ad-843a9f58f303
+- 288e0f5b-2a06-4378-8153-7e3f41231d9a

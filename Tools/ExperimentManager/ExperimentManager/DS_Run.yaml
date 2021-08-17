@@ -1,0 +1,11 @@
+InternalClassType: Method
+Coordinate3D: [45.5,-15.850000000000001,0]
+Name: DS_Run
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Distributed Simulation Interface
+ -- Start the simulation
+ 
+ EventController.start --WithoutAnimation
+RandomSeed: 190
+UUID: b2dca044-c933-4d07-bc3d-3683820492ae

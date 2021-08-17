@@ -1,0 +1,16 @@
+InternalClassType: Method
+Coordinate3D: [11.5,-39.55,0]
+Name: ShowReport
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: dialog and the context menu	
+ if DetailedResults.yDim = 0 
+ 	-- No experiment run was executed.
+ 	messageBox(rootfolder.Localization.getText(112),1,4) -- info
+ 	return
+ end
+ 
+ prepReport
+ ReportObject.show
+RandomSeed: 181
+UUID: 9d5a176d-1f00-4891-8571-cfbb646b9b40

@@ -1,0 +1,27 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [2,-4,0.05]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: InformationFlow
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 8f42b24a-cba6-4121-90ce-24c64143fb3a
+3D:
+ BackgroundColor: -1
+$Nodes:
+- 038518bf-c724-4500-a682-35fb71321f1d
+- 2a1497d8-2571-444e-b01a-2a54b0312235
+- 75dc6fb3-ff57-4f8a-b7c3-d7378ea4c021
+- b393ec41-862b-4f76-b46a-6d374d0967e8
+- de830c25-8275-4ec9-92e2-fd36fa8269c2
+- 6fa022ab-eff9-4265-b0ea-945a17619625
+- 06d27068-9330-4c19-8ec3-4a83321434f2
+- b096abd6-8ba1-4cab-91bc-eab5a61cb1bb
+- 511da01e-2e91-4c13-acdb-9ba86288ce20
+- fd46cae4-195b-4d48-b39e-27a993351c37
+- e48563fb-31b8-421d-b211-99cf7dc0770e
+- 12edef93-1d99-473a-81dd-a48cbae14199
+- b8667e32-dfcb-437b-ace9-3fed2ab3c2eb
+- 5a1f0630-8655-4744-b1ef-32b3f23a7f4e
+- 1b69bb79-b2b8-4c45-acb7-b85b5a18a70a

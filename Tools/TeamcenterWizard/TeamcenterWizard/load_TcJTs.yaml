@@ -1,0 +1,189 @@
+InternalClassType: Method
+Coordinate3D: [2.7,-22.4,0]
+Name: load_TcJTs
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- loads JTs to the objects after object generation or as updates
+ _________________________________________________________________________________
+ Parameters	: station, layout table, level, layout table row, TrafoIsSet, load graphics
+ 			  
+ ReturnValues: none
+ 
+ Called By	: insert_LayoutObjects, create_LibObjects, updateResourceGraphics
+ Calls		: make_AbsDir, make4x4Array, set_SegmentTab, set_Animation
+ 
+ Author		: Ralph Bauknecht
+ Date		: 19.12.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 19.12.2019	RBA		unhinged this code from insert_LayoutObjects; see there for history before this date
+ 29.01.2020	RBA		graphlevel is now used also in lines w/o jt files so deeper level rel trafos are correct
+ 20.03.2020	RBA		added set_SegmentTab to set length oriented objects curve according to animation line from Line Designer
+ 05.05.2020	RBA		delete "repair internal Trafo in JT" code because of problems with Toyota pilot data
+ 25.05.2020	RBA		use the new V15 syntax lines, delete the old lines
+ 08.01.2021	RBA		Changed syntax for graphic import to new version - do not use GID anymore
+ 					omit generation of new graphic group to apply trafo - multiply directly on the graphics trafo now
+ 					change TC_Connected to Data_Source
+ 12.02.2021	RBA		Bugfix Line 179: graphObj._3D.getObject(j).delete -> graphObj._3D.getObject(1).delete
+ _________________________________________________________________________________*/
+ 
+ param station, workareaTable : object, level : integer, byref i : integer, TrafoIsSet, loadGraphics : boolean
+ 
+ var tm, tmUp : real[4,4]
+ var graphLevelList : table[integer, table]
+ var gid : integer
+ var file, path : string := ""
+ 
+ if Data_Source = "TC" -- point to path where the JT files are located
+ 	path := make_AbsDir(Teamcenter.directory) + "\\\\" -- connected mode
+ else
+ 	path := path_Data -- offline mode
+ end
+ 
+ graphLevelList.create
+ 
+ 
+ var graphObj : object := VOID -- initialize; this is used after the repeat loop to check if the actual object has loaded graphics
+ tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0)) -- inital value
+ graphLevelList.delete -- this list administrates the graphics that are loaded to the actual object
+ graphLevelList[1, graphLevelList.yDim+1] := Level
+ graphLevelList.createnestedList(2, graphLevelList.yDim) -- the subtable holds the trafo
+ graphLevelList[2, graphLevelList.yDim].DataType := "real"
+ tm.copyToTable(graphLevelList[2, graphLevelList.yDim]) -- initial trafo
+ 
+ 
+ repeat
+ 		
+ 	-- load 3D graphics ----
+ 
+ 	if loadGraphics AND (station.isNameUnique("ReplaceGraphicsWithTcJT") OR (NOT station.isNameUnique("ReplaceGraphicsWithTcJT") AND station.ReplaceGraphicsWithTcJT)) -- if object graphics is allowed to be exchanged
+ 	
+ 		var graphLevel : integer := workareatable["Level",i]  -- actual graphic level
+ 		if graphLevel <= graphLevelList[1, graphLevelList.yDim] AND graphLevel > Level-- if level for next graphic is not > actual building level
+ 			repeat -- delete all levels >= next object
+ 			graphLevelList.cutRow(graphLevelList.yDim)
+ 			until graphLevelList[1, graphLevelList.yDim] < graphLevel
+ 		end
+ 
+ 		-- get the transformation matrix of type 4x4 if it is not already set to the actual object
+ 		if workareatable["Rel_Transform", i] /= "" AND NOT TrafoIsSet
+ 			tm := make4x4Array(splitStringToNum( workareatable["Rel_Transform", i], " " )) 	-- trafo of new graphic to load
+ 			tmUp.copyFromTable (graphLevelList[2, graphLevelList.yDim]) 					-- trafo of graphic of higher level
+ 			tm := tmUp * tm																-- new graphic uses own trafo + higher trafo
+ 		else -- if trafo is missing assign position, rotation and scaling 0
+ 			tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0))
+ 		end
+ 				
+ 		graphLevelList[1, graphLevelList.yDim+1] := graphLevel
+ 		graphLevelList.createnestedList(2, graphLevelList.yDim) -- the subtable holds the trafo
+ 		graphLevelList[2, graphLevelList.yDim].DataType := "real"
+ 		tm.copyToTable(graphLevelList[2, graphLevelList.yDim]) -- initial trafo
+ 
+ 		if (workareatable["JT_File",i] /= "")   -- if graphics data is available 
+ 				
+ 			-- load (additional) jt file to current station
+ 			file :=  workareatable["JT_File",i]
+ 			
+ 			switch workareatable["PlantSimClass", i]
+ 			case "Equipment"
+ 				-- add graphic to root frame
+ 				graphObj := Model_Root
+ 			else 
+ 				-- add graphic to current object
+ 				graphObj := station
+ 			end
+ 	
+ 					
+ 			if graphObj /= void and workareatable["PlantSimClass", i] /= "Equipment"
+ 				
+ 				if NOT existsGraphicGroup(graphObj, "Teamcenter")
+ 					graphObj._3D.addGraphicGroup("Teamcenter", TRUE, FALSE, FALSE)
+ 				end
+ 				
+ 				var graphGroupTC := graphObj._3d.getGraphic("Teamcenter")
+ 				-- import new graphic to graphObj that is not the root frame
+ 				var graphic := graphGroupTC.importGraphics(path + file, false, false)
+ 				-- for all sub-graphics: use relative transform matrix for proper graphics positioning
+ 				if graphic /= VOID
+ 					graphic.TransformationMatrix := graphic.TransformationMatrix * tm -- multiply new trafo on the existing trafo of the graphic
+ 							
+ 					if graphObj.internalClassName /= "Network" 
+ 						
+ 						if graphObj.hasAttribute("Length") AND graphObj._3D.hasAttribute("BaseHeight") -- is this a length oriented object
+ 							graphic.extractMUAnimation("Teamcenter") -- get animation
+ 							-- TODO: if UseLDAnim -- should this be used as default animation? New flag in dialog?
+ 							graphic.extractMUAnimation("Default") -- get animation for default use
+ 							set_SegmentTab(graphObj) -- convert imported animation line to segment table
+ 						elseif graphObj._3D.hasAttribute("MuAnimations") -- this is a place oriented object
+ 							graphic.extractMUAnimation("Default")
+ 						end
+ 						
+ 					end
+ 										
+ 				end	
+ 			end -- graphObj /= void
+ 				
+ 			
+ 			if graphObj /= void and workareatable["PlantSimClass", i] = "Equipment"
+ 				tm := splitStringToNum( workareatable["Abs_Transform", i], " " ) -- use abs Trafo since this graphic is loaded to base frame
+ 				graphGroupTC := graphObj._3d.getGraphic("deco")
+ 				graphic := graphGroupTC.importGraphics(path + file, false, false)
+ 				
+ 				if graphic /= VOID /* and workareatable["PlantSimClass", i] = "" */
+ 					graphic.TransformationMatrix := graphic.TransformationMatrix * tm -- multiply new trafo on the existing trafo of the graphic
+ 				end
+ 				
+ 			end
+ 			
+ 				
+ 			-- DEBUG - missing scale
+ 			if graphObj /= void AND graphObj /= Model_Root AND graphic /= VOID
+ 				var bbs : real[3] := graphObj._3D.BoundingBoxSize
+ 				if bbs[1] > 1000 OR bbs[2] > 1000 OR bbs[3] > 1000 -- if graphics have a very strange position or size!
+ 					if messageBox("Some graphical content of " + graphObj.Name + " (" + graphObj.Label + ") is more than 1000m from Zero! " + "This can result in strange visualization and lower performance. " + "Scale down the graphic by 0.001?", 48, 2) = 16
+ 						graphic.Scale := 0.001 -- TODO - HACK - if graphics is to big make it smaller w/o asking the user!!! Bugfix for Process Simulate robots missing scale
+ 					end
+ 				end
+ 			end
+ 			-- DEBUG
+ 	
+ 			-- optimize loaded graphics
+ 			if graphObj /= void AND graphic /= VOID AND Optimize_Graphics
+ 				graphic.optimizeByPruningTinyGraphics(0.01) -- delete elements that fit into 1cmx1cmx1cm cube 
+ 				-- graphic.optimizeByVisibilityFilter(1, 1) -- not automatically used, might delete too much
+ 				graphic.optimizeByStructureFlattening(FALSE, FALSE, TRUE) -- flattens the graphics structure
+ 			end
+ 				
+ 		end -- if workareatable["JT_File",i] /= void
+ 	end -- if station.ReplaceGraphicsWithTcJT
+ 			
+ 	i += 1
+ 		
+ 	TrafoIsSet := FALSE -- if more than 1 graphic is loaded to the object, and/or if the graphic is in the next level apply the Rel Trafo
+ 		
+ 	-- next simulation object begins here
+ 	-- if next entry has PlantSimClass              OR next entry level is lower            OR last entry in table
+ until (workareatable["PlantSimClass", i] /= "") OR (workareatable["level", i] <= level) OR i > workareatable.ydim   -- next simulation object begins here
+ 		
+ -- if no graphic file was loaded to the object show Plant Simulation standard graphics
+ if ((graphObj = void AND NOT existsGraphicGroup(station, "Teamcenter")) OR 
+ 		(graphObj /= VOID AND existsGraphicGroup(graphObj, "Teamcenter") AND graphObj._3D.getGraphic("Teamcenter").NumGraphics = 0)) AND
+ 	station /= VOID AND existsGraphicGroup(station, "default") AND station.internalClassName /= "Network"
+ 	
+ 	station._3D.showGraphicGroup("default")
+ 			-- else delete the standard graphics
+ elseif graphObj /= void AND existsGraphicGroup(graphObj, "Teamcenter") AND existsGraphicGroup(graphObj, "default")
+ 	graphObj._3D.hideGraphicGroup("default")
+ 	graphObj._3D.deletePlainGraphics -- delete graphics in graphic group "default"
+ 	var nO := graphObj._3D.numObjects -- if Animatable Objects exist 
+ 	for var j := 1 to nO
+ 		graphObj._3D.getObject(1).delete -- delete them
+ 	next
+ 	set_Animation(graphObj) -- fit states graph and animation point to imported graphics
+ end
+RandomSeed: 1073814166
+UUID: 5c741bc1-c5d7-4577-93e2-0043622b5f8a

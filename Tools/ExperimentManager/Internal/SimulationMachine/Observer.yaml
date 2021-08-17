@@ -1,0 +1,35 @@
+InternalClassType: Method
+Coordinate3D: [6.95,-9.55,0]
+Name: Observer
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- observe whether the remote process is running yet
+ -- called by: _RunProcess via executeNewCallChain of _Observer
+ -- with ErrorHandler
+ self.alreadyRunning := true
+ var machTab:object := ~.MachinesTable
+ -- "Start observer."
+ machTab.addLogging("Start observer.", JobId, MachineIndex, false)
+ &CheckRemote.lastCheckTime := sysDate
+ 
+ repeat
+ 	sleep(~.ObserverPeriod,false)
+ 	if (JobId /= 0) AND (NOT CheckRemote)  -- JobId = 0 is used for_TerminateAllRemoteeMPlants
+ 		FinishProcess("crashed") -- try to start a new remote process again on the same computer.
+ 	end
+ until JobId = 0 -- JobId > 0 means WIP, JobId = -1 means waiting for other remote machines
+ 
+ self.alreadyRunning := false
+ -- "Stop observer."
+ machTab.addLogging("Stop observer.", JobId, MachineIndex, false)
+RandomSeed: 351
+UUID: 68069403-1723-4626-b018-6b64d8fcf562
+$CustomAttributes:
+-
+ Name: alreadyRunning
+ DataType: boolean
+ Value: false
+-
+ Name: ErrorHandler
+ DataType: object
+ Value: "ErrorHandler"

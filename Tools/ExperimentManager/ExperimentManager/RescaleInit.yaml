@@ -1,0 +1,27 @@
+InternalClassType: Method
+Coordinate3D: [33.85,-19.85,0]
+Name: RescaleInit
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Called by Rescale 
+ -- Write the file containing the number of experiments and observations per experiment.
+ var tab : table[integer]
+ 
+ RescaleResultsFolder := getEnv("RescaleResultsFolder")
+ if strLen(RescaleResultsFolder) < 1 
+ 	messageBox("Please define Environment Variable 'RescaleResultsFolder'.",1,4) -- info
+ end
+ 
+ tab.create
+ var nExp:integer := ExpTable.yDim
+ if nExp > 0 
+ 	tab[1,1] := nExp
+ 	tab[1,2] := numRuns -- custom attribute	
+ 
+ 	var FileName:string := to_str(RescaleResultsFolder,"\\\\Exp_Study.txt")
+ 	tab.writeFile(FileName,true,"ANSI") -- like Exp211_Obs13.txt	
+ end
+ 
+ exitApplication
+RandomSeed: 208
+UUID: 231aa523-61b3-45ae-b99d-149486ce80e8

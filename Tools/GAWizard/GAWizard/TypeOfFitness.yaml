@@ -1,0 +1,12 @@
+InternalClassType: Variable
+Comment: |+1
+ set by method "resetGA",\r
+ used for the HTML report
+Coordinate3D: [32.300000000000004,-11,0]
+DataType: string
+HasInitValue: false
+Name: TypeOfFitness
+Origin: d67cec05-ddd2-49b9-96fb-d92509183dc2
+ShowDataType: false
+UUID: 44792646-0bc6-4e47-af28-2fa9f0c28141
+Value: "real"

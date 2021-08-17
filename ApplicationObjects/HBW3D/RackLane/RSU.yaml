@@ -1,0 +1,47 @@
+InternalClassType: Station
+Coordinate3D: [1.5,-2,0]
+Origin: ec079ce1-c1d6-4f1d-8894-e8cd2359ba92
+RandomSeed: 3029
+UUID: 93d3376f-9416-4f0b-a619-7c933349b24e
+3D:
+ $Objects:
+ -
+  Origin: 7192ae09-205c-4179-a61f-f67495d33f85
+  UUID: 35e6272f-2251-461a-95b7-8ee84d49bf55
+  $Objects:
+  -
+   Origin: b0324f79-c2ca-4ec1-baaf-76a3f505f534
+   UUID: a2d5c5ec-87bc-49b4-bd55-7c656caaca5c
+   $Objects:
+   -
+    Origin: 15a1a124-90dc-4e23-a235-05795150214e
+    UUID: 9c35fda7-d221-4fb5-8899-422fb4347e34
+$CustomAttributes:
+-
+ Name: Init
+ $DataType: method
+ RandomSeed: 3025
+-
+ Name: waitPosReached
+ $DataType: method
+ RandomSeed: 3023
+-
+ Name: ParametrizeRSU
+ $DataType: method
+ RandomSeed: 3092
+-
+ Name: transferPart
+ $DataType: method
+ RandomSeed: 6472
+-
+ Name: reset
+ $DataType: method
+ RandomSeed: 7146
+-
+ Name: SetSpeeds
+ $DataType: method
+ RandomSeed: 9097
+-
+ Name: OnFail
+ $DataType: method
+ RandomSeed: 1073753020

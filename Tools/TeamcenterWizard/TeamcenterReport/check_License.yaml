@@ -1,0 +1,67 @@
+InternalClassType: Method
+Coordinate3D: [-5.9999999999999991,4,0]
+Name: check_License
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: returns if Teamcenter connectivity or Line Designer native import 
+               is allowed, depending on the license type
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: allowed functionality based on license type
+ 
+ Called By	: TC_Import.callback, openTCWDialog
+ Calls		: 
+ 
+ Author		: RBA
+ Date		: 06.05.2021
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author		Description
+ _________________________________________________________________________________*/
+ 
+ -> string
+ 
+ switch licenseName
+ case "EMPLANT_PRO"
+ 	var licStr : string := "Plant Simulation Professional"
+ 	result := "TC"
+ case "EMPLANT_STD"
+ 	licStr := "Plant Simulation Standard"
+ 	result := "LD"
+ case "EMPLANT_FND"
+ 	licStr := "Plant Simulation Foundation"
+ 	result := "LD"
+ case "EMPLANT_APP"
+ 	licStr := "Plant Simulation Application"
+ 	result := "TC"
+ case "EMPLANT_RUN"
+ 	licStr := "Plant Simulation Runtime"
+ 	result := "TC"
+ case "EMPLANT_SIM"
+ 	licStr := "Plant Simulation Simulation"
+ 	result := "NO"
+ case "EMPLANT_VIEW"
+ 	licStr := "Plant Simulation Viewer"
+ 	result := "NO"
+ case "EMPLANT_RES"
+ 	licStr := "Plant Simulation Research"
+ 	result := "TC"
+ case "EMPLANT_EDU"
+ 	licStr := "Plant Simulation Educational"
+ 	result := "TC"
+ case "EMPLANT_STUDENT"
+ 	licStr := "Plant Simulation Student"
+ 	result := "TC"
+ end
+ 
+ 
+ if result = "NO" OR result = "LD"
+ 	-- TODO >=15.2: CHR --> STRCHR
+ 	messageBox(licStr + CHR(13) + "TeamcenterReport is not supported under this license type.", 1, 4)
+ end
+RandomSeed: 1073814227
+UUID: 8a91079a-6b9f-4476-8654-a653df53b529

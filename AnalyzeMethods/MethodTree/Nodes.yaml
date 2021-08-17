@@ -1,0 +1,27 @@
+InternalClassType: DataTable
+Coordinate3D: [0,2,0]
+Name: Nodes
+Origin: 8f1ab797-f9a8-49b5-b7a6-fed21ba3875d
+UUID: 5828da38-cedb-42b8-b38c-3010c3f698ee
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnIndexContents: false
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   DataType: object
+  -
+   Index: 1
+   DataType: integer
+  RowFormat:
+  -
+   Index: 0
+   DataType: string
+   FastIndexAccess: true
+ ColumnIndex: [string,2,"Node","ID"]
+ Columns:

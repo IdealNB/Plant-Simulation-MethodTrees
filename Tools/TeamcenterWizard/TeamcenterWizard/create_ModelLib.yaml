@@ -1,0 +1,55 @@
+InternalClassType: Method
+Coordinate3D: [2,-20,0]
+Name: create_ModelLib
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- creates the model library if not yet existing
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 19.12.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 04.05.2021	RBA		add folder "Resources" for workers	
+ _________________________________________________________________________________*/
+ -> boolean
+ 
+ if Model_Library = VOID -- no library
+ 	
+ 	if .isNameUnique("TeamcenterLibrary") -- if TeamcenterLibrary does not exist
+ 		var newFolder : object := .createFolder
+ 		newFolder.Name := "TeamcenterLibrary"
+ 	end
+ 	
+ 	if .TeamcenterLibrary.isNameUnique(Model_Root.name)
+ 		newFolder := .TeamcenterLibrary.createFolder
+ 		newFolder.Name := Model_Root.name -- set Lib name = Model name
+ 		Model_Library := newFolder
+ 		result := TRUE -- New Lib created
+ 	else
+ 		Model_Library := str_to_obj(".TeamcenterLibrary." + Model_Root.name)
+ 		result := FALSE -- Lib not created
+ 	end
+ end
+ 
+ if Model_Library.isNameUnique("MUs")
+ 	newFolder := Model_Library.createFolder
+ 	newFolder.Name := "MUs" -- set Folder name
+ end
+ 
+ if Model_Library.isNameUnique("Resources")
+ 	newFolder := Model_Library.createFolder
+ 	newFolder.Name := "Resources" -- set Folder name
+ end
+RandomSeed: 1073814167
+UUID: b517e213-b2d5-4c08-ac40-4595c51447ee

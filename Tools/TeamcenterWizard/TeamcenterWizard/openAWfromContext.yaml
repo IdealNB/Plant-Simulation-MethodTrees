@@ -1,0 +1,19 @@
+InternalClassType: Method
+Coordinate3D: [9,-2,0]
+Name: openAWfromContext
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ -- TODO: not in use, not finished
+ var searchStr : string
+ 
+ Teamcenter.login
+ 
+ --searchStr := "http://tc101tssora:9090/awc/#teamcenter.search.search;searchCriteria=" + ?.TCID
+ searchStr := "https://siemensrp:443/awc/#teamcenter.search.advancedSearch;Id=012176"
+ 
+ --openHTMLWindow(searchStr, "Simulation Object " + ?.Name, 50, 50, 800, 800)
+ openHTMLWindow(searchStr, "Simulation Object " + "ObjectName", 50, 50, 800, 800)
+ 
+ Teamcenter.logout
+RandomSeed: 1073814184
+UUID: e8998840-7653-4780-881d-8dcb42156738

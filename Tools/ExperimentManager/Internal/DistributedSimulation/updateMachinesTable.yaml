@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [26.1,-1.85,0]
+Name: updateMachinesTable
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: "APPLY" of the dialog
+ -- Start a distributed simulation run, after saving the model
+ param RemoteTableFromDialog:object
+ 
+ var LicType:string := ~.RemoteLicType -- attribute of the Experiment Manager
+ --if LicType ~= "Professional" then LicType:= "_Development"; end
+ 
+ MachinesTable.delete({1,1}..{*,*})
+ var row:integer
+ for var j := 1 to RemoteTableFromDialog.yDim 
+ 	var numProc:integer := RemoteTableFromDialog[2,j]
+ 	for var k := 1 to numProc 
+ 		row := row + 1 --             Comp name                    2 sema of the library  3                        4        5                 6
+ 		MachinesTable.writeRow(1,row, RemoteTableFromDialog[1,j], void,                   to_str(EventController), LicType, QuitAfterTime, ~.RemoteLowerPrio)
+ 		MachinesTable[9,row] := -1 -- jobID
+ 		MachinesTable[19,row] := k
+ 	next -- k
+ next -- j
+RandomSeed: 336
+UUID: cd9fbecc-2094-4695-99bd-e58a77c19f5a

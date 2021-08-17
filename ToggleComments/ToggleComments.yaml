@@ -1,0 +1,21 @@
+InternalClassType: Toolbar
+ChangePathCtrl:
+ConstructorCtrl:
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: ToggleComments
+UUID: d4e96c6c-00bb-4914-ae52-62d1bee5e43b
+Visible: true
+$Objects:
+- null
+- 344e3fec-aaa7-46fb-b194-86da7bcccb0a
+- 44995a1f-6f3b-48d8-a1b8-11f16d4a051c
+- null
+- be79e023-2f57-4276-bf13-5b09c4b33848
+- b1fd7174-c3ea-4abc-9e7b-0b4a382337bf
+- null
+- d72e5670-62f6-4439-a4cf-592f7c6d77f0
+- ff1e1dc8-e849-43bf-8326-6bbdf2d94ef1
+- null
+- 449add86-e4f6-4bf5-864b-919540be701a
+- 200e46e4-073f-4b27-b6d0-d516676551cd

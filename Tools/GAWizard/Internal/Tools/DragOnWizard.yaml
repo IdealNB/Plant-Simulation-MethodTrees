@@ -1,0 +1,21 @@
+InternalClassType: Method
+Coordinate3D: [9,-4,0]
+Name: DragOnWizard
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+RandomSeed: 498
+UUID: a51fd2b6-2e7e-4328-8418-8eeda7f61380
+$CustomAttributes:
+-
+ Name: nonrelevantAttributes
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnWidth: 20
+   DataType: string
+   ShowDataType: true
+  Columns:
+  - [1,string,16,"ChannelID","CurrIcon","CurrIconNo","CurrIconTransparent","IconAngle","IconRotation","NumAnimationEvents","ResStatOn","RotateAroundRefPoint","RotateMUs","Selected","StatusWithIcons","exitCtrlFront","exitCtrlRear","resourceType","Name"]
+  - [2,string,15,"KanalID","BildName","BildNr","BildTransparent","BildWinkel","BildDrehung","AnzahlAnimationsereignisse","ResStatAn","DreheUmRefPunkt","DreheBEs","Selektiert","ZustandsanzeigeMitBild","AusStBug","AusStHeck","Ressourcentyp"]
+Program: [$,M2LOWA/EJvXW5k0youN2nQ,3ZP+vsOnw+qKsYGD79P245GNq8msgN22pqKC1uW53O6Iv/+GnJOYmMn52aK10NDN7oHGnN+V9+TzobOE0M3CzejA9Yi/pefS+/H14cWCs4b1qebSzZOzts75uMnbmeDJ5Jm0kJa3r4HTzcztmqimmbuHm92V5beypPndt97RrNiIiNzZ7Ib91/+FgtGM9Py07YKzt6iDxJLztqHeneL0x5Hpubv+4Zja6r2A8ZXyxqTnp6jtoaS8qpKXt+iHkdTnp5eEqcbI0P+M0tOY2ZTnp9nt+b3c3IHunK+n7ZbiqeX0g/juipHOrYXW0dCx+PKnrrClk5H01YutiujDzJibrujn+42Qw4+Q4Ma+qsvAupXl9sem15Tvwtm+xM++kOrAnZPirZHS6q71iOu63+yc44W6jsG15YXNwYr08q28+O7UhYrm0O7s2erqyaaRjOHY5frhm+vOj8CAs6rM5q2Fq7jqyPfbv5nn04GvptTDn6SQuM/2rauQtaiUhuXT87P5zK721peU3bH3hee31ez60q2n2oDZhtW5zanH3+qGw7b847ag/dza7/OdrvPrpcXfq/3IhOL1sp3H5fj5y9KR+/O1y4bOkOu1vMn3ksjv+c+75YnMv/b8rs3fl9zJwYXrx4je0rOBrMCOqK/5pJWq7J/ng4CSvqralYPnv7Gm7PfP9ZTmhP3+k6mI546V+ZzRhsDYiOuD2a+CsN75mr2I4oHeqNHxwvaA1qiY8Mev2frIp5rrx8L4zs+z9dnu4PLFsN7bjsvJmYaNu+uA7umXtbrxuayU4YP+jOiU5/ii1frInMD74b3knv+12oLJ4b7G8IjQ98/6/4Tj6Mbc9KXmlPasqdH7/LXwqMLk87uD6sKb7pKg0/aohcLq3OG2rrWPgdek5vnSk/2W8bi1l/qa3cXI3uSD6NOZhZOZ1oWl7+LU6KaZ+YvOxPnt+r7CluPbv7fVvO/4uY7Uq/39kJyYtvnm5OL/w62Th+Os6cue9/2eqZDLhM6Jvr/sls3F15uoqMqGqtL1yfuV0eLO4eSk4YvywuqH1cL0/cPb3PqB9/qz59/c0efq3sPsk7ezvZK4isyslIGSqu+yyP+W0qze+vmEw6324+OehvGciv61oKqy2vOFoeSO54OxtIffqN6Sz+Tp9sfe1o2yiZrgqPSZ3ZLvlo25jcf/wN+th6Xhu8SL7+++sbLkjJDL55O7rIXr2avVurLCiIKo0Y7R8ImZ/YGHzY+8yrPX8I/rh6XZtbWdyZasxMGilOyu9dPBnp7G166Q1+e7reOW5LqyxJ/K2+G2oqm0gPuM/Omt5pXotqn43fvat4GLqcqVx9jt5fWQg6zev4eMs4rg7a3juOTWlcOrnvygy/+MrePEgpCVyL6nzZH6oJP30NDVlqaGqKzigpS5ue6nkqzh+42hopnR6vf0wfqqovHW0o31r6W0scqg84L84tzlsYHTycmHjJbr3uvK7p74moGJ656/772VtK6woKTg18+fk6rUoIXj0oevtqDauuug1rXNhuORjeHtvoKXoqGDm+TI+cjw06HMs9fJtKStxZWOnP7TuNWTgdfk2M3K2u3rz4ao0eGm8P6JsbCCn4WTseuziuzFzNq/ncL0hI7n2eOWsPD91qKmnJHf9Znv562pyqefvaKJxO3zkpGG4MzW/PvjtI6atLblzbSt4rOuwMee1P7liq2x5f6U+oKuzdu8qr7QqKqclY+24emfk+7Ek+qerPyr/4S8itm46IKpyKqNjqK+o6CM6ru3692l7dPfkqzex9Pr14yBq+eF+szvx97kjtutz5qZ2YXakLDoxZ3o6czZxOGDwbz99ObW2Lb9w4jSwIib1aSf5J/VjcCsxt2iw771nePr/8Du0//vkZDVz+2D8aKX+va43fmh0NWF6pL0v/Xp6c7piJG9laHexJq8l5PF57jviar8lNSjn+3+2cOzl6Tzy+ia2NGHgL+RpY6Fg9fVnMnP3fLr+9+PzY6qi9SVqaThpJayg7OCvtaqgJfkk6vBr8r3/Z/8psT8zM372pvT3dLmpomt6J3J59vT1MjUnrS/rtrIqtSi193mm8+qy+uR/crPjLjhjK7V4qGqxp+sj+/nvb7lx9Kgx7vD9MHbrPOzrJ++ptOEorz/sb+W866KxIXXlerKjO3wlvCo5uvcyOSSs6LAycaLiovivpuu+ZGkksG4ysvkxe6T+uvB8sDn4NSLkOX35bDinqGZ/vXDkubasJDK1a3ave3VqI2HidilqYGc97Hs/8jL9P2G0+qgyrCShdbgq8vynKuuzM6o6sHEn5CCgr3y2pzwsrCN9bHohYq2saSbtqyZsLjpzeqp7dXz7ry8v979xYbM8aLm4/+NwdnSlJ701tmEp66/zqGjhsTaobTSvo3bs+Lz5d/gtdXC9KS239CozenDz9Pcl+nT6uzsuMu/+ufEj+abhsm+kPDBh92h052C+cXoqYf5jKO6h4zs3+DJ09m1n5+jysyWhumP4bamvt2zuObz8pqDwcGDx4movvrYs5Gihp/v6u/crqzKtpv0zbuMobnOkvuXgv+O4+Ps6LGi0NOzv53epPzCgdqBsrD33tWUndmPq+CMrrSEla3G6OTmqKqr25O43um24PbD4M3owNbnkdyQt6C3kMi17/WB07W/+6+X/dnI8Yrj7tP99Zip6aOjlNeNwuuTudypxKif763D98/litvptI7n+vS5qZXah+7b+4ajsMX2oPm6rJbuy5uHv5/ri9HS5be3g+2m2J6vssicuLXYtY/3krvyytC4isCB]

@@ -1,0 +1,22 @@
+InternalClassType: Method
+Coordinate3D: [-3,7,0]
+Name: Act_Table
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ var rulesTab:object := ~.Rules.Rules
+ var actTab:object := ~.Rules.Action
+ actTab.delete
+ var rName:string := @.activeRuleName
+ rulesTab.setCursor(2,1); rulesTab.find({2,1}..{2,*},rName)
+ var row:integer := rulesTab.cursorY
+ actTab.insertList(1,1, rulesTab[5,row].copy({1,1}..{*,*}))
+ actTab.RuleNo := row
+ if rulesTab[8,row]  
+ 	actTab.setFormatString(3,"=")-- init_rule
+ else
+ 	actTab.setFormatString(3,"+;-;+%;-%;=")
+ end
+ actTab.openDialogBox(true)
+ print "Open action for rule ",rName," in row ",row
+RandomSeed: 324
+UUID: 6061b601-7cc8-4e9f-8392-bbc1c901c2f6

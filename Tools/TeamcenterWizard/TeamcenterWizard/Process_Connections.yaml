@@ -1,0 +1,190 @@
+InternalClassType: DataTable
+Coordinate3D: [23,-27,0]
+Name: Process_Connections
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 49a45da1-eda6-46ab-b978-2c4c4ba8d12f
+3D:
+ Mirror: [false,false,false]
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 5
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: true
+   Width: 12
+  -
+   Index: 1
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+     ColumnFormat:
+     -
+      Index: 1
+      DataType: table
+      Prototype:
+       EditorPermissions: 12
+       ListFormat:
+        ColumnWidth: 5
+        DataType: string
+        ShowDataType: true
+        ColumnFormat:
+        -
+         Index: 1
+         DataType: table
+         Prototype:
+          EditorPermissions: 12
+          ListFormat:
+           ColumnWidth: 5
+           DataType: string
+           ShowDataType: true
+           ColumnFormat:
+           -
+            Index: 1
+            DataType: table
+            Prototype:
+             EditorPermissions: 12
+             ListFormat:
+              ColumnWidth: 5
+              DataType: string
+              ShowDataType: true
+              ColumnFormat:
+              -
+               Index: 1
+               DataType: table
+               Prototype:
+                EditorPermissions: 12
+                ListFormat:
+                 ColumnWidth: 5
+                 DataType: string
+                 ShowDataType: true
+                 ColumnFormat:
+                 -
+                  Index: 1
+                  DataType: table
+                  Prototype:
+                   EditorPermissions: 12
+                   ListFormat:
+                    ColumnWidth: 5
+                    DataType: string
+                    ShowDataType: true
+                    ColumnFormat:
+                    -
+                     Index: 1
+                     DataType: table
+                     Prototype:
+                      EditorPermissions: 12
+                      ListFormat:
+                       ColumnWidth: 5
+                       DataType: string
+                       ShowDataType: true
+                      Columns:
+                    -
+                     Index: 2
+                     DataType: integer
+                    -
+                     Index: 3
+                     DataType: string
+                    -
+                     Index: 4
+                     DataType: string
+                    -
+                     Index: 5
+                     DataType: integer
+                   Columns:
+                 -
+                  Index: 2
+                  DataType: integer
+                 -
+                  Index: 3
+                  DataType: string
+                 -
+                  Index: 4
+                  DataType: string
+                 -
+                  Index: 5
+                  DataType: integer
+                Columns:
+              -
+               Index: 2
+               DataType: integer
+              -
+               Index: 3
+               DataType: string
+              -
+               Index: 4
+               DataType: string
+              -
+               Index: 5
+               DataType: integer
+             Columns:
+           -
+            Index: 2
+            DataType: integer
+           -
+            Index: 3
+            DataType: string
+           -
+            Index: 4
+            DataType: string
+           -
+            Index: 5
+            DataType: integer
+          Columns:
+        -
+         Index: 2
+         DataType: integer
+        -
+         Index: 3
+         DataType: string
+        -
+         Index: 4
+         DataType: string
+        -
+         Index: 5
+         DataType: integer
+       Columns:
+     -
+      Index: 2
+      DataType: integer
+     -
+      Index: 3
+      DataType: string
+     -
+      Index: 4
+      DataType: string
+     -
+      Index: 5
+      DataType: integer
+    Columns:
+   Width: 19
+  -
+   Index: 2
+   DataType: integer
+   Width: 8
+  -
+   Index: 3
+   DataType: string
+   Width: 8
+  -
+   Index: 4
+   DataType: string
+   Width: 4
+  -
+   Index: 5
+   DataType: integer
+   Width: 13
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,6,~,"Occ_ID","Level","Children","Type","Sequence_Number"]
+ Columns:

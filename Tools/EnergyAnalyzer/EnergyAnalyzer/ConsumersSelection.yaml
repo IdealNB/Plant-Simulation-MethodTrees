@@ -1,0 +1,70 @@
+InternalClassType: DataTable
+Coordinate3D: [-13.100000000000001,10,0]
+Name: ConsumersSelection
+Origin: 14b0b0f3-9be3-467f-95b4-1d31fdb86fdd
+PlausibilityCtrl: "self.OnPlausibility"
+UUID: 6db571d2-5536-40a8-ac0d-fb949f362e36
+$CustomAttributes:
+-
+ Name: OnPlausibility
+ DataType: method
+ RandomSeed: 47
+ Value: |+1
+  -- plausibility control (apply, ok)
+  var str:string
+  var obj:object
+  
+  for var j := ConsumersSelection.ydim downto 1 
+  	str := ConsumersSelection[1,j]
+  	if existsObject(str) 
+  		obj := str
+  		str := makePathRelative(obj,~)
+  		ConsumersSelection[1,j] := str
+  		ConsumersSelection.refillDialog
+  	elseif NOT existsObject(to_str("~.",str)) 
+  		if strLen(str) > 1 
+  			print rootfolder.Localization.getMessage(63, str,"","")
+  		end
+  		ConsumersSelection.cutRow(j)
+  	end
+  next
+  
+  Objects.delete
+  ConsumersSelection.copyrangeTo({1,1}..{1,*}, Objects,1,1)
+  dialog.setObjectTable -- custom attribute
+  
+  --EnergyConsumers.setBackgroundColorCells({0,1}..{*,*},makeRGBValue(255,255,255));
+  EnergyConsumers.delete({0,1}..{*,*})
+  
+  ConsumersSelection.copyrangeTo({1,1}..{1,*}, EnergyConsumers,0,1)
+  Frames.reg
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 1
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Width: 20
+  -
+   Index: 1
+   Width: 40
+  RowFormat:
+  -
+   Index: 0
+   ReadOnly: true
+   Alignment: "Center"
+   Hidden: false
+  CellFormat:
+  -
+   Index: 1
+   Rows:
+   -
+    Index: 0
+    ReadOnly: false
+ ColumnIndex: [string,2,"Energieverbraucher","Energy Consumers"]
+ Columns:

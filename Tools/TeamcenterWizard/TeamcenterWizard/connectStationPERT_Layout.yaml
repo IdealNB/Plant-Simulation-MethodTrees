@@ -1,0 +1,73 @@
+InternalClassType: Method
+Coordinate3D: [15,-30,0]
+Name: connectStationPERT_Layout
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- connect all layout resources in the model according to station pert information
+ -- 
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: ConnectObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 17.03.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ var predecs : string[]
+ var target, start : object[]
+ var target_UID, start_UID : string
+ 
+ -- connect all stations 
+ for var i := 1 to Created_Objects.yDim  -- loop through all created objects in the frame
+ 	var obj : object := Created_Objects["Link", i]
+ 	target_UID := Created_Objects["UniqueID", i]
+ 	
+ 	Layout_Data.CursorY := 1
+ 	Layout_Data.find({"UniqueID",*}, target_UID)
+ 	var row1 := Layout_Data.CursorY
+ 	
+ 	if Layout_Data["Predecessor", row1] /= "" -- predecessors exist
+ 		predecs := SplitString(Layout_Data["Predecessor", row1], " ") -- get all predecesssor entries in an array
+ 								
+ 		target.append(obj) -- get generated object to connect as target
+ 		
+ 		for var j := 1 to predecs.dim -- loop over all predecessors
+ 			Layout_Data.CursorY := 1
+ 			Layout_Data.find({"ID", *}, predecs[j])
+ 			var row2 := Layout_Data.CursorY
+ 									
+ 			start_UID := Layout_Data["UniqueID", row2] -- get the UniqueID
+ 			Created_Objects.CursorY := 1
+ 			if Created_Objects.find({"UniqueID", *}, start_UID) -- get generated object to connect as start
+ 				start.append(Created_Objects["Link", Created_Objects.cursorY])
+ 			end
+ 											
+ 		next -- loop over all predecessors
+ 									
+ 	end -- precdecessors exist
+ 					
+ 
+ 	
+ 	if start.dim > 0 AND target.dim > 0 -- if objects for the connections are in the model
+ 		ConnectObjects(start, target) -- connect them
+ 	end
+ 	
+ 	start.delete
+ 	target.delete
+ 	predecs.delete
+ 
+ next
+RandomSeed: 1073814161
+UUID: ac1b3c5d-6e2e-4c85-9211-c7d684423055
+3D:
+ Mirror: [false,false,false]

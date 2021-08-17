@@ -1,0 +1,198 @@
+InternalClassType: Chart
+Accumulated: false
+Category: "Chart"
+ChangePathCtrl:
+ChartType: "Stacked Columns"
+CloseCtrl:
+CollectData: true
+ConstructorCtrl:
+Coordinate3D: [0,0,0]
+CreateIn3D: false
+DataInColumn: false
+DataRange: "{*,*}..{*,*}"
+DataTable:
+DestructorCtrl:
+DisplayInFrame: false
+DragDropCtrl:
+Effect: "(None)"
+FeedRate: 6
+FirstInterval: 0
+GapWhenNull: true
+GraphTable: "Graph"
+Height: 15
+ImageQuality3D: "Balanced"
+InitCtrl:
+InputChannels:
+ Comment: ""
+ CommonFormat: false
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 2
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   ReadOnly: false
+   Hidden: false
+   Width: 18
+  RowFormat:
+  -
+   Index: 0
+   Alignment: "Left"
+   Hidden: false
+   DataType: string
+ Columns:
+Label: ""
+LegendLocation: "(Off)"
+Mode: "Watch"
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: Chart
+NullValue: -999999
+NumIntervals: 0
+NumValues: 200
+OpenCtrl:
+PlausibilityCtrl:
+RelabelCtrl:
+RenameCtrl:
+Rotation: 180
+SampleInterval: 1:00
+Scrollbar: false
+SizeInFrame: [2,2]
+StepCurve: false
+StepSize: 1
+Subtitle: ""
+Title: ""
+UseInputChannels: true
+UseMetricPrefix: true
+UUID: 3f9d6a85-d36c-432b-b23e-12101ee03943
+XGrid: true
+XGridLines: 25
+XLabel: "x"
+XLog: false
+XRange: 1:00:00
+XScaleMax: -1
+XScaleMin: -1
+YGrid: true
+YGridLineInterval: 0
+YLabel: "y"
+YLog: false
+YScaleMax: -1e+308
+YScaleMin: 1e+308
+ZLabel: ""
+$IconArray:
+-
+ Name: "Default"
+ RefPoint: [0,0]
+ Size: [40,40]
+ Pixels:
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+/v7+/v7+/v7+/v7+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+AQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+ - vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+
+-
+ Name: "icon3"
+ RefPoint: [0,0]
+ Size: [40,40]
+ Pixels:
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+AQEBAQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+AQEBAQEBAQEBAQEBAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+/v7+/v7+/v7+/v7+vr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+AQEBvr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBvr6+vr6+/v7+AA//AA//AA//AQEBvr6+/v7+/wAA/wAA/wAAAQEBvr6+/v7+APAAAPAAAPAAAQEBvr6+vr6+AQEBAQEBvr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBvr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBA////////////////
+ - ////////////////////7OzsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ - ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$Annotations:
+$Colors:
+- 0x0
+- 0xffffff
+- 0xffffff
+- 0x0
+- [0xff,0,3]
+- [0xee00,0,5]
+- [0xff0000,0,7]
+- [0xe8f8,0,2]
+- [0xffee00,0,2]
+- [0xff00ff,0,2]
+- [0xee00cc,0,2]
+- [0xddff,0,2]
+- [0xff,0,2]
+$MarkerSize: "Medium"
+$LabelFont: ["Arial",5,false,false]
+$TitleFont: ["Arial",5,false,false]
+$SubtitleFont: ["Arial",5,false,false]
+$TableFont: ["Arial",5,false,false]
+$StatisticsWizard: [0xffffffff,0x7,0,0,true,false]
+$WindowRect: [50,50,200,200]

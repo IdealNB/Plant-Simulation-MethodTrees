@@ -1,0 +1,11 @@
+InternalClassType: DataTable
+Coordinate3D: [2,-8,0]
+Name: AISelect
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 9a61a9bd-e082-47e0-b2f4-688ad5990ddb
+$Data:
+ ListFormat:
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+ Columns:

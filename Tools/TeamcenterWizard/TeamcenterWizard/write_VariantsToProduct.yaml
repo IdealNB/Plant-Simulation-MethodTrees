@@ -1,0 +1,95 @@
+InternalClassType: Method
+Coordinate3D: [3,-27.6689,0]
+Name: write_VariantsToProduct
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: generates a workplan in an attribute of an MU
+ _________________________________________________________________________________
+ Parameters	: new library object, row, Product_Data or Layout_Data
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Product_Data
+ Calls		: --
+ 
+ Author		: Ralph Bauknecht
+ Date		: 18.06.2021
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ param byref objectLib : object, pRow : integer, dataTable : object
+ 
+ var VariantsTab : table
+ VariantsTab.create
+ VariantsTab.ColumnIndex := true
+ 
+ custom_Methods.get_Variant("product", pRow, VariantsTab, self.~) -- read and format variant infos
+ 
+ for var i := 1 to VariantsTab.XDimIndex -- all variant entries
+ 	var VariantsName : string := VariantsTab[i, 0]
+ 	if  objectLib.isNameUnique(VariantsName)
+ 		objectLib.createAttr(VariantsName, "string")
+ 	end
+ 	objectLib.setAttribute(VariantsName, VariantsTab[i, 1]) -- set value
+ next
+RandomSeed: 1073814139
+UUID: 9e849a07-917b-4e85-b16a-f604221ef1dd
+$CustomAttributes:
+-
+ Name: workplanTable
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 6
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 2
+    DataType: time
+   -
+    Index: 3
+    DataType: table
+    Prototype:
+     EditorPermissions: 12
+     ListFormat:
+      ColumnIndex: true
+      ColumnWidth: 5
+      DataType: string
+      MaxXDim: 2
+      ShowDataType: true
+      ColumnFormat:
+      -
+       Index: 1
+       Width: 11
+      -
+       Index: 2
+       DataType: time
+       Width: 10
+      RowFormat:
+      -
+       Index: 0
+       Hidden: false
+       DataType: string
+       FastIndexAccess: true
+     ColumnIndex: [string,3,~,"Operation","Time"]
+     Columns:
+   -
+    Index: 6
+    DataType: object
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+    DataType: string
+    FastIndexAccess: true
+  ColumnIndex: [string,7,~,"Process","Time","Time Details","ID","Successor","Station"]
+  Columns:

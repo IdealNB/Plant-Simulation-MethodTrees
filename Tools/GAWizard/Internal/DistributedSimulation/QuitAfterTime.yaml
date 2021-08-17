@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Comment: "last registered error handling method"
+Coordinate3D: [6,-4.6000000000000005,0]
+DataType: time
+HasInitValue: false
+Name: QuitAfterTime
+Origin: d67cec05-ddd2-49b9-96fb-d92509183dc2
+UUID: 0228e5a7-f9bc-477f-a711-85dbdd45e1f5
+Value: 5:00

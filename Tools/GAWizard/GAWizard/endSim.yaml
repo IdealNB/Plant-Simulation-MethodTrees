@@ -1,0 +1,11 @@
+InternalClassType: Method
+Coordinate3D: [11.55,-8,0]
+Name: endSim
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ if optimRuns AND (NOT UsingRemote)
+  -- not distributed simulation:
+ 	&eval_and_next.executeNewCallChain
+ end
+RandomSeed: 459
+UUID: 2dab4246-1e24-43eb-a2eb-5ab18ad7b63f

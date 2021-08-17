@@ -1,0 +1,12 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: Public
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 288e0f5b-2a06-4378-8153-7e3f41231d9a
+3D:
+ BackgroundColor: -1
+Password: #

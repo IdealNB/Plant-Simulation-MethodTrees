@@ -1,0 +1,108 @@
+InternalClassType: Dialog
+Coordinate3D: [6,-4,0]
+Label: "Select TC Data Set"
+Name: TC_Select
+OpenModal: true
+Origin: 082ea809-294c-482e-b7fa-dfaa706a4e69
+ShowStandardButtons: false
+UUID: 619125d9-5f43-4e10-8533-208b33796794
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 1073814198
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+   Select AI and Sync
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: TC_Select (Dialog)
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 01.06.2018
+  _________________________________________________________________________________
+  	History: 
+  28.05.2019	RBA	set OK sensitive only if a sync was selected
+  31.05.2019	RBA	check if empty AI row was selected
+  26.06.2019	RBA	add global variable AI_Select 
+   _________________________________________________________________________________*/
+  param action: string
+  
+  switch action
+  case "Open"
+  	?.SetSensitive("B_OK", FALSE)
+  	--
+  	
+  case "Apply"
+  	var SSelect : integer := ?.getindex("L_Sync")
+  	?.close(FALSE)
+  	Sync_Select := SSelect
+  	
+  case "Close"
+  	--
+  
+  case "Cancel"
+  	?.close(FALSE)
+  	?.~.Sync_Select := 0 -- do not import data
+  	
+  case "L_Application_Interface_Select"
+  	AI_Select := ?.getindex("L_Application_Interface")
+  	-- get syncs for the selected AI
+  	if AI_Select > 0
+  		TeamCenter.querySyncs(AI_Select, SyncSelect)
+  		-- and show them
+  		?.updateUserDialog
+  		?.setindex("L_Application_Interface", AI_Select)
+  	end
+  case "L_Sync_Select"
+  	?.SetSensitive("B_OK", TRUE) -- can only apply if a sync was selected
+  	-- get selected sync only with OK button (->Apply)
+  	-- and close this dialog before importing the data
+  	
+  end
+$Elements:
+-
+ Type: StaticText
+ Name: "T_Application_Interface"
+ Caption: "Step 1: select an Application Interface"
+-
+ Type: ListView
+ Name: "L_Application_Interface"
+ Rect: [0,1,65,5]
+ CallbackArgument: "L_Application_Interface"
+ Table: "AIselect"
+-
+ Type: StaticText
+ Name: "T_Sync"
+ Caption: "Step 2: select a Sync (released data context)"
+ Rect: [0,7,0,0]
+-
+ Type: ListView
+ Name: "L_Sync"
+ Rect: [0,8,65,5]
+ CallbackArgument: "L_Sync"
+ Table: "SyncSelect"
+-
+ Type: StaticText
+ Name: "T_Apply"
+ Caption: "Step 3: confirm your selection"
+ Rect: [0,14,0,0]
+-
+ Type: Button
+ Name: "B_OK"
+ Caption: "OK"
+ Rect: [30,14,0,0]
+ CallbackArgument: "Apply"
+ Enable: false
+-
+ Type: Button
+ Name: "B_Cancel"
+ Caption: "Cancel"
+ Rect: [45,14,0,0]
+ CallbackArgument: "Cancel"

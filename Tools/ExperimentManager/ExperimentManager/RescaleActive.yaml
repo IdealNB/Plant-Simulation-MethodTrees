@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Comment: "Attention: only used when using rules!!!"
+Coordinate3D: [33.300000000000004,-11.9,0]
+DataType: boolean
+Font: 2
+HasInitValue: false
+Name: RescaleActive
+Origin: adb2b098-f7bf-44f4-8661-08f4ea05f61d
+ShowDataType: false
+UUID: 62a9e805-ed6b-4882-875f-2015587788d1
+Value: false

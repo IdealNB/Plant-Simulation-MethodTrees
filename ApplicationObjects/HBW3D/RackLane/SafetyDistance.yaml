@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Comment: ""
+Coordinate3D: [-10,-3,0]
+DataType: length
+HasInitValue: false
+Name: SafetyDistance
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 5e871082-1c2a-4430-a40b-8e2b09becaa8
+Value: 0.1

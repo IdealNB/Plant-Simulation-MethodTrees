@@ -1,0 +1,36 @@
+InternalClassType: Method
+Coordinate3D: [16,-20,0]
+Name: existsGraphicGroup
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- check if given graphics group exists
+ _________________________________________________________________________________
+ Parameters	: object, graphic group name
+ 			  
+ ReturnValues: boolean
+ 
+ Called By	: insert_LayoutObjects
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 23.10.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 23.10.2018 
+ _________________________________________________________________________________*/
+ param obj : object, ggn : string
+ -> boolean
+ result := FALSE
+ 
+ var ggnList : any := obj._3D.GraphicGroupNames 
+ for var i := 1 to ggnList.dim
+ 	if ggnList[i] = ggn
+ 		return TRUE
+ 	end
+ next
+RandomSeed: 1073814196
+UUID: 2044d9f3-9061-4a4a-982e-5abb67436e3d

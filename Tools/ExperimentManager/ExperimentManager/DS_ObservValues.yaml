@@ -1,0 +1,64 @@
+InternalClassType: DataTable
+Coordinate3D: [49.5,-18.85,0]
+Name: DS_ObservValues
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+UUID: a6cdff1f-f66d-42d6-8e7e-bc893728280f
+$CustomAttributes:
+-
+ Name: deleteTmpTables
+ DataType: method
+ RandomSeed: 169
+ Value: |+1
+  -- called by:_prepareReport,_resetWizard
+  var t:table := self.~.tmpTables
+  for var j := 1 to t.yDim 
+  	if t[1,j] /= void 
+  		t[1,j].deleteObject
+  	end
+  next
+  t.delete
+-
+ Name: tmpTables
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnWidth: 20
+   DataType: string
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 1
+    DataType: object
+  Columns:
+-
+ Name: OutputValue
+ DataType: string
+ Value: ""
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 12
+  DataType: string
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   DataType: integer
+  -
+   Index: 2
+   DataType: integer
+  -
+   Index: 3
+   DataType: real
+  -
+   Index: 4
+   DataType: real
+  RowFormat:
+  -
+   Index: 0
+   DataType: string
+ ColumnIndex: [string,5,~,"ExpNo","ObservNo","OutputVal 1","OutputVal 2"]
+ Columns:

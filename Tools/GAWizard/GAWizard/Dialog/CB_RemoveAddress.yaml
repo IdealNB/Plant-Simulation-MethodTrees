@@ -1,0 +1,30 @@
+InternalClassType: Method
+Coordinate3D: [10,-10,0]
+Name: CB_RemoveAddress
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- submethod of Experiments.callback 
+ -- adds a line to the remotes list, before current selected one
+ 
+ var sel : integer := Gawizard.getIndex("RemotesList")
+ 
+ if sel > 0 
+ 	RemoteTable.cutRow(sel)
+ end
+ 
+ var RemoteList:list[string]
+ RemoteList.create
+ 
+ if RemoteTable.yDim < 1 
+ 	RemoteList.append("  ")
+ else
+ 	for var j := RemoteTable.ydim downto 1 
+ 		RemoteList.insert(1, to_str(RemoteTable[1,j]," (",RemoteTable[2,j],")"))
+ 	next
+ end
+ 
+ Gawizard.setList("RemotesList",RemoteList)
+ Gawizard.callback("APPLY")
+ ~.DistributedSimulation.updateMachinesTable(RemoteTable)
+RandomSeed: 449
+UUID: c5f57ec9-ac6c-48f9-830b-1d6369055380

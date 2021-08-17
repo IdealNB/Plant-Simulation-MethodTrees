@@ -1,0 +1,7 @@
+InternalClassType: Variable
+Coordinate3D: [2,-3,0]
+Name: ActiveSuccessor
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+UUID: e1dbdb31-6915-4c80-9173-1b3c894894dc
+$DataType: integer
+Value: 1

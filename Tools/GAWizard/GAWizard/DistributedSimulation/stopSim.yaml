@@ -1,0 +1,10 @@
+InternalClassType: Method
+Coordinate3D: [38,-1.6500000000000001,0]
+Origin: b9cbd309-d8e9-44fb-80b7-e832dc367e32
+Program: |+1
+ -- called by: infty simulation run (SimMachine.M_StartSimulation_)
+ param JobNo:integer
+ 
+ ~.setPenaltyFitness(JobNo)
+RandomSeed: 421
+UUID: 58e8a38e-20c2-4d5f-9304-5fee3fccdde6

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: MethodRecursion
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: fbc7e8c8-b9d6-4dcb-a702-be70090673d2
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- f3c50c0a-6b19-45c9-94c4-51c36758e623
+- 018be54e-2308-4c62-8384-18c4524ea211
+- ee026c53-fe2c-48a3-8640-44be3ab00120
+- 939a0356-74f8-4a70-9a0d-6413d9d233cc
+- 92b94ade-bd7e-4acc-8d99-a9aae2c301ed
+- 193074b3-52ac-44ae-a455-93acf378cf71
+- 3b3fc85f-fdcb-4edf-a948-22da49b8700a

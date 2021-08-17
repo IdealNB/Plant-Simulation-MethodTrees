@@ -1,0 +1,7 @@
+InternalClassType: Variable
+Comment: "Row in the JobsTable"
+Coordinate3D: [11.850000000000001,-3.7,0]
+Font: 2
+Name: JobId
+Origin: d67cec05-ddd2-49b9-96fb-d92509183dc2
+UUID: ef3e9e38-7a23-45dd-8683-4951f5d0b035

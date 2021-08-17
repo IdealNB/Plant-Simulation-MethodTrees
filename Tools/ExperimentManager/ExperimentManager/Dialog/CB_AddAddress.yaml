@@ -1,0 +1,31 @@
+InternalClassType: Method
+Coordinate3D: [1.35,4,0]
+Name: CB_AddAddress
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- submethod of Experiments.callback 
+ -- adds a line to the remotes list, before current selected one
+ -- no multiple items
+ -- called by: "DistrSim_CB" in case of (RemoteTable.yDim = 0)
+ param DLG:object,CompName:string,numProc:integer,useAllCores:boolean
+ 
+ var sel : integer := AdvancedSettings.getIndex("RemotesList")
+ if sel>0 AND strLen(AdvancedSettings.getValue("RemotesList")) < 2 
+ 	RemoteTable.cutRow(sel)
+ end
+ 
+ RemoteTable.setCursor(1,1)
+ if RemoteTable.find({1,1}..{1,*},CompName) 
+ 	sel := RemoteTable.cursorY
+ else
+ 	sel := max(1,sel)
+ 	RemoteTable.insertRow(sel)
+ end
+ if useAllCores 
+ 	numProc := getNumberOfCPUCores 
+ end
+ RemoteTable.writeRow(1,sel, CompName, numProc,useAllCores)
+ RemoteTable.setRemoteInDialog -- makes AdvancedSettings.setList("RemotesList",1D list)
+ ~.DistributedSimulation.updateMachinesTable(RemoteTable)
+RandomSeed: 319
+UUID: 3a4f5a77-e37c-4da9-a753-ff50c9020cfc

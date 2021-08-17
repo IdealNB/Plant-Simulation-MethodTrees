@@ -1,0 +1,24 @@
+InternalClassType: Method
+Coordinate3D: [17.25,-27.5,0]
+Name: ReplaceRootstr
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ param TabObj:object,col:integer
+ 
+ var root_str:string := to_str(TabObj.rootframe)
+ var j:integer:= 1
+ while TabObj[col,j]/=void 
+ 	var obj_str:string := to_str(TabObj[col,j])
+ 	
+ 	while strLpos(" ",obj_str)>0 
+ 		obj_str := strOmit(obj_str, strLpos(" ",obj_str),1)
+ 	end
+ 	
+ 	if strLen(obj_str)>0	
+ 		TabObj[col,j] := insRootStr(obj_str,root_str)
+ 	end
+ 	j += 1
+ end
+ TabObj.refillDialog
+RandomSeed: 236
+UUID: 02742d9f-618c-433a-9042-a4e35735fbf9

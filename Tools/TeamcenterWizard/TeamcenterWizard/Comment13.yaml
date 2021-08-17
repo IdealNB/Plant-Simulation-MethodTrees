@@ -1,0 +1,14 @@
+InternalClassType: Comment
+BackgroundColor: 55295
+Color: 255
+Coordinate3D: [-15.8575,-13.1299,0]
+Name: Comment13
+Origin: f47edc1e-c99c-41c1-8b4b-241f1aff72f6
+Text: |+1
+ 
+ Do not change the ORIGINALS - they are replaced when updated!
+ ------------------------------------------------------------------------------
+ You can DERIVE this frame "TeamcenterWizard" and then make
+ changes to the derived copy in the "Public" folder of the library.
+Transparent: false
+UUID: b679fea8-8b4a-4d11-9b40-1bcaaf515733

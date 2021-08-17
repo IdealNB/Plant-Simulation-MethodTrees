@@ -1,0 +1,19 @@
+InternalClassType: Method
+Coordinate3D: [-7,7,0]
+Name: Cond_Table
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ var rulesTab,condTab:object;var rName:string;var row:integer
+ 
+ rulesTab := ~.Rules.Rules
+ condTab := ~.Rules.Condition-- table for input
+ condTab.delete
+ rName:= @.activeRuleName
+ rulesTab.setCursor(2,1); rulesTab.find({2,1}..{2,*},rName)
+ row := rulesTab.cursorY
+ condTab.insertList(1,1, rulesTab[3,row].copy({1,1}..{*,*}))
+ condTab.RuleNo := row
+ condTab.openDialogBox(true)
+ print "Open Cond-Tab for rule ",rName," in row ",row
+RandomSeed: 325
+UUID: e678bbeb-7886-4a71-818c-9d821873d38a

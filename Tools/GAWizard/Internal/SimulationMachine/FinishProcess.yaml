@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [29.150000000000002,-9.55,0]
+Name: FinishProcess
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by _RunProcess
+ param kindStr:string -- finished or crashed
+ 
+ var machTab:object := ~.MachinesTable
+ var row:integer := machineIndex
+ machTab[10,row] := kindStr -- job status
+ 
+ eMPlantHandle := 0
+ if kindStr ~= "crashed"  -- try to start again
+ 	machTab[18,row] := machTab[18,row] + 1 -- number of crashes
+ 	
+ 	var s:string
+ 	if NOT getCommandLineArg("Embedding", s) 
+ 		-- detect the Slave process
+ 		-- started by_createRemoteeMPlant
+ 		~.&StartMachine.executeNewCallChain(row,false,false) -- boolean parameter: test,firstStart
+ 	end
+ end
+RandomSeed: 480
+UUID: a809e77f-d8d8-4915-a8e3-6af06c13f5fd

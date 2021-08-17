@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [23,-8,0]
+DataType: boolean
+HasInitValue: false
+Name: Build_ProcessLevel
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: c4a963ea-edc2-4adb-b991-340edc9fd15e
+Value: false

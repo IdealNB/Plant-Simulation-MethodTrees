@@ -1,0 +1,114 @@
+InternalClassType: DataTable
+CloseCtrl: "RootFolder.Internal.Tools.closeTab"
+Coordinate3D: [43.3,0,0]
+Label: "Statistical Evaluation"
+Name: StatisticalEvaluation
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 2d559d77-6be2-4cd9-bd20-f1d0e0ca350f
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+-
+ Name: StartCurrGen
+ DataType: integer
+ Value: 0
+-
+ Name: currRow
+ DataType: integer
+ Value: 0
+-
+ Name: translate
+ DataType: method
+ RandomSeed: 414
+ Value: |+1
+  -- Individual,	Mean value,	Number,	Minimum,	Maximum,	Standard deviation,	Observations, "ID",	Description
+  var StatTab:object := StatisticalEvaluation
+  StatTab.writeRow(0,0,rootfolder.Localization.getText(73),rootfolder.Localization.getText(74),rootfolder.Localization.getText(75),rootfolder.Localization.getText(76),rootfolder.Localization.getText(77),rootfolder.Localization.getText(78),rootfolder.Localization.getText(79),"ID",rootfolder.Localization.getText(191))
+  
+
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 8
+  DataType: real
+  FormatString: "-15.2"
+  MaxXDim: 8
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   DataType: table
+   Prototype:
+    Comment: ~
+    EditorPermissions: 12
+    CommonFormat: false
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+    Columns:
+   Width: 9
+  -
+   Index: 1
+   Alignment: "Right"
+   DataType: real
+  -
+   Index: 2
+   Alignment: "Right"
+   DataType: integer
+   Width: 6
+  -
+   Index: 3
+   Alignment: "Right"
+   DataType: real
+  -
+   Index: 4
+   Alignment: "Right"
+   DataType: real
+  -
+   Index: 5
+   Alignment: "Right"
+   DataType: real
+  -
+   Index: 6
+   Alignment: "Right"
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnIndex: true
+     ColumnWidth: 20
+     DataType: real
+     MaxXDim: 1
+     ShowDataType: true
+     ColumnFormat:
+     -
+      Index: 1
+      DataType: real
+     RowFormat:
+     -
+      Index: 0
+      FontSize: 1
+      FontColor: 0xa00000
+      Color: 0xc0c0c0
+    ColumnIndex: [string,2,~,"Fitness"]
+    Columns:
+   Width: 9
+  -
+   Index: 7
+   Alignment: "Right"
+   DataType: integer
+  -
+   Index: 8
+   DataType: string
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,9,"Individual","Mean value","Number","Minimum","Maximum","Standard deviation","Observations","ID","Description"]
+ Columns:

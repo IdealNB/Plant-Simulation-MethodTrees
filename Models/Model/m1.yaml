@@ -1,0 +1,19 @@
+InternalClassType: Method
+Coordinate3D: [12,-7,0]
+Name: m1
+Origin: 038518bf-c724-4500-a682-35fb71321f1d
+Program: |+1
+ var i := 10
+ /*dsds*/
+ /*dsds*/var j := 10 /*aaa*/
+ /*fdfd
+ fdfdf
+ fdf
+ */var jj := 10; var jjj := 12
+ m2
+ //dsdsds
+ --dffddfsas
+ var k := 10
+ frame.m3
+RandomSeed: 1073829617
+UUID: 3a39a19e-ea18-49fb-b680-e1f14eac5102

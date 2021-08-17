@@ -1,0 +1,32 @@
+InternalClassType: Method
+Coordinate3D: [-6,-4,0]
+Name: setReportLabel
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: sets the teamcenter data set name 
+ 			  with which the report will be stored
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TcReport Context Menu
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 16.09.2019	RBA		do not change the label of the frame
+ 07.05.2021	RBA		check license type
+ _________________________________________________________________________________*/
+ 
+ if check_License = "TC"
+ 	ReportObject.Label := prompt("Set target name in Teamcenter for uploading the report: ")
+ 	TCName.text := "Teamcenter Name: " + ReportObject.Label -- this is to show the label independent of the View settings
+ end
+RandomSeed: 1073814228
+UUID: 35ddb89a-ffae-4cdb-a454-453d028e0d30

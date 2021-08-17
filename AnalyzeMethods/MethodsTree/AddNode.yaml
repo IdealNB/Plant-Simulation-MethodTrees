@@ -1,0 +1,112 @@
+InternalClassType: Method
+Coordinate3D: [-7.5999999999999988,-3.1,0]
+Name: AddNode
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ param tree,prevMethodNode:object ,fromObj, toObj:string, NodeType:string ->object
+ 
+ var methodNodeClass, methodNode:object
+ var id:integer
+ var nodeCanHaveSucc := true
+ var defaultNodeType := false
+ --var toObjStr:string := to_str(toObj)
+ 
+ switch NodeType
+ case "MethodNode"
+ 	methodNodeClass := .AnalyzeMethods.derived.Method
+ 	methodNode := methodNodeClass.derive(tree)
+ 	methodNode.label := regex_replace(toObj, to_str(model), "")
+ 	methodNode.nodePath := toObj
+ 	methodNode.DisplayedName.Text := methodNode.label -- to_str(toObj)
+ 	tree.Nodes.appendRow(methodNode, tree.Nodes.ydim)
+ 	id := tree.Nodes.ydim
+ 	methodNode.ActivationId.text := "No: " + to_str(id)
+ 
+ case "Recursion"
+ 	methodNodeClass := .AnalyzeMethods.derived.MethodRecursion
+ 	methodNode := methodNodeClass.derive(tree)
+ 	methodNode.label := regex_replace(toObj, to_str(model), "")
+ 	methodNode.nodePath := toObj
+ 	methodNode.DisplayedName.Text := methodNode.label -- to_str(toObj)
+ 	tree.Nodes.appendRow(methodNode, tree.Nodes.ydim)
+ 	id := tree.Nodes.ydim
+ 	methodNode.ActivationId.text := "Recursion!"
+ 
+ case "DataTable", "Variable","Store", "Conveyor", "Frame", "Folder", "Connector", "Teamcenter"
+ 	methodNodeClass := str_to_obj(".AnalyzeMethods.derived." + NodeType)
+ 	nodeCanHaveSucc := false
+ 	defaultNodeType := true
+ 
+ case "Transporter"
+ 	methodNodeClass := str_to_obj(".AnalyzeMethods.derived." + NodeType)
+ 	nodeCanHaveSucc := true
+ 	defaultNodeType := true
+ 
+ else
+ 	debug
+ end
+ 
+ if defaultNodeType
+ 	methodNode := methodNodeClass.derive(tree)
+ 	methodNode.label := regex_replace(toObj, to_str(model), "")
+ 	methodNode.nodePath := toObj
+ 	methodNode.DisplayedName.Text := methodNode.label -- to_str(toObj)
+ 	tree.Nodes.appendRow(methodNode, tree.Nodes.ydim)
+ 	id := tree.Nodes.ydim
+ 	methodNode.ActivationId.text := "No: " + to_str(id)
+ end
+ 
+ 
+ --var mo := MethodNode.MethodObj
+ --var text := mo._3d.getGraphic("default").createText(methodNode.label,1)
+ --text.scale := 1.5
+ --text.position := [5.2,-0.35,0.0025]
+ 
+ if fromObj /= ""
+ 	if nodeCanHaveSucc
+ 		.AnalyzeMethods.derived.MethodConnector.connect(prevMethodNode,methodNode)
+ 	else
+ 		.AnalyzeMethods.derived.ObjConnector.connect(prevMethodNode, methodNode)
+ 	end
+ end
+ 
+ //Start
+ var startPos := [0,3.5,0.1]
+ if fromObj /= ""
+ 	startPos := prevMethodNode.coordinate3D
+ end
+ 
+ //Set pos
+ if nodeCanHaveSucc = false and prevMethodNode.numSucc > 1
+ 	--stack
+ 	var horizontalNode := prevMethodNode.succ(prevMethodNode.numSucc-1).~
+ 	methodNode.coordinate3D := horizontalNode.coordinate3D
+ 	methodNode.coordinate3D[2] -= 1.5
+ else
+ 	--horizontal
+ 	methodNode.coordinate3D := startPos
+ 	methodNode.coordinate3D[2] := startPos[2]-4
+ 	if fromObj /= ""
+ 		methodNode.coordinate3D[1] := tree.Positions["X","End"] --methodNode.displayedName._3d.BoundingBoxSize[1]
+ 	end
+ end
+ 
+ 
+ //Save maximum coordinates
+ var endPos := methodNode.coordinate3D[1] + strLen(methodNode.displayedName.text)*0.35
+ --var endPos := methodNode.coordinate3D[1] + methodNode._3d.boundingBoxSize[1] --bug?
+ if endPos > tree.Positions["X","End"]
+ 	tree.Positions["X","End"] := endPos
+ end
+ if methodNode.coordinate3D[2] < tree.Positions["Y","End"]
+ 	tree.Positions["Y","End"] := methodNode.coordinate3D[2]
+ end
+ 
+ var gr := tree._3d.getGraphic("plate",[1])
+ gr.scale[1] := tree.positions["X","End"]-tree.positions["X","Start"]+10
+ gr.scale[2] := tree.positions["Y","End"]-tree.positions["Y","Start"] -4
+ gr.position := [-gr.scale[1]/2-1, gr.scale[2]/2,0]
+ 
+ return methodNode
+RandomSeed: 104
+UUID: bdcf4ea2-4d49-4921-aa21-1d02faa833ce

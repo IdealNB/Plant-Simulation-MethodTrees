@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Coordinate3D: [-17,0.24849999999999994,0]
+DataType: speed
+HasInitValue: false
+Name: RSU_speed
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: ac1ccb43-674e-4c9b-b671-5e7155a78ba3
+$Observers:
+- [Value,"onChanges"]
+Value: 1

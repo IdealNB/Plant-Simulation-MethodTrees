@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [-8,-3,0]
+Name: getFreeWorker
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ var ServiceTable : table
+ 
+ var j := WerkerPool.Capacity -- Anzahl Werker gesamt
+ var k := j
+ 
+ for var i := 1 to k 
+ 	j -= WerkerPool.ContentsList[1, i].mediatedCapacity
+ next
+ 
+ if j > maxWorkerAtStation then 
+ 	j := maxWorkerAtStation -- maximum of Workers at one station
+ elseif j = 0 then
+ 	j := 1 -- if no worker is free mediate at least 1
+ end
+ 
+ ?.imp.getServices(ServiceTable)
+ ServiceTable[2, 1] := j
+ ?.imp.setServices(ServiceTable)
+RandomSeed: 1073814238
+UUID: 1386bebd-def6-4c49-98f6-12d5eb68d99f

@@ -1,0 +1,14 @@
+InternalClassType: Comment
+BackgroundColor: 16777215
+Color: 16711680
+Coordinate3D: [-16,-10,0]
+Font: 2
+Name: Comment131
+Origin: f47edc1e-c99c-41c1-8b4b-241f1aff72f6
+Text: |+1
+ Customizable Methods 
+       (adjust to TC data structure and content)
+       (adjust to user specific Plant Simulation objects)
+ -----------------------------------------------------------------
+Transparent: false
+UUID: fd50a5b5-c8c9-4274-8235-c4cc1742d138

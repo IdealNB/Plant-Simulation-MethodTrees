@@ -1,0 +1,55 @@
+InternalClassType: Method
+Coordinate3D: [13.100000000000001,-9.55,0]
+Name: RunProcess
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- CONTROL THE PROCESS ON THE REMOTE MACHINE
+ -- The treatment of a single job
+ -- called by: ConnectProcess_ (StartMachine_), itself in a single callChain
+ /* has AN ErrorHandler, errors should NOT !! open the debugger. */
+ 
+ if NOT existsObject(to_str(self)) then
+ 	return  -- during detection (Reset distributed simulation)
+ end
+ 
+ var MachTab:object := ~.MachinesTable
+ var MachNo:integer := MachineIndex -- row of the MachinesTable
+ 
+ if JobId = 0 then
+ 	return
+ end
+ 
+ var sema:object := ~.~.rootfolder.Internal.&sema
+ waituntil sema.value = false prio 1
+ sema.value := true
+ 
+ var eMPlant:any := getInterfaceOfRemoteProcess(eMPlantHandle) -- this method has an error handler
+ 	
+ if JobId < 0
+ 	var newJobId:integer := ~.~.M_NewJobId(eMPlant,JobId) -- code depends of the wizard (Experimentmanager or GAwizard)
+ 
+ 	if newJobId > 0 
+ 		JobId := newJobId
+ 		startDateTime := sysdate-- register the start time of a simulation run in a custom attribute
+ 		
+ 		-- the following 3 methods have an error handler:
+ 		StartReplication
+ 		
+ 		if NOT &Observer.alreadyRunning 
+ 			&Observer.executeNewCallChain -- generates periodical calls
+ 		end
+ 
+ 		MachTab[10,MachNo] := "busy"
+ 		-- if JobId = -1: wait for the results of the other simulation machines
+ 	end
+ 	
+ end -- if JobId < 0
+ 
+ sema.value := false
+RandomSeed: 477
+UUID: ea2cd554-870d-48ac-b26b-ba9600751ba2
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: object
+ Value: "ErrorHandler"

@@ -1,0 +1,9 @@
+InternalClassType: Comment
+BackgroundColor: 16119285
+Coordinate3D: [0.7,0,0.1]
+Name: DisplayedName
+Origin: 1228824b-6298-488c-825f-0b55c39ee270
+Text: "Text"
+UUID: 579a97b7-b618-452a-a095-adc2ed55e390
+3D:
+ ExcludeFromShowContentOfLocation: false

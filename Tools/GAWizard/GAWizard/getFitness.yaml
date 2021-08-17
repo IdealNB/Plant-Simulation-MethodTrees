@@ -1,0 +1,34 @@
+InternalClassType: Method
+Coordinate3D: [32.300000000000004,-12,0]
+Name: getFitness
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- multi-target optimization
+ param obsTable:table, ObsNo:integer -> real 
+ 
+ var numComp:integer := Fitness.yDim --_Intermed_
+ var fit,r:real
+ var targetStr,stmt:string
+ if numComp > 1
+ 	--var a:integer := 1 + (ObsNo - 1) * (numComp + 1)
+ 	for var j := 1 to numComp 
+ 		targetStr := Fitness[1,j] -- like "root.eventcontroller.simTime"
+ 		stmt := to_str("-> real return ",targetStr)
+ 		r := executeSilent(stmt)
+ 		--IntermediateResults_[a + j,rowNo] := r
+ 		
+ 		obsTable[j+1,ObsNo] := r -- column 6 (statisticalEvaluation) of type table 
+ 		fit := fit + r * Fitness[2,j] -- weighting of the j-th component
+ 	next
+ 	--IntermediateResults_[a,rowNo] := fit
+ else
+ 		targetStr := Fitness[1,1] -- like "root.eventcontroller.simTime"
+ 		stmt := to_str("-> real return ",targetStr)
+ 		r := executeSilent(stmt)
+ 		fit := r * Fitness[2,1] -- weighting of the j-th component
+ end
+ 
+ obsTable[1,ObsNo] := fit
+ result := fit
+RandomSeed: 408
+UUID: f909abf6-33cb-43ca-ad18-18b788ebaebd

@@ -1,0 +1,85 @@
+InternalClassType: Station
+Coordinate3D: [1.25,-2.0000000000000004,0]
+Origin: 93d3376f-9416-4f0b-a619-7c933349b24e
+RandomSeed: 1073901392
+UUID: 25c55164-733f-4720-83f9-0e111277dc96
+3D:
+ GraphicGroupNames: ["default"]
+ LockedGraphicGroups: []
+ $Objects:
+ -
+  GraphicGroupNames: ["default"]
+  JointAcceleration: 0
+  JointDeceleration: 0
+  JointLowerLimitActive: false
+  JointType: "Prismatic Joint"
+  JointUpperLimitActive: false
+  JointVelocity: 1
+  LockedGraphicGroups: []
+  Origin: 35e6272f-2251-461a-95b7-8ee84d49bf55
+  UUID: 9b24664f-193d-4aaf-93c1-585eff89bdf7
+  $Objects:
+  -
+   GraphicGroupNames: ["default"]
+   JointAcceleration: 0
+   JointDeceleration: 0
+   JointLowerLimitActive: false
+   JointType: "Prismatic Joint"
+   JointUpperLimitActive: false
+   JointVelocity: 2
+   LockedGraphicGroups: []
+   Origin: a2d5c5ec-87bc-49b4-bd55-7c656caaca5c
+   UUID: d92e8eb1-e5c3-4d48-a345-c72b1f2703c1
+   $Objects:
+   -
+    GraphicGroupNames: ["default"]
+    JointAcceleration: 0
+    JointDeceleration: 0
+    JointLowerLimitActive: false
+    JointType: "Prismatic Joint"
+    JointUpperLimitActive: false
+    JointVelocity: 2
+    LockedGraphicGroups: []
+    Origin: 9c35fda7-d221-4fb5-8899-422fb4347e34
+    UUID: a6e46f48-1cf1-42d0-8906-27158cb80c95
+$CustomAttributes:
+-
+ Name: Init
+ $DataType: method
+ RandomSeed: 1073901390
+-
+ Name: waitPosReached
+ $DataType: method
+ RandomSeed: 1073901388
+-
+ Name: ParametrizeRSU
+ $DataType: method
+ RandomSeed: 1073901386
+-
+ Name: TrackWidth
+ $DataType: length
+ Value: 1.2
+-
+ Name: TrackLength
+ $DataType: length
+ Value: 11.54
+-
+ Name: Height
+ $DataType: length
+ Value: 6.7799999999999994
+-
+ Name: transferPart
+ $DataType: method
+ RandomSeed: 1073901384
+-
+ Name: reset
+ $DataType: method
+ RandomSeed: 1073901382
+-
+ Name: SetSpeeds
+ $DataType: method
+ RandomSeed: 1073901380
+-
+ Name: OnFail
+ $DataType: method
+ RandomSeed: 1073901378

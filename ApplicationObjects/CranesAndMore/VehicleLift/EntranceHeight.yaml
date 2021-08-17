@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-4,0]
+CreateIn3D: true
+DataType: length
+Name: EntranceHeight
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+PlausibilityCtrl: "RecomputeLayout"
+UUID: d29c7d2e-cbb4-48c2-a7bd-aaee7a4409a5
+Value: 0.01

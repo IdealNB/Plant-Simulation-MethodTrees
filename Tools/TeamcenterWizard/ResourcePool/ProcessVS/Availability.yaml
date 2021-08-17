@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2.8,-6,0]
+DataType: real
+HasInitValue: false
+Name: Availability
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: 4008fba0-6fd9-4040-9f7e-e83c01a1115a
+3D:
+ ExcludeFromShowContentOfLocation: false
+Value: 100

@@ -1,0 +1,16 @@
+InternalClassType: GAOptimization
+Coordinate3D: [11.55,0,0]
+Direction: "Minimum"
+ErrorCtrl: "ErrorHandler"
+EvaluationCtrl: "evaluate"
+FitnessTarget: 0
+FitnessTargetAverage: 0
+GenerationChangeCtrl: "generationChange"
+GenerationSize: 10
+NumBestSolutions: 5
+NumGenerations: 5
+OffspringSelection: "1of4"
+Origin: c8a4fbcd-e5a3-4b08-bb17-edd6bcee4b57
+TerminationCtrl: "termination"
+UUID: cf472fd2-76ac-4128-a60a-691dc4689a13
+$TaskTable:

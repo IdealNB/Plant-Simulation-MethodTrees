@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-23,-1.5015,0]
+DataType: length
+Name: BoxHeight
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 3b00b56a-311e-47c8-86af-2abb749fa98a
+$Observers:
+- [Value,"onChanges"]
+Value: 1.2

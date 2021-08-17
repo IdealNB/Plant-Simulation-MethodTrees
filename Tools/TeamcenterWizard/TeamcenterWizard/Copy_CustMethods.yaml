@@ -1,0 +1,42 @@
+InternalClassType: Method
+Coordinate3D: [-15,-9,0]
+Name: Copy_CustMethods
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: 
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: 
+ Calls		: 
+ 
+ Author		: 
+ Date		: 
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author		Description
+ _________________________________________________________________________________*/
+ 
+ if RootFolder.Public.isNameUnique("write_Process_Data")
+ 	RootFrame.TeamcenterWizard.&write_Process_Data.duplicate(RootFolder.Public, "write_Process_Data")
+ end
+ if RootFolder.Public.isNameUnique("write_Resource_Data")
+ 	RootFrame.TeamcenterWizard.&write_Resource_Data.duplicate(RootFolder.Public, "write_Resource_Data")
+ end
+ if RootFolder.Public.isNameUnique("get_Variant")
+ 	RootFrame.TeamcenterWizard.&get_Variant.duplicate(RootFolder.Public, "get_Variant")
+ end
+ if RootFolder.Public.isNameUnique("write_Process_Data_BB")
+ 	RootFrame.TeamcenterWizard.&write_Process_Data_BB.duplicate(RootFolder.Public, "write_Process_Data_BB")
+ end
+ if RootFolder.Public.isNameUnique("write_Product_Data")
+ 	RootFrame.TeamcenterWizard.&write_Product_Data.duplicate(RootFolder.Public, "write_Product_Data")
+ end
+ &custom_Methods.Value := "RootFolder.Public"
+RandomSeed: 1073814142
+UUID: c11a4caa-e7ce-46c5-bf93-3d16f1951995

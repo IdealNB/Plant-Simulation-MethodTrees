@@ -1,0 +1,180 @@
+InternalClassType: Method
+Coordinate3D: [15,-1,0]
+Name: Import
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+  logs into TC database and imports AI data
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TeamcenterWizard User Dialog
+ Calls		: TC_Select (Dialog), transfer_Tables, check_Mapping, write_History, 
+ 			  getTC_Data, getXML_JTs, set_CurrentDirectory, getLDXML_JTs
+ 
+ Author	: Ralph Bauknecht
+ Date		: 01.06.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 06.09.2018	RBA		added "StructureContext" SubType
+ 23.10.2018	RBA		added Check_Mapping
+ 28.05.2019	RBA		bugfix result = true only if data was loaded
+ 26.06.2019	RBA		remove result, add call of write_History
+ 26.08.2019	RBA		call new method getTC_Data because of ErrorHandler for uncomplete imports
+  					add set_CurrentDirectory which also checks if model was saved
+ 08.01.2021	RBA		change TC_Connected to Data_Source
+ 11.01.2021	RBA		add load native LD data in .xml format
+ _________________________________________________________________________________*/
+ 
+ var AISelected, SyncSelected : string
+ 
+ if set_CurrentDirectory -- make sure the working directory points to model folder
+ 	
+ -- TC-Connected: Get PLMXML from TeamCenter or from a Excel file?
+ 	if Data_Source = "TC"
+ 	
+ 		TeamCenter.UserName := ""
+ 		TeamCenter.setPassword("") 
+ 		Sync_Select := -1
+ 		infoBox("Connecting to Teamcenter ...", TRUE) -- show message while connecting in the background
+ 		if TeamCenter.login -- if login was successful
+ 			AISelect.delete
+ 			SyncSelect.delete
+ 			TeamCenter.queryApplicationInterfaces(AISelect)
+ 			infoBox("", TRUE) -- close message before opening selection dialog
+ 			TC_Select.open -- show selection dialog for AI and Sync
+ 			waituntil Sync_Select >= 0
+ 			if Sync_Select > 0 -- 0 is cancel import
+ 				--TeamCenter.retrieveData(Sync_Select) -- import data from TC
+ 				if NOT getTC_Data -- import data from TC
+ 					Sync_Select := 0 -- not succesfully loaded
+ 				end
+ 			end
+ 	
+ 			TeamCenter.logout
+ 		else
+ 			infoBox("", TRUE) -- close message when login was not successful
+ 		end
+ 
+ 	elseif Data_Source = "TC_XML"
+ 		if getXML_JTs -- load the TC PLMXML / XML from an external file
+ 			Sync_Select := 1 -- succesfully loaded
+ 		else
+ 			Sync_Select := 0 -- not succesfully loaded
+ 		end
+ 		
+ 	elseif Data_Source = "LD_XML"
+ 		getLDXML_JTs -- load the LD XML from an external file
+ 		Sync_Select := 0 -- no further table processing, no history for LD native data
+ 		check_Mapping
+ 		write_History -- make entry in history table
+ 		
+ 	end
+ 
+ 	if Sync_Select > 0
+ 		transfer_Tables
+ 		check_Mapping
+ 		write_History -- make entry in history table
+ 	end
+ 
+ end
+RandomSeed: 1073814225
+UUID: a684a527-1cb3-4d7e-8806-01440dd139a3
+3D:
+ Mirror: [false,false,false]
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814224
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  Shows simplified error messages from Teamcenter in message windows.
+  Full message goes to the console.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in Import
+  Calls		: 
+  
+  Author	: Ralph Bauknecht
+  Date		: 01.01.2018
+  _________________________________________________________________________________
+  	History: 
+  21.08.2019	RBA	show complete error in console.
+   _________________________________________________________________________________*/
+  
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  	-> any
+  
+  infoBox("", TRUE) -- close message when login was not successful because of an error
+  
+  print error -- show complete error message on the console
+  	
+  -- wrong servername or port	
+  if copy(error, 1, 49) = "The Teamcenter server returned a connection error"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The Teamcenter server returned a connection error.", "Please check your Teamcenter Interface configuration on the Data Source tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  if copy(error, 1, 63) = "Der Teamcenter-Server hat einen Verbindungsfehler zurückgegeben"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("Der Teamcenter-Server hat einen Verbindungsfehler zurückgegeben. Bitte prüfen Sie Ihre Teamcenter Interface Einstellungen im Data Source Tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  if copy(error, 1, 47) = "The Teamcenter server returned a protocol error"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The Teamcenter server returned a protocol error.", "Please check your Teamcenter Interface configuration on the Data Source tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  if copy(error, 1, 47) = "The Teamcenter server returned a protocol error"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The Teamcenter server returned a protocol error.", "Please check your Teamcenter Interface configuration on the Data Source tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  if copy(error, 1, 16) = "Unknown protocol"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The Teamcenter server returned a protocol error.", "Please check your Teamcenter Interface configuration on the Data Source tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  
+  -- for example JBOSS error
+  if copy(error, 1, 48) = "The Teamcenter server returned an internal error"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The Teamcenter server returned an internal error.", "Please check your Teamcenter Interface configuration on the Data Source tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  if copy(error, 1, 61) = "Der Teamcenter-Server hat einen internen Fehler zurückgegeben"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("Der Teamcenter-Server hat einen internen Fehler zurückgegeben. Bitte prüfen Sie Ihre Teamcenter Interface Einstellungen im Data Source Tab.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  
+  -- no login credentials
+  if error = "null"
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	promptmessage("The login attempt failed:  the user ID is empty.", "Open the console to see more information and repeat this step.")
+  	return FALSE
+  end
+  
+  -- unknown error
+  if copy(error, 1, 18) /= "Unhandled error in"
+  	promptmessage(error) -- shows complete error message
+  	error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  	return FALSE
+  end
+  
+  TeamCenter.logout -- since Import method is terminated by ErrorHandler
+  infoBox("", TRUE) -- close info window

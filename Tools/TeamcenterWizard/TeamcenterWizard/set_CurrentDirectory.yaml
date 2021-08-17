@@ -1,0 +1,36 @@
+InternalClassType: Method
+Coordinate3D: [15,-11,0]
+Name: set_CurrentDirectory
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- sets the current directory to the model residence
+ -- enforces to save the model if not yet saved
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Import, Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 26.08.2019
+ _________________________________________________________________________________
+ 	History: 
+ 26.08.2019	
+ _________________________________________________________________________________*/
+ -> boolean
+ 
+ var i : integer := strRpos("\\\\", modelFile)
+ if i = 0 -- model is not saved
+ 	result := FALSE -- do not continue
+     promptmessage("Please save the model first to apply your settings.")
+ else
+ 	result := TRUE
+     setCurrentDirectory(copy(modelFile, 1, i-1)) -- set the current directory
+ end
+RandomSeed: 1073814169
+UUID: e527bce9-34c2-471c-9136-a88c4b29fd3f

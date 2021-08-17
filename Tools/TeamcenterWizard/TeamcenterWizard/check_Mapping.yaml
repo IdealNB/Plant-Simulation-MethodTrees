@@ -1,0 +1,71 @@
+InternalClassType: Method
+Coordinate3D: [17,-18,0]
+Name: check_Mapping
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- check if imported PlantSimClass entries exist in Object_Mapping table
+ -- check if object entries in Object_Mapping table are valid
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Import, insert_LayoutObjects
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 23.10.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 14.12.2020	RBA		Add Product_Data check
+ _________________________________________________________________________________*/
+ 
+ -> boolean
+ 
+ result := TRUE -- initialize 
+ 
+ -- loop through Layout_Data and check PlantSimClass entries
+ for var i := 1 to Layout_Data.yDim
+ 	var PSC : string := Layout_Data["PlantSimClass", i]
+ 	if PSC /= "" AND PSC /= "Frame"
+ 		Object_Mapping.setCursor(1,1)
+ 		if NOT Object_Mapping.find({"TC PlantSimClass",1}..{"TC PlantSimClass",*}, PSC )
+ 			if messageBox("The PlantSimClass" + chr(13) + ">> " + PSC + " <<" + chr(13) + "is missing in the Object Mapping table." + chr(13) + "Do you want to add it to the table?", 48, 3) = 16
+ 				Object_Mapping["TC PlantSimClass", Object_Mapping.yDim+1] := PSC
+ 			end
+ 			Object_Mapping.openDialog
+ 			result := FALSE
+ 		end
+ 	end
+ next
+ 
+ -- loop through Product_Data and check PlantSimClass entries
+ for var i := 1 to Product_Data.yDim
+ 	PSC := Product_Data["PlantSimClass", i]
+ 	if PSC /= "" AND PSC /= "Frame"
+ 		Object_Mapping.setCursor(1,1)
+ 		if NOT Object_Mapping.find({"TC PlantSimClass",1}..{"TC PlantSimClass",*}, PSC )
+ 			if messageBox("The PlantSimClass" + chr(13) + ">> " + PSC + " <<" + chr(13) + "is missing in the Object Mapping table." + chr(13) + "Do you want to add it to the table?", 48, 3) = 16
+ 				Object_Mapping["TC PlantSimClass", Object_Mapping.yDim+1] := PSC
+ 			end
+ 			Object_Mapping.openDialog
+ 			result := FALSE
+ 		end
+ 	end
+ next
+ 
+ -- loop through Object_Mapping and check object entries
+ for var i := 1 to Object_Mapping.yDim
+ 	if NOT existsObject(obj_to_str(Object_Mapping["PlantSimulation Object", i]))
+ 		promptmessage("Invalid or missing object entry in the Object Mapping table.")
+ 		Object_Mapping.openDialog
+ 		result := FALSE
+ 		return
+ 	end
+ next
+RandomSeed: 1073814188
+UUID: d9dc2764-cfab-480c-88da-f555356f671e

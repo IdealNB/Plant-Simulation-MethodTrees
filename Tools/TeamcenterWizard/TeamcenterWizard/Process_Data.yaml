@@ -1,0 +1,123 @@
+InternalClassType: DataTable
+CloseCtrl: "self.OnClose"
+Coordinate3D: [28,-20,0]
+Name: Process_Data
+OpenCtrl: "self.OnOpen"
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 1f94650e-a5a2-4a3c-91ad-572df7c7a664
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+-
+ Name: OnOpen
+ DataType: method
+ RandomSeed: 1073814206
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- set open/close indicator 
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: table open control
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 12.10.2020
+  _________________________________________________________________________________
+  History: 
+  Date		Author		Description
+  12.10.2020	RBA			
+  _________________________________________________________________________________*/
+  
+  self.~.openDialog
+  self.~.isOpen := TRUE
+-
+ Name: OnClose
+ DataType: method
+ RandomSeed: 1073814205
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- set open/close indicator 
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: table close control
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 12.10.2020
+  _________________________________________________________________________________
+  History: 
+  Date		Author		Description
+  12.10.2020	RBA			
+  _________________________________________________________________________________*/
+  
+  param changed: boolean
+  self.~.isOpen := FALSE
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 7
+  -
+   Index: 2
+   Width: 8
+  -
+   Index: 3
+   Width: 6
+  -
+   Index: 8
+   Width: 11
+  -
+   Index: 9
+   Width: 11
+  -
+   Index: 10
+   Width: 11
+  -
+   Index: 11
+   Width: 11
+  -
+   Index: 13
+   Width: 13
+  -
+   Index: 15
+   Width: 9
+  -
+   Index: 16
+   Width: 9
+  -
+   Index: 17
+   Width: 9
+  -
+   Index: 19
+   Width: 9
+  -
+   Index: 20
+   Width: 9
+  -
+   Index: 23
+   Width: 13
+  -
+   Index: 24
+   Width: 13
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ Columns:

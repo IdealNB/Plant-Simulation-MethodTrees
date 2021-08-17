@@ -1,0 +1,9 @@
+InternalClassType: Interface
+Origin: e922ac8c-b0cf-4809-9151-995fbf24bde9
+RandomSeed: 1073901350
+UUID: f8c61a71-8e97-410a-9e59-41c3bc3f6957
+$Successors:
+-
+ $Succ: 9bd2b95a-a1c0-4c1a-af53-daf10d4f2b1a
+ Origin: 7aa16076-6b0b-4748-a131-801cca7aaf89
+ UUID: 5a37eb44-23a2-455d-aa7e-89ab754a7434

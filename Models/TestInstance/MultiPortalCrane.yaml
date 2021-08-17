@@ -1,0 +1,67 @@
+InternalClassType: Track
+Coordinate3D: [12,4,0]
+Origin: 018412fb-a99d-404e-8262-80a6b8823d91
+RandomSeed: 1073889120
+UUID: 1bb920b7-bb5f-4371-b5a1-80fcaffa85ab
+Width: 10
+$CustomAttributes:
+-
+ Name: INIT
+ $DataType: method
+ RandomSeed: 1073889118
+-
+ Name: createPortal
+ $DataType: method
+ RandomSeed: 1073889116
+-
+ Name: createTrolley
+ $DataType: method
+ RandomSeed: 1073889114
+-
+ Name: parametrizeHook
+ $DataType: method
+ RandomSeed: 1073889112
+-
+ Name: onOpen
+ $DataType: method
+ RandomSeed: 1073889110
+-
+ Name: getPortals
+ $DataType: method
+ RandomSeed: 1073889108
+-
+ Name: OnCreate
+ $DataType: method
+ RandomSeed: 1073889106
+-
+ Name: adjustCraneToStore
+ $DataType: method
+ RandomSeed: 1073889104
+-
+ Name: OnPull
+ $DataType: method
+ RandomSeed: 1073889102
+-
+ Name: CheckBlockingList
+ $DataType: method
+ RandomSeed: 1073889100
+-
+ Name: reset
+ $DataType: method
+ RandomSeed: 1073889098
+-
+ Name: createPortalGraphics
+ $DataType: method
+ RandomSeed: 1073889096
+-
+ Name: checkCraneCoordinates
+ $DataType: method
+ RandomSeed: 1073889094
+-
+ Name: calculateTargetPosition
+ $DataType: method
+ RandomSeed: 1073889092
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [0,5,0]

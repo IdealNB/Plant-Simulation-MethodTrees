@@ -1,0 +1,11 @@
+InternalClassType: Method
+Coordinate3D: [-5,10,0]
+Name: openConfig
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- called by the context menu
+ dialog.open
+ Dialog.setIndex("Register",2)
+
+RandomSeed: 69
+UUID: 131ef71a-70a5-406c-8ceb-f782c7b408a3

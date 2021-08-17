@@ -1,0 +1,121 @@
+InternalClassType: Conveyor
+AutomaticStop: true
+Capacity: 1
+Coordinate3D: [0,0,0]
+EntranceCtrl: "self.OnEntrance"
+EntranceCtrlFront: false
+EntranceCtrlRear: true
+Length: 2
+Origin: 777e8366-40d3-414d-b0b5-9f654fa72165
+RandomSeed: 1
+UUID: fa315c88-396b-4131-ba22-3c650d79d943
+Width: 1
+$TabConfig: 0xffef
+3D:
+ BaseHeight: 1
+ ExtConfiguration:
+ -
+  Name: "Lanes"
+  Extrusion Profile: [[-0.475,-0.1],[0.475,-0.1],[0.475,0],[-0.475,0],[-0.475,-0.1]]
+  Configuration Type: 2
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0x2d2d2d,0x292929,0x0,0x0,0,8]
+ -
+  Name: "Frame_2"
+  Extrusion Profile: [[0.475,-0.1],[0.5,-0.1],[0.5,0],[0.475,0],[0.475,-0.1]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,68]
+ -
+  Name: "Frame_1"
+  Extrusion Profile: [[-0.5,-0.1],[-0.475,-0.1],[-0.475,0],[-0.5,0],[-0.5,-0.1]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,68]
+ ObstacleForWorker: "(None)"
+$CustomAttributes:
+-
+ Name: Reset
+ DataType: method
+ RandomSeed: 3919
+ Value: |+1
+  @.EntranceLocked := false
+  @.ExitLocked := true
+  
+  Conveyor._3D.BaseHeight := current.EntranceHeight
+-
+ Name: OnEntrance
+ DataType: method
+ RandomSeed: 3918
+ Value: |+1
+  if not ?.Full
+  	return
+  end
+  
+  // Automatic stop is set to false so that the object
+  // is in working state during lift operation.
+  // This is important for processing time related failures
+  ?.AutomaticStop := false
+  
+  ?.EntranceLocked := true
+  
+  
+  var LiftHeight:length
+  if current.succ/=void
+  	LiftHeight:= ?._3D.getPositionOfObject(current.succ,current.succ._3D.getMUAnimationPosition(0.0)).z - current.EntranceHeight
+  else
+  	LiftHeight:= current.ExitHeight - current.EntranceHeight
+  end
+  
+  
+  self.~.playTranslation(0, LiftHeight)
+  ?.ExitLocked := false
+  
+  stopuntil ?.Empty
+  ?.ExitLocked := true
+  
+  self.~.playTranslation(LiftHeight, 0)
+  ?.EntranceLocked := false
+  ?.AutomaticStop := true
+-
+ Name: playTranslation
+ DataType: method
+ RandomSeed: 3917
+ Value: |+1
+  param startHeight:length, endHeight:length
+  var LiftSpeed:speed := current.LiftSpeed
+  
+  // Check if object exists in 3D and if animation is turned on
+  if self.~._3D.existsWithAnimation
+      var liftTime:time  := self.~._3D.playTranslation([0, 0, startHeight], [0, 0, endHeight], LiftSpeed)
+      while liftTime > 0
+      stopuntil self.~.Failed wait liftTime                                                       
+      if waitExpired then exitloop end
+      	current.Failed := true
+      	self.~._3D.SelfAnimations.pause
+      	stopuntil not self.~.Failed
+      	current.Failed := false
+      	self.~._3D.SelfAnimations.play
+      	liftTime := self.~._3D.SelfAnimations.AnimationTimeTotal
+       end
+  else
+      var liftStart:time  := EventController.SimTime
+      liftTime  := abs(endHeight-startHeight) / LiftSpeed 
+      while liftTime > 0
+     		stopuntil self.~.Failed wait liftTime                         		
+     		if waitExpired then exitloop end
+     			liftTime -= (EventController.SimTime-liftStart)
+     			stopuntil not self.~.Failed
+     			liftStart := EventController.SimTime
+      	end        
+  end
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [0,2,0]

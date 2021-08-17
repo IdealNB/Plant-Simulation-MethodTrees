@@ -1,0 +1,71 @@
+InternalClassType: Method
+Coordinate3D: [-15.000000000000002,-26,0]
+Name: write_ProcessTime
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write ProcTime to the generated resources
+ -- ErrorHandler attached for objects that do not support Proctime 
+ _________________________________________________________________________________
+ Parameters	: station (new object), process time
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_Process_Data
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 28.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 28.04.2020			
+ _________________________________________________________________________________*/
+ 
+ param station : object, pTime : time := 0
+ -> string
+ 	
+ --obj.ProcTime.Type := "Const" -- set constant time; this only works for internal attributes
+ station.ProcTime := pTime -- set time
+ 	
+ return "OK" -- data successfully set to the object
+RandomSeed: 1073814152
+UUID: 62eddc11-0bee-46af-a117-ca1df71301b7
+3D:
+ Mirror: [false,false,false]
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 1073814151
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  Error Handler, prohibits debugger window.
+  For objects that cannot take a process time, since there is no way to check for this.
+  _________________________________________________________________________________
+  Parameters	: error message
+  			  
+  ReturnValues: FALSE
+  
+  Called By	: Error in write_ProcessTime
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 28.04.2020
+  _________________________________________________________________________________
+  	History: 
+  Date		Author	Description
+  12.11.2020	RBA		Changed error message
+   _________________________________________________________________________________*/
+  
+  param byref error: string,
+  	  method_path: string,
+  	  line_number: integer
+  	-> string
+  
+  error := "" -- assigning an empty string prevents Plant Simulation from opening the debugger
+  return "Not possible to assign Process Time to this object."

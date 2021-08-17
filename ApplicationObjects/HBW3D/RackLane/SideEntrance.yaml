@@ -1,0 +1,18 @@
+InternalClassType: Interface
+Coordinate3D: [-0.5,-0.67,1]
+ExitStrategyBlocking: true
+MaxConnections: 1
+Name: SideEntrance
+Origin: 36c20b8d-1c80-4074-b22d-7918958e6fc8
+Position: 5
+RandomSeed: 1
+UUID: ee25ee65-1e61-47b5-9d06-40949ade22ce
+3D:
+ VisibleGraphicGroups: ["default"]
+$Successors:
+-
+ $Succ: f14ef1df-6ca3-4964-9c64-43574ec3223f
+ Name: Connector6
+ Origin: 24458a18-bd1b-4617-9042-e92c944f3bb4
+ UUID: 072e09ce-332c-4766-b0a7-011c8faeaf98
+ $SuccFlipped: true

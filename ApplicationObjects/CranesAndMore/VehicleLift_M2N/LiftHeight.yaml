@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-4,0]
+CreateIn3D: true
+DataType: length
+Name: LiftHeight
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+PlausibilityCtrl: "RecomputeLayout"
+UUID: 060d8e89-cfed-48a5-a999-6458c4dab9e7
+Value: 4

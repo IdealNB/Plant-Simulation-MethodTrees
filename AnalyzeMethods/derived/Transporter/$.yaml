@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Transporter
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 03c8ad7c-219e-4463-82cf-a02d0067317c
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 6e9272fc-0117-4a43-b40d-78e037802d45
+- 45aa94a1-10c6-4e55-9b38-0f72db5abfb5
+- 4b1abaca-eb1f-4ff6-8c88-8106cd888550
+- f1e635aa-d933-4903-a5c8-7c128987df3e
+- 92ecdfc2-06d4-47a8-9bea-58ccb50d75d1
+- bd3fa512-8147-4d55-8daa-037bdbbbf4d3
+- e6ccfe81-bd3e-4b71-8f75-b9c9dac1957c

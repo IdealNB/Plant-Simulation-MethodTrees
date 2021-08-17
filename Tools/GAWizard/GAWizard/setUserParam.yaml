@@ -1,0 +1,72 @@
+InternalClassType: Method
+Coordinate3D: [16.35,-8,0]
+Name: setUserParam
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- Set values of the_individual (as string and real value)
+ -- Set the sequence of the chromosome to the table file to be arranged.
+ -- called by: NewJob_ (end of optim),
+ -- nextIndividual (not distributed simulation),setRemoteParam_, Termination_
+ ->boolean
+ var stmt,attrStr,attrVal,typeStr:string
+ var k,chromNo:integer
+ var chrom:table
+ var successBool:boolean
+ var GAobj,seqTab:object
+ 
+ result := true
+ GaOptimization.taskTable.setCursor(1,1)
+ if GaOptimization.taskTable.find({1,1}..{1,*}, GAAllocation) 
+ 	chromNo := GaOptimization.taskTable.cursorY
+ 	chrom := individual[1,chromNo]
+ 	for var j := 1 to chrom.yDim 		
+ 		attrStr := GAAllocation[0,j]
+ 		attrVal := chrom[1,j]
+ 		typeStr := recogDataType(attrStr)
+ 		switch typeStr
+ 		case "string" 
+ 			stmt := to_str("-> boolean ",attrStr," := \\"",attrVal,"\\"; return true")
+ 		case "time" 
+ 			stmt := to_str("-> boolean ",attrStr," := str_to_time(\\"",attrVal,"\\"); return true")
+ 		else
+ 			stmt := to_str("-> boolean ",attrStr," := ",attrVal,"; return true")
+ 		end
+ 		successBool := executeSilent(stmt)
+ 		if successBool 
+ 			--Recording.append(to_str(attrStr," in Generation ",currGeneration," Individuum ",IndividualNum));
+ 		else
+ 			typeStr := to_str("Error by \\"",attrStr," := ",attrVal,"\\"")
+ 			Recording.append(typeStr)
+ 		end
+ 		result := successBool AND result
+ 	next
+ end
+ 
+ -- Rearrange the assigned TableFile ('seqTab')
+ attrStr := "Change order of table "
+ var t:table := SeqLoc.assignments
+ for var j := 1 to t.yDim 
+ 	seqTab := t[1,j]
+ 	GAobj  := t[2,j]
+ 	k      := t[3,j]
+ 	GaOptimization.taskTable.setCursor(1,1)
+ 	successBool := GaOptimization.taskTable.find({1,1}..{1,*},GAobj)
+ 	result := successBool AND result
+ 	if successBool 	
+ 		chromNo := GaOptimization.taskTable.cursorY
+ 		chrom := individual[1,chromNo]
+ 		--k := GAobj.freeCol_  SeqTab;
+ 		-- transmit the sequence of the chromosom to the table to be arranged
+ 		seqTab.sort(k,"up")-- original order
+ 		for var n := 1 to seqTab.yDim 
+ 			seqTab[k+1,chrom[1,n]] := n
+ 		next
+ 		seqTab.sort(k+1,"up")
+ 		attrStr := to_str(attrStr," '",GAobj.name,"'")
+ 	else
+ 		typeStr := to_str("Missing GA table '",GAobj.name,"'")
+ 		Recording.append(typeStr)
+ 	end
+ next
+RandomSeed: 411
+UUID: f7999d94-6c87-4b01-94bc-2b0fefb8941a

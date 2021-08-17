@@ -1,0 +1,37 @@
+InternalClassType: Method
+Coordinate3D: [-6,-2,0]
+Name: relabelReport
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: sets Label of the frame to report object
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TcReport Relabel control
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 07.05.2021	RBA		check license type
+ _________________________________________________________________________________*/
+ 
+ param oldLabel, newLabel : string, userRelabel : boolean
+ 
+ if userRelabel
+ 	if check_License = "TC"
+ 		ReportObject.Label := newLabel
+ 		TCName.text := "Teamcenter Name: " + newLabel -- this is to show the label independent of the View settings
+ 	else
+ 		?.Label := oldLabel
+ 	end
+ end
+RandomSeed: 1073814230
+UUID: 3ec7173c-36f3-4d83-96c9-c74abb858eed

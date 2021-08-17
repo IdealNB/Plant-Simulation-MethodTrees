@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [-17,-5,0]
+DataType: real
+HasInitValue: false
+Name: RSU_Availability
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 88b047c8-1b99-46dc-bbf6-80aabc9e7e03
+Value: 100

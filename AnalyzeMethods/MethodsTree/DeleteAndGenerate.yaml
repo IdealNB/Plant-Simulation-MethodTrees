@@ -1,0 +1,17 @@
+InternalClassType: Button
+Control: "self.OnClicked"
+Coordinate3D: [-16,-5,0]
+Label: "Delete And Generate"
+Name: DeleteAndGenerate
+ObjectWidth: 6
+Origin: 55f1a49c-de84-461b-a427-13c57fac25ad
+UUID: 26dd0ee2-e3de-4f76-b096-4e8baf84e386
+$CustomAttributes:
+-
+ Name: OnClicked
+ DataType: method
+ RandomSeed: 1073838454
+ Value: |+1
+  
+  DeleteAllTreesButton.onClicked
+  GenerateButton.onClicked

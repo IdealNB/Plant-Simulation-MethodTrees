@@ -1,0 +1,78 @@
+InternalClassType: Method
+Coordinate3D: [2,-26.3251,0]
+Name: create_Products
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: Generate MU library objects that are defined in Product_Data and Layout_Data
+ _________________________________________________________________________________
+ Parameters	: --
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: create_LibObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 02.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ -- generate MUs from the Product_Data structure
+ for var i := 1 to Product_Data.yDim
+ 	
+ 	Object_Mapping.CursorY := 1
+ 	var PS_Class : string := Product_Data["PlantSimClass", i] -- get PlantSimClass
+ 	var found_element : boolean := Object_Mapping.find({"TC PlantSimClass",*}, PS_Class)
+ 
+ 	if found_element = true then	-- Mapping LineDesigner <-> PlantSimulation successful?
+ 		
+ 		var temp_stat : object := Object_Mapping["PlantSimulation Object", Object_Mapping.CursorY]
+ 		
+ 		-- check if the mapped entry is a MU
+ 		if temp_stat.InternalClassName = "Piece" OR temp_stat.InternalClassName = "Goods" OR temp_stat.InternalClassName = "Vehicle"
+ 			
+ 			var level : integer := Product_Data["Level", i] -- level for actual object
+ 			var LengthOriented : boolean := Object_Mapping["LengthOrientation", Object_Mapping.CursorY]
+ 			var GetCapacity : boolean := Object_Mapping["GetCapacity", Object_Mapping.CursorY]
+ 		
+ 			-- create a new library object if this is a new TCID
+ 			create_LibObjects(temp_stat, LengthOriented, GetCapacity, level, i, Product_Data, "MU")
+ 	
+ 		end
+ 
+ 	end
+ 	
+ next
+ 
+ -- generate MUs from the Layout_Data structure
+ for var i := 1 to Layout_Data.yDim
+ 	
+ 	Object_Mapping.CursorY := 1
+ 	PS_Class := Layout_Data["PlantSimClass", i] -- get PlantSimClass
+ 	found_element := Object_Mapping.find({"TC PlantSimClass",*}, PS_Class)
+ 
+ 	if found_element = true then	-- Mapping LineDesigner <-> PlantSimulation successful?
+ 		
+ 		temp_stat := Object_Mapping["PlantSimulation Object", Object_Mapping.CursorY]
+ 		
+ 		-- check if the mapped entry is a MU
+ 		if temp_stat.InternalClassName = "Piece" OR temp_stat.InternalClassName = "Goods" OR temp_stat.InternalClassName = "Vehicle"
+ 			
+ 			level := Layout_Data["Level", i] -- level for actual object
+ 			LengthOriented := Object_Mapping["LengthOrientation", Object_Mapping.CursorY]
+ 			GetCapacity := Object_Mapping["GetCapacity", Object_Mapping.CursorY]
+ 		
+ 			-- create a new library object if this is a new TCID
+ 			create_LibObjects(temp_stat, LengthOriented, GetCapacity, level, i, Layout_Data, "MU")
+ 	
+ 		end
+ 
+ 	end
+ 	
+ next
+RandomSeed: 1073814158
+UUID: 77ce78ec-2589-4171-97f9-7439a6c8511d

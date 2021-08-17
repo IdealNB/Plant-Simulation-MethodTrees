@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-7,0]
+DataType: length
+Name: LaneHeight
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+UUID: 482c68df-f7f1-4884-b681-c23323d8f819
+Value: 0.01

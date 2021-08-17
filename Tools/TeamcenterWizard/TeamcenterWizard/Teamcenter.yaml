@@ -1,0 +1,53 @@
+InternalClassType: Teamcenter
+ApplicationInterfaceType: "PSI2PlantSimulation_AI"
+Coordinate3D: [3,-1,0]
+DatasetPrefix: "PSI2"
+DataTable: "PLMXML_Import"
+Directory: "Teamcenter"
+Origin: 18619437-246b-4ac7-8cf7-350028ff2d3f
+RetrieveJTFiles: true
+StyleSheet: "%ApplicationHome%Teamcenter\\Plmxml2Xml.xsl"
+UUID: 35bf8730-eb87-4e52-b9ae-9b08de6ac8e2
+3D:
+ Mirror: [false,false,false]
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+$CustomAttributes:
+-
+ Name: OnPlausibility
+ DataType: method
+ RandomSeed: 1073814226
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- checks format of JT data folder, adds "\\" if necessary
+  _________________________________________________________________________________
+  Parameters	: none
+  			  
+  ReturnValues: none
+  
+  Called By	: Teamcenter
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 04.12.2018
+  _________________________________________________________________________________
+  History: 
+  04.12.2018	RBA	changes
+  20.08.2019	RBA	method is no longer used
+  _________________________________________________________________________________*/
+  
+  var folder : string := to_str(?.Directory)
+  
+  if strlen(folder) > 1 then
+  	if omit(folder, 0, strlen(folder)) /= "\\\\" then
+  		folder := folder + "\\\\"
+  	end
+  --	?.~.path_Data := folder
+  else
+  	MessageBox("Choose directory for import data!")
+  	?.openDialog
+  end
+  
+  TC_Import.SetCaption("TC_Path", folder)

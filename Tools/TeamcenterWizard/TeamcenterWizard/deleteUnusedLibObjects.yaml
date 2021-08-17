@@ -1,0 +1,53 @@
+InternalClassType: Method
+Coordinate3D: [9,-10,0]
+Name: deleteUnusedLibObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- deletes all objects in the library connected to the model frame
+ 	that have no derived instances
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 10.01.2020
+ _________________________________________________________________________________
+ 	History: 
+ 10.01.2020	RBA	
+ _________________________________________________________________________________*/
+ 
+ var i := Library_Objects.ydim
+ if Library_Objects.ydim > 0
+ 	repeat
+ 		if to_str(Library_Objects["LibObject", i]) /= "VOID" AND
+ 				Library_Objects["LibObject", i].numChildren = 0
+ 			Library_Objects["LibObject", i].deleteObject
+ 			Library_Objects.cutRow(i)
+ 		else
+ 			i -= 1
+ 		end
+ 	until i = 0 
+ end
+ 
+ if Library_Objects.ydim = 0 -- if list is empty 
+ 	Library_Objects.inheritContents := TRUE -- inherit changes in Index for updates
+ end
+RandomSeed: 1073814162
+UUID: 6da18114-b6be-4a37-8e6f-cd75cfc2ba2d
+3D:
+ Mirror: [false,false,false]
+ StatesOrientation: "(Off)"
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true

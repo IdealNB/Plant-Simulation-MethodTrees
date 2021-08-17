@@ -1,0 +1,116 @@
+InternalClassType: Method
+Coordinate3D: [16,-23,0]
+Name: fill_OpList
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+  collect all operations and variant infos for a process
+ _________________________________________________________________________________
+ Parameters	: string of children IDs, table reference
+ 			  
+ ReturnValues: table reference
+ 
+ Called By	: write_Process_Data, insert_ProcessObjects
+ Calls		: get_Variant
+ 
+ Author		: Ralph Bauknecht
+ Date		: 04.09.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 13.02.2019	RBA		add usage of variant info in process table 
+ 17.09.2019	RBA		call get_Variant in Public/TcW_Methods
+ 19.10.2020	RBA		add >> products := "" << to correct multiple entries
+ 					add prodList to collect products for assembly setup
+ 					can be called for the process with single entry in the children array
+ 04.05.2021	RBA		removed customizable methods in Public
+ 14.06.2021	RBA		Change from variants string to VariantsTab table to support complete variant information
+ _________________________________________________________________________________*/
+ param  children : string[], Byref opList, prodList : table
+ 
+ var VariantsTab : table
+ VariantsTab.create
+ VariantsTab.ColumnIndex := true
+ 
+ for var i := 1 to children.dim		
+ --	/*¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+ --		go through all children of the process and get the processing time
+ --		_____________________________________________________________*/
+ 	var child := children[i]
+ 	Process_Data.setCursor(1,1)
+ 	if Process_Data.find({"ID",1}..{"ID",*}, child ) 
+ 		var row := Process_Data.CursorY
+ 		
+ 		if Process_Data.getColumnNo("ConsumedParts") /= -1 AND Process_Data["ConsumedParts", row] /= VOID -- if info to consumed parts exist
+ 			
+ 			VariantsTab.delete({1,0}..{*,*}) 	-- init list
+ 			var products : string := "" 		-- init list
+ 			
+ 			for var j := 1 to Process_Data["ConsumedParts", row].yDim -- go through all consumed products
+ 				var productID := Process_Data["ConsumedParts", row]["InContextID", j]
+ 				Product_Data.setCursor(1,1)
+ 				if Product_Data.find({"InContextID",1}..{"InContextID",*}, productID ) -- find consumed product data
+ 					var pRow := Product_Data.CursorY
+ 					custom_Methods.get_Variant("product", pRow, VariantsTab, self.~) -- read and format variant infos
+ 					products := incl(Product_Data["Name", pRow] + ",", products, 1)
+ 					var prodID := Product_Data["TcItemID", pRow]
+ 					prodList.setCursor(2,1)
+ 					if NOT prodList.find({2,1}..{2,*}, prodID)
+ 						prodList.writeRow(1, prodList.yDim+1, 
+ 							Product_Data["Name", pRow], 
+ 							Product_Data["TcItemID", pRow], 
+ 							when Product_Data["Quantity", pRow] > 0 then Product_Data["Quantity", pRow] else 1)
+ 					end
+ 				end
+ 			next
+ 			
+ 			opList.writeRow( 1, opList.YDim+1,
+ 				Process_Data["Name", row],
+ 				Process_Data["Time", row],
+ 				products)
+ 
+ 			for var k := 1 to VariantsTab.XDimIndex -- all variant entries
+ 				var vCol := opList.getColumnNo(VariantsTab[k, 0])
+ 				if  vCol = -1 -- if new variant
+ 					vCol := opList.XDimIndex+1
+ 					opList[vCol, 0] := VariantsTab[k, 0] -- set header
+ 				end
+ 				opList[vCol, opList.YDim] := VariantsTab[k, 1] -- set value
+ 			next
+ 
+ 		
+ 		elseif Process_Data.getColumnNo("Variants") /= -1 AND Process_Data["Variants", row] /= VOID -- if info to Variants exist
+ 			
+ 			VariantsTab.delete({1,0}..{*,*})
+ 			custom_Methods.get_Variant("process", row, VariantsTab, self.~) -- read and format variant infos
+ 					
+ 			opList.writeRow( 1, opList.YDim+1,
+ 				Process_Data["Name", row],
+ 				Process_Data["Time", row],
+ 				"")
+ 			
+ 			for var k := 1 to VariantsTab.XDimIndex -- all variant entries
+ 				vCol := opList.getColumnNo(VariantsTab[k, 0])
+ 				if  vCol = -1 -- if new variant
+ 					vCol := opList.XDimIndex+1
+ 					opList[vCol, 0] := VariantsTab[k, 0] -- set header
+ 				end
+ 				opList[vCol, opList.YDim] := VariantsTab[k, 1] -- set value
+ 			next
+ 
+ 		else
+ 			opList.writeRow( 1, opList.YDim+1,
+ 				Process_Data["Name", row],
+ 				Process_Data["Time", row],
+ 				"", "")
+ 		end
+ 			
+ 	else
+ 		print "Process Id >>", child, "<< not found in table ", Process_Data, "!"
+ 	end
+ 	
+ next
+RandomSeed: 1073814193
+UUID: 9e9f04e1-1c37-4a77-8baf-8f38f8977517

@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [1.6999999999999993,-2.1999999999999993,0]
+Name: analyzeModel
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- called by: dialog (also showStats)
+ if current.class /= void 
+ 	removeStats
+ 	-- animIcon(TRUE) -- removed since there is no reason for it
+ 	
+ 	analyzeFrame(~)
+ 	
+ 	if is3Dopen and current._3D.exists  
+ 		current._3D.deleteStatistics
+ 	end
+ 	-- current.sendMessage("statistics", "0");
+ 	
+ 	Analyzed := true
+ else
+ 	-- The Bottlenck Analyzer must be inserted before use.
+ 	messagebox(rootfolder.Localization.getText(9),1,11)
+ end
+  -- markBottleneckObject
+RandomSeed: 76
+UUID: 8fbf331d-dce2-4958-9784-dafa8c19f0d6

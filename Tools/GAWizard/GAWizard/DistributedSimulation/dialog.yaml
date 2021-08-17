@@ -1,0 +1,10 @@
+InternalClassType: Dialog
+Coordinate3D: [19.35,-6,0]
+Label: "Simulationsmaschine"
+Origin: fc730bfe-e5e9-4924-8c24-2a68572e38b3
+UUID: 381670ce-b23e-4aba-82e8-3e0e94fa888d
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 422

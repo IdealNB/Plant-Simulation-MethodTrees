@@ -1,0 +1,45 @@
+InternalClassType: Method
+Coordinate3D: [9,-6,0]
+Name: reset_TC_position
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- reset object positions to last applied values
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 10.05.2019
+ _________________________________________________________________________________
+ 	History: 
+ 10.05.2019	RBA		change from Abs_Transform to Rel_transform
+ 22.05.2019	RBA		change from imported Trafo to applied Pos values in CreatedObjects
+ _________________________________________________________________________________*/
+ 
+ var i :integer
+ var obj : object
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ i := 1
+ while i <= Created_Objects.ydim loop
+ 	obj := Created_Objects["Link", i]
+ 		-- reset position for automatically created simulation objects
+ 	obj._3D.Position.X := Created_Objects["posx", i]
+ 	obj._3D.Position.Y := Created_Objects["posy", i]
+ 	obj._3D.Position.Z := Created_Objects["posz", i]
+ 	
+ 	
+ 	i += 1
+ end
+RandomSeed: 1073814220
+UUID: c37a9e51-dfe9-489d-ad81-69cbe63e431c
+3D:
+ Mirror: [false,false,false]

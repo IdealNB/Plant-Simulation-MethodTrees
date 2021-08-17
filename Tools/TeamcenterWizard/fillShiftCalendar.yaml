@@ -1,0 +1,39 @@
+InternalClassType: Method
+Coordinate3D: [-38,17,0]
+Name: fillShiftCalendar
+Origin: 17fd5f57-3e4d-4b93-9e09-07a36ed3cbad
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: 
+ Fills Resource tab of ShiftCalendar with objects in frames from CreatedObjects.
+ Must be adjusted if used with models that contain other than ProcessVS objects.
+ To use it, insert this method beside the ShiftCalendar. Then D&D the ShiftCalendar onto the method.
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: D&D action ShiftCalendar on this method
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 14.02.2019
+ _________________________________________________________________________________
+ 	History: 
+ Date	Author	Description
+ _________________________________________________________________________________*/
+ param shiftcalobj : object
+ 
+ var co : object := TeamCenterWizard.Created_Objects
+ var restab : table := shiftcalobj.Resources
+ restab.delete
+ 
+ 
+ for var i := 1 to co.yDim
+ 	restab[1, restab.yDim+1] := str_to_obj(to_str(co["Link", i]) + ".ProcessVS")
+ next
+ 
+ shiftcalobj.Resources := restab
+RandomSeed: 1073814236
+UUID: c86e6e07-e3f5-4e39-b5a9-6918cdc063f4

@@ -1,0 +1,22 @@
+InternalClassType: Method
+Coordinate3D: [13.55,-16.8,0]
+Name: SetSeed
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Called by: Start,_EndOfExp, EndOfSim_(non-distributed simulation)
+ param localExp,localRun:integer
+ /*var str:string
+ if localRun = 2  -- more than one observation: register seed settings
+ 	if strLen(UserSeedValueMethod) > 0 --_userDefSeed 
+ 		-- User defined
+ 		str := rootfolder.Localization.getText(356)
+ 	else -- Seed offset
+ 		str := rootfolder.Localization.getText(357)
+ 	end
+ 	_Protocol[1, localExp] := str
+ end*/
+ 
+ DefSeed4Run(localExp, localRun)
+ --print "SetSeed_ExpNo/RandomNumbersVariant  ",localExp,"/",eventcontroller.RandomNumbersVariant
+RandomSeed: 257
+UUID: 1f160b54-a510-4fcf-b5d1-7d61f70a001b

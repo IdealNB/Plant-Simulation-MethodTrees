@@ -1,0 +1,26 @@
+InternalClassType: DataTable
+Coordinate3D: [23,-17,0]
+Name: PLMXML_Import
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 212d975e-c393-4683-b20f-60de1165c428
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 1
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   DataType: table
+   Prototype:
+    Comment: ~
+    CommonFormat: false
+    ListFormat:
+     ColumnWidth: 20
+     DataType: string
+     ShowDataType: true
+    Columns:
+ ColumnIndex: [string,2,~,"root"]
+ Columns:

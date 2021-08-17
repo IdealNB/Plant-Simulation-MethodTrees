@@ -1,0 +1,30 @@
+InternalClassType: Method
+Coordinate3D: [-7,-29,0]
+Name: create_Workers
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: Generate worker library objects that are defined in Process_Data and Layout_Data
+ _________________________________________________________________________________
+ Parameters	: --
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: --
+ 
+ Author		: Ralph Bauknecht
+ Date		: 02.04.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ --TODO -- not in use yet
+ 
+ -- 1. generate a workerpool (in lib or only in model?)
+ 
+ -- 2. generate workers: in Resources folder in lib; generate worker with different process abilities; different IDs = different workers
+RandomSeed: 1073814144
+UUID: bed168d5-a491-4183-8784-347ec0618092

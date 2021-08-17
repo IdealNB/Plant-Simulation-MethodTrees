@@ -1,0 +1,60 @@
+InternalClassType: Method
+Coordinate3D: [10,-26,0]
+Name: positionPERT
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: set the position of objects according to PERT in TC
+ _________________________________________________________________________________
+ Parameters	: --
+ 			  
+ ReturnValues: --
+ 
+ Called By	: Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 23.03.2020
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ _________________________________________________________________________________*/
+ 
+ var pPos : string[]
+ var	tm : real[4,4] -- transformation matrix is converted to 4x4 matrix
+ var row : integer
+ 
+ for var i := 1 to Created_Objects.yDim  -- loop through all created objects in the frame
+ 	var obj : object := Created_Objects["Link", i]
+ 	var UID : string := Created_Objects["UniqueID", i]
+ 	
+ 	Layout_Data.CursorY := 1
+ 	if Layout_Data.yDim /= 0 AND Layout_Data.find({"UniqueID",*}, UID) -- if this is a layout object
+ 		row := Layout_Data.CursorY
+ 
+ 		if Layout_Data["PERT_Pos", row] /= "" -- predecessors exist
+ 			pPos := SplitString(Layout_Data["PERT_Pos", row], " ") -- X and Y position in PERT
+ 			tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, str_to_num(pPos[1])/20, -str_to_num(pPos[2])/20, 0.0, 1.0))
+ 			obj._3D.TransformationMatrix := tm
+ 		end
+ 	
+ 	end
+ 
+ 	Process_Data.CursorY := 1
+ 	if Process_Data.yDim /= 0 AND Process_Data.find({"UniqueID",*}, UID) -- if this is a BB object
+ 		row := Process_Data.CursorY
+ 
+ 		if Process_Data["PERT_Pos", row] /= "" -- predecessors exist
+ 			pPos := SplitString(Process_Data["PERT_Pos", row], " ") -- X and Y position in PERT
+ 			tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, str_to_num(pPos[1])/20, str_to_num(pPos[2])/20, 0.0, 1.0))
+ 			obj._3D.TransformationMatrix := tm
+ 		end
+ 	
+ 	end
+ 	
+ 	apply_ModelChanges
+ 	
+ next
+RandomSeed: 1073814159
+UUID: 4676a203-a435-4b3a-bf11-a99447f07abf

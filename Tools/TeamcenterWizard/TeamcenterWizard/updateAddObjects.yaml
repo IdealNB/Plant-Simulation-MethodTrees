@@ -1,0 +1,101 @@
+InternalClassType: Method
+Coordinate3D: [8,-20,0]
+Name: updateAddObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- adds objects to the model that are new in TC data
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: insert_LayoutObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 26.06.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 01.07.2019	RBA		add check_CreatedObjects; 
+ 					set button in dialog unsensitive after execution, and do not check for Applied_In_Model anymore
+ 05.12.2019	RBA		add "Applied_In_Model" column
+ _________________________________________________________________________________*/
+ 
+ var workareaTable : object := Layout_Data
+ var workareaTableU : object := Layout_Data_Update
+ var row : integer
+ var bGetAllLevels : boolean := false
+ var station, auto_connector : object
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ if Import_History.ydim > 1 -- safety check if history table contains entries
+ 	
+ 	-- get last entry which contains changes to previous PLMXML
+ 	var Changes : table := Import_History["Changes", Import_History.ydim]
+ 	var Connectors : table := Import_History["Connector_List", Import_History.ydim]
+ 
+ 	workareaTableU.delete({1, 0}..{*, *}) -- init work table
+ 	workareaTable.copyFormatTo(workareaTableU)
+ 	workareaTable.copyRangeTo({1, 0}..{*, 0}, workareaTableU, 1, 0) -- write index to update table
+ 
+ 	-- check if changes exist
+ 	if Changes.ydim > 0 then
+ 	
+ 		for var i := 1 to Changes.yDim
+ 
+ 			-- new item was added to the layout data and is not yet applied
+ 			if Changes["Change_Note", i] = "New Item" AND Changes["PlantSimClass", i] /= "" AND Changes["Applied_In_Model", i] = "FALSE"
+ 		
+ 				var ID : string := Changes["UniqueID", i] -- get link to object
+ 				
+ 				-- create temporary workareatable and create the item
+ 				workareaTable.CursorY := 1
+ 				workareaTable.find({"UniqueID", *}, ID)
+ 				row := workareaTable.CursorY
+ 				workareaTable.copyRangeTo({1, row}..{*, row}, workareaTableU, 1, 1) -- generate a worktable with only the selected item
+ 				insert_LayoutObjects(workareaTableU) -- generate the object
+ 				workareaTableU.delete({1, 1}..{1, *}) -- empty the worktable after use
+ 				Changes["Applied_In_Model", i] := "TRUE" -- this change is applied
+ 					
+ 				-- if a workarea was created
+ --				tbl_connections.delete({1, 1}..{*, *}) -- TODO recreate connections
+ --				bGetAllLevels := true
+ 					
+ 			end
+ 			
+ 		next		
+ 	
+ 		Import_History["Applied_In_Model", Import_History.ydim] := true
+ --		TC_Import.SetSensitive("Add_ObjectsU", FALSE) -- only apply once
+ 		
+ 	
+ /*		if bGetAllLevels = true then
+ 			for var w := 1 to Connectors.ydim loop
+ 				auto_connector := Connectors["Connector", w]
+ 				if auto_connector /= VOID then
+ 					auto_connector.deleteObject
+ 				end
+ 				Connectors.cutRow(w)
+ 			next
+ 		
+ 			m_Get_All_Levels
+ 			m_Iterate_connectors(tbl_connections)
+ 		
+ 			if PERT_Connected = true then
+ 				m_PERT_areas
+ 			end
+ 			
+ 		end*/
+ 	
+ 	end
+ 
+ end
+RandomSeed: 1073814213
+UUID: 2d20f74d-3d02-478d-b194-73238c4ac5b1
+3D:
+ Mirror: [false,false,false]

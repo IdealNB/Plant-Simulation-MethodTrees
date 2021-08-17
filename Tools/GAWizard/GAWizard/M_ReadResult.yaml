@@ -1,0 +1,97 @@
+InternalClassType: Method
+Coordinate3D: [50.300000000000004,-8,0]
+Name: M_ReadResult
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ param eMPlant:any, JobId:integer
+ var jobTab:object := JobsTable
+ if JobId < 1 then return end
+ jobTab[4,JobId] := "ready" -- state column
+ var statTab:object := StatisticalEvaluation
+ var nRuns:integer := NumRuns
+ 
+ var indNo:integer := jobTab[2,JobId]-- No of_individual
+ var obsNo:integer := jobTab[3,JobId]-- No of observation
+ 	
+ var nGen:integer := currGeneration
+ var GenSize:integer := GaOptimization.GenerationSize
+ var rowStat:integer
+ if nGen = 1 
+ 	rowStat := indNo
+ else
+ 	rowStat := GenSize * (2 * nGen - 3) + indNo -- Gen 2: Rows = GenSize.../  Gen 3: Rows = 3 * GenSize...
+ end
+ 
+ var str:string
+ if statTab[6,rowStat] = void 
+ 	str := to_str("Gen ",nGen," Ind ",indNo)
+ 	IntermediateResults[0,rowStat] := str
+ 	statTab.createNestedList(6,rowStat);
+ 	statTab[6,rowStat].Name:=str
+ 	statTab[0,rowStat] := individuals[1,indNo].copy
+ 	statTab[0,rowStat].name := str
+ end
+ 
+ var obsTable:table := statTab[6,rowStat]
+ var p:string := to_str(self.~) -- path or location
+ var fit,r:real
+ if UserFitness -- fitness calculation by a method
+ 	str := to_str("-> real return ",~,".",UserCalculateFitness)
+ 	fit := eMPlant.executeSimTalk(str)
+ 	IntermediateResults[obsNo,rowStat] := fit
+ else -- fitness by table "Fitness"
+ 	var n:integer := Fitness.yDim
+ 	var outputStr,stmt:string
+ 	if n > 1 -- multible rows in the tablefile ~.Fitness
+ 		for var j := 1 to n 
+ 			outputStr := Fitness[1,j]
+ 			outputStr := to_str(root,strOmit(outputStr,1,4))
+ 			r := eMPlant.getValue(outputStr)
+ 			obsTable[j+1,obsNo] := r -- column 6 of StatisticalEvaluation (local statTab)
+ 			IntermediateResults[(n + 1) * (obsNo - 1) + j + 1 ,rowStat] := r --_Intermed_ 
+ 			fit := fit + r * Fitness[2,j] -- weighting of the j-th component
+ 		next
+ 		IntermediateResults[(n + 1) * (obsNo - 1) + 1, rowStat] := fit
+ 	else -- single row in the tablefile Fitness
+ 		outputStr := Fitness[1,1] -- like "root.eventcontroller.simTime"
+ 		outputStr := to_str(root,strOmit(outputStr,1,4))
+ 		stmt := to_str("-> real return ",outputStr)
+ 		r := eMPlant.getValue(outputStr)
+ 		fit := r * Fitness[2,1] -- weighting of the j-th component
+ 		IntermediateResults[obsNo,rowStat] := fit
+ 	end
+ end
+ obsTable[1,obsNo] := fit
+ 
+ jobTab[7,JobId] := sysdate -- register the end of the job
+ jobTab[8,JobId] := jobTab[7,JobId] - jobTab[6,JobId]
+ 
+ var nObs:integer := statTab[2,rowStat] + 1
+ statTab[2,rowStat] := nObs -- number of observations
+ var DLGobj:object := dialog.GAWizard
+ 
+ if nObs = nRuns  -- the evaluation of an_individual is ready
+ 	fit := obsTable.meanValue({1,1}..{1,*})
+ 	statTab[1,rowStat] := fit
+ 	if nRuns > 1  -- with statistical evaluation
+ 		statTab[3,rowStat] := obsTable.min({1,1}..{1,*})
+ 		statTab[4,rowStat] := obsTable.max({1,1}..{1,*})
+ 		statTab[5,rowStat] := obsTable.standardDeviation({1,1}..{1,*})
+ 	end
+ 	individuals[2,indNo] := fit
+ 	
+ 	statTab.setCursor(7,rowStat + 1)
+ 	if statTab.find({7,rowStat + 1}..{7,*}, statTab[7,rowStat])  -- search the ID for subsequent equal individuals
+ 		copyIndividual(rowStat, statTab.cursorY, indNo) -- fromID, toID, IndividualNo
+ 	end
+ 
+ 	indNo := Dialog.readyIndividuals + 1 -- count a full evaluated_individual
+ 	Dialog.readyIndividuals := indNo
+ 	DLGobj.setCaption("currIndivR_com",to_str(indNo))
+ end
+ obsNo := Dialog.readyObservations + 1 -- count an observation
+ Dialog.readyObservations := obsNo
+ DLGobj.setCaption("currRunR_com",to_str(obsNo))
+ dialog.showProgressByIcon
+RandomSeed: 393
+UUID: 6d9b561f-0d4c-4cf9-a443-e0d4ea5da0a3

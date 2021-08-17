@@ -1,0 +1,47 @@
+InternalClassType: Method
+Coordinate3D: [17,-17,0]
+Name: write_Successor
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- fills the Successor column using the Predecessor data
+ _________________________________________________________________________________
+ Parameters	: Layout_Data, Process_Data or LogProcess_Data table
+ 			  
+ ReturnValues: none
+ 
+ Called By	: transfer_Tables
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 20.08.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 17.03.2020	RBA		add check for columns; also called now for Layout_Data (Station PERT)
+ _________________________________________________________________________________*/
+ 
+ param workTable : object
+ 
+ var predecs : string[]
+ var row : integer
+ 
+ -- loop through workTable
+ if workTable.getColumnNo("Predecessor") /= -1 AND workTable.getColumnNo("Successor") /= -1 -- if columns exist
+ 	for var i := 1 to workTable.yDim
+ 		if workTable["Predecessor", i] /= ""
+ 			predecs := SplitString(workTable["Predecessor", i], " ") -- get all predecesssor entries in an array
+ 			for var j := 1 to predecs.dim -- loop over all predecessors
+ 				workTable.CursorY := 1
+ 				if workTable.find({"ID", *}, predecs[j])
+ 					row := workTable.CursorY
+ 					workTable["Successor", row] := trim(workTable["Successor", row] + " " + workTable["ID", i])
+ 				end
+ 			next
+ 		end
+ 	next
+ end
+RandomSeed: 1073814173
+UUID: cf04abd7-bfba-456b-b79b-08952156bd48

@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-23,-0.50149999999999961,0]
+DataType: length
+Name: BoxWidth
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: cae83318-d4db-4a59-ad69-8591b9f89ed4
+$Observers:
+- [Value,"onChanges"]
+Value: 0.9

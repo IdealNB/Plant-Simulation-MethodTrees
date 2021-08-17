@@ -1,0 +1,30 @@
+InternalClassType: Method
+Coordinate3D: [6,4,0]
+Name: CB_RemoveAddress
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- submethod of Experiments.callback 
+ -- adds a line to the remotes list, before current selected one
+ -- created 14.05.2004 8.0.0 jek
+ var sel,j : integer;var RemoteList:list[string]
+ var l: list[string]
+ 
+ sel := ?.getIndex("RemotesList")
+ 
+ if sel > 0 
+ 	RemoteTable.cutRow(sel)
+ end
+ RemoteList.create
+ 
+ if RemoteTable.yDim < 1 
+ 	RemoteList.append("  ")
+ else
+ 	for j := RemoteTable.ydim downto 1 
+ 		RemoteList.insert(1, to_str(RemoteTable[1,j]," (",RemoteTable[2,j],")"))
+ 	next
+ end
+ 
+ ?.setList("RemotesList",RemoteList)
+ ~.DistributedSimulation.updateMachinesTable(RemoteTable)
+RandomSeed: 318
+UUID: bc9b3ab0-01a6-4093-9642-4a882aa9bccb

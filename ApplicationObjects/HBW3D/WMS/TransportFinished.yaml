@@ -1,0 +1,33 @@
+InternalClassType: Method
+Coordinate3D: [6.5,6,0]
+Name: TransportFinished
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // A transport order for storing products is finished, enter the data into database
+ //--------------------------------------------------------------------------------
+ Param pallet: object
+ 
+ var product:string := pallet.HBW_ProductName
+ var side:string := when pallet.~.Name = "RackLeft" then "left" else "right"
+ 
+ var column, row: integer
+ pallet.getStoragePlace(column, row)
+ 
+ var quantity: integer
+ if pallet.getAttrNo("HBW_ProductQuantity") > 0
+ 	quantity := pallet.HBW_ProductQuantity
+ else
+ 	quantity := 1
+ end
+ 
+ // remember the products in table Inventory
+ addPallet(pallet, side, column, row, product, quantity)
+ 
+ // remember the number of products at stock
+ addProduct(product, quantity)
+RandomSeed: 2258
+UUID: 0f8dcb1c-8f83-4417-8df3-dc1d973b97ec
+3D:
+ Mirror: [false,false,false]
+ Rotation: [0,0,0,-1]

@@ -1,0 +1,68 @@
+InternalClassType: Method
+Coordinate3D: [49.300000000000004,-4,0]
+Name: setPenaltyFitness
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- set the parameter in the remote model
+ -- called by: SimMachine.M_StartSimulation_
+ param jobId:integer
+ 
+ var fit:real := penaltyValue
+ dialog.numPenalty := dialog.numPenalty + 1 -- Frame 'dialog'
+ 
+ var DLGobj:object := dialog.GAwizard
+ 
+ var jobTab:object := JobsTable
+ var indNo:integer := jobTab[2,JobId]-- No of_individual
+ var obsNo:integer := jobTab[3,JobId]-- No of observation
+ 
+ var statTab := StatisticalEvaluation
+ var nRuns:integer := NumRuns
+ 
+ var nGen:integer := currGeneration
+ var GenSize:integer := GaOptimization.GenerationSize
+ var rowStat:integer
+ if nGen = 1 then rowStat := indNo; else
+ 	rowStat := GenSize * (2 * nGen - 3) + indNo -- Gen 2: Rows = GenSize.../  Gen 3: Rows = 3 * GenSize...
+ end
+ 
+ IntermediateResults[obsNo,rowStat] := fit
+ 	
+ if statTab[6,rowStat] = void 
+ 	var str:string := to_str("Gen ",nGen," Ind ",indNo)
+ 	IntermediateResults[0,rowStat] := str
+ 	statTab.createNestedList(6,rowStat)
+ 	if typeOfFitness ~= "time" 
+ 		statTab[6,rowStat].dataType := "time"
+ 	else
+ 		statTab[6,rowStat].dataType := "real"
+ 	end
+ 	statTab[0,rowStat] := individuals[1,indNo].copy
+ 	statTab[0,rowStat].Name:=str
+ end
+ statTab[6,rowStat].Name:="Penalty"
+ 
+ var t:table := statTab[6,rowStat]
+ t[1,obsNo] := fit
+ var nObs:integer := statTab[2,rowStat] + 1
+ statTab[2,rowStat] := nObs -- number of observations
+ if nObs = nRuns  -- the evaluation of an_individual is ready
+ 	fit := t.meanValue
+ 	statTab[1,rowStat] := fit
+ 	if nRuns > 1  -- with statistical evaluation
+ 		statTab[3,rowStat] := t.min
+ 		statTab[4,rowStat] := t.max
+ 		statTab[5,rowStat] := t.standardDeviation
+ 	end
+ 	individuals[2,indNo] := fit
+ 	
+ 	indNo := Dialog.readyIndividuals + 1-- register a full evaluated_individual
+ 	Dialog.readyIndividuals := indNo
+ 	DLGobj.setCaption("currIndivR_com",to_str(indNo))
+ end
+ obsNo := Dialog.readyObservations + 1-- register an observation
+ Dialog.readyObservations := obsNo
+ DLGobj.setCaption("currRunR_com",to_str(obsNo))
+ dialog.showProgressByIcon
+RandomSeed: 397
+UUID: d2b01b71-76b5-4e18-b604-dde95dba76c0

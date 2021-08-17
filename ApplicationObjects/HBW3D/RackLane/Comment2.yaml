@@ -1,0 +1,11 @@
+InternalClassType: Comment
+Cont: |+1
+ Below are attributes passed by the user that are used to \r
+ parametrize the conveyors in front of the racklanes
+Coordinate3D: [-10,3,0]
+Font: 2
+Name: Comment2
+Origin: 6ff5122e-3f53-4711-bc67-3253e129a962
+SaveAsRichedit: false
+Text: "Conveyor Attributes"
+UUID: 629f1abc-c364-44e1-bc45-8f74076b953b

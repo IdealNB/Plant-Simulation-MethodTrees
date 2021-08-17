@@ -1,0 +1,357 @@
+InternalClassType: Dialog
+ArgumentForApply: "APPLY"
+Coordinate3D: [-14.05,11.25,0]
+DialogX: -1
+DialogY: -1
+Label: "Experiments"
+Name: Dialog
+Origin: 2184adf5-41ac-48d7-aa6b-b3a0d0363636
+UUID: fcce43cd-70e4-4185-a3c8-1dfec06758e7
+$CustomAttributes:
+-
+ Name: callback
+ DataType: method
+ RandomSeed: 313
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,+9jwvqXKyZPmyK+fttGrvr/jm5fArZv7osK5w6PfmNuUz6LhyoOazbHpybXI5uOgu8Xim5/TsKaEmKnlnPbVn9+Bgbfe29LvpYK34oChkf6x16vE8t/UjKqrmsjV37rIoPqn+a+avK3GsKjmiZzu88rL+v3u4O/erMem59v1tZHdmOzej6GJ2N+qlKHXsMegntry15jVwKbgo73g7NGRj4/OtYnBnIfYq/3Djo/HosqHjv/8h/au66uPkdfUzeTksJG1r4LRkMzBqtz8pNrq4r6f1ZjjvJalh92Vr+ee5uWq1NXKjpnctsjS2O269tikofbtoJuuz4Pqt8y0sf/Xv5PQu+OloIGQtpD68arCrLDv2qnTq+vlloOyt62C0onT+s+W2I2U87eAw83huq3ipceL+KGoxa/p1e7SwtmGrZSk4erih/jVmdLbwJjvpP/1wf7UqpDklJnMgqjm+fq+ucWt5uiTo/H80dCdnPLhw42y+N6V1vbm45bpiZeK07ygp7CRs6aPsf2j3rG80cy0lbWyxqGe0qH0rdL3psTlwNzqudiU+qa13Mzz27Xrl9qj8Mzu/5Pg68rVi63i1JPTq9nv+NPC//r49+7jhvmwn5apj8Ob86+Lp9SGn/zV5vyXzrWbgMPivtr5lPmlrNyboJ+wl/3bvcfCzJCYqZSR4ICs9vysy5e+wK3Ok5ypj53d1eDN2dWnpJv4ucjHm+aE0qO69N6fp4Lvy/rF1KCu47L9mYiJ9dvM4MuFtJ+08M6b2anz3JiKqdPL1fOljfjXvYOvuZW/0/y/7qyH4pme7N+zxp/PmK6Y/LyLqrXJhZnbqNzv2oLsica0lZuzq7blwdH77bvsoY7n7Pny9L3p2ciDvYeV3/nusv7H6qKM/YqemMPesYro7LDO0ZnQ7fSFyLTBwreWlL2DvquAs96PuPOQzrDOt86j6+GuhKfHtdnB3tqiiPzNnISlk6To1cucquiRpqug5qq8gseQnu7DkIfgtt7YmMaGru2+1JDEtsSFmrekw/rF1pGG1ILj/JaFnZrFpe/5lvSOmNbN9c+Hl+aE7Pz0ldOv/MLzzMbRqdr2x+i3wYbDoIXVw6yYta2/obrwvpik8azBsN2nnNmb24GcnJzQ/f3ij+H4j5qi2J2SvMaOzfm0uIWz6OPiz8qd25jhr5ehjeCr0K7vjafH4fPZpq6hs6aVsvGi4/6/w8aCyuTDvNeAgeOc6u+W/N/n7KCKi7m02ZqW56bbnZvV37rc1ZTI6MT4/bTiorXRhJ6qy/jx5ZD0mZmhhYnN2pOLg/jrw4HE/ofv/4ef3ofdo/3s2tXL9Kr18qqf3e+6vM/NhIGpw+eO0ajIvr/+g8mK5sX3go38iKLT67Tcr7u4xcrA8MvDrfHE2aXK+OTK58zs/PCmmLbGkIu2wuCDmNux2buM0uWE+vfhlee71KfTu/jylIuU8r7gw9XPsofVlOCC/de89O2kyMyWiPaoi4fC3MPsz6DMiqTDxLvr4PfcqtLkkO+r4c3D37be7fbd9fvxwurXzrO5jOPQy7v+8pOA7bbh8PLl7N+g87KEwvvRjbijq4Pv8tHqspeEg6nH/oO1veijyaej4daMrMrow/HEsqz6k/WTjouu/+SOoML5isqLyqbKpd7GtN+uzvODrrK3j4D8hNm78KGbwdan3sCL1/Ds1bupspvps+/T0JyFo4//soPuupWptqysyI2Uxsuy15HEuYfDwbemkaGSovqS+erW/6PLv9iL5O2dgrTt86eitszLrO6ymq/O0LyvmvjZjrHzifKpnajWzZzd88XS2Ni+o5/z/6Wc8Lf1l6vf8oTw+N+jl4fmtNCI3MWg55rK16mu4qOf957+9YKUlvDdydPHq6eDlpONqZrC9Km+8bj3gPC7rqW/+/CVtoCj2eOqg8SBtb/nj5acnNzv7bXKlOG5uKWa9cellOGyqebphd+0lbKi66r3/5fi1Lvim9v/5p7oyse10Y+e6/OSpYirkofZzJT8kMPy4vrO9ta9pv2MpLKi1dKQpJutlsfEto/m5c+Fk/Si76H278PV34Py8p3L+dm1iqDjrNzZ29n1qPPMoMP9mtbRttrf7cHZrP/bm82cgvf4rIv50qeE8Y601I/7zf6t/oWutsTSrbf+wvr64fbhyJ2QnPHovKH8usjuyKPBk5C3mrK54+ra5ZbIjur3t8uRytuekcLes87E1NOUm5CphvOA1unY5pi00vWpzJCJl9TZmcuzqI+gubLPuKKZk7aq2bbX+reosdLxib7m9un3uM7qioW6y8qW7+3trNDlzv3SrY39pvHdlPTIzc+KxsLA68DKkqrjhKOChMKw/6fYluXzgq7VtMXQ+YL/i7iIsJ2qm4zFr5+o+Y+TqdDA9aX23NrJyuaRosaFxaWuvYfZi4nE4IORubjK1Z61rsT8s7XfvYuX1ebmu5zc3PSp7Mvm3c6wwcHdsMGkh4z+n+jA7M3ej4+Mwfm0t43o1ZbXq9/x+trS7N7Az/69pLiew+r/6M2/kLrs9IHM8/7ZxdS2+LGwq9/wra3zpsLGor7l5bfT2/L9tp2vmJz/jKfQ8bue7aDihaGjw8y/sbKU3sPH56qK45j1kbC00qyHxOOd1aHYuaSimpTCsaezs+P98MG3tcnX95qUsJXIi+Xcn5zntdnq27DRp8vY04uYzfaBwZrcg8Pw3c/mh+CN/eGS8+jN+5SBjJGr18Ln3OjRwKqtjrr5qv/Vz+LZxMKk2N2Pi8CO4r282+61jsWluNHQqJ3iwar7zMeLgObw6KKyj8nD+MS2iZ/86uXR352GqJGW6vf19pHdvvnd6qvHiIeg7+yIkPHHvu3KkJGv4M6D1ajugdGGu8eMtuy02ezqwL/g6Laa96rxtrTE0Pvqorei1J+PuoOwu86/u7iz/OnW4uqCr9f3jaeqn66Y7uTw086J/bv13vLb/9naxILFkd7H1o+j/cGq0MTe9MWNhJDc0ZSWkPHuu/uz9uvg6bj75reug+miruqq9OfSj7n3/bue8Pv+3ojoxoTAnruizM/vmebupc3IzMuWh8Smh7eRrpPSz9XZrK++s/zPg4moiIm5gLTv2oSwwuLr0r3D7q7s2MGC9u760dDkh/H06rqHg9vlo9TP24mYw/az1YDI1fXSiLa55aHawavqgJiA3/HCxOSTlJ+x3c7sgJK7y6D15Lqm86TOkdaR3v3bqIaCmYLln4XO/J+npd/8vaO03PW3zuXGt+aXrpKjt5i61qOC9dyqrZvdoq+njfOAgbDcvPvA+NuZ0624+Jj/xZ+qo8Tti46A4re/gaz7/vfmmuWb7qWXqM3657+oxtWb9c/r7Nagv8/tk6iGwM2O1Ouj9f6l/pD0j8Wsps3574+G5P/M4uOSkdf7xeHkmL3H2tL80JyYxYPX/vqGzOji68be3cK/xuqzos2K/Jym4f/d0P/TlbKgrp/7q/uS8+uso7mTxvmHqKL0u6nVr6KN1MWeyovJnP+s9rXToYChw+7l5Pyin6DvxcKZk4CQ3bXuhJjsgYyi8qTE8qj05Nze45aAgt2RzreZ9sjLzOW5gfHVt7ysxuKd+Z/KptvChfvJuYf1k+u+tuatw/mgpf655NCp8I2OmfeIgOWgjbnX0s7Izd/f/Kb+w9+Ks4uVv/uJz+n5oYWCnLngytTLlJS9/6Gl6aia46HK3Za2p/KNqNreu6uW94nmp775tbyHhIzsuJHWvLe9uuLfo+eNh+XpqaKy+ZzFwMX7mYP23fywwreVvN+OwsGW/Z/h2LD10rvl6Zvfjp+9wNqsuuTIgpSezeGe46ryycLYoYi7q5y3u+aziP7vv63o5+Pw1pXxxrvjvYKNo/DwoYCrzcL0+ZeS3aG/3fet6qDyrNOKoOrp3e+G17KphOjzlYPtrontiazf6LGGyYnG8d/ou5D64KTQlcWYsMvSxtD78qfjhJ7JoI+IiqrV4KaA/7vHsKv/j7+nybqKzOnylO7ioe2m7pPC2bfkh5yy+Ymotv+3587UjvnzlZHB5anQ9Y/GhKGT8siz8ZnP3pXn/6iR3cPRxMqz0PXL4Znk1aX/nv6OobDWs9q7lpPHz4qdjPL18LWCvsCP5NDpkrmfveKN2+XBzJj56oLzmZCk6aDLyozXvKbJouGe8+vWz4j24O+ml6qA3sTb/7mfrdaGju6wl+6MoNu678Ly1vXkjofqwor4h9v1pIuOsvTZ5ryUp+3sotnR3/6ag5uS6vez+I+NtpnFj9emrvnkkrr885Xri/Tv1tHM++e/s5+GpIvV9Iq0/Kfs/NvX9OGI9ZXioe3Loba29Ye5jpe88d+Uj5TFxYCW8r650ojyhNjv6uT+neaagaqfh5bJlIa8iNrSlr2Uov+/nvycxMT014eh+ZrlvteyvaGx0+7LhcuOiNaJwvL6+Inbyv3Lt56Q9pvtzoGmifGS4KLo59nbjcnMq9+ZuJatv5ikg5aQ8d/EsMyetMjuwYjyyIuglNGQsraH5o/hrqH7qNTppKPpptHp7b+Dj52csKrOysmT8KHWlIe7reqSxZzQp/PI/LyhlOfj747rvM/huZHl+b2X+JHVyoD8laWWk8+AoPz349PY9deHqKP+obf4jrTH57bqz5CzxI3Iue3pv/HPrbuQuK68rpWc7O+KoeL4/YrO2o/62+rvg6KkiaXQxsWz8P/5zNHs/c2ulKy/05bDrfvxwbPrz/TY6rjwn/+Mq7mJnJGK5aiT/r6qvsHNwN+4w7LGs8mgjdaKir+0oeqH6PGj8Y2Pvp/BzLWhyZDusqWPkOn9oe3/8IKMp7KKrub85ZLTjM+vg8/Docixs+uc44mCtZy368/C5omT1/SUiO3k8eaLifnz1a7rleas6Z2QnvOAj7+L7vGS5+TdvpL80fzXhtujxfuWvIaT6vGd1KDW883gyaDvlcyc3sz30sj8sYew4+um9oOYsrbTpb7stIydwf7Xodbhrsb3hafF8bu33POKkbP6opr2jp369pX7kIC7nuTVs56cksKK36Xx1IjH1KqUseHilpmR36yam7rkyq/4g/Hswpi1o8uF+ebYy8Hm9Kvx0rLUgK6U3c+2/6LJlr3bvZXOy/SY+/nJx/3zuNLY9bC4mb6U8OCMm5fWzLjE84aSsL6787nfwfaYzOvTr+aS5ObKjriaxoDA6oqskJ+n0czSzuWr7LvCwp6F9rfz0Mydl4SY3c2nlfXOm6miop/GobDqyuPv9qmG2I3p/szujPq37sSutfPf+aftztHA1cWR6c21vOid/uLDqoOOz47zxcXznv6Sl4+rz/Wq+P29ipvfu6/x+8GuysPO5MDY0fLqlbX7y7+bm7ac6YjInPnZh5u/qKOLpLq55NuLqajL8sr+5OuJ7rnx8MLdm6TfsPHun6aDjYrf36GthA]
+-
+ Name: startDateExpRun
+ DataType: datetime
+ Value: 2017-1-1
+-
+ Name: DialogElements
+ DataType: table
+ Value:
+  Comment: "Translation of Index_Menu row 16"
+  ShowComment: true
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 2
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 2
+    DataType: integer
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+  ColumnIndex: [string,3,~,"element","Index"]
+  Columns:
+  - [1,string,38,"Navigate_Menu","OpenLoc_Menu","Tools_Menu","MenuMultiLevel","RandomDesign_menu","Menu2level","FactorAnal","AdvancedSettings_menu","Varianzanalyse_menu","numObserv_menu","Store_menu","Restore_menu","Chart_Menu","Help_Menu","Contents_Menu","HelpObject_Menu","Start_but","Stop_but","Reset_but","Def_Tab","Evaluation_tab","OutputValues_but","UseInputValues_CB","DefineInputVariables_but","DefineInputValues_but","Observations_txt","DistrSim_CB","CurrExp_txt","CurrObs_txt","Results_but","DetailedResults_but","HTML_but","Chart_Type_txt","Variable_Chart_but","Chart_but","Intervals_txt","MinMax_Radio","Confidence_Radio"]
+  - [2,integer,38,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35,36,37,38,39,40,41]
+-
+ Name: changeChart
+ DataType: method
+ RandomSeed: 312
+ Value: |+1
+  -- called by: checkboxes
+  if ~.OK_input AND ~.OK_output AND (~.DetailedResults.yDim > 0) 
+  	-- not performed before an experiment run (cf. 'Start' method)
+  	
+  	for var i:=1 to ~.OutputValues.yDim  -- use the number of already finished experiments (non-distributed study)
+  		~.CalcStatistics4Exp(i) -- after change the confidence level
+  	next
+  	~.prepChart
+  	if ~.Chart.active 
+  		~.Chart.update
+  	end
+  end
+-
+ Name: useRemote
+ DataType: method
+ RandomSeed: 311
+ Value: |+1
+  param DistrSim:boolean
+  
+  var DLG:object := advancedSettings
+  DLG.setCheckBox("DistrSim_CB", DistrSim)
+  DLG.setSensitive("HeaderTxt", DistrSim)
+  DLG.setSensitive("RemotesList", DistrSim)
+  DLG.setSensitive("AddAddress", DistrSim)
+  DLG.setSensitive("TestConnection_But", DistrSim)
+  DLG.setSensitive("RemoveAddress", DistrSim)
+  DLG.setSensitive("Recording", DistrSim)
+  DLG.setSensitive("quitAfterTimeTxt", DistrSim)
+  DLG.setSensitive("QuitAfterTime", DistrSim)
+  DLG.setSensitive("LicTypeTxt", DistrSim)
+  DLG.setSensitive("LowPrio_CB", DistrSim)
+  DLG.setSensitive("LicType", DistrSim)
+  DLG.setSensitive("SimulateWith3D_CB", DistrSim)
+  
+  
+  DLG.setSensitive("modelDir_Inp", NOT DistrSim AND ~.save_model)
+  DLG.setSensitive("modelDir_but", NOT DistrSim AND ~.save_model)
+  DLG.setSensitive("file_inp",     NOT DistrSim AND ~.save_model)
+  DLG.setSensitive("file_Txt",     NOT DistrSim AND ~.save_model)
+-
+ Name: checkDistrSim
+ DataType: method
+ RandomSeed: 310
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,nqimx9PAtLi+49CdqfzLsb7K8dDKgreXjrGlncuE8YOG05699ISirZ+VgvOWndj8suG8mOyCzOjei5f30fCzzreZ3JuQyou0xumytfaqge/svKWM3cup2Yul3eXErPnDqYLAv46iz7vDgMGqobWBuIq2jdOZwqPUqKjl9Oyj0MDzwMTIhvP8r/PYhuGCh8+jvbCZ8vnm9dqRgOGf6K2ztbyK+JK59piaucjfwJrcmJvWk7XWjYTB8cDG04u6+bGdtuWFx/7S48utp4ntspHW3f+k1K2d4PGO15iy/I/on5XRls/t6szK1rSau/ujuvLr28Os6t2b+YD1v4C4g/L5nOXVyZbU78rMo92BhK/A+biWiMqzgublovGf37KmpJnL7NfLjJKh9Jjri6D+soo]
+$Elements:
+-
+ Type: Menu
+ Name: "Navigate_Menu"
+ Caption: "Navigate"
+ $Elements:
+ -
+  Type: Menu
+  Name: "OpenLoc_Menu"
+  Caption: "Open Location"
+  CallbackArgument: "OpenLoc_Menu"
+-
+ Type: Menu
+ Name: "Tools_Menu"
+ Caption: "Tools"
+ $Elements:
+ -
+  Type: Menu
+  Name: "MenuMultiLevel"
+  Caption: "Multi-level Experimental Design..."
+  CallbackArgument: "MenuMultiLevel"
+ -
+  Type: Menu
+  Name: "RandomDesign_menu"
+  Caption: "Random Experimental Design..."
+  CallbackArgument: "RandomDesign_menu"
+ -
+  Type: Menu
+  Name: "sep"
+  Caption: "-"
+ -
+  Type: Menu
+  Name: "Menu2level"
+  Caption: "Two-level Experimental Design..."
+  CallbackArgument: "Menu2level"
+ -
+  Type: Menu
+  Name: "FactorAnal"
+  Caption: "Analysis of Factors"
+  CallbackArgument: "FactorAnal"
+ -
+  Type: Menu
+  Name: "sep2"
+  Caption: "-"
+ -
+  Type: Menu
+  Name: "AdvancedSettings_menu"
+  Caption: "Advanced Settings..."
+  CallbackArgument: "AdvancedSettings_menu"
+ -
+  Type: Menu
+  Name: "sep3"
+  Caption: "-"
+ -
+  Type: Menu
+  Name: "Varianzanalyse_menu"
+  Caption: "Analysis of Variance..."
+  CallbackArgument: "ANOVA_menu"
+ -
+  Type: Menu
+  Name: "numObserv_menu"
+  Caption: "Number of Observations..."
+  CallbackArgument: "numObserv_menu"
+ -
+  Type: Menu
+  Name: "sep4"
+  Caption: "-"
+ -
+  Type: Menu
+  Name: "Store_menu"
+  Caption: "Store Input Values"
+  CallbackArgument: "Store_menu"
+ -
+  Type: Menu
+  Name: "Restore_menu"
+  Caption: "Restore Input Values"
+  CallbackArgument: "Restore_menu"
+ -
+  Type: Menu
+  Name: "sep5"
+  Caption: "-"
+ -
+  Type: Menu
+  Name: "Chart_Menu"
+  Caption: "Charts"
+  CallbackArgument: "Chart_Menu"
+-
+ Type: Menu
+ Name: "Help_Menu"
+ Caption: "Help"
+ $Elements:
+ -
+  Type: Menu
+  Name: "Contents_Menu"
+  Caption: "Contents"
+  CallbackArgument: "Contents_Menu"
+ -
+  Type: Menu
+  Name: "HelpObject_Menu"
+  Caption: "Help on Object"
+  CallbackArgument: "HelpObject_Menu"
+-
+ Type: Button
+ Name: "Start_but"
+ Caption: "Start"
+ Rect: [0,0,12,0]
+ CallbackArgument: "Start_but"
+ Enable: false
+-
+ Type: Button
+ Name: "Stop_but"
+ Caption: "Stop"
+ Rect: [14,0,12,0]
+ CallbackArgument: "Stop_but"
+-
+ Type: Button
+ Name: "Reset_but"
+ Caption: "Reset"
+ Rect: [28,0,12,0]
+ CallbackArgument: "Reset_but"
+-
+ Type: GroupBox
+ Name: "Progress_Gr"
+ Rect: [0,1,41,2]
+ $Elements:
+ -
+  Type: StaticText
+  Name: "CurrExp_txt"
+  Caption: "Current experiment:"
+ -
+  Type: StaticText
+  Name: "CurrExp"
+  Caption: " "
+  Rect: [18,0,0,0]
+ -
+  Type: StaticText
+  Name: "CurrObs_txt"
+  Caption: "Observation:"
+  Rect: [22,0,0,0]
+ -
+  Type: StaticText
+  Name: "CurrObs"
+  Caption: " "
+  Rect: [34,0,0,0]
+-
+ Type: TabControl
+ Name: "Tabs"
+ Rect: [0,4,43,9]
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Def_Tab"
+  Caption: "Definition"
+  $Elements:
+  -
+   Type: Button
+   Name: "OutputValues_but"
+   Caption: "Define Output Values"
+   Rect: [1,0,37,0]
+   CallbackArgument: "OutputValues_but"
+  -
+   Type: CheckBox
+   Name: "UseInputValues_CB"
+   Caption: "Use input values"
+   Rect: [1,1,0,0]
+   CallbackArgument: "UseInputValues_CB"
+  -
+   Type: Button
+   Name: "DefineInputVariables_but"
+   Caption: "Define Input Values"
+   Rect: [1,2,37,0]
+   CallbackArgument: "DefineInputVariables_but"
+   Enable: false
+  -
+   Type: Button
+   Name: "DefineInputValues_but"
+   Caption: "Define Experiments"
+   Rect: [1,3,37,0]
+   CallbackArgument: "DefineInputValues_but"
+   Enable: false
+  -
+   Type: StaticText
+   Name: "Observations_txt"
+   Caption: "Observations per experiment:"
+   Rect: [1,4,0,0]
+  -
+   Type: EditText
+   Name: "Observations_Inp"
+   Caption: "5"
+   Rect: [31,4,7,0]
+   DataType: 4
+   Password: false
+  -
+   Type: CheckBox
+   Name: "DistrSim_CB"
+   Caption: "Use distributed simulation"
+   Rect: [1,6,0,0]
+   CallbackArgument: "DistrSim_CB"
+ -
+  Type: TabPage
+  Name: "Evaluation_tab"
+  Caption: "Evaluation"
+  $Elements:
+  -
+   Type: Button
+   Name: "Results_but"
+   Caption: "Results"
+   Rect: [1,0,37,0]
+   CallbackArgument: "Results_but"
+  -
+   Type: Button
+   Name: "DetailedResults_but"
+   Caption: "Detailed Results"
+   Rect: [1,1,37,0]
+   CallbackArgument: "DetailedResults_but"
+  -
+   Type: Button
+   Name: "HTML_but"
+   Caption: "Report"
+   Rect: [1,2,37,0]
+   CallbackArgument: "HTML_but"
+   Enable: false
+  -
+   Type: StaticText
+   Name: "Chart_Type_txt"
+   Caption: "Chart:"
+   Rect: [1,4,0,0]
+  -
+   Type: Button
+   Name: "Variable_Chart_but"
+   Caption: "Variable"
+   Rect: [13,4,12,0]
+   CallbackArgument: "Variable_Chart_but"
+   Enable: false
+  -
+   Type: Button
+   Name: "Chart_but"
+   Caption: "Show"
+   Rect: [26,4,12,0]
+   CallbackArgument: "Chart_but"
+   Enable: false
+  -
+   Type: StaticText
+   Name: "Intervals_txt"
+   Caption: "Intervals:"
+   Rect: [1,5,0,0]
+   Enable: false
+  -
+   Type: RadioButton
+   Name: "MinMax_Radio"
+   Caption: "Min-Max"
+   Rect: [14,5,0,0]
+   CallbackArgument: "MinMax_Radio"
+   Enable: false
+   GroupID: 0
+   IsSelected: true
+  -
+   Type: RadioButton
+   Name: "Confidence_Radio"
+   Caption: "Confidence"
+   Rect: [14,6,0,0]
+   CallbackArgument: "Confidence_Radio"
+   Enable: false
+   GroupID: 0

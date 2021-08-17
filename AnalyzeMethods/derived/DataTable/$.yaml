@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: DataTable
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: eb556f3a-a296-4f22-94a4-3f6539b3aedf
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- b957d858-b34f-4533-88f3-b561c731954b
+- 9a14dabf-1b33-4c39-b062-104a3ca809e4
+- 2ebe9631-7f66-461f-81dc-f72141fb92b8
+- 73c42402-f9ee-4a55-ac59-d5aa9859cef5
+- 6b6a350c-1c47-4bf8-925d-a1b407c90f7a
+- b60261d4-d6e3-4ceb-8f0a-21a21a02dac1
+- f53a9a0c-7fdf-475d-b7ce-b6ee95848774

@@ -1,0 +1,44 @@
+InternalClassType: Method
+Coordinate3D: [9,-7,0]
+Name: check_CreatedObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- checks for inconsistencies in the Created_Objects table
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: reset_TC_position, apply_ModelChanges
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 22.05.2019
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 08.04.2021	RBA		Bugfix: if an unvalid line was followed directly by another only the first was deleted
+ _________________________________________________________________________________*/
+ 
+ var i, row :integer
+ var obj : object
+ 
+ i := 1
+ while i <= Created_Objects.ydim loop
+ 	
+ 	-- check if object entry is valid or if it was deleted
+ 	obj := Created_Objects["Link", i]
+ 	if obj = VOID
+ 		Created_Objects.cutRow(i) -- delete line if object enry is not valid
+ 	else
+ 		i += 1
+ 	end
+ 	
+ end
+RandomSeed: 1073814177
+UUID: 4a1fca0e-2ea5-48f6-927d-b71bf9fa4fb1
+3D:
+ Mirror: [false,false,false]

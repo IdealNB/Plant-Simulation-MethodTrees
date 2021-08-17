@@ -1,0 +1,14 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: GraphicClasses
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 8abb8a74-b1ee-4a8d-9f9b-3dd6996f468c
+3D:
+ BackgroundColor: -1
+$Nodes:
+- 84b2efb6-e68c-4111-a078-95cc9064aa75
+- c865590f-431e-4b34-a06f-faede3c1fde8

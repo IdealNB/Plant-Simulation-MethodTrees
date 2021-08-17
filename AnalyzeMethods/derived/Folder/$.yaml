@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Folder
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 2659edce-f8f8-4546-8d6e-86c0d87e2686
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 53410844-12ac-4a62-aab3-a7f626d7bd4e
+- 66165bec-c089-453a-926b-f0815eeb22bb
+- ba6c15f5-f610-454e-9f6a-aa5129d90979
+- a51deffa-9d72-4483-8a61-ec8599dfc3fc
+- 7528f3f5-b247-487d-a4d5-879997898c74
+- 79762035-a150-45eb-9c7d-947d9e0af151
+- a7df0cd7-1b39-43fe-bfbb-d2a566c4371d

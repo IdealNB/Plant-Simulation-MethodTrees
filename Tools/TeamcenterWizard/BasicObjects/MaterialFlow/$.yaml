@@ -1,0 +1,14 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: MaterialFlow
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 12495f06-7de7-434e-9673-c96894bb2ae0
+3D:
+ BackgroundColor: -1
+$Nodes:
+- 2efe1555-83d4-41df-bd18-3f63267c468e
+- 568e0ea5-2c83-44ea-93ab-48ca7402b907

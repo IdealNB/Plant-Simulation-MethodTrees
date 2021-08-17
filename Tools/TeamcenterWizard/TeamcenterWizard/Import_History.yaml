@@ -1,0 +1,106 @@
+InternalClassType: DataTable
+Coordinate3D: [28,-17,0]
+Name: Import_History
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 311f891f-c7c2-4bca-96c8-76001f3d2bfa
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 10
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: true
+  -
+   Index: 1
+   DataType: string
+   Width: 11
+  -
+   Index: 2
+   DataType: string
+   Width: 11
+  -
+   Index: 3
+   Width: 15
+  -
+   Index: 4
+   Width: 15
+  -
+   Index: 5
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+    Columns:
+   Width: 7
+  -
+   Index: 6
+   DataType: string
+   Width: 11
+  -
+   Index: 7
+   DataType: table
+   Prototype:
+    Comment: ~
+    EditorPermissions: 12
+    CommonFormat: false
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+    Columns:
+   Width: 7
+  -
+   Index: 8
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+    Columns:
+   Width: 11
+  -
+   Index: 9
+   DataType: boolean
+   FormatString: "AAAAA"
+   Width: 12
+  -
+   Index: 10
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnWidth: 5
+     DataType: string
+     ShowDataType: true
+     ColumnFormat:
+     -
+      Index: 1
+      DataType: object
+     -
+      Index: 2
+      DataType: boolean
+      FormatString: "AAAAA"
+     -
+      Index: 3
+      DataType: object
+     -
+      Index: 4
+      DataType: object
+    Columns:
+   Width: 10
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,11,~,"Date_of_Import","Time_of_Import","Application_Interface","Sync","Attributes","Changes_made","Changes","PLMXML_original","Applied_In_Model","Connector_List"]
+ Columns:

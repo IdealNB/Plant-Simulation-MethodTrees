@@ -1,0 +1,262 @@
+InternalClassType: DataTable
+Coordinate3D: [36,-20,0]
+Name: Import_Mapping
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 56c602cc-5b86-4507-9cb6-a0870316776d
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 7
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 28
+  -
+   Index: 2
+   Width: 14
+  -
+   Index: 3
+   Width: 14
+  -
+   Index: 4
+   Width: 14
+  -
+   Index: 5
+   Width: 14
+  -
+   Index: 6
+   DataType: table
+   Prototype:
+    EditorPermissions: 12
+    ListFormat:
+     ColumnIndex: true
+     ColumnWidth: 5
+     DataType: string
+     MaxXDim: 5
+     ShowDataType: true
+     ColumnFormat:
+     -
+      Index: 1
+      Width: 21
+     -
+      Index: 2
+      Width: 18
+     -
+      Index: 3
+      Width: 13
+     -
+      Index: 4
+      Width: 12
+     -
+      Index: 5
+      Width: 12
+     RowFormat:
+     -
+      Index: 0
+      Hidden: false
+    ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+    Columns:
+   Width: 14
+  -
+   Index: 7
+   Width: 48
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,8,~,"TC Import Header","PS Layout Header","PS Process Header","PS Product Header","PS LogProcess Header","Format","Comment"]
+ Columns:
+ - [1,string,37,"ItemRevision.id","Item.itemId","ItemRevision.revision","ApplicationRef_label","ItemRevision.name","ItemRevision.Description","ItemRevision.psi2PlantSimClass","ItemRevision.psi2Availability","ItemRevision.psi2MTTR","ItemRevision.psi2ConveyorLength","ItemRevision.psi2ConveyorSpeed","ItemRevision.psi2Capacity","Mfg0allocated_time","Mfg0worker_count","AttributesInContext.Quantity","bl_formula","AttributesInContext.SequenceNumber","AttributesInContext.AO_ID","bl_level_starting_0","id","parentRef","occurrenceRefs","predecessorRefs","Mfg0predecessors","---","Item.subType","ItemRevision.JT_File_transfer","Transform","bl_plmxml_occ_xform","InstanceNotes.MEUILocation","ReferencedItemRevisions","ReferencedItemRevisions","ItemRevision.psi2Shifttable","ItemRevision.psi2Vacationtable","ItemRevision.sf2_SetupMatrix","ReferencedItemRevisions","ReferencedItemRevisions"]
+ - [2,string,35,"ItemId","TcItemID","Revision","UniqueID","Name","Description","PlantSimClass","Availability","MTTR","Length","Speed","Capacity",~4,"Sequence_Number","InContextID","Level","ID","ParentID","ChildrenIDs","Predecessor",~,"Successor","Type","JT_File","Abs_Transform","Rel_Transform","PERT_Pos",~2,"ShiftTable","VacationTable","SetupMatrix"]
+ - [3,string,32,"ItemId","TcItemID","Revision","UniqueID","Name","Description","PlantSimClass","Availability","MTTR",~3,"Time","Num_Workers",~,"Variants","Sequence_Number","InContextID","Level","ID","ParentID","ChildrenIDs",~,"Predecessor","Successor","Type",~3,"PERT_Pos","UsedResources","ConsumedParts"]
+ - [4,string,29,"ItemId","TcItemID","Revision","UniqueID","Name","Description","PlantSimClass",~7,"Quantity","Variants","Sequence_Number","InContextID","Level","ID","ParentID","ChildrenIDs",~4,"JT_File","Abs_Transform","Rel_Transform"]
+ - [5,string,37,"ItemId","TcItemID","Revision","UniqueID","Name","Description",~6,"Time",~3,"Sequence_Number","InContextID","Level","ID","ParentID","ChildrenIDs",~,"Predecessor","Successor","Type",~9,"LogisticAssigned","Container"]
+ -
+  Column: [6,table,37]
+  Data:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "real"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "time"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "length"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "speed"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "integer"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "time"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Layout Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "integer"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "integer"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "integer"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Layout Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,1,"TC Import Header"]
+   - [2,string,1,"PS Layout Header"]
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "string"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,6,"ItemRevision.id","ApplicationRef_label","ItemRevision.name","subType","id","AttributesInContext.AO_ID"]
+   - [2,string,6,"ItemId","UniqueID","Name","Type","ID","InContextID"]
+   - [3,string,6,"string","string","string","string","string","string"]
+   - [4,string,4,~3,"MEWorkArea;MEResource"]
+   - [5,string,6,~3,"use ; to divide multiple filter entries; only for subType in processes",~,"identifies clearly also linked resources with same ItemID"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,6,"ItemRevision.id","ApplicationRef_label","ItemRevision.name","subType","id","AttributesInContext.AO_ID"]
+   - [2,string,6,"ItemId","UniqueID","Name","Type","ID","InContextID"]
+   - [3,string,6,"string","string","string","string","string","string"]
+   - [4,string,4,~3,"MEConsumed"]
+   - [5,string,6,~3,"use ; to divide multiple filter entries; only for subType in processes",~,"identifies consumed products clearly in the products table"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,11,"psi2shift","psi2from","psi2to","psi2Mo","psi2Tu","psi2We","psi2Th","psi2Fr","psi2Sa","psi2Su","psi2pauses"]
+   - [2,string,11,"Shift","From","To","Mo","Tu","We","Th","Fr","Sa","Su","Pauses"]
+   - [3,string,11,"string","time","time","boolean","boolean","boolean","boolean","boolean","boolean","boolean","string"]
+   - [5,string,2,"example for shift data","no standard in TC"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,4,"psi2DateFrom","psi2DateTo","psi2ReducedTime","psi2Comment"]
+   - [2,string,4,"Date From","Date To","Reduce Times To","Comment"]
+   - [3,string,4,"date","date","string","string"]
+   - [5,string,2,"example for shift data","no standard in TC"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,6,"psi2_from","psi2_Prod1","psi2_Prod2","psi2_Prod3","psi2_Prod4","psi2_Prod5"]
+   - [2,string,6,"From","Product1","Product2","Product3","Product4","Product5"]
+   - [3,string,6,"string","time","time","time","time","time"]
+   - [5,string,6,"column 0 list of products","adjust PS Header entries to match column 0 entries from TC","adjust PS Header entries to match column 0 entries from TC","adjust PS Header entries to match column 0 entries from TC","adjust PS Header entries to match column 0 entries from TC","adjust PS Header entries to match column 0 entries from TC"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,7,"ItemRevision.id","ApplicationRef_label","ItemRevision.name","subType","ItemRevision.subType","id","AttributesInContext.AO_ID"]
+   - [2,string,7,"ItemId","UniqueID","Name","Type","LogType","ID","InContextID"]
+   - [3,string,7,"string","string","string","string","string","string","string"]
+   - [4,string,4,~3,"MELogisticAssigned"]
+   - [5,string,4,~3,"use ; to divide multiple filter entries; only for subType in processes"]
+  -
+   Name: "table"
+   ColumnIndex: [string,6,~,"TC Import Header","PS Header","Format","Filter","Comment"]
+   Columns:
+   - [1,string,7,"ItemRevision.id","ApplicationRef_label","ItemRevision.name","subType","ItemRevision.subType","id","AttributesInContext.AO_ID"]
+   - [2,string,7,"ItemId","UniqueID","Name","Type","LogType","ID","InContextID"]
+   - [3,string,7,"string","string","string","string","string","string","string"]
+   - [4,string,4,~3,"MEContainerRequirement"]
+   - [5,string,4,~3,"use ; to divide multiple filter entries; only for subType in processes"]
+ - [7,string,37,"Teamcenter ID","Teamcenter Item ID","Revision","Unique ID valid also for referenced items","Name","Description","Must match LD_property_name in Object Mapping table; \"Frame\" for hierarchy levels. Install Plant Simulation customization in TC!","Install Plant Simulation customization in TC!","Install Plant Simulation customization in TC!","Install Plant Simulation customization in TC!","Install Plant Simulation customization in TC!","Install Plant Simulation customization in TC!","In TC allocated time must be set","Number of Workers available for this process?? used by this proces??","Number of parts used","Variant settings","in Teamcenter this is \"Find No\" or \"Sequence No\"","Exists only for linked items; i.e. used to identify linked parts if same part exists in different variant sets","Hierarchy level","Occurence ID","Teamcenter ID of the parent","Teamcenter IDs of the children","Pert info for stations","Pert info for processes","Column generated by Plant Simulation from Predecessor data","Teamcenter item type","3D graphics data","3D placement data absolute","3D placement data relative, used for hierarchical models and graphics structures","PERT position","the data set contains different items; it is filtered by type in the Format subtable","the data set contains different items; it is filtered by type in the Format subtable","ShiftCalendar shift times table","ShiftCalendar calendar table","Setup Matrix table","the data set contains different items; it is filtered by type in the Format subtable","the data set contains different items; it is filtered by type in the Format subtable"]

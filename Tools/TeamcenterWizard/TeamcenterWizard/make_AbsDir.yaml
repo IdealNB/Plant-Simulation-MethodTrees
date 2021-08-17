@@ -1,0 +1,48 @@
+InternalClassType: Method
+Coordinate3D: [8,-18,0]
+Name: make_AbsDir
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- reads Teamcenter.Directory and returns the absolute path to the folder
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: load_TcJTs
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 29.05.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 14.01.2020	RBA		rename method from makeAbsDir to make_AbsDir
+ _________________________________________________________________________________*/
+ param dir : string
+ -> string
+ 
+ if pos("%", dir) = 1 -- if first char is %
+ 	dir := omit(dir, 1, 1) -- delete first %
+ 	if pos("%", dir) /= 0 -- check for 2nd %
+ 		dir := copy(dir, 1, (pos("%", dir) - 1)) -- copy str between %% e.g.%ApplicationHome%
+ 		result := executeSilent("-> string; return " + dir) -- delivers absolute path
+ 	else
+ 		result := "" -- invalid entry?
+ 	end
+ 
+ elseif pos("\\\\\\\\", dir) = 1 -- if first char is \\\\ it is a UNC path
+ 	result := dir -- no action required
+ 	
+ elseif pos(":", dir) = 2 -- if 2nd char is : it is a local path
+ 	result := dir -- no action required
+ 
+ else
+ 	var modelDir := copy(modelFile, 1, strRpos("\\\\", modelFile))
+ 	result := modelDir + dir
+ end
+RandomSeed: 1073814175
+UUID: 710823d7-2319-4665-bcab-adec5d40de4e

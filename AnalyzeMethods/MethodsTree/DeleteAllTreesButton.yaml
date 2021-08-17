@@ -1,0 +1,20 @@
+InternalClassType: Button
+Control: "self.OnClicked"
+Coordinate3D: [-16,-1,0]
+Label: "Delete All"
+Name: DeleteAllTreesButton
+ObjectWidth: 6
+Origin: 55f1a49c-de84-461b-a427-13c57fac25ad
+UUID: a967ec2d-d2c1-447b-b4bc-9dc34dc54677
+$CustomAttributes:
+-
+ Name: OnClicked
+ DataType: method
+ RandomSeed: 1073838453
+ Value: |+1
+  
+  
+  for var a := 1 to Trees.ydimindex
+  	Trees[0,a].deleteObject
+  next
+  Trees.delete({0,1}..{*,*})

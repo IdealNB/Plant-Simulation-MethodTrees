@@ -1,0 +1,48 @@
+InternalClassType: Method
+Coordinate3D: [26,-10,0]
+Name: CB_ShowError
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- shows the error for one remote machine
+ var sel,numberCrashes,errRow,numProcesses: integer
+ var errorFound:boolean
+ var str,machName : string	-- display text
+ 
+ var mt: object := ~.DistributedSimulation.MachinesTable
+ sel := ~.Dialog.GAWizard.getIndex("RemotesList")	-- selected remote machine
+ machName := RemoteTable[1,sel] --"Remote Machine"
+ for var j := 1 to mt.yDim 
+ 	if machName = mt[1,j] 
+ 		numProcesses := numProcesses + 1
+ 		numberCrashes := numberCrashes + mt[18,j]
+ 
+ 		if mt["Error Occurred",j] 
+ 			errorFound := true
+ 			errRow := j
+ 		end
+ 	end
+ next
+ 
+ if numberCrashes > 0 
+ 	-- "The simulation machine \\"",machName,"\\" was started ",numberCrashes + 1," times."
+ 	messageBox(rootfolder.Localization.getMessage(54,machName,numberCrashes + numProcesses,""),1,4) -- info
+ 	return
+ end
+ 	
+ if errorFound  -- results from column "Error Occurred"
+ 	str := to_str(
+ 		rootfolder.Localization.getText(23),-- "Error"
+ 		" '",mt["ErrorString",errRow],"'",strChr(10), -- ErrorString
+ 		rootfolder.Localization.getText(24),--found in Method
+ 		" '",mt["ErrorMethod",errRow],"'",strChr(10), --"ErrorMethod"
+ 		rootfolder.Localization.getText(25),--at line
+ 		" ",mt["ErrorLine",errRow],".")
+ 
+ 	messageBox(str,1,1) -- error
+ 	
+ else
+ 	infoBox("",false)
+  	messageBox(rootfolder.Localization.getText(21),1,4) -- Info: No error found
+ end
+RandomSeed: 446
+UUID: da54fd5d-b292-44cd-953a-a751416ee98b

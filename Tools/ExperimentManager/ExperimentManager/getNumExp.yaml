@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [6.95,-13.8,0]
+Name: getNumExp
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: resetWizard_
+ ->integer
+ for var j := 1 to ExpTable.yDim
+ 	if ExpTable[1,j]
+ 		result += 1
+ 	end
+ next
+ if UsingRules
+ 	result := max(NumRulesExp, result)
+ end
+RandomSeed: 168
+UUID: bdcfb3e2-b75e-4d3f-a268-663b05823854

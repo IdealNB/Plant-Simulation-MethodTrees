@@ -1,0 +1,21 @@
+InternalClassType: Conveyor
+Coordinate3D: [2,-3.3300000000000005,0]
+Length: 1.5
+Origin: d20e26b8-0e4d-4648-a6e8-8da615c7f86c
+RandomSeed: 1073901372
+Speed: 1
+UUID: 42729adb-988d-42b2-85d4-c6c94c4ec32d
+Width: 1.34
+3D:
+ BaseHeight: 1
+$CustomAttributes:
+-
+ Name: toggleStatus
+ $DataType: method
+ RandomSeed: 1073901370
+$Successors:
+-
+ $Succ: de598006-2e20-4023-9c54-bacaadaca128
+ Origin: 5a4e18fb-c08c-47fc-b0b6-14bffdc28396
+ UUID: f6766adb-13a9-4685-843a-83466e8fbed3
+InheritEntranceExitLockedOnReset: false

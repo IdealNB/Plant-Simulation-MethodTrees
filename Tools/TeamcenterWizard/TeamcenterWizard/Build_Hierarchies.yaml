@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [23,-7,0.19999999999999998]
+DataType: boolean
+HasInitValue: false
+Name: Build_Hierarchies
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: e70d2f83-7977-4e0e-b7f3-fca3b73db990
+Value: false

@@ -1,0 +1,45 @@
+InternalClassType: Conveyor
+Coordinate3D: [2,-3.33,0]
+Length: 1.5
+Name: OUT
+Origin: b6afcbdd-0c81-4449-9f5f-05e97247c45f
+RandomSeed: 1
+ShiftcalendarObject:
+Speed: 1
+UUID: d20e26b8-0e4d-4648-a6e8-8da615c7f86c
+Width: 1.34
+$CustomAttributes:
+-
+ Name: loadable
+ DataType: boolean
+ Value: true
+ HasInitValue: true
+ InitValue: true
+-
+ Name: toggleStatus
+ DataType: method
+ RandomSeed: 1073755121
+ Value: "?.loadable := true"
+$Successors:
+-
+ $Succ: 87eb1c63-b793-440b-8c1a-26773b431584
+ Name: Connector4
+ Origin: 24458a18-bd1b-4617-9042-e92c944f3bb4
+ UUID: 5a4e18fb-c08c-47fc-b0b6-14bffdc28396
+InheritEntranceExitLockedOnReset: false
+$Sensors:
+-
+ Id: 1
+ $CreatedHere: true
+ PositionAbs: 0
+ FromEnd: false
+ Control: "self.toggleStatus"
+ Destination: null
+ Front: false
+ Rear: true
+ BookPosition: false
+ IfDestination: true
+ LightBarrierMode: true
+$CurveSegments:
+- 0
+- [179.99999999999997,1.5,0]

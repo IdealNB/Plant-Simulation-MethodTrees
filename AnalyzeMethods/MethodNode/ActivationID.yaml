@@ -1,0 +1,13 @@
+InternalClassType: Comment
+BackgroundColor: 12632256
+Color: 8388608
+Coordinate3D: [0,-0.7,0.1]
+Font: 1
+Name: ActivationID
+Origin: 1228824b-6298-488c-825f-0b55c39ee270
+Text: "No:"
+Transparent: false
+UUID: 9460ba22-863b-4f09-9a3a-a0f20b6644ff
+3D:
+ ExcludeFromShowContentOfLocation: false
+ Scale: [0.7,0.7,0.7]

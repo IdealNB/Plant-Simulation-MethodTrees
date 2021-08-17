@@ -1,0 +1,37 @@
+InternalClassType: DataTable
+Coordinate3D: [27.35,-24.1,0]
+CreateIn3D: false
+Name: Protocol
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+UUID: db2f7e4d-1b52-40d0-b597-4e8a9d157eb1
+$Data:
+ Comment: "Overview of all executed experiments and their parametrizations."
+ ShowComment: true
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 4
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+   Width: 9
+  -
+   Index: 1
+   Width: 11
+  -
+   Index: 2
+   Width: 26
+  -
+   Index: 3
+   Alignment: "Center"
+   Width: 15
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,5,"Experiments","Random Number Seed Values","Static Parameterization","Configuration method","Dynamic Parameterization"]
+ Columns:

@@ -1,0 +1,1506 @@
+InternalClassType: Dialog
+ArgumentForApply: ""
+ArgumentForClose: ""
+ArgumentForOpen: "Open"
+CallbackMethod: "self.Callback"
+ChangePathCtrl:
+ConstructorCtrl:
+Coordinate3D: [3,-7,0]
+CreateIn3D: true
+DestructorCtrl:
+DialogX: -1
+DialogY: -1
+DragDropCtrl:
+InitCtrl:
+Label: "Teamcenter Wizard"
+Locked: false
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: TC_Import
+OpenCtrl:
+OpenModal: false
+PlausibilityCtrl:
+RelabelCtrl:
+RenameCtrl:
+ShowStandardButtons: false
+UUID: ee3f9159-6d26-451f-9e84-d50d236e8bff
+3D:
+ AniRotationAxis: [0,0,-1]
+ AniRotationCenter: [0,0,0]
+ ExcludeFromShowContentOfLocation: true
+ GraphicGroupNames: ["default"]
+ LockedGraphicGroups: []
+ Mirror: [false,false,false]
+ NameLabelEnabled: true
+ NameLabelPosition: [-1,-1,0]
+ NameLabelRotation: [0,0,0,-1]
+ NameLabelScale: [1,1,1]
+ ObstacleForWorker: "(None)"
+ Poses:
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+ SelfAnimations:
+ VisibleGraphicGroups: ["default"]
+$IconArray:
+-
+ Name: "Default"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+/wAA/v7+/v7+/v7+/v7+/v7+/v7+/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/v7+/wAA/v7+/wAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEB/v7+/v7+/v7+/v7+/v7+/v7+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEB/v7+AQEBAQEBAQEBAQEB/v7+AQEB/v7+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAAQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIgIAAgIAAgIAAgIAAgIAA/v7+/v7+/v7+/v7+/v7+/v7+/v7+gIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAiIiIgIAAgIAAgIAAgIAAgIAAiIiIgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAiIiIgIAAgIAAgIAAgIAAgIAAiIiIgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIgIAAgIAAgIAAgIAAgIAA/v7+AQEBAQEBAQEBAQEBAQEBAQEBgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/v7+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+-
+ Name: "Icon1"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs/wAA/v7+/v7+/wAAzpKC/wAA/wAAzpKC/wAAzpKC/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/v7+/v7+vr6+/v7+/v7+/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs/wAA/v7+/v7+/wAA/v7+////zpKC/v7+/v7+/v7+/v7+zpKC/v7+/v7+zpKC/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/v7+/v7+vr6+/v7+/v7+/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7OzsAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEB/v7+/v7+/v7+/v7+/v7+/v7+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEB/v7+AQEBAQEBAQEBAQEB/v7+AQEB/v7+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIvr6+vr6+vr6+vr6+AQEB/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+iIiIvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+iIiIvr6+vr6+vr6+vr6+AQEB/v7+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+iIiIvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+iIiIvr6+vr6+vr6+vr6+AQEB/v7+vr6+vr6+AQEBAQEBAQEBAQEBvr6+vr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+iIiIvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+iIiIvr6+vr6+vr6+vr6+AQEB/v7+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIvr6+vr6+vr6+vr6+AQEB/v7+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7OzsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+-
+ Name: "Icon2"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozs/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozs/wAA/v7+/v7+/wAA/wAAzpKC/wAA/wAAzpKC/wAAzpKC/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/v7+////vr6+/v7+/v7+/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozs/wAA/v7+/v7+/wAA/wAA/v7+////zpKC/v7+/v7+/v7+/v7+zpKC/v7+/v7+zpKC/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/v7+////vr6+/v7+/v7+/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozs/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAA/wAAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7OzsAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////////////////////////gICA////////////////////////gICA////////////////////////gICAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+AAAA////vr6+vr6+vr6+vr6+vr6+AAAA////vr6+vr6+vr6+vr6+vr6+AAAAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+gICAAAAAgICAvr6+AAAA////vr6+gICAAAAAgICAvr6+AAAA////vr6+AAAAgICAvr6+vr6+AAAAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+AAAA////vr6+vr6+vr6+vr6+vr6+AAAA////vr6+vr6+vr6+vr6+vr6+AAAAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+gICA////////////////////////////////////////////////////////////////////////////////gICAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAvr6+vr6+AAAAAAAAgICAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////////////////////////////////////////vr6+vr6+AAAA////////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////AAAAAAAA////AAAA////AAAAAAAA////////vr6+vr6+gICA////////vr6+AAAAAAAAvr6+AAAAAAAAvr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////////////////////////////////////////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////AAAA////gICAAAAAgICA////////////////vr6+vr6+AAAAAAAAgICAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////////////////////////////////////////vr6+vr6+AAAA////////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////AAAAAAAAgICA////AAAAAAAA////////////vr6+vr6+gICA////////vr6+AAAAgICAvr6+AAAAAAAAgICAvr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////////////////////////////////////////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+AAAA////AAAAAAAA////gICAAAAA////////////////vr6+vr6+AAAAAAAAgICAvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+gICA////////////////////////////////////////vr6+vr6+AAAA////////vr6+AAAAgICAAAAAgICAvr6+AAAAvr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+gICA////////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+gICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+/////v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+/////v7+/v7+/v7+/v7+/v7+/v7+/v7+vr6+vr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+////vr6+vr6+AAAAgICAAAAAvr6+vr6+AQEBvr6+vr6+////vr6+AQEBAQEBgICAAQEBAAAAvr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+////vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7Ozsvr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+vr6+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBvr6+vr6+QEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAA7OzsQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+-
+ Name: "ArrowDown"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAA/7AA/7AA/7AA/7AA/7AAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AA/7AA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA/7AAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+$CustomAttributes:
+-
+ Name: callback
+ DataType: method
+ RandomSeed: 1073814248
+ Value: |+1
+  /*_______________________________________________________________________________
+  
+  Method Tasks:
+  -- callback method of the main dialog
+  _________________________________________________________________________________
+  Parameters	: action from dialog
+  			  
+  ReturnValues: none
+  
+  Called By	: User Dialog TeamcenterWizard.TC_Import
+  Calls		: 
+  
+  Author		: Ralph Bauknecht
+  Date		: 01.01.2018
+  _________________________________________________________________________________
+  History: 
+  Date		Author	Description
+  13.05.2019	RBA		add Menus
+  29.05.2019	RBA		change filed names in Data Source tab; add PLMXML format for versions >= 14.2
+  26.06.2019	RBA		moved write_History to Import
+  17.09.2019	RBA		call write_Process_Data in Public/TcW_Methods
+  05.12.2019	RBA		add Update_ResourceU
+  16.01.2020	RBA		add Update_GraphicsU
+  17.02.2020	RBA		help file (PDF) changed to report object
+  17.03.2020	RBA		changed to 1 Connectors variable to switch between settings
+  20.03.2020	RBA		add Fit_Animation
+  25.05.2020	RBA		removed Menu - Help - Index entry in dialog
+  12.10.2020	RBA		add close Tables with the buttons
+  08.01.2021	RBA		change TC_Connected to Data_Source and add LD XML importing
+  01.03.2021	RBA		add Clean Out Tables: deletes the imported data
+  05.03.2021	RBA		check for license type
+  05.05.2021	RBA		removed customizable methods in Public
+  06.05.2021	RBA		delete call for errorLogout
+  17.06.2021	RBA		after model generation change of data source is not possible
+  					after model generation the Generate button is greyed out
+  _________________________________________________________________________________*/
+  
+  param action: string
+  
+  if ?.~.Created_Objects.yDim = 0 AND ?.~.Library_Objects.yDim = 0 -- check if a model was generated
+  	var ModelGen := FALSE
+  else
+  	ModelGen := TRUE
+  end
+  
+  -- Dialog actions ------------------------------------------------------------------------------
+  switch action
+  
+  -- Presettings at Open Dialog ------------------------------------------------------------------
+  case "Open"
+  	-- Menus
+  	-- Settings is deactivated before opening the dialog in openTCWDialog
+  		
+  	-- Dialog frame
+  	?.setSensitive("box_layout", false)
+  	?.setSensitive("box_library", false)
+  
+  	?.setCaption("box_layout", to_str(current.location))
+  	?.~.Model_Root := current.location
+  	?.setCaption("box_library", to_str(Model_Library))
+  	
+  	-- Model Generation Tab
+  	?.setSensitive("Execute", FALSE) -- enable only if data is available and no model was built
+  	-- check if tables are empty then grey out
+  	if Layout_Data.yDim = 0
+  		?.setSensitive("Open_LayoutData", FALSE)
+  	else
+  		?.setSensitive("Open_LayoutData", TRUE)
+  		?.setSensitive("Execute", TRUE)
+  	end
+  	if Process_Data.yDim = 0
+  		?.setSensitive("Open_ProcessData", FALSE)
+  	else
+  		?.setSensitive("Open_ProcessData", TRUE)
+  		?.setSensitive("Execute", TRUE)
+  	end
+  	if LogProcess_Data.yDim = 0
+  		?.setSensitive("Open_LogProcessData", FALSE)
+  	else
+  		?.setSensitive("Open_LogProcessData", TRUE)
+  	end
+  	if Product_Data.yDim = 0
+  		?.setSensitive("Open_ProductData", FALSE)
+  	else
+  		?.setSensitive("Open_ProductData", TRUE)
+  	end
+  	-- check if model is created, then deactivate Generate Model
+  	if ModelGen
+  		?.setSensitive("Execute", FALSE)
+  	end
+  		
+  
+  	-- Model Update Tab
+  	-- check if model is created, then activate update functions
+  	-- native LD does not support updates; grey out all update buttons 
+  	if NOT ModelGen OR Data_Source = "LD_XML" 
+  		?.setSensitive("ImportDataU", FALSE)
+  		?.setSensitive("Open_LayoutDataU", FALSE)
+  		?.setSensitive("Open_ProcessDataU", FALSE)
+  		?.setSensitive("Open_LogProcessDataU", FALSE)
+  		?.setSensitive("Open_ProductDataU", FALSE)
+  		?.setSensitive("ChangeTableU", FALSE)
+  		?.setSensitive("Apply_ProcessU", FALSE)
+  		?.setSensitive("Delete_ObjectsU", FALSE)
+  		?.setSensitive("Add_ObjectsU", FALSE)
+  		?.setSensitive("Update_ResourceU", FALSE)
+  	else
+  		?.setSensitive("ImportDataU", TRUE)
+  		if Layout_Data.yDim = 0
+  			?.setSensitive("Open_LayoutDataU", FALSE)
+  		else
+  			?.setSensitive("Open_LayoutDataU", TRUE)
+  		end
+  		if Process_Data.yDim = 0
+  			?.setSensitive("Open_ProcessDataU", FALSE)
+  		else
+  			?.setSensitive("Open_ProcessDataU", TRUE)
+  		end
+  		if LogProcess_Data.yDim = 0
+  			?.setSensitive("Open_LogProcessDataU", FALSE)
+  		else
+  			?.setSensitive("Open_LogProcessDataU", TRUE)
+  		end
+  		if Product_Data.yDim = 0
+  			?.setSensitive("Open_ProductDataU", FALSE)
+  		else
+  			?.setSensitive("Open_ProductDataU", TRUE)
+  		end
+  		?.setSensitive("ChangeTableU", TRUE)
+  		?.setSensitive("Apply_ProcessU", TRUE)
+  		?.setSensitive("Delete_ObjectsU", TRUE)
+  		?.setSensitive("Add_ObjectsU", TRUE)
+  		?.setSensitive("Update_ResourceU", TRUE)
+  	end
+  	?.setCheckBox("Update_GraphicsU", Update_Graphics)
+  
+  	-- Options Tab
+  	?.setCheckBox("Build_Hierarchies", Build_Hierarchies)
+  	?.SetCaption("Build_ProcessLevelNo", to_str(Build_ProcessLevelNo))
+  	?.setCheckBox("Build_ProcessLevel", Build_ProcessLevel)
+  	switch Connectors
+  	case "SequenceNumbers"
+  		?.setCheckBox("SequenceNumbers", TRUE)
+  	case "Process_PERT"
+  		?.setCheckBox("Process_PERT", TRUE)
+  	case "Station_PERT"
+  		?.setCheckBox("Station_PERT", TRUE)
+  	case "AutoConnectLines"
+  		?.setCheckBox("AutoConnectLines", TRUE)
+  	case "NoConnectors"
+  		?.setCheckBox("NoConnectors", TRUE)
+  	end
+  	?.setCheckBox("Optimize_Graphics", Optimize_Graphics)
+  	?.setCheckBox("Fit_Animation", Fit_Animation)
+  	?.setCheckBox("Set_PERTPos", Set_PERTPos)
+  
+  	-- Data Source Tab
+  	if Data_Source = "TC" AND check_License = "TC"
+  		?.setSensitive("TeamCenter_Import", TRUE)
+  		?.setCheckBox("TeamCenter_Import", TRUE)
+  		?.setSensitive("Delete_Data", TRUE)
+  		?.setSensitive("Delete_Data1", TRUE)
+  		?.setSensitive("TC_Path", TRUE)
+  		?.setSensitive("TC_Path", TRUE)
+  		?.setSensitive("Load_3D", TRUE)
+  		?.setSensitive("TC_Path_text", TRUE)
+  		?.setSensitive("Enter_XMLpath", FALSE)
+  		?.setSensitive("XML_path", FALSE)
+  		?.setSensitive("Enter_Datapath", FALSE)
+  		?.setSensitive("Data_Path", FALSE)
+  		?.setSensitive("Browse_XMLpath", FALSE)
+  		?.setSensitive("Browse_Datapath", FALSE)
+  		?.setSensitive("Browse_TCpath", TRUE)
+  		if ModelGen -- after model was created the data source type cannot be changed
+  			?.setSensitive("Load_TCXML_JT", FALSE)
+  			?.setSensitive("Load_LDXML_JT", FALSE)
+  		else
+  			?.setSensitive("Load_TCXML_JT", TRUE)
+  			?.setSensitive("Load_LDXML_JT", TRUE)
+  		end
+  	elseif Data_Source = "TC" AND check_License = "LD" AND NOT ModelGen -- switch to Line Designer native integration
+  		Data_Source := "LD_XML"
+  		?.setSensitive("TeamCenter_Import", FALSE)
+  		?.setSensitive("Load_TCXML_JT", TRUE)
+  		?.setSensitive("Load_LDXML_JT", TRUE)
+  		?.setCheckBox("Load_LDXML_JT", TRUE)
+  		?.setSensitive("Delete_Data", FALSE)
+  		?.setSensitive("Delete_Data1", FALSE)
+  		?.setSensitive("TC_Path", FALSE)
+  		?.setSensitive("TC_Path_text", FALSE)
+  		?.setSensitive("Load_3D", FALSE)
+  		?.setCaption("Enter_XMLpath", "Select Line Designer XML File")		
+  		?.setSensitive("Enter_XMLpath", TRUE)
+  		?.setSensitive("XML_path", TRUE)
+  		?.setSensitive("Enter_Datapath", TRUE)
+  		?.setSensitive("Data_Path", true)
+  		?.setSensitive("Browse_XMLpath", TRUE)
+  		?.setSensitive("Browse_Datapath", TRUE)
+  		?.setSensitive("Browse_TCpath", FALSE)		
+  	elseif Data_Source = "TC" AND check_License = "LD" AND ModelGen -- no changes possible
+  		?.setSensitive("TeamCenter_Import", FALSE)
+  		?.setSensitive("Load_TCXML_JT", FALSE)
+  		?.setSensitive("Load_LDXML_JT", FALSE)
+  		?.setCheckBox("TeamCenter_Import", TRUE)
+  		?.setSensitive("Delete_Data", FALSE)
+  		?.setSensitive("Delete_Data1", FALSE)
+  		?.setSensitive("TC_Path", FALSE)
+  		?.setSensitive("TC_Path_text", FALSE)
+  		?.setSensitive("Load_3D", FALSE)
+  		?.setCaption("Enter_XMLpath", "Select Line Designer XML File")		
+  		?.setSensitive("Enter_XMLpath", FALSE)
+  		?.setSensitive("XML_path", FALSE)
+  		?.setSensitive("Enter_Datapath", FALSE)
+  		?.setSensitive("Data_Path", FALSE)
+  		?.setSensitive("Browse_XMLpath", FALSE)
+  		?.setSensitive("Browse_Datapath", FALSE)
+  		?.setSensitive("Browse_TCpath", FALSE)		
+  	elseif Data_Source = "TC_XML"
+  		?.setSensitive("Load_TCXML_JT", TRUE)
+  		?.setCheckBox("Load_TCXML_JT", TRUE)
+  		?.setSensitive("Delete_Data", FALSE)
+  		?.setSensitive("Delete_Data1", FALSE)
+  		?.setSensitive("TC_Path", FALSE)
+  		?.setSensitive("TC_Path_text", FALSE)
+  		?.setSensitive("Load_3D", FALSE)
+  		?.setCaption("Enter_XMLpath", "Select Teamcenter XML or PLMXML File")		
+  		?.setSensitive("Enter_XMLpath", TRUE)
+  		?.setSensitive("XML_path", TRUE)
+  		?.setSensitive("Enter_Datapath", TRUE)
+  		?.setSensitive("Data_Path", true)
+  		?.setSensitive("Browse_XMLpath", TRUE)
+  		?.setSensitive("Browse_Datapath", TRUE)
+  		?.setSensitive("Browse_TCpath", FALSE)
+  		if ModelGen -- after model was created the data source type cannot be changed
+  			?.setSensitive("TeamCenter_Import", FALSE)
+  			?.setSensitive("Load_LDXML_JT", FALSE)
+  		else
+  			?.setSensitive("TeamCenter_Import", TRUE)
+  			?.setSensitive("Load_LDXML_JT", TRUE)
+  		end
+  	elseif Data_Source = "LD_XML"
+  		?.setSensitive("Load_LDXML_JT", TRUE)
+  		?.setCheckBox("Load_LDXML_JT", TRUE)
+  		?.setSensitive("Delete_Data", FALSE)
+  		?.setSensitive("Delete_Data1", FALSE)
+  		?.setSensitive("TC_Path", FALSE)
+  		?.setSensitive("TC_Path_text", FALSE)
+  		?.setSensitive("Load_3D", FALSE)
+  		?.setCaption("Enter_XMLpath", "Select Line Designer XML File")		
+  		?.setSensitive("Enter_XMLpath", TRUE)
+  		?.setSensitive("XML_path", TRUE)
+  		?.setSensitive("Enter_Datapath", TRUE)
+  		?.setSensitive("Data_Path", true)
+  		?.setSensitive("Browse_XMLpath", TRUE)
+  		?.setSensitive("Browse_Datapath", TRUE)
+  		?.setSensitive("Browse_TCpath", FALSE)
+  		if ModelGen -- after model was created the data source type cannot be changed
+  			?.setSensitive("TeamCenter_Import", FALSE)
+  			?.setSensitive("Load_TCXML_JT", FALSE)
+  		else
+  			?.setSensitive("TeamCenter_Import", TRUE)
+  			?.setSensitive("Load_TCXML_JT", TRUE)
+  		end
+  	end
+  	?.setCaption("TC_Path", to_str(Teamcenter.Directory))
+  	?.setCheckBox("Delete_Data", Delete_Data)
+  	?.setCheckBox("Load_3D", Teamcenter.retrieveJTFiles)
+  	?.setCaption("XML_Path", to_str(path_XML))
+  	?.setCaption("Data_Path", to_str(path_Data))
+  	
+  ------------------------------------------------------------------------------------------------
+  
+  -- Menu Items	------------------------------------------------------------------------
+  -- Navigate
+  case "OpenLocation"
+  	~.openDialog
+  
+  -- Actions
+  case "reset_object_positions"
+  	reset_TC_position
+  
+  case "ApplyModelChanges"
+  	apply_ModelChanges -- clean up Created_Objects table, apply Position changes ...
+  		
+  case "delete_current_model"
+  	deleteAllObjects
+  	-- model is deleted; from now on updates are no longer possible
+  	?.setSensitive("ImportDataU", FALSE)
+  	?.setSensitive("Open_LayoutDataU", FALSE)
+  	?.setSensitive("Open_ProcessDataU", FALSE)
+  	?.setSensitive("Open_LogProcessDataU", FALSE)
+  	?.setSensitive("Open_ProductDataU", FALSE)
+  	?.setSensitive("ChangeTableU", FALSE)
+  	?.setSensitive("Apply_ProcessU", FALSE)
+  	?.setSensitive("Delete_ObjectsU", FALSE)
+  	?.setSensitive("Add_ObjectsU", FALSE)
+  	?.setSensitive("Update_ResourceU", FALSE)
+  	?.setSensitive("Execute", TRUE) -- from now on new model generation is possible
+  		
+  case "clean_out_library"
+  	deleteUnusedLibObjects
+  	
+  if ?.~.Created_Objects.yDim = 0 AND ?.~.Library_Objects.yDim = 0 -- check if all objects are deleted
+  	if check_License = "TC"
+  		?.setSensitive("TeamCenter_Import", TRUE)
+  	elseif check_License /= "NO"
+  		?.setSensitive("TeamCenter_Import", FALSE)
+  	end
+  	?.setSensitive("Load_TCXML_JT", TRUE)
+  	?.setSensitive("Load_LDXML_JT", TRUE)
+  	?.setSensitive("Execute", TRUE) -- from now on new model generation is possible
+  end
+  	
+  -- Tables
+  case "Open_History_Table"
+  	Import_History.openDialog
+  		
+  case "OpenCreatedObjectsTable"
+  	Created_Objects.openDialog
+  
+  case "Open_LibraryObjects_Table"
+  	Library_Objects.openDialog
+  
+  case "Open_ObjectMapping_Table"
+  	Object_Mapping.openDialog
+  		
+  case "Open_DataMapping_Table"
+  	Import_Mapping.openDialog
+  
+  case "Open_PLMXML_Table"
+  	if Data_Source = "TC" OR Data_Source = "TC_XML"
+  		PLMXML_Import.openDialog
+  	elseif Data_Source = "LD_XML" 
+  		LD_XML_Import.openDialog
+  	end
+  	
+  case "CleanOutTables"
+  	if deleteInternalTables -- if tables are empty set all buttons to inactive
+  		?.setSensitive("Open_LayoutData", FALSE)
+  		?.setSensitive("Open_ProcessData", FALSE)
+  		?.setSensitive("Open_LogProcessData", FALSE)
+  		?.setSensitive("Open_ProductData", FALSE)
+  		?.setSensitive("Execute", FALSE)
+  	end
+  
+  -- Settings
+  case "OpenTC"
+  	TeamCenter.openDialog
+  
+  -- Help
+  case "HelpContents"	
+  	HTMLHelp(ApplicationHome + "\\Help\\PlantSimulationENU.chm") -- opens the help tab Contents
+  
+  case "HelpOnTeamcenterInterface"
+  	HTMLHelp(ApplicationHome + "\\Help\\PlantSimulationENU.chm::/id86926.html") -- opens help for the object Teamcenter Interface
+  
+  case "HelpOnObject"	
+  	RootFolder.Help.Show
+  	
+  ------------------------------------------------------------------------------------------------
+  
+  -- Model Generation	Tab	------------------------------------------------------------------------
+  case "ImportData"
+  	Import -- get data from TC
+  	
+  	-- check if tables are empty then grey out
+  	if Layout_Data.yDim = 0
+  		?.setSensitive("Open_LayoutData", FALSE)
+  	else
+  		?.setSensitive("Open_LayoutData", TRUE)
+  		?.setSensitive("Execute", TRUE)
+  	end
+  	if Process_Data.yDim = 0
+  		?.setSensitive("Open_ProcessData", FALSE)
+  	else
+  		?.setSensitive("Open_ProcessData", TRUE)
+  		?.setSensitive("Execute", TRUE)
+  	end
+  	if LogProcess_Data.yDim = 0
+  		?.setSensitive("Open_LogProcessData", FALSE)
+  	else
+  		?.setSensitive("Open_LogProcessData", TRUE)
+  	end
+  	if Product_Data.yDim = 0
+  		?.setSensitive("Open_ProductData", FALSE)
+  	else
+  		?.setSensitive("Open_ProductData", TRUE)
+  	end
+  	-- native LD does not support updates; grey out all update buttons
+  	if Data_Source = "LD_XML" 
+  		?.setSensitive("ImportDataU", FALSE)
+  		?.setSensitive("Open_LayoutDataU", FALSE)
+  		?.setSensitive("Open_ProcessData", FALSE)
+  		?.setSensitive("Open_LogProcessDataU", FALSE)
+  		?.setSensitive("Open_ProductDataU", FALSE)
+  		?.setSensitive("ChangeTableU", FALSE)
+  		?.setSensitive("Apply_ProcessU", FALSE)
+  		?.setSensitive("Delete_ObjectsU", FALSE)
+  		?.setSensitive("Add_ObjectsU", FALSE) 
+  		?.setSensitive("Update_ResourceU", FALSE) 
+  	end
+  
+  case "Open_LayoutData"
+  	if NOT Layout_Data.isOpen
+  		Layout_Data.openDialog
+  		Layout_Data.isOpen := TRUE
+  	else
+  		Layout_Data.closeDialog
+  	end
+  		
+  case "Open_ProcessData"
+  	if NOT Process_Data.isOpen
+  		Process_Data.openDialog
+  		Process_Data.isOpen := TRUE
+  	else
+  		Process_Data.closeDialog
+  	end
+  	
+  case "Open_LogProcessData"
+  	if NOT LogProcess_Data.isOpen
+  		LogProcess_Data.openDialog
+  		LogProcess_Data.isOpen := TRUE
+  	else
+  		LogProcess_Data.closeDialog
+  	end
+  		
+  case "Open_ProductData"
+  	if NOT Product_Data.isOpen
+  		Product_Data.openDialog
+  		Product_Data.isOpen := TRUE
+  	else
+  		Product_Data.closeDialog
+  	end
+  		
+  case "Execute"
+  	?.~.Generate
+  		
+  	-- model is generated; no data source changes possible
+  	if Data_Source = "TC"
+  		?.setSensitive("TeamCenter_Import", TRUE)
+  		?.setSensitive("Load_TCXML_JT", FALSE)
+  		?.setSensitive("Load_LDXML_JT", FALSE)
+  		?.setSensitive("ImportDataU", TRUE) -- from now on updates are possible
+  	elseif Data_Source = "TC_XML"
+  		?.setSensitive("TeamCenter_Import", FALSE)
+  		?.setSensitive("Load_TCXML_JT", TRUE)
+  		?.setSensitive("Load_LDXML_JT", FALSE)
+  		?.setSensitive("ImportDataU", TRUE) -- from now on updates are possible
+  	elseif Data_Source = "LD_XML"
+  		?.setSensitive("TeamCenter_Import", FALSE)
+  		?.setSensitive("Load_TCXML_JT", FALSE)
+  		?.setSensitive("Load_LDXML_JT", TRUE)
+  		?.setSensitive("ImportDataU", FALSE) -- LD does not support updates
+  	end
+  	?.setSensitive("Execute", FALSE) -- generate again only after deleting model and library
+  
+  ------------------------------------------------------------------------------------------------
+  	
+  -- Model Update Tab ----------------------------------------------------------------------------
+  case "ImportDataU"
+  	Import -- get data from TC
+  	
+  	-- check if tables are empty then grey out
+  	if Layout_Data.yDim = 0
+  		?.setSensitive("Open_LayoutData", FALSE)
+  		?.setSensitive("Open_LayoutDataU", FALSE)
+  	else
+  		?.setSensitive("Open_LayoutData", TRUE)
+  		?.setSensitive("Open_LayoutDataU", TRUE)
+  	end
+  	if Process_Data.yDim = 0
+  		?.setSensitive("Open_ProcessData", FALSE)
+  		?.setSensitive("Open_ProcessDataU", FALSE)
+  	else
+  		?.setSensitive("Open_ProcessData", TRUE)
+  		?.setSensitive("Open_ProcessDataU", TRUE)
+  	end
+  	if LogProcess_Data.yDim = 0
+  		?.setSensitive("Open_LogProcessData", FALSE)
+  		?.setSensitive("Open_LogProcessDataU", FALSE)
+  	else
+  		?.setSensitive("Open_LogProcessData", TRUE)
+  		?.setSensitive("Open_LogProcessDataU", TRUE)
+  	end
+  	if Product_Data.yDim = 0
+  		?.setSensitive("Open_ProductData", FALSE)
+  		?.setSensitive("Open_ProductDataU", FALSE)
+  	else
+  		?.setSensitive("Open_ProductData", TRUE)
+  		?.setSensitive("Open_ProductDataU", TRUE)
+  	end
+  	
+  	?.setSensitive("ChangeTableU", TRUE)
+  	?.setSensitive("Apply_ProcessU", TRUE)
+  	?.setSensitive("Delete_ObjectsU", TRUE)
+  	?.setSensitive("Add_ObjectsU", TRUE) 
+  	?.setSensitive("Update_ResourceU", TRUE) 
+  	
+  /*-- Tables are opened using the calls in "Model Generation Tab"
+  	case "Open_LayoutData"
+  	case "Open_ProcessData"
+  	case "Open_LogProcessData"
+  	case "Open_ProductData"*/
+  	
+  case "ChangeTableU"
+  	Import_History["Changes", Import_History.ydim].open
+  
+  case "Apply_ProcessU"
+  	custom_Methods.write_Process_Data(current)
+  
+  case "Delete_ObjectsU"
+  	updateDeleteObjects
+  --	?.setSensitive("Delete_ObjectsU", FALSE) -- apply only once
+  
+  case "Add_ObjectsU"
+  	updateAddObjects
+  --	?.setSensitive("Add_ObjectsU", FALSE) -- apply only once
+  
+  case "Update_ResourceU"
+  	updateResourceData
+  --	?.setSensitive("Update_ResourceU", FALSE) -- apply only once
+  	
+  case "Update_GraphicsU"
+  	Update_Graphics := ?.getCheckBox("Update_GraphicsU")
+  
+  ------------------------------------------------------------------------------------------------
+  		
+  -- Options Tab ---------------------------------------------------------------------------------
+  		
+  -- Settings
+  case "Build_Hierarchies"
+  	Build_Hierarchies := ?.getCheckBox("Build_Hierarchies")
+  	
+  case "Build_ProcessLevelNo"
+  	Build_ProcessLevelNo := str_to_num(?.getValue("Build_ProcessLevelNo"))
+  	
+  case "Build_ProcessLevel"
+  	Build_ProcessLevel := ?.getCheckBox("Build_ProcessLevel")
+  	
+  case "Set_PERTPos"
+  	Set_PERTPos := ?.getCheckBox("Set_PERTPos")
+  
+  -- Select Connectors
+  case "SequenceNumbers"
+  	Connectors := "SequenceNumbers"
+  
+  case "Process_PERT"
+  	Connectors := "Process_PERT"
+  
+  case "Station_PERT"
+  	Connectors := "Station_PERT"
+  
+  case "NoConnectors"
+  	Connectors := "NoConnectors"
+  		
+  case "AutoConnectLines"
+  	Connectors := "AutoConnectLines"
+  
+  -- Graphics	
+  case "Optimize_Graphics"
+  	Optimize_Graphics := ?.getCheckBox("Optimize_Graphics")
+  	
+  case "Fit_Animation"
+  	Fit_Animation := ?.getCheckBox("Fit_Animation")
+  	
+  ------------------------------------------------------------------------------------------------
+  
+  -- Data Source Tab -----------------------------------------------------------------------------
+  -- Data Source Settings (selection)
+  case "TeamCenter_Import"
+  	Data_Source := "TC"
+  	?.setSensitive("Delete_Data", TRUE)
+  	?.setSensitive("Delete_Data1", TRUE)
+  	?.setSensitive("TC_Path", TRUE)
+  	?.setSensitive("TC_Path_text", TRUE)
+  	?.setSensitive("Load_3D", TRUE)
+  	?.setSensitive("Enter_XMLpath", false)
+  	?.setSensitive("XML_path", false)
+  	?.setSensitive("Enter_Datapath", false)
+  	?.setSensitive("Data_Path", false)
+  	?.setSensitive("Browse_XMLpath", false)
+  	?.setSensitive("Browse_Datapath", false)
+  	?.setSensitive("Browse_TCpath", true)
+  		
+  case "Load_TCXML_JT"
+  	Data_Source := "TC_XML"
+  	?.setSensitive("Delete_Data", FALSE)
+  	?.setSensitive("Delete_Data1", FALSE)
+  	?.setSensitive("TC_Path", false)
+  	?.setSensitive("TC_Path_text", false)
+  	?.setSensitive("Load_3D", FALSE)
+  	?.setCaption("Enter_XMLpath", "Select Teamcenter XML or PLMXML File")		
+  	?.setSensitive("Enter_XMLpath", true)
+  	?.setSensitive("XML_path", true)
+  	?.setSensitive("Enter_Datapath", true)
+  	?.setSensitive("Data_Path", true)
+  	?.setSensitive("Browse_XMLpath", true)
+  	?.setSensitive("Browse_Datapath", true)
+  	?.setSensitive("Browse_TCpath", false)
+  
+  case "Load_LDXML_JT"
+  	Data_Source := "LD_XML"
+  	?.setSensitive("Delete_Data", FALSE)
+  	?.setSensitive("Delete_Data1", FALSE)
+  	?.setSensitive("TC_Path", false)
+  	?.setSensitive("TC_Path_text", false)
+  	?.setSensitive("Load_3D", FALSE)
+  	?.setCaption("Enter_XMLpath", "Select Line Designer XML File")		
+  	?.setSensitive("Enter_XMLpath", true)
+  	?.setSensitive("XML_path", true)
+  	?.setSensitive("Enter_Datapath", true)
+  	?.setSensitive("Data_Path", true)
+  	?.setSensitive("Browse_XMLpath", true)
+  	?.setSensitive("Browse_Datapath", true)
+  	?.setSensitive("Browse_TCpath", false)
+  
+  case "Load_3D" -- load 3D data from TC
+  	Teamcenter.retrieveJTFiles := ?.getCheckBox("Load_3D")	
+  	
+  case "Delete_Data" -- delete downloaded data after model generation
+  	Delete_Data := ?.getCheckBox("Delete_Data")	
+  
+  -- Data Source Settings	(paths)	
+  case "Browse_TCpath" -- select Teamcenter data path
+  	Teamcenter.directory := browseForFolder("")
+  	if strlen(Teamcenter.directory) > 1
+  		?.setCaption("TC_Path",  Teamcenter.directory)
+  	else
+  		MessageBox("Choose folder for Teamcenter data!")
+  		Teamcenter.directory := ?.getValue("TC_Path")
+  	end
+  	
+  case "TC_Path" -- manual entry TC folder
+  	?.setCaption("TC_Path", Teamcenter.directory)
+  	promptMessage("Please use the selection dialog.")
+  	
+  
+  case "Browse_XMLpath" -- select XML / PLMXML file
+  	if Data_Source = "LD_XML" -- select Line Desigfner XML file
+  		?.setCaption("XML_Path", selectFileForOpen("XML files (*.xml)|*.xml||"))
+  	elseif Data_Source = "TC_XML" -- select TC PLMXML or processed XML file
+  		?.setCaption("XML_Path", selectFileForOpen("XML files (*.xml, *.plmxml)|*.xml;*.plmxml||"))
+  	end
+  	if strlen(?.getValue("XML_Path")) > 0 -- new or existing entry
+  		path_XML := ?.getValue("XML_Path")
+  	else
+  		MessageBox("Choose XML or PLMXML file!")
+  		?.setCaption("XML_Path", path_XML) -- keep old setting
+  	end
+  
+  case "XML_Path" -- manual entry XML / PLMXML file
+  	?.setCaption("XML_Path", to_str(path_XML))
+  	promptMessage("Please use the selection dialog.")
+  
+  case "Browse_Datapath" -- select data path for JTs
+  	var folder : string := browseForFolder("")
+  	if strlen(folder) > 1 then
+  		if omit(folder, 0, strlen(folder)) /= "\\\\" then
+  			folder := folder +  "\\\\"
+  		end
+  		?.setCaption("Data_Path",  folder)
+  		path_Data := folder
+  	elseif strlen(?.getValue("Data_Path")) = 0 -- no new entry, no existing entry
+  		MessageBox("Choose folder for 3D data!")
+  		?.setCaption("Data_Path",  path_Data) -- keep old setting
+  	end
+  
+  case "Data_Path" -- manual entry data folder
+  	?.setCaption("Data_Path", to_str(path_Data))
+  	promptMessage("Please use the selection dialog.")
+  ------------------------------------------------------------------------------------------------
+  		
+  -- 	Dialog Apply/Close -------------------------------------------------------------------------
+  case "Close"
+  	?.Close(true)
+  ------------------------------------------------------------------------------------------------
+  
+  end
+$Elements:
+-
+ Type: Menu
+ Name: "Navigate"
+ Caption: "Navigate"
+ $Elements:
+ -
+  Type: Menu
+  Name: "OpenLocation"
+  Caption: "Open Location"
+  CallbackArgument: "OpenLocation"
+-
+ Type: Menu
+ Name: "Actions"
+ Caption: "Actions"
+ $Elements:
+ -
+  Type: Menu
+  Name: "ResetObjectPositions"
+  Caption: "Reset Object Positions"
+  CallbackArgument: "reset_object_positions"
+ -
+  Type: Menu
+  Name: "ApplyModelChanges"
+  Caption: "Apply Model Changes"
+  CallbackArgument: "ApplyModelChanges"
+ -
+  Type: Menu
+  Name: "DeleteCurrentModel"
+  Caption: "Delete Current Model"
+  CallbackArgument: "delete_current_model"
+ -
+  Type: Menu
+  Name: "CleanOutLibrary"
+  Caption: "Clean Out Model Library"
+  CallbackArgument: "clean_out_library"
+-
+ Type: Menu
+ Name: "Tables"
+ Caption: "Tables"
+ $Elements:
+ -
+  Type: Menu
+  Name: "ImportHistory"
+  Caption: "Import History"
+  CallbackArgument: "Open_History_Table"
+ -
+  Type: Menu
+  Name: "OpenCreatedObjectsTable"
+  Caption: "Created Objects"
+  CallbackArgument: "OpenCreatedObjectsTable"
+ -
+  Type: Menu
+  Name: "LibraryObjects"
+  Caption: "Library Objects"
+  CallbackArgument: "Open_LibraryObjects_Table"
+ -
+  Type: Menu
+  Name: "ObjectMapping"
+  Caption: "Object Mapping"
+  CallbackArgument: "Open_ObjectMapping_Table"
+ -
+  Type: Menu
+  Name: "DataMapping"
+  Caption: "Data Mapping"
+  CallbackArgument: "Open_DataMapping_Table"
+ -
+  Type: Menu
+  Name: "PLMXML"
+  Caption: "PLMXML Import Table"
+  CallbackArgument: "Open_PLMXML_Table"
+ -
+  Type: Menu
+  Name: "CleanOutTables"
+  Caption: "Clean Out Data Tables"
+  CallbackArgument: "CleanOutTables"
+-
+ Type: Menu
+ Name: "Settings"
+ Caption: "Settings"
+ $Elements:
+ -
+  Type: Menu
+  Name: "TeamcenterSettings"
+  Caption: "Teamcenter Settings"
+  CallbackArgument: "OpenTC"
+-
+ Type: Menu
+ Name: "Help"
+ Caption: "Help"
+ $Elements:
+ -
+  Type: Menu
+  Name: "HelpContents"
+  Caption: "Contents"
+  CallbackArgument: "HelpContents"
+ -
+  Type: Menu
+  Name: "HelpOnTeamcenterInterface"
+  Caption: "Help on Teamcenter Interface"
+  CallbackArgument: "HelpOnTeamcenterInterface"
+ -
+  Type: Menu
+  Name: "HelpOnObject"
+  Caption: "Help on Object"
+  CallbackArgument: "HelpOnObject"
+-
+ Type: GroupBox
+ Name: "Model_Path"
+ Caption: "Simulation Model Path"
+ Rect: [0,0,78,4]
+ Enable: false
+ $Elements:
+ -
+  Type: StaticText
+  Name: "Description_Layout"
+  Caption: "The destination model for the Teamcenter data is the frame containing this dialog"
+ -
+  Type: StaticText
+  Name: "name_layout"
+  Caption: "Model Frame: "
+  Rect: [0,1,0,0]
+ -
+  Type: EditText
+  Name: "box_layout"
+  Caption: ".Tools.TeamcenterWizard"
+  Rect: [15,1,55,0]
+  CallbackArgument: "box_layout"
+  Enable: false
+  DataType: 1
+  Password: false
+ -
+  Type: StaticText
+  Name: "name_library"
+  Caption: "Model library:"
+  Rect: [0,2,0,0]
+ -
+  Type: EditText
+  Name: "box_library"
+  Rect: [15,2,55,0]
+  CallbackArgument: "box_library"
+  Enable: false
+  DataType: 1
+  Password: false
+-
+ Type: TabControl
+ Name: "TabCTRL"
+ Rect: [1,5,80,15]
+ CallbackArgument: "TabCTRL"
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Model_Generation"
+  Caption: "Model Generation"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Model_Generation"
+   Rect: [0,0,70,10]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "Step1"
+    Caption: "Step 1:"
+    Rect: [1,0,0,0]
+   -
+    Type: Button
+    Name: "ImportData"
+    Caption: "Import Data      "
+    Rect: [15,0,22,0]
+    CallbackArgument: "ImportData"
+   -
+    Type: Image
+    Name: "ArrowDown1"
+    Rect: [22,1,0,0]
+    ImageID: "3"
+   -
+    Type: StaticText
+    Name: "Step2"
+    Caption: "Step 2 (optional): Review the acquired data"
+    Rect: [1,2,0,0]
+   -
+    Type: Button
+    Name: "Open_LayoutData"
+    Caption: "Layout Data"
+    Rect: [3,3,15,0]
+    CallbackArgument: "Open_LayoutData"
+   -
+    Type: Button
+    Name: "Open_ProcessData"
+    Caption: "Process Data"
+    Rect: [19,3,15,0]
+    CallbackArgument: "Open_ProcessData"
+   -
+    Type: Button
+    Name: "Open_LogProcessData"
+    Caption: "LogProcess Data"
+    Rect: [35,3,15,0]
+    CallbackArgument: "Open_LogProcessData"
+   -
+    Type: Button
+    Name: "Open_ProductData"
+    Caption: "Product Data"
+    Rect: [51,3,15,0]
+    CallbackArgument: "Open_ProductData"
+   -
+    Type: Image
+    Name: "ArrowDown2"
+    Rect: [22,4,0,0]
+    ImageID: "3"
+   -
+    Type: StaticText
+    Name: "Step3"
+    Caption: "Step 3:"
+    Rect: [1,5,0,0]
+   -
+    Type: Button
+    Name: "Execute"
+    Caption: "Generate Model"
+    Rect: [15,5,22,0]
+    CallbackArgument: "Execute"
+   -
+    Type: StaticText
+    Name: "Execute_Description_1"
+    Caption: "Depending on import settings and available data, the generated model needs "
+    Rect: [0,7,0,0]
+   -
+    Type: StaticText
+    Name: "Execute_Description_2"
+    Caption: "to be enhanced with logic and additional configuration and data."
+    Rect: [0,8,0,0]
+ -
+  Type: TabPage
+  Name: "Model_Update"
+  Caption: "Model Update"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Model_Update"
+   Rect: [0,0,70,13]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "Step1U"
+    Caption: "Step 1:"
+    Rect: [1,0,0,0]
+   -
+    Type: Button
+    Name: "ImportDataU"
+    Caption: "Import Data      "
+    Rect: [15,0,22,0]
+    CallbackArgument: "ImportDataU"
+   -
+    Type: Image
+    Name: "ArrowDown1"
+    Rect: [22,1,0,0]
+    ImageID: "3"
+   -
+    Type: StaticText
+    Name: "Step2U"
+    Caption: "Step 2 (optional): Review the acquired data"
+    Rect: [1,2,0,0]
+   -
+    Type: Button
+    Name: "Open_LayoutDataU"
+    Caption: "Layout Data"
+    Rect: [3,3,15,0]
+    CallbackArgument: "Open_LayoutData"
+   -
+    Type: Button
+    Name: "Open_ProcessDataU"
+    Caption: "Process Data"
+    Rect: [19,3,15,0]
+    CallbackArgument: "Open_ProcessData"
+   -
+    Type: Button
+    Name: "Open_LogProcessDataU"
+    Caption: "LogProcess Data"
+    Rect: [35,3,15,0]
+    CallbackArgument: "Open_LogProcessData"
+   -
+    Type: Button
+    Name: "Open_ProductDataU"
+    Caption: "Product Data"
+    Rect: [51,3,15,0]
+    CallbackArgument: "Open_ProductData"
+   -
+    Type: Image
+    Name: "ArrowDown2"
+    Rect: [22,4,0,0]
+    ImageID: "3"
+   -
+    Type: StaticText
+    Name: "Step3U"
+    Caption: "Step 3:"
+    Rect: [1,5,0,0]
+   -
+    Type: Button
+    Name: "ChangeTableU"
+    Caption: "Review Change Report"
+    Rect: [15,5,22,0]
+    CallbackArgument: "ChangeTableU"
+   -
+    Type: Image
+    Name: "ArrowDown3"
+    Rect: [22,6,0,0]
+    ImageID: "3"
+   -
+    Type: StaticText
+    Name: "Step4U"
+    Caption: "Step 4: Apply updated data to model"
+    Rect: [1,7,0,0]
+   -
+    Type: Button
+    Name: "Apply_ProcessU"
+    Caption: "Apply Process Data"
+    Rect: [3,8,20,0]
+    CallbackArgument: "Apply_ProcessU"
+   -
+    Type: StaticText
+    Name: "T_Apply_ProcessU"
+    Caption: "Overwrite all process settings in the model"
+    Rect: [25,8,0,0]
+   -
+    Type: Button
+    Name: "Delete_ObjectsU"
+    Caption: "Delete Objects"
+    Rect: [3,9,20,0]
+    CallbackArgument: "Delete_ObjectsU"
+   -
+    Type: StaticText
+    Name: "T_Delete_ObjectsU"
+    Caption: "Deletes objects that were removed from layout data"
+    Rect: [25,9,0,0]
+   -
+    Type: Button
+    Name: "Add_ObjectsU"
+    Caption: "Add Objects"
+    Rect: [3,10,20,0]
+    CallbackArgument: "Add_ObjectsU"
+   -
+    Type: StaticText
+    Name: "T_Add_ObjectsU"
+    Caption: "Generates objects that were added to layout data"
+    Rect: [25,10,0,0]
+   -
+    Type: Button
+    Name: "Update_ResourceU"
+    Caption: "Update Resource Data"
+    Rect: [3,11,20,0]
+    CallbackArgument: "Update_ResourceU"
+   -
+    Type: StaticText
+    Name: "T_Update_ResourceU"
+    Caption: "Update resource data, position,"
+    Rect: [25,11,0,0]
+   -
+    Type: CheckBox
+    Name: "Update_GraphicsU"
+    Caption: "graphics"
+    Rect: [51,11,0,0]
+    CallbackArgument: "Update_GraphicsU"
+ -
+  Type: TabPage
+  Name: "Options"
+  Caption: "Options"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Settings"
+   Caption: "Settings"
+   Rect: [2,0,72,4]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "Build_Hierarchies"
+    Caption: "Create hierarchical model (requires PlantSimClass \"Frame\")"
+    CallbackArgument: "Build_Hierarchies"
+   -
+    Type: CheckBox
+    Name: "Build_ProcessLevel"
+    Caption: "Build process level"
+    Rect: [0,1,0,0]
+    CallbackArgument: "Build_ProcessLevel"
+   -
+    Type: EditText
+    Name: "Build_ProcessLevelNo"
+    Rect: [19,1,3,0]
+    CallbackArgument: "Build_ProcessLevelNo"
+    DataType: 5
+    Password: false
+   -
+    Type: StaticText
+    Name: "T_Build_ProcessLevel"
+    Caption: "for processes without resource assignment"
+    Rect: [24,1,0,0]
+   -
+    Type: CheckBox
+    Name: "Set_PERTPos"
+    Caption: "Use PERT positions for stations or BlackBox objects"
+    Rect: [0,2,0,0]
+    CallbackArgument: "Set_PERTPos"
+  -
+   Type: GroupBox
+   Name: "SelectConnectors"
+   Caption: "Simulation Connectors"
+   Rect: [2,5,26,7]
+   $Elements:
+   -
+    Type: RadioButton
+    Name: "SequenceNumbers"
+    Caption: "Sequence Numbers"
+    CallbackArgument: "SequenceNumbers"
+    GroupID: 0
+   -
+    Type: RadioButton
+    Name: "Process_PERT"
+    Caption: "Process PERT"
+    Rect: [0,1,0,0]
+    CallbackArgument: "Process_PERT"
+    GroupID: 0
+   -
+    Type: RadioButton
+    Name: "Station_PERT"
+    Caption: "Station PERT"
+    Rect: [0,2,0,0]
+    CallbackArgument: "Station_PERT"
+    GroupID: 0
+   -
+    Type: RadioButton
+    Name: "AutoConnectLines"
+    Caption: "Auto Connect Lines"
+    Rect: [0,3,0,0]
+    CallbackArgument: "AutoConnectLines"
+    GroupID: 0
+   -
+    Type: RadioButton
+    Name: "NoConnectors"
+    Caption: "No Connectors"
+    Rect: [0,4,0,0]
+    CallbackArgument: "NoConnectors"
+    GroupID: 0
+    IsSelected: true
+  -
+   Type: GroupBox
+   Name: "Graphics"
+   Caption: "Graphics"
+   Rect: [30,5,44,7]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "Optimize_Graphics"
+    Caption: "Optimize Graphics"
+    CallbackArgument: "Optimize_Graphics"
+   -
+    Type: StaticText
+    Name: "Optimize_Graphics_T1"
+    Caption: "This will make graphics smaller and therefore"
+    Rect: [2,1,0,0]
+   -
+    Type: StaticText
+    Name: "Optimize_Graphics_T2"
+    Caption: "reduce the model file size."
+    Rect: [2,2,0,0]
+   -
+    Type: StaticText
+    Name: "Optimize_Graphics_T3"
+    Caption: "Model building will take more time."
+    Rect: [2,3,0,0]
+   -
+    Type: CheckBox
+    Name: "Fit_Animation"
+    Caption: "Fit Animation "
+    Rect: [0,4,0,0]
+    CallbackArgument: "Fit_Animation"
+   -
+    Type: StaticText
+    Name: "Fit_Animation_T"
+    Caption: "Adjusts Animation and State to Graphic."
+    Rect: [2,5,0,0]
+ -
+  Type: TabPage
+  Name: "Data_Source"
+  Caption: "Data Source"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Data_Source_Settings"
+   Caption: "Data Source Settings"
+   Rect: [1,0,73,12]
+   Enable: false
+   $Elements:
+   -
+    Type: RadioButton
+    Name: "TeamCenter_Import"
+    Caption: "TeamCenter Connection (Online)"
+    Rect: [1,1,0,0]
+    CallbackArgument: "TeamCenter_Import"
+    GroupID: 0
+    IsSelected: true
+   -
+    Type: CheckBox
+    Name: "Load_3D"
+    Caption: " Load JT files"
+    Rect: [50,1,0,0]
+    CallbackArgument: "Load_3D"
+   -
+    Type: StaticText
+    Name: "TC_Path_text"
+    Caption: "Selected TeamCenter Import Path"
+    Rect: [4,2,0,0]
+   -
+    Type: CheckBox
+    Name: "Delete_Data"
+    Caption: " Delete data after"
+    Rect: [50,2,0,0]
+    CallbackArgument: "Delete_Data"
+   -
+    Type: EditText
+    Name: "TC_Path"
+    Rect: [4,3,40,0]
+    CallbackArgument: "TC_Path"
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "Browse_TCpath"
+    Caption: "..."
+    Rect: [44,3,3,0]
+    CallbackArgument: "Browse_TCpath"
+   -
+    Type: StaticText
+    Name: "Delete_Data1"
+    Caption: "model generation"
+    Rect: [53,3,0,0]
+   -
+    Type: RadioButton
+    Name: "Load_TCXML_JT"
+    Caption: "Teamcenter XML, PLMXML and JT Files"
+    Rect: [1,5,0,0]
+    CallbackArgument: "Load_TCXML_JT"
+    GroupID: 0
+   -
+    Type: RadioButton
+    Name: "Load_LDXML_JT"
+    Caption: "Line Designer XML and JT Files"
+    Rect: [40,5,0,0]
+    CallbackArgument: "Load_LDXML_JT"
+    GroupID: 0
+   -
+    Type: StaticText
+    Name: "Enter_XMLpath"
+    Caption: "Select XML or PLMXML File"
+    Rect: [4,6,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "XML_Path"
+    Rect: [4,7,40,0]
+    CallbackArgument: "XML_Path"
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "Browse_XMLpath"
+    Caption: "..."
+    Rect: [44,7,3,0]
+    CallbackArgument: "Browse_XMLpath"
+    Enable: false
+   -
+    Type: StaticText
+    Name: "Enter_Datapath"
+    Caption: "Select path for JTs"
+    Rect: [4,8,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "Data_Path"
+    Rect: [4,9,40,0]
+    CallbackArgument: "Data_Path"
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "Browse_Datapath"
+    Caption: "..."
+    Rect: [44,9,3,0]
+    CallbackArgument: "Browse_Datapath"
+    Enable: false
+-
+ Type: Button
+ Name: "Close"
+ Caption: "Close"
+ Rect: [65,21,12,0]
+ CallbackArgument: "Close"

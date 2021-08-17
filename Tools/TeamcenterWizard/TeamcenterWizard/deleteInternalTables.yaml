@@ -1,0 +1,43 @@
+InternalClassType: Method
+Coordinate3D: [9,-11,0]
+Name: deleteInternalTables
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- emties all internal tables
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: 
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 03.02.2021
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 03.02.2021	RBA		
+ _________________________________________________________________________________*/
+ -> boolean
+ 
+ -- delete table content only if no generated objects exist
+ if Created_Objects.yDim = 0 AND Library_Objects.yDim = 0
+ 	PLMXML_Import.delete
+ 	LD_XML_Import.delete
+ 	Layout_Data.delete
+ 	Layout_Data_Update.delete
+ 	Process_Data.delete
+ 	Product_Data.delete
+ 	LogProcess_Data.delete
+ 	result := TRUE
+ else
+ 	promptMessage("There are still objects based on this data in the library and model. " +
+ 	"You must >Delete Current Model< and >Clean Up Library< in the Actions menu before you can clean up the data tables.")
+ 	result := FALSE
+ end
+RandomSeed: 1073814145
+UUID: 32dedc71-601f-4f35-93b0-bed4662e83b3

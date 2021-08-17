@@ -1,0 +1,175 @@
+InternalClassType: Track
+Capacity: 1
+Coordinate3D: [0,0,0]
+EntranceCtrl: "self.OnEntrance"
+EntranceCtrlFront: false
+EntranceCtrlRear: true
+ExitCtrl: "self.OnExit"
+ExitCtrlOnce: true
+Length: 2
+Origin: f6296f5c-f863-4087-b72d-f5bece44a6cd
+PullCtrl: "self.OnPull"
+RandomSeed: 1
+UUID: 91aa47c1-a82f-4c12-a9e6-24f140a131af
+Width: 1
+3D:
+ BaseHeight: 0.01
+ ExtConfiguration:
+ -
+  Name: "Lanes"
+  Extrusion Profile: [[-0.45,-0.01],[0.45,-0.01],[0.45,0],[-0.45,0],[-0.45,-0.01]]
+  Configuration Type: 2
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0x8cff,0x292929,0x0,0x0,0,13]
+ -
+  Name: "Frame_2"
+  Extrusion Profile: [[0.44999999999999996,-0.01],[0.49999999999999994,-0.01],[0.49999999999999994,0],[0.44999999999999996,0],[0.44999999999999996,-0.01]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+ -
+  Name: "Frame_1"
+  Extrusion Profile: [[-0.5,-0.01],[-0.45,-0.01],[-0.45,0],[-0.5,0],[-0.5,-0.01]]
+  Configuration Type: 0
+  Offsets: [0,0]
+  Repetition Interval: 0
+  Graphic Group ID: 0
+  Material: [0xcc6633,0xcc6633,0x595959,0x0,0,64]
+ VisibleGraphicGroups: ["default"]
+$CustomAttributes:
+-
+ Name: OnExit
+ DataType: method
+ RandomSeed: 3939
+ Value: "@.move(current.Succ(ActiveSuccessor))"
+-
+ Name: CurrentMU
+ DataType: object
+ Value: ""
+-
+ Name: CurrentHeight
+ DataType: real
+ Value: 0
+-
+ Name: Init
+ DataType: method
+ RandomSeed: 3938
+ Value: |+1
+  var DestinationZ := WaitHeight - LaneHeight
+  self.~.waitForLiftOperation(0, DestinationZ)
+  self.~.CurrentHeight := DestinationZ
+-
+ Name: OnPull
+ DataType: method
+ RandomSeed: 3937
+ Value: |+1
+  -- ?: the object for which the control was called
+  -- @: the MU for which the control was called,
+  --    when unblocking the identifier @ has the value void
+  if ?.CurrentMU /= void
+  	return
+  end
+  
+  // Automatic stop is set to false so that the object
+  // is in working state during lift operation.
+  // This is important for processing time related failures
+  --?.AutomaticStop := false
+  
+  ?.CurrentMU := ?.fwBlockList[1]
+  
+  var MU_Height:length := ?._3D.getPositionOfObject(?.CurrentMU).z
+  var DestintationZ := ?.CurrentHeight + MU_Height - current.LaneHeight
+  self.~.waitForLiftOperation(?.CurrentHeight, DestintationZ)
+  
+  ?.CurrentHeight := DestintationZ
+  
+  ?.unblock(?.CurrentMU)
+  
+  --?.AutomaticStop := true
+-
+ Name: waitForLiftOperation
+ DataType: method
+ RandomSeed: 3936
+ Value: |+1
+  param startHeight:length, endHeight:length
+  var LiftSpeed:speed := current.LiftSpeed
+  
+  // Check if object exists in 3D and if animation is turned on
+  if self.~._3D.existsWithAnimation
+      var liftTime:time  := self.~._3D.playTranslation([0, 0, startHeight], [0, 0, endHeight], LiftSpeed)
+      while liftTime > 0
+      stopuntil self.~.Failed wait liftTime                                                       
+      if waitExpired then exitloop end
+      	current.Failed := true
+      	self.~._3D.SelfAnimations.pause
+      	stopuntil not self.~.Failed
+      	current.Failed := false
+      	self.~._3D.SelfAnimations.play
+      	liftTime := self.~._3D.SelfAnimations.AnimationTimeTotal
+       end
+  else
+      var liftStart:time  := EventController.SimTime
+      liftTime  := abs(endHeight-startHeight) / LiftSpeed 
+      while liftTime > 0
+     		stopuntil self.~.Failed wait liftTime                         		
+     		if waitExpired then exitloop end
+     			liftTime -= (EventController.SimTime-liftStart)
+     			stopuntil not self.~.Failed
+     			liftStart := EventController.SimTime
+      	end        
+  end
+-
+ Name: OnEntrance
+ DataType: method
+ RandomSeed: 3935
+ Value: |+1
+  ?.CurrentMU := void
+  
+  if not ?.Full
+  	return
+  end
+  
+  ?.EntranceLocked := true
+  
+  // Automatic stop is set to false so that the object
+  // is in working state during lift operation.
+  // This is important for processing time related failures
+  --?.AutomaticStop := false
+  
+  // Let the user determine the successor
+  SetActiveSuccessor
+  
+  // Calculate lift height
+  var MU_Destination:object := current.Succ(ActiveSuccessor)
+  var DestinationPos := MU_Destination._3D.getMUAnimationPosition(0)
+  DestinationPos := ?._3D.getPositionOfObject(MU_Destination, DestinationPos)
+  var DestintationZ := ?.CurrentHeight + DestinationPos.z - current.LaneHeight
+  
+  // Wait for lift operation completed
+  self.~.waitForLiftOperation(?.CurrentHeight, DestintationZ)
+  ?.CurrentHeight := DestintationZ
+  ?.ExitLocked := false
+  
+  // Wait until all parts have left
+  stopuntil ?.Empty
+  ?.ExitLocked := true
+  
+  --?.AutomaticStop := true
+  ?.EntranceLocked := false
+-
+ Name: Reset
+ DataType: method
+ RandomSeed: 3934
+ Value: |+1
+  @.EntranceLocked := false
+  @.ExitLocked     := true
+  
+  Track.Coordinate3D.z := 0
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [0,2,0]

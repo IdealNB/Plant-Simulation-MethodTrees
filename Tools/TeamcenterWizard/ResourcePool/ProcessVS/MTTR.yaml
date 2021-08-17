@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-8,1,0]
+DataType: time
+HasInitValue: false
+Name: MTTR
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: 08889f31-0e33-4c71-8aa4-b80688957eac
+3D:
+ ExcludeFromShowContentOfLocation: true
+Value: 0

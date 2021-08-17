@@ -1,0 +1,14 @@
+InternalClassType: Method
+Coordinate3D: [-7,11,0]
+Name: prepareDir
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ ->string
+ var queryStr:string
+ 
+ queryStr := rootfolder.Localization.getText(211)--"Please select a folder."
+ 
+ 	result := to_str(browseForFolder(queryStr),"\\\\")
+
+RandomSeed: 320
+UUID: d0bf9d85-c721-43fa-9e78-7da9fc776ecc

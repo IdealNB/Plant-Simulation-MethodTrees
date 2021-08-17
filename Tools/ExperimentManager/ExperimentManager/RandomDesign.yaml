@@ -1,0 +1,206 @@
+InternalClassType: DataTable
+CloseCtrl: "self.closeDesignTab"
+Coordinate3D: [45,-26.25,0]
+Name: RandomDesign
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+UUID: 50ea50f0-4c5a-459e-a34d-07af8ace3838
+$CustomAttributes:
+-
+ Name: closeDesignTab
+ DataType: method
+ RandomSeed: 229
+ Value: |+1
+  -- interaction Close of table 'RandomDesign'
+  -- called by: interaction close of the table 'RandomDesign'
+  param bb:boolean
+  
+  self.~.generateDesign(true)
+-
+ Name: openDesignTab
+ DataType: method
+ RandomSeed: 228
+ Value: |+1
+  -- Prepare the table 'RandomlDesign'
+  -- called by: Menu RandomDesign_menu
+  if Input.yDim < 2 
+  	-- For a experimental design at least two input values are needed.
+  	messageBox(rootfolder.Localization.getText(313),1,4) -- info
+  	return
+  end
+  
+  self.~.prepDesignTab(true) -- true calledByDialog
+-
+ Name: generateDesign
+ DataType: method
+ RandomSeed: 227
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,l6zgoN6PxIrzm+bvsva0+JmLjbn0zfzemIPGmJbY5PWl4PXM6tfEzpK0itHajt3cxvTbl6rgm6/FjuGh16m+6dn34M+r8IG5uemC0u3Tn/XU4OeFs5arxJPhwdq1x6XA0oS5xbOphfOK5/rFj/SFm+2l//jdntGkpr3Zn96qu7HbppeCwe3ascWyofXJ1pTMmqHMncDjk+79hJTS1djS1Y7lst3R3LTrocqcn5fPvYyRqq7x0e/ZhpT5sY3r2cvc/ZzkyfPB6O3r1KnN7rmUo436gpns1ZLD3JzJiLz5gPGvxN3UoMzavMDTpfzL767Qm/X2yNC8teaM15ydrcjZyNTEztvpivrM4dmM/q/XosvW99r975DJ/PbmtuCDhbPzntSnk8ylz+vw6eGH6+XTp7KWqtS+j6e8g+izjpz3vvyGzL3yrb2b2eeUrN/wkZvi15Gy79m8iPmZjY++4+6Qvf77x9nVsJL7xKmFnqbkub3iqNDjv93O0sKa5vfK6tXFgMjVu//8hZekwLb+uauM2eTIwc/QnbOl1OeglsXQ4v6nzaTN+L/w9Ni50qPZz7yt7p/6q5Khkvyz0N/OxPLDpcah0fLvr//awYTJ4qicw8jSo+Lthammh/qsuaC6tq2p/6Ln3q2Z0OHwoZeQtf2grrGw+vudpPqa2533sMGjr7Plg4zpnsD2/O6nnJbGwuWSwa/ig7qGo/qavrvrpumt7tPSmvK6+aeZ+6vq7d+epKHQxaLkhLXe/bWDhtyC19vcsvuNmK2zv4nloZHok57M8rf4jaTD8deNtb/Hl/af6Kmx4pWSs7Ld2oHsy5Wqn/r7gKGKlLDQyNqB6IzEya38it2Qz5fXgbvK4+/HlMz1pcTz1beO3ayQ8MHMwoiJrN3Qgcuv6qugmIfZ8NXpssuzp9+a0srPzefpk+DXqOqIu6q2mMuo6M3I7uWDhsD4qLTWi5K0k/if+/u60Mv29LS8wpT14sT6m87kpK7uprPl2Jqr5Pj958bwkaPp4N3eld23z83p2cGV5ZrFvqrv0bumrryL7/7DveDhsr2epazFxeyNhNjpysGSofG4+pPZvJvL4LGJiYHg9a6c4+bfr5KGndTs79m04Kqfxrfor+jm25nF2P2gjtSsl5y8ncK4nZaR6MrjysG69ZmY6+Ok3L2p5p3+oKCy2M/xu5jrm8u7to6pws3138alj6a5vvuxr/7CwYfFyd6d89jupPWvjcWUiaHgvcbx7IPEvuiwm+O0nMG/5faU2tmQi5SB/sG3xvWtibzqiZWSyKel6szFpPm796+j7fG0qdu60YjJ8KzC/tiT7OTp0cS4oa/F1O33ksyNu9zz+O/KkpzM0P7w+dSy1ovZoOiz2ObXyeatmbLn4dax5cvlhc2r1Z3KjY+I4daor/6O2f785ueG6NnGzKj679nppMP11+LSm4zD0rGEpM7m//L1+frn4/Tk4OWXqdWu+67K5sqnkJyGqYiV+9va393F2eXv+YTYgK758ZLOztbkt+6XhPP12429862XydrTloTZxuyU65D/+rKXgquFsofc9MiOxLSIyfWbka3+vs2h+uOMxbjmls+6qLr33Kagt62HmPTg0N3CgsSx07Hwke7/4aGW77uF676bn7SAifLu3LLH3Zn8lq/h1rm5wo7RqfvCz+KB8onm2rCswcfOvcSBss6io8akxa3xu9/6pP/St+WD7Kncqbak7Oqlj+Civ5HXiN7Q7t3EjuCwkePLjv/czeKRmsOMhK/ehpeI4K6V0eW5spbYh8L3yYvzvJ6Q4e7J6s7Bp/2roYz17Lyfv9rpz8bx7Mz9lMm7/4bL6IrGjOak5biZ3r/QzLvcyNCtupyOvMiYjoagqbKgvJrzr5r3oevIwKqgq6bU77u+wom/uvGO6r3P34/sjpml/YWussrHyJ3Uq9PFu9mE7a7hv/rj3Njy3OnZ5Kaf0d6Ur8fK+pWq4qCumL+tw6376sStw9fsk43OnsPRuObO/JvT0t2fqPKstqDUgInPt+6VvJTPoa/Mtuzf9YLKlO3P76OI4tKK89zIqqii6POZ3Y7pq5OwtZ3z6pHWguCh2pD0nrO+zbCHzb7B/57Y0dqW/bzNsv2cl+ivneiZlvignJ754Iao9+X35e+i2cmb0PPz6KzOs7zyrp333IGig5OC3a2h2KyngMu9raCJ3aeFhtuFypT704rl8fPKm5G0l+bn49fewY6V98Gz6Jjg0on/qa+U0K2/s6Hru6Dr+8Hk7Mn83pyUoa/fyKHNy7+u0t+Qvcncq+bKpce5iu7h2OickeCgpZC/3MfSgOX3wrjEzNHnz+7O3Ymag4ie4Pbh+vvnoLHT0d7Z2+TP/fSvv42bsq2Nl9LJ8Lbq7r3yna7zmpbkmPPb4tjD+abm4aCd25ayqOLDseaixayt/tDR5OnWwt6/lqfdj+vVivbyluTjpKvKtMGVmpq92MqJ5ZCGs/Dv25fG9oeenr2l6YPppMCx2aiD4+2glojTqpDF/NLB+oXvvpG8jaPIh/T397uZktXVlMPE74alneedkOX82qLG1sHavdmenIyphY7i3seWl9bLlJacvuqt0KDVsJvrgw]
+-
+ Name: prepDesignTab
+ DataType: method
+ RandomSeed: 226
+ Value: |+1
+  -- Prepare the table 'RandomDesign'
+  -- using the format of the table 'ExpTable'
+  param calledByDialog:boolean
+  
+  if Input.yDim < 1  -- Model parameters are needed for a random experimental design.
+  	messageBox(Rootfolder.Localization.getText(277),1,4) -- info
+  	return
+  end
+  var ExpTab:object := ExpTable
+  var desTab:object := RandomDesign
+  desTab.maxXdim := -1
+  
+  var j:integer := 1
+  var changeDone:boolean
+  var str:string
+  while ExpTab[j+1,0]/=void
+  	str := ExpTab[j+1,0]
+  	changeDone := changeDone OR (strTrim(desTab[j,0]) /= strTrim(str))
+  	desTab[j,0]:= str
+  	desTab.setDataType(j,ExpTab.getDataType(j+1))
+  	j += 1
+  end
+  
+  desTab.delete({j,0}..{*,*}) -- also delete the column index
+  
+  j -= 1
+  if j > 0
+  	desTab.maxXdim := j
+  end
+  
+  if changeDone
+  	for var k := 1 to j
+  		var colLastDesign:integer := desTab.LastDesign.getColumnNo(desTab[k,0])
+  		if colLastDesign > 0 AND desTab.LastDesign[colLastDesign,1] /= void
+  			desTab.LastDesign.copyRangeTo({colLastDesign,1}..{colLastDesign,*}, desTab,k,1)
+  		else -- set default design values
+  			switch desTab.getDataType(k)
+  			case "string"
+  				desTab[k,1]:= "A"
+  				desTab[k,2]:= "B"
+  			case "boolean"
+  				desTab[k,1]:= true
+  				desTab[k,2]:= false
+  			case "time"
+  				desTab[k,1]:= 60
+  				desTab[k,2]:= 300
+  			case "length"
+  				desTab[k,1]:= str_to_length("1")
+  				desTab[k,2]:= str_to_length("5")
+  			case "speed"
+  				desTab[k,1]:= str_to_speed("1")
+  				desTab[k,2]:= str_to_speed("5")
+  			case "acceleration"
+  				desTab[k,1]:= str_to_acceleration("1")
+  				desTab[k,2]:= str_to_acceleration("5")
+  			case "weight"
+  				desTab[k,1]:= str_to_weight("1")
+  				desTab[k,2]:= str_to_weight("5")
+  
+  			else
+  				desTab[k,1]:= 1
+  				desTab[k,2]:= 5
+  			end
+  		end -- set default design values
+  		desTab[k,3]:=void
+  	next -- k
+  end -- if changeDone
+  /* For the random experimental design you define
+  	the lower and upper level of the ",j," input values.
+  	Please close this table before you continue.
+  	*/
+  str:=to_str(Rootfolder.Localization.getText(308),--  For the random experimental design you define
+  	strChr(13),strChr(10),Rootfolder.Localization.getMessage(309,j,"",""),--  the lower and upper level of the $1 input values.
+  	strChr(13),strChr(10),Rootfolder.Localization.getText(307))-- Please close this table before you continue.
+  
+  desTab[0,0]:=Rootfolder.Localization.getText(301)--" Input value";
+  desTab[0,1]:=Rootfolder.Localization.getText(302)--" Lower level";
+  desTab[0,2]:=Rootfolder.Localization.getText(303)--" Upper level";
+  
+  if calledByDialog
+  	desTab.comment := str
+  	desTab.openDialogBox(true) -- open the table 'Design'
+  	desTab.comment := "" -- detect whether "OK" or "Cancel" was pressed.
+  end
+-
+ Name: LastDesign
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   Alignment: "Right"
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   RowIndex: true
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    Width: 9
+   -
+    Index: 1
+    DataType: integer
+    FormatString: "-9"
+    Width: 10
+   -
+    Index: 2
+    DataType: integer
+    FormatString: "-9"
+    Width: 14
+   -
+    Index: 3
+    DataType: integer
+    FormatString: "-9"
+    Width: 19
+   -
+    Index: 4
+    DataType: integer
+    FormatString: "-9"
+    Width: 12
+  ColumnIndex: [string,1," Eingabewert"]
+  Columns:
+  - [0,string,2," Untere Stufe"," Obere Stufe"]
+-
+ Name: NumOfExperiments
+ DataType: integer
+ Value: 1
+$Data:
+ Comment: ~
+ ShowComment: true
+ ListFormat:
+  Alignment: "Right"
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Width: 9
+  -
+   Index: 1
+   DataType: integer
+   FormatString: "-9"
+   Width: 10
+  -
+   Index: 2
+   DataType: integer
+   FormatString: "-9"
+   Width: 14
+  -
+   Index: 3
+   DataType: integer
+   FormatString: "-9"
+   Width: 19
+  -
+   Index: 4
+   DataType: integer
+   FormatString: "-9"
+   Width: 12
+ ColumnIndex: [string,1," Eingabewert"]
+ Columns:
+ - [0,string,2," Untere Stufe"," Obere Stufe"]

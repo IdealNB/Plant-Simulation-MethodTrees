@@ -1,0 +1,6 @@
+InternalClassType: Broker
+Coordinate3D: [-1,5,0]
+Origin: fe6ada79-a31e-447d-9626-d96d96086523
+UUID: e7601743-d9a8-4b1c-a62a-c4fcc7c3871b
+3D:
+ ExcludeFromShowContentOfLocation: true

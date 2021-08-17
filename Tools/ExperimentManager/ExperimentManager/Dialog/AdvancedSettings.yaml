@@ -1,0 +1,950 @@
+InternalClassType: Dialog
+ArgumentForApply: "APPLY"
+ArgumentForClose: "CANCEL"
+ArgumentForOpen: "OPEN"
+CallbackMethod: "self.Callback"
+Coordinate3D: [-14,14,0]
+DialogX: -1
+DialogY: -1
+Label: "Advanced Settings"
+Locked: false
+Name: AdvancedSettings
+Origin: 2184adf5-41ac-48d7-aa6b-b3a0d0363636
+ShowStandardButtons: true
+UUID: eb26425c-fdea-4d4f-975f-655bbea50589
+$CustomAttributes:
+-
+ Name: activeRuleName
+ DataType: string
+ Value: ""
+-
+ Name: callback
+ DataType: method
+ RandomSeed: 335
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,6aKIxeiB6b64vr7jlfPSgOuruaCZ3bbHl/ry/f3a0cHR+I6SyJrp1eTOjpzWjZCJw+Spir3HvuC145e06aPGwc75pLrKs/XuyKq2+eTMiOHI2M7Wzdr3vsHQuNmL1ri0pcCwmN2XwJHehKOlhIiM+8fj2rL7xa3y88PA2d/ZxNrlwKnKu5bBqcK0kuGHjOvB+eOXto74x8PvxJm2k9nagP+ujcm+jui+sb74lNK7z+iByPLb+/6hvIfHje6spbfo+v3X3LGdqtKfx8Wk9oeMmbT414v43J+72vzxvfy76tOQjYrEto6Mx/n0y9LIhJ386vyY0fu0s+6p+prXsZPA4JilwYjv+Lij/r3CtOuUydOC3o7bxb61rd3IuMKKg8SA5uO6rJHgiLKLyOeb1K6cpduuz/+ks8KTyYSKl8mO9s/eqrSHjYWdpqPP9+y/hoCJ8se3zciCs8+QmYHrrLC/y82iwqCght66wfHZ/PiL3+K1kp3Lkc6Ci4Cjof/RisKYk8y+keObxoSN/qyk4v/N1M60hIb4sf2Gs5+epOT1nOiq/sHTjMTlu6b838GyiN/BiOfrwvXh2PS16MyTrpi93s2X9fqRiazwwLrt6K6L94bW+JqwjJTUu8a3nJ/EnK263JC0vLLFoe75h/WygeLooOfGsazlyunmvK7Y7Nz6vLiHh8T367r2puzK443M2IDl+KKMzti+3pf3pYPCgJyZyIH0r4zb257Kv+X0k9CowOWVm4vrkszE1NeF0sOG9Y2ovZnKj92gnKq/rIehkrCa8MrWqIqYxv3V+ay0rZ+cxYzK3av75P261M7UqsvOs6qt2f7Fg5j76tewisbs5O/Lg53t5e7R5sXL4f2fiq749tz3/8XyrpyA2K/uvIOLpZTz5qzArp7FiZ+3/tici/b4uNuxh8OjjMujlNvY65jwo4TmztP4kf+cuNn33f/G5bm/l8WihNXAhL3AxMa2wcOnoNGn/ZHvs7Xf+ZOg0JCal5uJn5itqOaV4vnojpfO9ZiFh7qw0eGk0Lz30LOg64LGgbjg6L21q++WxuGittTsuoqw99zy/pqZkM3g/caBy62T6+38mKqWsYyF1aWvk4Kl28v1uLLN1o/mnM6Hx5GVtYTDgZLksqiQ7dyYk7Sb773i0ISrrNq+nNzm3KTl09eoz+OV79eq8bva4fe087Oy4NO36oyOgsPjra249dG11K+vn/2Uk8TntO2n9OOp6pjrua6JxeHJ5Z6N0tn7ksL9l/quwr3LltvdsfaSgIef/uvpzqezzNTZ7Zzy1sCeq93C4dfUq+XLp6yPxbLY5a/+xYGC0aXz0om/xejnrbGq5tmg2bG+6PmtyKbZr4Pj+7ySsJOLjoXYp6uDlp6Gp8ekmKqYr+6i+pS/8eux3cTG3ryv/IOqlZbG2b74zf/S4MGlkPGovZerjM3gi5+ygcfS1rfcstK11peIh8f/sf+Irp71gLGQ+7aEzb/J2OP01du4+aKWrMm19Ly+14/F/cDfnOzQgb780pPS6M3PqM/LqoeUi4XLo6GMq6XMs4CO48a2z76/ksGR/PXJmrPpjcX3v52ngYGnufil5pypqqfy6Zid1uTP88mA9tPVnaqq3pSqmKif9pjc4ufr5vfVnaG8tZzzl8v285PHlJeGpLPP5bPH95H1rYrXv+Pnz8afhPSsgoyrkbCb1575vYyplr/XjY781NL64LidxvrzzOiL1aGp0fDlque2ianRyO+og/yB+qfUvZKrs+K09daSpbmKqPCmnqnEgejr0o6Wpv3YooSIp+eMzIaA+aGjtfnp95OSkfbtwbzptvvbkcWq++Kx152kkJTA1vXE/L/alK7x5Mmxt/uzltnLsoCt1da6ntu746XJ78DDxtvfn7f2yaPev/jNlPCn2eSGsOr/qKXJxJXWq4bZyqWwvfDJt/mbtYS5lYfjtrCetLqNnaKQzLXsxsL+1J68/fHy5unt4M2Fm7aQm/emgsLS4d6/ydPylZuhguPMytPC9KDquePEzvHz94iXmo7b0fiW58+p5o/Su4qo/b/xiIeUnLmgquHQys2K65T5j4j/6+3Fw6jNvLPLttiGjZD5/pfzquPv3bTQm6Dl08bU8PXfovb+nNLPxsLfgKv/vs74kpun7pKV/s7P2KeS0cushdTNmOfgreeHm77j5/TPq7On+7no+bfmq9f325LK6MO6s8Wo0pGaq+ackPy256Sri6SNjcn+iqDV5qvH/ZyKyJaPzZrzs6DD7vbI/rH/5bKfnPSbl7jO0uKzi7ia+Y+ww9P/37T8s6v84c3V9KOu0Zfgw4i0qcjGwceQzqrS2JPQ5PTP5cOZxa7RrNH935z7qpPqn4aXhJyAw7SJ58ylm4rqwKqzndvi1MjjpcL9wM6stuX/oofIqubJ9szLjL3v7LK2+62bt8iV6Yzb9OG7wrOJqoG6lNqKtbKEkv32+LSEvcrM08ns7tu109Xxv9iDsd+s6qTsvdrWoOfG+aTOxd/E0aWZnNOCopv8mfzjxbbRo7C15YCX+7PAxLWYofqS96Chz4u36t+n7/Htm+Wuw7fBzpvqm5LP7q+qk6CH5fDt4eXmhZLIkfeqsNq1rP67vNX3soy21pvwsOPF7Z6guZGhy/D20OC46q6FpKe/44rJ+5WUnK/9v/OpqtKr6cXQx9qdzObO8J2F3+zT5I2b+viKme2UvYmvjJ6Wy62GyoSRi5T5r4jzsouI6NfZ9dqV+LvWyuOanbCpnZjNkrenmsaznIXCwamhnKOhiavbu5+dv4ukqPDZ3ZfcgvOF19rI+Ib0zcvY74Hlvfjjtq6EqLPZy53m3t3VqrqWz4rlsq7F/Y2VnK222YyA+p7Hus+V5OTp2ef54djDsLLNnvHSrdLf7fGJ8MmblJe/14Ta8Iz99Mm/oKaYtNXj8+uKjZGRjp2yh8ClruzA+KXZq8nZgsuT5tLI7+q0p4qglLCovP/nk+uF+aCBhanu9IrwtNG91JO2hNra2I2touPCw4rq+Nu///iMyPS9jbPf1b7wy4jO+4ervdeC3fGl0bSN8czZtoPD297A8oe02aGNxPrY66PP3fay4KXS3LvEnpGS95jZlK/b9quohr+Cg5O3kqS64/TH5JXGtb3TtI+p0Lqe48DYn+zc44yU2Ie1mPjKsub9xM76kMrlhb+t/9y7luWay6SFt52Nppn26/e/t+vjpb2P4qHe1OKNu8HvnuWZycX419HvyfrR383QpObJ/4+s7IGQ3M3gntb7o5TAjYSrh4KEwZLVr92o15Dyt/qu8/fv3IjI9siFiJTBq5zVzLq0z+bUnsqK97/yoOXk4/u3j6DGtMuU2qikmcbKv++/ocmxsb/Kpuju3MXRvs3Pv5nTlpPij5bI1riVybHD29Sf/LDl69nQgIyciL+o4aXA5+P+1ce778v8qsCZg6CqqvLO19OHztXu9bWd37Lt9c3My/Dyz8zv0dTc2oG95ILI1sPClYvliL6WmqbhsuiXkL/d/s+H1oyA8/zkw4TiwbCzubn4vc2dx/zZ3avp2rb/qYzZi9Td6aPXtevh25K8+LfEzIDk4cOq0Ouam83Vr/HXr+zH/Ora5bzY15fwm9uI4OGP7t+f3ouj/9vbpI/hyeDZhY29jPzdtfOtxbHNzMbJ+fGv2+La+4KDi77dnPbm1ebKooue4KWYyO/o0LKuwo/erNfMgKSYl+iKybqdpN/d563C0MTe/eqa26Cg6aCjhcat76v1+Kun7biN2vbbyL//3P/i/NzHvNim4ticrZ+cltCMnou+/by02YvIw9mjtZv89uLB2rfc2O7J3tz24anR57eki/njucfY37Ld2uOQqribkpi979Gep5yyjdeahM6niJLc4vyM1Jjg0eS6uPW0ub6B0cSDg4OA5rGLk+6Thvmq1aDhxImurry+jPX616Tbluve55vo6PvNz5Xult/igYu61uyb5aCD/py+tOWzk83Uq7jz1o7Xw8uC4ZfZ/aGNm5Hg/tz0vP3glpSN7M3714vA+eDtzq32i8nH5ci3ncSC6bHR8M6puPeTkt6fztjljcbv3Ly9h+bv2satuJOoiNKRiZLan/fn/dbkh9z/pK2qnNKclq70m66aocCNrK6Y273Kyt720LqA8ZbW1vXw+6Ot/oX/tcORyd/3w5TU0b6Dv9Tb/4CZ4fnBpsG7zpGzx5yYnqiWgommt7LkufDwh/aEoPeO4Mu6ho/a2Pjf+fiCjpP+8syZy4G0lJH28fuUxeHcup3wrMLI566j1Mmz/JWS1Pze6Me6wNf06Zzs7bSulYmz+JbtzPWxxdyKhZ237um4koTtwuO1rLbmosGGi6Sp0+6YuciJu7f34+63nI6Fn9yGlIuB1Mu1t4GdvsmH/JeZ37CwrNmDtbnO+s69v5SnyOm8s9j+qYWi4f6ug+Ggj967vv62nfye5tm+isqH8fu90/Lw0Yzoy+nl89eP9dWgrrvNmJy77+3H1Zryub+0hLywp8aBnNKr0c7dwLLswv/q4KfT9/7XldXAx7jC3sfOuv77uK7xiqKvuOfqvqKmyP/2y961jqD0scaxrv7t3/yA5qHJjtKGpvSfx+Kh+c7Ir4yw25PTttn0oOyNmP3Eg6LMq5z9vJz1j7TwuoG9nNWYgI7z7fbr98XnqbHhtJydj+aG37Hr/L/kg8+C9KX2tPKxoOCpwZWNuLGAmIS8/Yv3pbO74Y+o5IWerMnkueDxh/P3p5O7pciinb7Xv/6q+6rR+7GTzvHKwaLszLiL07q01O7Wts/Yk9HxxPnsh4Tx3ZD4zL+kmJzL6JzrxfiO9PHF28eL0sHc6dbS1seF2dXZ68KP39e7hav8lNHZ2sebsqzWu93o/8fy2tWV/LmLpt+wq4i5sfqz0YLpj/e/pMv2qpOVjePBnIm5wvXMucz78NPvu9GYrdO+05bzvJ3AjKuDipj4yOzW3eq2wJWm5Pm7y5uGlv3t4fe56dPmmurso6+E5ca+tZ3tp8CQjqfJ0uavyd+WidvrkKrcu/Oh67nXk/yfxIHOx+Wy/ObSoIzRp+X7saShpN65iaKxpfmXgMX6r9ix2dvJ9MzOu/6g7t2JsNSYisXjwOif8O7XqrrZmcvg+cujsOjbtLWX2sHT3qrz3oDo6bLetJaTtcv5w6jWoeedj+2Qqf+B/O6+4b/k2a2zut/QoZ7xmZP0p5/y24HU4fvuzea7qOK0p4OutryOlbjtw+yM4sb1qrC/kcjr/Y3h1rvUss3ro6Pf+cTLjMDOmoWNrbKQkf+p55aCqZ3IjK70+c/qp42E38+p5fP367O51fDU2fmileSD2oKxjMHLvdf5rOSKlvmK8MC048HU4cCli5buiZrw0KKjj6Th9pr6+LyHw4SB7OTkpNWet/uG086o79fbvoumy7uQt9Tit/Hxx53KmJPq+dvJ0rKE5IXB67KQma3bv5LYgafb1InS6r72sd+HsYypzZPZ8ribz6zBqZT9qd+csZqCssa21f/AvKXSr7T4wvf1qIiX5bGF+9CP6cLbgLWqt7qVj5WUxMLkx6Tovp3X65SB6Y6djKy4re/FtLbbvt3giKC9q/OjjJvvzqmv6PbOz7Cw1umRgeTb/9m55sWfjd+k88DFiu2syJX6yaaHjLLsp6iKn7K/3N2x7pOJt9r7+ZHXgvGBnpnG2POhx9y40ury2vC/9du2q+fYl/nWwebDn/yQ8bmThYr/vM/ehN672u+U98zr4/rcw9/514T6xZ3dpbSqwt3A/f2y5peEyuOLqvS6kv+73K6OusrZjZ79gP7r1L31lanZkZuFvO3mzOrk8f+0kri7+96e/tjYnZKR2rii6tezkaSumpeF+M7niqSajeObgqHY/9Wb4f2SxLb2vt3Kt87H89zJiZHJoKK67sDL9KrwhrXButmXqLGYyaGvpsLkiLLbgtDk+OigyuDI37vWzue+xayag4yh0cX/poyHsqbtv97Xrduxg8SynaHWiN/XgIW5yeve47bZkezz297X5bKU5sL1v5630szx1Ky88pCLnvDK7Ys]
+-
+ Name: DialogElements
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 2
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 2
+    DataType: integer
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+  ColumnIndex: [string,3,~,"element","Index"]
+  Columns:
+  - [1,string,60,"UserMethods_Gr","reliability_Gr","ConfLevel_ITxt","Recording_but","Rules","Settings","Validation","Reports_Group","savemod_CB","file_Txt","modelDir_but","DistSim","HeaderTxt","DistrSim_CB","AddAddress","TestConnection_But","RemoveAddress","Recording","quitAfterTimeTxt","LicTypeTxt","LowPrio_CB","Rules_GR","Title_Rules","NumExp_Txt","RuleSelect_C","ActiveRule_CB","AsInit_CB","forExp_Txt","Prio_C","TableCond_B","MethCond_B","TableAction_B","MethAction_B","NewRules_B","DeleteRule_B","allRules_B","Descript_Gr","DescrProjectName_Txt","DescProjectPers_Txt","saveHTMLatEnd","ResultsReport_Gr","FolderHTML_but","ReportAtEnd_CB","showRuntimeAtEnd_CB","Param_but","Param_Group","ExpNo_txt","ObsNo_txt","SendMail_CB","Receiver_Txt","Mailserver_Txt","BoxPlot_CB","Report","restore_CB","Excel_CB","SimulateWith3D_CB","Configure","SeedValues","Evaluate","restore_GR"]
+  - [2,integer,60,65,66,67,70,71,72,73,74,76,78,77,199,79,29,81,82,83,84,86,87,88,89,90,91,92,93,94,95,181,182,184,183,185,186,187,188,190,191,193,194,195,196,197,200,201,202,203,204,226,227,228,229,35,126,389,419,59,61,60,447]
+-
+ Name: VersionStr
+ DataType: method
+ RandomSeed: 334
+ Value: |+1
+  ->string
+  var a,b,c:integer
+  
+  a:= applicationVersion div 1000000
+  c:= applicationVersion mod 1000000
+  b:=c div 1000
+  c:=c mod 1000
+  result := to_str(a,".",b,".",c)
+
+-
+ Name: isNumber
+ DataType: method
+ RandomSeed: 333
+ Value: |+1
+  param s:string->boolean
+  
+  var j,p:integer
+  
+  result := true
+  for j := 1 to strLen(s) 
+  	p := strAscii(strCopy(s,j,1))
+  	if 48 > p OR p > 58 
+  		result := false
+  	end
+  next
+-
+ Name: updateRules
+ DataType: method
+ RandomSeed: 332
+ Value: |+1
+  var rName,inp,last,str:string;var ruleNo,a,j:integer;var rulesTab,obj:object;var bb:boolean
+  
+  a := str_to_num(@.getValue("NumExp_Inp"))
+  if a>0 
+  	~.NumRulesExp := a
+  else
+  	@.setCaption("NumExp_Inp",to_str(~.NumRulesExp))
+  end
+  if NOT ~.UsingRules then return end
+  
+  rulesTab := ~.Rules.Rules
+  
+  if rulesTab.yDim > 0 
+  	ruleNo := @.getIndex("Ruleselect_Pop")
+  	rName := rulesTab[2,ruleNo]
+  	@.activeRuleName := rName
+  	--	~.Rules.Rules2History_;
+  
+  	--print "Rule ",rName," in row ",ruleNo;
+  		
+  	rulesTab[8,ruleNo] := @.getCheckBox("AsInit_CB")
+  	inp := @.getValue("Valid_Inp")
+  	while strLpos(" ",inp)>0 
+  		inp := strOmit(inp,strLpos(" ",inp),1)
+  	end
+  	last := inp; @.setCaption("Valid_Inp",inp)
+  	bb := true
+  	while strLpos(";",last)>0 
+  		a := strLpos(";",last)
+  		str := strCopy(last,1,a-1)
+  		last:= strOmit(last,1,a)
+  		if strLpos("-",str) > 0 
+  			a := strLpos("-",str)
+  			bb := bb AND self.~.isNumber(strCopy(str,1,a-1))
+  			bb := bb AND self.~.isNumber(strOmit(str,1,a))
+  		else
+  			bb := bb AND self.~.isNumber(str)
+  		end
+  	end
+  	if strLpos("-",last) > 0 
+  		a := strLpos("-",last)
+  		bb := bb AND self.~.isNumber(strCopy(last,1,a-1))
+  		bb := bb AND self.~.isNumber(strOmit(last,1,a))
+  	else
+  		bb := bb AND self.~.isNumber(last)
+  	end
+  	
+  	if bb then rulesTab[9,ruleNo] := inp;else
+  		--The string entered on tab 'Rules' is not correct:
+  		messageBox(to_str(rootfolder.Localization.getText(220)," ",inp), 1,1) -- error
+  		print "Error: ",inp
+  	end
+  	
+  	rulesTab[7,ruleNo] := @.getCheckBox("ActiveRule_CB")
+  	
+  	str := @.getValue("Prio_Input")
+  	if strLen(str)>0 then rulesTab[1,ruleNo] := str_to_num(str);end
+  	@.RuleSpecified
+  end
+  --
+  obj := ~.ReportRules
+  obj.delete({1,0}..{*,0})
+  for j := 1 to rulesTab.yDim 
+  	obj[j,0] := rulesTab[2,j] -- Rules name
+  next
+-
+ Name: RuleSpecified
+ DataType: method
+ RandomSeed: 331
+ Value: |+1
+  /*
+  called by: checkbox "Title_Rules"
+  */
+  var RulesInsAndUsing,isInitRule:boolean;var RulesTabObj,workTabObj:object
+  var tab:table;var j,k,m,col:integer
+  var attrStr,RuleName:string
+  
+  RulesTabObj := ~.Rules.Rules
+  RulesInsAndUsing := (RulesTabObj.yDim > 0) AND ~.UsingRules
+  RuleName := @.activeRuleName
+  
+  @.setSensitive("NumExp_Txt",RulesInsAndUsing)
+  @.setSensitive("NumExp_Inp",RulesInsAndUsing)
+  @.setSensitive("RuleSelect_C",RulesInsAndUsing)
+  @.setSensitive("Ruleselect_Pop",RulesInsAndUsing)
+  @.setSensitive("ActiveRule_CB",RulesInsAndUsing)
+  @.setSensitive("AsInit_CB",RulesInsAndUsing)
+  @.setSensitive("forExp_Txt",RulesInsAndUsing)
+  @.setSensitive("ActiveRule_CB",RulesInsAndUsing)
+  @.setSensitive("TableCond_B",RulesInsAndUsing)
+  @.setSensitive("TableAction_B",RulesInsAndUsing)
+  @.setSensitive("MethCond_B",RulesInsAndUsing)
+  @.setSensitive("MethAction_B",RulesInsAndUsing)
+  @.setSensitive("Prio_C",RulesInsAndUsing)
+  @.setSensitive("Prio_Input",RulesInsAndUsing)
+  
+  @.setSensitive("Ruleselect_Pop",RulesInsAndUsing)
+  @.setSensitive("allRules_B",RulesInsAndUsing)
+  @.setSensitive("DeleteRule_B",RulesInsAndUsing)
+  @.setSensitive("Valid_Inp",RulesInsAndUsing)
+  
+  RulesTabObj.setCursor(2,1)
+  if RulesTabObj.find({2,1}..{2,*},RuleName)
+  
+  	isInitRule := RulesTabObj[8,RulesTabObj.cursorY]
+  end
+  
+  @.setSensitive("MethCond_B",NOT isInitRule AND RulesInsAndUsing)
+  @.setSensitive("TableCond_B",NOT isInitRule AND RulesInsAndUsing)
+  	
+  @.setSensitive("NewRules_B",~.UsingRules)
+
+-
+ Name: RuleSelected
+ DataType: method
+ RandomSeed: 330
+ Value: |+1
+  var rulesTab:object;var ruleNo:integer;var rName:string;var initRule:boolean
+  
+  rulesTab := ~.Rules.Rules
+  ruleNo := @.getIndex("Ruleselect_Pop")
+  rName := rulesTab[2,ruleNo]
+  @.activeRuleName := rName
+  --	print "Rule: ",rName," in row ",ruleNo;
+  initRule := rulesTab[8,ruleNo]
+  	@.setCheckBox("AsInit_CB",initRule)
+  @.setSensitive("MethCond_B",NOT initRule)
+  @.setSensitive("TableCond_B",NOT initRule)
+  @.setCheckBox("ActiveRule_CB",rulesTab[7,ruleNo])
+  if rulesTab[1,ruleNo]=void
+   -- prio
+  	@.setCaption("Prio_Input","")
+  else
+  	@.setCaption("Prio_Input",to_str(rulesTab[1,ruleNo]))
+  end
+  @.setCaption("Valid_Inp",rulesTab[9,ruleNo])
+
+-
+ Name: initRulesTab
+ DataType: method
+ RandomSeed: 329
+ Value: |+1
+  var rulesTab,DlgObj:object;var rulesNames:list[string];var ruleNo:integer;var isInitRule:boolean
+  
+  DlgObj := self.~ -- AdvancedSettings
+  rulesTab := ~.Rules.Rules
+  
+  rulesNames.create-- for DialogObj.setList
+  if rulesTab.ydim >0 
+  	rulesNames.insertList(1, rulesTab.copy({2,1}..{2,*}))
+  	DlgObj.setList("Ruleselect_Pop",rulesNames)
+  	
+  	rulesTab.setCursor(2,1); rulesTab.find({2,1}..{2,*}, DlgObj.activeRuleName)
+  	ruleNo := rulesTab.cursorY
+  	
+  	if ruleNo > 0 
+  		DlgObj.setIndex("Ruleselect_Pop",ruleNo)
+  	else
+  		ruleNo := 1
+  		DlgObj.setIndex("Ruleselect_Pop",1)
+  		DlgObj.activeRuleName := rulesTab[2,1]
+  	end
+  --	print "Selected Rule: ",DlgObj.activeRuleName," in row ",ruleNo;
+  	isInitRule := rulesTab[8,ruleNo]
+  	DlgObj.setCheckBox("AsInit_CB",isInitRule)
+  	DlgObj.setCheckBox("ActiveRule_CB",rulesTab[7,ruleNo])
+  	--		DlgObj.setSensitive("if_C",NOT isInitRule AND APPObj.UsingRules);
+  	--		DlgObj.setSensitive("and_cond_C",NOT isInitRule AND APPObj.UsingRules);
+  	DlgObj.setSensitive("MethCond_B",NOT isInitRule AND ~.UsingRules)
+  	DlgObj.setSensitive("TableCond_B",NOT isInitRule AND ~.UsingRules)
+  	if rulesTab[1,ruleNo]=void 
+  		DlgObj.setCaption("Prio_Input","")
+  	else
+  		DlgObj.setCaption("Prio_Input",to_str(rulesTab[1,ruleNo]))
+  	end
+  	DlgObj.setCaption("Valid_Inp",rulesTab[9,ruleNo])
+  else
+  	rulesNames.insert(1, rootfolder.Localization.getText(220))-- "No rule"
+  	DlgObj.setList("Ruleselect_Pop",rulesNames)
+  	
+  	DlgObj.setCaption("Valid_Inp","")
+  end
+  DlgObj.setSensitive("DeleteRule_B",rulesTab.ydim>0)
+  
+
+-
+ Name: ExpNo
+ DataType: integer
+ Value: 1
+-
+ Name: ObservNo
+ DataType: integer
+ Value: 1
+-
+ Name: setUserMethod
+ DataType: method
+ RandomSeed: 328
+ Value: |+1
+  -- set user defined methods
+  param kind:string -- Possible values: "Configuration", "Evaluation", "SeedValues"
+  var DLG:object := self.~
+  var newctrl:string
+  if @ = DLG -- #################################### called by the dialog
+  	switch kind
+  	case "Configuration" -- Configuration method
+  		newctrl := DLG.getValue("ConfigMethod_Inp")
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl,~.~)
+  			DLG.setCaption("ConfigMethod_Inp",newctrl)
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			~.userConfigMethod := newctrl
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(42)
+  				print "The configuration method must have the signature: param localExp:integer"
+  				if messageBox(to_str(newctrl,": ",rootfolder.Localization.getText(62)),48,12) = 16 -- Would you like to format the method?
+  					str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  					str_to_method(to_str(~.~,".",newctrl)).program := ~.&userConfigMethodTemplate.program -- insert template with new syntax
+  				end
+  			end
+  		else
+  			@.setCaption("ConfigMethod_Inp","")
+  			~.userConfigMethod := ""
+  		end
+  		-- end of dialog call "Configuration"
+  
+  	case "Evaluation" -- Evaluation method
+  		newctrl := DLG.getValue("EvalMethod_Inp")
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl,~.~)
+  			DLG.setCaption("EvalMethod_Inp",newctrl)
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			~.userEvalMethod := newctrl
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(~)
+  				print "The evaluation method must have the signature: param ExperimentManager:object"
+  				if messageBox(to_str(newctrl,": ",rootfolder.Localization.getText(62)),48,12) = 16 -- Would you like to format the method?
+  					str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  					str_to_method(to_str(~.~,".",newctrl)).program := ~.&userEvalMethodTemplate.program -- insert template with new syntax
+  				end
+  			end
+  		else
+  			DLG.setCaption("EvalMethod_Inp","")
+  			~.userEvalMethod := ""
+  		end
+  		-- end of dialog call "Evaluation"
+  
+  	case "SeedValues" -- SeedValueMethod "SeedValues_Inp"
+  		newctrl := DLG.getValue("SeedValues_Inp")
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl,~.~)
+  			DLG.setCaption("SeedValues_Inp",newctrl)
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			~.userSeedValueMethod := newctrl
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(1,2)
+  				print "The Seed values method must have the signature: param ExpNo,ObservNo:integer"
+  				if messageBox(to_str(newctrl,": ",rootfolder.Localization.getText(62)),48,12) = 16 -- Would you like to format the method?
+  					str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  					str_to_method(to_str(~.~,".",newctrl)).program := ~.&userSeedValueMethodTemplate.program -- insert template with new syntax
+  				end
+  			end
+  		else
+  			DLG.setCaption("SeedValues_Inp","")
+  			~.userSeedValueMethod := ""
+  		end
+  	end -- end of dialog call "SeedValues"
+  	-- switch kind "Configuration", "Evaluation", "SeedValues" of call by the dialog
+  
+  else -- #################################### called by SimTalk
+  	switch kind
+  	case "Configuration"
+  		newctrl := ~.userConfigMethod
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl, ~.~)
+  			~.userConfigMethod := newctrl
+  			print "Set relative path of the configuration method."
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(42)
+  				str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  				str_to_method(to_str(~.~,".",newctrl)).program := ~.&userConfigMethodTemplate.program -- insert template with new syntax
+  				print "Use template of the configuration method."
+  			end
+  			~.userConfigMethod := newctrl
+  		else
+  			~.userConfigMethod := ""
+  		end
+  		DLG.setCaption("ConfigMethod_Inp", ~.userConfigMethod)
+  		-- end of SimTalk call "Configuration"
+  
+  	case "Evaluation"
+  		newctrl := ~.userEvalMethod
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl, ~.~)
+  			DLG.setCaption("EvalMethod_Inp",newctrl)
+  			~.userEvalMethod := newctrl
+  			print "Set relative path of the evaluation method."
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(~)
+  				str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  				str_to_method(to_str(~.~,".",newctrl)).program := ~.&userEvalMethodTemplate.program -- insert template with new syntax
+  				print "Use template of the evaluation method."
+  			end
+  			~.userEvalMethod := newctrl
+  		else
+  			~.userEvalMethod := ""
+  		end
+  		DLG.setCaption("EvalMethod_Inp", ~.userEvalMethod)
+  		-- end of SimTalk call "Evaluation"
+  
+  	case "SeedValues"
+  		newctrl := ~.userSeedValueMethod
+  		if strLpos(".",newCtrl) = 1 -- absolute path
+  			newctrl := makePathRelative(newctrl, ~.~)
+  			DLG.setCaption("SeedValues_Inp",newctrl)
+  			~.userSeedValueMethod := newctrl
+  			print "Set relative path of the seed values method."
+  		end
+  		if existsMethod(to_str(~.~,".",newctrl))
+  			if NOT str_to_method(to_str(~.~,".",newctrl)).checkArguments(1,2)
+  				str_to_method(to_str(~.~,".",newctrl)).UsingNewSyntax := true
+  				str_to_method(to_str(~.~,".",newctrl)).program := ~.&userSeedValueMethodTemplate.program -- insert template with new syntax
+  				print "Use template of the seed values method."
+  			end
+  		end
+  		~.userSeedValueMethod := newctrl
+  	else
+  		~.userSeedValueMethod := ""
+  	end
+  	DLG.setCaption("SeedValues_Inp", ~.userSeedValueMethod)
+  	-- end of SimTalk call "SeedValues"
+  	-- switch kind "Configuration", "Evaluation", "SeedValues" of call by SimTalk
+  end -- else called by SimTalk
+$Elements:
+-
+ Type: TabControl
+ Name: "Tab"
+ Rect: [0,0,53,15]
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Settings"
+  Caption: "Settings"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "UserMethods_Gr"
+   Caption: " User-defined methods "
+   Rect: [0,0,47,4]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "Configure"
+    Caption: "Configuration:"
+   -
+    Type: EditText
+    Name: "ConfigMethod_Inp"
+    Rect: [15,0,24,0]
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "ConfigMethod_but"
+    Caption: " ... "
+    Rect: [39,0,5,0]
+    CallbackArgument: "ConfigMethod_but"
+   -
+    Type: StaticText
+    Name: "SeedValues"
+    Caption: "Seed values:"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "SeedValues_Inp"
+    Rect: [15,1,24,0]
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "SeedValues_but"
+    Caption: " ..."
+    Rect: [39,1,5,0]
+    CallbackArgument: "SeedValues_but"
+   -
+    Type: StaticText
+    Name: "Evaluate"
+    Caption: "Evaluation:"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "EvalMethod_Inp"
+    Rect: [15,2,24,0]
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "EvalMethod_but"
+    Caption: " ..."
+    Rect: [39,2,5,0]
+    CallbackArgument: "EvalMethod_but"
+  -
+   Type: GroupBox
+   Name: "reliability_Gr"
+   Caption: " Statistical reliability "
+   Rect: [0,5,47,3]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "ConfLevel_ITxt"
+    Caption: "Confidence level (%):"
+   -
+    Type: EditText
+    Name: "ConfLevel_I"
+    Caption: "95"
+    Rect: [37,0,5,0]
+    DataType: 9
+    Password: false
+   -
+    Type: CheckBox
+    Name: "BoxPlot_CB"
+    Caption: "Min-Max intervals with quartiles"
+    Rect: [0,1,0,0]
+    CallbackArgument: "BoxPlot_CB"
+    IsChecked: true
+  -
+   Type: GroupBox
+   Name: "restore_GR"
+   Caption: " More settings "
+   Rect: [0,9,47,2]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "restore_CB"
+    Caption: "Restore original input values"
+    CallbackArgument: "restore_CB"
+ -
+  Type: TabPage
+  Name: "Validation"
+  Caption: "Validation"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Reports_Group"
+   Caption: " Parametrization of the model "
+   Rect: [0,0,47,2]
+   $Elements:
+   -
+    Type: Button
+    Name: "Recording_but"
+    Caption: "All Recordings"
+    Rect: [5,0,25,0]
+    CallbackArgument: "Recording_but"
+  -
+   Type: GroupBox
+   Name: "Save_Group"
+   Rect: [0,3,47,4]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "savemod_CB"
+    Caption: "Save models after experiments"
+    CallbackArgument: "savemod_CB"
+   -
+    Type: StaticText
+    Name: "file_Txt"
+    Caption: "Model file: "
+    Rect: [0,1,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "file_inp"
+    Caption: "SimulationRun"
+    Rect: [23,1,20,0]
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: Button
+    Name: "modelDir_but"
+    Caption: "Model Folder"
+    Rect: [0,2,20,0]
+    CallbackArgument: "modelDir_but"
+    Enable: false
+   -
+    Type: EditText
+    Name: "modelDir_Inp"
+    Caption: "C:\\TEMP"
+    Rect: [23,2,20,0]
+    Enable: false
+    DataType: 1
+    Password: false
+  -
+   Type: GroupBox
+   Name: "Param_Group"
+   Caption: " Model parametrization "
+   Rect: [0,8,47,3]
+   Enable: false
+   $Elements:
+   -
+    Type: StaticText
+    Name: "ExpNo_txt"
+    Caption: "Experiment:"
+   -
+    Type: EditText
+    Name: "ExpNo_inp"
+    Caption: "1"
+    Rect: [13,0,5,0]
+    DataType: 4
+    Password: false
+   -
+    Type: StaticText
+    Name: "ObsNo_txt"
+    Caption: "Observation:"
+    Rect: [24,0,0,0]
+   -
+    Type: EditText
+    Name: "ObsNo_inp"
+    Caption: "1"
+    Rect: [38,0,5,0]
+    DataType: 4
+    Password: false
+   -
+    Type: Button
+    Name: "Param_but"
+    Caption: "Set Parameters"
+    Rect: [20,1,23,0]
+    CallbackArgument: "Param_but"
+ -
+  Type: TabPage
+  Name: "DistSim"
+  Caption: "Distribution"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "DistSim_Gr"
+   Rect: [0,0,47,13]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "DistrSim_CB"
+    Caption: "Use distributed simulation"
+    CallbackArgument: "DistrSim_CB"
+   -
+    Type: StaticText
+    Name: "HeaderTxt"
+    Caption: "Computer and number of parallel processes:"
+    Rect: [0,1,0,0]
+    Enable: false
+   -
+    Type: ListBox
+    Name: "RemotesList"
+    Caption: [" "]
+    Rect: [0,2,27,5]
+    CallbackArgument: "RemotesList"
+    Enable: false
+    SelectionIndex: 1
+   -
+    Type: Button
+    Name: "AddAddress"
+    Caption: "Insert"
+    Rect: [30,2,12,0]
+    CallbackArgument: "CB_AddAddress"
+    Enable: false
+   -
+    Type: Button
+    Name: "TestConnection_But"
+    Caption: "Test"
+    Rect: [30,3,12,0]
+    CallbackArgument: "TestConnection_But"
+    Enable: false
+   -
+    Type: Button
+    Name: "RemoveAddress"
+    Caption: "Remove"
+    Rect: [30,4,12,0]
+    CallbackArgument: "CB_RemoveAddress"
+    Enable: false
+   -
+    Type: Button
+    Name: "Recording"
+    Caption: "Protocol"
+    Rect: [30,5,12,0]
+    CallbackArgument: "Recording"
+    Enable: false
+   -
+    Type: CheckBox
+    Name: "SimulateWith3D_CB"
+    Caption: "Simulate with 3D"
+    Rect: [0,8,0,0]
+    CallbackArgument: "SimulateWith3D_CB"
+    Enable: false
+    IsChecked: true
+   -
+    Type: StaticText
+    Name: "quitAfterTimeTxt"
+    Caption: "Terminate after [time]:"
+    Rect: [0,9,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "QuitAfterTime"
+    Caption: "5:00.0000"
+    Rect: [25,9,18,0]
+    Enable: false
+    DataType: 10
+    Password: false
+   -
+    Type: StaticText
+    Name: "LicTypeTxt"
+    Caption: "Remote license:"
+    Rect: [0,10,0,0]
+    Enable: false
+   -
+    Type: Drop-Down
+    Name: "LicType"
+    Caption: ["Professional","Standard","Application","Runtime","Research","Educational","Simulation","Highest Available"]
+    Rect: [21,10,22,0]
+    Enable: false
+    SelectionIndex: 1
+   -
+    Type: CheckBox
+    Name: "LowPrio_CB"
+    Caption: "Lower priority"
+    Rect: [0,11,0,0]
+    CallbackArgument: "LowPrio_CB"
+    Enable: false
+    IsChecked: true
+ -
+  Type: TabPage
+  Name: "Rules"
+  Caption: "Rules"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Rules_GR"
+   Caption: " Rule-based settings "
+   Rect: [0,0,47,11]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "Title_Rules"
+    Caption: "Use rules"
+    CallbackArgument: "useRules"
+   -
+    Type: StaticText
+    Name: "NumExp_Txt"
+    Caption: "Number of experiments:"
+    Rect: [0,1,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "NumExp_Inp"
+    Caption: "1"
+    Rect: [32,1,11,0]
+    Enable: false
+    DataType: 4
+    Password: false
+   -
+    Type: StaticText
+    Name: "RuleSelect_C"
+    Caption: "Select rule:"
+    Rect: [0,2,0,0]
+    Enable: false
+   -
+    Type: Drop-Down
+    Name: "Ruleselect_Pop"
+    Caption: ["No rule"]
+    Rect: [28,2,15,0]
+    CallbackArgument: "RuleSelected"
+    Enable: false
+    SelectionIndex: 1
+   -
+    Type: CheckBox
+    Name: "ActiveRule_CB"
+    Caption: "Rule is active"
+    Rect: [0,3,0,0]
+    CallbackArgument: "ActiveRule_CB"
+    Enable: false
+    IsChecked: true
+   -
+    Type: CheckBox
+    Name: "AsInit_CB"
+    Caption: "Use for first simulation run"
+    Rect: [20,3,0,0]
+    CallbackArgument: "AsInit_CB"
+    Enable: false
+   -
+    Type: StaticText
+    Name: "forExp_Txt"
+    Caption: "Valid for experiment (e.g.  5; 8-12):"
+    Rect: [0,4,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "Valid_Inp"
+    Rect: [32,4,11,0]
+    Enable: false
+    DataType: 1
+    Password: false
+   -
+    Type: StaticText
+    Name: "Prio_C"
+    Caption: "Priority of the rule:"
+    Rect: [0,5,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "Prio_Input"
+    Rect: [32,5,11,0]
+    Enable: false
+    DataType: 4
+    Password: false
+   -
+    Type: Button
+    Name: "TableCond_B"
+    Caption: "Table Condition"
+    Rect: [0,6,20,0]
+    CallbackArgument: "Cond_Table"
+    Enable: false
+   -
+    Type: Button
+    Name: "MethCond_B"
+    Caption: "Method Condition"
+    Rect: [22,6,21,0]
+    CallbackArgument: "Cond_Meth"
+    Enable: false
+   -
+    Type: Button
+    Name: "TableAction_B"
+    Caption: "Table Action"
+    Rect: [0,7,20,0]
+    CallbackArgument: "Act_Table"
+    Enable: false
+   -
+    Type: Button
+    Name: "MethAction_B"
+    Caption: "Method Action"
+    Rect: [22,7,21,0]
+    CallbackArgument: "Act_Meth"
+    Enable: false
+   -
+    Type: Button
+    Name: "NewRules_B"
+    Caption: "Create New Rule"
+    Rect: [0,8,20,0]
+    CallbackArgument: "NewRule"
+    Enable: false
+   -
+    Type: Button
+    Name: "allRules_B"
+    Caption: "Show All Rules"
+    Rect: [22,8,21,0]
+    CallbackArgument: "openRules"
+    Enable: false
+   -
+    Type: Button
+    Name: "DeleteRule_B"
+    Caption: "Delete Displayed Rule"
+    Rect: [0,9,25,0]
+    CallbackArgument: "DeleteRule"
+    Enable: false
+ -
+  Type: TabPage
+  Name: "Report"
+  Caption: "Report"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "Descript_Gr"
+   Caption: " The report shows the information you enter "
+   Rect: [0,0,47,4]
+   $Elements:
+   -
+    Type: StaticText
+    Name: "DescrProjectName_Txt"
+    Caption: "Name of the project:"
+   -
+    Type: EditText
+    Name: "ProjName_Inp"
+    Rect: [23,0,20,0]
+    DataType: 1
+    Password: false
+   -
+    Type: StaticText
+    Name: "DescProjectPers_Txt"
+    Caption: "Person in charge:"
+    Rect: [0,1,0,0]
+   -
+    Type: EditText
+    Name: "ProjPers_Inp"
+    Rect: [23,1,20,0]
+    DataType: 1
+    Password: false
+   -
+    Type: StaticText
+    Name: "Receiver_Txt"
+    Caption: "E-mail recipient:"
+    Rect: [0,2,0,0]
+   -
+    Type: EditText
+    Name: "Receiver_Inp"
+    Rect: [23,2,20,0]
+    DataType: 1
+    Password: false
+  -
+   Type: GroupBox
+   Name: "ResultsReport_Gr"
+   Caption: " Behavior at the end of the experiment run "
+   Rect: [0,5,47,6]
+   $Elements:
+   -
+    Type: CheckBox
+    Name: "showRuntimeAtEnd_CB"
+    Caption: "Show run time"
+    CallbackArgument: "showRuntimeAtEnd_CB"
+    IsChecked: true
+   -
+    Type: CheckBox
+    Name: "ReportAtEnd_CB"
+    Caption: "Show report"
+    Rect: [23,0,0,0]
+    CallbackArgument: "ReportAtEnd_CB"
+    IsChecked: true
+   -
+    Type: CheckBox
+    Name: "saveHTMLatEnd"
+    Caption: "Save report"
+    Rect: [0,1,0,0]
+    CallbackArgument: "saveHTMLatEnd"
+   -
+    Type: CheckBox
+    Name: "Excel_CB"
+    Caption: "Save results"
+    Rect: [23,1,0,0]
+    CallbackArgument: "Excel_CB"
+   -
+    Type: Button
+    Name: "FolderHTML_but"
+    Caption: "Folder"
+    Rect: [0,2,16,0]
+    CallbackArgument: "openHTMLPath"
+   -
+    Type: EditText
+    Name: "FolderHTML_inp"
+    Rect: [17,2,26,0]
+    DataType: 1
+    Password: false
+   -
+    Type: CheckBox
+    Name: "SendMail_CB"
+    Caption: "Send e-mail"
+    Rect: [0,3,0,0]
+    CallbackArgument: "SendMail_CB"
+   -
+    Type: StaticText
+    Name: "Mailserver_Txt"
+    Caption: "E-mail server:"
+    Rect: [0,4,0,0]
+    Enable: false
+   -
+    Type: EditText
+    Name: "Mailserver_Inp"
+    Rect: [17,4,26,0]
+    Enable: false
+    DataType: 1
+    Password: false

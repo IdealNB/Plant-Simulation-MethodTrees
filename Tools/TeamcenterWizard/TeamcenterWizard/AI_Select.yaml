@@ -1,0 +1,7 @@
+InternalClassType: Variable
+Coordinate3D: [1.9999999999999996,-10,0]
+Name: AI_Select
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: 03f5779f-bafc-4272-a473-1c16a6459384
+$DataType: integer
+Value: 0

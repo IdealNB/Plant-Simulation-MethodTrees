@@ -1,0 +1,30 @@
+InternalClassType: Method
+Coordinate3D: [-6,-3,0]
+Name: setTCFolder
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: sets the teamcenter folder (in the users Home) 
+ 			  in which the report will be stored
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TcReport Context Menu
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ 21.12.2018	RBA	
+ _________________________________________________________________________________*/
+ 
+ if check_License = "TC"
+ 	TC_Folder := prompt("Set target folder in Teamcenter for uploading the report: ")
+ 	TCFolder.Text := "Teamcenter Folder: " + TC_Folder -- this is to show the folder
+ end
+RandomSeed: 1073814229
+UUID: 6108ceb6-ff42-4aa9-b9fc-559689814130

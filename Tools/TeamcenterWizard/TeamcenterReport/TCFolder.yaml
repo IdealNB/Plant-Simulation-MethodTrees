@@ -1,0 +1,10 @@
+InternalClassType: Comment
+BackgroundColor: 16777215
+Coordinate3D: [-1,-2.4,0.005]
+Name: TCFolder
+Origin: f47edc1e-c99c-41c1-8b4b-241f1aff72f6
+Text: "Teamcenter Folder: "
+Transparent: false
+UUID: eeea9a60-4ca9-417d-8f91-7c95edc5f1f4
+3D:
+ ExcludeFromShowContentOfLocation: false

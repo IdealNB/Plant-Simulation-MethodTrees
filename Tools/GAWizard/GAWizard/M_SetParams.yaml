@@ -1,0 +1,89 @@
+InternalClassType: Method
+Coordinate3D: [45.300000000000004,-8,0]
+Name: M_SetParams
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- set the parameter in the remote model 14.2
+ -- called by: NewJobId
+ param eMPlant:any, jobId, MachineIndex :integer->boolean
+ 
+ var p,str,DataTypeStr,s:string; var chromNo,k,j,indNo:integer; var indivTable,chrom:table;var r:real
+ 
+ indNo := JobsTable[2,jobId] -- No of the individual
+ if indNo < 1 OR Individuals[1,indNo]=void then return false;end
+ 
+ p := to_str(self.~) -- path or location
+ 
+ -- transfer all chromosomes of the_individual (to be evaluated)
+ indivTable := Individuals[1,indNo]
+ str := to_str(p,".individual.delete")
+ eMPlant.executeSimTalk(str) -- delete the remote individual table
+ 
+ for chromNo := 1 to indivTable.yDim
+ 	chrom := indivTable[1,chromNo]
+ 	DataTypeStr := indivTable[1,chromNo].getDatatype(1)
+ 	str := to_str(p,".individual.createNestedList(1,",chromNo,"); ",p,".individual[1,",chromNo,"].setDataType(1,\\"",DataTypeStr,"\\")")
+ 	eMPlant.executeSimTalk(str)
+ 
+ 	if chrom.RowIndex
+ 		str := to_str(p,".individual[1,",chromNo,"].RowIndex := true")
+ 		eMPlant.executeSimTalk(str)
+ 		for k := 1 to chrom.ydim
+ 
+ 			str := chrom[0,k]
+ 			j := 1
+ 			while j <= strLen(str)
+ 				s:= strCopy(str,j,1)-- print s;
+ 				if s = "\\""  -- debug;
+ 					str := to_str(strCopy(str,1,j-1),"\\\\",strCopy(str,j,strLen(str))) -- replace " by \\"
+ 					j := j + 1
+ 				end
+ 				j := j + 1
+ 			end
+ 
+ 			str := 	to_str(p,".individual[1,",chromNo,"][0,",k,"] := \\"",str,"\\"")
+ 			eMPlant.executeSimTalk(str)
+ 		next
+ 	end
+ 
+ 	for k := 1 to chrom.ydim
+ 		switch strToLower(DataTypeStr)
+ 		case "string"
+ 			str := 	to_str(p,".individual[1,",chromNo,"][1,",k,"] := \\"",chrom[1,k],"\\"")
+ 		case "time"
+ 			r := chrom[1,k]
+ 			str := 	to_str(p,".individual[1,",chromNo,"][1,",k,"] := ",r)
+ 		else -- all data types which are described by real (length,...) and boolean
+ 			str := 	to_str(p,".individual[1,",chromNo,"][1,",k,"] := ",chrom[1,k],"")
+ 		end
+ 		eMPlant.executeSimTalk(str)
+ 	next
+ next -- chrom
+ 
+ var EvCrtlStr:string := to_str(rootframe,".eventController")
+ eMPlant.ResetSimulation(EvCrtlStr)-- reset_ the model => userConfigMethod_
+ 
+ -- Assign problems defined in the table 'ProblemDefinition'
+ str := to_str("-> boolean result := ",p,".setUserParam")
+ result := eMPlant.executeSimTalk(str)
+ if NOT result
+ 	return false
+ end
+ 
+ if strLen(UserConfigMethod) > 0
+ 	str := to_str("-> any result := ",~,".",UserConfigMethod)
+ 	--str := to_str("-> boolean result := ",p,".UserConfigMethod")
+ 	--str := to_str("-> string ",~,".", UserConfigMethod,"(",localExp,")")
+ 	--result := eMPlant.executeSimTalk(str_to_method(to_str(~,".",UserConfigMethod)).program)
+ 	var a:any := eMPlant.executeSimTalk(str)
+ 	result := getSimTalkTypename(a) ~= "boolean" AND a
+ 	if NOT result
+ 		DistributedSimulation.MachinesTable.addLogging(to_str("ERROR in configuration method '",UserConfigMethod,"'"), jobId, MachineIndex, true)
+ 	end
+ 
+ end
+ 
+ -- for all object generating events during the reset_ phase
+ eMPlant.ResetSimulation(EvCrtlStr)
+RandomSeed: 415
+UUID: 85a6d75d-a15c-4335-84b5-e12faa91cebf

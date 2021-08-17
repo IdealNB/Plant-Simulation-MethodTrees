@@ -1,0 +1,42 @@
+InternalClassType: Method
+Coordinate3D: [-8,-9,0]
+Name: Del_CustMethods
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: 
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: 
+ Calls		: 
+ 
+ Author		: 
+ Date		: 
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author		Description
+ _________________________________________________________________________________*/
+ 
+ if NOT RootFolder.Public.isNameUnique("write_Process_Data")
+ 	RootFolder.Public.&write_Process_Data.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Resource_Data")
+ 	RootFolder.Public.&write_Resource_Data.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("get_Variant")
+ 	RootFolder.Public.&get_Variant.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Process_Data_BB")
+ 	RootFolder.Public.&write_Process_Data_BB.deleteObject
+ end
+ if NOT RootFolder.Public.isNameUnique("write_Product_Data")
+ 	RootFolder.Public.&write_Product_Data.deleteObject
+ end
+ &custom_Methods.Value := "RootFolder.TeamcenterWizard"
+RandomSeed: 1073814141
+UUID: 6bbdc4f3-3dac-4d52-adbc-4099a246c889

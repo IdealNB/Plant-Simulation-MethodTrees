@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [12,2.8809000000000005,0]
+DataType: time
+HasInitValue: false
+Name: unloadTime
+Origin: e84f209f-f52a-4ebb-ba53-900e877e7687
+UUID: 9118f05f-0dee-4546-97c4-2071ac6278cb
+Value: 4

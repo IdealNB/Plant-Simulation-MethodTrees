@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Coordinate3D: [-1,1.85,0]
+CreateIn3D: true
+DataType: string
+Name: Energy
+Origin: cc1c4470-16df-4768-94d8-a76dbe4a15f2
+UUID: 7ae8b2bb-32b0-44f9-b59a-076dddf672df
+3D:
+ GraphicGroupNames: ["default"]
+ LockedGraphicGroups: []
+Value: ""

@@ -1,0 +1,20 @@
+InternalClassType: Method
+Coordinate3D: [-8.3,-1.7,0]
+Name: CreateMethodTree
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ param node:string
+ 
+ var tree := .AnalyzeMethods.MethodTree.derive(current)
+ Tree.label := node
+ Trees.appendRow(tree,tree.name)
+ tree.coordinate3D[1] := 1
+ var prevTree := trees[0,trees.ydim-1]
+ if trees.ydim /= 1
+ 	tree.coordinate3D[2] := prevTree.coordinate3D[2] - prevTree._3d.BoundingBoxSize[2] -3
+ end
+ 
+ var methodNode := addNode(tree,void,"",node, "MethodNode")
+ analyzeMethod(tree,node, methodNode)
+RandomSeed: 103
+UUID: 7637cb13-4a15-4df2-bf0d-effe7de4c38b

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Teamcenter
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 687ffd5b-7159-4ce4-bb5d-829458333538
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- c10f09af-06bb-4017-9dd5-9f7fc90f7f67
+- 93ebead9-23b7-4f70-9318-bcd68306ce07
+- 27b8fcc1-53c3-4542-89db-4d35c8357919
+- 1034acc2-175d-42fc-880c-b5241da0fbab
+- 2565e77b-e2c4-4155-8b4f-607a4a08a50e
+- 50527d26-4239-4289-8956-a7df50c3f75c
+- fccee214-80d7-4a0f-9b42-da7f44e6c348

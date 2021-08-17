@@ -1,0 +1,18 @@
+InternalClassType: Dialog
+Label: "Szimulációs számítógép"
+Origin: eb796743-b261-4c7e-bd37-61cb70247539
+UUID: 565a636a-5a29-407f-8541-0bb3acfa404d
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 263
+$Elements:
+-
+ Type: EditText
+ Name: "CompName_inp"
+ Caption: "localhost"
+-
+ Type: EditText
+ Name: "numParallelProc_Inp"
+ Caption: "8"

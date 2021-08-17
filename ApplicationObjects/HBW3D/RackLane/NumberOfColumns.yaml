@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-23,1.4985,0]
+Name: NumberOfColumns
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 9c837955-b772-4266-a0b3-16f6d62d29d9
+$Observers:
+- [Value,"onChanges"]
+$DataType: integer
+Value: 10

@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [6.5,-12,0]
+Name: RESET
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // reset all working tables
+ //--------------------------------------------------------------------------------
+ Content.InheritFormat := true;
+ Content.delete({0,1}..{*,*})
+ Inventory.InheritFormat := true
+ Inventory.delete({0,1}..{*,*})
+ RackLanes.delete // Rack lanes are added in Init method of each rack lane
+RandomSeed: 2259
+UUID: b57a27c5-5f99-49be-8bac-5129e3ede595
+3D:
+ VisibleGraphicGroups: ["default","reset"]

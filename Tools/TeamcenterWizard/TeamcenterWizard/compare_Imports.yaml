@@ -1,0 +1,70 @@
+InternalClassType: Method
+Coordinate3D: [2.7,-18.7,0]
+Name: compare_Imports
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- compare table 'a' with table 'b' and write into table 'c'
+ -- is called 2 times: with a = old import, b = new import and a = new import, b = old import
+ _________________________________________________________________________________
+ Parameters	: Tables a, b, c, actual line in Import_History, note
+ 			  
+ ReturnValues: none
+ 
+ Called By	: write_history
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 05.12.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 25.06.2019	RBA		check for column "UniqueID" to correct error when first loading only process data then loading layout data 
+ 04.12.2019	RBA		add "Applied_In_Model" column
+ 13.01.2021	RBA		make "not supported" line gray
+ _________________________________________________________________________________*/
+ -- tables source, target, changes
+ param a, b, c : any, import_line : integer, note : string
+ 
+ if a.getColumnNo("UniqueID") /= -1 AND b.getColumnNo("UniqueID") /= -1 -- if prev and actual imports contain layout data
+ 	for var row := 1 to a.yDim
+ 		b.setCursor("UniqueID", 1)
+ 		var prevID : boolean := b.find({"UniqueID", *}, a["UniqueID", row])	-- exists UID in both tables?
+ 		var change_row : integer := c.ydim + 1
+ 		c.setCursor("UniqueID", 1)
+ 		var UId_exists : boolean := c.find({"UniqueID", *}, a["UniqueID", row]) -- ID already entered into changes table
+ 	
+ 		if prevID = true then -- UID exists in both tables
+ 			for var column := 1 to a.xDim
+ 				if a[column, row] /= b[column, b.CursorY] and UId_exists = false then -- compare data fields in the line
+ 					Import_History["Changes_made", import_line] := "TRUE"
+ 					c["Change_Note", change_row] := c["Change_Note", change_row] + " / " + a[column, 0] -- add column name to the change notes
+ 					c[column + 1, change_row] := a[column, row] -- copy data field to change table
+ 					c["UniqueID", change_row] := a["UniqueID", row]
+ 					c["Applied_In_Model", change_row] := "FALSE"
+ 				end
+ 			next
+ 		
+ 		else -- UID not found in previous attribute table
+ 			if a["UniqueID", row] /= "" then
+ 				Import_History["Changes_made", import_line] := "TRUE"
+ 				c["Change_Note", change_row] := note -- set Change_Note to "Deleted" or "New Item"
+ 				c.InsertList(2, change_row, a.copy({1, row}..{*, row}))
+ 				--c["UniqueID", change_row] := a["UniqueID", row]
+ 				if note = "Deleted"
+ 					c.setFontColorRow(change_row, 2) -- set line RED
+ 				elseif note = "New Item"
+ 					c.setFontColorRow(change_row, makeRGBValue(0, 128, 0)) -- set line GREEN
+ 				end
+ 				c["Applied_In_Model", change_row] := "FALSE"
+ 			end
+ 		end
+ 	next
+ else
+ 	Import_History["Changes_made", import_line] := "not supported" -- for Process Data only compare is not possible
+ 	Import_History.setFontColorRow(import_line, makeRGBValue(150, 150, 150)) -- set line GRAY
+ end
+RandomSeed: 1073814214
+UUID: 23bda964-fbab-4bd6-b012-b3160f730cd0

@@ -1,0 +1,70 @@
+InternalClassType: DataTable
+Coordinate3D: [56.150000000000006,-11.7,0]
+Name: SVGofCharts
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+UUID: 0c48eabb-f37a-40bb-98ac-98841a1a91a1
+$CustomAttributes:
+-
+ Name: removeSVGtables
+ DataType: method
+ RandomSeed: 203
+ Value: |+1
+  var tab:table := self.~.tmpTables
+  for var j := tab.yDim downto 1 
+  	if tab[1,j] /= void 
+  		tab[1,j].deleteObject
+  	end
+  next
+  tab.delete
+
+-
+ Name: tmpTables
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   RowIndex: true
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    Hidden: false
+   -
+    Index: 1
+    DataType: object
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+  ColumnIndex: [string,2,~,"tablefile SVGofChart<No>"]
+  Columns:
+  - [0,string,2,"Observation 2","Observation 3"]
+-
+ Name: prepareTables
+ DataType: method
+ RandomSeed: 202
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,wanHhr+k3r+6savLpO2gzpru8qfjsZrH96DxwLi0+bX5tdf6/fTMg7nbuoKxwdLRibH7jvKz3/qm6aOmmeaawoX5yprFmaH7/MyN9J7rnsbd6I71q6yIjaTp3JPEwc286YX0tP7hmvr9/P3trY+diZLRq42RucGOlqS5vrfmhNCOxsDFtamIhqHUl6DhvL3vyLaIt+Oqm5Tdo8Sd1u6Yk7vugIjXj4DRt/mU0Zmslq3+maadi67K3srX1qP51pj13eGz2NzJ7NuEmeqLl9TJk4iw0Iau8pu4osf/2pqsyZDA/+/ky9Kwquz81L6j+Nn4m6rI2NTCitbYo4CWv/bTteD82Ovo/f/zl8ej8Iuq0Oiqycjp3dL+2PCn+qr21/WJz5XG9NbwkvrrjuOj0bGvjYeds4TJg9SUgs7418jm1Kc]
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnIndexContents: false
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+  CellFormat:
+  -
+   Index: 1
+   Rows:
+   -
+    Index: 3
+    FontColor: 0x0
+ Columns:

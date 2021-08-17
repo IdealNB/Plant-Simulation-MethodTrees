@@ -1,0 +1,32 @@
+InternalClassType: Conveyor
+Coordinate3D: [0.5,-0.67,0]
+ExitCtrl: "self.OnExit"
+Length: 1.5
+Name: IN
+Origin: b6afcbdd-0c81-4449-9f5f-05e97247c45f
+RandomSeed: 1
+ShiftcalendarObject:
+Speed: 1
+UUID: e1f4c637-e015-4e87-8a82-11eb658a0dd4
+Width: 1.34
+$CustomAttributes:
+-
+ Name: OnExit
+ DataType: method
+ RandomSeed: 2267
+ Value: |+1
+  // Method Tasks:
+  // schedule storing operation on RSU to move the part to the pre defined
+  // storage location.
+  //
+  // Called By	: exit control
+  //--------------------------------------------------------------------------------
+  // Part is scheduled as next waiting part in case that there is no other part queuing up already or being transported
+  waituntil RSU.waitingPart = void
+  RSU.waitingPart := @
+$Predecessors:
+- 29dd2a27-7cb2-46ea-a9b6-da0c9cab42a4
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [0,1.5,0]

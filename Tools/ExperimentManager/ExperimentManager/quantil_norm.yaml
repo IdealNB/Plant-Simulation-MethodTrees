@@ -1,0 +1,28 @@
+InternalClassType: Method
+Coordinate3D: [27.35,-30.85,0]
+Name: quantil_norm
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ /* Quantil of the (standard) normal distribution
+ Reference: Dietmar Herrmann: Statistik in C, p. 69
+ Approx. of Hastings, cf. Handbook of Mathematical functions, Dover 1965
+ max error 4.5e-4 = 0.00045
+ */
+ param x : real -> real
+ 
+ var x1: real := x
+ if x < 0.5
+ 	x := 1 - x
+ end
+ 
+ var t : real := sqrt(-2 * log(1-x))
+ var z: real := 2.515517 + t * (0.802853 + 0.010328 * t)
+ var n: real := 1 + t * (1.432788 + t * (0.189269+0.001308 * t))
+ z := t - z/n
+ if x1 < 0.5
+ 	result := -z
+ else
+ 	result := z
+ end
+RandomSeed: 291
+UUID: f956face-c69a-4bd7-ae64-6bba3fb2c2fe

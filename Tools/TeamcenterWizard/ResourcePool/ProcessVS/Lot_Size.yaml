@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2.8,-4,0]
+DataType: integer
+HasInitValue: false
+Name: Lot_Size
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: f99d24dd-e640-4f87-986b-4c0990a686f9
+3D:
+ ExcludeFromShowContentOfLocation: false
+Value: 1

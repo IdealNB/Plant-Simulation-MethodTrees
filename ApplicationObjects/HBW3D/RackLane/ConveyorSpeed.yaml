@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Comment: ""
+Coordinate3D: [-10,-0.50150000000000006,0]
+DataType: speed
+HasInitValue: false
+Name: ConveyorSpeed
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 3eeab64b-0f71-41a1-b556-df87c7860584
+Value: 1

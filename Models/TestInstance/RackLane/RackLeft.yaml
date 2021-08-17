@@ -1,0 +1,37 @@
+InternalClassType: Store
+Coordinate3D: [2,-0.67,0]
+Origin: 815f0b83-1868-44ea-bd42-679df60e9b4b
+RandomSeed: 1073901356
+UUID: 2c1db0f3-1ba1-4f04-bd14-8fd3536a590e
+XDim: 10
+YDim: 5
+3D:
+ AutoGraphicsActive: true
+ Dimensions: [0.9,1.3,1.2]
+ FloorThickness: 0.03
+ Gap: 0.04
+ GroundClearance: 0.6
+ OriginX: "Left"
+ OriginY: "Center"
+ PostMaterialActive: true
+ PostMaterialAmbientColor: 13395507
+ PostMaterialDiffuseColor: 13395507
+ PostMaterialEmissiveColor: 0
+ PostMaterialShininess: 0.247
+ PostMaterialSpecularColor: 5855577
+ PostMaterialTransparency: 0
+ StorageAreaMaterialActive: true
+ StorageAreaMaterialAmbientColor: 9670004
+ StorageAreaMaterialDiffuseColor: 8946281
+ StorageAreaMaterialEmissiveColor: 0
+ StorageAreaMaterialShininess: 0.247
+ StorageAreaMaterialSpecularColor: 5855577
+ StorageAreaMaterialTransparency: 0
+ StoreType: "Rack with square posts (dynamic)"
+ VisibleGraphicGroups: ["default"]
+$CustomAttributes:
+-
+ Name: OnEntrance
+ $DataType: method
+ RandomSeed: 1073901354
+InheritEntranceExitLockedOnReset: false

@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [-4,5,0]
+DataType: string
+HasInitValue: false
+Name: WMS_new
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 472e54b0-e4d4-4d7a-b415-96f7c66fe59f
+Value: "WMS"

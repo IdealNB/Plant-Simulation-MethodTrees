@@ -1,0 +1,13 @@
+InternalClassType: DataTable
+Origin: 92dec6f2-f24d-4b3e-806a-c2039381dacf
+UUID: c92d5d18-af4d-4573-9e5c-e7bf6f7624bf
+$CustomAttributes:
+-
+ Name: OnOpen
+ $DataType: method
+ RandomSeed: 1073886632
+-
+ Name: OnClose
+ $DataType: method
+ RandomSeed: 1073886630
+$Data:

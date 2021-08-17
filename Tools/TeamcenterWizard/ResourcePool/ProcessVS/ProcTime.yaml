@@ -1,0 +1,13 @@
+InternalClassType: Variable
+Coordinate3D: [-8,3,0]
+DataType: randtime
+DecimalPlaces: 0
+HasInitValue: false
+Name: ProcTime
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+RandomSeed: 1
+ShowUnit: false
+UUID: e164302e-3fc1-44c1-bba5-b6871a6cc573
+3D:
+ ExcludeFromShowContentOfLocation: true
+Value: 0

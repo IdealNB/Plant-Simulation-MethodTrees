@@ -1,0 +1,213 @@
+InternalClassType: DataTable
+CloseCtrl: "self.closeDesignTab"
+Coordinate3D: [41,-26.25,0]
+Name: GeneralDesign
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+UUID: 0cb43ba7-bf67-4c6f-b8e8-e42679ea7a41
+$CustomAttributes:
+-
+ Name: closeDesignTab
+ DataType: method
+ RandomSeed: 256
+ Value: |+1
+  -- interaction Close of table 'GeneralDesign'
+  -- called by: interaction close of the table file 'GeneralDesign'
+  -- otherwise called by an external method
+  param bb:boolean
+  
+  self.~.generateDesign(true)
+-
+ Name: openDesignTab
+ DataType: method
+ RandomSeed: 255
+ Value: |+1
+  -- Prepare the table 'GeneralDesign'
+  -- called by: Menu MultiLevel
+  if Input.yDim < 1 
+  	-- Input values are needed for a multi-level experimental design.
+  	messageBox(rootfolder.Localization.getText(280),1,4) -- info
+  	return
+  end
+  
+  self.~.prepDesignTab(true)-- true calledByDialog
+-
+ Name: generateDesign
+ DataType: method
+ RandomSeed: 254
+ Value: [$,M2LOWA/EJvXW5k0youN2nQ,n4Gc2pTujPr5vJKR48PbifqFqfKN8azFwML0177xuqbcqaq6uvfPjMHl2pnkjrCzsdPCt5G1mfqGsuONr5bak5m0+PWB/Yzj2LDv96G5woD31MPu08Cy7qvfkqbaz6CkvJXEp72Ej/S5te7t3N74x+Koku3Z+Kedl7Hix8X70KPrj6DNl6jOqKbP0J2ovuTq8OGau4OQ8qXXnsfyi+a2pb/QrtuipYqxoLrA0/2B/Ovk+tv/4Jf4tbWhwNiO3YSs7rKQwdK6lYvT0a686/S9vpf0huexs9zsrsOtw6rTgP+yidrovryR/dH/o9eSpdry68DO9+/IhMqDws+s6Nvvm6WO05T6+bDkn7e5ltOIv6TTnPX1zZDVisyC19XsgPjMtsuH78ueva7A5PO+1PHNgK7ovfeL07He88Lig5aXoaSo7IK7htOoyuv0vNOq8Y3Ew92837bhmpWrk7CDsOCfxLGytb7s87627YrX3cabrYPxje7ogKaBleTz9auY/+rF476Pg+mSjrKGmKa0nNbK14OThIyjwIvl2oatxNnhppO/1/qOpOOHvbW8ld2ntb+r2Zf50/Czo8T/4I2oibOmpLHqxNfUt8mjv9T4yJH45LGw5suGvrWz4ZKq+qXH5teDqOveruLy1uvlh73L99DLlOrn0I/ny4CEgdj+ibCMjpXmxM3nsL2FpZDgv+yI4fKZ8dSN8avf3qzZkcnVmZCrlryzh/u17KqC/6/1tNjTvIncr8/c56OSyMak+rny6pTw9IepqKbL5ca6guT11LvP9cSwgc238d3q0fa0kpfO/qSy3ujpmquL0P21o/3GiNDwz86Zlb3mm5GJ4ve8ieH5htvJuMObvtGY0LHZuY/VuPW7p4Kq3oSzv7Wv6Y2UiJKo/aaJpsed3YnUmL6U+52UsPa7vpTo7+f50MXbjKqQg8OEk4ehyeet45rX4bLr09Le4Oy6x/DR18WsgrLcia2bsMny9cDPxPaMq6WxparAsKen5K/7iK7WqKbw6uu+waju25eryLmS2qnn0bKG+dXa9tSr4dD6+YKf6o+6zf6L5+6/1eHNoo7b2tzcycGWz4KFgLbssJ2p4+P25ufIgIW1q6nAt+XGxuG8lr6/g6rg5MyrkqaetuKhgZX+9dP2rpCL8s2n/Jqo4fqJlNi//aG+/ML2k97ygpSrzqGT15+A09mryIKfgY+KqsCZ6uD8g4OAj/zckezZubDN7u2Im6iDnMf/gaaOh5ilgubblu77norEnMX0l8GoweT4j/GBqLzSpPLjs6LVjPT58sSH1dCKnszGxqaT6JTdm5fy1rD58Ljgqqj6qcaT98SYttefpMK4qbWF4dynq4nt1uOdl8WolYmRqOLzlcimsc2x3oHy/8P1lqrb8bmr2Pnc8+mxuM+vv5Dhj5G7qrXs8fjwt9mP/Pjbtu2Ujan56Zzuv7rpj6yc9bf3rvTKxbbc+cqMiJHVzYmfls+Asdisp5P1yPjomYGcxr6xmtOqxsTBxuWX9LGX4LiYldnj6KCX+fvB1JaIkfL2yoTe0ue087fFirzVq9TO55qIotnNmNza1crgn6TV58zysMbFm8jVo/jqjtP0ytKBk/7dn83o68Kfk+eToaPN3/D4mvG7uYfH+8jIlJDo+M3I6O6f+Pyu/9fz7Mye4r6Z6IXq+/mrq96T7vK33821y4iwqeDE7bSLk4Hho/n/9a/k6c315ciO1/u527vNj5iC4bbul4DBjNa4tMfWtsbJ4pGkyPab08qo7JWD9uymiMbhg6PF2KCFhqSajpr/5JjW5bzp7vPS39LV7sCU0p3p2JyeubfS/ZyMiIXVj+2w8Lmt2vCP4Iy35Ovm8aTj6cXfr/rVrOvzoszt5u2licSfo+yjh5mDvcnHp5jwqNPNiNSA9sfwmamLvJn8yqC9wvGouvWtpqLY2s6UnL6BzbbEl/uFnp6sk5CVjprN7fyptJG1g/+Wvrjg1LD1sOvxkcXEjM6MnbX0m4CSgpGvmKPf2JrrkaCEt56W9e3Gioag7ZDu+NDQm+Sorv7qw9fU5sWjqpfqgr3i0a+ulsuo9OW9kbahoc/pmPKZub7zyOWi/seG8Zzb8b6LnrjF9bOC+4OM9qf4qLelqf2j/ZjK2KWMjanHkLWIl6a/+8iszMvb3Mj10Ni/hsmAwrKTvJ3l+7uVu479k7Wl4t/cnKm75aG60ta8seKH26Lfj5HXteTu3NLOxJ6nkPqUspmspL27++OH0dz+yaOemcKDl6XTzJqxk9KPiOKI9Zzwwef4w87Dko+V/tW5tabHxbaE4Oj90sekve2sqZi555ygp7XuvpzSvIGb1LuW2bXmpIHfvO7iqbzZ0bjZ8IDzpaTpuYuMuaOtw9SF79Kr+7uokfyMl/TN/JPE44LW3+qsoYzbppOJrNKE3d/2h+bszpTFuY/40PvZsMGi06OSm8eEoKKhvPLxquTahsyx8vu+oO+G/Y3P6bqI3Nn6u8PQj+udhp+WuKjA/aGMtPn658C6v6e3lMDKntf3itS2+9CPntPD07Kqm4DFh+ermuWL9IybiuLH4cHp/Y2A2reMi//xk+LazuzAj6iQkLGt5YiCzcTdyomN5s+J6sikwN2u+uWutq7choSn6vSO66/424jBq/3136SilL/yqvuh4riIs7m9sKGLxcX1prul6dy+osPghrr1zJ6Lz/CJwemX5pW0x+WD2cLUx8yxoarWhL+4mNnrqfr1q7SNv6eLmKygrvjhn8PXr7u9r/PK0KeagumZlceC4dKCy+PexoKW3s+xw6WRwYLh2LKnld+7xp7h3ZXAzv/4xNr6p7nDxeG7h+v3+YP2pZvE2O/WkvnG+5+y85uQ5Nai0fz2sNq7lLKm/6Hl16r84OW9j7mu+qL7s7aY18vV1NvHudG8qamfo57xxPD65M/Hnqni+9X9guabtJy8t/212oaehsKH94zwpN7Nx5fBz7+X35Hx8+TC+Z2p5PW91OrvmPyU3e6y74L1y5Sxvse2sqqt0Lf2npqW4pvt9Z6WwZrS8YPtvc2O9N3Zksmipdzt98LJoqDascDI99qkmZGVjLS1rt79g9eByMXx/ITZn7yh0c/kvOXR77bJwfnwzsKqlZrZ+ZXaj9v+1Yqmj/WG4cWqr5/7nMvRrLXpyZ3mmYHl+4OY+eKcvP6829fAuf6cxqLmubLKhcybyL7NmraAvNPUwZqplfSQ1+Xlo/a49e7G0b6D5q72q9TevPzRtpDm8r+pve2WvqjIotC2jZSZvMvI3cPKptCk/sv76+LOluTmlO3QuOupgfu0u6T/58SSg/fgmcW47fS7tu+0nqSz8s+SlNia4v6gu/bV0P+grNrXkJm2vLqOzdngq7Xa742Nrq7Z697+m9Ox4e/Cmoy9vYyv3Mrf1p3pyPHUg7/wzA]
+-
+ Name: prepDesignTab
+ DataType: method
+ RandomSeed: 253
+ Value: |+1
+  -- Prepare the table 'GeneralDesign'
+  -- using the format of the table 'ExpTable'
+  param calledByDialog:boolean
+  
+  var str:string
+  var changeDone:boolean
+  
+  if Input.yDim < 1  -- Model parameters are needed for a multi-level experimental design.
+  	messageBox(Rootfolder.Localization.getText(280),1,4) -- info
+  	return
+  end
+  var ExpTab:object := ExpTable
+  var desTab:object := GeneralDesign
+  
+  desTab.maxXdim := -1
+  
+  var j:integer := 1
+  while ExpTab[j+1,0]/=void 
+  	str := ExpTab[j+1,0]
+  	changeDone := changeDone OR (strTrim(desTab[j,0]) /= strTrim(str))
+  	desTab[j,0]:= str
+  	desTab.setDataType(j,ExpTab.getDataType(j+1))
+  	j += 1
+  end
+  
+  desTab.delete({j,0}..{*,*}) -- also delete the column index
+  
+  j -= 1
+  if j>0 
+  	desTab.maxXdim := j
+  end
+  if changeDone 
+  	for var k := 1 to j 
+  		var colLastDesign:integer := desTab.LastDesign.getColumnNo(desTab[k,0])
+  		if colLastDesign > 0 AND desTab.LastDesign[colLastDesign,1] /= void
+  			desTab.LastDesign.copyRangeTo({colLastDesign,1}..{colLastDesign,*}, desTab,k,1)
+  		else -- set default design values	
+  			switch desTab.getDataType(k)
+  			case "string" 			
+  				desTab[k,1]:= "A"
+  				desTab[k,2]:= "B"
+  				desTab[k,3]:= void 				
+  			case "boolean" 
+  				desTab[k,1]:= true
+  				desTab[k,2]:= false
+  				desTab[k,3]:= void
+  			case "time" 
+  				desTab[k,1]:= 60
+  				desTab[k,2]:= 300
+  				desTab[k,3]:= 60
+  			case "length" 	
+  				desTab[k,1]:= str_to_length("1")
+  				desTab[k,2]:= str_to_length("5")
+  				desTab[k,3]:= str_to_length("1")
+  			case "speed" 	
+  				desTab[k,1]:= str_to_speed("1")
+  				desTab[k,2]:= str_to_speed("5")
+  				desTab[k,3]:= str_to_speed("1")
+  			case "acceleration" 	
+  				desTab[k,1]:= str_to_acceleration("1")
+  				desTab[k,2]:= str_to_acceleration("5")
+  				desTab[k,3]:= str_to_acceleration("1")
+  			case "weight" 	
+  				desTab[k,1]:= str_to_weight("1")
+  				desTab[k,2]:= str_to_weight("5")
+  				desTab[k,3]:= str_to_weight("1")
+  			
+  			else
+  				desTab[k,1]:= 1
+  				desTab[k,2]:= 5
+  				desTab[k,3]:= 1 -- default increment
+  			end
+  		end -- set default design values
+  	next -- k
+  end -- if changeDone
+  
+  /* For the multi-level experimental design you define
+  the lower and upper level of the ",j," input values and the increments.
+  Please close this table before you continue.
+  */
+  str:=to_str(Rootfolder.Localization.getText(305),
+  	strChr(13),strChr(10),Rootfolder.Localization.getMessage(306,j,"",""),
+  	strChr(13),strChr(10),Rootfolder.Localization.getText(307))
+  		
+  desTab[0,0]:=Rootfolder.Localization.getText(301)--" Input value";
+  desTab[0,1]:=Rootfolder.Localization.getText(302)--" Lower level";
+  desTab[0,2]:=Rootfolder.Localization.getText(303)--" Upper level";
+  desTab[0,3]:=Rootfolder.Localization.getText(304)--" Increment";
+  	
+  if calledByDialog 
+  	desTab.comment := str
+  	desTab.openDialogBox(true) -- open the table 'Design'
+  	desTab.comment := ""-- detect whether "OK" or "Cancel" was pressed.
+  end
+-
+ Name: LastDesign
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   Alignment: "Right"
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   RowIndex: true
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    Width: 9
+   -
+    Index: 1
+    DataType: integer
+    FormatString: "-9"
+    Width: 10
+   -
+    Index: 2
+    DataType: integer
+    FormatString: "-9"
+    Width: 14
+   -
+    Index: 3
+    DataType: integer
+    FormatString: "-9"
+    Width: 19
+   -
+    Index: 4
+    DataType: integer
+    FormatString: "-9"
+    Width: 12
+  ColumnIndex: [string,1," Eingabewert"]
+  Columns:
+  - [0,string,3," Untere Stufe"," Obere Stufe"," Schrittweite"]
+$Data:
+ Comment: ~
+ ShowComment: true
+ ListFormat:
+  Alignment: "Right"
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Width: 9
+  -
+   Index: 1
+   DataType: integer
+   FormatString: "-9"
+   Width: 10
+  -
+   Index: 2
+   DataType: integer
+   FormatString: "-9"
+   Width: 14
+  -
+   Index: 3
+   DataType: integer
+   FormatString: "-9"
+   Width: 19
+  -
+   Index: 4
+   DataType: integer
+   FormatString: "-9"
+   Width: 12
+ ColumnIndex: [string,1," Eingabewert"]
+ Columns:
+ - [0,string,3," Untere Stufe"," Obere Stufe"," Schrittweite"]

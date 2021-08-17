@@ -1,0 +1,63 @@
+InternalClassType: Method
+Coordinate3D: [9,-9,0]
+Name: deleteAllObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- deletes all objects and graphics in the model frame
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback, Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 11.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ 11.12.2018	RBA	changed name from deleteObjects to deleteAllObjects
+ 19.08.2019	RBA	add Created_Objects.inheritContents
+ _________________________________________________________________________________*/
+ 
+ for var i := 1 to Created_Objects.ydim 
+ 	if to_str(Created_Objects["Link", i]) /= "VOID"
+ 		Created_Objects["Link", i].deleteObject
+ 	end
+ next
+ 
+ Created_Objects.delete
+ Created_Objects.inheritContents := TRUE -- inherit changes in Index for updates
+ 
+ if existsObject("dummy")
+ 	dummy.deleteObject
+ end
+ 
+ -- reset tables
+ tbl_connections.delete({1,1}..{*,*})
+ 
+ -- delete the default graphic
+ Model_Root._3d.deletePlainGraphics
+ if existsGraphicGroup(Model_Root, "deco")
+ 	Model_Root._3D.deleteGraphicGroup("deco")
+ end
+ Model_Root._3D.addGraphicGroup ("deco", TRUE, TRUE, TRUE)
+ if existsGraphicGroup(Model_Root, "Teamcenter")
+ 	Model_Root._3D.deleteGraphicGroup("Teamcenter")
+ end
+ Model_Root._3D.addGraphicGroup ("Teamcenter", TRUE, TRUE, TRUE)
+RandomSeed: 1073814222
+UUID: 26f221e2-61e4-4500-b881-ec49b81219e5
+3D:
+ Mirror: [false,false,false]
+ StatesOrientation: "(Off)"
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true

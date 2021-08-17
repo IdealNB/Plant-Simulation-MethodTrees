@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-14.5,7,0]
+DataType: integer
+HasInitValue: true
+InitValue: 0
+Name: LastIndex
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 96c3e636-94fa-48c1-890b-36c12dacd04a
+Value: 0

@@ -1,0 +1,28 @@
+InternalClassType: Method
+Coordinate3D: [15,-3,0]
+Name: errorLogout
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- logout of TC manually; Error Handling for versions < 15 where login status cannot be checked
+ -- Button in Dialog tab Data Source
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 05.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ 05.12.2018 
+ _________________________________________________________________________________*/
+ TeamCenter.logout
+ infoBox("", TRUE)
+RandomSeed: 1073814195
+UUID: 54a2f58d-aee6-445d-bc73-598e77255a54

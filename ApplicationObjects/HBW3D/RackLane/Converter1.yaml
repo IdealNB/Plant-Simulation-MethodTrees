@@ -1,0 +1,68 @@
+InternalClassType: Converter
+AutomaticStop: false
+Capacity: 1
+Coordinate3D: [0,0,0]
+Length: 1.34
+Name: Converter1
+Origin: c65d1c76-fd59-43b4-b70b-ccd4e9d3ac42
+RandomSeed: 1
+Speed: 1
+Strategy: "Method"
+StrategyCtrl: "self.OnStrategy"
+UUID: f14ef1df-6ca3-4964-9c64-43574ec3223f
+Width: 1
+$CustomAttributes:
+-
+ Name: OnStrategy
+ DataType: method
+ RandomSeed: 2284
+ Value: |+1
+  // Method Tasks:
+  // A pallet (@) arrives at the entrance of the converter.
+  // If the destination is the current rack lane, then move in the pallet
+  //
+  // Parameters	: entranceNo, the number of the entrance where the pallet arrives
+  //--------------------------------------------------------------------------------
+  param entranceNo: integer
+  
+  var destination := @.Destination
+  
+  if destination = void
+  	?.ExitForMU := 0
+  else
+  	var rackLane: object := destination.~.~
+  	
+  	// the WMS found a place where to store the pallet
+  	if rackLane=current then
+  		// move in
+  		?.ExitForMU := 3
+  	else
+  		// the pallet will be stored in another rack lane
+  		?.ExitForMU := 0
+  	end
+  end
+$Successors:
+-
+ $Succ: b7e9d5e9-dbca-4daf-b100-66faddeae3a7
+ Name: Connector2
+ Origin: 24458a18-bd1b-4617-9042-e92c944f3bb4
+ UUID: 68a31a68-707c-42ba-824e-03bc41fb8bbc
+-
+ $Succ: e1f4c637-e015-4e87-8a82-11eb658a0dd4
+ Name: Connector1
+ Origin: 24458a18-bd1b-4617-9042-e92c944f3bb4
+ UUID: 29dd2a27-7cb2-46ea-a9b6-da0c9cab42a4
+ $PredFlipped: true
+$Predecessors:
+- 7aa16076-6b0b-4748-a131-801cca7aaf89
+- 072e09ce-332c-4766-b0a7-011c8faeaf98
+InheritEntranceExitLockedOnReset: false
+$CurveSegments:
+- 0
+- [90,1.34,0]
+$MUAttributeList:
+- [Lane,"racklane",3]
+$Side0: 68a31a68-707c-42ba-824e-03bc41fb8bbc
+$Side1: 072e09ce-332c-4766-b0a7-011c8faeaf98
+$Side2: 7aa16076-6b0b-4748-a131-801cca7aaf89
+$Side3: 29dd2a27-7cb2-46ea-a9b6-da0c9cab42a4

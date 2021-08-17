@@ -1,0 +1,73 @@
+InternalClassType: Frame
+Coordinate3D: [0.5,0,0]
+CreateIn3D: false
+Name: Dialog
+Origin: a792091b-9074-40fb-9614-3b301f811640
+ReplacementMode: "exchange"
+UUID: a7396e91-cba3-4c55-819d-a0d3e671661e
+$CustomAttributes:
+-
+ Name: startDateExpRun
+ DataType: datetime
+ Value: 1970-1-1
+-
+ Name: showProgressByIcon
+ DataType: method
+ RandomSeed: 306
+ Value: |+1
+  -- show the progress by the icons "Icon0",...,"Icon8"
+  param ExpNo,RunNo:integer
+  
+  var totalNum:integer
+  var ApplObj:object := ~
+  
+  if ApplObj.usingRules 
+  	totalNum := max(1, ApplObj.NumRulesExp)
+  elseif ~.usingTables 
+  	totalNum := max(1, ApplObj.ExpTable.yDim)
+  else
+  	totalNum := 1
+  end
+  
+  var j:integer := max(1, ApplObj.numRuns) -- number of observations
+  totalNum := totalNum * j
+  var n:integer := (ExpNo - 1) * j + RunNo
+  
+  var iconNo:integer := floor(8 * n/totalNum) -- round down of a number in [0,8)
+  -- iconNo = 0,...,7
+  -- 8 is shown ones after the last run
+  if -1 < iconNo AND iconNo < 9 
+  	ApplObj.selected := false
+  	var iconStr:string := to_str("icon",iconNo)
+  	ApplObj.CurrIcon := iconStr
+  	if ~._3D.exists
+  		~._3D.VisibleGraphicGroups := makeArray(iconStr)
+  	end
+  end
+-
+ Name: restoring
+ DataType: boolean
+ Value: false
+-
+ Name: StudyExecuted
+ DataType: boolean
+ Value: false
+$Nodes:
+- eb26425c-fdea-4d4f-975f-655bbea50589
+- 2dbe892f-d121-45e2-a5a1-492f304a19bc
+- 3786a460-48d9-4e25-b519-00f88cd8fa51
+- e678bbeb-7886-4a71-818c-9d821873d38a
+- 6061b601-7cc8-4e9f-8392-bbc1c901c2f6
+- 72bf75c2-a1cc-42b0-af19-87a2282a98fc
+- 222e60cf-2187-40c6-b9d7-1db7e4f077ad
+- 98202401-5382-46d0-a222-7d5a96e5a42d
+- d0bf9d85-c721-43fa-9e78-7da9fc776ecc
+- 3a4f5a77-e37c-4da9-a753-ff50c9020cfc
+- bc9b3ab0-01a6-4093-9642-4a882aa9bccb
+- 8d75edaf-4325-4d44-8937-330627d97480
+- 026fb006-900c-4a2b-82f3-716f3d5fb7eb
+- 336348b3-e72d-4ede-9fc1-08bdfbe857bf
+- ea4368c9-2206-4a21-b030-60001df78397
+- bf182c2f-1267-43a2-ae07-62cac7f0eda9
+- fcce43cd-70e4-4185-a3c8-1dfec06758e7
+- da9916e7-9cd5-4521-ae04-f1a8d11ba81b

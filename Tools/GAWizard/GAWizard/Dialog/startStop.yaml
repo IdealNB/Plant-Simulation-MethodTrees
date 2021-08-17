@@ -1,0 +1,30 @@
+InternalClassType: Method
+Coordinate3D: [28,-1,0]
+Name: startStop
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by button start_but, context menu
+ if ~.currGeneration=0 
+ 	~.GaStopFlag := false
+ 	if ~.start 
+ 		GAWizard.setCaption("start_but", rootfolder.Localization.getText(3))--"Stop/Anhalten"
+ 	end
+ else -- during the optimization
+ 	if ~.optimRuns 
+ 		if ~.GaStopFlag 
+ 			-- "Please wait until the current generation is evaluated."
+ 			messageBox(rootfolder.Localization.getText(50),1,4) -- info
+ 		end
+ 		~.GaStopFlag := true
+ 		~.recording.append(to_str("Interrupt at ",sysdate))
+ 		print "The optimization is interrupted, evaluate the individuals of the current generation ..."
+ 		GAWizard.setCaption("start_but", rootfolder.Localization.getText(4))--"Wait/warten"
+ 	else
+ 		~.GaStopFlag := false
+ 		~.recording.append(to_str("Continue at ",sysdate))
+ 		GAWizard.setCaption("start_but", rootfolder.Localization.getText(3))--"Stop/Anhalten"
+ 		~.start-- in the console: "Continue the optimization ..."
+ 	end
+ end
+RandomSeed: 455
+UUID: a2d18759-2da9-4063-aa72-b734dc8d6cf8

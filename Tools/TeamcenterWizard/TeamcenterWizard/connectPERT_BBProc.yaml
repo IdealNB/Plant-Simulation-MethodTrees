@@ -1,0 +1,93 @@
+InternalClassType: Method
+Coordinate3D: [15,-28,0]
+Name: connectPERT_BBProc
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- connect all blackbox processes according to process pert information
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: ConnectObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 16.01.2019
+ _________________________________________________________________________________
+ 	History: 
+ 16.01.2019 
+ _________________________________________________________________________________*/
+ 
+ var predecs : string[]
+ var target, start : object[]
+ var target_UID, start_UID : string
+ var row, i1Level, i2Level  : integer
+ 
+ -- connect all processes 
+ for var i := 1 to Process_Data.ydim 
+ 	
+ 	i1Level := Process_Data["Level", i]
+ 	for var i1 := i downto 1 -- look for actual and higher levels if necessary
+ 						
+ 		if i1 = i OR Process_Data["Level", i1] < i1Level -- look at actual line or upper lines if level is higher
+ 	
+ 	
+ 			if Process_Data["Predecessor", i1] /= "" then -- precdecessors exist
+ 				predecs := SplitString(Process_Data["Predecessor", i1], " ") -- get all predecesssor entries in an array
+ 				target_UID := Process_Data["UniqueID", i]
+ 		
+ 				if Created_Objects.find({"UniqueID", *}, target_UID) -- get generated object to connect as target
+ 					target.append(Created_Objects["Link", Created_Objects.cursorY])
+ 		
+ 					for var j := 1 to predecs.dim -- loop over all predecessors
+ 						Process_Data.CursorY := 1
+ 						Process_Data.find({"ID", *}, predecs[j])
+ 						row := Process_Data.CursorY
+ 						
+ 						i2Level := Process_Data["Level", row]
+ 						for var i2 := row to Process_Data.yDim -- look for actual and lower levels if necessary
+ 										
+ 							if i2 = row OR Process_Data["Level", i2] > i2Level -- look at actual line or next lines if level is lower
+ 						
+ 								start_UID := Process_Data["UniqueID", i2] -- get the UniqueID
+ 								Created_Objects.CursorY := 1
+ 								if Created_Objects.find({"UniqueID", *}, start_UID) -- get generated object to connect as start
+ 									start.append(Created_Objects["Link", Created_Objects.cursorY])
+ 								end
+ 						
+ 							else 
+ 								exitLoop -- do not look at higher levels
+ 							end
+ 									
+ 						next -- look for actual and lower levels if necessary
+ 						
+ 						
+ 					next
+ 		
+ 				end -- get generated object to connect as target
+ 			
+ 			end -- precdecessors exist
+ 	
+ 			if start.dim > 0 AND target.dim > 0 -- if objects for the connections are in the model
+ 				ConnectObjects(start, target) -- connect them
+ 			end
+ 			
+ 		else 
+ 			exitLoop -- do not look at lower levels				
+ 		end
+ 	
+ 	next -- look for actual and higher levels if necessary
+ 	
+ 	start.delete
+ 	target.delete
+ 	predecs.delete
+ 	
+ next
+RandomSeed: 1073814181
+UUID: 365a9feb-fb3c-4161-a567-d34a5c6c691d
+3D:
+ Mirror: [false,false,false]

@@ -1,0 +1,34 @@
+InternalClassType: Method
+Coordinate3D: [-8.05,4.3,0]
+Name: deleteItemsOfType
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ param tabObj:object,-- 'InputValues' or 'OutputValues'
+         typeStr:string -- "Tab" or "Rule"
+ 
+ var KindTab:object
+ if tabObj.name = "InputValues"
+ 	KindTab :=  to_str(tabObj.~,".Kind_Input")
+ else
+ 	KindTab :=  to_str(tabObj.~,".Kind_Output")
+ end
+ 
+ var j:integer := 1 -- delete all "Tab" items
+ while tabObj[j,0]/=void  -- 'OutputValues'
+ 	var str:string := tabObj[j,0]
+ 	if KindTab.getRowNo(str) > 0 AND KindTab[1,str] = typeStr
+ 
+ 		tabObj.cutColumn(j)
+ 		KindTab.cutRow(str)
+ 	else
+ 		j += 1
+ 	end
+ end
+ 
+ for j := KindTab.yDim downto 1
+ 	if KindTab[1,j] = typeStr
+ 		KindTab.cutRow(j)
+ 	end
+ next
+RandomSeed: 292
+UUID: deff1813-c77f-46f1-9ae6-446a2c40df9a

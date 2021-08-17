@@ -1,0 +1,146 @@
+InternalClassType: Method
+Coordinate3D: [2,-18,0]
+Name: write_History
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- generates entry in Import_History table after importing new data
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 04.12.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 25.06.2019	RBA		change SubTable entries to "OPEN" 
+ 26.06.2019	RBA		add AI and Sync info
+ 08.01.2021	RBA		change TC_Connected to Data_Source
+ 13.01.2021	RBA		make "not supported" line gray					
+ _________________________________________________________________________________*/
+ var	workareaTable : object := Layout_Data
+ var rows1 : integer := Import_History.yDim + 1
+ 
+ Import_History["Date_of_Import", rows1] := to_str(getdate(sysDate))
+ Import_History["Time_of_Import", rows1]	:= to_str(timeofday(sysDate))
+ 
+ --- ADD NEW COLUMN HEADERS INTO OLDER TABLES -------------------------------
+ if Import_History[3, 0] = "" AND Import_History[4, 0] = ""
+ 	Import_History[3, 0] := "Application_Interface"
+ 	Import_History[4, 0] := "Sync"
+ end
+ --- ADD NEW COLUMN HEADERS INTO OLDER TABLES -------------------------------
+ 
+ if Data_Source = "TC"
+ 	Import_History["Application_Interface", rows1] := AISelect[1, AI_Select]
+ 	Import_History["Sync", rows1] := SyncSelect[1, Sync_Select]
+ elseif Data_Source = "XML" OR Data_Source = "LD_XML"
+ 	Import_History["Application_Interface", rows1] := "File import: " + Path_XML
+ 	Import_History["Sync", rows1] := "-"
+ end
+ 
+ Import_History.createNestedList("Attributes", rows1, "OPEN")
+ Import_History.createNestedList("PLMXML_original", rows1, "OPEN")
+ 
+ var NewImport : table := Import_History["Attributes", rows1]
+ NewImport.columnindex := true
+ var OrigPLMXML : table := Import_History["PLMXML_original", rows1]
+ OrigPLMXML.ColumnIndex := true
+ WorkareaTable.copyRangeTo({1, 0}..{*, *},  OrigPLMXML, 1,  0) -- set index only if layout data was loaded
+ WorkareaTable.copyRangeTo( {1, 0}..{*, *},  NewImport, 1,  0) -- set index only if layout data was loaded
+ 
+ var add_Columns : integer := NewImport.xDimIndex
+ if add_Columns > 1 -- do only if layout data index is set
+ 	NewImport[add_Columns + 1, 0] := "Pos_X"
+ 	NewImport[add_Columns + 2, 0] := "Pos_Y"
+ 	NewImport[add_Columns + 3, 0] := "Pos_Z"
+ end
+ 
+ var rows2 : integer := NewImport.yDim
+ var tm : real[16]
+ 
+ for var k := 1 to rows2 -- loop through new import
+ 	if NewImport["Abs_Transform", k] /= "" then
+ 		tm := splitStringToNum(NewImport["Abs_Transform", k], " ")
+ 		NewImport["Pos_X", k]  := to_str(tm[13])
+ 		NewImport["Pos_Y", k]  := to_str(tm[14])
+ 		NewImport["Pos_Z", k]  := to_str(tm[15])
+ 	end
+ 	
+ 	if pos("/",  NewImport["ItemID", k]) > 1 then
+ 		NewImport["Revision", k] := to_str(omit(NewImport["ItemID", k], 1, pos("/",  NewImport["ItemID", k])))
+ 	end
+ next
+ 
+ -- compare with previous import (comparison string = "UniqueID")
+ if Import_History.yDim = 1 then -- first import
+ 	Import_History["Changes_made", rows1] := "FALSE"
+ elseif Data_Source = "LD_XML"
+ 	Import_History["Changes_made", rows1] := "not supported" -- for LD Data only compare is not possible
+ 	Import_History.setFontColorRow(rows1, makeRGBValue(150, 150, 150)) -- set line GRAY
+ else
+ 	Import_History.createNestedList("Changes", rows1, "OPEN")
+ 	var tbl_Changes := Import_History["Changes", rows1]
+ 	
+ 	-- get previous Import Table, which actually was applied in the model
+ 	var PrevImport : Table
+ 	for var i := (Import_History.ydim - 1) downto 1 loop
+ 		if Import_History["Applied_In_Model", i] = true then
+ 			PrevImport := Import_History["Attributes", i]
+ 			exitloop
+ 		elseif i = 1 then -- first import
+ 			PrevImport := Import_History["Attributes", i]
+ 		end
+ 	next
+ 	
+ 	tbl_Changes.columnindex := true
+ 	tbl_Changes.InsertList(2, 0, NewImport.copy({1, 0}..{*, 0}))
+ 	add_Columns := tbl_Changes.xDimIndex
+ 	if add_Columns > 1 -- do only if layout data index is set
+ 		tbl_Changes[1, 0] := "Change_Note"
+ 		tbl_Changes.setColumnWidth("Change_Note", 30)
+ 		tbl_Changes[add_Columns + 1, 0] := "Applied_In_Model"
+ 	end
+ 	tbl_Changes.setColumnWidth({2, 0}..{*, *}, 10)
+ 	
+ 	--compare tables
+ 	compare_Imports(NewImport, PrevImport, tbl_Changes, rows1, "New Item")
+ 	compare_Imports(PrevImport, NewImport, tbl_Changes, rows1, "Deleted")
+ 	
+ 	if tbl_Changes.ydim = 0 AND Import_History["Changes_made", rows1] = "" then
+ 		Import_History["Changes_made", rows1] := "FALSE"
+ /*	else
+ 		Import_History["Changes_made", rows1] := TRUE*/
+ 	end
+ end
+ 
+ NewImport.setColumnWidth({1, 0}..{16, *}, 10)
+ 
+ 
+ -- Prepare ConnectorList
+ Import_History.createNestedList("Connector_List", rows1, "OPEN")
+ var tbl_saved_connectors : table := Import_History["Connector_List", rows1]
+ 
+ tbl_saved_connectors.delete({1,1}..{*,*})
+ tbl_saved_connectors.ColumnIndex := true
+ tbl_saved_connectors.maxXDim := 4
+ tbl_saved_connectors.ColumnWidth := 10
+ 
+ tbl_saved_connectors[1, 0] := "Connector"
+ tbl_saved_connectors[2, 0] := "AutoGenerated"
+ tbl_saved_connectors[3, 0] := "Predecessor"
+ tbl_saved_connectors[4, 0] := "Successor"
+ 
+ tbl_saved_connectors.SetDataType("Connector", "Object")
+ tbl_saved_connectors.SetDataType("AutoGenerated", "Boolean")
+ tbl_saved_connectors.SetDataType("Predecessor", "Object")
+ tbl_saved_connectors.SetDataType("Successor", "Object")
+RandomSeed: 1073814216
+UUID: 4e366056-2d5a-46ad-ad75-c88b32107fa1

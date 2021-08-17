@@ -1,0 +1,45 @@
+InternalClassType: Chart
+Accumulated: false
+Category: "Chart"
+ChartType: "Line with Markers"
+CollectData: true
+Coordinate3D: [16.35,-17.35,0]
+DataInColumn: true
+DataRange: "{2,*}..{*,*}"
+DataTable: "Children"
+GapWhenNull: false
+LegendLocation: "(Off)"
+Mode: "Watch"
+Name: OffSpring
+NullValue: -999999
+Origin: 3f9d6a85-d36c-432b-b23e-12101ee03943
+SizeInFrame: [2,2]
+StepCurve: false
+Subtitle: " "
+Title: ""
+UseInputChannels: false
+UUID: 63e873f2-ccef-4fdd-bfac-546012b4212a
+XGrid: false
+XGridLines: 25
+XLabel: " "
+YGrid: false
+YGridLineInterval: 0
+YLabel: "Fitness"
+YScaleMax: -1e+308
+YScaleMin: 1e+308
+$Annotations:
+$Colors:
+- 0x0
+- 0xffffff
+- 0xffffff
+- 0x0
+- [0xff0000,0,3]
+- [0xee00,0,5]
+- [0xff0000,0,7]
+- [0xff,0,2]
+- [0xffee00,0,2]
+- [0xff00ff,0,2]
+- [0xee00cc,0,2]
+- [0xddff,0,2]
+- [0xff,0,2]
+$WindowRect: [201,402,569,469]

@@ -1,0 +1,120 @@
+InternalClassType: Method
+Coordinate3D: [31.3,0,0]
+Name: nextIndividual
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- called by: reset_in a new call chain
+ -- only for non-distributed simulation
+ var ParamSetBool:boolean
+ var s:string
+ while ((individualNum <= NumOfIndividual) AND (NOT ParamSetBool)) 
+ 	Dialog.GAWizard.setCaption("currIndivR_com",to_str(individualNum))
+ 	individual := individuals[1,individualNum].copy
+ 	var ID:integer := StatisticalEvaluation.currRow
+ 	
+ 	if (lastGeneration4DuplicatesCheck = -1 OR CurrGeneration <= lastGeneration4DuplicatesCheck) AND alreadyEvaluated(individualNum,ID)  -- Is the individual already evaluated?
+ 		individualNum := individualNum + 1
+ 		StatisticalEvaluation.currRow := StatisticalEvaluation.currRow + 1 -- row in StatisticalEvaluation			
+ 
+ 	else
+ 		if NOT setUserParam 
+ 			ParamSetBool := false
+ 			recording.append(to_str("Error in 'setUserParam' by individual ",individualNum," in generation",currGeneration))
+ 		end
+ 		if strLen(userConfigMethod) > 0 
+ 			ParamSetBool := str_to_method(to_str(~,".",UserConfigMethod)).execute -- reads the global variable individual
+ 			/*setParameter_  if NOT ParamSetBool then -- you can see it in the statistical evaluations
+ 					recording.append(to_str("Error in 'setParameter_' by individual ",individualNum," in generation ",currGeneration));
+ 				end*/
+ 		else
+ 			ParamSetBool := true
+ 		end
+ 	
+ 		if NOT ParamSetBool 
+ 			/* Degrade the fitness if constraints are violated (penalty_method)
+ 				Do not start a simulation for infeasible solutions.
+ 				Now it is individualNum <= NumOfIndividual AND
+ 				UserConfigMethod_failed (=false)*/
+ 			individuals[2,individualNum]:= penaltyValue
+ 			var row:integer := StatisticalEvaluation.currRow
+ 			s := to_str("Gen ",currGeneration," Ind ",individualNum)
+ 							
+ 			statisticalEvaluation[1,row] := penaltyValue
+ 			statisticalEvaluation.createNestedList(6,row)
+ 			statisticalEvaluation[6,row].Name:="Penalty"
+ 			if typeOfFitness ~= "time" 
+ 				statisticalEvaluation[6,row].dataType := "time"
+ 			else
+ 				statisticalEvaluation[6,row].dataType := "real"
+ 			end
+ 			IntermediateResults.writeRow(0,row, s,penaltyValue)
+ 			dialog.numPenalty := dialog.numPenalty + 1
+ 			individualNum := individualNum + 1
+ 			StatisticalEvaluation.currRow := StatisticalEvaluation.currRow + 1 -- row in StatisticalEvaluation
+ 		end
+ 	end
+ end-- while individualNum <= NumOfIndividual AND 'Penalty'
+ 		
+ -- show progrss by the icon:
+ Dialog.showProgressByIcon
+ 	
+ if ParamSetBool  -- UserConfigMethod_was sucessful
+ 	currRunNo := 1
+ 	-- show current run No
+ 	Dialog.GAWizard.setCaption("currRunR_com",to_str(currRunNo))
+ 	
+ 	firstReset := false
+ 	EventController.reset
+ 	-- EventController.start --WithoutAnimation
+ 
+ else -- All individuals of a generation are evaluated.
+ 	
+ 	if GaStopFlag 
+ 		Dialog.GAWizard.setCaption("start_but",rootfolder.Localization.getText(2)) -- Start/Starten
+ 		
+ 		currIcon := "Default"
+ 		if _3D.exists
+ 			_3D.VisibleGraphicGroups := makeArray("default")
+ 		end
+ 		
+ 		Dialog.changeUserSettings("restore")
+ 		GaStopFlag := false
+ 		optimRuns  := false
+ 	
+ 		-- The optimization is interrupted and the generation is evaluated
+ 		if bestIndividuals.yDim > 0 
+ 			individual := bestIndividuals[0,1].copy
+ 			s := to_str("Set the best solution with fitness ",bestFitness," in the model.")
+ 			recording.append(s)
+ 
+ 			setUserParam
+ 			if UserFitness AND strLen(userConfigMethod) > 0 
+ 				str_to_method(to_str(~,".",UserConfigMethod)).execute --_setParameter
+ 			end
+ 		end
+ 	else -- GaStopFlag = false
+ 		generationEvaluated -- user defined method
+ 		--individuals.opendialog;
+ 		individuals.delete({1,NumOfIndividual + 1}..{2,*})
+ 		
+ 		GaOptimization.evolve -- next generation for not distributed simulation, variable 'individuals' is reference
+ 		individual.delete
+ 		optimRuns := true
+ 	end
+ end -- if ParamSetBool
+RandomSeed: 433
+UUID: 320a8b24-9c68-4881-a847-97dbf1876101
+$CustomAttributes:
+-
+ Name: ErrorHandler
+ DataType: method
+ RandomSeed: 432
+ Value: |+1
+  param byref error : string, method_path : string, line_number : integer
+  
+  var s:string := to_str(?.name," outputs error ",error," in method ",method_path," (line ",line_number,")")
+  recording.append(s)
+  
+  -- &setParameter_.openDialog
+  --_resetGA
+  error := "" -- catch the error

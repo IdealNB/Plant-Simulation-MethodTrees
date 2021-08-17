@@ -1,0 +1,11 @@
+InternalClassType: Variable
+Comment: ""
+Coordinate3D: [-8,4,0]
+DataType: integer
+HasInitValue: false
+Name: NumWorker
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: 2455b6b1-d70d-4617-94db-7cf41af85a91
+3D:
+ ExcludeFromShowContentOfLocation: true
+Value: 1

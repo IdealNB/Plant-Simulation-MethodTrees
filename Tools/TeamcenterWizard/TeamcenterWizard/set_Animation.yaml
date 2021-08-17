@@ -1,0 +1,65 @@
+InternalClassType: Method
+Coordinate3D: [3.4,-23.1,0]
+Name: set_Animation
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: set the Animation Point (only point oriented objects) and 
+ 			  State Graphics (all objects) according to graphics position 
+ 			  of the generated object
+ _________________________________________________________________________________
+ Parameters	: object
+ 			  
+ ReturnValues: none
+ 
+ Called By	: load_TcJTs
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 22.10.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 20.03.2020	RBA		add Fit_Animation choice in dialog 
+ 14.05.2020	RBA		include State adjustment into "if Fit_Animation ..."
+ 07.08.2020	RBA		switch off states first so it is not part of the bounding box for animation setting
+ _________________________________________________________________________________*/
+ 
+ param graphObj : object
+ 
+ var animPos, statesPos : real[3]
+ var animTab : table
+ 
+ if Fit_Animation -- do only if this is set in the dialog
+ 	
+ 	-- switch off states
+ 	var statesOrient : string := graphObj._3D.StatesOrientation -- memorize setting
+ 	graphObj._3D.StatesOrientation := "(Off)" -- so it is not part of the bounding box
+ 
+ 	-- set animation point to center top of bounding box
+ 	animPos := graphObj._3D.BoundingBoxCenter -- x y z
+ 	animPos[3] := graphObj._3D.BoundingBoxMax[3] -- z
+ 	if graphObj.internalClassName /= "Network" -- network does not have MUAnimations
+ 		graphObj._3D.MUAnimations.getTable(animTab) -- read mu animation positions
+ 		if animTab.getRowNo("Default") /= -1 AND animTab[1, "Default"].yDim = 1 -- do only for place oriented objects
+ 			animTab[1, "Default"][1,1] := animPos[1] -- x
+ 			animTab[1, "Default"][2,1] := animPos[2] -- y
+ 			animTab[1, "Default"][3,1] := animPos[3] -- z
+ 			graphObj._3D.MUAnimations.setTable(animTab) -- write new mu animation position
+ 		end
+ 	end
+ 
+ 	-- set states position to left rear top of bounding box
+ 	statesPos[1] := graphObj._3D.BoundingBoxMin[1] -- x
+ 	statesPos[2] := graphObj._3D.BoundingBoxMax[2] -- y
+ 	statesPos[3] := graphObj._3D.BoundingBoxMax[3] -- z
+ 	graphObj._3D.StatesOrientation := "Horizontal" -- write horizontal position
+ 	graphObj._3D.StatesPosition := statesPos
+ 	graphObj._3D.StatesOrientation := "Vertical" -- write vertical position
+ 	graphObj._3D.StatesPosition := statesPos
+ 	graphObj._3D.StatesOrientation := statesOrient -- restore setting
+ 
+ end
+RandomSeed: 1073814168
+UUID: 852766d6-f391-4475-a0eb-e4275401b2f8

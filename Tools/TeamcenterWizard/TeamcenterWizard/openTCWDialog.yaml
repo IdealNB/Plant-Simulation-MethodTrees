@@ -1,0 +1,42 @@
+InternalClassType: Method
+Coordinate3D: [2,-7,0]
+Name: openTCWDialog
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks: opens the UI of TeamcenterWizard
+  
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: open control of TeamcenterWizard
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 21.12.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 21.12.2018	RBA		rename
+ 09.03.2021	RBA		check for license type
+ _________________________________________________________________________________*/
+ 
+ if current = root then
+ 	openDialog
+ else
+ 	if check_License = "NO"
+ 		-- TcW usage is not allowed
+ 		return
+ 	elseif check_License = "TC"
+ 		TC_Import.setSensitive("Settings", TRUE)
+ 	elseif check_License = "LD"
+ 		-- Deactivate Settings Menu before opening the dialog
+ 		TC_Import.setSensitive("Settings", FALSE)
+ 	end
+ 	TC_Import.open
+ end
+RandomSeed: 1073814209
+UUID: 9e0bcf31-3ee5-40b5-b2af-2c46db8377d4

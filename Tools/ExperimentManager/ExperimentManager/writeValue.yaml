@@ -1,0 +1,12 @@
+InternalClassType: Method
+Coordinate3D: [3.3999999999999986,-27.5,0]
+Name: writeValue
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- set AttrStr := Values
+ -- called by:_evalExpTable
+ param AttrStr:string, newVal:any -> boolean
+ 
+ return executeSilent(to_str("param a:any -> boolean ",AttrStr,":= a; return true"), newVal)
+RandomSeed: 250
+UUID: 460b505c-3008-4123-8109-f59d48d2ef14

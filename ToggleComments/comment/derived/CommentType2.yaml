@@ -1,0 +1,8 @@
+InternalClassType: Comment
+BackgroundColor: 36095
+Coordinate3D: [-2,2,0]
+Name: CommentType2
+Origin: 9269fd85-fad3-4cb4-8495-c151da604c44
+UUID: be79e023-2f57-4276-bf13-5b09c4b33848
+3D:
+ VisibleGraphicGroups: ["default"]

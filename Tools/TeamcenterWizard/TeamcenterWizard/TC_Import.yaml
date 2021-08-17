@@ -1,0 +1,66 @@
+InternalClassType: Dialog
+Coordinate3D: [3,-4,0]
+Origin: ee3f9159-6d26-451f-9e84-d50d236e8bff
+UUID: 1acd522c-b62b-49d7-8708-3163662a25b5
+$CustomAttributes:
+-
+ Name: callback
+ $DataType: method
+ RandomSeed: 1073814212
+$Elements:
+-
+ Type: Menu
+ Name: "Navigate"
+-
+ Type: Menu
+ Name: "Actions"
+-
+ Type: Menu
+ Name: "Tables"
+-
+ Type: Menu
+ Name: "Settings"
+-
+ Type: Menu
+ Name: "Help"
+-
+ Type: GroupBox
+ Name: "Model_Path"
+ Enable: false
+ $Elements:
+ -
+  Type: EditText
+  Name: "box_layout"
+  Caption: ".Tools"
+  Enable: false
+ -
+  Type: EditText
+  Name: "box_library"
+-
+ Type: TabControl
+ Name: "TabCTRL"
+ $Elements:
+ -
+  Type: TabPage
+  Name: "Model_Generation"
+ -
+  Type: TabPage
+  Name: "Model_Update"
+ -
+  Type: TabPage
+  Name: "Options"
+  $Elements:
+  -
+   Type: GroupBox
+   Name: "SelectConnectors"
+   $Elements:
+   -
+    Type: RadioButton
+    Name: "SequenceNumbers"
+    IsSelected: true
+   -
+    Type: RadioButton
+    Name: "NoConnectors"
+ -
+  Type: TabPage
+  Name: "Data_Source"

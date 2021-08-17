@@ -1,0 +1,77 @@
+InternalClassType: Method
+Coordinate3D: [-8,-2,0]
+Name: getProcTime
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- get ProcTime from OperationTable
+ -- required MU attribute "Variant" and/or add. attributes see OperationTable columns 5 up
+ -- content of attribute must match content of correspontent OperationTable column
+ _________________________________________________________________________________
+ Parameters	: none
+ 
+ ReturnValues: time
+ 
+ Called By	: procTime control of the object
+ Calls		:
+ 
+ Author		: Ralph Bauknecht
+ Date		: 03.12.2019
+ _________________________________________________________________________________
+ History:
+ Date		Author	Description
+ 03.12.2019 	RBA		correct entry is valid if variant field is empty
+ 					changed column 4 index name to "Variant"
+ 					added check for MU attribute
+ 12.11.2020	RBA		add check for part name
+ 					changed column 3 index name to "Part"
+ 15.06.2021	RBA		Changed code to support more than one variant conditions
+                 	Now if MU label is empty the used parts check is ignored
+ _________________________________________________________________________________*/
+ 
+ -> time
+ 
+ var i, j : integer
+ 
+ for i := 1 to OperationTable.yDim -- through all operations
+ 
+ 	-- check if the part variants are matching the table entry in Variant column
+ 	for j := 4 to OperationTable.xDimIndex -- through all attributes
+ 		var p1 := FALSE -- init indicator
+ 		if OperationTable[j, i] = "" -- entry is valid for all variants (no entries in this variant column)
+ 			p1 := TRUE
+ 		elseif @.getAttrNo(OperationTable[j, 0]) > 0 -- if MU variant attribute exists
+ 			if @.getAttribute(OperationTable[j, 0]) /= "" -- if MU variant attribute has a value
+ 				p1 := when pos(@.getAttribute(OperationTable[j, 0]), OperationTable[j, i]) > 0 then TRUE else FALSE -- Variant type
+ 			elseif @.getAttribute(OperationTable[j, 0]) = "" -- if MU variant attribute has no value
+ 				p1 := TRUE
+ 			end
+ 		else -- if MU does not have this variant attribute
+ 			p1 := TRUE
+ 		end
+ 
+ 		if p1 = FALSE -- not valid for this variant column entry
+ 			exitLoop -- do not add to complete time; all constraints must be met to add the operation time to the process time
+ 		end
+ 	next
+ 
+ 	-- check if the part name is matching the table entry in Part column
+ 	var p2 := FALSE -- init indicator
+ 
+ 	if OperationTable[3, i] = "" OR @.Label = "" -- entry is valid for all parts (no entries in the part column) OR part is not defined by TC data
+ 		p2 := TRUE -- add to complete time
+ 	else -- both fields are set
+ 		p2 := when pos(@.Label, OperationTable[3, i]) > 0 then TRUE else FALSE -- part name is in list
+ 	end
+ 
+ 	if p1 AND p2 -- if op is valid
+ 		result += OperationTable["Time", i] -- add to complete time
+ 	end
+ 
+ next
+ 
+ Cycle_Time := result
+RandomSeed: 1073814239
+UUID: 6fc96132-f202-4c0e-8f06-860248b1dd92

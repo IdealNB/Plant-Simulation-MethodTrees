@@ -1,0 +1,143 @@
+InternalClassType: Frame
+ChangePathCtrl:
+CloseCtrl:
+ConnectCtrl:
+ConstructorCtrl:
+Coordinate3D: [1,-10,0]
+CreateIn3D: true
+DestructorCtrl:
+DragDropCtrl:
+InitCtrl:
+Label: ""
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: Lift_M2N
+OpenCtrl:
+PermitDeleteCtrl:
+RelabelCtrl:
+RenameCtrl:
+ReplacementMode: "merge"
+ShiftcalendarObject:
+UUID: ed75898c-5a5e-4d58-80ac-385d17fa640a
+3D:
+ AniRotationAxis: [0,0,-1]
+ AniRotationCenter: [0,0,0]
+ BackgroundColor: -1
+ CameraAnimations:
+ ExcludeFromShowContentOfLocation: false
+ GraphicGroupNames: ["default","deco"]
+ InternalGraphicGroups: ["deco"]
+ LockedGraphicGroups: ["deco"]
+ Mirror: [false,false,false]
+ NameLabelEnabled: false
+ NameLabelPosition: [-1,-1,0]
+ NameLabelRotation: [0,0,0,-1]
+ NameLabelScale: [1,1,1]
+ ObstacleForWorker: "Graphics"
+ PlanningView: false
+ PointCloudPath: ""
+ PointCloudPosition: [0,0,0]
+ PointCloudRotation: [0,0,0,-1]
+ Poses:
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+ SelfAnimations:
+ ShowBasePlate: true
+ ShowConnections: true
+ ShowContent: true
+ ShowExternalGraphics: false
+ ShowGrid: true
+ ShowLabels: true
+ ShowNames: true
+ ShowPointClouds: false
+ ShowShadows: false
+ ShowSky: false
+ StatesOrientation: "Vertical"
+ VisibleGraphicGroups: ["deco"]
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [0.05,0,4]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true
+$IconArray:
+-
+ Name: "Default"
+ RefPoint: [20,20]
+ Transparent: true
+ Size: [32,32]
+ Pixels:
+ - uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1uLe1
+ - uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2uri2
+ - u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4u7m4
+ - vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5vbu5
+ - vry7vry7vry7vry7vry7vry7vry7vry7vry7vry7vry7vry7qqmovry7vry7vry7vry7vry7vry7vry7vry7vry7vr27vby6vry7v769v769wL+9vr27vry7vry7vry7
+ - v768v768v768v768v768v768v768v768v768v768v768uKeer4x6vI96uox1uolyuIduuYNpoGRHpnNavpJ9wLq3w8TDx8fHxsfHyMjIycnJyMjIyMnJxsbFxcTEw8LC
+ - wb++wb++wL+9vby7wL+9wL++wMC/w8LBw8PCwcHAw8PCnHZjkm5cl2RMtHVWsnRWsnJTrnBSpWZHsot4oXNcxLOrysrKyMnJysvLx8jIyMjIxsbGx8jIyMjIycrKysrK
+ - xcbFx8fHyMjIy8zLy8vLysrKy8zMysvLy8vLy8vLy8zLqH5qsp6Unn9vqXdfp4V0p4V0p4V0n29Xs5+Vn3lmxrixysvKy8zMycrKx8jIycnJycrKx8jIyMnJxsfHxcbG
+ - y8zMzM3Mzc7OzM3My8vLzs/Py8zLzMzMzM3Nzc7OysvLqYBrtKCWoIBxp3VcpYNyo4JxooFwnW5XsZ2TnXVixbmzy8zMycrKysvLzc3NzM3Ny8zLzc7NzM3Ny8zLzM3N
+ - z9DQzM3Nzc7Nz8/Pzs/OzM3Nzs/Pz9DPzM3NycrKzM3MqYJusJuRnX5vp3VcpIJxpoRyp4Rznm9YsZ2TnXRfy8G8zc3Nzs/Pzc7Nzs/Pzc7Ozc7Ozs/Ozc7Nz8/Pzc3N
+ - zM3Ny8zMzc3NzMzMzMzMy8zMy8zMzM3Mzs7Oz9DQz9DQrIVxtKCVoYN1qXZdp4V0p4Vzp4V0nm9YtKCWn3Vgx8C8zM3NzMzMz9DQzs/Pzs/P0dLSzc7Nz9DQzs/P0dLR
+ - zM3M0NDQ0NHRz9DQ09TT0NHR0dLR0NHQ0tLS0dLR0NHQrYd0taCWoYR2qXVcp4V0qIZ1p4V0oHFas56UoHRezcjEz9DQ0NHRzs/Ozs/Py8zMzs/P09TT0NHQ0NHRz9DQ
+ - 0tPT0tPTzc7N0dLS0dHR09TU09TU0NHQ0dLS09TU0tPTrop3s56TooV3qnZcp4V0p4V0p4V0oXNbtaCWn3Fb0M3M09TT09TT0NHQ0dLS09TUz9DQzM3RycrSzM3Uz9DY
+ - 0tPT0NLR1tfX0tPTzc7O09TU0tPT1NXV1dbW0NHR0tPTso58tZ6TooZ4qXVaqIZ0qYd1p4VzoXNdtaCWoHFa0tLR0tPVzc7Wz9DZ0dLZ0NHZzs/X0dLV09TU0dLSz9DQ
+ - 1dbW19nY09TT0tPT19jXz9HQ0tPS1dbVzMnItrKwnJiWc2BXm4h/o4d5qnVbqYZ1qYd2pIBzoXRhs5+bn29a0NDY0dLX1NbV1dbV1dbV1NXU1NXU09LRvLi2npuZfHh2
+ - 19jY09PTz8zKtbGvmZWTgHt5Yl5bSkZENjY1NTU1QTk1Vj8za0Uzi1c8qHRcp4V4pYN2p4NypXhhtqGXoXFa1tfX1dbW09LRvLi2mZWTe3d1XlpYPjo5NTU1Qjk1W0Az
+ - Yl5cSkRCNjU1NTU1Ozc1UD00ZUMyflQ/m3Fctox3x6eWrXZatZiKjVU5q3ZbqYZ1qYZ1qIRyonRdpIyAkmBIeHRyW1dVOzk4NTU1PTg1Vj8zclA/lXNitpSCzbSo1tDM
+ - X0EzdUo1kmZRsIRvxZ+Lzrer1c7K19jX2NnZ2tva1dbVroNuuJyOj1c7qnRaqod2q4l3poJwfEIkW0c9cUAoUT00a0k3jWlXsIx6yayc1svF2drZ19nY2NjWvrq3mJSS
+ - 08W+2dnX19nY29zc293c2dra2NrZ29zc2tvb19nY2tvbsop1spSGjlc7q3Vaq4h2qod2qINykEoot6KXmWVL08O629rZ2dra2NrZ1dLQrqqoi4aEaGNhQj49NTU1NzY1
+ - 3N7d3N3d3N3d2NrZ2tzb3N7d3d7e2NrZ293c3N3d2dvasYp3upuLkVo+p3JXqYZ0rIl3qIRxkEwquaWaom1TxsK/op2bfnl3WFNRODc2NTU1Ojc1VT40d1VEnnxsxKSV
+ - 3N3d3d7d3d7e3d7e29zb2tzb3d/e4OHh29zc29zc3d7dtZB9t5eHkVtAqnRZq4h3p4VzpoJwg0YndFxQgEovNTU1NTU1PTc1WUAzfFlHpYJxxqiY0sfB3N3c3N7d3d7d
+ - 3t/f3d/e3d/e3+Hg3uDf3d7e2tvb3t/e4eLi3+Hg2tvbtZKAuZiHk15DqXNYrot6rYt5pYBujkwrgGxigEktgl1MqYVzyauc18/J293c2tzb4OHh4eLi3N7d2tzb3N7d
+ - 3+Df3+Dg3+Hg3d7d4ePi4OLh3+Dg29rZw767nZeVeHNwUUZBdGhhkFtBqXNYrIl3rYp4qYRyk1Avt6OYom9V3uDf3+Hg3+Hg3uDf4OHh3+Df3N3c3N3d3+Df4uPj4OHg
+ - 3uDf3+Hg3+Hg2NXTsqypj4qHaWNgQj48NTU1NTU1NTU1STs1ZkQzikssqXNYrot5r4h0q3ZcnVYzwKufp3Vc2dva2NrZ4OHg3+Hg3uDf3+Df4uTj4uTj3d/e3N3c3d/e
+ - paCdgHp3WVNRODY2NTU1NTU1NjU1Tj00bEc1k2pWupN/tIJpu495mV5Bp2A9oGNEjFY7dlI/bUs5oWxSqHFV4eLi4uTj293c3+Dg4ePi4eLh3d/e3t/f5OXk5Obl4uPj
+ - NTU1NTU1ODY1Uj40cEk2mG9awpqFzrir3tzZ4uPj4uPjw62htGE4iUorfU83X0tAYUtAe1M/k1k8sXJTzKWS4ePi4ePi4ePi3d/e29zc4uTj5Obl5ebm2tzb2tzb3d/e
+ - dUw4nnNexZ6J0byx393b4uTj4+Tj5ebl4uPj5efm5OXl4uTjubSwjlM2llMxpmZHx45x0K+f2tLN4uPj4uTj4uPj4uPi5Obl5efm5OXk2NnZ1NbV3N7d5efm5efm4uTj
+ - 4N/d4+Xk5OXk5+jo4+Xk5efm5efm4+Xk4+Tj3+Hg5Obl5ujn5+jn19HM1MW94uHf4uTj4+Xk5ebl4uTj5ujn5ujn4uPj3N7d3N7d4OLh5ujn5ujn3+Df3t/e5Obl4+Xk
+ - 5Obl5ufn6Onp5Obl5Obl4OLh5Obl5+no5+no5+no5Obl4+Tk5Obl5Obl5efm5OXl5ufn5+no5+no4OLh3N7d3uDf4+Xk5+no5+no4+Xk5ebm5ebm5Obl4uTj3t/f4eLi
+ - 5efm4eLi5Obl6erp6Orp6Onp5efm5Obl5efm5ebl5ebm5efm5ujn6Orp6Orp5+jo3t/e3uDf4OLh5+no6Orp5ujn5Obl6Onp5ufm5ebl4+Xk4+Xk5+no6Orp6Orp5ebl
+ - 6erp6evq5ebl6erp5ufn5efm5ujn5efm5+no6erq6evq6erq4+Xk3uDf4ePi4+Tk6erq6Orp5efm6erp6erq5ujn5efm4eLi5+jn6erp6erp6evq5efm5efm5ebm5ufm
+ - 6Onp5ujn5ujn4uTj6uvq6uzr6uvq6uvr5+no4uTj4uTj4+Xk5efm6Orp5ujn6uvq6uzr6uzr5ujn4+Xk5Obl6uvq6evq6uvr6Orp5ufn6evq5ujn5+jn5+jn5ujn6Orp
+-
+ Name: "ClassLibrary"
+ RefPoint: [15,15]
+ Transparent: true
+ Size: [16,16]
+ Pixels:
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAgIAA
+ - gIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAAAAAAAAAAAAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAAAAAgIAAAAAAgIAAAAAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAAAAAgIAAAAAAgIAAAAAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAAAAAAAAAAAAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+ - gIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAAgIAAgIAAgIAAAAAAgIAAgIAA
+$CustomAttributes:
+-
+ Name: HelpOnObject
+ DataType: string
+ Value: "rootfolder.LiftDocumentation"
+ StatisticsActive: true
+$Nodes:
+- e1dbdb31-6915-4c80-9173-1b3c894894dc
+- 810376d3-14bb-452a-bd41-df38392fb628
+- 9d9dc390-e4fe-417d-9725-491003450f7b
+- 7475b0e5-87bc-475c-90b6-c9eb8bdc61df
+- 6d0cd075-6533-431d-a754-6ab89f51113a
+- fdb12931-2344-4982-938d-1cbdb51f96ed
+- a79e04b5-f1e1-4933-bf20-adc232d56038
+- 17ee0f39-4d1f-4693-a10b-24a52711d59b
+- 83fc812d-d8b4-4e24-8722-94cbe96025db
+- deba69da-bfd3-4c03-ba41-7a1f595fe33e
+- 4fe35851-03d0-4cb6-9970-9c2d62eb74e0
+- a2d91fa7-a2b3-4d74-9d54-35c27e36f772

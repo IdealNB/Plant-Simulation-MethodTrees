@@ -1,0 +1,61 @@
+InternalClassType: Method
+Coordinate3D: [0.5,-20.05,0]
+Name: resetWizard
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+RandomSeed: 247
+UUID: 65968388-810b-474a-ab01-d9b5e539ddcb
+$CustomAttributes:
+-
+ Name: check_InputValues_OutputValues
+ DataType: method
+ RandomSeed: 246
+ Value: |+1
+  -- called by: buttons Apply_and Reset (calls resetWizard), condition for DOE
+  -- Without side effects, only check
+  -- Run the code for testing Output.yDim > 0 earlier in the method_resetWizard 
+  -> boolean
+  var obj:object := Output
+  var str:string
+  result := true
+  if obj.yDim = 0 	
+  	str:= rootfolder.Localization.getText(224)
+  	--messageBox(rootfolder.Localization.getText(224),1,4) 
+  	infoBox(str,false) -- Please specify result values as the target of the simulation study.
+  	sleep(1.5, false)
+  	infoBox("", false)
+  	obj.inheritContents := false
+  	if rootfolder /= ~
+  		obj.openDialogBox(true)
+  	end
+  	--Dialog.Dialog.setSensitive("DefineInputValues_but", false) -- for open table ExpTable
+  	result := false
+  --else
+  	--Dialog.Dialog.setSensitive("DefineInputValues_but", true) -- for open table ExpTable
+  end
+  
+  -- Check all output values
+  kind_Output.numberOfOutputValues := 0
+  for var j := 1 to Output.yDim 
+  	str := obj[1,j]
+  	if NOT testAttributeString(str)  -- Incorrect output value
+  		messageBox(to_str(current,": ",strChr(10),rootfolder.Localization.getText(222)," \\"",str,"\\"."), 1, 3) -- warning
+  		result := false
+  	end
+  	if NOT isOutTable(str) 
+  		kind_Output.numberOfOutputValues := kind_Output.numberOfOutputValues + 1
+  	end
+  next
+  
+  -- Check all input values
+  if usingTables AND (NOT result)
+  	obj := Input
+  	for var j := 1 to obj.yDim 
+  		str := obj[1,j]
+  		if NOT testAttributeString(str) OR NOT testInputString(str) 
+  			-- Incorrect input value
+  			messageBox(to_str(current,": ",strChr(10),rootfolder.Localization.getText(223)," \\"",str,"\\"."), 1, 3) -- warning
+  			--return false
+  		end
+  	next 
+  end -- if usingTables
+Program: [$,M2LOWA/EJvXW5k0youN2nQ,lriU58Hn84Sh0qvvycPwl4iBgp6tkqC2q9C0htDttLCx692F643J4KTMhbaGtP2GlYLb0qvN//ii0YSW5p2e75/3vP3m4tOx57iD2cOm1frXhe6ysp3duczbuMTGlIuW7O66uq+D5raazf6n3b+oyYyTjNzn8IvJhoeNkcaptpmb1KDlob23jfbvo8yl9vDr8cn60dPXwo6Ls7jxuquPwuns0unJ6cSO2vHXz+rA/sSit8PNz4LKvfS++MLWtfu3k6iR5b+r8Ia/x66pvvm8jYzPkubDhqfhvcrjmaC51szPjpSB3vCZ9ZbIj6Xr8rm/v+XElcKvgKuz3pnxxtmxtvWCncO8hcGhxbuIvcG34bKP0aXLhurE3uPMjaDz8oS1gMPrx56ehMzEtqDEgZz7gKXw9Zyc9/Wgra+rsfTKhd2R1+X78YyDsJnssL73rcv6vpGGjMT7pc7X+Pblhtme9dDzoI7o+MCwl8+o3pv4qrP66Juz7LeWpoqLiLa1tvyCsai6qIuV/dTS1cWtp9Lx6uXqzPjo3fmZhcOk0a30lYXngs/kl/DT94eWxvys8fz/6N2p2vOakOGzw43zjLHv0qiauKHZ8+mp1ITn09nhyc/Ihp/E+PmcqrGyoNzFxueAweD6ub+y+aDU76SZjMGWs+mGrfi50IO4lcGI0u3FtMHupIqW2YCt8KmL3/bf6sy5u++Bnpj6uJzCicG9nq7sg/qTmrOv5u+85bT/7IiOnYubrbiA4PuOuNrM17LuspiNqor2682O0/Khxd+t5u6onM/jxYWtstn5nP2dkuXpqLWu4+S8ofnF/O+o1cDn/eTqxOfp6Pf14N+L3qObye2clfiI65yZ2df5o+nm29T+ifmt8fnEwNittOGb1uWWl6+jwrzUgembqKvz+6PU5P3r4/nJ35KC6Y+Zxc2bu4Gcg5XQ8brHwv+Rks/Uvumek8Xmt8uVkJHt0sb0mOOCkcLws/y2p+H42s6Z7MSP8qnP2rvFyqTEnovH/N+fvJWk/9yp15DNoYPa9dv5mf64nZKIvp+r/42Fqf6QgsmAv9jovOLE2bCY8YPEidOrnqewrOrM5LLg76HtjoXxosLGg5Xm/OTp5syBv6jD+trCpYHBjaanwI7c9rvavM6Q48Pw4bSvsd331fK49+vNj++y36inzrWAmpyWm5Lx947gg86Tup2Xyfjd1Ibr89Kz4bqww7y6if2tm++qnt2F9cLO2fmsp+vLvdzy7LePsM7k6tiDjoK89+ictJ6X8OWOhviI6/jqpsPK1onnlNzOpJqp+ou9n7va247I0dO1j5rut4XRm6vU+OTEnfCZx+mNg8GSotXKjI3gvKv6/Y3GgLfryKDChreA9rPph76j+qT/nrPAueHngsbG2pOzw4Tbhr/Tgpa3to3Zl534j/ajqrfasYmSyZ2s/PrkvaC1ttH8gbbn26PUruKviOielfrH1Pv4irqBr6Kjv4iAnICQipXIrPqV7fKUo8murvT6lOnyl6Te25TnwtSLxYiOhMyt09nszNrN46myxJTBt9b+yMDVmKjqkc+75OWu08CCnvqAhJWhjPz4u8izqpq/1L/MtrLY6M2rtZuZ2/+A2drz1uX536DslcuNkJbMgbm9kPKo7dTjiY2zyYbur8vh6rm19JTK1Ob7sonz/6iS6Kmi6v6Bt9umvdfayO2Z7sam4vS18oja+vKG78OY/8ifrba12M/N17W1tYC1ouzK3f69+PCIzs6Aha6E0IOq5cyw95rPzfPAw/+m69fEt620wMX6uoCM8Lvv+YTe7pXE/aflj8OTs9vi5p752ozH+JTUhOOIpuSX/o+89/KKx6rox+/07rqn/PDBgtSOppv/wJ7S7YDtwNGcv7fZ2KSs8brkk4K7k9f/waeJm5ij97vfxaOnptvLns75krWo7aj22aLKvoCooenfzpH7zcrVv+zG7dS0+OjJivvErtPQ8oKovJbhpKKkyaKap424ssfEwo/ivKC6yLeY7Mnt6c6Kod+Mv521xtXE4N+h6JDTh8O/od3xu+CS27Cer8akp7Ozk4W25PServziyY68iYD6/u640Z77tYiv9pWE/KmQgZ6//u/4r72e66/T6YH9zZy3maqlgNXAscj2l6CL4JSx+sqbq8qmqtThq/u7mbKu2Z3IpvaI5puc+PbehdOq/4HznYqTzvr5lrj1i/2G0J6ZrsPciJO9q978luuNoqO5+N2asO30grbzpZWMlMWjqqGupuzc2eHGsLS+tLW52dy6kYqLvtWw1crG0K2w7s/Y96uo87Kr9eeHnsbZ0+TDm/X0xJWNtYev/+Kf79enoN+dtrWIu9/upu+V86jYp8Oo3dq88JeD8qGLsdGKwsaqgtXa0orrsMG9wKC+0PjdhKy+pLmJqqq0vJObxMr7g5DZ+4iI0q6e9LSfn6X4tK68y6mEipyV7e6ipa3ioMf5qaa78I/lvqqykvCP0+nR48+V08auq6T3+tyig4qow9KGvrzD692Jru3ip7/e/pjznPL/wrC4vrqb7deny/e+iejD+rCa/YS5vrmn4pzO7Yvso9qp69GM2IKv8oLerdbEy7PD9MKo2djx6pWm3+KTwNSXyoOck4yYuvG5m6H44PDphuep6b7o4e7E1brFzrqpsvro2bqbrOmihLXX/KOa0YrHpryezdTLucuYp/iL0eyFl9Prk+Hwwsb79oT287KauvG2wIM]

@@ -1,0 +1,183 @@
+InternalClassType: Method
+Coordinate3D: [16.35,-4,0]
+Name: generationChange
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- Prepare statistics
+ -- called by: GAoptimization (Change of generation) and Termination of the optimization
+ param tab:table
+ 
+ if eventcontroller /= void 
+ 	eventcontroller.RandomNumbersVariant := 1
+ end
+ var statTab:object := StatisticalEvaluation
+ var bestTab:object := bestIndividuals
+ 
+ var GenSize:integer := GaOptimization.GenerationSize
+ var nGen:integer := currGeneration
+ 	
+ var a,b:integer
+ if currGeneration = 1 
+ 	a := 1
+ 	b := GenSize
+ else
+ 	a := 1 + GenSize * (2 * currGeneration - 3)
+ 	b :=     GenSize * (2 * currGeneration - 1)
+ end
+ 
+ var boundFit:real
+ if bestTab.ydim = 0 
+ 	boundFit := tab[5,1][2,numBestSolutions]
+ else
+ 	boundFit := bestTab[1,bestTab.ydim]
+ end
+ 
+ var numSol:integer := bestTab.ydim + 1
+ var ID:integer
+ var iTab:table
+ var numChrom:integer := GAOptimization.TaskTable.yDim
+ if GAoptimization.direction ~= "minimum" 	
+ 	for var j := a to b 
+ 		bestTab.setCursor(2,1) -- column ID
+ 		ID := statTab[7,j]
+ 		if (statTab[1,j] <= boundFit) AND NOT bestTab.find({2,1}..{2,*},ID) 
+ 			bestTab.writeRow(0,numSol, statTab[0,j], statTab[1,j], ID)
+ 			bestTab[0,numSol].name := statTab[0,j].name
+ 			iTab := statTab[0,j]
+ 			for var k := 1 to iTab.ydim 
+ 				bestTab[2+k,numSol] := iTab[1,k]
+ 				bestTab[2+k,numSol].Name := to_str("Chrom ",k)
+ 			next
+ 			if statTab[6,j]/=void
+ 				bestTab[3 + numChrom, numSol] := statTab[6,j] -- observations
+ 				bestTab[3 + numChrom, numSol].name := to_str(rootfolder.Localization.getText(126)," ",ID) -- Fitness 12
+ 			end
+ 			numSol := numSol + 1
+ 		end
+ 	next
+ 	bestTab.sort(1,"up")
+ 	
+ else -- maximum
+ 	for var j := a to b 
+ 		bestTab.setCursor(2,1)
+ 		ID := statTab[7,j]
+ 		if (statTab[1,j] >= boundFit) AND NOT bestTab.find({2,1}..{2,*},ID) 
+ 			bestTab.writeRow(0,numSol, statTab[0,j], statTab[1,j], ID)
+ 			bestTab[0,numSol].name := statTab[0,j].name
+ 		
+ 			iTab := statTab[0,j]
+ 			for var k := 1 to iTab.ydim 
+ 				bestTab[2+k,numSol] := iTab[1,k]
+ 				bestTab[2+k,numSol].Name := to_str("Chrom ",k)
+ 			next
+ 			if statTab[6,j]/=void
+ 				bestTab[3 + numChrom, numSol] := statTab[6,j] -- observations
+ 				bestTab[3 + numChrom, numSol].name := to_str(rootfolder.Localization.getText(126)," ",ID) -- Fitness 12
+ 			end
+ 			numSol := numSol + 1
+ 		end
+ 	next
+ 	bestTab.sort(1,"down")
+ end
+ 
+ bestTab.delete({0,numBestSolutions + 1}..{*,*})
+ bestFitness := bestTab[1,1]
+ if typeOfFitness ~= "time" 
+ 	var timeVar:time := bestFitness
+ 	Dialog.GAWizard.setCaption("currFitnessR_com", to_str(timeVar))
+ else
+ 	Dialog.GAWizard.setCaption("currFitnessR_com", to_str(round(bestFitness,3)))
+ end
+ 
+ if showStatisticEval -- configure the Offspring diagram 'Dialog.allOffSpring'
+ 	var withStatistics:boolean := (numRuns >1)
+ 	var allChildDiagr:object := allOffSpring
+ 	var yscaleMin, yscaleMax:real
+ 	if withStatistics 
+ 		yscaleMin := statTab.min({3,1}..{3,*}) * 0.9 -- column minimum
+ 		yscaleMax := statTab.max({4,1}..{4,*}) * 1.1 -- column maximum
+ 	else
+ 		yscaleMin := statTab.min({1,1}..{1,*}) * 0.9 -- column mean value
+ 		yscaleMax := statTab.max({1,1}..{1,*}) * 1.1
+ 	end
+ 	allChildDiagr.yscaleMin := yscaleMin
+ 	allChildDiagr.yscaleMax := yscaleMax
+ 
+ 	var annotationsTab:table := allChildDiagr.annotations
+ 	var row:integer := annotationsTab.yDim
+ 	var minV,maxV,delta:real
+ 	delta := 0.08
+ 	var rowX:integer := allchildren.yDim
+ 	var rowStatTab:integer
+ 	for var rowStat := a to b 
+ 		if statTab[6,rowStat]=void 
+ 			rowStatTab := statTab[7,rowStat]
+ 			if statTab[6,rowStatTab] /= void
+ 				statTab[6,rowStat] := statTab[6,rowStatTab]
+ 				statTab[6,rowStat].name := statTab[6,rowStatTab].name
+ 			end
+ 			var fit:real := statTab[1,rowStatTab]
+ 			statTab[1,rowStat] := fit
+ 		end
+ 		if statTab[6,rowStat].name ~= "penalty"  -- vertical line with the word 'Penalty'
+ 			row := row + 1
+ 			annotationsTab.writeRow(1,row, 0, rowStat, 0.8*yScaleMin + 0.2*yScaleMax, 0.9*yScaleMin + 0.1*yScaleMax,3,2,"Penalty")
+ 		else -- not a penalty evaluation
+ 			rowX := rowX + 1; allchildren.writeRow(1,rowX, rowX,statTab[1,rowStat])
+ 			if withStatistics 
+ 				minV     := statTab[3,rowStat]-- min
+ 				maxV     := statTab[4,rowStat]-- max
+ 				row := row + 1;annotationsTab.writeRow(1,row, 0,rowStat, minV,maxV, 3,0)-- vertical lines
+ 				row := row + 1;annotationsTab.writeRow(1,row, 1,minV, rowStat-delta,rowStat+delta, 3,0)
+ 				row := row + 1;annotationsTab.writeRow(1,row, 1,maxV, rowStat-delta,rowStat+delta, 3,0)
+ 			end
+ 		end
+ 	next
+ 	
+ 	if currGeneration < GaOptimization.NumGenerations  -- draw vertical line
+ 		var indX:integer := GenSize * (2 * currGeneration - 1)
+ 		annotationsTab.writeRow(1,annotationsTab.ydim+1, 0,indX, void, void, 9,0)
+ 	end
+ 	
+ else -- reduced statistics	
+ 	if currGeneration = 4
+ 		statTab.delete({2, 1}..{6, GenSize}) -- delete generation 1
+ 		-- for var j := 1 to GenSize; statTab[0,j].delete; next
+ 		statTab.delete({0, 1}..{0, GenSize})
+ 		
+ 		statTab.createNestedList(0, 1)
+ 		statTab[0, 1].name := to_str("Generation ",currGeneration - 3)
+ 	end
+ 	
+ 	if currGeneration > 4
+ 		statTab.delete({2, a - 6 * GenSize}..{6, b - 6 * GenSize}) -- delete generation (currGeneration - 3)
+ 		-- for var j := a - 6 * GenSize to b - 6 * GenSize; statTab[0,j].delete; next
+ 		statTab.delete({0, a - 6 * GenSize}..{0, b - 6 * GenSize})
+ 		
+ 		statTab.createNestedList(0, a - 6 * GenSize)
+ 		statTab[0, a - 6 * GenSize].name := to_str("Generation ",currGeneration - 3)
+ 	end
+ end -- if showStatisticEval
+ 
+ 
+ -- Evolution (best solution, average, worst solution)
+ var locTab:table
+ locTab.create
+ locTab.dataType := "real"
+ statTab := EvolutionTab -- table of the Evolution diagram 
+ statTab.datatype := "real"
+ locTab.insertList(1,1,  tab[6,1].copy({2,1}..{4,*}))
+ statTab.insertList(0,1, tab[6,1].copy({1,1}..{1,*}))
+ 
+ statTab.insertList(1,1, locTab.copy({1,1}..{3,*}))
+ statTab.dataType := TypeOfFitness
+ Evolution.update
+ 
+ if dialog.wait4generationChange -- during the optimization (optimRuns = true) the user pressed the "Report" button on tab "Evaluate"
+ 	dialog.wait4generationChange := false
+ 	prepReport
+ 	ReportObject.show
+ 	Dialog.GAWizard.setCaption("HTML_but",rootfolder.Localization.getText(49)) -- change from "Wait" to "Report"
+ end
+RandomSeed: 457
+UUID: aa9bddcb-0fa3-477c-a9ef-16ade729d8d7

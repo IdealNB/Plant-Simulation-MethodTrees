@@ -1,0 +1,26 @@
+InternalClassType: DataTable
+Coordinate3D: [-7.1000000000000005,7,0]
+Name: Objects
+Origin: 14b0b0f3-9be3-467f-95b4-1d31fdb86fdd
+UUID: fd2f5066-6045-4061-9923-69b96ef26a69
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 50
+  DataType: string
+  MaxXDim: 1
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Width: 20
+  -
+   Index: 1
+   Width: 31
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,2,~,"Objects"]
+ Columns:

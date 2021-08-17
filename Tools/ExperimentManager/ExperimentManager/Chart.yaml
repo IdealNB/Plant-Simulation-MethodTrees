@@ -1,0 +1,109 @@
+InternalClassType: Chart
+ChartType: "Markers"
+CollectData: true
+Coordinate3D: [56.150000000000006,-0.39999999999999858,0]
+DataInColumn: true
+DataTable: "self.MeanValueTable"
+GapWhenNull: false
+Label: "Output values of interest"
+LegendLocation: "(Off)"
+Mode: "Sample"
+Name: Chart
+NullValue: -999999
+Origin: f0e0e279-81ae-4d08-8e55-8626cf02f784
+Subtitle: ""
+Title: "Experiment"
+UseInputChannels: false
+UUID: a406d7d6-0970-4ba7-b698-07f994f576d5
+XGrid: false
+XGridLines: 25
+XLabel: ""
+YGrid: false
+YGridLineInterval: 0
+YLabel: ""
+YScaleMax: -1e+308
+YScaleMin: 1e+308
+$CustomAttributes:
+-
+ Name: DisplayedOutputValues
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnWidth: 20
+   DataType: string
+   ShowDataType: true
+  Columns:
+-
+ Name: MeanValueTable
+ DataType: table
+ Value:
+  Comment: "examples for the column index: SingleProc12.proctime, mytab[2,3]"
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 10
+   DataType: real
+   FormatString: "-15.2"
+   RowIndex: true
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    Hidden: false
+    Width: 10
+  ColumnIndex: [string,2,~,""]
+  Columns:
+  - [0,string,1,"Exp 1"]
+-
+ Name: Annotationstable
+ DataType: table
+ Value:
+  Comment: "examples for the column index: SingleProc12.proctime, mytab[2,3]"
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 10
+   DataType: real
+   FormatString: "-15.2"
+   MaxXDim: 7
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 0
+    Hidden: false
+    Width: 29
+   -
+    Index: 1
+    DataType: integer
+    FormatString: "-9"
+   -
+    Index: 5
+    DataType: integer
+    FormatString: "-9"
+   -
+    Index: 6
+    DataType: integer
+    FormatString: "-9"
+   -
+    Index: 7
+    DataType: string
+  ColumnIndex: [string,8,~,"0=Vertical","Value","From","To","Color","Style","Text"]
+  Columns:
+$Annotations:
+$Colors:
+- 0x0
+- 0xffffff
+- 0xffffff
+- 0x0
+- [0xff0000,0,3]
+- [0x4080,0,5]
+- [0xff,0,7]
+- [0x8000ff,0,9]
+- [0xffee00,0,11]
+- [0xff00ff,0,0]
+- [0xee00cc,0,1]
+- [0xddff,0,92]
+- [0xff,0,96]
+$WindowRect: [512,308,481,375]

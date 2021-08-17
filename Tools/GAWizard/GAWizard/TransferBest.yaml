@@ -1,0 +1,44 @@
+InternalClassType: Method
+Coordinate3D: [26,-4,0]
+Name: TransferBest
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- set the parameter of the best_individual in the model.
+ -- called by: termination control, userpopupMenu
+ param No:integer
+ 
+ var s:string; var t:time;var numBestSolutions:integer
+ 
+ numBestSolutions := bestIndividuals.yDim
+ if bestIndividuals.yDim > 0 AND No <= numBestSolutions 
+ 	Individual := bestIndividuals[0,No].copy
+ 	if TypeOfFitness ~= "time" 
+ 		t:= bestIndividuals[1,No]
+ 		switch No
+ 		case 1 ;    s := rootfolder.localization.getMessage(179,t,"","")
+ 		case 2 ;    s := rootfolder.localization.getMessage(180,t,"","")
+ 		case 3 ;    s := rootfolder.localization.getMessage(181,t,"","")
+ 		else -- Set the best solution with number ... and fitness ... in the model.
+ 			s := rootfolder.localization.getMessage(178,No,t,"")
+ 		end
+ 	else
+ 		switch No
+ 		case 1 ;    s := rootfolder.localization.getMessage(179,bestIndividuals[1,No],"","")
+ 		case 2 ;    s := rootfolder.localization.getMessage(180,bestIndividuals[1,No],"","")
+ 		case 3 ;    s := rootfolder.localization.getMessage(181,bestIndividuals[1,No],"","")
+ 		else -- Set the best solution with number ... and fitness ... in the model.			
+ 			s := rootfolder.localization.getMessage(178,No,bestIndividuals[1,No],"")
+ 		end
+ 	end
+ 	print; print s
+ 	recording.append(s)
+ 	setUserParam
+   	
+ 	if strLen(userConfigMethod) > 0 
+ 		str_to_method(to_str(~,".",UserConfigMethod)).execute
+ 	end
+ else
+ 	messageBox(rootfolder.Localization.getText(40),1,4) -- Info: "No optimization were performed."
+ end
+RandomSeed: 402
+UUID: 83e05340-610b-448c-8946-baea268d98a4

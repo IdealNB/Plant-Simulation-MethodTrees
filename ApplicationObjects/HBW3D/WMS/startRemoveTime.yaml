@@ -1,0 +1,8 @@
+InternalClassType: Variable
+Coordinate3D: [6.5,-2,0]
+DataType: time
+HasInitValue: false
+Name: startRemoveTime
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 1155b692-6e71-456c-8035-e0a1c9f7f2f5
+Value: 20:00

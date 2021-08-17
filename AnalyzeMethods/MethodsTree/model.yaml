@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-16,0,0]
+DataType: object
+Name: model
+Origin: 2a1497d8-2571-444e-b01a-2a54b0312235
+UUID: 4fcf0d40-47ee-4680-99d5-3cdeebd1be64
+3D:
+ ExcludeFromShowContentOfLocation: false
+Value: ".Models.TestInstance.TeamcenterWizard"

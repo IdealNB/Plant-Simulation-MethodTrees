@@ -1,0 +1,176 @@
+InternalClassType: Frame
+ChangePathCtrl:
+CloseCtrl:
+ConnectCtrl:
+ConstructorCtrl:
+Coordinate3D: [-3,6,0]
+CreateIn3D: true
+DestructorCtrl:
+DragDropCtrl:
+InitCtrl:
+Label: "TeamcenterReport"
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: TeamcenterReport
+OpenCtrl: "openReport"
+PermitDeleteCtrl:
+RelabelCtrl: "relabelReport"
+RenameCtrl: "renameReport"
+ReplacementMode: "merge"
+ShiftcalendarObject:
+UUID: a2aaeacb-9948-4a18-81a1-050a3bd168ed
+3D:
+ AniRotationAxis: [0,0,-1]
+ AniRotationCenter: [0,0,0]
+ BackgroundColor: -1
+ CameraAnimations:
+ ExcludeFromShowContentOfLocation: false
+ GraphicGroupNames: ["default","deco"]
+ InternalGraphicGroups: ["deco"]
+ LockedGraphicGroups: []
+ Mirror: [false,false,false]
+ NameLabelEnabled: true
+ NameLabelPosition: [-1,-1,0]
+ NameLabelRotation: [0,0,0,-1]
+ NameLabelScale: [1,1,1]
+ ObstacleForWorker: "Graphics"
+ PlanningView: true
+ PointCloudPath: ""
+ PointCloudPosition: [0,0,0]
+ PointCloudRotation: [0,0,0,-1]
+ Poses:
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+ SelfAnimations:
+ ShowBasePlate: false
+ ShowConnections: false
+ ShowContent: true
+ ShowExternalGraphics: false
+ ShowGrid: true
+ ShowLabels: false
+ ShowNames: true
+ ShowPointClouds: false
+ ShowShadows: false
+ ShowSky: false
+ StatesOrientation: "(Off)"
+ VisibleGraphicGroups: ["deco","default"]
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true
+$IconArray:
+-
+ Name: "Default"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAV///QkAAV///V///QkAAV///QkAAQkAAQkAAQkAAQkAAV///QkAAV///V///V///QkAAV///V///QkAAV///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAV///V///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAQkAAV///QkAAQkAAV///V///QkAAV///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAV///V///V///QkAAQkAAQkAAQkAAV///V///V///QkAAV///V///V///QkAAV///QkAAV///QkAAV///V///QkAAV///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAV///V///V///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///QkAAV///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAV///V///V///V///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///QkAAQkAAQkAAQkAAV///V///V///V///V///V///V///V///gIAAgIAAgIAA
+ - gIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAA
+ - gIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAA
+ - gIAAgIAAV///V///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAA
+ - gIAAV///V///V///V///V///V///AAAA////////AAAA////////AAAA////////AAAAV///V///V///AAAAAAAAAAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///V///V///V////2AA/2AAV///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///V///V///V////2AA/2AAV///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///V///V///V///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///V///V///V///V///AAAAAAAAAAAAAAAAV///V///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///V///V///V///AAAAAA//AA//AA//AA//AAAAV///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///AAAAV///V///V///V///V///V///gIAA
+ - gIAAV///V///V///V///V///V///V///V///AAAAAA//AA//AA//AA//AA//AA//AAAAV///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///V///gIAA
+ - gIAAgIAAV///V///V///V///V///V///AAAAAOAAAA//AA//AA//AA//AA//AA//AA//AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///AAAAV///V///V///V///V///gIAAgIAA
+ - gIAAgIAAV///V///V///V///V///V///AAAAAOAAAOAAAOAAAA//AA//AA//AA//AA//AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAA
+ - gIAAgIAAV///V///V///V///V///V///AAAAAOAAAOAAAOAAAOAA/2AA/2AA/2AA/2AAAAAAV///V///V///AAAAAAAAV///AAAAAAAAAAAAV///V///V///V///V///V///V///V///V///V///V///gIAAgIAA
+ - gIAAgIAAgIAAV///V///V///V///V///AAAAAOAAAOAAAOAAAOAA/2AA/2AA/2AA/2AAAAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAV///V///V///V///V///AAAAAOAAAOAAAOAA/2AA/2AA/2AAAAAAV///V///V///V///AAAAAAAAAAAAAAAAV///AAAAAAAAV///AAAAAAAAV///V///V///V///V///gIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAV///V///V///V///V///V///AAAAAOAAAOAA/2AA/2AAAAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///AAAAAAAAAAAAAAAAV///V///V///V///V///V///AAAAAAAAV///AAAAAAAAV///AAAAAAAAV///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAV///V///V///V///V///V///V///V///V///V///V///V///gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+-
+ Name: "Operational"
+ Transparent: true
+ Size: [40,40]
+ Pixels:
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/vgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///QkAAV///V///QkAAV///QkAAQkAAQkAAQkAAQkAAV///QkAAV///V///V///QkAAV///V///QkAAV///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAQkAAV///QkAAQkAAV///V///QkAAV///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///QkAAQkAAQkAAQkAAV///V///V///QkAAV///V///V///QkAAV///QkAAV///QkAAV///V///QkAAV///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///QkAAV///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///QkAAV///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///V///QkAAV///V///QkAAQkAAQkAAQkAAV///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAA////////AAAA////////AAAA////////AAAAV///V///V///AAAAAAAAAAAAV///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///V///V///V////2AA/2AAV///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///V///V///V////2AA/2AAV///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAA////////AAAA////////AAAA////////AAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///AAAAAAAAAAAAAAAAV///V///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///AAAAAA//AA//AA//AA//AAAAV///V///V///V///V///AAAAV///AA//AA//V////2AA/2AAV///AOAAAOAAV///AAAAV///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///AAAAAA//AA//AA//AA//AA//AA//AAAAV///V///V///V///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///AAAAAOAAAA//AA//AA//AA//AA//AA//AA//AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///AAAAV///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///AAAAAOAAAOAAAOAAAA//AA//AA//AA//AA//AAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///AAAAAOAAAOAAAOAAAOAA/2AA/2AA/2AA/2AAAAAAV///V///V///AAAAAAAAV///AAAAAAAAAAAAV///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///AAAAAOAAAOAAAOAAAOAA/2AA/2AA/2AA/2AAAAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///AAAAAOAAAOAAAOAA/2AA/2AA/2AAAAAAV///V///V///V///AAAAAAAAAAAAAAAAV///AAAAAAAAV///AAAAAAAAV///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///AAAAAOAAAOAA/2AA/2AAAAAAV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///AAAAAAAAAAAAAAAAV///V///V///V///V///V///AAAAAAAAV///AAAAAAAAV///AAAAAAAAV///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vV///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///V///QkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAA7+/vQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+ - gIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAAgIAA
+$UserPopupMenu:
+ Active: true
+ $Entries:
+ - ["Show Report","showReport"]
+ - ["Open Configuration","openReport"]
+ - ["Set Teamcenter Report Name","setReportLabel"]
+ - ["Set Teamcenter Folder","setTCFolder"]
+ - ["Upload to Teamcenter ","uploadReportToTC"]
+$Nodes:
+- 8b0fe527-f919-4402-b46f-5b12222b3a76
+- 036058a1-1148-4f24-aba9-49aec970fea3
+- 31956ac1-2394-43c1-92cc-929b108e59fc
+- a316b6c5-ac4d-440e-b153-83c4e0806b49
+- 9b5f101a-3123-4c69-a95c-501fd2db8df5
+- 3ec7173c-36f3-4d83-96c9-c74abb858eed
+- 2628adb0-9fc8-40c0-a0f0-4dcf92a444d3
+- f8fa8f70-795c-4299-961c-94e82afef6c5
+- eeea9a60-4ca9-417d-8f91-7c95edc5f1f4
+- 6108ceb6-ff42-4aa9-b9fc-559689814130
+- 6faaf661-9ff7-4680-8845-d504c52b8ace
+- 35ddb89a-ffae-4cdb-a454-453d028e0d30
+- 8a91079a-6b9f-4476-8654-a653df53b529

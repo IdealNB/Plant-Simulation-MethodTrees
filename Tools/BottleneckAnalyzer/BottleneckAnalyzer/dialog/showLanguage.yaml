@@ -1,0 +1,32 @@
+InternalClassType: Method
+Coordinate3D: [3,13,0]
+Name: showLanguage
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- show the dialog box in the current userinterfacelanguage
+ var display:list[string]
+ display.create
+ /*	Only Bars
+ 	Plus Scale
+ 	Plus Background
+ */
+ for var n := 1 to 3 
+ 	display.insert(n, rootfolder.Localization.getText(n+3))
+ next
+ dialog.setList("display_pop",  display)
+ dialog.label := rootfolder.Localization.getText(70)-- "Bottleneck Analyzer"
+ 
+ for var n := 1 to Translations.yDim 
+ 	var Dialog_elem: string := Translations[0,n]
+ 	var messageTabNo:integer := Translations[1,n]
+ 	dialog.setCaption(Dialog_elem,rootfolder.Localization.getText(messageTabNo))
+ next
+ 
+ dialog.setCheckBox("prod_chk",~.production)
+ dialog.setCheckBox("transp_chk",~.transport)
+ dialog.setCheckBox("stor_chk",~.storage)
+ dialog.setIndex("display_pop",~.scale_icon)
+ 
+ dialog.open
+RandomSeed: 72
+UUID: b714832e-00a5-4efa-a46c-514f31eb5723

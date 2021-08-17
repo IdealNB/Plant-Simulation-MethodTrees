@@ -1,0 +1,93 @@
+InternalClassType: Method
+Coordinate3D: [-8,-17,0]
+Name: write_Resource_Data
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Resource Data to the generated resources
+ -- Frame objects must contain the correct variables or data will not be written:
+ --    Availability, MTTR, Speed, Length, xDim, yDim, Capacity
+ 
+  To add user defined / customized code here please open this method in the Public folder of the TeamcenterWizard library.
+  Switch off inheritance and add your code. This ensures that your changes are not overwritten when updating of the library.
+ _________________________________________________________________________________
+ Parameters	: homeframe (TeamcenterWizard), station (new object), settings from Object Mapping
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Insert_LayoutObjects, create_LibObjects, updateResourceData
+ Calls		: write_FailureProfile, write_SetupMatrix
+ 
+ Author		: Ralph Bauknecht
+ Date		: 13.09.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 13.09.2018	RBA		added ShiftCalender processing based on example by Stephan Froeber
+ 12.12.2018	RBA		add attribute dependend writing of data; add usability of frame objects  
+ 31.05.2019	RBA		set length to TwoLaneTrack Lane A
+ 17.09.2019	RBA		moved a derivation of this method to Public\\TcW_Methods frame and made this the active copy
+ 08.04.2020	RBA		create a "Teamcenter" failure profile with mode "ProcessingTime"
+ 28.04.2020	RBA		add separate methods with errorhandler for failure and setup matrix
+ 					add param homeframe
+ 05.05.2021	RBA		removed customizable methods in Public
+ _________________________________________________________________________________*/
+ 
+ param homeframe, station : object, row : integer, bLengthOriented, bGetCapacity : boolean, workareaTable : object := VOID
+ if workareaTable = VOID
+ 	workareaTable := Layout_Data -- standard value; for updates another table is used
+ end
+ 
+ if station.InternalClassName /= "Network" then
+ 
+ 	-- separate method with errorhandler
+ 	var ret : string := homeframe.write_FailureProfile(station, row, workareaTable)
+ 	if ret /= "OK"
+ 		print to_str(station) + ": " + ret
+ 	end
+ 		
+ 	if bLengthOriented -- if LengthOrientation is set in Object Mapping  
+ 		if (existsObject(to_str(station) + ".Speed") OR station.getAttrNo("Speed") > 0 OR NOT station.isNameUnique("Speed")) AND workareaTable["Speed", row] /= 0
+ 			station.speed := workareaTable["Speed", row]
+ 		end
+ 		
+ 		if (existsObject(to_str(station) + ".Length") OR station.getAttrNo("Length") > 0 OR NOT station.isNameUnique("Length")) AND workareaTable["Length", row] /= 0
+ 			if station.InternalClassName = "Nw2Way" -- a TwoWayTrack length must be set to Lane A
+ 				station.A.length := workareaTable["Length", row]
+ 			else
+ 				station.length := workareaTable["Length", row]
+ 			end
+ 		end
+ 
+ 	end
+ 		
+ 	if bGetCapacity  -- if GetCapacity is set in Object Mapping 
+ 		if (existsObject(to_str(station) + ".xDim") OR station.getAttrNo("xDim") > 0 OR NOT station.isNameUnique("xDim")) AND workareaTable["Capacity", row] >= 1 then --> for ParallelStation, Store
+ 			station.xDim := workareaTable["Capacity", row]
+ 			station.yDim := 1
+ 		elseif (existsObject(to_str(station) + ".Capacity") OR station.getAttrNo("Capacity") > 0 OR NOT station.isNameUnique("Capacity")) AND workareaTable["Capacity", row] >= 1 then --> for Buffers, Sorters, Lines, ...
+ 			station.Capacity := workareaTable["Capacity", row]
+ 		end
+ 	end
+ 	
+ 	-- if ShiftCalender elements are defined; this requires a fixed format in the subtables - see Data Mapping table
+ 	if station.InternalClassName = "NwShift" AND workareaTable.getColumnNo("ShiftTable") /= -1 AND workareaTable.getColumnNo("VacationTable") /= -1
+ 		if workareaTable["ShiftTable", row] /= VOID
+ 			station.ShiftPlan := workareaTable["ShiftTable", row]
+ 		end
+ 		if workareaTable["VacationTable", row] /= VOID
+ 			station.Calendar := workareaTable["VacationTable", row]
+ 		end
+ 	end
+ 	
+ 	-- separate method with errorhandler
+ 	ret := homeframe.write_SetupMatrix(station, row, workareaTable)
+ 	if ret /= "OK"
+ 		print to_str(station) + ": " + ret
+ 	end
+ 	
+ end
+RandomSeed: 1073814218
+UUID: 797a28cd-f8ea-4a91-9a51-23700db2621f

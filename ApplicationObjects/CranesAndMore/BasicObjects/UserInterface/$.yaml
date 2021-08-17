@@ -1,0 +1,13 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: UserInterface
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 0770c087-e201-401a-97d6-ec4356f18061
+3D:
+ BackgroundColor: -1
+$Nodes:
+- 0073d8c5-69c5-462f-a808-69922a47a6eb

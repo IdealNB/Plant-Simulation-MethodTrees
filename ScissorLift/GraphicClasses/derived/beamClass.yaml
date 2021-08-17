@@ -1,0 +1,10 @@
+InternalClassType: Buffer
+Coordinate3D: [1,-1,0]
+Name: beamClass
+Origin: 84b2efb6-e68c-4111-a078-95cc9064aa75
+RandomSeed: 20
+UUID: db2d9ce2-32a2-493f-8e36-7ea68b20aa75
+3D:
+ GraphicGroupNames: ["default","object"]
+ LockedGraphicGroups: []
+InheritEntranceExitLockedOnReset: false

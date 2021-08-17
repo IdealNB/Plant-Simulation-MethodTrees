@@ -1,0 +1,176 @@
+InternalClassType: Method
+Coordinate3D: [41.300000000000004,-8,0]
+Name: M_NewJobId
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ param eMPlant:any, oldJobId:integer->integer -- 14.2
+ -- return values (JobId_):
+ -- > 0 ... continue with job initialization
+ -- = 0 ... no more jobs available, end the remote process
+ -- < 0 ... wait and call again later, this is used when
+ --         the results of other jobs are necessary to continue
+ 
+ var job,indNo,a,b,nGen,GenSize,rowStat:integer
+ var str:string
+ 
+ var SimMachine:object := ?.~ -- ? is the method RunProcess
+ var mt:object := DistributedSimulation.machinesTable
+ 
+ if eMPlant /= void
+ 	var t:time := DistributedSimulation.QuitAfterTime
+ 	if t > 0
+ 		-- The number of milliseconds must be < 2^31. Null means infty lifespan of the prozess.
+ 		eMPlant.QuitAfterTime(2000 * t)
+ 		-- "Start the 'Terminate after time' anew."
+ 		mt.addLogging("Start the 'Terminate after time' anew.", SimMachine.JobId, SimMachine.MachineIndex, false)
+ 	end
+ end
+ 
+ var indivTable:table := individuals
+ var JobTab:object := JobsTable
+ var col:integer := 4 -- column 'State' in JobsTable
+ if oldJobId > 0 AND JobTab[col,oldJobId] = "process"
+ 	result := -1
+ end
+ 
+ var StatTab:object:= StatisticalEvaluation
+ var IntermedRes:object := IntermediateResults
+ nGen := currGeneration
+ GenSize := GaOptimization.GenerationSize
+ 
+ var p:string := to_str(self.~)
+ 
+ var RangeS:integer := JobTab.RangeStart
+ Var RangeE:integer := JobTab.RangeEnd
+ JobTab.setCursor(col,RangeS)
+ while JobTab.find({col,RangeS}..{col,RangeE}, "open")
+ 	result := JobTab.cursorY
+ 	SimMachine.JobID := result
+ 	JobTab[col,result] := "process" -- now scheduled
+ 
+ 	if NOT self.infoBoxOpen
+ 		infobox(rootfolder.localization.getText(380),false) -- The simulation study is running ...
+ 		self.infoBoxOpen := true
+ 	end
+ 
+ 	-- "Try to parametrize."
+ 	var machNo:integer := SimMachine.MachineIndex--if mt[9,machNo] > 0 then debug end
+ 	
+ 	if M_SetParams(eMPlant,result,machNo)
+ 		-- "Job successfully parametrized."
+ 		mt.addLogging("Job successfully parametrized.", SimMachine.JobId, SimMachine.MachineIndex, false)
+ 
+ 		JobTab[6,result] := sysdate -- register start date time
+ 		-- after setting the parameter the seedtable is set in the remote model
+ 		str := to_str(p,".DefSeed4Run(",JobTab[3,result] ,")")
+ 		eMPlant.executeSimTalk(str)
+ 
+ 		str := to_str("-> string return getenv(\\"COMPUTERNAME\\")")
+ 		str := eMPlant.executeSimTalk(str)--if strLen(str) < 1 then debug end
+ 		JobTab[5,result] := to_str(str," (",SimMachine.eMPlantHandle,")")
+ 
+ 		
+ 		mt[9,machNo] := result-- JobId
+ 		return -- found the first open job, which is parametrized
+ 	end
+ 
+ 	-- use penalty_method
+ 	indNo := JobTab[2,result]
+ 
+ 	str := to_str("-> real return ",p,".penaltyValue")
+ 	var penalty := eMPlant.executeSimTalk(str)
+ 	indivTable[2,indNo] := penalty
+ 
+ 	JobTab.setCursor(2,RangeS)
+ 	JobTab.find({2,RangeS}..{2,RangeE}, indNo) -- first item of 'indNo'
+ 	a := JobTab.CursorY
+ 	b := a + NumRuns - 1
+ 	for job := a to b  -- all observations of the_individual 'indNo' are ready
+ 		JobTab[col,job] := "ready"
+ 	next
+ 	if nGen = 1 then rowStat := indNo; else
+ 		rowStat := GenSize * (2 * nGen - 3) + indNo -- Gen 2: Rows = GenSize.../  Gen 3: Rows = 3 * GenSize...
+ 	end
+ 	str := to_str("Gen ",nGen," Ind ",indNo)
+ 	IntermedRes[0,rowStat] := str
+ 	StatTab.createNestedList(6,rowStat)
+ 	StatTab[6,rowStat].Name:="Penalty"
+ 	if TypeOfFitness ~= "time"
+ 		StatTab[6,rowStat].dataType := "time"
+ 	else
+ 		StatTab[6,rowStat].dataType := "real"
+ 	end
+ 
+ 	StatTab[1,rowStat] := penalty
+ 	StatTab[0,rowStat] := indivTable[1,indNo].copy
+ 	StatTab[0,rowStat].Name:=str
+ 
+ 	dialog.numPenalty := dialog.numPenalty + 1
+ 
+ 	var DLGobj:object := Dialog.GAwizard
+ 	a := Dialog.readyIndividuals + 1
+ 	Dialog.readyIndividuals := a
+ 	DLGobj.setCaption("currIndivR_com",to_str(a))
+ 
+ 	a := Dialog.readyObservations + NumRuns
+ 	Dialog.readyObservations := a
+ 	DLGobj.setCaption("currRunR_com",to_str(a))
+ 	-- end of penalty_method
+ 
+ end -- while find "open"
+ 
+ --JobTab.setCursor(col,1); if JobTab.find(`[col,RangeS]..`[col,RangeE], "open") then debug;end
+ 
+ -- all evaluation for the current generation are scheduled
+ JobTab.setCursor(col,1)
+ if JobTab.find({col,RangeS}..{col,RangeE}, "process")
+ 	result := -1 -- wait for the results of other simulation machines
+ else --  "open" and "process" are not found
+ 	--print "All individuals of generation ",~.currGeneration," are evaluated.";
+ 	for a := StatTab.StartCurrGen to StatTab.yDim
+ 		b := StatTab[7,a]
+ 		if b < a
+ 			StatTab.insertList(1,a, StatTab.copy({1,b}..{6,b}))
+ 			--_Intermed_ IntermedRes.insertList(1,a, IntermedRes.copy({1,b}..{*,b}))
+ 			if a <= GenSize then b := a; else b := a - (2 * nGen - 3) * GenSize;end
+ 			individuals[2,b] := StatTab[1,a]
+ 		end
+ 	next
+ 
+ 	if GaStopFlag
+ 		Dialog.GAWizard.setCaption("start_but",rootfolder.Localization.getText(2)) -- Start/Starten
+ 
+ 		currIcon := "Default"
+ 		if _3D.exists
+ 			_3D.VisibleGraphicGroups := makeArray("default")
+ 		end
+ 
+ 		GaStopFlag := false
+ 		optimRuns  := false
+ 		-- The optimization is interrupted and the generation is evaluated.
+ 		if bestIndividuals.yDim > 0
+ 			individual := bestIndividuals[0,1].copy
+ 			setUserParam
+ 			if strLen(userConfigMethod) > 0
+ 				str_to_method(to_str(~,".",UserConfigMethod)).execute(ExpNo)
+ 			end
+ 		end
+ 	end
+ 
+ 	if optimRuns  -- is set by this method and termination_control
+ 		result := -1
+ 		generationEvaluated -- user defined method
+ 		--individuals.opendialog;
+ 		GaOptimization.evolve -- next generation for a distrubuted sim, variable 'individuals' is reference
+ 		individual.delete
+ 	else
+ 		result := 0-- remote process is terminated
+ 	end
+ end -- end of evaluation of the current generation
+RandomSeed: 394
+UUID: a2c8cb5a-dea8-49ec-a56d-140f8d35b2db
+$CustomAttributes:
+-
+ Name: infoBoxOpen
+ DataType: boolean
+ Value: false

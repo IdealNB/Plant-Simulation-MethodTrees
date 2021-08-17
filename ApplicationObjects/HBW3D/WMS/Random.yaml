@@ -1,0 +1,76 @@
+InternalClassType: Method
+Coordinate3D: [-10,7,0]
+Name: Random
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Method Tasks:
+ // random search for a free place in the warehouse
+ //--------------------------------------------------------------------------------
+ 
+ param byRef Racklane: object, byRef Side: string, byRef Column, Row: integer
+ 
+ var RacksWithSpace:object[]
+ var NumFreeSpaces:integer[]
+ var LeftRack, RightRack :object
+ var rack: object
+ var emptySpaces:integer
+ 
+ // Iterate through all registered racklanes and get the amount of free space they have.
+ for var i := 1 to RackLanes.Dim
+ 	Racklane := RackLanes[i]
+ 	LeftRack := Racklane.RackLeft
+ 	emptySpaces := LeftRack.capacity - Racklane.OccupancyLeft.sum
+ 	if emptySpaces > 0
+ 		RacksWithSpace.append(LeftRack)
+ 		NumFreeSpaces.append(emptySpaces)
+ 	end
+ 	Racklane := RackLanes[i]
+ 	RightRack := Racklane.RackRight
+ 	emptySpaces := RightRack.capacity - Racklane.OccupancyRight.sum
+ 	if emptySpaces > 0
+ 		RacksWithSpace.append(RightRack)
+ 		NumFreeSpaces.append(emptySpaces)
+ 	end
+ next
+ 
+ if RacksWithSpace.dim = 0
+ 	Racklane := void
+ 	return
+ end
+ 
+ // Randomly choose a rack that has empty spaces left
+ var RacklaneIndex: integer := round(z_uniform(1, RacksWithSpace.dim))
+ Rack := RacksWithSpace[RacklaneIndex]
+ 
+ // Chose which of those empty spaces should be occupied
+ var place: integer := round(z_uniform(1, NumFreeSpaces[RacklaneIndex]))
+ 
+ var RackOccupancyTable : object
+ if Rack.name = "RackLeft"
+ 	RackOccupancyTable:= Rack.~.OccupancyLeft
+ 	Side:= "left"
+ else
+ 	RackOccupancyTable:= Rack.~.OccupancyRight
+ 	Side := "right"
+ end
+ 
+ Racklane:= Rack.~
+ 
+ RackOccupancyTable.setCursor(1,1)
+ var found:boolean
+ for var i := 1 to place
+ 	found:= RackOccupancyTable.find(0)
+ 	if not found
+ 		debug -- something went wrong since no free space can be found in this racklane
+ 	end
+ next
+ 
+ 
+ Column := RackOccupancyTable.cursorX
+ 
+ Row := RackOccupancyTable.cursorY
+RandomSeed: 2244
+UUID: 5ed3166d-e0ad-4d9f-88e3-a620707ec496
+3D:
+ Mirror: [false,false,false]
+ Rotation: [0,0,0,-1]

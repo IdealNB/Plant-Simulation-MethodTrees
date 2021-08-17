@@ -1,0 +1,124 @@
+InternalClassType: Method
+Coordinate3D: [15,-29,0]
+Name: connectProcessPERT_Layout
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- connect all layout resources in the model according to process pert information
+ -- PERT connected processes are not necessarily the same level than resource connected processes
+ -- the method looks up and down the levels to find connections
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: ConnectObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 22.01.2019
+ _________________________________________________________________________________
+ 	History: 
+ 20.08.2019	RBA	use InContextID to connect objects
+ 				only connect open ends in substructures to the first element of the next substructure
+ 26.09.2019	RBA	only search if InContextID /= ""
+ _________________________________________________________________________________*/
+ 
+ var predecs : string[]
+ var target, start : object[]
+ var target_ICID, target_UID, target_ID, start_UID, start_ID : string
+ var row, p1Level, p2Level : integer
+ 
+ -- connect all processes 
+ for var i := 1 to Created_Objects.yDim  -- loop through all created objects in the frame
+ 	var obj : object := Created_Objects["Link", i]
+ 	target_ID := Created_Objects["ItemID", i]
+ 	target_UID := Created_Objects["UniqueID", i]
+ 	target_ICID := Created_Objects["InContextID", i] -- InContext ID
+ 	
+ 	if target_ICID /= "" -- if InContextID exists
+ 		
+ 		for var k := 1 to Process_Data.yDim  -- look in all processes
+ 
+ 			if Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1) -- search for the object
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, target_ICID )  -- find resource ID in the sublist
+ 					
+ 					p1Level := Process_Data["Level", k]
+ 					for var k1 := k downto 1 -- look for actual and higher levels if necessary
+ 						
+ 						if k1 = k OR Process_Data["Level", k1] < p1Level -- look at actual line or upper lines if level is higher
+ 							-- TODO works only for entries in the line directly above
+ 							-- should do for all open entries (no predecessor) in a substructure
+ 						
+ 							if Process_Data["Predecessor", k1] /= "" -- precdecessors exist
+ 								predecs := SplitString(Process_Data["Predecessor", k1], " ") -- get all predecesssor entries in an array
+ 								
+ 								target.append(Created_Objects["Link", i]) -- get generated object to connect as target
+ 		
+ 								for var j := 1 to predecs.dim -- loop over all predecessors
+ 									Process_Data.CursorY := 1
+ 									Process_Data.find({"ID", *}, predecs[j])
+ 									row := Process_Data.CursorY
+ 									
+ 									p2Level := Process_Data["Level", row]
+ 									for var k2 := row to Process_Data.yDim -- look for actual and lower levels if necessary
+ 										
+ 										if k2 = row OR Process_Data["Level", k2] > p2Level -- look at actual line or next lines if level is lower
+ 										
+ 											if Process_Data["UsedResources", k2] /= VOID AND (k2 = row OR Process_Data["Successor", k2] = "") -- for lower levels only use open ends in substructures
+ 										
+ 												for var l := 1 to Process_Data["UsedResources", k2].yDim -- loop over all UsedResources
+ 													start_ID := Process_Data["UsedResources", k2]["InContextID", l] -- get the InContextIDs
+ 													Created_Objects.CursorY := 1
+ 													if Created_Objects.find({"InContextID", *}, start_ID) -- get generated object to connect as start
+ 														start.append(Created_Objects["Link", Created_Objects.cursorY])
+ 													end
+ 											
+ 												next -- loop over all UsedResources
+ 
+ 											end
+ 																				
+ 										else 
+ 											exitLoop -- do not look at higher levels
+ 										end
+ 									
+ 									next -- look for actual and lower levels if necessary
+ 										
+ 								next -- loop over all predecessors
+ 									
+ 		
+ 							end -- precdecessors exist
+ 							
+ 						else 
+ 							exitLoop -- do not look at lower levels				
+ 						end
+ 						
+ 					next -- look for actual and higher levels if necessary
+ 					
+ 				end
+ 					
+ 			end
+ 				
+ 		next
+ 			
+ 
+ 	
+ 		if start.dim > 0 AND target.dim > 0 -- if objects for the connections are in the model
+ 			ConnectObjects(start, target) -- connect them
+ 		end
+ 	
+ 		start.delete
+ 		target.delete
+ 		predecs.delete
+ 
+ 	end
+ 	
+ next
+RandomSeed: 1073814180
+UUID: 3f9efdb3-b913-479d-b401-f82329307dc3
+3D:
+ Mirror: [false,false,false]

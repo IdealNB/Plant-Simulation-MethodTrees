@@ -1,0 +1,44 @@
+InternalClassType: Method
+Coordinate3D: [4,8,0]
+Name: CreatePart
+Origin: 5ecbf44d-47b5-4158-80d1-4b021e226361
+Program: |+1
+ // Creates an instance of PartToCreate in the specified column and row of the racklane.
+ // Note: If this is a container and you place parts on this container then call WMS.addProduct to
+ // add the correct amount of parts in the inventory.
+ 
+ param PartToCreate:Object, left:boolean, Column:integer, Row:integer -> object
+ 
+ // Create part and bookmark place as reserved
+ var OccupancyTable: object
+ var rack: object
+ 
+ if left
+ 	OccupancyTable := OccupancyLeft
+ 	rack:= RackLeft
+ else
+ 	OccupancyTable := OccupancyRight
+ 	rack:= RackRight
+ end
+ 
+ if OccupancyTable[Column, Row] = 0 then
+ 	OccupancyTable[Column, Row] := 1
+ 	// Decrease number of available places in all registered racklanes
+ 	WMS.NumFreePlaces -= 1
+ 	result := PartToCreate.create(rack[Column, Row])
+ else
+ 	debug // Box is not free
+ end
+ 
+ WMS.setAttributes(result)
+ 
+ // Enter the data into database
+ var side:string := when left then "left" else "right"
+ 
+ // remember the products in table Inventory
+ WMS.addPallet(result, side, column, row, result.HBW_ProductName, 1)
+ 
+ // remember the number of products at stock
+ WMS.addProduct(result.name, 1)
+RandomSeed: 1073755402
+UUID: 0ae3d8a0-f3c0-476e-a47d-1cfcb3266dbe

@@ -1,0 +1,37 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: ResourcePool
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: c4ac15db-5f98-41d9-a994-da1c2be2e395
+3D:
+ BackgroundColor: -1
+$Nodes:
+- 2d244c8f-c8b6-4b11-8b34-003ffd1b2f61
+- 576226a9-9a12-48e0-ba55-fe88f829280b
+- 0335319c-1567-4a18-96d8-3eec5ed914ed
+- 774a801d-62fe-4ff4-b811-4617054d3c6d
+- b0daf986-5e3e-4530-8b52-66cb2916face
+- 89019b59-7442-405f-bdc2-96d6ad0d3f91
+- 7dd6a63c-eaf9-4ce7-96e7-4253d9329e25
+- cb8578cc-e240-4bec-9cbe-c78eb90939a2
+- d77755d2-3bc5-441b-82cb-92c780e5c590
+- 5dbcb0c9-ffa2-4d06-bbc2-54143540edd5
+- f7d51f82-ec65-485d-af1b-a6a0f3a1117d
+- 0b318e5b-39da-4003-8dd0-134e8191e897
+- 2833479b-b65d-45ee-b8bd-382ccf1684fd
+- a95678c0-736a-4d01-bcb9-54733a870d7e
+- 3040bd47-8076-4340-a637-9366b99e05cc
+- 635db48f-81c0-4a2b-92b0-b564e1088112
+- b24f2fa5-92b6-46ea-9540-e570df989c63
+- 2e8afa86-f8ba-4df5-bcdb-25fb9ec825c6
+- ca9671e9-30cb-45f1-813b-6246ebdb0f34
+- f8a30257-c03b-4612-bab0-d7a1c0b107f2
+- bdc94812-aaf6-4084-974e-cdefcee71a1d
+- 5701127e-ce7b-46a2-8457-14f16dfc762c
+- eda6f595-08d3-4c68-9963-1762cedd3bdd
+- 823f2962-6443-452d-b50f-ba1a55711c34
+- f793f192-4583-4493-99da-8662b5d12fdd

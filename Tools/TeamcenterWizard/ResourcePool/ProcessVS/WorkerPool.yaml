@@ -1,0 +1,11 @@
+InternalClassType: WorkerPool
+Coordinate3D: [1,5,0]
+Origin: 816dbf44-a67d-4e35-ad83-16921dda60fd
+RandomSeed: 1
+UUID: 2d5f73b4-1cf7-4b85-b43a-f35b4794102f
+WorkersTravelMode: "Beam to workplace"
+3D:
+ ExcludeFromShowContentOfLocation: true
+InheritEntranceExitLockedOnReset: false
+$CreationTable:
+- [9a58c1b1-44ed-401d-ab40-b4b69b6922f7,1,~,-1,-1,0]

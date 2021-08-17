@@ -1,0 +1,167 @@
+InternalClassType: Method
+Coordinate3D: [-15,-17,0]
+Name: write_Process_Data
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- write Process Data to the generated resources and add blackbox resources
+ 
+  To add user defined / customized code here please open this method in the Public folder of the TeamcenterWizard library.
+  Switch off inheritance and add your code. This ensures that your changes are not overwritten when updating of the library.
+ _________________________________________________________________________________
+ Parameters	: homeframe (TeamcenterWizard)
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate, TC_Import.callback Process data update
+ Calls		: fill_OpList, check_CreatedObjects
+ 
+ Author		: Ralph Bauknecht
+ Date		: 04.09.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 01.07.2019	RBA		add check_CreatedObjects
+ 17.09.2019	RBA		moved a derivation of this method to Public\\TcW_Methods frame and made this the active copy
+ 26.09.2019	RBA		use InContextID instead of ItemID
+ 28.04.2020	RBA		add separate method with errorhandler for proctime
+ 					add check for NumWorker
+ 19.10.2020	RBA		add prodList to collect products for assembly setup
+ 					add separate call for AssemblyStation
+ 03.03.2021	RBA		fix issues with the Assembly data; use process data if no children data exists
+ 12.04.2021	RBA		check if ProcTime and getProcTime exist
+ 05.05.2021	RBA		removed customizable methods in Public
+ 14.06.2021	RBA		change opList to support unlimited entries and variant data
+ _________________________________________________________________________________*/
+ 
+ param homeframe : object -- called from TeamcenterWizard
+ -- homeframe is the TeamcenterWizard frame holding all tables, methods and settings
+ 
+ -- opList : description, procTime, used parts, variants, ...
+ var opList : table
+ opList.create
+ opList.setDataType(2, "time")
+ opList.ColumnIndex := true
+ opList.writeRow( 1, 0, "Operation", "Time", "Parts", "Variant") -- set fixed column header
+ -- prodList : part ID, part name, quantity
+ var prodList : table[string, string, integer]
+ prodList.create
+ 
+ homeframe.check_CreatedObjects -- clean up Created_Objects table
+ 
+ var Created_Objects : object := homeframe.Created_Objects
+ var Process_Data : object := homeframe.Process_Data
+ 
+ for var i := 1 to Created_Objects.yDim  -- loop through all created objects in the frame
+ 	var obj : object := Created_Objects["Link", i]
+ 	var objICID : string := Created_Objects["InContextID", i]
+ 	
+ 	-- BASIC for material flow objects like Station ...		
+ 	if (obj.getAttrNo("ProcTime") > 0 OR NOT obj.isNameUnique("ProcTime")) -- objects that have a process time attribute (internal or user defined) or a variable with that name
+ 		
+ 		for var k := 1 to Process_Data.yDim  -- look in all processes
+ 
+ 			if Process_Data["Time", k] > 0 AND Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1) -- search for the object
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID )  -- find resource ID in the sublist
+ 					var pTime : time := Process_Data["Time", k] -- set time
+ 					-- separate method with errorhandler:
+ 					var ret : string := homeframe.write_ProcessTime(obj, pTime)
+ 					if ret /= "OK"
+ 						print to_str(obj) + ": " + ret -- write error message to console
+ 					end
+ 				end
+ 					
+ 			end
+ 				
+ 		next
+ 			
+ 	end --if (obj.getAttrNo("ProcTime") > 0 OR NOT obj.isNameUnique("ProcTime"))
+ 
+ 	
+ 	-- EXAMPLE for user defined objects with tables and attributes - uses variant and part information in Product_Data if available
+ 	if existsObject(to_str(obj) + ".OperationTable") OR obj.hasAttribute("OperationTable") -- if the object has a table / user defined attribute for (sub-) operations 
+ 			
+ 		for var k := 1 to Process_Data.yDim  -- look in all processes
+ 
+ 			if Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1) -- search for the object
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID )  -- find resource ID in the sublist
+ 					var children : string := Process_Data["ChildrenIDs", k] -- get all children of the process
+ 						
+ 					if children /= ""  -- process has children (operations with the time setting)
+ 						opList.delete -- delete content
+ 						opList.delete({5,0}..{*,0}) -- delete variant names
+ 						prodList.delete
+ 						homeframe.fill_OpList(splitString(children, " "), opList, prodList) -- get all operations/subprocesses of the process with times, parts and variant data
+ 					end
+ 					-- transfer data to Station object in Model
+ 					if opList.yDim = 0 -- if no operation data is available
+ 						homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList) -- get the process itself with time, parts and variant data
+ 					end
+ 					obj.OperationTable.delete
+ 					obj.OperationTable.insertList(1, 0, opList.copy({1,0}..{*,*}))
+ 				
+ 					if existsObject(to_str(obj) + ".ProcTime") OR obj.hasAttribute("ProcTime") -- if the object has the attribute or variable
+ 						obj.ProcTime.Type := "Formula" -- set use formula
+ 						if obj.internalClassName = "Network" AND existsObject(to_str(obj) + ".ProcTime")
+ 							obj.ProcTime.Formula := "getProcTime" -- set formula method
+ 						elseif obj.hasAttribute("getProcTime")
+ 							obj.ProcTime.Formula := "self.getProcTime" -- set formula method as attribute
+ 						end
+ 					end
+ 					
+ 					if obj.InternalClassName = "NwAssembler" -- AssemblyStation
+ 						if prodList.yDim = 0 -- if operations or subprocesses delivered no data
+ 							homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList) -- get the process itself with time, parts and variant data
+ 						end
+ 						homeframe.write_AssemblyList(obj, prodList) -- write AssemblyList
+ 					end
+ 								
+ 					if existsObject(to_str(obj) + ".NumWorker") OR obj.hasAttribute("NumWorker") -- if the object has a table / user defined attribute for NumWorker
+ 						obj.NumWorker := Process_Data["Num_Workers", k] -- set number of assigned workers
+ 					end
+ 						
+ 				else
+ 					print "UsedResource >>", Created_Objects["Name", i], "<< not found in table ", Process_Data, "!" --else the process was not found
+ 				end
+ 
+ 			end
+ 				
+ 		next
+ 	
+ 	elseif obj.InternalClassName = "NwAssembler" -- AssemblyStation w/o OperationTable, set AssemblyList only
+ 		
+ 		for var k := 1 to Process_Data.yDim  -- look in all processes
+ 
+ 			if Process_Data["UsedResources", k] /= VOID 
+ 				Process_Data["UsedResources", k].setCursor(1,1) -- search for the object
+ 			
+ 				if Process_Data["UsedResources", k].find({"InContextID", 1}..{"InContextID", *}, objICID )  -- find resource ID in the sublist
+ 					children := Process_Data["ChildrenIDs", k] -- get all children of the process
+ 					opList.delete -- delete content
+ 					opList.delete({5,0}..{*,0}) -- delete variant names
+ 					prodList.delete	
+ 					if children /= ""  -- process has children (operations with the time setting)
+ 						homeframe.fill_OpList(splitString(children, " "), opList, prodList) -- get all operations/subprocesses with time, parts and variant data
+ 					end
+ 					if prodList.yDim = 0 -- if operations or subprocesses deliver no data
+ 						homeframe.fill_OpList(splitString(Process_Data["ID", k], " "), opList, prodList) -- get the process itself with time, parts and variant data
+ 					end
+ 					homeframe.write_AssemblyList(obj, prodList) -- write AssemblyList
+ 
+ 				end
+ 				
+ 			end
+ 			
+ 		next
+ 	
+ 	end --if existsObject(to_str(obj) + ".OperationTable") OR obj.hasAttribute("OperationTable")
+ 			
+ next
+RandomSeed: 1073814194
+UUID: 321d5b55-0667-4ab0-8fc1-775eb32a2e9e

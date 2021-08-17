@@ -1,0 +1,140 @@
+InternalClassType: Method
+Coordinate3D: [2,-2,0]
+CreateIn3D: true
+Name: RecomputeLayout
+Origin: ff6edb54-f219-4374-9714-c8547303ab3d
+Program: |+1
+ Track.Length         := Length_
+ Track.Width          := Width
+ 
+ var TopBarHeight:real := LiftHeight
+ 
+ var decoGraphicGroup := _3D.getGraphic("deco")
+ 
+ var extConf:table := Track._3D.ExtConfiguration
+ var matTable:table := extConf[7,2]
+ 
+ -- Reset position, scale and material (frame color) for all relevant graphics --
+ 
+ var graphic := decoGraphicGroup.graphic("Post1")
+ graphic.Position              := [PostDiameter/2, Width/2+PostDiameter/2,0]
+ graphic.Scale                 := [PostDiameter,PostDiameter,TopBarHeight]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("Post2")
+ graphic.Position              := [Length_-PostDiameter/2, Width/2+PostDiameter/2,0]
+ graphic.Scale                 := [PostDiameter,PostDiameter,TopBarHeight]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("Post3")
+ graphic.Position              := [PostDiameter/2, -Width/2-PostDiameter/2,0]
+ graphic.Scale                 := [PostDiameter,PostDiameter,TopBarHeight]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("Post4")
+ graphic.Position              := [Length_-PostDiameter/2, -Width/2-PostDiameter/2,0]
+ graphic.Scale                 := [PostDiameter,PostDiameter,TopBarHeight]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("TopBar1")
+ graphic.Position              := [Length_/2, Width/2+PostDiameter/2,TopBarHeight]
+ graphic.Scale                 := [Length_,PostDiameter,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("TopBar2")
+ graphic.Position              := [Length_-PostDiameter/2, 0,TopBarHeight]
+ graphic.Scale                 := [PostDiameter,Width,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("TopBar3")
+ graphic.Position              := [Length_/2, -Width/2-PostDiameter/2,TopBarHeight]
+ graphic.Scale                 := [Length_, PostDiameter,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("TopBar4")
+ graphic.Position              := [PostDiameter/2, 0,TopBarHeight]
+ graphic.Scale                 := [PostDiameter,Width,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("BottomBar1")
+ graphic.Position              := [Length_/2, Width/2+PostDiameter/2,0]
+ graphic.Scale                 := [Length_,PostDiameter,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("BottomBar3")
+ graphic.Position              := [Length_/2, -Width/2-PostDiameter/2,0]
+ graphic.Scale                 := [Length_, PostDiameter,PostDiameter]
+ graphic.MaterialActive        := true
+ graphic.MaterialDiffuseColor  := matTable[1,1]
+ graphic.MaterialAmbientColor  := matTable[2,1]
+ graphic.MaterialSpecularColor := matTable[3,1]
+ graphic.MaterialEmissiveColor := matTable[4,1]
+ graphic.MaterialTransparency  := matTable[5,1]
+ graphic.MaterialShininess     := matTable[6,1]
+ 
+ graphic := decoGraphicGroup.graphic("Pane1")
+ graphic.Position := [Length_/2, Width/2+PostDiameter/2,0]
+ graphic.Scale    := [Length_, 1, TopBarHeight]
+ 
+ graphic := decoGraphicGroup.graphic("Pane2")
+ graphic.Position := [Length_/2, -Width/2-PostDiameter/2,0]
+ graphic.Scale    := [Length_, 1, TopBarHeight]
+ 
+ // Set position of states
+ _3D.StatesPosition := [PostDiameter/2, 0, TopBarHeight]
+RandomSeed: 3933
+UUID: ad25ca5e-9495-460f-a719-01bf6a7cf63c

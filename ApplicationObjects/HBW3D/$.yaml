@@ -1,0 +1,31 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: HBW3D
+PermitDeleteCtrl:
+RenameCtrl:
+RootFolder: true
+UUID: f8c55ce5-6bbd-47c7-b117-fff8c4651fc5
+3D:
+ BackgroundColor: -1
+Password:
+LibInfo:
+ Name: "HBW"
+ Version: "16.0.5"
+ Description: |+1
+  This example library is a demonstrator which exemplifies how to model a high bay warehouse.\r
+  \r
+
+ Requires3D: true
+ ProhibitAccess: true
+$Nodes:
+- 14b3dc64-65d2-410a-8d2c-2d7e64bf02d7
+- 8a050776-98a1-4a6c-b2d6-8acb938dc2b0
+- a30bd1ba-48ef-40f4-8600-1735358a365e
+- ec079ce1-c1d6-4f1d-8894-e8cd2359ba92
+- 6d516a96-ead4-45b7-bae2-1d55ab3b8ff2
+- da9841aa-a16c-431e-9958-d5a064c734cb
+- d68a1dac-9a30-4557-bab8-f4d1480786b8
+- efece425-a6a6-4b36-b3bf-d29277c99357

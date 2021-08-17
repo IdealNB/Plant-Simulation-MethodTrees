@@ -1,0 +1,123 @@
+InternalClassType: Method
+Coordinate3D: [-7.5999999999999988,-2.4,0]
+Name: AnalyzeMethod
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ param tree:object,node:string, methodNode:object
+ 
+ --var del := strChr(10)
+ --var subParts := splitString(node.program, del)
+ 
+ var nodeObj:any := str_to_method(node)
+ var p := nodeObj.program
+ var noComments:string
+ 
+ var f1, f2:integer
+ var t0,t:string
+ 
+ --remove all section comments
+ while strLPos("/*",p) /= 0
+ 	f1 := strLPos("/*", p)
+ 	f2 := strLPos("*/", p)
+ 	if  f2 = 0
+ 		t := "" --strOmit(c,f1-1,f2+2)
+ 	else
+ 		t := strOmit(p,f1,f2-f1+2)
+ 	end
+ 	p := t
+ end
+ --remove all --
+ while strLPos("--",p) /= 0
+ 	f1 := strLPos("--", p)
+ 	t0 := strOmit(p, 0, f1)
+ 	f2 := strLPos(strChr(10),t0)
+ 	if f2 = 0
+ 		t := strOmit(p,f1,strLen(p)-f1+1)
+ 	else
+ 		f2 := f1+f2
+ 		t := strOmit(p,f1-1,f2-f1)
+ 	end
+ 	p := t
+ end
+ --remove all //
+ while strLPos("//",p) /= 0
+ 	f1 := strLPos("//", p)
+ 	t0 := strOmit(p, 0, f1)
+ 	f2 := strLPos(strChr(10),t0)
+ 	if f2 = 0
+ 		t := strOmit(p,f1,strLen(p)-f1+1)
+ 	else
+ 		f2 := f1+f2
+ 		t := strOmit(p,f1-1,f2-f1)
+ 	end
+ 	p := t
+ end
+ 
+ methodNode.AnalyzedProgram.cont := p
+ 
+ var del := strChr(10)
+ del += strChr(9)
+ del += "(),;[]{}:="
+ var subParts := splitString(p, del)
+ 
+ for var a := 1 to subParts.dim
+ 
+ 	if strLPos("\\"", subParts[a]) /= 0 --if a string, skip
+ 		continue
+ 	end
+ 
+ 	var path := to_str(nodeObj.~) + "." + subParts[a]
+ 	path := regex_replace(path, " ", "") --will this always fix errors??
+ 
+ 	var isValidObject := existsObject(path)
+ 	var isValidMethod := existsMethod(path)
+ 	var node2:=path
+ 	var node2Obj:any
+ 	forget node2Obj
+ 
+ 	if isValidObject AND NOT isValidMethod
+ 		--is an object, but not a method
+ 		if not GenerateObjects.value
+ 			--skip this
+ 			continue
+ 		end
+ 
+ 
+ 		node2Obj := str_to_obj(node2)
+ 		var createdNode:object
+ 
+ 		switch node2Obj.internalClassType
+ 		case "DataTable"
+ 			if methodNode.numSucc = 0
+ 				createdNode := addNode(tree,methodNode,node, node2, "DataTable")
+ 			else
+ 				for var b := 1 to methodNode.numSucc
+ 					if str_to_obj(methodNode.succ(b).location.nodePath) = node2Obj
+ 						--skip adding this, so we only add 1 table node instance per parent node
+ 						exitloop
+ 					end
+ 					if b = methodNode.numsucc
+ 						createdNode := addNode(tree,methodNode,node,node2, "DataTable")
+ 					end
+ 				next
+ 			end
+ 		else
+ 			--print "INFO; in " + to_str(nodeObj) + ", skipped adding node: " + node2
+ 			addNode(tree,methodNode,node,node2,node2Obj.internalClassType)
+ 		end
+ 	elseif isValidMethod
+ 		--is a method (object or internal)
+ 		node2Obj := str_to_Method(node2)
+ 		if node = node2--nodeObj = node2Obj
+ 			--recursion! Will never finish...
+ 			createdNode := addNode(tree,methodNode, node, node2, "Recursion")
+ 		else
+ 			createdNode := addNode(tree,methodNode, node, node2, "MethodNode")
+ 			analyzeMethod(tree, node2, createdNode)
+ 		end
+ 	else
+ 		--is not a method and not a object, junk?
+ 	end
+ next
+RandomSeed: 117
+UUID: f9598567-3c80-4832-86fa-e820dee26746

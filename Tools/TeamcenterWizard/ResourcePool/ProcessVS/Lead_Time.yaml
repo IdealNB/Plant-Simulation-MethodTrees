@@ -1,0 +1,12 @@
+InternalClassType: Variable
+Color: 8421504
+Coordinate3D: [-2.8,-3,0]
+DataType: time
+DecimalPlaces: 0
+HasInitValue: false
+Name: Lead_Time
+Origin: c8e805c5-ad5f-40d7-a614-6a37375fec55
+UUID: 537b88b6-8561-41b6-b1cd-0f90603a21ba
+3D:
+ ExcludeFromShowContentOfLocation: false
+Value: 0

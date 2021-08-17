@@ -1,0 +1,118 @@
+InternalClassType: DataTable
+CloseCtrl: "RootFolder.Internal.Tools.closeTab"
+Coordinate3D: [26.3,-12,0]
+Label: "Fitness"
+Name: Fitness
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+PlausibilityCtrl: "self.prepare"
+UUID: 1a2dfcd2-dd83-4c04-bdd3-7f5af094145b
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+-
+ Name: ResTab
+ DataType: table
+ Value:
+  Comment: ~
+  CommonFormat: false
+  ListFormat:
+   ColumnIndex: true
+   ColumnWidth: 20
+   DataType: string
+   MaxXDim: 3
+   ShowDataType: true
+   ColumnFormat:
+   -
+    Index: 2
+    DataType: real
+    FormatString: "-15.5"
+    Width: 10
+   RowFormat:
+   -
+    Index: 0
+    Hidden: false
+  ColumnIndex: [string,4,~,"Target value","Weighting","Value"]
+  Columns:
+-
+ Name: regResults
+ DataType: method
+ RandomSeed: 410
+ Value: |+1
+  -- PS 7.6.3 Aug 2006
+  -- called by: Show Best (not used)
+  param eMPlant:any
+  
+  var j:integer;var fitnessTab:object;var tab:table;var stmt,p:string
+  
+  fitnessTab := Fitness
+  tab := self.~.ResTab
+  
+  if eMPlant = void  -- non-distrubuted simulation
+  	for j := 1 to fitnessTab.ydim 
+  		stmt := to_str("-> any return ",Fitness[1,j])
+  		tab[3,j] := to_str(executeSilent(stmt))
+  		-- get format, i.e. time (for the HTML report)
+  	next
+  else -- distrubuted simulation
+  	p := to_str(root) -- print p;
+  	for j := 1 to fitnessTab.ydim 
+  		stmt := to_str("-> any return ",p,".",strOmit(Fitness[1,j],0,6))
+  		tab[3,j] := to_str(eMPlant.executeSimTalk(stmt))
+  	next
+  end
+-
+ Name: prepare
+ DataType: method
+ RandomSeed: 409
+ Value: |+1
+  -- Fitness calculation by a weighted sum
+  -- called by: Apply_in the dialog, plausibility of table 'Fitness'
+  
+  var fitTab:object := Fitness
+  for var j:=1 to fitTab.yDim 
+  	var str:string := fitTab[1,j]
+  	var s:string  := insRootStr(str,to_str(rootframe))
+  	fitTab[1,j] := s
+  	if fitTab[2,j] = void 
+  		fitTab[2,j] := 1 -- default weight
+  	end
+  	fitTab.refillDialog
+  	
+  	if testAttributString(s) 
+  		switch recogDataType(str)
+  		case "Not allowed","string","boolean" 
+  			--"Not allowed data type in row:"
+  			messageBox(to_str(rootfolder.Localization.getText(158)," ",j,strChr(10),s),1,1) -- error
+  		end
+  	else
+  		messageBox(to_str(Rootfolder.Localization.getText(157)," ",j,strChr(10),s),1,1) -- Error in row:
+  	end
+  next
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 2
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   Width: 36
+  -
+   Index: 2
+   DataType: real
+   FormatString: "-15.5"
+   Width: 11
+  RowFormat:
+  -
+   Index: 0
+   FontSize: 1
+   FontColor: 0xa00000
+   Color: 0xc0c0c0
+   Hidden: false
+ ColumnIndex: [string,3,~,"Target value","Weighting"]
+ Columns:

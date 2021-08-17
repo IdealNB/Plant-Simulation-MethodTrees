@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Comment: ""
+Coordinate3D: [-23,-7,0]
+DataType: boolean
+HasInitValue: false
+Name: ShowRackContent
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 9a2a3388-2a29-4bf1-ac61-6987aa23346c
+Value: true

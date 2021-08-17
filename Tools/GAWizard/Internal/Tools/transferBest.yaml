@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [23,-7,0]
+Name: transferBest
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- set the parameter of the best_individual in the model.
+ -- called by: userPopupMenu
+  
+ var APPObj:object := ?
+ if APPObj.bestIndividuals.yDim > 0 
+ 	APPObj.TransferBest(1)
+ 
+ else -- "No optimization were performed."
+ 	messageBox(rootfolder.Localization.getText(40),1,4) -- info
+ end
+RandomSeed: 486
+UUID: 74ba546c-976a-4e96-a0d0-566bc22594ce

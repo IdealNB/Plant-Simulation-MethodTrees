@@ -1,0 +1,51 @@
+InternalClassType: DataTable
+CloseCtrl: "self.OnClose"
+Coordinate3D: [0.5,-3.1999999999999993,0]
+Name: Input
+Origin: 522e0560-226d-4277-81eb-4fcc13f4529a
+PlausibilityCtrl: "InputChanged"
+UUID: 453706bf-fda3-464a-a4c6-6c3820026938
+$CustomAttributes:
+-
+ Name: OnClose
+ DataType: method
+ RandomSeed: 289
+ Value: |+1
+  param bb:boolean
+  
+  if Input.WarningGiven 
+  	Input.WarningGiven := false
+  else
+  	if NOT OK_input  -- Incorrect input value.
+  		messageBox(to_str(rootfolder.Localization.getText(223),"."),1,1)
+  	end
+  end
+-
+ Name: WarningGiven
+ DataType: boolean
+ Value: false
+$Data:
+ Comment: "Specify the input values for the simulation study."
+ ShowComment: true
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  MaxXDim: 2
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Hidden: false
+  -
+   Index: 1
+   Width: 40
+  -
+   Index: 2
+   Width: 37
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+ ColumnIndex: [string,3,~,"Input Values","Description"]
+ Columns:

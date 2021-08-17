@@ -1,0 +1,12 @@
+InternalClassType: Method
+Coordinate3D: [1,-39.55,0]
+Name: StartCM
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- start an Experiment run
+ -- called by: context menu
+ if (State = "stopped") OR (State = "ready")  
+ 	Start
+ end
+RandomSeed: 182
+UUID: 65d1ab82-8965-4f2c-a99d-ad21a2b65470

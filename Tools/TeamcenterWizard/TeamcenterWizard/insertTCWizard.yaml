@@ -1,0 +1,42 @@
+InternalClassType: Method
+Coordinate3D: [2,-11,0]
+Name: insertTCWizard
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ --/*_______________________________________________________________________________
+ --
+ --Method Tasks:
+ -- check if another TeamcenterWizard is already present in the model
+ -- only 1 TeamcenterWizard is allowed in a model
+ --_________________________________________________________________________________
+ --Parameters	: 
+ --			  
+ --ReturnValues: 
+ --
+ --Called By	: Constructor of TCWizard
+ --Calls		: 
+ --
+ --Author	: Ralph Bauknecht
+ --Date		: 05.02.2019
+ --_________________________________________________________________________________
+ --	History: 
+ -- 10.05.2019	RBA		Object can be derived in the class library
+ --_________________________________________________________________________________*/
+ 
+ var tcw : object := self.~.class
+ 
+ if tcw /= VOID -- if TeamcenterWizard is not in the class library
+ 	
+ 	for var i := 1 to tcw.NumChildren
+ 		
+ 		if tcw.childNo(i).~ = ~ AND tcw.childNo(i) /= self.~
+ 			promptmessage("This model already contains a TeamcenterWizard.", "Only one TeamcenterWizard is allowed!")
+ 			RootFolder.BasicObjects.&deleteTCWizard.executeNewCallChain(self.~)
+ 			exitloop
+ 			
+ 		end	
+ 	next
+ 	
+ end
+RandomSeed: 1073814179
+UUID: 8b4d7666-488d-448a-9c3a-6797a8b7308f

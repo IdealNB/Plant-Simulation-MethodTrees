@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-7,0]
+DataType: length
+Name: PostDiameter
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+PlausibilityCtrl: "RecomputeLayout"
+UUID: 006d60dc-06f2-43fd-b203-799a2f741976
+Value: 0.1

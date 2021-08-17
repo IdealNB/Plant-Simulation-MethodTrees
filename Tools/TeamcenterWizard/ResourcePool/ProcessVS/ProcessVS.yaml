@@ -1,0 +1,24 @@
+InternalClassType: Station
+Coordinate3D: [0,0,0]
+Name: ProcessVS
+Origin: 5701127e-ce7b-46a2-8457-14f16dfc762c
+ProcTime: [Formula,"getProcTime"]
+RandomSeed: 1
+UUID: bb2228ff-d9e1-4e23-abf1-c529db7672e1
+$CustomAttributes:
+-
+ Name: getProcTime
+ $DataType: method
+ RandomSeed: 1073814242
+$Successors:
+-
+ $Succ: 158bd1dc-00dc-4297-8462-a80d7685da29
+ Name: Connector1
+ Origin: 568e0ea5-2c83-44ea-93ab-48ca7402b907
+ UUID: e83fcdb4-63e3-43c8-b730-f1dc77739021
+$Predecessors:
+- bd133b57-f5ca-477f-bc7c-cc937ee2ce28
+InheritEntranceExitLockedOnReset: false
+$ProcImp:
+ Active: true
+ BrokerPath: "Broker"

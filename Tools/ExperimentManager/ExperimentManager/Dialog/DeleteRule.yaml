@@ -1,0 +1,41 @@
+InternalClassType: Method
+Coordinate3D: [0,11,0]
+Name: DeleteRule
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ var rulesTab:object;var ruleNo,j,k:integer;var str:string;var lst:list[string];var ruleName:string
+ 
+ --- "Do you really want to delete this Rule?"
+ if messagebox(rootfolder.Localization.getText(219),48,12)=16
+ 
+ 	rulesTab := ~.Rules.Rules
+ 	ruleNo := @.getIndex("Ruleselect_Pop")
+ 	ruleName := rulesTab[2,ruleNo]
+ 	rulesTab[4,ruleNo].deleteObject
+ 	rulesTab[6,ruleNo].deleteObject
+ 	rulesTab.cutRow(ruleNo)
+ 	
+ 	lst.create
+ 	if rulesTab.yDim > 0 
+ 		
+ 		lst.insertList(1, rulesTab.copy({2,1}..{2,*}))
+ 		@.activeRuleName:= rulesTab[2,1]
+ 	else
+ 		lst.insert(1, rootfolder.Localization.getText(220))-- "No rule"
+ 	end
+ 	
+ 	@.setList("Ruleselect_Pop",lst)
+ 	@.setIndex("Ruleselect_Pop",1)
+ 	@.setCaption("Valid_Inp",rulesTab[9,1])
+ 	@.RuleSpecified
+ 	
+ 	for j:=1 to rulesTab.ydim 
+ 		k := 10 + 100*(j-1)
+ 		rulesTab[4,j].xPos := k
+ 		rulesTab[6,j].xPos := k
+ 	next
+ end
+ 
+
+RandomSeed: 326
+UUID: 3786a460-48d9-4e25-b519-00f88cd8fa51

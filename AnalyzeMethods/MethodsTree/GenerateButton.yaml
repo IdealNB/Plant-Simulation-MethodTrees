@@ -1,0 +1,16 @@
+InternalClassType: Button
+Control: "self.OnClicked"
+Coordinate3D: [-16,-4,0]
+Label: "Generate"
+Name: GenerateButton
+ObjectWidth: 6
+Origin: 55f1a49c-de84-461b-a427-13c57fac25ad
+UUID: 9cbbda88-f689-4510-be9d-6090673ec55a
+$CustomAttributes:
+-
+ Name: OnClicked
+ DataType: method
+ RandomSeed: 1073838455
+ Value: |+1
+  
+  CreateMethodTrees

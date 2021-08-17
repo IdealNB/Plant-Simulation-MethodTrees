@@ -1,0 +1,12 @@
+InternalClassType: DataList
+Coordinate3D: [0.5,8,0]
+Name: RackLanes
+Origin: 651a00b3-d42b-457b-b933-b0c3937fabbc
+UUID: da8da12c-506f-4b83-8481-2a4842c60c00
+$Data:
+ ListFormat:
+  ColumnWidth: 67
+  DataType: object
+  MaxXDim: 1
+  ShowDataType: true
+ Column:

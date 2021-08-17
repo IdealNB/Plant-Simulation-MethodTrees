@@ -1,0 +1,57 @@
+InternalClassType: Method
+Coordinate3D: [36.9,-5,0]
+Name: TreatError
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Prepare statistics for non-distributed simulation in case of an error
+ -- called back:
+ param localExp, localRun: integer, message:string
+ Recording.append(to_str("ERROR in Experiment ",localExp," Observation ",localRun," ", message))
+ Recording.localErrors += 1
+ --totalRuns := totalRuns + 1 -- number of observations
+ 
+ if DetailedResults[0,localExp].void
+ 	prepExp(localExp)
+ end
+ 
+ var j:integer
+ if UsingRules
+ 	j := totalRuns mod numRuns
+ 	if j=0 then j := numRuns end
+ 	Dialog.Dialog.setCaption("currObs", to_str(j))
+ else
+ 	Dialog.Dialog.setCaption("currObs", to_str(totalRuns))
+ end
+ 
+ var AttrStr: string
+ var colMean:integer
+ for j := 1 to Output.yDim
+ 	AttrStr := Output[1,j]
+ 	var str:string := ValueDescriptions.get(AttrStr)
+ 	colMean := DetailedResults.getColumnNo(str)
+ 	var ObservTab:table
+ 	if isOutTable(AttrStr)  -- OutputTable
+ 		ObservTab := DetailedResults[colMean + 4,localExp]
+ 		ObservTab[2, localRun] := to_str("Error",message)
+ 	else -- numerical output value
+ 		ObservTab := DetailedResults[colMean + 6,localExp] -- insert into subtable
+ 		ObservTab[1, localRun] := void
+ 		ObservTab[2, localRun] := to_str("Error",message)
+ 	end
+ next -- j: output value
+ 
+ if UsingRules
+ 	j:=1 -- output values for rules:
+ 	while strLen(Results4Rules[j,0])>0
+ 		AttrStr := Results4Rules[j,0]
+ 		Results4Rules[j,localRun] := 0
+ 		j += 1
+ 	end
+ end -- if UsingRules
+ 
+ Dialog.showProgressByIcon(localExp,localRun)
+ redraw
+ 
+ DetailedResults.refillDialog
+RandomSeed: 166
+UUID: 8c1389e8-a024-4d52-b33c-96a172fbb7ca

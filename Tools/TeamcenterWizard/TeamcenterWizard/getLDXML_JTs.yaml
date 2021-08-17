@@ -1,0 +1,87 @@
+InternalClassType: Method
+Coordinate3D: [12.0295,-17,0]
+Name: getLDXML_JTs
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- loads local Line Designer XML file into layout work table
+ _________________________________________________________________________________
+ Parameters	: none
+ 
+ ReturnValues: none
+ 
+ Called By	: Import
+ Calls		:
+ 
+ Author		: Ralph Bauknecht
+ Date		: 08.01.2021
+ _________________________________________________________________________________
+ 	History:
+ 	Date		Author	Description
+ 29.04.2021		RBA		use UniqueID as ID
+ _________________________________________________________________________________*/
+ -> boolean
+ 
+ result := FALSE
+ 
+ PlMXML_Import.delete({1,1}..{*,*}) -- just to make sure older imports are deleted
+ LD_XML_Import.delete({1,1}..{*,*})
+ LD_XML_Import.inheritFormat := TRUE -- reset Table
+ LD_XML_Import.inheritContents := TRUE -- reset Table
+ Layout_Data.delete({1,1}..{*,*})
+ Layout_Data.inheritFormat := TRUE -- reset Table
+ Layout_Data.inheritContents := TRUE -- reset Table
+ 
+ if strRcopy(path_XML, 4) = ".xml"
+ 	LD_XML_Import.readXMLFile(path_XML, TRUE)
+ 	if LD_XML_Import[1, 0] = "ItemId"
+ 		result := TRUE
+ 	else
+ 		promptMessage("You need to select .xml files exported from Line Designer.")
+ 		return
+ 	end
+ else
+ 	promptMessage("You need to select .xml files exported from Line Designer.")
+ 	return
+ end
+ 
+ -- adjust data to the needs of the TCWizard
+ LD_XML_Import.insertColumn(19) -- create the missing columns
+ LD_XML_Import.insertColumn(20) --
+ LD_XML_Import.insertColumn(25) --
+ LD_XML_Import.insertColumn(28) --
+ LD_XML_Import.setDataType(19, 20, 25, 28, "string") -- set data type of the new columns
+ LD_XML_Import.setDataType(8, "real") -- set data type of the columns
+ LD_XML_Import.setDataType(9, "time") -- set data type of the columns
+ LD_XML_Import.setDataType(10, "length") -- set data type of the columns
+ LD_XML_Import.setDataType(11, "speed") -- set data type of the columns
+ LD_XML_Import.setDataType(12, 15, "integer") -- set data type of the new columns
+ LD_XML_Import.setDataType(26, 27, 28, "table") -- set data type of the columns
+ LD_XML_Import[19, 0] := "Predecessor" -- set index of the new columns
+ LD_XML_Import[20, 0] := "Successor"
+ LD_XML_Import[25, 0] := "PERT_Pos"
+ LD_XML_Import[28, 0] := "SetupMatrix"
+ 
+ -- use the JT file names as TcItemID since the LD native does not create this attribute
+ for var i := 1 to LD_XML_Import.yDim
+ 	if LD_XML_Import[2, i] = "" -- if there is no TC originated entry
+ 		if LD_XML_Import[22, i] /= ""
+ 			LD_XML_Import[2, i] := omit(LD_XML_Import[22, i], strlen(LD_XML_Import[22, i])-2, 3)
+ 		else
+ 			LD_XML_Import[2, i] := LD_XML_Import[4, i] -- use UID if there is no JT file (should not be)
+ 		end
+ 	end
+ next
+ 
+ -- use UniqueID as ID since this is also imported as parent and children IDs
+ LD_XML_Import.copyRangeTo({"UniqueID",1}..{"UniqueID",*}, LD_XML_Import, "ID", 1) -- copy column
+ 
+ -- transfer data to Layout_Data table
+ LD_XML_Import.copyFormatTo(Layout_Data, TRUE) -- set the format of the layout table
+ LD_XML_Import.copyRangeTo({1,1}..{*,*}, Layout_Data, 1, 1) -- copy the data to the layout table
+RandomSeed: 1073814146
+UUID: 66f127d7-afce-4a09-8b97-8d593f59b13d
+3D:
+ Mirror: [false,false,false]

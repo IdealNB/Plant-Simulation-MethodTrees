@@ -1,0 +1,10 @@
+InternalClassType: Method
+Coordinate3D: [-5,13,0]
+Name: openDia
+Origin: a160734f-b0d4-4ec9-b932-0cee48d18dfb
+Program: |+1
+ -- needed for update from 7.6
+ var ApplObj:object := ~
+ ApplObj.userPopupMenu := Context
+RandomSeed: 66
+UUID: 0ca29724-5b94-4ee4-b908-51a967da5c8c

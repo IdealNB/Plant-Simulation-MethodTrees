@@ -1,0 +1,26 @@
+InternalClassType: Comment
+ChangePathCtrl:
+Color: 0
+ConstructorCtrl:
+Cont: |+1
+ {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 MS Shell Dlg;}}\r
+ \\viewkind4\\uc1\\pard\\f0\\fs17\\par\r
+ \\par\r
+ }\r
+
+Coordinate3D: [0,0,0]
+CreateIn3D: false
+DestructorCtrl:
+DragDropCtrl:
+Font: 1
+InitCtrl:
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: Comment
+OpenCtrl:
+PlausibilityCtrl:
+RenameCtrl:
+SaveAsRichedit: true
+Text: "Text"
+Transparent: false
+UUID: 478b0577-fd7e-4c5b-b877-1b7c2befb162

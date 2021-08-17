@@ -1,0 +1,14 @@
+InternalClassType: Teamcenter
+ApplicationInterfaceType: "PSI2PlantSimulation_AI"
+DatasetPrefix: "PSI2"
+DataTable: "PLMXML_Import"
+Directory: "Teamcenter"
+Origin: 35bf8730-eb87-4e52-b9ae-9b08de6ac8e2
+RetrieveJTFiles: true
+StyleSheet: "%ApplicationHome%Teamcenter\\Plmxml2Xml.xsl"
+UUID: 89e8cfb2-592c-4e45-ae04-b419bef41ab1
+$CustomAttributes:
+-
+ Name: OnPlausibility
+ $DataType: method
+ RandomSeed: 1073863190

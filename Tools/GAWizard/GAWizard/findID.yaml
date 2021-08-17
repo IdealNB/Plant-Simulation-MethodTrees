@@ -1,0 +1,48 @@
+InternalClassType: Method
+Coordinate3D: [11.55,-12,0]
+Name: findID
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- unique ID, which is the firstly occurred individual number
+ -- called by:_alreadyEvaluated
+ param ID:integer->integer
+ 
+ 	
+ var individualTable:table := StatisticalEvaluation[0,ID]
+ var m:integer := 199 -- number of columns of the hash table is a prime number
+ var t:table
+ var sepItem:string := ";"
+ var sepChrom:string := "|"
+ var descStr:string := sepChrom
+ for var chromNo := 1 to individualTable.yDim 
+ 	t := individualTable[1,chromNo]
+ 	for var a := 1 to t.yDim-1 
+ 		descStr := to_str(descStr,t[1,a], sepItem)
+ 	next
+ 	descStr := to_str(descStr,t[1,t.yDim],sepChrom)
+ next
+ 
+ StatisticalEvaluation[8,ID] := descStr -- unique description
+ 
+ var hashValue:integer := strHash(descStr)
+ var hashReduced:integer := hashValue mod m + 1 -- range {1,...,m}
+ 
+ HashTable.setCursor(hashReduced,1)
+ while HashTable.find({hashReduced,1}..{hashReduced,*}, hashValue) 
+ 	var candID:integer := IDs[hashReduced,HashTable.CursorY]
+ 	if StatisticalEvaluation[8,candID] = descStr  -- comparison of the unique description
+ 		StatisticalEvaluation[7,ID] := candID -- register the duplicate			
+ 		return candID
+ 	end
+ end
+ 
+ var row:integer := HashTable[hashReduced,0] + 1
+ 
+ HashTable[hashReduced,0] := row
+ HashTable[hashReduced,row] := hashValue
+ IDs[hashReduced,row] := ID
+ 
+ return ID
+
+RandomSeed: 396
+UUID: 9a6b8839-e7a8-42c9-9745-e168f80c057c

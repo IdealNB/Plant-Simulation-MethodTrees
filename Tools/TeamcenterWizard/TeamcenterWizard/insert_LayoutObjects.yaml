@@ -1,0 +1,195 @@
+InternalClassType: Method
+Coordinate3D: [2,-21,0]
+Name: insert_LayoutObjects
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- builds the model from Layout_Data, generates hierarchies if set, 
+    inserts simulation objects, loads 3D graphics from JT files
+ _________________________________________________________________________________
+ Parameters	: Layout_Data_Update for Add Objects updates; none for model generation
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate, updateAddObjects
+ Calls		: check_Mapping, existsGraphicGroup, create_LibObjects, write_Resource_Data, make4x4Array, write_CreatedObjects, load_TcJTs, makeValidObjectName
+ 
+ Author		: Ralph Bauknecht
+ Date		: 04.09.2018
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 08.10.2018	RBA		changed end of table condition from  "i >= workareatable.ydim" to "i > workareatable.ydim"
+ 23.10.2018	RBA		changed tm to 4x4 array, so multiplication of arrays is possible for graphic in graphic loading
+ 28.05.2019	RBA		check if station /= void to show standard graphics. In case the first entry contains an invalid PlantSimClass that is not entred in Object_Mapping
+ 26.06.2019	RBA		added param to allow for update function call (updateAddObjects)
+ 01.07.2019	RBA		add graphics optimization. Correct that default graphics are show in case an existing or not existing JT table entry cannot be loaded.
+ 18.07.2019	RBA		correct error: invalid PlantSimClass entry now continues with last hierarchy entry; this is important for 1st line when Station is still VOID
+ 29.07.2019	RBA		differentiate JT path if TC_Connected or not
+ 20.08.2019	RBA		add makeAbsDir and "\\\\" to connected JT path 
+ 27.08.2019	RBA		delete Animatable Objects also if graphics was succesfully loaded to an object
+ 17.09.2019	RBA		call write_Resource_Data in Public/TcW_Methods
+ 22.10.2019	RBA		add set_Animation to adjust states graphic and animation point
+ 19.12.2019	RBA		move code to load graphics to method load_TcJTs
+ 23.12.2019	RBA		add check_Mapping in case lib was changed before rebuilding model
+ 09.01.2020	RBA		create library objects and use them for model building: call method create_LibObjects
+ 01.03.2020	RBA		set loadGraphics := TRUE in Hierarchies for all cases so graphics will be loaded
+ 28.04.2020	RBA		add "current" to write_Resource_Data call
+ 26.05.2020	RBA		add check for MU classes
+ 01.03.2021	RBA		add check for class Worker
+ 05.05.2021	RBA		removed customizable methods in Public
+ 18.06.2021	RBA		change call for create_LibObjects parameter "Resource" to "Asset"
+ _________________________________________________________________________________*/
+ 
+ param workareaTable : object := VOID
+ if workareaTable = VOID
+ 	workareaTable := Layout_Data -- standard value; for updates another table is used
+ end
+ 
+ var	tm : real[4,4] -- transformation matrix from TC is converted to 4x4 matrix
+ var HierarchyList : table[object, integer]
+ var level : integer -- remember the level to build hierarchies and to assign graphics
+ 
+ if NOT check_Mapping
+ 	return
+ end
+ 
+ HierarchyList.create
+ HierarchyList.writeRow(1, 1, Model_Root, -1) -- start building the model in root
+ if NOT existsGraphicGroup(Model_Root, "Teamcenter")
+ 	Model_Root._3D.addGraphicGroup("Teamcenter", TRUE, TRUE, TRUE) -- group for pure graphics data from TC (Layout, Deco) in the root frame
+ else
+ 	Model_Root._3D.showGraphicGroup("Teamcenter") -- set the layout graphics visible and locked in the root frame
+ 	Model_Root._3D.setGraphicGroupInternal("Teamcenter")
+ 	Model_Root._3D.lockGraphicGroup("Teamcenter")
+ end
+ 
+ var i := 1
+ while i <= workareatable.ydim
+ 	level := workareatable["Level", i] -- level for actual object - load only graphics to this object that are in lower levels
+ 	
+ 	-- manage hierarchy levels; this may also be used if hierarchy setting is OFF but user defined objects with sub-hierarchy are used
+ 	if level <= HierarchyList[2, HierarchyList.yDim] -- if level for next object is not > actual building level
+ 		repeat -- delete all levels >= next object
+ 			HierarchyList.cutRow(HierarchyList.yDim)
+ 		until HierarchyList[2, HierarchyList.yDim] < level
+ 	end
+ 	
+ 	var TrafoIsSet : boolean := FALSE -- this is the marker so Trafo is not applied twice
+ 	var loadGraphics : boolean := FALSE -- do not load graphics to instances
+ 
+ 	if (workareatable["PlantSimClass", i] /= "") AND 
+ 		(workareatable["PlantSimClass", i] /= "Equipment") AND 
+ 		(workareatable["PlantSimClass", i] /= "Frame")	-- a relevant object, create object of the corresponding type...
+ 		
+ 		Object_Mapping.CursorY := 1
+ 		var PS_Class : string := workareatable["PlantSimClass", i] -- get PlantSimClass
+ 		var bfound_element : boolean := Object_Mapping.find({"TC PlantSimClass",*}, PS_Class)
+ 		
+ 		if bfound_element = true -- Mapping LineDesigner <-> PlantSimulation successful?
+ 			var bLengthOriented : boolean := Object_Mapping["LengthOrientation", Object_Mapping.CursorY]
+ 			var bGetCapacity : boolean := Object_Mapping["GetCapacity", Object_Mapping.CursorY]
+ 			
+ 			var temp_stat : object := Object_Mapping["PlantSimulation Object", Object_Mapping.CursorY]
+ 			
+ 			-- check if the mapped entry is a MU
+ 			if NOT (temp_stat.InternalClassName = "Piece" OR temp_stat.InternalClassName = "Goods" OR temp_stat.InternalClassName = "Vehicle" OR temp_stat.InternalClassName = "NwWorker")
+ 
+ 				-- create a new library object if this is a new TCID
+ 				create_LibObjects(temp_stat, bLengthOriented, bGetCapacity, level, i, workareatable, "Asset")
+ 				-- create new instance from the library object in the model
+ 				var station : object := temp_stat.derive(HierarchyList[1, HierarchyList.yDim]) 
+ 			
+ 				-- if the new objekt is a user defined object based on a frame it is a new hierarchy level that can hold other objects
+ 				if station.internalClassName = "Network"
+ 					HierarchyList[1, HierarchyList.yDim+1] := station
+ 					HierarchyList[2, HierarchyList.yDim] := workareatable["Level", i]
+ 				end
+ 	
+ 				-- pass parameter from TC to the object
+ 				station.Level := level
+ 			
+ 				-- set data from the Layout_Data table to the new object in case occurence data is unique
+ 				custom_Methods.write_Resource_Data(current, station, i, bLengthOriented, bGetCapacity, workareaTable) 
+ 			
+ 				-- assign object position from plmxml data table
+ 				if (Build_Hierarchies OR station.~ /= Model_Root) AND workareatable["Rel_Transform", i] /= "" -- if hierarchical model or inside user defined frame based object
+ 					tm := make4x4Array(splitStringToNum( workareatable["Rel_Transform", i], " "))
+ 				elseif NOT Build_Hierarchies AND workareatable["Abs_Transform", i] /= "" -- if not hierarchical model
+ 					tm := make4x4Array(splitStringToNum( workareatable["Abs_Transform", i], " "))
+ 				else -- if data is missing, assign position, rotation and scaling 0
+ 					tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0))
+ 				end		
+ 			
+ 				-- insert station info to Created_Objects table
+ 				write_CreatedObjects(station, tm[1,4], tm[2,4], tm[3,4], i, workareaTable)
+ 			
+ 				-- Set position and rotation for object (rotation around z-axis)
+ 				station._3D.TransformationMatrix  := tm
+ --			TrafoIsSet := TRUE
+ 
+ 			else -- if the mapped entry is a MU; no new object generated
+ 				station := HierarchyList[1, HierarchyList.yDim] -- continue on the actual hierary level
+ 			
+ 			end -- if the mapped entry is a MU
+ 			
+ 		else -- bfound_element = false; no new object generated
+ 			station := HierarchyList[1, HierarchyList.yDim] -- continue on the actual hierary level
+ 			
+ 		end -- bfound_element = true
+ 		
+ 		-- process hierarchy level only if Build_Hierarchies is selected
+ 	elseif Build_Hierarchies 
+ 		
+ 		if (workareatable["PlantSimClass", i] = "Frame")
+ 			station := RootFolder.ResourcePool.HierarchyFrame.derive(HierarchyList[1, HierarchyList.yDim]) -- create frame object
+ 			
+ 			if workareatable["Rel_Transform", i] /= "" -- relative position
+ 				tm := make4x4Array(splitStringToNum( workareatable["Rel_Transform", i], " "))
+ 			elseif workareatable["Abs_Transform", i] /= "" -- absolute position
+ 				tm := make4x4Array(splitStringToNum( workareatable["Abs_Transform", i], " "))
+ 			else -- if missing assign position, rotation and scaling 0
+ 				tm := make4x4Array(makeArray(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0))
+ 			end
+ 			station._3D.TransformationMatrix  := tm -- set Position
+ 			TrafoIsSet := TRUE
+ 			
+ 			HierarchyList[1, HierarchyList.yDim+1] := station
+ 			HierarchyList[2, HierarchyList.yDim] := workareatable["Level", i]
+ 			station.name := "Level" + to_str(workareatable["Level", i]) + "_" + MakeValidObjectName(workareatable["UniqueID", i])
+ 			station.label := workareatable["Name", i]
+ 			station.createAttr("AutoGenerated", "boolean")
+ 			station.AutoGenerated := true
+ 			station.createAttr("Level", "integer")
+ 			station.Level := workareatable["Level", i]
+ 		
+ 			-- insert station info to Created_Objects table
+ 			write_CreatedObjects(station, tm[1,4], tm[2,4], tm[3,4], i, workareaTable)
+ 
+ 			-- delete the default graphic, prepare for following graphic import
+ 			station._3d.hideGraphicGroup("default")
+ 			station._3d.deletePlainGraphics -- deletes the content of graphics group "default"
+ 		else -- no new hierarchy frame generated
+ 			station := HierarchyList[1, HierarchyList.yDim] -- continue on the actual hierary level
+ 		end
+ 		loadGraphics := TRUE -- load TC graphics to the frame instance; no library object is generated
+ 
+ 	else -- no new object generated
+ 		station := HierarchyList[1, HierarchyList.yDim] -- continue on the actual hierary level
+ 		loadGraphics := TRUE -- load TC graphics to the actual hierary level instance; no library or instance object is generated
+ 		
+ 		-- TODO : if level is jumped calculate Relative Trafo anyway? 
+ 		-- Actual behaviour: if user chooses to not build hierarchy levels trafos are ignored!
+ 		
+ 	end -- of core preparation of the new object
+ 	
+ 	
+ ------------------------------------------------------------------------------------------------
+ 	-- load graphics into the actual object
+ 	load_TcJTs(station, workareaTable, level, i, TrafoIsSet, loadGraphics)
+ 	
+ end -- end while loop, covering the complete import table...
+RandomSeed: 1073814215
+UUID: c969cdca-9005-4e49-b236-445b89930b9e

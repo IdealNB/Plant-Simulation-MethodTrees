@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Color: 32768
+Coordinate3D: [-2,-6,0]
+CreateIn3D: true
+DataType: speed
+Name: LiftSpeed
+Origin: 3f6f2fa9-ea6d-4789-b85d-92909641f9b2
+UUID: 0b9a24a7-80d8-4c55-a0de-01365180c101
+Value: 0.5

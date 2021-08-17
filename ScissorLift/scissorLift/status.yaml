@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [7,-9,0]
+DataType: string
+HasInitValue: false
+Name: status
+Origin: e84f209f-f52a-4ebb-ba53-900e877e7687
+StatisticsActive: true
+UUID: 2f39b89a-44b8-4e6b-9e02-6f7279569211
+Value: ""

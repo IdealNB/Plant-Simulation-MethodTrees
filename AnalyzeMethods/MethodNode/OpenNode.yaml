@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [2,3,0]
+Name: OpenNode
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ 
+ 
+ var isValidObject := existsObject(nodePath)
+ var isValidMethod := existsMethod(nodePath)
+ 
+ if isValidObject
+ 	str_to_obj(nodePath).OpenDialog
+ elseif isValidMethod
+ 	str_to_Method(nodePath).OpenDialog
+ end
+RandomSeed: 1073830015
+UUID: c39d6623-7b84-43d4-b21d-4df43fde13fc

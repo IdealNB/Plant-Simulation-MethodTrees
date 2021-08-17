@@ -1,0 +1,102 @@
+InternalClassType: Frame
+Coordinate3D: [1.3499999999999996,0,0]
+CreateIn3D: false
+Name: Dialog
+Origin: b3443f36-4651-4d59-a4bd-27b082f256c0
+UUID: e1a57a5d-d97c-4f89-a779-7e279f1654c4
+$CustomAttributes:
+-
+ Name: openBB
+ DataType: method
+ RandomSeed: 437
+ Value: |+1
+  /*
+   called by the context menu
+  */
+  ~.openDialog
+
+-
+ Name: sayNoResults
+ DataType: method
+ RandomSeed: 436
+ Value: |+1
+  -- called by: 3 buttons
+  -- messageBox: No Optimization results available.
+   --"No Optimization results available."
+  messageBox(rootfolder.Localization.getText(41),1,4) -- info
+-
+ Name: startDatatime
+ DataType: datetime
+ Value: 2003-10-17 11:30:26.63100004
+-
+ Name: readyIndividuals
+ DataType: integer
+ Value: 0
+-
+ Name: readyObservations
+ DataType: integer
+ Value: 0
+-
+ Name: numPenalty
+ DataType: integer
+ Value: 0
+-
+ Name: numAlready
+ DataType: integer
+ Value: 0
+-
+ Name: showProgressByIcon
+ DataType: method
+ RandomSeed: 435
+ Value: |+1
+  -- show the progress by the icons "Icon0",...,"Icon8"
+  var ApplObj:object := ~
+  var GAOpt:object := ApplObj.GaOptimization
+  var GenSize:integer := GAOpt.GenerationSize
+  -- current state:
+  var GenNo:integer := ApplObj.currGeneration
+  var IndNo:integer := ApplObj.individualNum
+  
+  var n:integer
+  if GenNo = 1 
+  	n := IndNo
+  else
+  	n := GenSize + 2 * (GenNo - 2) * GenSize + IndNo
+  end
+  
+  var totalNum:integer := (2 * GAOpt.NumGenerations - 1) * GAOpt.GenerationSize
+  var iconNo:integer := ceil(8 * n/totalNum) -- round down of a number in [0,8)
+  -- iconNo = 1,...,7
+  -- 8 is shown ones after the last run
+  if 0 < iconNo AND iconNo < 9 
+  	ApplObj.selected := false
+  	var iconStr:string := to_str("icon",iconNo)
+  	ApplObj.CurrIcon := iconStr
+  	if ApplObj._3D.exists
+  		ApplObj._3D.VisibleGraphicGroups := makeArray(iconStr)
+  	end
+  end
+-
+ Name: wait4generationChange
+ DataType: boolean
+ Value: false
+$UserPopupMenu:
+ Active: true
+$Nodes:
+- a2d18759-2da9-4063-aa72-b734dc8d6cf8
+- bf7a3999-f785-42b8-a628-b53818af9523
+- a04c9d33-5e07-4d5d-92e4-31daf8d9f215
+- 510c8a82-1a08-4a29-8661-50f6bbc8f34f
+- c72faa64-30ec-4851-8263-54aebee35031
+- c11da0b2-21ef-487d-84e4-2577f1622eaf
+- 684222a8-e2a8-42ae-bdef-ab78947eeb2f
+- c5f57ec9-ac6c-48f9-830b-1d6369055380
+- aaa46fae-6500-42af-94f5-1d722b68d333
+- cf1d6396-12f3-4c54-9f50-cd7cb46208b6
+- da54fd5d-b292-44cd-953a-a751416ee98b
+- 3705422c-5f5f-48ef-9a12-adb0ca5b8728
+- ff24eb6b-e0fc-499c-81b7-6c935637b97d
+- e8e1541d-eb51-41a3-b404-2469979c5add
+- 106e5403-a589-467f-8e24-58d52cdcb686
+- 6a79fdca-8428-4cf9-a14e-7f513e7dc296
+- 9f7ec4ca-7b2d-4f0e-bfb4-fe7186aeb1fb

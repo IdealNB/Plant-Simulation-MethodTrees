@@ -1,0 +1,9 @@
+InternalClassType: Variable
+Coordinate3D: [-23,-2.5015,0]
+DataType: length
+Name: BoxDepth
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: c8c80a4c-29b3-4f37-9495-0b21363031e2
+$Observers:
+- [Value,"onChanges"]
+Value: 1.3

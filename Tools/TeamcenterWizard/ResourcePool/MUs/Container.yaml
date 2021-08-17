@@ -1,0 +1,150 @@
+InternalClassType: Container
+AutomaticRouting: false
+BookPntHRelative: 0
+BookPntLRelative: 0.5
+BookPntWRelative: 0.5
+ChangePathCtrl:
+ConstructorCtrl:
+Coordinate3D: [3,3,0]
+CostingActive: false
+CreateIn3D: true
+Destination:
+DestructorCtrl:
+DistributeCosts: false
+DragDropCtrl:
+EntranceCtrl:
+EntranceLocked: false
+ExitCtrl:
+ExitCtrlFront: false
+ExitCtrlOnce: false
+ExitCtrlRear: false
+FillWholeLayer: false
+InitCtrl:
+Label: ""
+MoveToFolderCtrl:
+MUHeight: 0.15
+MULength: 1
+MUWidth: 1
+Name: Container
+OpenCtrl:
+PlausibilityCtrl:
+ProdStatOn: true
+RandomSeed: 6
+RelabelCtrl:
+RenameCtrl:
+ResetDestinationWhenAtDestination: false
+ResourceType: "Transport"
+ResStatOn: true
+RouteWeightingAttr: ""
+ShiftcalendarObject:
+UUID: 07416f19-6938-4cb0-be6c-38d04f5145c3
+WorkpieceCarrierActive: false
+XDim: 2
+YDim: 2
+ZDim: 1
+3D:
+ AnimationObject: ""
+ GraphicGroupNames: ["default"]
+ LockedGraphicGroups: []
+ MaterialActive: false
+ Mirror: [false,false,false]
+ MUAnimationAreaAbsoluteCenter: [0,0,1]
+ MUAnimationAreaAbsoluteSize: [1,1]
+ MUAnimationAreaEnabled: false
+ MUAnimationAreaMURotation: [0,0,0,-1]
+ MUAnimationAreaOrientation: "XY plane"
+ MUAnimations:
+ -
+  Name: "#0#0"
+  AnchorPoints:
+  - [-0.25,-0.25,0.15,0,0,0,-1,~]
+ -
+  Name: "#0#1"
+  AnchorPoints:
+  - [-0.25,0.25,0.15,0,0,0,-1,~]
+ -
+  Name: "#1#0"
+  AnchorPoints:
+  - [0.25,-0.25,0.15,0,0,0,-1,~]
+ -
+  Name: "#1#1"
+  AnchorPoints:
+  - [0.25,0.25,0.15,0,0,0,-1,~]
+ MUSideToAttach: "Booking Point"
+ Poses:
+ Rotation: [0,0,0,-1]
+ Scale: [1,1,1]
+ ScaleAutomatically: false
+ ShowContent: true
+ StatesOrientation: "(Off)"
+ VisibleGraphicGroups: ["default"]
+ $StatesTransformations:
+  HorizontalStatesPosition: [-1,1,2]
+  HorizontalStatesScale: [1,1,1]
+  HorizontalStatesScaleWithObject: true
+  VerticalStatesPosition: [-0.96,0.96,2]
+  VerticalStatesScale: [1,1,1]
+  VerticalStatesScaleWithObject: true
+$IconArray:
+-
+ Name: "Operational"
+ Transparent: true
+ Size: [21,21]
+ Pixels:
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+FFyMFFyMFFyMMo6+AAAAMo6+
+ - Mo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+FFyMFFyMFFyMMo6+Mo6+Mo6+
+ - Mo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+gIAAgIAAgIAAMo6+Mo6+Mo6+
+-
+ Name: "Waiting"
+ Transparent: true
+ Size: [21,21]
+ Pixels:
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//FFyMFFyMFFyMAP//AAAAAP//
+ - AP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//FFyMFFyMFFyMAP//AP//AP//
+ - AP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//gIAAgIAAgIAAAP//AP//AP//
+$CustomAttributes:
+-
+ Name: ReplaceGraphicsWithTcJT
+ DataType: boolean
+ Value: true
+-
+ Name: Variant
+ DataType: string
+ Value: ""
+InheritEntranceExitLockedOnReset: false

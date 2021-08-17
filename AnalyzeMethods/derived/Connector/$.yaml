@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Connector
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: 55b0a5fb-41a3-4b20-a679-9ccae9679f53
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 0c965758-4921-4f28-aa68-8f54f24bf785
+- 8e4d5533-fd2e-4a6e-aa9d-34456b234a7f
+- 2f6c5ea6-82e9-486b-8c17-182d8a5fb1af
+- d6775e7c-f1af-495c-acc5-6b1e6fc92fac
+- 8bbbee42-a48d-4d9f-bded-9c8011a9df76
+- 1299ffe3-fab3-490f-abdd-892305b7e778
+- 24253d67-dc89-482d-85ea-65ce1120e4cf

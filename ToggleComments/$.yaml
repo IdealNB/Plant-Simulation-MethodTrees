@@ -1,0 +1,23 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: ToggleComments
+PermitDeleteCtrl:
+RenameCtrl:
+RootFolder: true
+UUID: 279eaaa1-b987-4466-b211-098da318d077
+3D:
+ BackgroundColor: -1
+LibInfo:
+ Name: "ToggleComments"
+ Version: "1.0.3"
+ Description: "Works in 2D and 3D."
+ Requires3D: false
+ ProhibitAccess: true
+$Nodes:
+- 4df51ed2-6615-4235-b09e-fcdb5eaf80de
+- 3912873e-5abb-4865-93c5-aeea93f29fed
+- e9a2ff52-9882-489d-8425-13a0942dc266
+- d4e96c6c-00bb-4914-ae52-62d1bee5e43b

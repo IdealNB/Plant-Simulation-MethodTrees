@@ -1,0 +1,36 @@
+InternalClassType: Method
+Coordinate3D: [15,-8,0]
+Name: deleteData
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- deletes all imported data: PLMXML, XML, JTs
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: Generate
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 01.06.2018
+ _________________________________________________________________________________
+ 	History: 
+ Date		Author	Description
+ 31.05.2019	RBA		delete only if TC_Connected
+ 08.01.2021	RBA		change TC_Connected to Data_Source
+ _________________________________________________________________________________*/
+ 
+ if Data_Source = "TC"
+ 	
+ 	var TCDir : string := make_AbsDir(Teamcenter.Directory)
+ -- build DOS command delete string
+ 	var delDir := "del \\"" + TCDir + "\\\\*.*\\" /F /S /Q"
+ 	system(delDir) -- delete all files in Teamcenter folder
+ 	
+ end
+RandomSeed: 1073814197
+UUID: 1be12671-ef28-4d66-9269-f106905c7bde

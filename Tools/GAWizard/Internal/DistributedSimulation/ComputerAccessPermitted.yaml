@@ -1,0 +1,10 @@
+InternalClassType: Method
+Coordinate3D: [26.1,-7,0]
+Name: ComputerAccessPermitted
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- The origin of this method id in the library 'DistributedSimulation'
+ -> boolean
+ result := isComputerAccessPermitted
+RandomSeed: 463
+UUID: 6d642b7c-8763-4f4a-8fb5-74afc3461d43

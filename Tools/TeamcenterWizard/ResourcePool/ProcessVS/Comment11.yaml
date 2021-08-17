@@ -1,0 +1,10 @@
+InternalClassType: Comment
+BackgroundColor: 16777215
+Color: 32768
+Coordinate3D: [1.3,-6,0]
+Name: Comment11
+Origin: f47edc1e-c99c-41c1-8b4b-241f1aff72f6
+Text: "%"
+UUID: f3721d9f-3730-4a0f-979b-2162ee5d7b0d
+3D:
+ ExcludeFromShowContentOfLocation: false

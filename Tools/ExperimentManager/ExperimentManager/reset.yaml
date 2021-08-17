@@ -1,0 +1,28 @@
+InternalClassType: Method
+Coordinate3D: [17.25,-0.1,0]
+Name: reset
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- non-distributed simulation: DefExperiments_ after _reset
+ -- for a distributed simulation the remote_process has_State = "ready"
+ if NOT UsingRemote AND state /="ready" -- AND currRunNo = 1
+ 	if firstReset AND currRunNo = 1 then
+ 		&DefExperiments.executeNewCallChain
+ 		-- set input values for the next experiment
+ 		-- calls eventController.reset with firstReset := false
+ 	else
+ 		eventController.start --WithoutAnimation
+ 	end;	
+ 	if numRuns = currRunNo 
+ 		firstReset := true
+ 	end;
+ end
+ if dialog.restoring  
+ 	&restoreParam.executeNewCallChain
+ 	dialog.restoring := false
+ end
+ if RescaleActive 
+ 	&RescaleSetParameter.executeNewCallChain
+ end
+RandomSeed: 185
+UUID: 0a360cfa-3d44-40b0-a8e7-ef65772760ea

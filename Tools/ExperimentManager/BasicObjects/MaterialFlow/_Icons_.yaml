@@ -1,0 +1,30 @@
+InternalClassType: Method
+ChangePathCtrl:
+CloseCtrl:
+ConstructorCtrl:
+Coordinate3D: [0,0,0]
+CreateIn3D: false
+DestructorCtrl:
+DragDropCtrl:
+InitCtrl:
+Label: ""
+MoveInFrameCtrl:
+MoveToFolderCtrl:
+Name: _Icons_
+OpenCtrl:
+PlausibilityCtrl:
+Program: ""
+RandomSeed: 362
+RelabelCtrl:
+RenameCtrl:
+UUID: 5276ee1b-198b-4e55-bb31-ac8ce0569256
+$IconArray:
+-
+ Name: "Default"
+ RefPoint: [0,0]
+ Transparent: true
+ Size: [3,3]
+ Pixels:
+ - /wAA/wAA/wAA
+ - /wAA/wAA/wAA
+ - /wAA/wAA/wAA

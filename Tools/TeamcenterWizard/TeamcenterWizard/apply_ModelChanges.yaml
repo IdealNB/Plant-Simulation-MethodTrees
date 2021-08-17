@@ -1,0 +1,44 @@
+InternalClassType: Method
+Coordinate3D: [9,-8,0]
+Name: apply_ModelChanges
+Origin: 3a2981cf-66d0-4972-a43b-efb18f2f379e
+Program: |+1
+ /*_______________________________________________________________________________
+ 
+ Method Tasks:
+ -- checks for inconsistencies in the Created_Objects table
+ -- write actual position values
+ _________________________________________________________________________________
+ Parameters	: none
+ 			  
+ ReturnValues: none
+ 
+ Called By	: User Dialog TeamcenterWizard.TC_Import.callback
+ 			  updateResourceData
+ Calls		: 
+ 
+ Author		: Ralph Bauknecht
+ Date		: 10.05.2019
+ _________________________________________________________________________________
+ History: 
+ Date		Author	Description
+ 22.05.2019	 
+ _________________________________________________________________________________*/
+ 
+ var obj : object
+ 
+ check_CreatedObjects -- clean up Created_Objects table
+ 
+ for var i := 1 to Created_Objects.ydim loop
+ 	obj := Created_Objects["Link", i]
+ 	-- write actual position values
+ 	Created_Objects["posx", i]	:= obj._3D.Position.X
+ 	Created_Objects["posy", i]	:= obj._3D.Position.Y
+ 	Created_Objects["posz", i]	:= obj._3D.Position.Z
+ next
+ 
+ -- TODO: check for manually inserted objects and enter them into Created_Objects
+RandomSeed: 1073814176
+UUID: 6aa60ab7-1a66-4839-9644-fbdace02bc95
+3D:
+ Mirror: [false,false,false]

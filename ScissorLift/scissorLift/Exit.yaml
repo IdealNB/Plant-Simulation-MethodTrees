@@ -1,0 +1,9 @@
+InternalClassType: Interface
+Coordinate3D: [1,0,0]
+Name: Exit
+Origin: 2d722dfd-af34-4da9-bbd5-582650cc5b92
+RandomSeed: 1073747819
+Side: "Right"
+UUID: 668ac08b-f0ec-4a09-aecb-6ef8874832b3
+$Predecessors:
+- d2967cbb-3d14-4a43-ad98-a503e8d8af15

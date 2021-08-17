@@ -1,0 +1,17 @@
+InternalClassType: Conveyor
+Length: 1.5
+Origin: e1f4c637-e015-4e87-8a82-11eb658a0dd4
+RandomSeed: 1073901369
+Speed: 1
+UUID: 46916e70-ccf1-4306-bc93-0d028f247f1e
+Width: 1.34
+3D:
+ BaseHeight: 1
+$CustomAttributes:
+-
+ Name: OnExit
+ $DataType: method
+ RandomSeed: 1073901367
+$Predecessors:
+- 1e338e69-b478-4dba-a6b2-b0d075ceaea9
+InheritEntranceExitLockedOnReset: false

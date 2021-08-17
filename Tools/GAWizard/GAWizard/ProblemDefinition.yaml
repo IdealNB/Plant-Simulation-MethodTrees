@@ -1,0 +1,69 @@
+InternalClassType: DataTable
+CloseCtrl: "RootFolder.Internal.Tools.closeTab"
+Coordinate3D: [16.35,0,0]
+Label: ""
+Name: ProblemDefinition
+Origin: 8ba6b601-81ae-4e08-8ab4-b3a725ddfbea
+UUID: 2be28b55-03cf-4148-87e2-3e55f7c9568a
+$CustomAttributes:
+-
+ Name: isOpen
+ DataType: boolean
+ Value: false
+$Data:
+ Comment: ~
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 1
+   ReadOnly: true
+   Width: 14
+  -
+   Index: 2
+   ReadOnly: false
+  -
+   Index: 3
+   ReadOnly: true
+   Width: 14
+  -
+   Index: 4
+   ReadOnly: false
+  -
+   Index: 5
+   ReadOnly: true
+   Width: 14
+  -
+   Index: 6
+   ReadOnly: false
+  -
+   Index: 7
+   ReadOnly: true
+   Width: 14
+  -
+   Index: 8
+   ReadOnly: false
+  -
+   Index: 9
+   ReadOnly: true
+   Width: 14
+  -
+   Index: 10
+   ReadOnly: false
+  RowFormat:
+  -
+   Index: 0
+   FontSize: 1
+   FontColor: 0xa00000
+   Color: 0xc0c0c0
+   Hidden: false
+ ColumnIndex: [string,10,~,"Parameter:",~,"Parameter:",~,"Parameter:",~,"Parameter:",~,"Parameter:"]
+ Columns:
+ - [1,string,3,"Untere Stufe","Obere Stufe","Schrittweite"]
+ - [3,string,3,"Untere Stufe","Obere Stufe","Schrittweite"]
+ - [5,string,3,"Untere Stufe","Obere Stufe","Schrittweite"]
+ - [7,string,3,"Untere Stufe","Obere Stufe","Schrittweite"]
+ - [9,string,3,"Untere Stufe","Obere Stufe","Schrittweite"]

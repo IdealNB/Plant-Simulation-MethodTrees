@@ -1,0 +1,64 @@
+InternalClassType: Method
+Coordinate3D: [33.85,-16.85,0]
+Name: RescaleResults
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Called by Rescale
+ /*
+ 1. Evaluate the Environment Variable RescaleResultsFolder
+ 2. Read_all files like "Exp2_Obs3.txt" in the folder RescaleResultsFolder
+ 3. Fill the tablefile Experimentmanager.DetailedResults
+ 4. Statistical evaluation and preparation of the Report
+ 5. Save the report
+ */
+ var tab : table[string,string,string] -- Path of the Output Value, Data Type, Value
+ var FileName, OutputStr:string;var ObsTab:table;var col:integer
+ 
+ RescaleActive := true
+ tab.create
+ RescaleResultsFolder := getEnv("RescaleResultsFolder")
+ resetWizard
+ for var ExpNo := 1 to ExpTable.yDim 
+ 	evalExpTable(ExpNo)
+ 	prepExp(ExpNo) -- create subtables
+ 	for var ObsNo := 1 to NumRuns 
+ 		FileName := to_str(RescaleResultsFolder,"\\\\Exp",ExpNo,"_Obs",ObsNo,".txt") -- like Exp211_Obs13.txt
+ 		if existsFile(FileName) 
+ 			tab.readFile(FileName)
+ 			for var OutNo := 1 to tab.yDim 
+ 				OutputStr := ValueDescriptions.get(tab[1,OutNo])
+ 				col := DetailedResults.getColumnNo(OutputStr)
+ 				ObsTab := DetailedResults[col + 6, ExpNo]
+ 				switch tab[2,OutNo]
+ 				case "time" 
+ 					ObsTab[1,ObsNo] := str_to_time(tab[3,OutNo])
+ 				else
+ 					ObsTab[1,ObsNo] := str_to_num(tab[3,OutNo])
+ 				end
+ 			next -- OutNo
+ 		end
+ 	next -- ObsNo
+ 	CalcStatistics4Exp(ExpNo)
+ next -- ExpNo
+ 
+ --if Kind_Output.numberOfOutputValues > 0 then 
+ --	Dialog.Dialog.setSensitive("Chart_but", true);
+ --end
+ 
+ if Design4FactorialAnalysis 
+ 	FactorialAnalysis(FactorDesignValue)
+ end
+ T_Test(pValues)
+ 
+ --Dialog.Dialog.setSensitive("HTML_but", true); -- needed for using the dialog of the ExpMgr, not needed for this purpose
+ 
+ -- open the Report
+ -- ReportObject.SaveToDirectory := RescaleResultsFolder; -- needed for using the dialog of the ExpMgr, not needed for this purpose
+ prepReport
+ ReportObject.save(to_str(RescaleResultsFolder,"\\Report.htm"))
+ 
+ RescaleActive := false
+ 
+ exitApplication
+RandomSeed: 211
+UUID: 93996833-ec70-4d8a-beff-9ba2ded511f8

@@ -1,0 +1,32 @@
+InternalClassType: Converter
+Length: 1.34
+Origin: f14ef1df-6ca3-4964-9c64-43574ec3223f
+RandomSeed: 1073901362
+Speed: 1
+UUID: 9bd2b95a-a1c0-4c1a-af53-daf10d4f2b1a
+Width: 1
+3D:
+ BaseHeight: 1
+$CustomAttributes:
+-
+ Name: OnStrategy
+ $DataType: method
+ RandomSeed: 1073901360
+$Successors:
+-
+ $Succ: d39b3889-a7f0-48ba-afc8-e04ce7b0b1df
+ Origin: 68a31a68-707c-42ba-824e-03bc41fb8bbc
+ UUID: 8db3b712-0871-4653-bf82-2e513eb045e2
+-
+ $Succ: 46916e70-ccf1-4306-bc93-0d028f247f1e
+ Origin: 29dd2a27-7cb2-46ea-a9b6-da0c9cab42a4
+ UUID: 1e338e69-b478-4dba-a6b2-b0d075ceaea9
+ $PredFlipped: true
+$Predecessors:
+- 5a37eb44-23a2-455d-aa7e-89ab754a7434
+- ad3a2927-5eda-4504-9412-fdb2f8056307
+InheritEntranceExitLockedOnReset: false
+$Side0: 8db3b712-0871-4653-bf82-2e513eb045e2
+$Side1: ad3a2927-5eda-4504-9412-fdb2f8056307
+$Side2: 5a37eb44-23a2-455d-aa7e-89ab754a7434
+$Side3: 1e338e69-b478-4dba-a6b2-b0d075ceaea9

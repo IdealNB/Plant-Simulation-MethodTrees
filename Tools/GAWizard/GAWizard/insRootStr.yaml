@@ -1,0 +1,41 @@
+InternalClassType: Method
+Coordinate3D: [22,-8,0]
+Name: insRootStr
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ -- ExpMgr.: ReplaceRootstr_(OutputChanged, InputChanged), DragOnExpMgr, OutputChanged, ChartTab.PlausCharts
+ -- GA: Fitness.prepare, Tool.DragOnWizard, Tools.PrepProblDef_
+ param obj_str,root_str:string->string
+ 
+ -- removed leading and trailing blanks, tab stops, and carriage returns
+ obj_str := strTrim(obj_str) -- like "~.Station.proctime.beta", ".Models.Frame.Station.statNumIn"
+ if strLen(obj_str)=0
+ 	return obj_str
+ end
+ 
+ if strLpos("root",obj_str) = 1
+ -- already "root" inserted OR entry deleted
+ 	return obj_str
+ else
+ 	if strLpos("*",obj_str) = 1 
+ 		obj_str := strOmit(obj_str,1,1)
+ 	end
+ 	
+ 	if strLpos(".",obj_str) = 1 -- absolute path
+ 		if strLpos(root_str,obj_str)=1   -- for instance: obj_str = ".Model.station.procTime"
+ 			var L:integer := StrLen(root_str)
+ 			return to_str("root",strOmit(obj_str,0,L+1))
+ 		else -- for instance: obj_str = ".MUs.Part.statAvgLifeSpan"
+ 			return obj_str
+ 		end
+ 	end
+ 	
+ 	if strLpos("~",obj_str) = 1 -- for instance: obj_str = "~.station.procTime"
+ 	   return to_str("root",strOmit(obj_str,1,1)) -- root.station.procTime
+ 	end
+ 	
+ 	-- for instance: obj_str = "station.procTime"
+ 	return to_str("root.",obj_str)
+ end
+RandomSeed: 392
+UUID: 4a0e2b9d-c292-448d-9d9b-d1cbe0922f77

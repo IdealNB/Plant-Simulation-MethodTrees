@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [-5,5,0]
+LockStructure: true
+Name: Frame
+Origin: dd652573-9f51-4558-9da2-4e82a53d469e
+UUID: dd7bcf4a-734a-4335-a3fc-c717e4a8eeab
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073813658
+$Nodes:
+- 5a052deb-5cad-4831-9761-0cda8b3481b3
+- bc0dd94b-8d12-41ba-a69d-401e4590b27c
+- bf49a55d-a775-4578-83a8-3aa6ee7eedb9
+- 0a69454e-9236-41f0-bc9d-98fabfabc839
+- 3fde935b-265e-4e9d-8b3d-fb88f85d7187
+- 17f3f7f5-9b70-4e24-9536-b4aab1ed93e4
+- 9c4b5bbc-7a43-489c-bf35-3302f3fc5b8c

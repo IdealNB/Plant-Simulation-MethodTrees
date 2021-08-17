@@ -1,0 +1,10 @@
+InternalClassType: Variable
+Coordinate3D: [-17,-4,0]
+DataType: speed
+HasInitValue: false
+Name: Carrier_speed
+Origin: d68f7da8-55b1-4317-b894-b2def367a731
+UUID: 288502f7-a117-453d-bd03-cd61a1edf4e0
+$Observers:
+- [Value,"onChanges"]
+Value: 2

@@ -1,0 +1,11 @@
+InternalClassType: DataTable
+Coordinate3D: [2,-9,0]
+Name: SyncSelect
+Origin: fd8ef838-95f4-4011-94be-9a88eeaff877
+UUID: 94337544-32f1-400a-8275-cfd2390e985b
+$Data:
+ ListFormat:
+  ColumnWidth: 20
+  DataType: string
+  ShowDataType: true
+ Columns:

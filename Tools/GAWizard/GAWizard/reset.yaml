@@ -1,0 +1,17 @@
+InternalClassType: Method
+Coordinate3D: [1.3499999999999996,-8,0]
+Name: reset
+Origin: 336fc4fb-d50e-481c-98f8-9051294eb512
+Program: |+1
+ if optimRuns and (NOT UsingRemote) -- and (currRunNo = 1) 
+ 	if firstreset and currRunNo = 1 
+ 		&nextIndividual.executeNewCallChain -- set the parameter of the individual
+ 	else
+ 		EventController.start --WithoutAnimation
+ 	end
+ 	if numRuns = currRunNo then
+ 		firstReset := true
+ 	end	
+ end
+RandomSeed: 412
+UUID: 8b03d5b0-3efa-420d-a302-691d86fd8f0f

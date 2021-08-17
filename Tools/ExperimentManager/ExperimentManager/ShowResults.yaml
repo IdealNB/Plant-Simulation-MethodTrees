@@ -1,0 +1,9 @@
+InternalClassType: Method
+Coordinate3D: [7.75,-39.55,0]
+Name: ShowResults
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- called by: context menu
+ Results.openDialog
+RandomSeed: 240
+UUID: 1e1cdb16-b005-4052-9392-24b7b6f3a839

@@ -1,0 +1,28 @@
+InternalClassType: Method
+Coordinate3D: [33.2,-13,0]
+Name: RescaleRun
+Origin: 62d69426-0905-4e32-a460-c5d135e458cc
+Program: |+1
+ -- Called by Rescale 
+ -- This process is started for the simulation of a single observation.
+ RescaleActive := true
+ 
+ UsingRemote := true
+ dialog.restoring := false
+ UsingRules := false
+ --UserEvalMethod_:= "" -- User defined evaluation method is impossible since the observation is already computed.
+ UsingTables := true
+ MailAtEnd := false
+ saveHTMLatEnd := false
+ showRuntimeAtEnd := false
+ saveExcelatEnd := false
+ 
+ -- Environment Variables
+ -- generate by: print setEnv("RescaleExperiment","1");
+ RescaleResultsFolder := getEnv("RescaleResultsFolder")
+ currExpNo := str_to_num( getEnv("RescaleExperiment") )
+ currRunNo := str_to_num( getEnv("RescaleObservation"))
+ 
+ EventController.reset
+RandomSeed: 212
+UUID: a7801325-f3ac-4640-b90f-502c657d1ac5

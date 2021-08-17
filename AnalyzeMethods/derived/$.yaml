@@ -1,0 +1,25 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: derived
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 3c58de6f-4c87-4d90-90ca-56835985762b
+3D:
+ BackgroundColor: -1
+$Nodes:
+- ed888ccc-5f97-4759-b965-c4e0f76434be
+- 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+- fbc7e8c8-b9d6-4dcb-a702-be70090673d2
+- 51721372-ba27-46a4-9986-b0d16a237810
+- eb556f3a-a296-4f22-94a4-3f6539b3aedf
+- 173ab9f6-f32a-4b06-bbbc-ae0543212926
+- bf597860-c83f-4429-bf11-b6e5dd40440d
+- 6074b243-9a72-4ca7-9759-50455ace061f
+- dd7bcf4a-734a-4335-a3fc-c717e4a8eeab
+- 2659edce-f8f8-4546-8d6e-86c0d87e2686
+- 03c8ad7c-219e-4463-82cf-a02d0067317c
+- 55b0a5fb-41a3-4b20-a679-9ccae9679f53
+- 687ffd5b-7159-4ce4-bb5d-829458333538
