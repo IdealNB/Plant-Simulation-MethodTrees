@@ -6,9 +6,16 @@ MoveToFolderCtrl:
 Name: AnalyzeMethods
 PermitDeleteCtrl:
 RenameCtrl:
+RootFolder: true
 UUID: cdfc2d78-76e8-458d-9d36-3a2af760c181
 3D:
  BackgroundColor: -1
+LibInfo:
+ Name: "MethodTrees"
+ Version: "1.0.0"
+ Description: ~
+ Requires3D: false
+ ProhibitAccess: true
 $Nodes:
 - e894d2e5-f9e8-4b32-8ccb-3eec69343249
 - 2587680c-8cc2-4422-90b5-873cfa737bd7
