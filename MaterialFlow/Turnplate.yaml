@@ -46,6 +46,7 @@ ShiftcalendarObject:
 Speed: 1
 Strategy: "Angle"
 StrategyCtrl:
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: 89522bcd-f15a-4194-a4ba-be1416dce67f
 Width: 1

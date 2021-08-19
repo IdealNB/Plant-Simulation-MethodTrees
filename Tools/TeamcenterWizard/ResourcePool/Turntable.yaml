@@ -53,6 +53,7 @@ RotationTimePer90Degrees: 1
 ShiftcalendarObject:
 Speed: 1
 TargetCtrl:
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: 2e8afa86-f8ba-4df5-bcdb-25fb9ec825c6
 Width: 1

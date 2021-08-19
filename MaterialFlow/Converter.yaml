@@ -49,6 +49,7 @@ ShiftcalendarObject:
 Speed: 1
 Strategy: "Default Exit"
 StrategyCtrl:
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: e0be6db3-56d0-45c1-9443-e68a036750c2
 Width: 1

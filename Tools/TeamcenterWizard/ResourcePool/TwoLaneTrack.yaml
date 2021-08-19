@@ -29,6 +29,7 @@ ResStatOn: true
 ShiftcalendarObject:
 TrackPitch: 1
 Traffic: "Right-hand Traffic"
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: bdc94812-aaf6-4084-974e-cdefcee71a1d
 Width: 2.1

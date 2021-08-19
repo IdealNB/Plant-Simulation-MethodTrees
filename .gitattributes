@@ -1,0 +1,4 @@
+# YAML files will always have LF line endings on checkout.
+*.yaml text eol=lf
+# JT files are always binary.
+*.jt binary

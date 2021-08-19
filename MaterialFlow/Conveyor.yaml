@@ -56,6 +56,7 @@ ResStatOn: true
 ShiftcalendarObject:
 Speed: 1
 SpeedCtrl:
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: 419de801-f941-4b22-8b8f-637d046021c0
 Width: 1

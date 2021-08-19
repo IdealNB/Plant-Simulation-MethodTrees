@@ -16,6 +16,7 @@ OpenCtrl:
 PlausibilityCtrl:
 RelabelCtrl:
 RenameCtrl:
+TransferLengthToObject: true
 UUID: 0d922d9f-12a5-4419-94db-1cf3fa3e89b8
 Width: 0.9
 $BasicObject: true

@@ -45,6 +45,7 @@ RenameCtrl:
 ResourceType: "Transport"
 ResStatOn: true
 ShiftcalendarObject:
+TransferLengthToObject: true
 UnplannedCtrl:
 UUID: 018412fb-a99d-404e-8262-80a6b8823d91
 Width: 10
