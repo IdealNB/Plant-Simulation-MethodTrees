@@ -1,8 +1,0 @@
-InternalClassType: Comment
-Cont: |+1
- if WMS /= void then
- 	WMS.TransportFinished(@)
- end
-Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
-SaveAsRichedit: false
-UUID: 9d7ebd53-e2a8-49bb-9c6e-91a7b9aa6467

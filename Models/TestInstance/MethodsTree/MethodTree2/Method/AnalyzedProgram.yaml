@@ -1,8 +1,0 @@
-InternalClassType: Comment
-Cont: |+1
- dialog.label := "Racklane"
- 
- dialog.open
-Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
-SaveAsRichedit: false
-UUID: ead0aaf8-cf90-46b0-9390-afc6a7b64157
