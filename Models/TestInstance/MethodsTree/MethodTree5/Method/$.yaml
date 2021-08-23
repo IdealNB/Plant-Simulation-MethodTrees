@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".INIT"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 3501e08e-2655-4e71-986a-7d7cbec42759
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901528
+$Nodes:
+- f94c9474-728f-452f-bd14-634e3f7a3db2
+- 2a5d7ebd-57ec-4119-a092-cf8e27f1fbde
+- 22b41779-0e88-47a2-a8e6-390596fef2ff
+- 6417ab0f-1fb9-4eb2-b15d-384e2c58df19
+- 8b88c433-486b-4d09-99d7-36e9fda43008
+- 4bb2b17f-fab0-4d12-8bed-06cdf997a20a
+- 5b136973-f57d-476d-a83a-c30d5b46bcdc

@@ -1,0 +1,10 @@
+InternalClassType: Comment
+Cont: |+1
+ param attribute : string, oldValue, newValue : any
+ 
+ if oldValue/=NewValue then
+ 	ParameterChanges := true
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 25d0d613-b31c-4410-868b-8a3d4a6ea0af

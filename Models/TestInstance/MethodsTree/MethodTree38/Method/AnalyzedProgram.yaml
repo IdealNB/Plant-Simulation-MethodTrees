@@ -1,0 +1,18 @@
+InternalClassType: Comment
+Cont: |+1
+ var RSU := self.~
+ 
+ RSU.state := "waiting"
+ 
+ while true
+ 	waituntil RSU.OpenPartOrders.Dim>0 or RSU.waitingPart/=void
+ 	if not RSU.OpenPartOrders.empty
+ 		RSU.transferPart(RSU.OpenPartOrders.pop)
+ 	elseif RSU.waitingPart/=void
+ 		RSU.transferPart(RSU.waitingPart)
+ 		RSU.waitingPart:=void
+ 	end
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 50c8bef8-90fc-425e-b789-32b5ec50cdbb

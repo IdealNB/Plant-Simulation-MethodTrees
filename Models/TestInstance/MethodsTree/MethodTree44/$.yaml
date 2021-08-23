@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-378,0]
+Label: ".Models.TestInstance.RackLane.RSU.OnFail"
+LockStructure: true
+Name: MethodTree44
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: b2a068a0-e525-4c50-8bdf-6026865283d3
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- a0de2f21-4e2c-4ea2-92bc-088c0d9f343b
+- 84b5b4d0-86b5-4ab7-ab7d-6c9e5575ad90
+- da9d050c-b8f9-41f3-a15f-cfb3783664a6

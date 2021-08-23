@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-348,0]
+Label: ".Models.TestInstance.RackLane.RSU.ParametrizeRSU"
+LockStructure: true
+Name: MethodTree40
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 1496c36d-b344-4a32-b7ee-653447ead2b9
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 66fecbdb-6e0a-43c4-9b1b-ab0d0f7c023c
+- f46fa80c-dae6-4b48-a94e-95fc4798370e
+- 587a838f-302d-4577-b726-f115843f520f

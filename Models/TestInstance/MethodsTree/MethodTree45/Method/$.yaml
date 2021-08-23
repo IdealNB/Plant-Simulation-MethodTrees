@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Dialog.callback"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: b47ab8cd-1ebe-4cde-859f-398e34c5d393
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901883
+$Nodes:
+- 2a8a3fc1-1dba-4fa1-9ed0-c05249a80d13
+- 27bf1e21-3706-4824-8f00-7209419f0d39
+- 302323c9-bfdf-4e21-a7d4-652fae2e9170
+- d97b13c3-bd26-48c6-a22b-77905412604c
+- 7daa948e-3791-4c9a-933f-8852e77dddb6
+- 120175de-219c-4356-beb4-f9e8f1d8e662
+- 4ded5d5d-9884-4fd8-9fcd-cfbdc0c1e22c

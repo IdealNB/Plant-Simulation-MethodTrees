@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-23,0]
+Label: ".Models.TestInstance.RackLane.onOpen"
+LockStructure: true
+Name: MethodTree2
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 49303e8f-6389-47a1-b157-a236caacd53b
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 20d81699-6aba-43ff-b5ed-6e5f4bea36c4
+- 919bf87a-23db-4a01-9562-88c85d6e302f
+- 5233bb8c-b27f-4e8a-816a-28f5dd8907a5

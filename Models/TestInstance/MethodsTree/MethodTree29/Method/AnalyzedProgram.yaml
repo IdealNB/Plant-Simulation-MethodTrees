@@ -1,0 +1,22 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ param draggedObjects: object[]
+ var obj: object
+ 
+ 
+ for local i := 1 to draggedObjects.dim
+ 	
+ 	obj := draggedObjects[i]
+ 	
+ 	if obj.Class=.ApplicationObjects.HBW3D.WMS then
+ 		
+ 	
+ 		WMS_new := makePathRelative(draggedObjects[i], location)
+ 	end
+ next
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 2cc243cf-fc97-49e1-8ab8-f70f547b3fef

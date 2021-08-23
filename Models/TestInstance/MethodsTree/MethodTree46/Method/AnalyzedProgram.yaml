@@ -1,0 +1,134 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ var l : length := 1
+ var l_unit : string := getUnit(l)
+ var s : speed := 1
+ var s_unit : string := getUnit(s)
+ var a : acceleration := 1
+ var a_unit : string := getUnit(a)
+ var inherit:boolean
+ 
+ dialog.setCaption("Name_inp", current.name)
+ current.getAttribute("name", inherit)
+ dialog.setCheckBox("NameInherit", inherit)
+ 
+ dialog.setCaption("label_inp", current.label)
+ current.getAttribute("label", inherit)
+ dialog.setCheckBox("LabelInherit", inherit)
+ 
+ dialog.Label := current.name
+ 
+ dialog.setCaption("TrackWidth_inp", to_str(TrackWidth))
+ dialog.setCaption("TrackWidth_unit", l_unit)
+ &TrackWidth.getAttribute("Value", inherit)
+ dialog.setCheckBox("TrackWidthInherit", inherit)
+ 
+ dialog.setCaption("RSU_speed_inp", to_str(RSU_speed))
+ dialog.setCaption("RSU_speed_unit", s_unit)
+ &RSU_speed.getAttribute("Value", inherit)
+ dialog.setCheckBox("RSU_speedInherit", inherit)
+ 
+ dialog.setCaption("RSU_acceleration_inp", to_str(RSU_acceleration))
+ dialog.setCaption("RSU_acceleration_unit", a_unit)
+ &RSU_acceleration.getAttribute("Value", inherit)
+ dialog.setCheckBox("RSU_accelerationInherit", inherit)
+ 
+ dialog.setCaption("RSU_deceleration_inp", to_str(RSU_deceleration))
+ dialog.setCaption("RSU_deceleration_unit", a_unit)
+ &RSU_deceleration.getAttribute("Value", inherit)
+ dialog.setCheckBox("RSU_decelerationInherit", inherit)
+ 
+ dialog.setCaption("LoadHandler_speed_inp", to_str(LoadHandler_speed))
+ dialog.setCaption("LoadHandler_speed_unit", s_unit)
+ &LoadHandler_speed.getAttribute("Value", inherit)
+ dialog.setCheckBox("LoadHandler_speedInherit", inherit)
+ 
+ dialog.setCaption("Carrier_speed_inp", to_str(Carrier_speed))
+ dialog.setCaption("Carrier_speed_unit", s_unit)
+ &Carrier_speed.getAttribute("Value", inherit)
+ dialog.setCheckBox("Carrier_speedInherit", inherit)
+ 
+ dialog.setCaption("RSU_Availability_inp", to_str(RSU_Availability))
+ &RSU_Availability.getAttribute("Value", inherit)
+ dialog.setCheckBox("RSU_AvailabilityInherit", inherit)
+ 
+ if RSU_Availability=100
+ 	&RSU_MTTR.inheritAttribute("Value")
+ end
+ dialog.setCaption("RSU_MTTR_inp", to_str(RSU_MTTR))
+ &RSU_MTTR.getAttribute("Value", inherit)
+ dialog.setCheckBox("RSU_MTTRInherit", inherit)
+ 
+ dialog.setCaption("WMS_inp", WMS_new)
+ 
+ dialog.setCaption("NumberOfColumns_inp", to_str(NumberOfColumns))
+ &NumberOfColumns.getAttribute("Value", inherit)
+ dialog.setCheckBox("NumberOfColumnsInherit",inherit)
+ 
+ dialog.setCaption("NumberOfRows_inp", to_str(NumberOfRows))
+ &NumberOfRows.getAttribute("Value", inherit)
+ dialog.setCheckBox("NumberOfRowsInherit",inherit )
+ 
+ dialog.setCaption("BoxHeight_inp", to_str(BoxHeight))
+ dialog.setCaption("BoxHeight_unit", l_unit)
+ &BoxHeight.getAttribute("Value", inherit)
+ dialog.setCheckBox("BoxHeightInherit", inherit )
+ 
+ dialog.setCaption("BoxWidth_inp", to_str(BoxWidth))
+ dialog.setCaption("BoxWidth_unit", l_unit)
+ &BoxWidth.getAttribute("Value", inherit)
+ dialog.setCheckBox("BoxWidthInherit", inherit )
+ 
+ dialog.setCaption("BoxDepth_inp", to_str(BoxDepth))
+ dialog.setCaption("BoxDepth_unit", l_unit)
+ &BoxDepth.getAttribute("Value", inherit)
+ dialog.setCheckBox("BoxDepthInherit", inherit)
+ 
+ 
+ dialog.setCaption("Gap_inp", to_str(Gap))
+ dialog.setCaption("Gap_unit", l_unit)
+ &Gap.getAttribute("Value", inherit)
+ dialog.setCheckBox("GapInherit", inherit)
+ 
+ dialog.setCaption("FloorThickness_inp", to_str(FloorThickness))
+ dialog.setCaption("FloorThickness_unit", l_unit)
+ &FloorThickness.getAttribute("Value", inherit)
+ dialog.setCheckBox("FloorThicknessInherit", inherit)
+ 
+ dialog.setCaption("GroundClearance_inp", to_str(GroundClearance))
+ dialog.setCaption("GroundClearance_unit", l_unit)
+ &GroundClearance.getAttribute("Value", inherit)
+ dialog.setCheckBox("GroundClearanceInherit", inherit)
+ 
+ 
+ dialog.setCheckbox("showContent_chk", showRackContent)
+ 
+ dialog.setCaption("ConveyorWidth_inp", to_str(ConveyorWidth))
+ dialog.setCaption("ConveyorWidth_unit", l_unit)
+ &ConveyorWidth.getAttribute("Value", inherit)
+ dialog.setCheckBox("ConveyorWidthInherit", inherit)
+ 
+ dialog.setCaption("ConveyorLength_inp", to_str(ConveyorLength))
+ dialog.setCaption("ConveyorLength_unit", l_unit)
+  &ConveyorLength.getAttribute("Value", inherit)
+ dialog.setCheckBox("ConveyorLengthInherit",inherit)
+ 
+ dialog.setCaption("BaseHeight_inp", to_str(BaseHeight))
+ dialog.setCaption("BaseHeight_unit", l_unit)
+  &BaseHeight.getAttribute("Value", inherit)
+ dialog.setCheckBox("BaseHeightInherit",inherit)
+ 
+ dialog.setCaption("ConveyorSpeed_inp", to_str(ConveyorSpeed))
+ dialog.setCaption("ConveyorSpeed_unit", s_unit)
+ &ConveyorSpeed.getAttribute("Value", inherit)
+ dialog.setCheckBox("ConveyorSpeedInherit", inherit)
+ 
+ dialog.showStatistic
+ 
+ dialog.setCheckBox("adopt_parameter",false)
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 83e27e33-a1ca-4e61-a56a-fca14c8294f9

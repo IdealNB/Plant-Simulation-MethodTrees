@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".IN.OnExit"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 0fa72c68-34bc-48a2-a7e6-bc4dd63b17d7
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901683
+$Nodes:
+- 39f16850-b909-4eed-9525-091d1505e0ac
+- 17c1f416-eea1-4f73-9c8d-c379749216dd
+- 0f92a2de-3bdf-4511-9f76-7300df098f84
+- fb7f368f-d4d8-4fc1-9247-6a9ef882ab92
+- 289baf77-f52b-4da5-a7cc-31ce62da7f2d
+- 24da651c-fd02-4493-9eb3-fe68ed1ffaf3
+- 89fb6b8f-9cb7-4185-9df3-4a3667c05fc7

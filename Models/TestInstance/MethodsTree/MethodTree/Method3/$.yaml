@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [20.299999999999997,-4.5,0.1]
+Label: ".adoptParametrization"
+LockStructure: true
+Name: Method3
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: c787e37a-4130-4180-a0a7-879d0c19f923
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901443
+$Nodes:
+- 21846ed5-d9c4-4a8a-88ea-ed57a4490368
+- d883e5a8-434d-49c0-8c11-7533781dc311
+- f1af467d-6733-4245-9d92-d44b13caed9d
+- 61e18762-6f16-4aa2-898a-6ad60808b6aa
+- 55778777-b2d0-46b7-8ab0-63117dbbe872
+- 4cd02617-b727-458e-9cd0-26714db29b40
+- a69684b2-314f-40c8-bac2-a658a655aa9f

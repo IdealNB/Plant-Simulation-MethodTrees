@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [18.9,-4.5,0.1]
+Label: ".RSU.SetSpeeds"
+LockStructure: true
+Name: Method4
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 10691045-2db6-4ea5-a8a5-c5d080dcf08b
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901663
+$Nodes:
+- e4e9b0b0-13eb-452f-83c8-3d565dfdd257
+- 4c0e1db0-4351-48ba-849b-afa05cd875eb
+- a7eaa24f-09db-482c-94d2-86fe81cae12f
+- 1dd87e05-c535-48f2-bb19-28268481b173
+- 7bd29a5d-b9a9-47b3-8d98-6ca871f991ee
+- 71c9dfc1-4276-40d5-8326-9795d6152f3c
+- 8a19a872-3c9b-4981-8d8c-d63679e3fb5a

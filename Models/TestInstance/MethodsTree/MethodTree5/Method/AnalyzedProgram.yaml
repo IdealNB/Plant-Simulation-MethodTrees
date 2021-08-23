@@ -1,0 +1,65 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ var Manager : object := location.extendPath(WMS_new)
+ 
+ if Manager/=void then
+ 	if Manager/=WMS then
+ 	
+ 		if WMS/=void then
+ 			WMS.deleteRacklane(current)
+ 		end
+ 
+ 		WMS := Manager
+ 	end
+ 
+ 	WMS.addRacklane(current)
+ else
+ 	messageBox(to_str(current, ": No valid WMS defined: ", WMS_new), 1, 1)
+ 	root.eventcontroller.stop
+ 	return
+ end
+ 
+ RSU_Height := NumberOfRows * BoxHeight + GroundClearance + FloorThickness * (NumberOfRows+1)
+ 
+ if ParameterChanges then
+ 	InitRackLane
+ 	ParameterChanges := false
+ else
+ 	setConveyorspeed
+ end
+ 
+ RSU.FailureActive := false
+ RSU.Availability := RSU_Availability
+ RSU.MTTR := RSU_MTTR
+ RSU.FailureActive := true
+ var HomePosition := RSU._3D.getPositionOfObject(In, In._3D.getMUAnimationPosition(1))
+ RSU.HomePositionX := HomePosition.x - BoxWidth/2
+ RSU.HomePositionZ := HomePosition.z
+ 
+ OccupancyLeft.delete
+ OccupancyLeft.MaxXDim := NumberOfColumns
+ OccupancyLeft.MaxYDim := NumberOfRows
+ for var col := 1 to NumberOfColumns loop
+ 	for var row := 1 to NumberOfRows loop
+ 		OccupancyLeft[col, row] := 0
+ 	next
+ next
+ 
+ OccupancyRight.delete
+ OccupancyRight.MaxXDim := NumberOfColumns
+ OccupancyRight.MaxYDim := NumberOfRows
+ for var col := 1 to NumberOfColumns loop
+ 	for var row := 1 to NumberOfRows loop
+ 		OccupancyRight[col, row] := 0
+ 	next
+ next
+ 
+ OUT.SensorID(1).Position := BoxWidth + 0.01
+ 
+ RSU.waitPosReached(max(RSU._3D.getObject(1).moveTo(RSU.HomePositionX), RSU._3D.getObject(1).getObject(1).moveTo(RSU.HomePositionZ)))
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 4bb2b17f-fab0-4d12-8bed-06cdf997a20a

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".RSU.transferPart"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 58e6a622-f51e-4aa7-813e-b3ef93281c74
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901863
+$Nodes:
+- 44f91a29-4a7d-4615-b0fc-047a0442ccac
+- 811051bc-526e-479c-b6e8-ff11ba02eb1c
+- 6702a626-40fb-495f-8fe7-43381a79c5f7
+- 30a11ab4-0311-46f4-a444-ab64814f0d59
+- f64327f6-40f5-49d1-ac80-2748c51d47d2
+- 91bf486a-d242-4d57-b821-17318a25ed67
+- fa45dccd-227c-46a4-a6c2-2962a43c0683

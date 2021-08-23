@@ -1,0 +1,17 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ param attribute:any
+ 
+ if ?.getCheckBox(attribute.name+"Inherit") and ?.~.Origin/=void
+ 	attribute.inheritAttribute("Value") 
+ else
+ 	if attribute.DataType = "time"
+ 		attribute.value := str_to_time(dialog.getValue(attribute.name+"_inp"))
+ 	else
+ 		attribute.value := str_to_num(dialog.getValue(attribute.name+"_inp"))
+ 	end
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: e0fb195b-3003-4028-93f7-5b00265b2d06

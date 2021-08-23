@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [31.499999999999996,-4.5,0.1]
+Label: ".RSU.waitPosReached"
+LockStructure: true
+Name: Method7
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 70ed6bfe-4baf-4a9a-922f-70928c09e38f
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901563
+$Nodes:
+- a160600a-bf36-4d5f-b7be-380be1190fec
+- c81c2689-ed5a-4b17-9914-36ac33380fab
+- 58390b3c-36e1-4efa-8600-6b3e096e5440
+- 868e274c-60ea-45a1-879c-53b26190324e
+- 07a9e9d1-b431-4d4c-a760-50c5871dae84
+- 61aecca4-6109-4053-b1a2-2ca130e9955f
+- 9e1cb7e3-8cc7-44f5-bb93-b40512f27968

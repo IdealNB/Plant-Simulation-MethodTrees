@@ -1,0 +1,17 @@
+InternalClassType: Comment
+Cont: |+1
+ param RSUSpeed: speed, RSUAcceleration: acceleration, RSUDeceleration: acceleration, LiftTableSpeed: speed, ForksSpeed: speed
+ 
+ var RSU := self.~
+ var rsuUnit   := self.~._3D.getObject(1)
+ var LiftTable := rsuUnit.getObject(1)
+ var Forks     := LiftTable.getObject(1)
+ 
+ rsuUnit.JointVelocity := RSUSpeed
+ rsuUnit.JointAcceleration := RSUAcceleration
+ rsuUnit.JointDeceleration := RSUDeceleration
+ LiftTable.JointVelocity := LiftTableSpeed
+ Forks.JointVelocity := ForksSpeed
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 1a35baa6-edd2-4dee-93d4-77462c94573a

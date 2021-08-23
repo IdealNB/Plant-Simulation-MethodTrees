@@ -1,0 +1,15 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ if pred/=Void and pred.~.Class=current.Class
+ 	adoptParametrization(pred.~)
+ elseif succ/=Void and succ.~.Class=current.Class
+ 	adoptParametrization(succ.~)
+ elseif pred/=Void and pred.~.Class=current.Class and succ/=Void and succ.~.Class=current.Class
+ 	adoptParametrization(pred.~)
+ end
+ 
+ initRackLane
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 7b2c767a-71cb-4393-8477-51c0c7ccec65

@@ -1,0 +1,26 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ param Rack : object
+ 
+ if not Rack._3D.exists then
+ 	return
+ end
+ 
+ Rack.XDim := NumberOfColumns
+ Rack.YDim := NumberOfRows
+ 
+ Rack._3D.Gap := Gap
+ Rack._3D.FloorThickness := FloorThickness
+ Rack._3D.GroundClearance := GroundClearance
+ 
+ 
+ Rack._3D.Dimensions := [BoxWidth, BoxDepth, BoxHeight]
+ 
+ Rack._3D.AutoGraphicsActive := true
+ Rack._3D.StoreType := "Rack with square posts (dynamic)"
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 0ea3fccf-913e-4c58-9fda-15a0355c19d6

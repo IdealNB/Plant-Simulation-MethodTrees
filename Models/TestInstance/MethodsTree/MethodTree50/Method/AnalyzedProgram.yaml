@@ -1,0 +1,32 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ ?.changeAttribute(&TrackWidth)
+ ?.changeAttribute(&RSU_speed)
+ ?.changeAttribute(&RSU_acceleration)
+ ?.changeAttribute(&RSU_deceleration)
+ ?.changeAttribute(&LoadHandler_speed)
+ ?.changeAttribute(&Carrier_speed)
+ ?.changeAttribute(&RSU_Availability)
+ ?.changeAttribute(&RSU_MTTR)
+ 
+ ?.changeAttribute(&NumberOfColumns)
+ ?.changeAttribute(&NumberOfRows)
+ ?.changeAttribute(&BoxWidth)
+ ?.changeAttribute(&BoxHeight)
+ ?.changeAttribute(&BoxDepth)
+ 
+ ?.changeAttribute(&Gap)
+ ?.changeAttribute(&FloorThickness)
+ ?.changeAttribute(&GroundClearance)
+ 
+ ?.changeAttribute(&ConveyorWidth)
+ ?.changeAttribute(&BaseHeight)
+ ?.changeAttribute(&ConveyorLength)
+ ?.changeAttribute(&ConveyorSpeed)
+ 
+ ?.initDerivates
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 8edf2126-2a17-4816-8713-517bd82dd90f

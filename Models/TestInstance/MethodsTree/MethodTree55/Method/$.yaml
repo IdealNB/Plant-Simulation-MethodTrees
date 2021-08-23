@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".CreatePart.Class"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 47f4dfbe-1902-4564-9904-ab89b12ae222
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901933
+$Nodes:
+- 3c1e4504-1f8b-42eb-8957-3e11cd0bc05e
+- e26157e3-de5a-409c-8aca-004101d472d9
+- a5451f2f-b350-4367-8fc0-cbb475112ac1
+- 3f8daf3d-bc18-414e-888c-4a52249e5f7a
+- db211762-339d-4059-a966-ea7bf7e4a242
+- c9735ed2-0a30-4d85-bb1d-9d771647ff8c
+- 68654867-83a2-4d28-9238-2d9995132ce1

@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-363,0]
+Label: ".Models.TestInstance.RackLane.RSU.reset"
+LockStructure: true
+Name: MethodTree42
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: eb6d7add-53df-41eb-bc77-082ea816f563
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- e56ec107-36f4-4433-99c9-7a19a2ab0cf4
+- 92368f7c-4957-4047-9090-35fa4792e0ea
+- 7e161487-2105-4473-a7ce-16b1e0f3d224

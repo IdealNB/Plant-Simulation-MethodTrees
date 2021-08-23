@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-219.5,0]
+Label: ".Models.TestInstance.RackLane.onChanges"
+LockStructure: true
+Name: MethodTree25
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 1b7a9459-a0ab-46a4-b0fb-221bfd889dd1
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- e106f9d7-986d-4ee3-a960-4c0ff4df8094
+- b9b3eb20-feb8-4544-afd2-e055a3e061f2
+- 04b3c735-6f73-4246-965f-d53faa056546

@@ -1,0 +1,10 @@
+InternalClassType: Toolbar
+ChangePathCtrl:
+ConstructorCtrl:
+DestructorCtrl:
+MoveToFolderCtrl:
+Name: AnalyzeMethods
+UUID: 1ce1c83e-09b5-49e1-8a2d-a2c78adff7e4
+Visible: true
+$Objects:
+- 2587680c-8cc2-4422-90b5-873cfa737bd7

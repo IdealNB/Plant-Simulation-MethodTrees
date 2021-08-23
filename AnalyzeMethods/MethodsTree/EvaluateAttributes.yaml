@@ -1,0 +1,20 @@
+InternalClassType: Method
+Coordinate3D: [-8,-2.3,0]
+Name: EvaluateAttributes
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ param namespace:any
+ 
+ var t:table
+ var m:any
+ namespace.putAttributeNamesIntoTable(t,true,true)
+ for var a := 1 to t.ydim
+ 	var str := to_str(namespace) + "." + t[1,a]
+ 	if existsMethod(str)
+ 		forget m
+ 		m := str_to_method(str)
+ 		createMethodTree(str)
+ 	end
+ next
+RandomSeed: 1073901412
+UUID: cc214b04-c7d5-4b6d-b869-492833e59880

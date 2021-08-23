@@ -1,0 +1,23 @@
+InternalClassType: Frame
+Coordinate3D: [1,-294.5,0]
+Label: ".Models.TestInstance.RackLane.contructorControl.Origin"
+LockStructure: true
+Name: MethodTree35
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: e09e6bcb-d873-4b2d-b99a-de3908af7f77
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- ae5c40ca-ca7c-4c87-aeb2-f1b48c98ef9e
+- d3837ad8-3ddf-416c-aa59-5e508a06fb60
+- 15ec8998-1d9b-4e50-8288-b153e392ce1b
+- 36fd268c-8cc0-4139-817b-7ca4a4bd2d03
+- 20e3379b-e7ea-4967-929a-a99fd1c05409
+- 07149671-9ae0-4191-9d96-3c5e59460208
+- d15fb757-e49e-434c-a989-ab140b171528
+- cc003c1d-a614-4067-9455-c65eaaf78fae
+- 116e55b0-b97a-45d2-9cff-f5f53f4d241a
+- 78914cab-1a78-4307-a10b-3a9a02276262
+- 37620ccf-e804-471a-bb0a-99c1bd99761e

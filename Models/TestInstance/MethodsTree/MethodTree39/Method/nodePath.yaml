@@ -1,0 +1,5 @@
+InternalClassType: Variable
+Origin: b1ba17ed-1c38-4f82-9db0-2e8bd7ad0203
+UUID: 151e1ef1-b6e4-40ef-abda-60f4b2e9e759
+$DataType: string
+Value: ".Models.TestInstance.RackLane.RSU.waitPosReached"

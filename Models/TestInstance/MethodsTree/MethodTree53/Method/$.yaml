@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Dialog.reset"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: ad3bd3a9-2f5b-434f-b6ef-4fb342aa1e1c
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901923
+$Nodes:
+- df84a706-3673-4ee4-82ca-f5af3f4de1ca
+- dd666002-675a-4465-bafb-1c9e68802c50
+- dfec2e02-1807-4720-b2ac-4ef07a00b9fe
+- d3378999-1e7c-415f-9857-b5b079a674ef
+- 46d5dc20-ae2f-459c-860e-43f7d3d3c08f
+- 656853ff-4b9e-4725-bb6d-dd789b4834c3
+- 565c9d0d-3018-48fd-80a0-7e30f87b6c4b

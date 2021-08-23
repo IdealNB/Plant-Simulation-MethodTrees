@@ -6,13 +6,13 @@ ConstructorCtrl:
 Coordinate3D: [15,-1,0]
 CreateIn3D: true
 DestructorCtrl:
-DragDropCtrl:
+DragDropCtrl: "OnDragDrop"
 InitCtrl:
 Label: ""
 MoveInFrameCtrl:
 MoveToFolderCtrl:
 Name: MethodsTree
-OpenCtrl:
+OpenCtrl: "OnOpen"
 PermitDeleteCtrl:
 RelabelCtrl:
 RenameCtrl:
@@ -164,3 +164,6 @@ $Nodes:
 - 26dd0ee2-e3de-4f76-b096-4e8baf84e386
 - 9cbbda88-f689-4510-be9d-6090673ec55a
 - 50370ed1-4cc2-40b1-af87-a065634b283d
+- cc214b04-c7d5-4b6d-b869-492833e59880
+- 80c0f3f6-61d9-4cc2-9265-f6eedfb4123c
+- 6957f9c8-9269-453c-a3f2-44ee52060043

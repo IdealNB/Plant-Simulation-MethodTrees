@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-76.5,0]
+Label: ".Models.TestInstance.RackLane.appendOrder.Class"
+LockStructure: true
+Name: MethodTree7
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 98af2caa-9829-4b2c-a0d0-a183e2ecb882
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- aa1fbc41-0c3d-4c00-a586-53a55e3444e7
+- cc74207a-8b70-4713-95a5-0d5b11107894
+- 76dba556-46f0-43a9-a361-d5974ecbd40e

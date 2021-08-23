@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-91.5,0]
+Label: ".Models.TestInstance.RackLane.createRack.Origin"
+LockStructure: true
+Name: MethodTree9
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: be61dd4f-6686-497d-98fe-d68efebba391
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 921b3126-77c4-43f1-b0b9-44f127ca96b2
+- 9d128db8-dfe3-42f6-8ea0-954a9f485be5
+- c73b3543-a65c-4a36-ae43-a8c7b7b8391c

@@ -1,0 +1,31 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ param Column, Row: integer, orderSide: string, OrderNo: string := "0"
+ 
+ 
+ var targetRack := when orderSide = "left" then RackLeft else RackRight
+ 
+ var part := targetRack[column, row].cont
+ 
+ if part.getAttrNo("HBW_OrderNo") <= 0 then
+ 	part.createAttr("HBW_OrderNo", "string")
+ end
+ part.HBW_OrderNo := orderNo
+ 
+ part.inheritAttribute("AutomaticRouting")
+ if part.getAttrNo("HBW_ProductName") > 0 then
+ 	part.deleteAttr("HBW_ProductName")
+ end
+ if part.getAttrNo("HBW_ProductQuantity") > 0 then
+ 	part.deleteAttr("HBW_ProductQuantity")
+ end
+ 
+ part.destination := Out
+ 
+ RSU.OpenPartOrders.push(part)
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 0209ac50-7548-4f74-9a16-a4fe3a29471b

@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [8.75,-4.5,0.1]
+Label: ".ApplicationObjects.HBW3D.RackLane.adoptParametrization"
+LockStructure: true
+Name: Method1
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 36fd268c-8cc0-4139-817b-7ca4a4bd2d03
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901758
+$Nodes:
+- 9680757c-026b-421b-9e1f-e03932a8a6bb
+- 41c5f83d-0e02-4e32-ab65-099405af5374
+- fffd4375-fe7b-4c05-9749-18453d7c3b2e
+- de31c103-7631-4822-99c4-76f28de905da
+- 5df24c4b-1dd6-48a8-a0ce-a7a0cac11d46
+- 98199723-d6e4-4506-8fb3-a33d5133c687
+- 8444b4e8-ad95-4d80-9643-9df1f39c73fc

@@ -13,4 +13,4 @@ $CustomAttributes:
  RandomSeed: 1073838455
  Value: |+1
   
-  CreateMethodTrees
+  CreateMethodTrees(model)

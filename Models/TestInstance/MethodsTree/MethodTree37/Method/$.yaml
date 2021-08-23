@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".contructorControl"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 63cd2229-8fce-4a4c-ac4b-2fcbed1d6846
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901803
+$Nodes:
+- bfa5ad3f-1205-4457-bb29-23f7c04bcaf8
+- a2ccdd70-15e5-477f-bd73-f1d154e0cc51
+- cb72992c-617d-462d-85de-79c136679b25
+- b6317b5d-8fa7-4106-a73c-eb2a6f472bf5
+- 33867328-655f-4749-96de-4aef4fb2afaf
+- 8b5b26f6-48a4-44a6-a60b-76c46fedb756
+- e092d69f-4e26-438c-84c1-169a3c1b8896

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".RSU.reset"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7e161487-2105-4473-a7ce-16b1e0f3d224
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901868
+$Nodes:
+- 0292629d-6955-46ac-aa77-f880e16589ab
+- ee108649-e299-4bc3-83f6-5e1595ca9a9d
+- 6268cb83-3d3a-4ef7-8bab-2917795cc7f9
+- 03d3f875-804a-42bc-9866-d80364b4507c
+- b86af69e-0f9f-490b-b46c-c87df9e62288
+- 6eb2b3f6-6ecd-49ac-8984-c87ae9a3e33c
+- 9c3d3f6e-8399-415a-86e9-acc9f78c1235

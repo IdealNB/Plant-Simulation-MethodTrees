@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".setConveyorSpeed"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 2b927b3d-4dc7-43e9-90a9-7cdf48c7a514
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901718
+$Nodes:
+- bb89880d-0bca-49b9-8e9b-7f474f41084f
+- a6bc95b0-cb33-4895-90d3-3fc1af95bc37
+- 796a6320-998f-42ce-bee7-c5f14b76e7c9
+- 31dc4d7b-f165-4b49-9e70-b281424d33b0
+- cd070f60-2108-413a-9e89-2736c16603be
+- 3c98e3dd-90e7-4368-8dc0-f4b77ff9816b
+- 65f655c2-f17f-496a-b841-ff704ee32ecb

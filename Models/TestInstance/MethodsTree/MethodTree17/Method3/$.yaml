@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [12.249999999999998,-4.5,0.1]
+Label: ".RSU.ParametrizeRSU"
+LockStructure: true
+Name: Method3
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: a5790574-d923-42ed-8004-8d10b52d865c
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901658
+$Nodes:
+- 8d3d0e80-163e-479f-8517-3b78ca3cafc1
+- e0920644-bb21-4ffa-8b1f-e15b31a42453
+- aa546e10-c55c-43b8-9178-e7b601af19f2
+- 9f7b714a-0c7f-4268-a558-38e4414ab10d
+- 3bed62d7-4fc0-49ba-8f85-7bf3f82ba4e5
+- 3ef73729-2164-474a-b8f9-9947452dbdfe
+- 4b76ed6a-ad3d-4058-9b35-50bc75861398

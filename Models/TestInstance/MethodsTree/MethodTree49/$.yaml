@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-415.5,0]
+Label: ".Models.TestInstance.RackLane.Dialog.changeAttribute"
+LockStructure: true
+Name: MethodTree49
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 320457f4-14af-4b6e-ba79-ac8c8ad3ab01
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 3fb5b23a-9c43-4321-930f-861da702f3e8
+- 9f5fb771-a2c6-490f-9517-b9215e3b1de4
+- 848092c5-1b5e-427c-aa11-bece3119f3ec

@@ -3,44 +3,39 @@ Coordinate3D: [-9,-1,0]
 Name: CreateMethodTrees
 Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
+ param namespace:object
+ 
  //This method is called when a "generate"-button is activated.
  //The method searches in the namespace for methods (internal+external)
  //Each method found will have a tree constructed for it.
  
- var nameSpace := model
+ --var nameSpace := model
+ 
  var i := 0
  var node:object
  
- switch namespace.internalclassType
- case "Frame"
+ EvaluateAttributes(namespace)
+ 
+ if namespace.internalclasstype = "Frame"
  	while true
  		i += 1
  		node := nameSpace.node(i)
  		if  node = void
  			return --finished
  		end
- 
+ 		EvaluateAttributes(node)
+ 		
  		switch node.internalclassType
  		case "Method"
  			--analyze it!
  			createMethodTree(to_str(node))
+ 		case "Frame"
+ 			CreateMethodTrees(node)
  		else
  
  		end
  
  	end
- else
- 	var t:table
- 	namespace.putAttributeNamesIntoTable(t,true,true)
- 	for var a := 1 to t.ydim
- 		var str := to_str(namespace) + "." + t[1,a]
- 		if existsMethod(str)
- 			var m := str_to_method(str)
- 			createMethodTree(str)
- 		end
- 
- 	next
- 
  end
 RandomSeed: 105
 UUID: 11e12aad-0f57-4edc-ae63-e7cb1e692ebf

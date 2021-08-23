@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".OUT.toggleStatus"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: b2d02b8d-a713-4b2e-b6db-62c80387d3cc
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901688
+$Nodes:
+- 0c92619e-a120-4ae0-8021-0af5c1a8c4d9
+- 97ce9f0b-8b67-4e63-bf02-70c1dad3b43e
+- 30100ea7-c53f-4bae-83ac-3e13b2404d5a
+- a80b2adf-a3e8-433e-acc4-8d5789756006
+- 0f910b8f-cbe9-4a78-bb1b-2ba0e4495ea6
+- f2d0402c-7f39-43fa-bb23-19ef8f44416f
+- 0868355e-4949-4bc1-855c-e878f8ff0d73

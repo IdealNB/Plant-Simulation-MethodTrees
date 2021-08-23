@@ -1,0 +1,5 @@
+InternalClassType: Variable
+Origin: b1ba17ed-1c38-4f82-9db0-2e8bd7ad0203
+UUID: 0c92619e-a120-4ae0-8021-0af5c1a8c4d9
+$DataType: string
+Value: ".Models.TestInstance.RackLane.OUT.toggleStatus"

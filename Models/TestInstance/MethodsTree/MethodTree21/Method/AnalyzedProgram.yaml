@@ -1,0 +1,9 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ waituntil RSU.waitingPart = void
+ RSU.waitingPart := @
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 24da651c-fd02-4493-9eb3-fe68ed1ffaf3

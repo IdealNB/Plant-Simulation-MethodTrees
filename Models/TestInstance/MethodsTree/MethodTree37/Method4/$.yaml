@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [28.35,-4.5,0.1]
+Label: ".initRackLane"
+LockStructure: true
+Name: Method4
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: f52c6400-e354-480a-9470-17ce1fe63aba
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901823
+$Nodes:
+- d14ccd84-5a73-409d-8bc4-c1bba07d125c
+- cc09b0d1-f425-4858-8941-fd3bf612ab26
+- 615c1bc7-aa6f-42fc-a541-35c647d8e854
+- ba29347b-d657-4a57-b618-7c916918f4ac
+- b6f3e666-8602-482c-8319-2db6c24f7ffe
+- 5c3291d2-2a3e-41d7-8673-f1eba88c1bcf
+- 61b923b6-1055-41df-b172-d1423a399414

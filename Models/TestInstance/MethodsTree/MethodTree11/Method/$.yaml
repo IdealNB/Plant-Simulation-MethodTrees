@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".createRack"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 0d42b882-9c32-4a11-be9c-b003be5042e3
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901593
+$Nodes:
+- a0b805b5-2e12-4c7d-add8-a0cc6755dd47
+- f91a2445-272d-4b64-b10f-22c0cdea9be7
+- 7ceb3ed5-3543-431f-a942-7b724b637791
+- f071b56a-6e70-4db9-a1c2-d5c59de3d6b7
+- 42ce3a00-175e-48bd-923c-d8f9d870bbc1
+- 7ba6b758-83fc-4756-8150-a1dadd803444
+- 49f9f3fe-a792-452e-b085-a45a09c8d166

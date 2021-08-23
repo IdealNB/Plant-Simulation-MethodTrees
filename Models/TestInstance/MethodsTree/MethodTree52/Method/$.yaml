@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Dialog.adoptParameters"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 5d4f9538-44cc-4cda-93ac-4f298453d5d9
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901918
+$Nodes:
+- 68d12c83-be32-4892-af1f-31f374ba1e1e
+- d57ca77d-0111-4085-8656-ae73057a0586
+- a640d25d-67c5-4211-9bc9-55c8dcc4631b
+- 2300adf2-808f-4ef0-96b1-f72a60b41c32
+- 8136430b-f6ef-4905-821c-747802b90619
+- ce032a1d-042f-4915-8d52-1f0765268b00
+- 717d8bde-7342-40a0-a895-45f064e4d975

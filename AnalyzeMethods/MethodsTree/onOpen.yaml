@@ -1,0 +1,9 @@
+InternalClassType: Method
+Coordinate3D: [-16,-8,0]
+Name: onOpen
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ DeleteAndGenerate.onClicked
+ current.OpenDialog
+RandomSeed: 1073901414
+UUID: 6957f9c8-9269-453c-a3f2-44ee52060043

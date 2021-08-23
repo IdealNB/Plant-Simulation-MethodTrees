@@ -1,0 +1,25 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ param entranceNo: integer
+ 
+ var destination := @.Destination
+ 
+ if destination = void
+ 	?.ExitForMU := 0
+ else
+ 	var rackLane: object := destination.~.~
+ 	
+ 
+ 	if rackLane=current then
+ 	
+ 		?.ExitForMU := 3
+ 	else
+ 	
+ 		?.ExitForMU := 0
+ 	end
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 5c38adf5-1214-4c76-bf7e-9d49828c5d6c

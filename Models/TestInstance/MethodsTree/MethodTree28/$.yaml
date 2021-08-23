@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-242,0]
+Label: ".Models.TestInstance.RackLane.setConveyorSpeed"
+LockStructure: true
+Name: MethodTree28
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: d78daa2b-f8f6-4725-9e35-a248dc411095
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- d0ef6c15-29e4-4f26-9c08-874cf64520dc
+- 7efb4968-f1d0-4586-919c-b0677cdf773f
+- 2b927b3d-4dc7-43e9-90a9-7cdf48c7a514

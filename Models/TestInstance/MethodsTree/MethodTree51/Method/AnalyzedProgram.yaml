@@ -1,0 +1,13 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ if ParameterChanges then
+ 	InitRackLane
+ 	ParameterChanges := false
+ 	for var i := 1 to ?.NumChildren
+ 		?.childNo(i).&initDerivates.execute(void,childNo(i).dialog)
+ 	next
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 5bdf4827-d517-4a14-af78-f5b1cc54b22a

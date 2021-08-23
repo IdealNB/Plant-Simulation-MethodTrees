@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".createRack.Origin"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: c73b3543-a65c-4a36-ae43-a8c7b7b8391c
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901583
+$Nodes:
+- 880225cd-b3e2-46fc-9d6b-e6249d6fea8b
+- af3cef62-170b-4563-8f57-761ff1b2667d
+- 8e48b187-d560-42f0-a08f-4f980063d092
+- b82c89c3-c541-4b2b-bac4-3d0d6487b60c
+- 041cfa83-cc40-44b1-8c8a-ff170653bbb2
+- f7a69f1b-28b2-406b-9851-c0216495e0e7
+- da8df3d4-fff4-443c-be14-09858bc4a77b

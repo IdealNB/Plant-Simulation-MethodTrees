@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".RackLeft.OnEntrance"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: b074d39d-6347-4350-88b5-91b2b293ce78
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901598
+$Nodes:
+- 2ea64439-4c60-4231-bb9c-754592c3af84
+- e99c22d3-c657-40f7-9695-93950ee5bfb5
+- 1c3eddf2-777f-44b3-b235-6a35caae69e0
+- 279bdcdf-2ff5-44ce-98d2-9eba04c5d65a
+- a28804d4-4086-494e-a5a2-57b3d2f9aa16
+- 9d7ebd53-e2a8-49bb-9c6e-91a7b9aa6467
+- b8a61d59-46ba-4473-8228-85d096e4d0d4

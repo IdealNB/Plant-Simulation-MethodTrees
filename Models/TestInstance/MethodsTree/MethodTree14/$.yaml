@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-129,0]
+Label: ".Models.TestInstance.RackLane.Converter1.OnStrategy"
+LockStructure: true
+Name: MethodTree14
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 1dc04313-afa2-4a3c-ae25-4ba1c6f69e46
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 549ce94d-44c5-41ce-b0ff-95739e6dd499
+- 46352075-1f1c-4548-8fd2-12fbe504f963
+- 842f52c9-8ec8-4034-9e4c-ce6a6793efa5

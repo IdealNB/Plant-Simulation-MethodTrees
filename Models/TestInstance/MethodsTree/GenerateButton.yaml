@@ -1,0 +1,8 @@
+InternalClassType: Button
+Origin: 9cbbda88-f689-4510-be9d-6090673ec55a
+UUID: a4e5b937-58a3-4e18-bb8c-9501a795bb72
+$CustomAttributes:
+-
+ Name: OnClicked
+ $DataType: method
+ RandomSeed: 1073901423

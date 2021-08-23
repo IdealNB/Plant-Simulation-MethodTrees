@@ -1,0 +1,13 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ /
+ 
+ Converter1.speed	:= ConveyorSpeed
+ IN.Speed			:= ConveyorSpeed
+ Line.Speed			:= ConveyorSpeed
+ Converter2.Speed	:= ConveyorSpeed
+ OuT.Speed			:= ConveyorSpeed
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 4590070a-de3c-4b98-8a16-273ffc3aac12

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".Converter1.OnStrategy"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 842f52c9-8ec8-4034-9e4c-ce6a6793efa5
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901608
+$Nodes:
+- 2751cc2d-8525-484a-a39e-cb7c969876ae
+- 97717e9a-1fa2-4f2b-a3ee-f479bc86b784
+- 0e4eccc3-0e3a-4e42-ae34-57f63216f18a
+- df1ab1a2-ac9a-4f4d-813e-ec8634449abc
+- 0740fd99-3101-49fc-b6ac-a9666602e6cd
+- 5c38adf5-1214-4c76-bf7e-9d49828c5d6c
+- 30c19ae2-377c-454e-887b-0300e153adff

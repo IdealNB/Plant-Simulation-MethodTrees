@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [57.05,-4.5,0.1]
+Label: ".ApplicationObjects.HBW3D.RackLane.RSU.SetSpeeds"
+LockStructure: true
+Name: Method4
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: a8abebef-ae0c-4e4e-94ec-14b23170b0fe
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901633
+$Nodes:
+- 13933e43-cd38-4f0d-806f-dce3efed8cf8
+- 2d6b17ce-c93a-4372-ba8d-e086be8678b0
+- 1695d40a-869c-48c4-8c2c-09634cfd3005
+- 189a21ad-a5ce-4896-af95-c6360b706d70
+- 29b2fb70-25e9-4df3-bd13-d60a807028f4
+- 5b7093af-0597-42aa-a4c7-9b8b8688f68c
+- bd5a7fa3-ef3e-4299-9560-0b9af31e0bb0

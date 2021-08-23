@@ -1,5 +1,5 @@
 InternalClassType: Method
-Coordinate3D: [-7.5999999999999988,-3.1,0]
+Coordinate3D: [-7.3,-4.4,0]
 Name: AddNode
 Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
 Program: |+1
@@ -41,7 +41,7 @@ Program: |+1
  	nodeCanHaveSucc := false
  	defaultNodeType := true
  
- case "Transporter"
+ case "Transporter", "Part"
  	methodNodeClass := str_to_obj(".AnalyzeMethods.derived." + NodeType)
  	nodeCanHaveSucc := true
  	defaultNodeType := true

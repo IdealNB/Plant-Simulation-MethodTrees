@@ -1,0 +1,12 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ if self.~.state = "Waiting"
+ 	var oldState := self.~.state
+ 	self.~.state := "failed"
+ 	stopuntil not self.~.Failed
+ 	self.~.state := oldState
+ end
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 4a280845-ac53-4f46-8aac-714c0b6d9ad4

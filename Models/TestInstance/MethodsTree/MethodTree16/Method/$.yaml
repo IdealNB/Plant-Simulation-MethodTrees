@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".InitRackLane.Class"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 78de301e-68f8-46a6-8592-1d78add9de25
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901638
+$Nodes:
+- 517e9388-972b-426d-9396-10eea783f552
+- 6a800814-f36a-4b3b-86e8-01f0cf08f2c7
+- ef03dcdd-2a21-4bdc-9589-f61e3a507265
+- e9aa3dfc-1b60-4384-8c1d-6ddf1fb1a9ff
+- 279e59c2-c428-4427-8349-d48284cda30f
+- f3a89748-f68a-4410-b9e4-74f897db0bd0
+- 75ccf2b9-b15f-4d23-80b9-329f895125b1

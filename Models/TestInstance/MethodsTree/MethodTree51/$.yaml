@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-430.5,0]
+Label: ".Models.TestInstance.RackLane.Dialog.initDerivates"
+LockStructure: true
+Name: MethodTree51
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: 3344eecc-652f-4492-b56d-d039b7b3fb2b
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- 9d36b4f3-0005-47b0-b4d4-32c84ef8db87
+- 17dc4446-80e2-4494-a65e-d4b841bd6d50
+- 3e8e69aa-eb6c-4e4b-88cb-f3ac3059d980

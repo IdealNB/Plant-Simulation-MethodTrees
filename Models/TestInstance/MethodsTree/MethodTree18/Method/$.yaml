@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".statistic.Origin"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 7ecad262-e940-471e-954e-6bf0239ab600
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901668
+$Nodes:
+- 2386cda5-79dc-44ae-afe1-80eb2520c596
+- 9fc8875d-806f-4e87-94de-2e315fad7df1
+- 14891cef-ebda-481f-a178-6466f89076cc
+- 636e0f40-2e1c-415a-8c86-65254bc5fbc9
+- 36f12157-63da-43b7-bc90-ab1d61951433
+- 9822e1a3-e0dd-42fb-be57-a83a245fd4f3
+- c0b123da-3149-4967-881d-6887e990da09

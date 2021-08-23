@@ -1,0 +1,20 @@
+InternalClassType: Frame
+Coordinate3D: [114.45,-8.5,0.1]
+Label: ".ApplicationObjects.HBW3D.RackLane.RSU.ParametrizeRSU"
+LockStructure: true
+Name: Method7
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: 78914cab-1a78-4307-a10b-3a9a02276262
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901788
+$Nodes:
+- 8058dfa9-456c-4fb3-96cf-36228344adba
+- 12da819d-1b26-4f92-87b8-37e3e10075b2
+- d6f46e38-ef10-4aff-96c9-ad17fc88a99d
+- b087bcfc-d030-4e17-a293-e3a7e936b663
+- 7e2303a1-f5c7-40c0-8694-8316d2d1a558
+- bca5cb4c-b7bc-487e-a02d-f36441111fa8
+- 2e534bad-5747-4762-8a56-e27a627b638e

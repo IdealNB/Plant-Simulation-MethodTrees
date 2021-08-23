@@ -1,0 +1,7 @@
+InternalClassType: DataTable
+Origin: 5828da38-cedb-42b8-b38c-3010c3f698ee
+UUID: 5a1e818a-ba1c-4415-ae83-ec31d85270cd
+$Data:
+ Columns:
+ - [0,object,1,5d4f9538-44cc-4cda-93ac-4f298453d5d9]
+ - [1,integer,1,0]

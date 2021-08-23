@@ -1,0 +1,16 @@
+InternalClassType: Method
+Coordinate3D: [-16,-7,0]
+Name: onDragDrop
+Origin: e894d2e5-f9e8-4b32-8ccb-3eec69343249
+Program: |+1
+ param draggedObjects:object[]
+ 
+ if draggedObjects.dim /= 1
+ 	return
+ end
+ 
+ var obj := draggedObjects[1]
+ 
+ model := to_str(obj)
+RandomSeed: 1073901413
+UUID: 80c0f3f6-61d9-4cc2-9265-f6eedfb4123c

@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".DragDropCtrl"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: c1d244c9-c138-4ec5-9862-a03cac8d6dc1
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901473
+$Nodes:
+- db6e96ff-6a0f-454d-9c7e-baef100c88f9
+- db46da28-a146-40e9-8eb1-23da45982a31
+- 119e3ce4-a3d6-4a9f-9d99-cf57ccfddad0
+- 30a99f0d-5eca-43dc-83e4-7ed58b0160a9
+- 4a08bd8c-7190-4e30-ad5f-8cbeb863d415
+- 3289d897-2da9-4e58-9f73-0d997ee5f3a3
+- 972a1b99-016a-4c4f-9c31-97bf70c13c3e

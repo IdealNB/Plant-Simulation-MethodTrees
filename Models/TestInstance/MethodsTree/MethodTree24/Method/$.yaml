@@ -1,0 +1,19 @@
+InternalClassType: Frame
+Coordinate3D: [0,-0.5,0.1]
+Label: ".onChanges.Class"
+LockStructure: true
+Origin: 86c18a2e-5eb6-4230-b2c9-2ea7c47cb2a3
+UUID: a673294f-4c8b-4de1-96cc-13bc8aec9114
+$CustomAttributes:
+-
+ Name: tooltip
+ $DataType: method
+ RandomSeed: 1073901698
+$Nodes:
+- a30c5778-c97d-41e8-a201-dacd8fd8512c
+- c5223881-7352-4e37-a113-9e37fb24e940
+- 8d7e7c1c-f7e5-433b-907a-ac55e6567f3c
+- b636c69f-9b9e-4f91-8314-21e61a23d5d4
+- 06b5c6fa-8eb9-4318-98ed-f8d5cb43b954
+- ad62c382-bcf6-4996-ba40-d1872d668b70
+- 85399f2e-34ce-4288-800a-210e1463b6d5

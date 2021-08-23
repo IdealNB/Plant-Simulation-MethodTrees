@@ -1,0 +1,36 @@
+InternalClassType: Comment
+Cont: |+1
+ 
+ 
+ param PartToCreate:Object, left:boolean, Column:integer, Row:integer -> object
+ 
+ var OccupancyTable: object
+ var rack: object
+ 
+ if left
+ 	OccupancyTable := OccupancyLeft
+ 	rack:= RackLeft
+ else
+ 	OccupancyTable := OccupancyRight
+ 	rack:= RackRight
+ end
+ 
+ if OccupancyTable[Column, Row] = 0 then
+ 	OccupancyTable[Column, Row] := 1
+ 
+ 	WMS.NumFreePlaces -= 1
+ 	result := PartToCreate.create(rack[Column, Row])
+ else
+ 	debug
+ end
+ 
+ WMS.setAttributes(result)
+ 
+ var side:string := when left then "left" else "right"
+ 
+ WMS.addPallet(result, side, column, row, result.HBW_ProductName, 1)
+ 
+ WMS.addProduct(result.name, 1)
+Origin: c5ce3683-2ad7-434d-a125-e9ab898a8a5e
+SaveAsRichedit: false
+UUID: 3cd2c9a5-5b73-41f9-bef4-3bec0a9aec32

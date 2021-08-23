@@ -1,0 +1,15 @@
+InternalClassType: Frame
+Coordinate3D: [1,-189.5,0]
+Label: ".Models.TestInstance.RackLane.IN.OnExit"
+LockStructure: true
+Name: MethodTree21
+Origin: 4393eed9-c045-49af-97b6-2dff93f60e1d
+UUID: a57c8549-de5d-4a8d-8b18-7fe515a729f2
+3D:
+ GraphicGroupNames: ["default","deco","plate"]
+ InternalGraphicGroups: ["deco","plate"]
+ LockedGraphicGroups: ["plate"]
+$Nodes:
+- d3ad3529-caee-4b35-bb51-787ff20b1870
+- 4d5badaa-9b4f-43bc-8d16-e1080354f668
+- 0fa72c68-34bc-48a2-a7e6-bc4dd63b17d7
